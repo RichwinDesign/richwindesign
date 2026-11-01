@@ -1463,3 +1463,91 @@ body {
   object-fit: cover;
   filter: grayscale(100%);
 }
+
+/* PORTAL #05 */
+
+.portal-detail-hero-05 {
+  background-image:
+    linear-gradient(
+      rgba(10, 37, 97, 0.80),
+      rgba(10, 37, 97, 0.80)
+    ),
+    url("images/portale/portal-05/portal_05_hero-background.png");
+}
+
+.portal-detail-hero-05 .portal-detail-hero-text h1 {
+  color: #168bff;
+}
+
+.portal-detail-hero-05 .portal-detail-buy {
+  background: #0047e0;
+  color: #ffffff;
+}
+
+
+/* PORTAL #05 NAVIGATION */
+
+.portal-detail-navigation-05 a {
+  border-color: #168bff;
+  color: #168bff;
+}
+
+.portal-detail-navigation-05 a:hover {
+  background: #168bff;
+  color: #111111;
+}
+
+
+/* PORTAL #05 ÜBERSCHRIFTEN */
+
+.portal-detail-hero-05 + .portal-detail-navigation
++ .portal-detail-content
+.portal-detail-section-heading h2 {
+  color: #168bff;
+}
+
+
+/* PORTAL #05 PROZESSNUMMERN */
+
+.portal-detail-hero-05 + .portal-detail-navigation
++ .portal-detail-content
+.portal-process-card p span {
+  color: #168bff;
+}
+
+
+/* PORTAL #05 JURYPREIS */
+
+.portal-award-card {
+  margin-bottom: 34px;
+  padding: 14px;
+
+  border: 2px solid #ffcc14;
+
+  background: #171717;
+
+  text-align: center;
+}
+
+.portal-award-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+
+  margin-bottom: 18px;
+}
+
+.portal-award-card p {
+  margin: 7px 0;
+
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.portal-award-card a {
+  color: #ffcc14;
+}
+
+.portal-process-heading-05 {
+  margin-top: 0;
+}
