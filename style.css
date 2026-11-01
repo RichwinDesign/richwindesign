@@ -190,31 +190,31 @@ body {
 
 .motion-banner {
   background-image:
-    url("images/hero_motion-banner.gif");
+    url("images/general/hero_motion-banner.gif");
   background-position: center;
 }
 
 .portals {
   background-image:
-    url("images/hero_portale.png");
+    url("images/general/hero_portale.png");
   background-position: 47% 93%;
 }
 
 .print-media {
   background-image:
-    url("images/hero_print-medien.jpg");
+    url("images/general/hero_print-medien.jpg");
   background-position: 73% 17%;
 }
 
 .landing-pages {
   background-image:
-    url("images/hero_landing-pages.webp");
+    url("images/general/hero_landing-pages.webp");
   background-position: 49% 72%;
 }
 
 .motion-video {
   background-image:
-    url("images/hero_bewegtbild.gif");
+    url("images/general/hero_bewegtbild.gif");
   background-position: 64% 68%;
 }
 
@@ -224,13 +224,13 @@ body {
 
 .photography {
   background-image:
-    url("images/hero_fotografie.png");
+    url("images/general/hero_fotografie.png");
   background-position: 71% 57%;
 }
 
 .genealogy {
   background-image:
-    url("images/hero_genealogie.png");
+    url("images/general/hero_genealogie.png");
   background-position: 100% 0%;
 }
 
@@ -398,7 +398,7 @@ body {
   min-height: 650px;
 
   background-image:
-    url("images/hero_motionbanner.png");
+    url("images/motion-banner/hero_motionbanner.png");
   background-size: cover;
   background-position: center;
 
@@ -951,7 +951,7 @@ body {
       rgba(66, 64, 47, 0.78),
       rgba(66, 64, 47, 0.78)
     ),
-    url("images/portal_01_hero-background.png");
+    url("images/portale/portal-01/portal_01_hero-background.png");
 }
 
 .portal-detail-hero-inner {
@@ -1291,7 +1291,7 @@ body {
       rgba(76, 37, 86, 0.78),
       rgba(76, 37, 86, 0.78)
     ),
-    url("images/portal_02_hero-background.png");
+    url("images/portale/portal-02/portal_02_hero-background.png");
 }
 
 .portal-detail-hero-02 .portal-detail-hero-text h1 {
