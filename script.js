@@ -4,6 +4,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const aiModalClose = document.getElementById("aiModalClose");
   const aiModalBackdrop = document.querySelector(".ai-modal-backdrop");
 
+  // Wenn auf der Seite kein KI-Popup vorhanden ist,
+  // muss nichts weiter ausgeführt werden.
+  if (!aiModal || !aiModalClose || !aiModalBackdrop) {
+    return;
+  }
+
   function openAiModal(event) {
     event.preventDefault();
     event.stopPropagation();
