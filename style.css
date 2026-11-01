@@ -27,7 +27,7 @@ body {
 .header-inner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 28px 32px;
+  padding: 20px 32px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -76,12 +76,12 @@ body {
 
 .intro-inner {
   max-width: 1200px;
-  min-height: 470px;
+  min-height: 400px;
   margin: 0 auto;
-  padding: 70px 32px;
+  padding: 55px 32px;
   display: grid;
-  grid-template-columns: 1.4fr 0.8fr;
-  gap: 90px;
+  grid-template-columns: 1.5fr 0.7fr;
+  gap: 80px;
   align-items: center;
 }
 
@@ -113,9 +113,9 @@ body {
 }
 
 .intro-image img {
-  width: 300px;
+  width: 270px;
   max-width: 100%;
-  aspect-ratio: 1 / 1.1;
+  aspect-ratio: 1 / 1.08;
   object-fit: cover;
   border-radius: 50%;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
@@ -125,7 +125,7 @@ body {
 
 .project-section {
   position: relative;
-  min-height: 240px;
+  min-height: 210px;
   margin-top: 38px;
   background-size: cover;
   background-position: center;
@@ -144,10 +144,10 @@ body {
   z-index: 2;
 
   max-width: 1200px;
-  min-height: 240px;
+  min-height: 210px;
 
   margin: 0 auto;
-  padding: 40px 60px;
+  padding: 35px 60px;
 
   display: grid;
   grid-template-columns: 1fr auto;
