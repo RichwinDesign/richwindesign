@@ -53,6 +53,7 @@ body {
 }
 
 /* Menü etwas weiter mittig über dem Bild */
+
 .main-nav {
   display: flex;
   gap: 34px;
@@ -238,39 +239,20 @@ body {
   z-index: 5;
   left: 12%;
   bottom: 25px;
-}
 
-.ai-label summary {
-  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  border: 0;
+  background: transparent;
+
   cursor: pointer;
 }
 
-.ai-label summary::-webkit-details-marker {
-  display: none;
-}
-
-.ai-label summary img {
+.ai-label img {
   width: 24px;
   height: auto;
   display: block;
-}
-
-.ai-info {
-  position: absolute;
-  bottom: 55px;
-  left: 0;
-
-  width: 220px;
-  padding: 15px;
-
-  background: #151515;
-  color: #ffffff;
-  border: 1px solid #ffffff;
-
-  font-size: 13px;
-  line-height: 1.5;
-
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
 }
 
 /* RESPONSIVE */
@@ -317,4 +299,79 @@ body {
     left: 24px;
   }
 
+}
+
+/* KI-POPUP */
+
+.ai-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.ai-modal.is-open {
+  display: flex;
+}
+
+.ai-modal-backdrop {
+  position: absolute;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(4px);
+}
+
+.ai-modal-window {
+  position: relative;
+  z-index: 2;
+
+  width: min(520px, calc(100% - 40px));
+  padding: 34px;
+
+  background: #181818;
+  color: #ffffff;
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 14px;
+
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.55);
+}
+
+.ai-modal-window h2 {
+  margin: 0 0 16px;
+  font-size: 24px;
+}
+
+.ai-modal-window p {
+  margin: 0 0 28px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #dddddd;
+}
+
+#aiModalClose {
+  display: block;
+  margin-left: auto;
+
+  padding: 11px 24px;
+
+  border: 1px solid #ffffff;
+  border-radius: 6px;
+
+  background: transparent;
+  color: #ffffff;
+
+  font: inherit;
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+#aiModalClose:hover {
+  background: #ffffff;
+  color: #111111;
 }
