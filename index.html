@@ -35,7 +35,9 @@
       <div class="intro-inner">
 
         <div class="intro-text">
-          <p class="intro-small"><strong>Hei !</strong></p>
+          <p class="intro-small">
+            <strong>Hei !</strong>
+          </p>
 
           <h1>Ich bin Bianca Richwin</h1>
 
@@ -57,7 +59,10 @@
         </div>
 
         <div class="intro-image">
-          <img src="images/profil_bianca-richwin.jpg" alt="Bianca Richwin">
+          <img
+            src="images/profil_bianca-richwin.jpg"
+            alt="Bianca Richwin"
+          >
         </div>
 
       </div>
@@ -65,6 +70,7 @@
 
     <section id="portfolio" class="project-section motion-banner">
       <div class="project-content">
+
         <h2>
           <a href="#">Motion Banner</a>
         </h2>
@@ -72,11 +78,13 @@
         <a class="project-button" href="#">
           Alle ➔
         </a>
+
       </div>
     </section>
 
     <section id="portale" class="project-section portals">
       <div class="project-content">
+
         <h2>
           <a href="#">Portale</a>
         </h2>
@@ -84,22 +92,24 @@
         <a class="project-button" href="#">
           Portale entdecken
         </a>
+
       </div>
 
-      <details class="ai-label">
-        <summary>
-  <img src="images/icon_ki-hinweis.png" alt="Hinweis: KI-generiertes Bild">
-</summary>
-
-        <div class="ai-info">
-          <strong>KI-generiertes Bild</strong><br>
-          Dieses Bild wurde mithilfe generativer KI erstellt.
-        </div>
-      </details>
+      <button
+        class="ai-label"
+        type="button"
+        aria-label="Hinweis: KI-generiertes Bild"
+      >
+        <img
+          src="images/icon_ki-hinweis.png"
+          alt=""
+        >
+      </button>
     </section>
 
     <section class="project-section print-media">
       <div class="project-content">
+
         <h2>
           <a href="#">Print Medien</a>
         </h2>
@@ -107,11 +117,13 @@
         <a class="project-button" href="#">
           Alle ➔
         </a>
+
       </div>
     </section>
 
     <section class="project-section landing-pages">
       <div class="project-content">
+
         <h2>
           <a href="#">Landing Pages</a>
         </h2>
@@ -119,11 +131,13 @@
         <a class="project-button" href="#">
           Alle ➔
         </a>
+
       </div>
     </section>
 
     <section class="project-section motion-video">
       <div class="project-content">
+
         <h2>
           <a href="#">Bewegtbild</a>
         </h2>
@@ -131,11 +145,13 @@
         <a class="project-button" href="#">
           Alle ➔
         </a>
+
       </div>
     </section>
 
     <section class="project-section photography">
       <div class="project-content">
+
         <h2>
           <a href="#">Fotografie</a>
         </h2>
@@ -143,22 +159,24 @@
         <a class="project-button" href="#">
           Alle ➔
         </a>
+
       </div>
 
-      <details class="ai-label">
-        <summary>
-  <img src="images/icon_ki-hinweis.png" alt="Hinweis: KI-generiertes Bild">
-</summary>
-
-        <div class="ai-info">
-          <strong>KI-generiertes Bild</strong><br>
-          Dieses Bild wurde mithilfe generativer KI erstellt.
-        </div>
-      </details>
+      <button
+        class="ai-label"
+        type="button"
+        aria-label="Hinweis: KI-generiertes Bild"
+      >
+        <img
+          src="images/icon_ki-hinweis.png"
+          alt=""
+        >
+      </button>
     </section>
 
     <section class="project-section genealogy">
       <div class="project-content">
+
         <h2>
           <a href="#">Genealogie</a>
         </h2>
@@ -166,23 +184,55 @@
         <a class="project-button" href="#">
           Alle ➔
         </a>
+
       </div>
 
-      <details class="ai-label">
-        <summary>
-  <img src="images/icon_ki-hinweis.png" alt="Hinweis: KI-generiertes Bild">
-</summary>
-
-        <div class="ai-info">
-          <strong>KI-generiertes Bild</strong><br>
-          Dieses Bild wurde mithilfe generativer KI erstellt.
-        </div>
-      </details>
+      <button
+        class="ai-label"
+        type="button"
+        aria-label="Hinweis: KI-generiertes Bild"
+      >
+        <img
+          src="images/icon_ki-hinweis.png"
+          alt=""
+        >
+      </button>
     </section>
 
   </main>
-  
-<script src="script.js"></script>
+
+  <div
+    class="ai-modal"
+    id="aiModal"
+    aria-hidden="true"
+  >
+    <div class="ai-modal-backdrop"></div>
+
+    <div
+      class="ai-modal-window"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="aiModalTitle"
+    >
+      <h2 id="aiModalTitle">
+        KI-generiertes Bild
+      </h2>
+
+      <p>
+        Dieses Bild wurde mithilfe generativer KI erstellt.
+      </p>
+
+      <button
+        type="button"
+        id="aiModalClose"
+      >
+        Okay
+      </button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
 </body>
 
 </html>
