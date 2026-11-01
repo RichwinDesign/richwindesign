@@ -1340,3 +1340,52 @@ body {
 .portal-process-card p span {
   color: #d952e0;
 }
+/* PORTAL #03 */
+
+.portal-detail-hero-03 {
+  background-image:
+    linear-gradient(
+      rgba(75, 46, 48, 0.80),
+      rgba(75, 46, 48, 0.80)
+    ),
+    url("images/portale/portal-03/portal_03_hero-background.png");
+}
+
+.portal-detail-hero-03 .portal-detail-hero-text h1 {
+  color: #ff8652;
+}
+
+.portal-detail-hero-03 .portal-detail-buy {
+  background: #ff8652;
+}
+
+
+/* PORTAL #03 NAVIGATION */
+
+.portal-detail-navigation-03 a {
+  border-color: #ff8652;
+  color: #ff8652;
+}
+
+.portal-detail-navigation-03 a:hover {
+  background: #ff8652;
+  color: #111111;
+}
+
+
+/* PORTAL #03 ÜBERSCHRIFTEN */
+
+.portal-detail-hero-03 + .portal-detail-navigation
++ .portal-detail-content
+.portal-detail-section-heading h2 {
+  color: #ff8652;
+}
+
+
+/* PORTAL #03 PROZESSNUMMERN */
+
+.portal-detail-hero-03 + .portal-detail-navigation
++ .portal-detail-content
+.portal-process-card p span {
+  color: #ff8652;
+}
