@@ -1,4 +1,36 @@
+```javascript
 document.addEventListener("DOMContentLoaded", () => {
+
+  /* -------------------------------------------------- */
+  /* WEBSITE INTRO */
+  /* -------------------------------------------------- */
+
+  const siteIntro = document.getElementById("siteIntro");
+
+  if (siteIntro) {
+    const introAlreadyShown =
+      sessionStorage.getItem("richwinIntroShown");
+
+    if (introAlreadyShown) {
+      siteIntro.classList.add("is-hidden");
+    } else {
+      sessionStorage.setItem("richwinIntroShown", "true");
+
+      window.setTimeout(() => {
+        siteIntro.classList.add("is-opening");
+      }, 1100);
+
+      window.setTimeout(() => {
+        siteIntro.classList.add("is-hidden");
+      }, 2100);
+    }
+  }
+
+
+  /* -------------------------------------------------- */
+  /* KI-POPUP */
+  /* -------------------------------------------------- */
+
   const aiButtons = document.querySelectorAll(".ai-label");
   const aiModal = document.getElementById("aiModal");
   const aiModalClose = document.getElementById("aiModalClose");
@@ -39,4 +71,6 @@ document.addEventListener("DOMContentLoaded", () => {
       closeAiModal();
     }
   });
+
 });
+```
