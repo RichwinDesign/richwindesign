@@ -1263,3 +1263,61 @@ body {
   }
 
 }
+
+/* PORTAL #02 */
+
+.portal-detail-hero-02 {
+  background-image:
+    linear-gradient(
+      rgba(76, 37, 86, 0.78),
+      rgba(76, 37, 86, 0.78)
+    ),
+    url("images/portal_02_hero-background.png");
+}
+
+.portal-detail-hero-02 .portal-detail-hero-text h1 {
+  color: #d952e0;
+}
+
+.portal-detail-inspiration {
+  margin: 0 0 14px;
+
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.portal-detail-hero-02 .portal-detail-buy {
+  background: #d952e0;
+}
+
+
+/* PORTAL #02 NAVIGATION */
+
+.portal-detail-navigation-02 a {
+  border-color: #d952e0;
+  color: #d952e0;
+}
+
+.portal-detail-navigation-02 a:hover {
+  background: #d952e0;
+  color: #111111;
+}
+
+
+/* PORTAL #02 ÜBERSCHRIFTEN */
+
+.portal-detail-hero-02 + .portal-detail-navigation
++ .portal-detail-content
+.portal-detail-section-heading h2 {
+  color: #d952e0;
+}
+
+
+/* PORTAL #02 PROZESSNUMMERN */
+
+.portal-detail-hero-02 + .portal-detail-navigation
++ .portal-detail-content
+.portal-process-card p span {
+  color: #d952e0;
+}
