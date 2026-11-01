@@ -52,9 +52,11 @@ body {
   font-weight: 700;
 }
 
+/* Menü etwas weiter mittig über dem Bild */
 .main-nav {
   display: flex;
   gap: 34px;
+  margin-right: 120px;
 }
 
 .main-nav a {
@@ -250,7 +252,6 @@ body {
 .ai-label summary span {
   width: 42px;
   height: 42px;
-
   border-radius: 50%;
 
   display: flex;
@@ -259,7 +260,6 @@ body {
 
   background: #ffffff;
   color: #111111;
-
   font-weight: 700;
 }
 
@@ -273,7 +273,6 @@ body {
 
   background: #151515;
   color: #ffffff;
-
   border: 1px solid #ffffff;
 
   font-size: 13px;
@@ -288,6 +287,10 @@ body {
 
   .header-inner {
     padding: 20px;
+  }
+
+  .main-nav {
+    margin-right: 0;
   }
 
   .intro-inner {
