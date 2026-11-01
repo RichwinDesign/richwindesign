@@ -542,3 +542,366 @@ body {
   }
 
 }
+
+/* PORTALE UNTERSEITE */
+
+.portal-intro {
+  background: linear-gradient(
+    135deg,
+    #111111 0%,
+    #171717 55%,
+    #0f0f0f 100%
+  );
+}
+
+.portal-intro-inner {
+  max-width: 1136px;
+  margin: 0 auto;
+  padding: 70px 0 60px;
+}
+
+.portal-intro h1 {
+  margin: 0 0 24px;
+  font-size: 34px;
+  font-weight: 800;
+}
+
+.portal-intro-text {
+  max-width: 620px;
+}
+
+.portal-intro-text p {
+  margin: 0 0 16px;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+
+/* PORTAL ÜBERSICHT */
+
+.portal-overview {
+  max-width: 1136px;
+  margin: 45px auto 70px;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+
+/* KARTEN */
+
+.portal-card {
+  min-height: 490px;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  background: #202020;
+
+  border: 1px solid rgba(255, 255, 255, 0.05);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.portal-card:hover {
+  transform: translateY(-4px);
+
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.32);
+}
+
+
+/* BILDER */
+
+.portal-card-image {
+  height: 230px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 22px;
+}
+
+.portal-card-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  display: block;
+}
+
+
+/* INHALT */
+
+.portal-card-content {
+  flex: 1;
+
+  padding: 20px 22px 26px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+}
+
+.portal-card-content h2 {
+  margin: 0 0 14px;
+
+  padding-bottom: 5px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.75);
+
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.portal-card-type {
+  margin: 0 0 12px;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.portal-card-title {
+  margin: 0 0 12px;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.portal-card-status {
+  margin: 0 0 22px;
+
+  font-size: 12px;
+}
+
+.portal-card-work {
+  margin: 0 0 22px;
+
+  color: #ff4040;
+
+  font-size: 13px;
+  font-weight: 800;
+}
+
+
+/* BUTTON */
+
+.portal-card-button {
+  margin-top: auto;
+
+  min-width: 180px;
+
+  padding: 13px 22px;
+
+  border-radius: 999px;
+
+  text-decoration: none;
+
+  color: #111111;
+
+  background: #dddddd;
+
+  font-size: 13px;
+
+  transition:
+    transform 0.2s ease,
+    filter 0.2s ease;
+}
+
+.portal-card-button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+}
+
+.portal-card-button.disabled {
+  background: #777777;
+  color: #222222;
+
+  text-decoration: line-through;
+
+  pointer-events: none;
+}
+
+
+/* INDIVIDUELLE PORTALFARBEN */
+
+.portal-card-merch {
+  background: linear-gradient(
+    180deg,
+    #2e2519 0%,
+    #211b14 100%
+  );
+}
+
+.portal-card-merch .portal-card-title {
+  color: #e7a53a;
+}
+
+.portal-card-merch .portal-card-button {
+  background: #e7a53a;
+}
+
+
+.portal-card-01 {
+  background: linear-gradient(
+    180deg,
+    #1d2a18 0%,
+    #172015 100%
+  );
+}
+
+.portal-card-01 .portal-card-title {
+  color: #87d33f;
+}
+
+.portal-card-01 .portal-card-button {
+  background: #87d33f;
+}
+
+
+.portal-card-02 {
+  background: linear-gradient(
+    180deg,
+    #302034 0%,
+    #211724 100%
+  );
+}
+
+.portal-card-02 .portal-card-title {
+  color: #d94ce0;
+}
+
+.portal-card-02 .portal-card-button {
+  background: #d94ce0;
+}
+
+
+.portal-card-03 {
+  background: linear-gradient(
+    180deg,
+    #3a251f 0%,
+    #271a16 100%
+  );
+}
+
+.portal-card-03 .portal-card-title {
+  color: #ff8652;
+}
+
+.portal-card-03 .portal-card-button {
+  background: #ff8652;
+}
+
+
+.portal-card-04 {
+  background: linear-gradient(
+    180deg,
+    #282828 0%,
+    #202020 100%
+  );
+}
+
+
+.portal-card-05 {
+  background: linear-gradient(
+    180deg,
+    #182543 0%,
+    #111a30 100%
+  );
+}
+
+.portal-card-05 .portal-card-title {
+  color: #3476ff;
+}
+
+.portal-card-05 .portal-card-button {
+  background: #3476ff;
+  color: #ffffff;
+}
+
+
+.portal-card-06,
+.portal-card-07 {
+  background: linear-gradient(
+    180deg,
+    #292929 0%,
+    #202020 100%
+  );
+}
+
+
+/* PLATZHALTER */
+
+.portal-card-placeholder {
+  height: 230px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      #191919,
+      #262626
+    );
+
+  color: rgba(255, 255, 255, 0.14);
+
+  font-size: 24px;
+  font-weight: 800;
+}
+
+
+/* HINWEIS UNTEN */
+
+.portal-note {
+  max-width: 1136px;
+
+  margin: 0 auto 80px;
+
+  font-size: 13px;
+  color: #cccccc;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 1000px) {
+
+  .portal-intro-inner,
+  .portal-overview,
+  .portal-note {
+    max-width: calc(100% - 48px);
+  }
+
+  .portal-overview {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .portal-intro-inner {
+    padding-top: 50px;
+  }
+
+  .portal-intro h1 {
+    font-size: 28px;
+  }
+
+  .portal-overview {
+    grid-template-columns: 1fr;
+  }
+
+}
