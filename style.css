@@ -127,7 +127,7 @@ body {
 
 .project-section {
   position: relative;
-  max-width: 1200px;
+  max-width: calc(1200px - 64px);
   min-height: 210px;
 
   margin: 38px auto 0;
