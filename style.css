@@ -388,3 +388,73 @@ body {
   background: #ffffff;
   color: #111111;
 }
+
+/* MOTION-BANNER UNTERSEITE */
+
+.motion-page-hero {
+  position: relative;
+  min-height: 650px;
+
+  background-image:
+    url("images/hero_motionbanner.png");
+  background-size: cover;
+  background-position: center;
+
+  overflow: hidden;
+}
+
+.motion-page-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.motion-page-hero-inner {
+  position: relative;
+  z-index: 2;
+
+  max-width: 1200px;
+  min-height: 650px;
+
+  margin: 0 auto;
+  padding: 120px 32px;
+
+  display: flex;
+  align-items: center;
+}
+
+.motion-page-text {
+  width: 33.33%;
+  max-width: 420px;
+}
+
+.motion-page-text h1 {
+  margin: 0 0 22px;
+
+  font-size: 6.3rem;
+  line-height: 0.9;
+  font-weight: 800;
+}
+
+.motion-page-subtitle {
+  margin: 0 0 20px;
+
+  color: #00d99a;
+
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.motion-page-text p {
+  margin: 0;
+
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.motion-page-ai {
+  left: 12%;
+  bottom: 40px;
+}
