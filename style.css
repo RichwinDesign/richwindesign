@@ -240,19 +240,32 @@ body {
   left: 12%;
   bottom: 25px;
 
+  width: 28px;
+  height: 28px;
+
   padding: 0;
   margin: 0;
 
   border: 0;
   background: transparent;
 
+  display: block;
   cursor: pointer;
+
+  appearance: none;
 }
 
 .ai-label img {
-  width: 24px;
-  height: auto;
+  width: 28px !important;
+  height: 28px !important;
+
+  max-width: 28px;
+  max-height: 28px;
+
+  object-fit: contain;
   display: block;
+
+  pointer-events: none;
 }
 
 /* RESPONSIVE */
