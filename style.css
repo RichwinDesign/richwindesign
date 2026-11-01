@@ -809,6 +809,10 @@ body {
   );
 }
 
+.portal-04-image {
+  border-radius: 28px;
+  filter: grayscale(100%);
+}
 
 .portal-card-05 {
   background: linear-gradient(
