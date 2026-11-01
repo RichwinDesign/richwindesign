@@ -57,7 +57,6 @@ body {
 .main-nav {
   display: flex;
   gap: 34px;
-  margin-right: 120px;
 }
 
 .main-nav a {
