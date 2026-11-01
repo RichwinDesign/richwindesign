@@ -14,9 +14,56 @@ body {
   color: #111111;
 }
 
-h1,
-h2,
-h3,
-p {
+header {
+  width: 100%;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a {
+  color: #111111;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 32px;
+}
+
+.intro {
+  margin-bottom: 80px;
+}
+
+.intro p {
+  margin: 0 0 12px 0;
+  font-size: 18px;
+}
+
+.intro h1 {
   margin: 0;
+  font-size: 48px;
+  line-height: 1.1;
+}
+
+.portfolio {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.portfolio h2 {
+  margin: 0;
+  padding: 40px;
+  border: 1px solid #e5e5e5;
+  font-size: 28px;
 }
