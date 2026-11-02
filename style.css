@@ -1568,7 +1568,7 @@ body {
   overflow: hidden;
   background: #0a0a0a;
 
-  animation: introScreenOut 1.15s ease forwards;
+  animation: introScreenOut 1s ease-out forwards;
 }
 
 .site-intro-name {
@@ -1596,7 +1596,7 @@ body {
   backface-visibility: hidden;
   -webkit-font-smoothing: antialiased;
 
-  animation: introNameAnimation 1s forwards;
+  animation: introNameAnimation 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 
@@ -1612,28 +1612,35 @@ body {
     opacity: 0;
     transform:
       translate3d(-50%, -50%, 0)
-      scale(0.82);
+      scale(0.75);
   }
 
-  25% {
+  18% {
     opacity: 1;
-    transform:
-      translate3d(-50%, -50%, 0)
-      scale(1);
-  }
-
-  48% {
-    opacity: 1;
-    transform:
-      translate3d(-50%, -50%, 0)
-      scale(1);
   }
 
   100% {
     opacity: 0;
     transform:
       translate3d(-50%, -50%, 0)
-      scale(4);
+      scale(5);
+  }
+
+}
+
+
+@keyframes introScreenOut {
+
+  0%,
+  78% {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  100% {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
   }
 
 }
