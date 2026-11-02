@@ -2208,3 +2208,346 @@ body {
   }
 
 }
+/* ================================================== */
+/* GENEALOGIE HAUPTSEITE */
+/* ================================================== */
+
+.genealogy-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 70px 32px 90px;
+}
+
+
+/* -------------------------------------------------- */
+/* EINLEITUNG */
+/* -------------------------------------------------- */
+
+.genealogy-intro {
+  max-width: 720px;
+  margin-bottom: 60px;
+}
+
+.genealogy-intro h1 {
+  margin: 0 0 20px;
+  font-size: 3.4rem;
+  line-height: 1;
+  font-weight: 800;
+}
+
+.genealogy-intro-lead {
+  margin: 0 0 18px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.genealogy-intro-text {
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.genealogy-intro-text p {
+  margin: 0 0 12px;
+}
+
+
+/* -------------------------------------------------- */
+/* ABSCHNITTE */
+/* -------------------------------------------------- */
+
+.genealogy-section {
+  margin-bottom: 65px;
+}
+
+.genealogy-section > h2 {
+  margin: 0 0 26px;
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+
+
+/* -------------------------------------------------- */
+/* ÜBERSICHTSKARTEN */
+/* -------------------------------------------------- */
+
+.genealogy-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.genealogy-card {
+  grid-column: span 2;
+
+  min-height: 285px;
+  padding: 34px 28px 28px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+
+  background: #1c1c1c;
+}
+
+.genealogy-card-wide {
+  grid-column: span 3;
+}
+
+.genealogy-card-icon {
+  display: block;
+  margin-bottom: 16px;
+}
+
+.genealogy-card-icon img {
+  width: 66px;
+  height: 66px;
+  object-fit: contain;
+  display: block;
+}
+
+.genealogy-card h3 {
+  margin: 0 0 10px;
+  font-size: 1rem;
+}
+
+.genealogy-card h3 a,
+.genealogy-card-link {
+  color: #d79b45;
+}
+
+.genealogy-card h3 a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.genealogy-card p {
+  max-width: 280px;
+  margin: 0;
+
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.genealogy-card-link {
+  margin-top: auto;
+  padding-top: 24px;
+
+  font-size: 12px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+
+/* -------------------------------------------------- */
+/* VIER HAUPTLINIEN */
+/* -------------------------------------------------- */
+
+.genealogy-lines-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.genealogy-line-card {
+  min-height: 340px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+  background: #1c1c1c;
+}
+
+.genealogy-line-card > a:first-child {
+  display: block;
+  padding-top: 30px;
+}
+
+.genealogy-line-card img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  display: block;
+}
+
+.genealogy-line-card h3 {
+  margin: 14px 0 12px;
+
+  font-size: 1.25rem;
+  color: #888;
+}
+
+.genealogy-line-card p {
+  margin: 0;
+  padding: 0 28px;
+
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.genealogy-line-link {
+  width: 100%;
+  margin-top: auto;
+  padding: 26px 15px;
+
+  border-top: 10px solid #111;
+
+  color: #fff;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.genealogy-line-link:hover {
+  color: #d79b45;
+}
+
+
+/* -------------------------------------------------- */
+/* KONTAKT / IMPRESSUM / DATENSCHUTZ */
+/* -------------------------------------------------- */
+
+.genealogy-info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  margin-top: 20px;
+
+  background: #1c1c1c;
+}
+
+.genealogy-info-card {
+  padding: 32px;
+
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 22px;
+
+  align-items: start;
+}
+
+.genealogy-info-card img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.genealogy-info-card h3 {
+  margin: 0 0 12px;
+  font-size: 1rem;
+}
+
+.genealogy-info-card h3 a,
+.genealogy-info-card > div > a {
+  color: #d79b45;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.genealogy-info-card p {
+  margin: 0 0 16px;
+
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.genealogy-info-card > div > a {
+  font-size: 12px;
+}
+
+
+/* -------------------------------------------------- */
+/* FOOTER */
+/* -------------------------------------------------- */
+
+.genealogy-footer {
+  padding: 25px 0;
+  background: #111;
+}
+
+
+/* -------------------------------------------------- */
+/* HOVER */
+/* -------------------------------------------------- */
+
+.genealogy-card,
+.genealogy-line-card {
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.genealogy-card:hover,
+.genealogy-line-card:hover {
+  background: #222;
+}
+
+.genealogy-card-icon img,
+.genealogy-line-card img {
+  transition: transform 0.25s ease;
+}
+
+.genealogy-card:hover img,
+.genealogy-line-card:hover img {
+  transform: translateY(-3px);
+}
+
+
+/* -------------------------------------------------- */
+/* RESPONSIVE */
+/* -------------------------------------------------- */
+
+@media (max-width: 950px) {
+
+  .genealogy-overview-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .genealogy-card,
+  .genealogy-card-wide {
+    grid-column: auto;
+  }
+
+  .genealogy-lines-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .genealogy-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+@media (max-width: 650px) {
+
+  .genealogy-page {
+    padding: 50px 20px 70px;
+  }
+
+  .genealogy-intro h1 {
+    font-size: 2.8rem;
+  }
+
+  .genealogy-overview-grid,
+  .genealogy-lines-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .genealogy-card {
+    min-height: 260px;
+  }
+
+  .genealogy-info-card {
+    grid-template-columns: 55px 1fr;
+    padding: 26px 20px;
+  }
+
+  .genealogy-info-card img {
+    width: 48px;
+    height: 48px;
+  }
+
+}
