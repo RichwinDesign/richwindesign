@@ -208,12 +208,12 @@ body::before {
 /* INTRO */
 
 .intro-section {
-  background: linear-gradient(
-    135deg,
-    #111111 0%,
-    #171717 55%,
-    #0f0f0f 100%
-  );
+  background:
+    linear-gradient(
+      180deg,
+      rgba(8, 10, 12, 0.88) 0%,
+      rgba(8, 10, 12, 0.72) 100%
+    );
 }
 
 .intro-inner {
