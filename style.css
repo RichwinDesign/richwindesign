@@ -1723,21 +1723,18 @@ body {
   margin: 50px auto 90px;
   padding: 0 24px;
 
-  column-count: 3;
-  column-gap: 14px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+
+  align-items: start;
 }
 
 .print-gallery-item {
-  display: inline-block;
-  width: 100%;
-  margin: 0 0 14px;
+  margin: 0;
 
   overflow: hidden;
   background: #1b1b1b;
-
-  break-inside: avoid;
-  -webkit-column-break-inside: avoid;
-  page-break-inside: avoid;
 }
 
 .print-gallery-item img {
@@ -1747,62 +1744,67 @@ body {
   display: block;
 
   transition:
-    transform 0.35s ease,
-    filter 0.35s ease;
+    transform 0.3s ease,
+    filter 0.3s ease;
 }
 
 .print-gallery-item:hover img {
-  transform: scale(1.015);
+  transform: scale(1.02);
   filter: brightness(1.04);
 }
 
-/* diese Klassen werden dann für Print nicht mehr gebraucht,
-   können aber drin bleiben, ohne etwas kaputt zu machen */
-.print-gallery-item-large,
-.print-gallery-item-wide,
-.print-gallery-item-tall {
-  grid-column: auto;
-  grid-row: auto;
+/* Format-Hilfen */
+
+.print-gallery-item-wide {
+  grid-column: span 2;
 }
+
+.print-gallery-item-large {
+  grid-column: span 2;
+}
+
+.print-gallery-item-tall {
+  grid-row: span 2;
+}
+
 
 /* -------------------------------------------------- */
 /* PRINT RESPONSIVE */
 /* -------------------------------------------------- */
 
-@media (max-width: 950px) {
-
-  .print-page-text {
-    width: 45%;
-  }
-
-  .print-page-text h1 {
-    font-size: 4.8rem;
-  }
+@media (max-width: 1000px) {
 
   .print-gallery {
-    column-count: 2;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
 }
 
-@media (max-width: 700px) {
-
-  .print-page-hero-inner {
-    min-height: 580px;
-    padding: 80px 24px;
-  }
-
-  .print-page-text {
-    width: 100%;
-    max-width: 460px;
-  }
-
-  .print-page-text h1 {
-    font-size: 3.8rem;
-  }
+@media (max-width: 750px) {
 
   .print-gallery {
-    column-count: 1;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .print-gallery-item-wide,
+  .print-gallery-item-large {
+    grid-column: span 2;
+  }
+
+}
+
+@media (max-width: 520px) {
+
+  .print-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .print-gallery-item,
+  .print-gallery-item-wide,
+  .print-gallery-item-large,
+  .print-gallery-item-tall {
+    grid-column: auto;
+    grid-row: auto;
   }
 
 }
