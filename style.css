@@ -1723,24 +1723,28 @@ body {
   margin: 50px auto 90px;
   padding: 0 24px;
 
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-auto-flow: dense;
-  gap: 14px;
+  column-count: 3;
+  column-gap: 14px;
 }
 
 .print-gallery-item {
-  margin: 0;
-  min-height: 260px;
+  display: inline-block;
+  width: 100%;
+  margin: 0 0 14px;
+
   overflow: hidden;
   background: #1b1b1b;
+
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
 }
 
 .print-gallery-item img {
   width: 100%;
-  height: 100%;
+  height: auto;
+
   display: block;
-  object-fit: cover;
 
   transition:
     transform 0.35s ease,
@@ -1748,19 +1752,18 @@ body {
 }
 
 .print-gallery-item:hover img {
-  transform: scale(1.025);
-  filter: brightness(1.05);
+  transform: scale(1.015);
+  filter: brightness(1.04);
 }
 
+/* diese Klassen werden dann für Print nicht mehr gebraucht,
+   können aber drin bleiben, ohne etwas kaputt zu machen */
 .print-gallery-item-large,
-.print-gallery-item-wide {
-  grid-column: span 2;
-}
-
+.print-gallery-item-wide,
 .print-gallery-item-tall {
-  grid-row: span 2;
+  grid-column: auto;
+  grid-row: auto;
 }
-
 
 /* -------------------------------------------------- */
 /* PRINT RESPONSIVE */
@@ -1777,7 +1780,7 @@ body {
   }
 
   .print-gallery {
-    grid-template-columns: repeat(2, 1fr);
+    column-count: 2;
   }
 
 }
@@ -1799,16 +1802,7 @@ body {
   }
 
   .print-gallery {
-    grid-template-columns: 1fr;
-  }
-
-  .print-gallery-item,
-  .print-gallery-item-large,
-  .print-gallery-item-wide,
-  .print-gallery-item-tall {
-    grid-column: auto;
-    grid-row: auto;
-    min-height: 260px;
+    column-count: 1;
   }
 
 }
