@@ -1,181 +1,243 @@
-/* -------------------------------------------------- */
-/* PRINT MEDIEN UNTERSEITE */
-/* -------------------------------------------------- */
+<!DOCTYPE html>
+<html lang="de">
 
-.print-page-hero {
-  position: relative;
-  min-height: 650px;
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../style.css">
+  <title>Print Medien | Richwin Design</title>
+</head>
 
-  background-image:
-    url("images/portfolio/print/hero_print-medien.png");
+<body>
 
-  background-size: cover;
-  background-position: center;
+  <header class="site-header">
+    <div class="header-inner">
 
-  overflow: hidden;
-}
+      <div class="social-links">
+        <a href="#" aria-label="Social Media">✦</a>
+        <a href="#" aria-label="Instagram">◎</a>
+        <a href="#" aria-label="LinkedIn">in</a>
+        <a href="#" aria-label="Pinterest">p</a>
+        <a href="#" aria-label="Twitch">◉</a>
+      </div>
 
-.print-page-hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
+      <nav class="main-nav">
+        <a href="../index.html#portale">Portale</a>
+        <a href="../index.html#portfolio">Portfolio</a>
+      </nav>
 
-  background: rgba(0, 0, 0, 0.22);
-}
-
-.print-page-hero-inner {
-  position: relative;
-  z-index: 2;
-
-  max-width: 1200px;
-  min-height: 650px;
-
-  margin: 0 auto;
-  padding: 120px 32px;
-
-  display: flex;
-  align-items: center;
-}
-
-.print-page-text {
-  width: 33.33%;
-  max-width: 420px;
-}
-
-.print-page-text h1 {
-  margin: 0 0 22px;
-
-  font-size: 6.3rem;
-  line-height: 0.9;
-  font-weight: 800;
-}
-
-.print-page-subtitle {
-  margin: 0 0 20px;
-
-  color: #e29c69;
-
-  font-size: 18px;
-  font-weight: 500;
-}
-
-.print-page-text p {
-  margin: 0;
-
-  font-size: 15px;
-  line-height: 1.7;
-}
-
-.print-page-ai {
-  left: 12%;
-  bottom: 40px;
-}
+    </div>
+  </header>
 
 
-/* -------------------------------------------------- */
-/* PRINT GALERIE */
-/* -------------------------------------------------- */
+  <main>
 
-.print-gallery {
-  max-width: 1200px;
-  margin: 50px auto 90px;
-  padding: 0 24px;
+    <!-- HERO -->
 
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-auto-flow: dense;
-  gap: 14px;
-}
+    <section class="print-page-hero">
 
-.print-gallery-item {
-  margin: 0;
+      <div class="print-page-hero-inner">
 
-  min-height: 260px;
+        <div class="print-page-text">
 
-  overflow: hidden;
+          <h1>Print Medien</h1>
 
-  background: #1b1b1b;
-}
+          <p class="print-page-subtitle">
+            Ideen zum Anfassen.
+          </p>
 
-.print-gallery-item img {
-  width: 100%;
-  height: 100%;
+          <p>
+            Ich gestalte Printmedien von der Konzeption bis zur Reinzeichnung.
+            Ob Flyer, Broschüren oder Poster – mein Fokus liegt auf einer klaren
+            Gestaltung, einer durchdachten Struktur und einer präzisen visuellen
+            Umsetzung, die Inhalte wirkungsvoll vermittelt.
+          </p>
 
-  display: block;
+        </div>
 
-  object-fit: cover;
+        <button
+          class="ai-label print-page-ai"
+          type="button"
+          aria-label="Hinweis: KI-generiertes Bild"
+        >
+          <img
+            src="../images/icons/icon_ki-hinweis.png"
+            alt=""
+          >
+        </button>
 
-  transition:
-    transform 0.35s ease,
-    filter 0.35s ease;
-}
+      </div>
 
-.print-gallery-item:hover img {
-  transform: scale(1.025);
-  filter: brightness(1.05);
-}
-
-.print-gallery-item-large {
-  grid-column: span 2;
-}
-
-.print-gallery-item-wide {
-  grid-column: span 2;
-}
-
-.print-gallery-item-tall {
-  grid-row: span 2;
-}
+    </section>
 
 
-/* -------------------------------------------------- */
-/* PRINT RESPONSIVE */
-/* -------------------------------------------------- */
+    <!-- GALERIE -->
 
-@media (max-width: 950px) {
+    <section class="print-gallery">
 
-  .print-page-text {
-    width: 45%;
-  }
+      <figure class="print-gallery-item print-gallery-item-large">
+        <img
+          src="../images/portfolio/print/print_bifold-a4.png"
+          alt="Bifold A4 Printdesign"
+        >
+      </figure>
 
-  .print-page-text h1 {
-    font-size: 4.8rem;
-  }
+      <figure class="print-gallery-item">
+        <img
+          src="../images/portfolio/print/print_startbeileger.jpg"
+          alt="Startbeileger"
+        >
+      </figure>
 
-  .print-gallery {
-    grid-template-columns: repeat(2, 1fr);
-  }
+      <figure class="print-gallery-item print-gallery-item-tall">
+        <img
+          src="../images/portfolio/print/print_anzeige-kloenschnack.webp"
+          alt="Anzeige Klönschnack"
+        >
+      </figure>
 
-}
+      <figure class="print-gallery-item">
+        <img
+          src="../images/portfolio/print/print_57749.png"
+          alt="Printprojekt"
+        >
+      </figure>
 
-@media (max-width: 700px) {
+      <figure class="print-gallery-item">
+        <img
+          src="../images/portfolio/print/print_img-20170614.jpg"
+          alt="Printprojekt"
+        >
+      </figure>
 
-  .print-page-hero-inner {
-    min-height: 580px;
-    padding: 80px 24px;
-  }
+      <figure class="print-gallery-item print-gallery-item-wide">
+        <img
+          src="../images/portfolio/print/print_lekkerland-02.webp"
+          alt="Lekkerland Printdesign"
+        >
+      </figure>
 
-  .print-page-text {
-    width: 100%;
-    max-width: 460px;
-  }
+      <figure class="print-gallery-item">
+        <img
+          src="../images/portfolio/print/print_img-20211030-0036.jpg"
+          alt="Printprojekt"
+        >
+      </figure>
 
-  .print-page-text h1 {
-    font-size: 3.8rem;
-  }
+      <figure class="print-gallery-item print-gallery-item-tall">
+        <img
+          src="../images/portfolio/print/print_maklergalgen.webp"
+          alt="Maklergalgen Gestaltung"
+        >
+      </figure>
 
-  .print-gallery {
-    grid-template-columns: 1fr;
-  }
+      <figure class="print-gallery-item print-gallery-item-large">
+        <img
+          src="../images/portfolio/print/print_fh127-innen.png"
+          alt="FH127 Innengestaltung"
+        >
+      </figure>
 
-  .print-gallery-item,
-  .print-gallery-item-large,
-  .print-gallery-item-wide,
-  .print-gallery-item-tall {
-    grid-column: auto;
-    grid-row: auto;
+      <figure class="print-gallery-item">
+        <img
+          src="../images/portfolio/print/print_img-20211030-0038.webp"
+          alt="Printprojekt"
+        >
+      </figure>
 
-    min-height: 260px;
-  }
+      <figure class="print-gallery-item">
+        <img
+          src="../images/portfolio/print/print_kalender-a3.png"
+          alt="A3 Kalender Gestaltung"
+        >
+      </figure>
 
-}
+      <figure class="print-gallery-item">
+        <img
+          src="../images/portfolio/print/print_5650456.png"
+          alt="Printprojekt"
+        >
+      </figure>
+
+      <figure class="print-gallery-item">
+        <img
+          src="../images/portfolio/print/print_lila-2.png"
+          alt="Printprojekt"
+        >
+      </figure>
+
+      <figure class="print-gallery-item print-gallery-item-wide">
+        <img
+          src="../images/portfolio/print/print_folder-georia.png"
+          alt="Folder Gestaltung"
+        >
+      </figure>
+
+      <figure class="print-gallery-item">
+        <img
+          src="../images/portfolio/print/print_img-20211030-0039.jpg"
+          alt="Printprojekt"
+        >
+      </figure>
+
+      <figure class="print-gallery-item print-gallery-item-large">
+        <img
+          src="../images/portfolio/print/print_z-fold-flyer.jpg"
+          alt="Z-Fold Flyer"
+        >
+      </figure>
+
+      <figure class="print-gallery-item print-gallery-item-large">
+        <img
+          src="../images/portfolio/print/print_a4-flyer-grid.png"
+          alt="A4 Flyer Grid"
+        >
+      </figure>
+
+    </section>
+
+  </main>
+
+
+  <!-- KI POPUP -->
+
+  <div
+    class="ai-modal"
+    id="aiModal"
+    aria-hidden="true"
+  >
+
+    <div class="ai-modal-backdrop"></div>
+
+    <div
+      class="ai-modal-window"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="aiModalTitle"
+    >
+
+      <h2 id="aiModalTitle">
+        KI-generiertes Bild
+      </h2>
+
+      <p>
+        Dieses Bild wurde mithilfe generativer KI erstellt.
+      </p>
+
+      <button
+        type="button"
+        id="aiModalClose"
+      >
+        Okay
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <script src="../script.js"></script>
+
+</body>
+
+</html>
