@@ -1828,3 +1828,161 @@ body {
   }
 
 }
+
+/* -------------------------------------------------- */
+/* LANDING PAGES UNTERSEITE */
+/* -------------------------------------------------- */
+
+.landing-page-hero {
+  position: relative;
+  min-height: 650px;
+
+  background-image:
+    url("images/portfolio/landing-pages/hero_landing-pages.png");
+
+  background-size: cover;
+  background-position: center;
+
+  overflow: hidden;
+}
+
+.landing-page-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.landing-page-hero-inner {
+  position: relative;
+  z-index: 2;
+
+  max-width: 1200px;
+  min-height: 650px;
+
+  margin: 0 auto;
+  padding: 120px 32px;
+
+  display: flex;
+  align-items: center;
+}
+
+.landing-page-text {
+  width: 33.33%;
+  max-width: 420px;
+}
+
+.landing-page-text h1 {
+  margin: 0 0 22px;
+
+  font-size: 6.3rem;
+  line-height: 0.9;
+  font-weight: 800;
+}
+
+.landing-page-subtitle {
+  margin: 0 0 20px;
+
+  color: #b37af2;
+
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.landing-page-text p {
+  margin: 0;
+
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.landing-page-ai {
+  left: 12%;
+  bottom: 40px;
+}
+
+
+/* -------------------------------------------------- */
+/* LANDING PAGES GALERIE */
+/* -------------------------------------------------- */
+
+.landing-gallery {
+  max-width: 1200px;
+  margin: 50px auto 90px;
+  padding: 0 24px;
+
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+
+  align-items: start;
+}
+
+.landing-gallery-item {
+  margin: 0;
+
+  overflow: hidden;
+
+  background: #1b1b1b;
+}
+
+.landing-gallery-item img {
+  width: 100%;
+  height: auto;
+
+  display: block;
+
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
+}
+
+.landing-gallery-item:hover img {
+  transform: scale(1.015);
+  filter: brightness(1.04);
+}
+
+
+/* -------------------------------------------------- */
+/* LANDING PAGES RESPONSIVE */
+/* -------------------------------------------------- */
+
+@media (max-width: 950px) {
+
+  .landing-page-text {
+    width: 45%;
+  }
+
+  .landing-page-text h1 {
+    font-size: 4.8rem;
+  }
+
+  .landing-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+@media (max-width: 700px) {
+
+  .landing-page-hero-inner {
+    min-height: 580px;
+    padding: 80px 24px;
+  }
+
+  .landing-page-text {
+    width: 100%;
+    max-width: 460px;
+  }
+
+  .landing-page-text h1 {
+    font-size: 3.8rem;
+  }
+
+  .landing-gallery {
+    grid-template-columns: 1fr;
+  }
+
+}
