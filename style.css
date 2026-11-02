@@ -241,25 +241,25 @@ body {
 
 .motion-banner {
   background-image:
-    url("images/portfolio/motion-visuals/hero_motion_visuals.gif");
+    url("images/general/Hero_Motion-Visuals.gif");
   background-position: center;
 }
 
 .print-media {
   background-image:
-    url("images/general/hero_print-medien.jpg");
+    url("images/general/Hero_Print-media.png");
   background-position: center;
 }
 
 .landing-pages {
   background-image:
-    url("images/general/hero_landing-pages.webp");
+    url("images/general/Hero_Landing-pages.png");
   background-position: center;
 }
 
 .photography {
   background-image:
-    url("images/general/hero_fotografie.png");
+    url("images/general/Hero_Fotografie.png");
   background-position: center;
 }
 
@@ -376,13 +376,13 @@ body {
 
 .genealogy {
   background-image:
-    url("images/general/hero_genealogie.png");
+    url("images/general/Hero_Genealogie.png");
   background-position: center;
 }
 
 .portals {
   background-image:
-    url("images/general/hero_portale.png");
+    url("images/general/Hero_portalwelt.png");
   background-position: center;
 }
 
