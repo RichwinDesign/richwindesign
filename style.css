@@ -238,9 +238,16 @@ body::before {
 
 .intro-text h1 {
   margin: 0 0 22px;
-  color: #00d99a;
-  font-size: 28px;
-  font-weight: 500;
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.intro-text h1 span {
+  color: #6fb6d9;
+
+  text-shadow:
+    0 0 18px rgba(111, 182, 217, 0.16);
 }
 
 .intro-text p {
