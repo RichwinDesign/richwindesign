@@ -129,9 +129,7 @@ body {
   position: relative;
   max-width: calc(1200px - 64px);
   min-height: 210px;
-
   margin: 38px auto 0;
-
   background-size: cover;
   background-position: center;
   overflow: hidden;
@@ -147,13 +145,10 @@ body {
 .project-content {
   position: relative;
   z-index: 2;
-
   max-width: 1200px;
   min-height: 210px;
-
   margin: 0 auto;
   padding: 35px 60px;
-
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
@@ -190,7 +185,7 @@ body {
 
 .motion-banner {
   background-image:
-    url("images/general/hero_motion-banner.gif");
+    url("images/portfolio/motion-visuals/hero_motion_visuals.gif");
   background-position: center;
 }
 
@@ -231,32 +226,24 @@ body {
   z-index: 5;
   left: 12%;
   bottom: 25px;
-
   width: 28px;
   height: 28px;
-
   padding: 0;
   margin: 0;
-
   border: 0;
   background: transparent;
-
   display: block;
   cursor: pointer;
-
   appearance: none;
 }
 
 .ai-label img {
   width: 28px !important;
   height: 28px !important;
-
   max-width: 28px;
   max-height: 28px;
-
   object-fit: contain;
   display: block;
-
   pointer-events: none;
 }
 
@@ -312,7 +299,6 @@ body {
   position: fixed;
   inset: 0;
   z-index: 9999;
-
   display: none;
   align-items: center;
   justify-content: center;
@@ -325,7 +311,6 @@ body {
 .ai-modal-backdrop {
   position: absolute;
   inset: 0;
-
   background: rgba(0, 0, 0, 0.72);
   backdrop-filter: blur(4px);
 }
@@ -333,16 +318,12 @@ body {
 .ai-modal-window {
   position: relative;
   z-index: 2;
-
   width: min(520px, calc(100% - 40px));
   padding: 34px;
-
   background: #181818;
   color: #ffffff;
-
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 14px;
-
   box-shadow: 0 24px 70px rgba(0, 0, 0, 0.55);
 }
 
@@ -361,18 +342,13 @@ body {
 #aiModalClose {
   display: block;
   margin-left: auto;
-
   padding: 11px 24px;
-
   border: 1px solid #ffffff;
   border-radius: 6px;
-
   background: transparent;
   color: #ffffff;
-
   font: inherit;
   cursor: pointer;
-
   transition: 0.2s ease;
 }
 
@@ -389,9 +365,9 @@ body {
 
   background-image:
     url("images/portfolio/motion-visuals/hero_motion-visuals.png");
+
   background-size: cover;
   background-position: center;
-
   overflow: hidden;
 }
 
@@ -399,20 +375,16 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-
   background: rgba(0, 0, 0, 0.18);
 }
 
 .motion-page-hero-inner {
   position: relative;
   z-index: 2;
-
   max-width: 1200px;
   min-height: 650px;
-
   margin: 0 auto;
   padding: 120px 32px;
-
   display: flex;
   align-items: center;
 }
@@ -424,7 +396,6 @@ body {
 
 .motion-page-text h1 {
   margin: 0 0 22px;
-
   font-size: 6.3rem;
   line-height: 0.9;
   font-weight: 800;
@@ -432,16 +403,13 @@ body {
 
 .motion-page-subtitle {
   margin: 0 0 20px;
-
   color: #00d99a;
-
   font-size: 18px;
   font-weight: 500;
 }
 
 .motion-page-text p {
   margin: 0;
-
   font-size: 15px;
   line-height: 1.7;
 }
@@ -457,11 +425,9 @@ body {
   max-width: 1200px;
   margin: 50px auto 90px;
   padding: 0 24px;
-
   display: grid;
   grid-template-columns: 220px minmax(0, 1fr) 220px;
   gap: 16px;
-
   align-items: start;
 }
 
@@ -478,14 +444,10 @@ body {
   object-fit: contain;
 }
 
-/* Linke und rechte Spalte etwas kompakter */
-
 .motion-gallery-left,
 .motion-gallery-right {
   width: 100%;
 }
-
-/* Mittlere Leaderboards */
 
 .motion-gallery-center {
   width: 100%;
@@ -496,8 +458,6 @@ body {
   max-width: 100%;
   margin: 0 auto;
 }
-
-/* Responsive Motion-Galerie */
 
 @media (max-width: 950px) {
 
@@ -566,33 +526,25 @@ body {
   line-height: 1.7;
 }
 
-
 /* PORTAL ÜBERSICHT */
 
 .portal-overview {
   max-width: 1136px;
   margin: 45px auto 70px;
-
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 18px;
 }
 
-
 /* KARTEN */
 
 .portal-card {
   min-height: 490px;
-
   display: flex;
   flex-direction: column;
-
   overflow: hidden;
-
   background: #202020;
-
   border: 1px solid rgba(255, 255, 255, 0.05);
-
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease;
@@ -600,65 +552,50 @@ body {
 
 .portal-card:hover {
   transform: translateY(-4px);
-
   box-shadow: 0 14px 35px rgba(0, 0, 0, 0.32);
 }
-
 
 /* BILDER */
 
 .portal-card-image {
   height: 230px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   padding: 22px;
 }
 
 .portal-card-image > a {
   width: 100%;
   height: 100%;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   text-decoration: none;
 }
 
 .portal-card-image img {
   width: 100%;
   height: 100%;
-
   object-fit: contain;
-
   display: block;
 }
-
 
 /* INHALT */
 
 .portal-card-content {
   flex: 1;
-
   padding: 20px 22px 26px;
-
   display: flex;
   flex-direction: column;
   align-items: center;
-
   text-align: center;
 }
 
 .portal-card-content h2 {
   margin: 0 0 14px;
-
   padding-bottom: 5px;
-
   border-bottom: none;
-
   font-size: 25px;
   font-weight: 800;
 }
@@ -673,53 +610,39 @@ body {
 
 .portal-card-type {
   margin: 0 0 12px;
-
   font-size: 13px;
   font-weight: 700;
 }
 
 .portal-card-title {
   margin: 0 0 12px;
-
   font-size: 13px;
   font-weight: 700;
 }
 
 .portal-card-status {
   margin: 0 0 22px;
-
   font-size: 12px;
 }
 
 .portal-card-work {
   margin: 0 0 22px;
-
   color: #ff4040;
-
   font-size: 13px;
   font-weight: 800;
 }
-
 
 /* BUTTON */
 
 .portal-card-button {
   margin-top: auto;
-
   min-width: 180px;
-
   padding: 13px 22px;
-
   border-radius: 999px;
-
   text-decoration: none;
-
   color: #111111;
-
   background: #dddddd;
-
   font-size: 13px;
-
   transition:
     transform 0.2s ease,
     filter 0.2s ease;
@@ -733,12 +656,9 @@ body {
 .portal-card-button.disabled {
   background: #777777;
   color: #222222;
-
   text-decoration: line-through;
-
   pointer-events: none;
 }
-
 
 /* INDIVIDUELLE PORTALFARBEN */
 
@@ -758,7 +678,6 @@ body {
   background: #e7a53a;
 }
 
-
 .portal-card-01 {
   background: linear-gradient(
     180deg,
@@ -774,7 +693,6 @@ body {
 .portal-card-01 .portal-card-button {
   background: #87d33f;
 }
-
 
 .portal-card-02 {
   background: linear-gradient(
@@ -792,7 +710,6 @@ body {
   background: #d94ce0;
 }
 
-
 .portal-card-03 {
   background: linear-gradient(
     180deg,
@@ -808,7 +725,6 @@ body {
 .portal-card-03 .portal-card-button {
   background: #ff8652;
 }
-
 
 .portal-card-04 {
   background: linear-gradient(
@@ -840,7 +756,6 @@ body {
   color: #ffffff;
 }
 
-
 .portal-card-06,
 .portal-card-07 {
   background: linear-gradient(
@@ -850,41 +765,32 @@ body {
   );
 }
 
-
 /* PLATZHALTER */
 
 .portal-card-placeholder {
   height: 230px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   background:
     linear-gradient(
       135deg,
       #191919,
       #262626
     );
-
   color: rgba(255, 255, 255, 0.14);
-
   font-size: 24px;
   font-weight: 800;
 }
-
 
 /* HINWEIS UNTEN */
 
 .portal-note {
   max-width: 1136px;
-
   margin: 0 auto 80px;
-
   font-size: 13px;
   color: #cccccc;
 }
-
 
 /* RESPONSIVE PORTAL-ÜBERSICHT */
 
@@ -902,7 +808,6 @@ body {
 
 }
 
-
 @media (max-width: 600px) {
 
   .portal-intro-inner {
@@ -919,7 +824,6 @@ body {
 
 }
 
-
 /* -------------------------------------------------- */
 /* PORTAL DETAILSEITE */
 /* -------------------------------------------------- */
@@ -927,11 +831,9 @@ body {
 .portal-detail-hero {
   position: relative;
   overflow: hidden;
-
   background-size: cover;
   background-position: center;
 }
-
 
 /* PORTAL #01 HERO */
 
@@ -947,17 +849,13 @@ body {
 .portal-detail-hero-inner {
   max-width: 1136px;
   min-height: 650px;
-
   margin: 0 auto;
   padding: 70px 0;
-
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 70px;
-
   align-items: center;
 }
-
 
 /* HERO BILD */
 
@@ -971,10 +869,8 @@ body {
   width: 100%;
   max-width: 470px;
   height: auto;
-
   display: block;
 }
-
 
 /* HERO TEXT */
 
@@ -984,7 +880,6 @@ body {
 
 .portal-detail-number {
   margin: 0 0 18px;
-
   font-size: 56px;
   line-height: 1;
   font-weight: 800;
@@ -992,57 +887,43 @@ body {
 
 .portal-detail-hero-text h1 {
   margin: 0 0 22px;
-
   color: #8cc945;
-
   font-size: 24px;
   font-weight: 500;
 }
 
 .portal-detail-description {
   margin: 0 0 34px;
-
   font-size: 15px;
   line-height: 1.7;
 }
-
 
 /* UNIKAT KAUFEN */
 
 .portal-detail-buy {
   display: inline-block;
-
   min-width: 190px;
   padding: 13px 24px;
-
   border-radius: 999px;
-
   text-align: center;
   text-decoration: none;
-
   background: #8cc945;
   color: #111111;
-
   font-size: 13px;
   font-weight: 700;
 }
 
 .portal-detail-buy.disabled {
   opacity: 0.45;
-
   text-decoration: line-through;
-
   pointer-events: none;
 }
-
 
 /* PORTAL DETAIL NAVIGATION */
 
 .portal-detail-navigation {
   max-width: 1136px;
-
   margin: 28px auto;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1050,19 +931,13 @@ body {
 
 .portal-detail-navigation a {
   min-width: 180px;
-
   padding: 11px 20px;
-
   border: 1px solid #8cc945;
   border-radius: 999px;
-
   color: #8cc945;
-
   text-decoration: none;
   text-align: center;
-
   font-size: 13px;
-
   transition:
     background 0.2s ease,
     color 0.2s ease;
@@ -1073,18 +948,14 @@ body {
   color: #111111;
 }
 
-
 /* PORTAL DETAIL INHALT */
 
 .portal-detail-content {
   max-width: 1136px;
-
   margin: 55px auto 0;
-
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 46px;
-
   align-items: start;
 }
 
@@ -1092,7 +963,6 @@ body {
 .portal-process-section {
   min-width: 0;
 }
-
 
 /* ÜBERSCHRIFTEN */
 
@@ -1102,92 +972,71 @@ body {
 
 .portal-detail-section-heading h2 {
   margin: 0 0 10px;
-
   color: #8cc945;
-
   font-size: 22px;
   font-weight: 800;
 }
 
 .portal-detail-section-heading p {
   margin: 0;
-
   max-width: 480px;
-
   color: #d5d5d5;
-
   font-size: 13px;
   line-height: 1.6;
 }
-
 
 /* DETAILGALERIE */
 
 .portal-detail-gallery {
   display: grid;
-
   grid-template-columns: repeat(2, 1fr);
-
   gap: 10px;
 }
 
 .portal-detail-gallery img {
   width: 100%;
   height: 190px;
-
   object-fit: cover;
-
   display: block;
 }
 
 .portal-detail-gallery img:first-child {
   grid-column: span 2;
-
   height: 260px;
 }
-
 
 /* ENTSTEHUNGSPROZESS */
 
 .portal-process-grid {
   display: grid;
-
   grid-template-columns: repeat(3, 1fr);
-
   gap: 10px;
 }
 
 .portal-process-card {
   margin: 0;
   padding: 10px;
-
   background: #1b1b1b;
-
   border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .portal-process-card p {
   margin: 0 0 9px;
-
   font-size: 11px;
   color: #dddddd;
 }
 
 .portal-process-card p span {
   color: #8cc945;
-
   font-weight: 700;
 }
 
 .portal-process-card img {
   width: 100%;
   height: 125px;
-
   object-fit: cover;
-
   display: block;
 }
-
 
 /* NAVIGATION UNTEN */
 
@@ -1195,7 +1044,6 @@ body {
   margin-top: 55px;
   margin-bottom: 80px;
 }
-
 
 /* RESPONSIVE PORTAL DETAILSEITE */
 
@@ -1221,14 +1069,11 @@ body {
 
 }
 
-
 @media (max-width: 700px) {
 
   .portal-detail-hero-inner {
     grid-template-columns: 1fr;
-
     min-height: auto;
-
     padding: 50px 0;
   }
 
@@ -1246,7 +1091,6 @@ body {
 
   .portal-detail-navigation a {
     min-width: 0;
-
     flex: 1;
   }
 
@@ -1255,7 +1099,6 @@ body {
   }
 
 }
-
 
 @media (max-width: 500px) {
 
@@ -1290,7 +1133,6 @@ body {
 
 .portal-detail-inspiration {
   margin: 0 0 14px;
-
   font-size: 14px;
   font-weight: 700;
   color: #ffffff;
@@ -1299,9 +1141,6 @@ body {
 .portal-detail-hero-02 .portal-detail-buy {
   background: #d952e0;
 }
-
-
-/* PORTAL #02 NAVIGATION */
 
 .portal-detail-navigation-02 a {
   border-color: #d952e0;
@@ -1313,23 +1152,18 @@ body {
   color: #111111;
 }
 
-
-/* PORTAL #02 ÜBERSCHRIFTEN */
-
 .portal-detail-hero-02 + .portal-detail-navigation
 + .portal-detail-content
 .portal-detail-section-heading h2 {
   color: #d952e0;
 }
 
-
-/* PORTAL #02 PROZESSNUMMERN */
-
 .portal-detail-hero-02 + .portal-detail-navigation
 + .portal-detail-content
 .portal-process-card p span {
   color: #d952e0;
 }
+
 /* PORTAL #03 */
 
 .portal-detail-hero-03 {
@@ -1349,9 +1183,6 @@ body {
   background: #ff8652;
 }
 
-
-/* PORTAL #03 NAVIGATION */
-
 .portal-detail-navigation-03 a {
   border-color: #ff8652;
   color: #ff8652;
@@ -1362,17 +1193,11 @@ body {
   color: #111111;
 }
 
-
-/* PORTAL #03 ÜBERSCHRIFTEN */
-
 .portal-detail-hero-03 + .portal-detail-navigation
 + .portal-detail-content
 .portal-detail-section-heading h2 {
   color: #ff8652;
 }
-
-
-/* PORTAL #03 PROZESSNUMMERN */
 
 .portal-detail-hero-03 + .portal-detail-navigation
 + .portal-detail-content
@@ -1399,16 +1224,10 @@ body {
   background: #bdbdbd;
 }
 
-
-/* PORTAL #04 HERO-BILD */
-
 .portal-detail-hero-image-04 img {
   border-radius: 28px;
   filter: grayscale(100%);
 }
-
-
-/* PORTAL #04 NAVIGATION */
 
 .portal-detail-navigation-04 a {
   border-color: #bdbdbd;
@@ -1420,26 +1239,17 @@ body {
   color: #111111;
 }
 
-
-/* PORTAL #04 ÜBERSCHRIFTEN */
-
 .portal-detail-hero-04 + .portal-detail-navigation
 + .portal-detail-content
 .portal-detail-section-heading h2 {
   color: #bdbdbd;
 }
 
-
-/* PORTAL #04 PROZESSNUMMERN */
-
 .portal-detail-hero-04 + .portal-detail-navigation
 + .portal-detail-content
 .portal-process-card p span {
   color: #bdbdbd;
 }
-
-
-/* PORTAL #04 PLATZHALTER */
 
 .portal-detail-gallery-placeholder {
   grid-template-columns: 1fr;
@@ -1474,9 +1284,6 @@ body {
   color: #ffffff;
 }
 
-
-/* PORTAL #05 NAVIGATION */
-
 .portal-detail-navigation-05 a {
   border-color: #168bff;
   color: #168bff;
@@ -1487,17 +1294,11 @@ body {
   color: #111111;
 }
 
-
-/* PORTAL #05 ÜBERSCHRIFTEN */
-
 .portal-detail-hero-05 + .portal-detail-navigation
 + .portal-detail-content
 .portal-detail-section-heading h2 {
   color: #168bff;
 }
-
-
-/* PORTAL #05 PROZESSNUMMERN */
 
 .portal-detail-hero-05 + .portal-detail-navigation
 + .portal-detail-content
@@ -1505,17 +1306,11 @@ body {
   color: #168bff;
 }
 
-
-/* PORTAL #05 JURYPREIS */
-
 .portal-award-card {
   margin-bottom: 34px;
   padding: 14px;
-
   border: 2px solid #ffcc14;
-
   background: #171717;
-
   text-align: center;
 }
 
@@ -1523,13 +1318,11 @@ body {
   width: 100%;
   height: auto;
   display: block;
-
   margin-bottom: 18px;
 }
 
 .portal-award-card p {
   margin: 7px 0;
-
   font-size: 12px;
   line-height: 1.5;
 }
@@ -1542,7 +1335,6 @@ body {
   margin-top: 0;
 }
 
-
 /* -------------------------------------------------- */
 /* WEBSITE INTRO */
 /* -------------------------------------------------- */
@@ -1551,13 +1343,10 @@ body {
   position: fixed;
   inset: 0;
   z-index: 99999;
-
   width: 100vw;
   height: 100vh;
-
   overflow: hidden;
   background: #0a0a0a;
-
   animation: introScreenOut 1s ease-out forwards;
 }
 
@@ -1565,36 +1354,22 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-
   margin: 0;
-
   color: #ffffff;
   font-size: clamp(36px, 5vw, 68px);
   font-weight: 800;
   letter-spacing: -2px;
   line-height: 1;
   white-space: nowrap;
-
   opacity: 0;
-
   transform:
     translate3d(-50%, -50%, 0)
     scale(0.82);
-
   transform-origin: center center;
-
   backface-visibility: hidden;
   -webkit-font-smoothing: antialiased;
-
   animation: introNameAnimation 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
-
-
-/* Text:
-   1. schnell weich rein
-   2. kurz stehen
-   3. stark nach vorne zoomen
-*/
 
 @keyframes introNameAnimation {
 
@@ -1617,7 +1392,6 @@ body {
   }
 
 }
-
 
 @keyframes introScreenOut {
 
@@ -1642,13 +1416,10 @@ body {
 .print-page-hero {
   position: relative;
   min-height: 650px;
-
   background-image:
     url("images/portfolio/print/hero_print-medien.png");
-
   background-size: cover;
   background-position: center;
-
   overflow: hidden;
 }
 
@@ -1656,20 +1427,16 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-
   background: rgba(0, 0, 0, 0.22);
 }
 
 .print-page-hero-inner {
   position: relative;
   z-index: 2;
-
   max-width: 1200px;
   min-height: 650px;
-
   margin: 0 auto;
   padding: 120px 32px;
-
   display: flex;
   align-items: center;
 }
@@ -1681,7 +1448,6 @@ body {
 
 .print-page-text h1 {
   margin: 0 0 22px;
-
   font-size: 6.3rem;
   line-height: 0.9;
   font-weight: 800;
@@ -1689,16 +1455,13 @@ body {
 
 .print-page-subtitle {
   margin: 0 0 20px;
-
   color: #e29c69;
-
   font-size: 18px;
   font-weight: 500;
 }
 
 .print-page-text p {
   margin: 0;
-
   font-size: 15px;
   line-height: 1.7;
 }
@@ -1708,7 +1471,6 @@ body {
   bottom: 40px;
 }
 
-
 /* -------------------------------------------------- */
 /* PRINT GALERIE */
 /* -------------------------------------------------- */
@@ -1717,7 +1479,6 @@ body {
   max-width: 1200px;
   margin: 50px auto 90px;
   padding: 0 24px;
-
   column-count: 3;
   column-gap: 14px;
 }
@@ -1726,10 +1487,8 @@ body {
   display: inline-block;
   width: 100%;
   margin: 0 0 14px;
-
   overflow: hidden;
   background: #1b1b1b;
-
   break-inside: avoid;
   -webkit-column-break-inside: avoid;
   page-break-inside: avoid;
@@ -1738,9 +1497,7 @@ body {
 .print-gallery-item img {
   width: 100%;
   height: auto;
-
   display: block;
-
   transition:
     transform 0.35s ease,
     filter 0.35s ease;
@@ -1757,10 +1514,6 @@ body {
   grid-column: auto;
   grid-row: auto;
 }
-
-/* -------------------------------------------------- */
-/* PRINT RESPONSIVE */
-/* -------------------------------------------------- */
 
 @media (max-width: 950px) {
 
@@ -1807,13 +1560,10 @@ body {
 .landing-page-hero {
   position: relative;
   min-height: 650px;
-
   background-image:
     url("images/portfolio/landing-pages/hero_landing-pages.png");
-
   background-size: cover;
   background-position: center;
-
   overflow: hidden;
 }
 
@@ -1821,20 +1571,16 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-
   background: rgba(0, 0, 0, 0.18);
 }
 
 .landing-page-hero-inner {
   position: relative;
   z-index: 2;
-
   max-width: 1200px;
   min-height: 650px;
-
   margin: 0 auto;
   padding: 120px 32px;
-
   display: flex;
   align-items: center;
 }
@@ -1846,7 +1592,6 @@ body {
 
 .landing-page-text h1 {
   margin: 0 0 22px;
-
   font-size: 6.3rem;
   line-height: 0.9;
   font-weight: 800;
@@ -1854,16 +1599,13 @@ body {
 
 .landing-page-subtitle {
   margin: 0 0 20px;
-
   color: #b37af2;
-
   font-size: 18px;
   font-weight: 500;
 }
 
 .landing-page-text p {
   margin: 0;
-
   font-size: 15px;
   line-height: 1.7;
 }
@@ -1873,37 +1615,26 @@ body {
   bottom: 40px;
 }
 
-
-/* -------------------------------------------------- */
-/* LANDING PAGES GALERIE */
-/* -------------------------------------------------- */
-
 .landing-gallery {
   max-width: 1200px;
   margin: 50px auto 90px;
   padding: 0 24px;
-
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 14px;
-
   align-items: start;
 }
 
 .landing-gallery-item {
   margin: 0;
-
   overflow: hidden;
-
   background: #1b1b1b;
 }
 
 .landing-gallery-item img {
   width: 100%;
   height: auto;
-
   display: block;
-
   transition:
     transform 0.3s ease,
     filter 0.3s ease;
@@ -1913,11 +1644,6 @@ body {
   transform: scale(1.015);
   filter: brightness(1.04);
 }
-
-
-/* -------------------------------------------------- */
-/* LANDING PAGES RESPONSIVE */
-/* -------------------------------------------------- */
 
 @media (max-width: 950px) {
 
@@ -1934,7 +1660,6 @@ body {
   }
 
 }
-
 
 @media (max-width: 700px) {
 
@@ -1957,6 +1682,7 @@ body {
   }
 
 }
+
 /* FOTOGRAFIE UNTERSEITE */
 
 .photo-page-hero {
@@ -1979,12 +1705,10 @@ body {
 .photo-page-hero-inner {
   position: relative;
   z-index: 2;
-
   max-width: 1200px;
   min-height: 650px;
   margin: 0 auto;
   padding: 120px 32px;
-
   display: flex;
   align-items: center;
 }
@@ -2019,14 +1743,12 @@ body {
   bottom: 40px;
 }
 
-
 /* VORHER / NACHHER */
 
 .photo-compare-section {
   max-width: 1200px;
   margin: 60px auto 90px;
   padding: 0 24px;
-
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 24px;
@@ -2087,18 +1809,14 @@ body {
   left: 50%;
   width: 46px;
   height: 46px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   border-radius: 50%;
   background: #ffffff;
   color: #111111;
-
   font-size: 20px;
   font-weight: 700;
-
   transform: translate(-50%, -50%);
   pointer-events: none;
   z-index: 4;
@@ -2110,7 +1828,6 @@ body {
   width: 100%;
   height: 100%;
   margin: 0;
-
   opacity: 0;
   cursor: ew-resize;
   z-index: 5;
@@ -2141,9 +1858,6 @@ body {
   height: auto;
   display: block;
 }
-
-
-/* FOTOGRAFIE RESPONSIVE */
 
 @media (max-width: 950px) {
 
@@ -2182,6 +1896,7 @@ body {
   }
 
 }
+
 /* ================================================== */
 /* GENEALOGIE HAUPTSEITE */
 /* ================================================== */
@@ -2191,11 +1906,6 @@ body {
   margin: 0 auto;
   padding: 70px 32px 90px;
 }
-
-
-/* -------------------------------------------------- */
-/* EINLEITUNG */
-/* -------------------------------------------------- */
 
 .genealogy-intro {
   max-width: 720px;
@@ -2224,11 +1934,6 @@ body {
   margin: 0 0 12px;
 }
 
-
-/* -------------------------------------------------- */
-/* ABSCHNITTE */
-/* -------------------------------------------------- */
-
 .genealogy-section {
   margin-bottom: 65px;
 }
@@ -2239,11 +1944,6 @@ body {
   font-weight: 800;
 }
 
-
-/* -------------------------------------------------- */
-/* ÜBERSICHTSKARTEN */
-/* -------------------------------------------------- */
-
 .genealogy-overview-grid {
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
@@ -2252,16 +1952,12 @@ body {
 
 .genealogy-card {
   grid-column: span 2;
-
   min-height: 285px;
   padding: 34px 28px 28px;
-
   display: flex;
   flex-direction: column;
   align-items: center;
-
   text-align: center;
-
   background: #1c1c1c;
 }
 
@@ -2299,7 +1995,6 @@ body {
 .genealogy-card p {
   max-width: 280px;
   margin: 0;
-
   font-size: 13px;
   line-height: 1.55;
 }
@@ -2307,16 +2002,10 @@ body {
 .genealogy-card-link {
   margin-top: auto;
   padding-top: 24px;
-
   font-size: 12px;
   text-decoration: underline;
   text-underline-offset: 3px;
 }
-
-
-/* -------------------------------------------------- */
-/* VIER HAUPTLINIEN */
-/* -------------------------------------------------- */
 
 .genealogy-lines-grid {
   display: grid;
@@ -2326,11 +2015,9 @@ body {
 
 .genealogy-line-card {
   min-height: 340px;
-
   display: flex;
   flex-direction: column;
   align-items: center;
-
   text-align: center;
   background: #1c1c1c;
 }
@@ -2349,7 +2036,6 @@ body {
 
 .genealogy-line-card h3 {
   margin: 14px 0 12px;
-
   font-size: 1.25rem;
   color: #888;
 }
@@ -2357,7 +2043,6 @@ body {
 .genealogy-line-card p {
   margin: 0;
   padding: 0 28px;
-
   font-size: 12px;
   line-height: 1.55;
 }
@@ -2366,9 +2051,7 @@ body {
   width: 100%;
   margin-top: auto;
   padding: 26px 15px;
-
   border-top: 10px solid #111;
-
   color: #fff;
   font-size: 13px;
   text-decoration: none;
@@ -2378,27 +2061,18 @@ body {
   color: #d79b45;
 }
 
-
-/* -------------------------------------------------- */
-/* KONTAKT / IMPRESSUM / DATENSCHUTZ */
-/* -------------------------------------------------- */
-
 .genealogy-info-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-
   margin-top: 20px;
-
   background: #1c1c1c;
 }
 
 .genealogy-info-card {
   padding: 32px;
-
   display: grid;
   grid-template-columns: 72px 1fr;
   gap: 22px;
-
   align-items: start;
 }
 
@@ -2422,7 +2096,6 @@ body {
 
 .genealogy-info-card p {
   margin: 0 0 16px;
-
   font-size: 12px;
   line-height: 1.55;
 }
@@ -2431,20 +2104,10 @@ body {
   font-size: 12px;
 }
 
-
-/* -------------------------------------------------- */
-/* FOOTER */
-/* -------------------------------------------------- */
-
 .genealogy-footer {
   padding: 25px 0;
   background: #111;
 }
-
-
-/* -------------------------------------------------- */
-/* HOVER */
-/* -------------------------------------------------- */
 
 .genealogy-card,
 .genealogy-line-card {
@@ -2468,11 +2131,6 @@ body {
   transform: translateY(-3px);
 }
 
-
-/* -------------------------------------------------- */
-/* RESPONSIVE */
-/* -------------------------------------------------- */
-
 @media (max-width: 950px) {
 
   .genealogy-overview-grid {
@@ -2493,7 +2151,6 @@ body {
   }
 
 }
-
 
 @media (max-width: 650px) {
 
