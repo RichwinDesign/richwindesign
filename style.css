@@ -212,16 +212,6 @@ body {
   background-position: 49% 72%;
 }
 
-.motion-video {
-  background-image:
-    url("images/general/hero_bewegtbild.gif");
-  background-position: 64% 68%;
-}
-
-.motion-video::before {
-  background: rgba(0, 0, 0, 0.52);
-}
-
 .photography {
   background-image:
     url("images/general/hero_fotografie.png");
@@ -2061,39 +2051,79 @@ body {
   gap: 24px;
 }
 
-.photo-compare-block h2 {
+.photo-compare-card h3 {
   margin: 18px 0 0;
   text-align: center;
   font-size: 1.5rem;
 }
 
-.photo-compare {
+.image-compare {
   position: relative;
+  width: 100%;
+  aspect-ratio: 1386 / 962;
   overflow: hidden;
   background: #111;
 }
 
-.photo-compare img {
-  display: block;
+.image-compare-base,
+.image-compare-top {
+  position: absolute;
+  inset: 0;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
-.photo-compare-after-wrap {
+.image-compare-overlay {
   position: absolute;
   inset: 0;
   width: 50%;
   overflow: hidden;
 }
 
-.photo-compare-after {
+.image-compare-overlay .image-compare-top {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: left center;
+  max-width: none;
 }
 
-.photo-compare-range {
+.image-compare-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: #ffffff;
+  transform: translateX(-50%);
+  pointer-events: none;
+  z-index: 3;
+}
+
+.image-compare-handle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 46px;
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  background: #ffffff;
+  color: #111111;
+
+  font-size: 20px;
+  font-weight: 700;
+
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 4;
+}
+
+.image-compare-slider {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -2102,45 +2132,8 @@ body {
 
   opacity: 0;
   cursor: ew-resize;
-  z-index: 4;
+  z-index: 5;
 }
-
-.photo-compare-line {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-
-  width: 2px;
-  background: #fff;
-
-  transform: translateX(-50%);
-  pointer-events: none;
-  z-index: 3;
-}
-
-.photo-compare-line::before {
-  content: "↔";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-
-  width: 44px;
-  height: 44px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 50%;
-  background: #fff;
-  color: #111;
-  font-size: 18px;
-  font-weight: 700;
-
-  transform: translate(-50%, -50%);
-}
-
 
 /* FOTO-PROJEKTE */
 
