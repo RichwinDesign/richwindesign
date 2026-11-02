@@ -1,1 +1,181 @@
+/* -------------------------------------------------- */
+/* PRINT MEDIEN UNTERSEITE */
+/* -------------------------------------------------- */
 
+.print-page-hero {
+  position: relative;
+  min-height: 650px;
+
+  background-image:
+    url("images/portfolio/print/hero_print-medien.png");
+
+  background-size: cover;
+  background-position: center;
+
+  overflow: hidden;
+}
+
+.print-page-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.22);
+}
+
+.print-page-hero-inner {
+  position: relative;
+  z-index: 2;
+
+  max-width: 1200px;
+  min-height: 650px;
+
+  margin: 0 auto;
+  padding: 120px 32px;
+
+  display: flex;
+  align-items: center;
+}
+
+.print-page-text {
+  width: 33.33%;
+  max-width: 420px;
+}
+
+.print-page-text h1 {
+  margin: 0 0 22px;
+
+  font-size: 6.3rem;
+  line-height: 0.9;
+  font-weight: 800;
+}
+
+.print-page-subtitle {
+  margin: 0 0 20px;
+
+  color: #e29c69;
+
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.print-page-text p {
+  margin: 0;
+
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.print-page-ai {
+  left: 12%;
+  bottom: 40px;
+}
+
+
+/* -------------------------------------------------- */
+/* PRINT GALERIE */
+/* -------------------------------------------------- */
+
+.print-gallery {
+  max-width: 1200px;
+  margin: 50px auto 90px;
+  padding: 0 24px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-flow: dense;
+  gap: 14px;
+}
+
+.print-gallery-item {
+  margin: 0;
+
+  min-height: 260px;
+
+  overflow: hidden;
+
+  background: #1b1b1b;
+}
+
+.print-gallery-item img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.35s ease,
+    filter 0.35s ease;
+}
+
+.print-gallery-item:hover img {
+  transform: scale(1.025);
+  filter: brightness(1.05);
+}
+
+.print-gallery-item-large {
+  grid-column: span 2;
+}
+
+.print-gallery-item-wide {
+  grid-column: span 2;
+}
+
+.print-gallery-item-tall {
+  grid-row: span 2;
+}
+
+
+/* -------------------------------------------------- */
+/* PRINT RESPONSIVE */
+/* -------------------------------------------------- */
+
+@media (max-width: 950px) {
+
+  .print-page-text {
+    width: 45%;
+  }
+
+  .print-page-text h1 {
+    font-size: 4.8rem;
+  }
+
+  .print-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+@media (max-width: 700px) {
+
+  .print-page-hero-inner {
+    min-height: 580px;
+    padding: 80px 24px;
+  }
+
+  .print-page-text {
+    width: 100%;
+    max-width: 460px;
+  }
+
+  .print-page-text h1 {
+    font-size: 3.8rem;
+  }
+
+  .print-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .print-gallery-item,
+  .print-gallery-item-large,
+  .print-gallery-item-wide,
+  .print-gallery-item-tall {
+    grid-column: auto;
+    grid-row: auto;
+
+    min-height: 260px;
+  }
+
+}
