@@ -1986,3 +1986,225 @@ body {
   }
 
 }
+/* FOTOGRAFIE UNTERSEITE */
+
+.photo-page-hero {
+  position: relative;
+  min-height: 650px;
+  background-image:
+    url("images/portfolio/fotografie/hero_fotografie.png");
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.photo-page-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.photo-page-hero-inner {
+  position: relative;
+  z-index: 2;
+
+  max-width: 1200px;
+  min-height: 650px;
+  margin: 0 auto;
+  padding: 120px 32px;
+
+  display: flex;
+  align-items: center;
+}
+
+.photo-page-text {
+  width: 33.33%;
+  max-width: 420px;
+}
+
+.photo-page-text h1 {
+  margin: 0 0 22px;
+  font-size: 6.3rem;
+  line-height: 0.9;
+  font-weight: 800;
+}
+
+.photo-page-subtitle {
+  margin: 0 0 20px;
+  color: #f0b429;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.photo-page-text p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.photo-page-ai {
+  left: 12%;
+  bottom: 40px;
+}
+
+
+/* VORHER / NACHHER */
+
+.photo-compare-section {
+  max-width: 1200px;
+  margin: 60px auto 90px;
+  padding: 0 24px;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.photo-compare-block h2 {
+  margin: 18px 0 0;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.photo-compare {
+  position: relative;
+  overflow: hidden;
+  background: #111;
+}
+
+.photo-compare img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.photo-compare-after-wrap {
+  position: absolute;
+  inset: 0;
+  width: 50%;
+  overflow: hidden;
+}
+
+.photo-compare-after {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left center;
+}
+
+.photo-compare-range {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+
+  opacity: 0;
+  cursor: ew-resize;
+  z-index: 4;
+}
+
+.photo-compare-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+
+  width: 2px;
+  background: #fff;
+
+  transform: translateX(-50%);
+  pointer-events: none;
+  z-index: 3;
+}
+
+.photo-compare-line::before {
+  content: "↔";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  background: #fff;
+  color: #111;
+  font-size: 18px;
+  font-weight: 700;
+
+  transform: translate(-50%, -50%);
+}
+
+
+/* FOTO-PROJEKTE */
+
+.photo-project-section {
+  max-width: 1200px;
+  margin: 0 auto 90px;
+  padding: 0 24px;
+}
+
+.photo-project-section h2 {
+  margin: 0 0 24px;
+  text-align: center;
+  font-size: 1.7rem;
+}
+
+.photo-project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.photo-project-grid img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+/* FOTOGRAFIE RESPONSIVE */
+
+@media (max-width: 950px) {
+
+  .photo-page-text {
+    width: 45%;
+  }
+
+  .photo-page-text h1 {
+    font-size: 4.8rem;
+  }
+
+}
+
+@media (max-width: 700px) {
+
+  .photo-page-hero-inner {
+    min-height: 580px;
+    padding: 80px 24px;
+  }
+
+  .photo-page-text {
+    width: 100%;
+    max-width: 460px;
+  }
+
+  .photo-page-text h1 {
+    font-size: 3.8rem;
+  }
+
+  .photo-compare-section {
+    grid-template-columns: 1fr;
+  }
+
+  .photo-project-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
