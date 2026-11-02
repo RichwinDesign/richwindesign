@@ -15,23 +15,26 @@ body {
 body {
   font-family: Arial, sans-serif;
 
+body {
+  font-family: Arial, sans-serif;
+
   background:
     radial-gradient(
-      circle at 20% 20%,
-      rgba(0, 70, 120, 0.10) 0%,
+      circle at 18% 18%,
+      rgba(0, 45, 80, 0.08) 0%,
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 82% 38%,
+      rgba(0, 70, 110, 0.05) 0%,
+      transparent 26%
+    ),
+    radial-gradient(
+      circle at 50% 85%,
+      rgba(0, 35, 65, 0.06) 0%,
       transparent 32%
     ),
-    radial-gradient(
-      circle at 82% 42%,
-      rgba(0, 100, 160, 0.07) 0%,
-      transparent 30%
-    ),
-    radial-gradient(
-      circle at 45% 85%,
-      rgba(0, 55, 95, 0.08) 0%,
-      transparent 35%
-    ),
-    #0b0d0f;
+    #07090b;
 
   color: #ffffff;
 }
@@ -39,7 +42,13 @@ body {
 /* HEADER */
 
 .site-header {
-  background: rgba(11, 13, 15, 0.94);
+  background:
+    linear-gradient(
+      180deg,
+      rgba(7, 9, 11, 0.98) 0%,
+      rgba(7, 11, 15, 0.94) 100%
+    );
+
   backdrop-filter: blur(8px);
 }
 
