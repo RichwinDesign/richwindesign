@@ -1568,7 +1568,7 @@ body {
   overflow: hidden;
   background: #0a0a0a;
 
-  animation: introScreenOut 1.55s ease forwards;
+  animation: introScreenOut 1.15s ease forwards;
 }
 
 .site-intro-name {
@@ -1596,7 +1596,7 @@ body {
   backface-visibility: hidden;
   -webkit-font-smoothing: antialiased;
 
-  animation: introNameAnimation 1.4s forwards;
+  animation: introNameAnimation 1s forwards;
 }
 
 
