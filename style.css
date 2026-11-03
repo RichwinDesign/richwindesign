@@ -2555,3 +2555,330 @@ body::before {
   }
 
 }
+
+/* =========================================
+   PORTALE – KACHELREDESIGN
+   Stil angelehnt an die Index-Seite
+========================================= */
+
+/* Übersicht */
+
+.portal-overview {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 20px;
+}
+
+
+/* Grundgestaltung */
+
+.portal-overview .portal-card {
+  --portal-accent: #6fb6d9;
+  --portal-glow: rgba(111, 182, 217, 0.13);
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  min-width: 0;
+  min-height: 360px;
+  overflow: hidden;
+
+  padding: 0;
+  border: 1px solid rgba(111, 182, 217, 0.25);
+  border-radius: 12px;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 25%,
+      var(--portal-glow),
+      transparent 75%
+    ),
+    #071019;
+
+  box-shadow: none;
+  isolation: isolate;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+/* Farben pro Portal */
+
+.portal-overview .portal-card-merch {
+  --portal-accent: #e5ad4e;
+  --portal-glow: rgba(229, 173, 78, 0.19);
+}
+
+.portal-overview .portal-card-01 {
+  --portal-accent: #8bd548;
+  --portal-glow: rgba(139, 213, 72, 0.17);
+}
+
+.portal-overview .portal-card-02 {
+  --portal-accent: #d44fdb;
+  --portal-glow: rgba(212, 79, 219, 0.18);
+}
+
+.portal-overview .portal-card-03 {
+  --portal-accent: #ff8958;
+  --portal-glow: rgba(255, 137, 88, 0.17);
+}
+
+.portal-overview .portal-card-04 {
+  --portal-accent: #bec4cb;
+  --portal-glow: rgba(190, 196, 203, 0.12);
+}
+
+.portal-overview .portal-card-05 {
+  --portal-accent: #488cff;
+  --portal-glow: rgba(72, 140, 255, 0.2);
+}
+
+.portal-overview .portal-card-06,
+.portal-overview .portal-card-07 {
+  --portal-accent: #76899d;
+  --portal-glow: rgba(118, 137, 157, 0.1);
+}
+
+
+/* Bilder großflächig innerhalb der Kacheln */
+
+.portal-overview .portal-card-image {
+  position: absolute;
+  inset: 0;
+
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+
+  overflow: hidden;
+  z-index: 0;
+}
+
+.portal-overview .portal-card-image > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.portal-overview .portal-card-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+  object-position: center 30%;
+
+  padding: 14px 10px 90px;
+  box-sizing: border-box;
+
+  transform: scale(1);
+  transition: transform 0.45s ease;
+}
+
+
+/* Dunkler Verlauf für lesbare Texte */
+
+.portal-overview .portal-card-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(4, 8, 13, 0.05) 0%,
+    rgba(4, 8, 13, 0.06) 35%,
+    rgba(4, 8, 13, 0.55) 62%,
+    rgba(4, 8, 13, 0.95) 100%
+  );
+
+  pointer-events: none;
+}
+
+
+/* Text direkt auf den Kacheln */
+
+.portal-overview .portal-card-content {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+
+  width: 100%;
+  min-height: 145px;
+
+  padding: 20px;
+  margin: 0;
+
+  background: transparent;
+  text-align: left;
+}
+
+.portal-overview .portal-card-content h2 {
+  margin: 0 0 7px;
+
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: left;
+}
+
+.portal-overview .portal-card-content h2 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.portal-overview .portal-card-type {
+  margin: 0 0 4px;
+  font-size: 11px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.75);
+  text-align: left;
+}
+
+.portal-overview .portal-card-title {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.45;
+  font-weight: 500;
+  color: var(--portal-accent);
+  text-align: left;
+}
+
+.portal-overview .portal-card-status,
+.portal-overview .portal-card-work {
+  margin: 5px 0 0;
+  font-size: 11px;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: left;
+}
+
+
+/* Runde Pfeil-Buttons wie auf Index */
+
+.portal-overview .portal-card-button {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 36px;
+  min-width: 36px;
+  height: 36px;
+  min-height: 36px;
+
+  margin: 14px 0 0;
+  padding: 0;
+
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+
+  background: rgba(4, 10, 16, 0.45);
+  color: transparent;
+  font-size: 0;
+  text-decoration: none;
+
+  box-shadow: none;
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.portal-overview .portal-card-button::after {
+  content: "→";
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 1;
+  color: #ffffff;
+}
+
+
+/* Hover */
+
+.portal-overview .portal-card:not(:has(.portal-card-button.disabled)):hover {
+  transform: translateY(-5px);
+
+  border-color: var(--portal-accent);
+
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.3),
+    0 0 22px var(--portal-glow);
+}
+
+.portal-overview .portal-card:hover .portal-card-image img {
+  transform: scale(1.05);
+}
+
+.portal-overview .portal-card-button:not(.disabled):hover {
+  background: var(--portal-accent);
+  border-color: var(--portal-accent);
+  transform: translateX(3px);
+}
+
+
+/* Platzhalter Portal 06 und 07 */
+
+.portal-overview .portal-card-placeholder {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background:
+    radial-gradient(
+      ellipse at center,
+      var(--portal-glow),
+      transparent 75%
+    );
+
+  color: rgba(255, 255, 255, 0.15);
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.portal-overview .portal-card-button.disabled {
+  opacity: 0.4;
+  pointer-events: none;
+  cursor: default;
+}
+
+
+/* Responsive */
+
+@media (max-width: 900px) {
+  .portal-overview {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .portal-overview {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 28px 16px;
+  }
+
+  .portal-overview .portal-card {
+    min-height: 370px;
+  }
+}
