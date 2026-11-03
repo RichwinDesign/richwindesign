@@ -2958,6 +2958,7 @@ body::before {
 /* Farbverlauf über der Bildebene,
    aber hinter Text und Buttons */
 
+
 .portal-overview .portal-card::before {
   content: "";
   position: absolute;
@@ -2966,18 +2967,36 @@ body::before {
   pointer-events: none;
 
   background:
+    /* Dunkle Ecke oben rechts */
     radial-gradient(
-      ellipse at 50% 30%,
-      var(--portal-glow-strong),
-      transparent 72%
+      ellipse at 95% 5%,
+      rgba(1, 5, 12, 0.65) 0%,
+      transparent 58%
     ),
+
+    /* Hellerer Farbbereich oben links */
+    radial-gradient(
+      ellipse at 10% 22%,
+      var(--portal-glow-strong) 0%,
+      transparent 85%
+    ),
+
+    /* Zweiter Farbbereich unten rechts */
+    radial-gradient(
+      ellipse at 90% 78%,
+      var(--portal-glow-soft) 0%,
+      transparent 90%
+    ),
+
+    /* Dunkler Übergang am unteren Rand */
     linear-gradient(
       180deg,
-      transparent 10%,
-      var(--portal-glow-soft) 58%,
-      rgba(3, 8, 14, 0.75) 100%
+      rgba(5, 10, 18, 0.05) 0%,
+      rgba(4, 8, 15, 0.15) 45%,
+      rgba(2, 6, 12, 0.55) 100%
     );
 }
+
 
 /* Individuelle, kräftigere Farben */
 
