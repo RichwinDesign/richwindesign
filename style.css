@@ -1036,10 +1036,14 @@ body::before {
 /* INDIVIDUELLE PORTALFARBEN */
 
 .portal-card-merch {
+  --portal-glow-strong: rgba(231, 165, 58, 0.18);
+  --portal-glow-soft: rgba(231, 165, 58, 0.10);
+  --portal-tint-top: rgba(231, 165, 58, 0.08);
+
   background: linear-gradient(
     180deg,
-    #2e2519 0%,
-    #211b14 100%
+    #0a1017 0%,
+    #081019 100%
   );
 }
 
@@ -1052,10 +1056,14 @@ body::before {
 }
 
 .portal-card-01 {
+  --portal-glow-strong: rgba(135, 211, 63, 0.18);
+  --portal-glow-soft: rgba(135, 211, 63, 0.10);
+  --portal-tint-top: rgba(135, 211, 63, 0.08);
+
   background: linear-gradient(
     180deg,
-    #1d2a18 0%,
-    #172015 100%
+    #071018 0%,
+    #07111a 100%
   );
 }
 
@@ -1068,10 +1076,14 @@ body::before {
 }
 
 .portal-card-02 {
+  --portal-glow-strong: rgba(217, 76, 224, 0.18);
+  --portal-glow-soft: rgba(217, 76, 224, 0.10);
+  --portal-tint-top: rgba(217, 76, 224, 0.08);
+
   background: linear-gradient(
     180deg,
-    #302034 0%,
-    #211724 100%
+    #08101b 0%,
+    #0a1020 100%
   );
 }
 
@@ -1084,10 +1096,14 @@ body::before {
 }
 
 .portal-card-03 {
+  --portal-glow-strong: rgba(255, 134, 82, 0.18);
+  --portal-glow-soft: rgba(255, 134, 82, 0.10);
+  --portal-tint-top: rgba(255, 134, 82, 0.08);
+
   background: linear-gradient(
     180deg,
-    #3a251f 0%,
-    #271a16 100%
+    #08101b 0%,
+    #0a101c 100%
   );
 }
 
@@ -1100,23 +1116,31 @@ body::before {
 }
 
 .portal-card-04 {
+  --portal-glow-strong: rgba(189, 189, 189, 0.14);
+  --portal-glow-soft: rgba(189, 189, 189, 0.08);
+  --portal-tint-top: rgba(189, 189, 189, 0.05);
+
   background: linear-gradient(
     180deg,
-    #282828 0%,
-    #202020 100%
+    #0a1017 0%,
+    #0a1119 100%
   );
 }
 
 .portal-04-image {
   border-radius: 28px;
-  filter: grayscale(100%);
+  filter: grayscale(100%) drop-shadow(0 14px 24px rgba(0, 0, 0, 0.30));
 }
 
 .portal-card-05 {
+  --portal-glow-strong: rgba(52, 118, 255, 0.20);
+  --portal-glow-soft: rgba(52, 118, 255, 0.11);
+  --portal-tint-top: rgba(52, 118, 255, 0.09);
+
   background: linear-gradient(
     180deg,
-    #182543 0%,
-    #111a30 100%
+    #07101c 0%,
+    #08111d 100%
   );
 }
 
@@ -1131,10 +1155,14 @@ body::before {
 
 .portal-card-06,
 .portal-card-07 {
+  --portal-glow-strong: rgba(160, 170, 185, 0.10);
+  --portal-glow-soft: rgba(160, 170, 185, 0.05);
+  --portal-tint-top: rgba(160, 170, 185, 0.04);
+
   background: linear-gradient(
     180deg,
-    #292929 0%,
-    #202020 100%
+    #0a1017 0%,
+    #091119 100%
   );
 }
 
@@ -2881,4 +2909,44 @@ body::before {
   .portal-overview .portal-card {
     min-height: 370px;
   }
+}
+
+
+/* =========================================
+   PORTALE – INDIVIDUELLE FARBVERLÄUFE
+   ========================================= */
+
+.portal-overview .portal-card {
+  background:
+    radial-gradient(
+      ellipse at 50% 28%,
+      var(--portal-glow) 0%,
+      transparent 78%
+    ),
+    radial-gradient(
+      ellipse at 50% 85%,
+      var(--portal-glow) 0%,
+      transparent 70%
+    ),
+    linear-gradient(
+      145deg,
+      #0b1722 0%,
+      #071019 55%,
+      #050a10 100%
+    );
+}
+
+/* Farbiger Schimmer auf den Boxen */
+
+.portal-overview .portal-card-image img {
+  filter: drop-shadow(
+    0 12px 20px rgba(0, 0, 0, 0.35)
+  );
+}
+
+/* Portal #04 bleibt schwarzweiß */
+
+.portal-overview .portal-card-04 .portal-card-image img {
+  filter: grayscale(100%)
+    drop-shadow(0 12px 20px rgba(0, 0, 0, 0.35));
 }
