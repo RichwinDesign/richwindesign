@@ -2797,45 +2797,94 @@ body::before {
 }
 
 
-/* Runde Pfeil-Buttons wie auf Index */
+
+/* =========================================
+   PORTALE – OUTLINE BUTTONS
+   ========================================= */
 
 .portal-overview .portal-card-button {
   position: relative;
+  z-index: 4;
 
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 12px;
 
-  width: 36px;
-  min-width: 36px;
-  height: 36px;
+  width: fit-content;
+  min-width: 0;
+  height: auto;
   min-height: 36px;
 
   margin: 14px 0 0;
-  padding: 0;
+  padding: 9px 14px;
 
-  border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(111, 182, 217, 0.45);
+  border-radius: 8px;
 
-  background: rgba(4, 10, 16, 0.45);
-  color: transparent;
-  font-size: 0;
+  background: transparent;
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.4;
   text-decoration: none;
+  white-space: nowrap;
 
   box-shadow: none;
 
   transition:
     background 0.3s ease,
     border-color 0.3s ease,
+    box-shadow 0.3s ease,
     transform 0.3s ease;
 }
 
+/* Feiner blauer Pfeil */
+
 .portal-overview .portal-card-button::after {
-  content: "→";
-  font-size: 19px;
-  font-weight: 400;
-  line-height: 1;
+  content: "›";
+
+  display: inline-block;
+
+  color: #6fb6d9;
+  font-family: Arial, sans-serif;
+  font-size: 23px;
+  font-weight: 300;
+  line-height: 0.7;
+
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
+}
+
+/* Verlauf bei Hover, Berührung und Klick */
+
+.portal-overview .portal-card-button:not(.disabled):hover,
+.portal-overview .portal-card-button:not(.disabled):active,
+.portal-overview .portal-card-button:not(.disabled):focus-visible {
+  background:
+    linear-gradient(
+      110deg,
+      var(--portal-glow-strong) 0%,
+      var(--portal-glow-soft) 55%,
+      rgba(8, 19, 31, 0.85) 100%
+    );
+
+  border-color: var(--portal-accent);
+
   color: #ffffff;
+
+  box-shadow:
+    0 0 16px var(--portal-glow-soft);
+
+  transform: translateY(-2px);
+}
+
+.portal-overview .portal-card-button:not(.disabled):hover::after,
+.portal-overview .portal-card-button:not(.disabled):active::after,
+.portal-overview .portal-card-button:not(.disabled):focus-visible::after {
+  transform: translateX(3px);
 }
 
 
@@ -2854,13 +2903,6 @@ body::before {
 .portal-overview .portal-card:hover .portal-card-image img {
   transform: scale(1.05);
 }
-
-.portal-overview .portal-card-button:not(.disabled):hover {
-  background: var(--portal-accent);
-  border-color: var(--portal-accent);
-  transform: translateX(3px);
-}
-
 
 /* Platzhalter Portal 06 und 07 */
 
