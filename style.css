@@ -3519,3 +3519,9 @@ a.mega-link:focus-visible {
     max-width: 270px;
   }
 }
+/* Einleitungsbereiche – Hintergrund wie Genealogie */
+
+.intro-section,
+.portal-intro {
+  background: transparent;
+}
