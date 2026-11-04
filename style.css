@@ -3935,3 +3935,25 @@ body:has(.genealogy-page) footer {
     0 16px 35px rgba(0, 0, 0, 0.35),
     0 0 18px rgba(110, 82, 57, 0.10);
 }
+
+/* MENÜSTRICHE – FEINER MIT STÄRKEREM GLOW */
+
+.main-nav a.mega-trigger::after,
+.main-nav a.mega-trigger:hover::after,
+.main-nav a.mega-trigger.active::after,
+.main-nav a.mega-trigger.mega-hovered::after {
+  height: 1px;
+
+  box-shadow:
+    0 0 5px rgba(111, 182, 217, 0.85),
+    0 0 12px rgba(111, 182, 217, 0.55),
+    0 0 20px rgba(111, 182, 217, 0.25);
+}
+
+.main-nav a.mega-trigger:hover::after,
+.main-nav a.mega-trigger.mega-hovered::after {
+  box-shadow:
+    0 0 7px rgba(111, 182, 217, 0.95),
+    0 0 16px rgba(111, 182, 217, 0.65),
+    0 0 25px rgba(111, 182, 217, 0.35);
+}
