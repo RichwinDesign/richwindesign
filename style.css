@@ -3525,3 +3525,121 @@ a.mega-link:focus-visible {
 .portal-intro {
   background: transparent;
 }
+
+/* =========================================
+   FOTOGRAFIE – VORHER / NACHHER VERGLEICH
+   ========================================= */
+
+.photo-compare-block {
+  min-width: 0;
+}
+
+.photo-compare {
+  --split: 50%;
+
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1386 / 962;
+  overflow: hidden;
+  isolation: isolate;
+  background: #111;
+  user-select: none;
+}
+
+/* Beide Fotos exakt übereinander */
+
+.photo-compare-before,
+.photo-compare-after {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.photo-compare-before {
+  position: absolute;
+  inset: 0;
+}
+
+/* Zweites Foto rechts der Trennlinie */
+
+.photo-compare-after-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  clip-path: inset(0 0 0 var(--split));
+}
+
+.photo-compare-after {
+  position: absolute;
+  inset: 0;
+}
+
+/* Weiße Trennlinie */
+
+.photo-compare-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--split);
+  width: 2px;
+  background: #fff;
+  transform: translateX(-50%);
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* Runder Griff mit Pfeilen */
+
+.photo-compare-line::after {
+  content: "‹ ›";
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 36px;
+  height: 36px;
+
+  border-radius: 50%;
+  background: #fff;
+  color: #111;
+
+  font-size: 20px;
+  font-weight: 700;
+  white-space: nowrap;
+
+  box-shadow: 0 3px 12px rgba(0,0,0,.25);
+}
+
+/* Unsichtbarer, bedienbarer Schieberegler */
+
+.photo-compare-range {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+
+  width: 100%;
+  height: 100%;
+  margin: 0;
+
+  opacity: 0;
+  cursor: ew-resize;
+  touch-action: pan-y;
+}
+
+/* Beschriftung */
+
+.photo-compare-block h2 {
+  margin: 18px 0 0;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 700;
+}
