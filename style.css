@@ -3682,3 +3682,234 @@ a.mega-link:focus-visible {
     aspect-ratio: 4 / 3;
   }
 }
+
+/* =========================================
+   GENEALOGIE – KACHELREDESIGN
+   ========================================= */
+
+/* Farbwelt */
+
+.genealogy-page {
+  --genealogy-accent: #d79b45;
+  --genealogy-border: rgba(215,155,69,.35);
+}
+
+/* Die fünf Übersichtskacheln */
+
+.genealogy-card {
+  min-height: 285px;
+  padding: 30px 24px 25px;
+
+  background:
+    radial-gradient(
+      ellipse at 20% 10%,
+      rgba(215,155,69,.18),
+      transparent 72%
+    ),
+    linear-gradient(150deg, #111b25, #050a10 95%);
+
+  border: 1px solid var(--genealogy-border);
+  border-radius: 14px;
+  overflow: hidden;
+
+  box-shadow: 0 12px 30px rgba(0,0,0,.2);
+
+  transition:
+    transform .3s ease,
+    border-color .3s ease,
+    box-shadow .3s ease;
+}
+
+.genealogy-card:hover {
+  background:
+    radial-gradient(
+      ellipse at 20% 10%,
+      rgba(215,155,69,.24),
+      transparent 72%
+    ),
+    linear-gradient(150deg, #111b25, #050a10 95%);
+
+  transform: translateY(-4px);
+  border-color: #d79b45;
+
+  box-shadow:
+    0 16px 35px rgba(0,0,0,.35),
+    0 0 22px rgba(215,155,69,.13);
+}
+
+/* Icons */
+
+.genealogy-card-icon img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+
+/* Überschriften */
+
+.genealogy-card h3 {
+  color: #fff;
+  font-size: 19px;
+  font-weight: 700;
+  margin: 0 0 12px;
+}
+
+.genealogy-card h3 a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.genealogy-card h3 a:hover {
+  color: #e6b46b;
+}
+
+/* Beschreibungen */
+
+.genealogy-card p {
+  color: #cbd4dc;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+/* Buttons im Portal-Stil */
+
+.genealogy-card-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: auto;
+  padding: 9px 14px;
+
+  border: 1px solid rgba(111,182,217,.5);
+  border-radius: 8px;
+
+  color: #fff;
+  background: transparent;
+
+  font-size: 12px;
+  font-weight: 500;
+  text-decoration: none;
+
+  transition: .25s ease;
+}
+
+.genealogy-card-link:hover {
+  background: rgba(215,155,69,.16);
+  border-color: #d79b45;
+  color: #fff;
+}
+
+/* =========================================
+   DIE VIER FAMILIENLINIEN
+   ========================================= */
+
+.genealogy-line-card {
+  min-height: 340px;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 10%,
+      rgba(215,155,69,.15),
+      transparent 73%
+    ),
+    linear-gradient(160deg, #101923, #050a10 95%);
+
+  border: 1px solid var(--genealogy-border);
+  border-radius: 14px;
+  overflow: hidden;
+
+  box-shadow: 0 12px 30px rgba(0,0,0,.2);
+
+  transition:
+    transform .3s ease,
+    border-color .3s ease,
+    box-shadow .3s ease;
+}
+
+.genealogy-line-card:hover {
+  background:
+    radial-gradient(
+      ellipse at 50% 10%,
+      rgba(215,155,69,.22),
+      transparent 73%
+    ),
+    linear-gradient(160deg, #101923, #050a10 95%);
+
+  transform: translateY(-4px);
+  border-color: #d79b45;
+  box-shadow: 0 0 24px rgba(215,155,69,.12);
+}
+
+.genealogy-line-card h3 {
+  color: #fff;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.genealogy-line-card p {
+  color: #cbd4dc;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+/* Unteren schwarzen Balken entfernen */
+
+.genealogy-line-link {
+  width: auto;
+  margin: auto 20px 22px;
+  padding: 10px 14px;
+
+  border: 1px solid rgba(111,182,217,.5);
+  border-radius: 8px;
+
+  background: transparent;
+  color: #fff;
+  text-decoration: none;
+  font-size: 12px;
+
+  transition: .25s ease;
+}
+
+.genealogy-line-link:hover {
+  background: rgba(215,155,69,.16);
+  border-color: #d79b45;
+  color: #fff;
+}
+
+/* =========================================
+   UNTERE INFO- UND FOOTERBEREICHE AUSBLENDEN
+   ========================================= */
+
+/* Kontakt / Impressum / Datenschutz-Kacheln */
+
+.genealogy-info-grid {
+  display: none;
+}
+
+/* Zusätzliche Fußzeile nur auf Genealogie */
+
+body:has(.genealogy-page) footer {
+  display: none;
+}
+
+/* Falls die Fußzeile diese Klasse verwendet */
+
+.genealogy-footer {
+  display: none;
+}
+
+/* =========================================
+   MOBILE ANPASSUNG
+   ========================================= */
+
+@media (max-width: 650px) {
+  .genealogy-card,
+  .genealogy-line-card {
+    min-height: 270px;
+  }
+
+  .genealogy-line-link {
+    margin: auto 20px 20px;
+  }
+}
