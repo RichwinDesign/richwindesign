@@ -3112,6 +3112,7 @@ body::before {
 .portal-overview .portal-card-07 {
   cursor: default;
 }
+
 /* =====================================================
    RICHWIN DESIGN – MEGA-MENÜ
    DIESEN BLOCK GANZ UNTEN an style.css ANHÄNGEN
@@ -3259,4 +3260,87 @@ a.mega-link:focus-visible {
   .mega-preview img { height: 120px; }
   .main-nav { gap: 4px 14px; }
   .main-nav a { font-size: 12px; }
+}
+
+/* =========================================
+   MEGA-MENÜ – EINHEITLICHE TYPOGRAFIE
+   ========================================= */
+
+/* Einheitliche Schrift */
+
+.mega-menu-panel {
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+}
+
+/* Alle Menüpunkte gleich darstellen */
+
+.mega-menu-panel .mega-link,
+.mega-menu-panel .mega-genealogy-group .mega-link {
+  color: #dce8ee;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.4;
+  min-height: 32px;
+  padding: 7px 9px;
+}
+
+/* Einheitliche Überschriften */
+
+.mega-menu-panel .mega-heading,
+.mega-menu-panel .mega-group-title {
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+/* Geplante Seiten nicht mehr abdunkeln */
+
+.mega-menu-panel .mega-link-pending {
+  opacity: 1;
+  color: #dce8ee;
+}
+
+/* "geplant" nicht mehr anzeigen */
+
+.mega-menu-panel .mega-link-pending small {
+  display: none;
+}
+
+/* Icons einheitlich */
+
+.mega-menu-panel .mega-link-icon {
+  color: #83bdd6;
+  font-size: 14px;
+}
+
+/* Genealogie – gleiche Textdarstellung */
+
+.mega-menu-panel .mega-genealogy-group {
+  opacity: 1;
+}
+
+.mega-menu-panel .mega-genealogy-group .mega-link {
+  padding-left: 16px;
+}
+
+/* Hover bleibt dezent blau */
+
+.mega-menu-panel a.mega-link:hover,
+.mega-menu-panel a.mega-link:focus-visible {
+  color: #ffffff;
+  background: rgba(111, 182, 217, 0.13);
+}
+
+/* Vorschautext vereinheitlichen */
+
+.mega-menu-panel .mega-preview strong {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.mega-menu-panel .mega-preview > span {
+  color: #dce8ee;
+  font-size: 12px;
 }
