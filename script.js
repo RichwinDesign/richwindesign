@@ -216,3 +216,37 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!header.contains(event.target)) closeMenu();
   });
 });
+
+/* =========================================
+   FOTOGRAFIE – BILDVERGLEICH
+   ========================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const photoComparisons =
+    document.querySelectorAll(".photo-compare");
+
+  photoComparisons.forEach((compare) => {
+
+    const slider =
+      compare.querySelector(".photo-compare-range");
+
+    if (!slider) return;
+
+    function updatePhotoCompare() {
+      compare.style.setProperty(
+        "--split",
+        slider.value + "%"
+      );
+    }
+
+    updatePhotoCompare();
+
+    slider.addEventListener(
+      "input",
+      updatePhotoCompare
+    );
+
+  });
+
+});
