@@ -3485,3 +3485,37 @@ a.mega-link:focus-visible {
     padding: 10px 0 0;
   }
 }
+
+/* =========================================
+   MEGA-MENÜ – SPALTEN ENGER ZUSAMMEN
+   ========================================= */
+
+@media (min-width: 951px) {
+
+  /* Gesamtmenü schmaler */
+  .mega-menu-panel {
+    width: min(650px, calc(100vw - 32px));
+    grid-template-columns: 1fr 1fr 1.05fr;
+    gap: 6px;
+    padding: 14px 12px;
+  }
+
+  /* Abstand an den Trennlinien reduzieren */
+  .mega-column + .mega-column {
+    padding-left: 7px;
+  }
+
+  /* Genealogie ebenfalls schmaler */
+  .mega-menu-panel[data-menu="genealogie"] {
+    width: min(510px, calc(100vw - 32px));
+    max-width: 510px;
+    grid-template-columns: 1.4fr 0.8fr;
+    gap: 8px;
+  }
+
+  /* Kontakt behält seine kompakte Breite */
+  .mega-menu-panel[data-menu="kontakt"] {
+    width: 270px;
+    max-width: 270px;
+  }
+}
