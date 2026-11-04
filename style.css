@@ -3519,3 +3519,13 @@ a.mega-link:focus-visible {
     max-width: 270px;
   }
 }
+
+/* =========================================
+   EINHEITLICHER HINTERGRUND – EINLEITUNGEN
+   ========================================= */
+
+.intro-section,
+.portal-intro,
+.genealogy-page {
+  background: #040608;
+}
