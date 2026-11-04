@@ -364,17 +364,17 @@ body::before {
 }
 
 .print-media {
-  background-image: url("images/general/Hero_Print-media.png");
+  background-image: url("images/general/Hero_Print-media.webp");
   background-position: center;
 }
 
 .landing-pages {
-  background-image: url("images/general/Hero_Landing-pages.png");
+  background-image: url("images/general/Hero_Landing-pages.webp");
   background-position: center;
 }
 
 .photography {
-  background-image: url("images/general/Hero_Fotografie.png");
+  background-image: url("images/general/Hero_Fotografie.webp");
   background-position: center;
 }
 
@@ -383,7 +383,6 @@ body::before {
   bottom: auto;
   top: 20px;
 }
-
 /* -------------------------------------------------- */
 
 /* GENEALOGIE + PORTALE – BREITE BANNER */
@@ -487,13 +486,13 @@ body::before {
   transform: translateX(3px);
 }
 
-.genealogy {
-  background-image: url("images/general/Hero_Genealogie.png");
+.portals {
+  background-image: url("images/general/Hero_portalwelt.webp");
   background-position: center;
 }
 
-.portals {
-  background-image: url("images/general/Hero_portalwelt.png");
+.genealogy {
+  background-image: url("images/general/Hero_Genealogie.webp");
   background-position: center;
 }
 
