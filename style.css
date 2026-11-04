@@ -3957,3 +3957,76 @@ body:has(.genealogy-page) footer {
     0 0 16px rgba(111, 182, 217, 0.65),
     0 0 25px rgba(111, 182, 217, 0.35);
 }
+
+/* =========================================
+   HEADER – DAUERHAFTE LEUCHTSTRICHE
+   ========================================= */
+
+/* Dropdown-Pfeile vollständig ausblenden */
+
+.main-nav .mega-chevron {
+  display: none !important;
+}
+
+/* Position der Menüpunkte */
+
+.main-nav a.mega-trigger {
+  position: relative;
+  gap: 0;
+}
+
+/* Strich dauerhaft anzeigen */
+
+.main-nav a.mega-trigger::after,
+.main-nav a.mega-trigger:hover::after,
+.main-nav a.mega-trigger.active::after,
+.main-nav a.mega-trigger.mega-hovered::after {
+  content: "";
+  position: absolute;
+
+  left: 50%;
+  bottom: 14px;
+
+  width: 30px;
+  height: 1px;
+
+  border-radius: 999px;
+  background: #85c9e5;
+
+  box-shadow:
+    0 0 5px rgba(111, 182, 217, .9),
+    0 0 12px rgba(111, 182, 217, .65),
+    0 0 20px rgba(111, 182, 217, .3);
+
+  transform: translateX(-50%);
+
+  transition: width .25s ease, box-shadow .25s ease;
+}
+
+/* Hover: etwas längerer und stärkerer Glow */
+
+.main-nav a.mega-trigger:hover::after,
+.main-nav a.mega-trigger.mega-hovered::after {
+  width: 38px;
+  box-shadow:
+    0 0 7px rgba(111, 182, 217, 1),
+    0 0 16px rgba(111, 182, 217, .75),
+    0 0 25px rgba(111, 182, 217, .4);
+}
+
+/* Keine Striche bei Menüpunkten ohne Dropdown */
+
+.main-nav a:not(.mega-trigger)::after {
+  content: none;
+}
+
+/* Korrekte Position bei schmaleren Bildschirmen */
+
+@media (max-width: 950px) {
+  .main-nav a.mega-trigger::after,
+  .main-nav a.mega-trigger:hover::after,
+  .main-nav a.mega-trigger.active::after,
+  .main-nav a.mega-trigger.mega-hovered::after {
+    bottom: 4px;
+  }
+}
