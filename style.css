@@ -11,6 +11,7 @@ body {
   margin: 0;
   padding: 0;
 }
+
 body {
   font-family: Arial, sans-serif;
   background: #040608;
@@ -24,9 +25,7 @@ body::before {
   inset: 0;
   pointer-events: none;
   z-index: -1;
-
-  background:
-    radial-gradient(
+  background: radial-gradient(
       circle at 18% 78%,
       rgba(40, 120, 190, 0.10) 0%,
       transparent 22%
@@ -55,15 +54,12 @@ body::before {
 .site-header {
   position: relative;
   z-index: 20;
-
-  background:
-    radial-gradient(
+  background: radial-gradient(
       circle at 12% 50%,
       rgba(111, 182, 217, 0.10) 0%,
       transparent 22%
     ),
     rgba(4, 6, 8, 0.94);
-
   border-bottom: 1px solid rgba(111, 182, 217, 0.35);
   backdrop-filter: blur(10px);
 }
@@ -73,7 +69,6 @@ body::before {
   min-height: 72px;
   margin: 0 auto;
   padding: 0 32px;
-
   display: grid;
   grid-template-columns: 120px 1fr 180px;
   align-items: center;
@@ -84,37 +79,28 @@ body::before {
 
 .header-logo {
   position: relative;
-
   color: #d9eaf2;
   text-decoration: none;
-
   font-family: Georgia, "Times New Roman", serif;
   font-size: 34px;
   line-height: 1;
   letter-spacing: -2px;
-
-  text-shadow:
-    0 0 18px rgba(111, 182, 217, 0.22);
+  text-shadow: 0 0 18px rgba(111, 182, 217, 0.22);
 }
 
 .header-logo::after {
   content: "";
   position: absolute;
-
   left: -20px;
   top: 50%;
-
   width: 125px;
   height: 1px;
-
-  background:
-    linear-gradient(
+  background: linear-gradient(
       90deg,
       transparent,
       rgba(111, 182, 217, 0.65),
       transparent
     );
-
   transform: rotate(-12deg);
   pointer-events: none;
 }
@@ -130,17 +116,12 @@ body::before {
 
 .main-nav a {
   position: relative;
-
   padding: 26px 0 22px;
-
   color: rgba(255, 255, 255, 0.82);
   text-decoration: none;
-
   font-size: 15px;
   font-weight: 400;
-
-  transition:
-    color 0.25s ease,
+  transition: color 0.25s ease,
     text-shadow 0.25s ease;
 }
 
@@ -153,19 +134,13 @@ body::before {
 .main-nav a:hover::after {
   content: "";
   position: absolute;
-
   left: 50%;
   bottom: 14px;
-
   width: 42px;
   height: 1px;
-
   background: #6fb6d9;
-
-  box-shadow:
-    0 0 7px rgba(111, 182, 217, 0.75),
+  box-shadow: 0 0 7px rgba(111, 182, 217, 0.75),
     0 0 14px rgba(111, 182, 217, 0.30);
-
   transform: translateX(-50%);
 }
 
@@ -181,22 +156,16 @@ body::before {
 .social-links a {
   width: auto;
   height: auto;
-
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
   background: transparent;
   border-radius: 0;
-
   color: rgba(255, 255, 255, 0.82);
   text-decoration: none;
-
   font-size: 13px;
   font-weight: 700;
-
-  transition:
-    color 0.2s ease,
+  transition: color 0.2s ease,
     transform 0.2s ease;
 }
 
@@ -208,8 +177,7 @@ body::before {
 /* INTRO */
 
 .intro-section {
-  background:
-    linear-gradient(
+  background: linear-gradient(
       180deg,
       rgba(8, 10, 12, 0.88) 0%,
       rgba(8, 10, 12, 0.72) 100%
@@ -245,9 +213,7 @@ body::before {
 
 .intro-text h1 span {
   color: #6fb6d9;
-
-  text-shadow:
-    0 0 18px rgba(111, 182, 217, 0.16);
+  text-shadow: 0 0 18px rgba(111, 182, 217, 0.16);
 }
 
 .intro-text p {
@@ -267,16 +233,15 @@ body::before {
   aspect-ratio: 1 / 1.08;
   object-fit: cover;
   border-radius: 50%;
-
   border: 1px solid rgba(111, 182, 217, 0.55);
-
-  box-shadow:
-    0 14px 35px rgba(0, 0, 0, 0.48),
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.48),
     0 0 24px rgba(111, 182, 217, 0.10);
 }
 
 /* ================================================== */
+
 /* STARTSEITE – PORTFOLIO ÜBERSICHT */
+
 /* ================================================== */
 
 .portfolio-overview {
@@ -286,7 +251,9 @@ body::before {
 }
 
 /* -------------------------------------------------- */
+
 /* 4 PORTFOLIO-KACHELN */
+
 /* -------------------------------------------------- */
 
 .portfolio-grid {
@@ -305,8 +272,7 @@ body::before {
   border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 14px;
   box-shadow: 0 14px 35px rgba(0, 0, 0, 0.24);
-  transition:
-    transform 0.3s ease,
+  transition: transform 0.3s ease,
     border-color 0.3s ease,
     box-shadow 0.3s ease;
 }
@@ -315,8 +281,7 @@ body::before {
   content: "";
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(
+  background: linear-gradient(
       180deg,
       rgba(0, 0, 0, 0.05) 0%,
       rgba(0, 0, 0, 0.12) 42%,
@@ -328,8 +293,7 @@ body::before {
 .portfolio-card:hover {
   transform: translateY(-5px);
   border-color: rgba(70, 170, 255, 0.6);
-  box-shadow:
-    0 18px 45px rgba(0, 0, 0, 0.38),
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.38),
     0 0 24px rgba(50, 150, 255, 0.10);
 }
 
@@ -374,8 +338,7 @@ body::before {
   color: #ffffff;
   text-decoration: none;
   font-size: 18px;
-  transition:
-    background 0.25s ease,
+  transition: background 0.25s ease,
     border-color 0.25s ease,
     transform 0.25s ease;
 }
@@ -388,30 +351,28 @@ body::before {
 }
 
 /* -------------------------------------------------- */
+
 /* KACHEL-HINTERGRÜNDE */
+
 /* -------------------------------------------------- */
 
 .motion-banner {
-  background-image:
-    url("images/general/Hero_Motion-Visuals.gif");
+  background-image: url("images/general/Hero_Motion-Visuals.gif");
   background-position: center;
 }
 
 .print-media {
-  background-image:
-    url("images/general/Hero_Print-media.png");
+  background-image: url("images/general/Hero_Print-media.png");
   background-position: center;
 }
 
 .landing-pages {
-  background-image:
-    url("images/general/Hero_Landing-pages.png");
+  background-image: url("images/general/Hero_Landing-pages.png");
   background-position: center;
 }
 
 .photography {
-  background-image:
-    url("images/general/Hero_Fotografie.png");
+  background-image: url("images/general/Hero_Fotografie.png");
   background-position: center;
 }
 
@@ -422,7 +383,9 @@ body::before {
 }
 
 /* -------------------------------------------------- */
+
 /* GENEALOGIE + PORTALE – BREITE BANNER */
+
 /* -------------------------------------------------- */
 
 .portfolio-wide-stack {
@@ -441,8 +404,7 @@ body::before {
   border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 14px;
   box-shadow: 0 14px 35px rgba(0, 0, 0, 0.24);
-  transition:
-    transform 0.3s ease,
+  transition: transform 0.3s ease,
     border-color 0.3s ease,
     box-shadow 0.3s ease;
 }
@@ -451,8 +413,7 @@ body::before {
   content: "";
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(
+  background: linear-gradient(
       90deg,
       rgba(0, 0, 0, 0.10) 0%,
       rgba(0, 0, 0, 0.18) 42%,
@@ -464,8 +425,7 @@ body::before {
 .portfolio-wide:hover {
   transform: translateY(-3px);
   border-color: rgba(70, 170, 255, 0.55);
-  box-shadow:
-    0 18px 45px rgba(0, 0, 0, 0.35),
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35),
     0 0 24px rgba(50, 150, 255, 0.08);
 }
 
@@ -514,8 +474,7 @@ body::before {
   color: #ffffff;
   text-decoration: none;
   font-size: 19px;
-  transition:
-    background 0.25s ease,
+  transition: background 0.25s ease,
     color 0.25s ease,
     transform 0.25s ease;
 }
@@ -527,14 +486,12 @@ body::before {
 }
 
 .genealogy {
-  background-image:
-    url("images/general/Hero_Genealogie.png");
+  background-image: url("images/general/Hero_Genealogie.png");
   background-position: center;
 }
 
 .portals {
-  background-image:
-    url("images/general/Hero_portalwelt.png");
+  background-image: url("images/general/Hero_portalwelt.png");
   background-position: center;
 }
 
@@ -551,6 +508,7 @@ body::before {
   .portfolio-card {
     aspect-ratio: 0.9 / 1;
   }
+
 }
 
 @media (max-width: 700px) {
@@ -571,8 +529,7 @@ body::before {
   }
 
   .portfolio-wide::before {
-    background:
-      linear-gradient(
+    background: linear-gradient(
         180deg,
         rgba(0, 0, 0, 0.06) 0%,
         rgba(0, 0, 0, 0.32) 48%,
@@ -590,6 +547,7 @@ body::before {
   .portfolio-wide-text {
     width: calc(100% - 60px);
   }
+
 }
 
 /* KI-HINWEIS */
@@ -623,7 +581,6 @@ body::before {
 /* RESPONSIVE */
 
 @media (max-width: 800px) {
-
   .header-inner {
     padding: 20px;
   }
@@ -735,10 +692,7 @@ body::before {
 .motion-page-hero {
   position: relative;
   min-height: 650px;
-
-  background-image:
-    url("images/portfolio/motion-visuals/hero_motion-visuals.png");
-
+  background-image: url("images/portfolio/motion-visuals/hero_motion-visuals.png");
   background-size: cover;
   background-position: center;
   overflow: hidden;
@@ -833,7 +787,6 @@ body::before {
 }
 
 @media (max-width: 950px) {
-
   .motion-gallery {
     grid-template-columns: 170px minmax(0, 1fr) 170px;
     gap: 12px;
@@ -846,7 +799,6 @@ body::before {
 }
 
 @media (max-width: 700px) {
-
   .motion-gallery {
     grid-template-columns: 1fr;
     max-width: 520px;
@@ -918,8 +870,7 @@ body::before {
   overflow: hidden;
   background: #202020;
   border: 1px solid rgba(255, 255, 255, 0.05);
-  transition:
-    transform 0.25s ease,
+  transition: transform 0.25s ease,
     box-shadow 0.25s ease;
 }
 
@@ -1016,8 +967,7 @@ body::before {
   color: #111111;
   background: #dddddd;
   font-size: 13px;
-  transition:
-    transform 0.2s ease,
+  transition: transform 0.2s ease,
     filter 0.2s ease;
 }
 
@@ -1039,7 +989,6 @@ body::before {
   --portal-glow-strong: rgba(231, 165, 58, 0.18);
   --portal-glow-soft: rgba(231, 165, 58, 0.10);
   --portal-tint-top: rgba(231, 165, 58, 0.08);
-
   background: linear-gradient(
     180deg,
     #0a1017 0%,
@@ -1059,7 +1008,6 @@ body::before {
   --portal-glow-strong: rgba(135, 211, 63, 0.18);
   --portal-glow-soft: rgba(135, 211, 63, 0.10);
   --portal-tint-top: rgba(135, 211, 63, 0.08);
-
   background: linear-gradient(
     180deg,
     #071018 0%,
@@ -1079,7 +1027,6 @@ body::before {
   --portal-glow-strong: rgba(217, 76, 224, 0.18);
   --portal-glow-soft: rgba(217, 76, 224, 0.10);
   --portal-tint-top: rgba(217, 76, 224, 0.08);
-
   background: linear-gradient(
     180deg,
     #08101b 0%,
@@ -1099,7 +1046,6 @@ body::before {
   --portal-glow-strong: rgba(255, 134, 82, 0.18);
   --portal-glow-soft: rgba(255, 134, 82, 0.10);
   --portal-tint-top: rgba(255, 134, 82, 0.08);
-
   background: linear-gradient(
     180deg,
     #08101b 0%,
@@ -1119,7 +1065,6 @@ body::before {
   --portal-glow-strong: rgba(189, 189, 189, 0.14);
   --portal-glow-soft: rgba(189, 189, 189, 0.08);
   --portal-tint-top: rgba(189, 189, 189, 0.05);
-
   background: linear-gradient(
     180deg,
     #0a1017 0%,
@@ -1136,7 +1081,6 @@ body::before {
   --portal-glow-strong: rgba(52, 118, 255, 0.20);
   --portal-glow-soft: rgba(52, 118, 255, 0.11);
   --portal-tint-top: rgba(52, 118, 255, 0.09);
-
   background: linear-gradient(
     180deg,
     #07101c 0%,
@@ -1158,7 +1102,6 @@ body::before {
   --portal-glow-strong: rgba(160, 170, 185, 0.10);
   --portal-glow-soft: rgba(160, 170, 185, 0.05);
   --portal-tint-top: rgba(160, 170, 185, 0.04);
-
   background: linear-gradient(
     180deg,
     #0a1017 0%,
@@ -1173,8 +1116,7 @@ body::before {
   display: flex;
   align-items: center;
   justify-content: center;
-  background:
-    linear-gradient(
+  background: linear-gradient(
       135deg,
       #191919,
       #262626
@@ -1196,7 +1138,6 @@ body::before {
 /* RESPONSIVE PORTAL-ÜBERSICHT */
 
 @media (max-width: 1000px) {
-
   .portal-intro-inner,
   .portal-overview,
   .portal-note {
@@ -1210,7 +1151,6 @@ body::before {
 }
 
 @media (max-width: 600px) {
-
   .portal-intro-inner {
     padding-top: 50px;
   }
@@ -1226,7 +1166,9 @@ body::before {
 }
 
 /* -------------------------------------------------- */
+
 /* PORTAL DETAILSEITE */
+
 /* -------------------------------------------------- */
 
 .portal-detail-hero {
@@ -1239,8 +1181,7 @@ body::before {
 /* PORTAL #01 HERO */
 
 .portal-detail-hero-01 {
-  background-image:
-    linear-gradient(
+  background-image: linear-gradient(
       rgba(66, 64, 47, 0.78),
       rgba(66, 64, 47, 0.78)
     ),
@@ -1339,8 +1280,7 @@ body::before {
   text-decoration: none;
   text-align: center;
   font-size: 13px;
-  transition:
-    background 0.2s ease,
+  transition: background 0.2s ease,
     color 0.2s ease;
 }
 
@@ -1449,7 +1389,6 @@ body::before {
 /* RESPONSIVE PORTAL DETAILSEITE */
 
 @media (max-width: 1000px) {
-
   .portal-detail-hero-inner,
   .portal-detail-navigation,
   .portal-detail-content {
@@ -1471,7 +1410,6 @@ body::before {
 }
 
 @media (max-width: 700px) {
-
   .portal-detail-hero-inner {
     grid-template-columns: 1fr;
     min-height: auto;
@@ -1502,7 +1440,6 @@ body::before {
 }
 
 @media (max-width: 500px) {
-
   .portal-detail-gallery {
     grid-template-columns: 1fr;
   }
@@ -1520,8 +1457,7 @@ body::before {
 /* PORTAL #02 */
 
 .portal-detail-hero-02 {
-  background-image:
-    linear-gradient(
+  background-image: linear-gradient(
       rgba(76, 37, 86, 0.78),
       rgba(76, 37, 86, 0.78)
     ),
@@ -1568,8 +1504,7 @@ body::before {
 /* PORTAL #03 */
 
 .portal-detail-hero-03 {
-  background-image:
-    linear-gradient(
+  background-image: linear-gradient(
       rgba(75, 46, 48, 0.80),
       rgba(75, 46, 48, 0.80)
     ),
@@ -1609,8 +1544,7 @@ body::before {
 /* PORTAL #04 */
 
 .portal-detail-hero-04 {
-  background-image:
-    linear-gradient(
+  background-image: linear-gradient(
       rgba(40, 40, 40, 0.82),
       rgba(40, 40, 40, 0.82)
     ),
@@ -1668,8 +1602,7 @@ body::before {
 /* PORTAL #05 */
 
 .portal-detail-hero-05 {
-  background-image:
-    linear-gradient(
+  background-image: linear-gradient(
       rgba(10, 37, 97, 0.80),
       rgba(10, 37, 97, 0.80)
     ),
@@ -1737,7 +1670,9 @@ body::before {
 }
 
 /* -------------------------------------------------- */
+
 /* WEBSITE INTRO */
+
 /* -------------------------------------------------- */
 
 .site-intro {
@@ -1763,8 +1698,7 @@ body::before {
   line-height: 1;
   white-space: nowrap;
   opacity: 0;
-  transform:
-    translate3d(-50%, -50%, 0)
+  transform: translate3d(-50%, -50%, 0)
     scale(0.82);
   transform-origin: center center;
   backface-visibility: hidden;
@@ -1773,11 +1707,9 @@ body::before {
 }
 
 @keyframes introNameAnimation {
-
   0% {
     opacity: 0;
-    transform:
-      translate3d(-50%, -50%, 0)
+    transform: translate3d(-50%, -50%, 0)
       scale(0.75);
   }
 
@@ -1787,15 +1719,13 @@ body::before {
 
   100% {
     opacity: 0;
-    transform:
-      translate3d(-50%, -50%, 0)
+    transform: translate3d(-50%, -50%, 0)
       scale(5);
   }
 
 }
 
 @keyframes introScreenOut {
-
   0%,
   82% {
     opacity: 1;
@@ -1811,14 +1741,15 @@ body::before {
 }
 
 /* -------------------------------------------------- */
+
 /* PRINT MEDIEN UNTERSEITE */
+
 /* -------------------------------------------------- */
 
 .print-page-hero {
   position: relative;
   min-height: 650px;
-  background-image:
-    url("images/portfolio/print/hero_print-medien.png");
+  background-image: url("images/portfolio/print/hero_print-medien.png");
   background-size: cover;
   background-position: center;
   overflow: hidden;
@@ -1873,7 +1804,9 @@ body::before {
 }
 
 /* -------------------------------------------------- */
+
 /* PRINT GALERIE */
+
 /* -------------------------------------------------- */
 
 .print-gallery {
@@ -1899,8 +1832,7 @@ body::before {
   width: 100%;
   height: auto;
   display: block;
-  transition:
-    transform 0.35s ease,
+  transition: transform 0.35s ease,
     filter 0.35s ease;
 }
 
@@ -1917,7 +1849,6 @@ body::before {
 }
 
 @media (max-width: 950px) {
-
   .print-page-text {
     width: 45%;
   }
@@ -1933,7 +1864,6 @@ body::before {
 }
 
 @media (max-width: 700px) {
-
   .print-page-hero-inner {
     min-height: 580px;
     padding: 80px 24px;
@@ -1955,14 +1885,15 @@ body::before {
 }
 
 /* -------------------------------------------------- */
+
 /* LANDING PAGES UNTERSEITE */
+
 /* -------------------------------------------------- */
 
 .landing-page-hero {
   position: relative;
   min-height: 650px;
-  background-image:
-    url("images/portfolio/landing-pages/hero_landing-pages.png");
+  background-image: url("images/portfolio/landing-pages/hero_landing-pages.png");
   background-size: cover;
   background-position: center;
   overflow: hidden;
@@ -2036,8 +1967,7 @@ body::before {
   width: 100%;
   height: auto;
   display: block;
-  transition:
-    transform 0.3s ease,
+  transition: transform 0.3s ease,
     filter 0.3s ease;
 }
 
@@ -2047,7 +1977,6 @@ body::before {
 }
 
 @media (max-width: 950px) {
-
   .landing-page-text {
     width: 45%;
   }
@@ -2063,7 +1992,6 @@ body::before {
 }
 
 @media (max-width: 700px) {
-
   .landing-page-hero-inner {
     min-height: 580px;
     padding: 80px 24px;
@@ -2089,8 +2017,7 @@ body::before {
 .photo-page-hero {
   position: relative;
   min-height: 650px;
-  background-image:
-    url("images/portfolio/fotografie/hero_fotografie.png");
+  background-image: url("images/portfolio/fotografie/hero_fotografie.png");
   background-size: cover;
   background-position: center;
   overflow: hidden;
@@ -2261,7 +2188,6 @@ body::before {
 }
 
 @media (max-width: 950px) {
-
   .photo-page-text {
     width: 45%;
   }
@@ -2273,7 +2199,6 @@ body::before {
 }
 
 @media (max-width: 700px) {
-
   .photo-page-hero-inner {
     min-height: 580px;
     padding: 80px 24px;
@@ -2299,7 +2224,9 @@ body::before {
 }
 
 /* ================================================== */
+
 /* GENEALOGIE HAUPTSEITE */
+
 /* ================================================== */
 
 .genealogy-page {
@@ -2512,8 +2439,7 @@ body::before {
 
 .genealogy-card,
 .genealogy-line-card {
-  transition:
-    background 0.25s ease,
+  transition: background 0.25s ease,
     transform 0.25s ease;
 }
 
@@ -2533,7 +2459,6 @@ body::before {
 }
 
 @media (max-width: 950px) {
-
   .genealogy-overview-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -2554,7 +2479,6 @@ body::before {
 }
 
 @media (max-width: 650px) {
-
   .genealogy-page {
     padding: 50px 20px 70px;
   }
@@ -2600,43 +2524,33 @@ body::before {
   padding: 48px 20px;
 }
 
-
 /* Grundgestaltung */
 
 .portal-overview .portal-card {
   --portal-accent: #6fb6d9;
   --portal-glow: rgba(111, 182, 217, 0.13);
-
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-
   min-width: 0;
   min-height: 360px;
   overflow: hidden;
-
   padding: 0;
   border: 1px solid rgba(111, 182, 217, 0.25);
   border-radius: 12px;
-
-  background:
-    radial-gradient(
+  background: radial-gradient(
       ellipse at 50% 25%,
       var(--portal-glow),
       transparent 75%
     ),
     #071019;
-
   box-shadow: none;
   isolation: isolate;
-
-  transition:
-    transform 0.3s ease,
+  transition: transform 0.3s ease,
     border-color 0.3s ease,
     box-shadow 0.3s ease;
 }
-
 
 /* Farben pro Portal */
 
@@ -2676,19 +2590,16 @@ body::before {
   --portal-glow: rgba(118, 137, 157, 0.1);
 }
 
-
 /* Bilder großflächig innerhalb der Kacheln */
 
 .portal-overview .portal-card-image {
   position: absolute;
   inset: 0;
-
   display: block;
   width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
-
   overflow: hidden;
   z-index: 0;
 }
@@ -2703,17 +2614,13 @@ body::before {
   display: block;
   width: 100%;
   height: 100%;
-
   object-fit: contain;
   object-position: center 30%;
-
   padding: 14px 10px 90px;
   box-sizing: border-box;
-
   transform: scale(1);
   transition: transform 0.45s ease;
 }
-
 
 /* Dunkler Verlauf für lesbare Texte */
 
@@ -2721,7 +2628,6 @@ body::before {
   content: "";
   position: absolute;
   inset: 0;
-
   background: linear-gradient(
     to bottom,
     rgba(4, 8, 13, 0.05) 0%,
@@ -2729,35 +2635,28 @@ body::before {
     rgba(4, 8, 13, 0.55) 62%,
     rgba(4, 8, 13, 0.95) 100%
   );
-
   pointer-events: none;
 }
-
 
 /* Text direkt auf den Kacheln */
 
 .portal-overview .portal-card-content {
   position: relative;
   z-index: 2;
-
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-end;
-
   width: 100%;
   min-height: 145px;
-
   padding: 20px;
   margin: 0;
-
   background: transparent;
   text-align: left;
 }
 
 .portal-overview .portal-card-content h2 {
   margin: 0 0 7px;
-
   font-size: 20px;
   line-height: 1.2;
   font-weight: 700;
@@ -2796,8 +2695,6 @@ body::before {
   text-align: left;
 }
 
-
-
 /* =========================================
    PORTALE – OUTLINE BUTTONS
    ========================================= */
@@ -2805,36 +2702,27 @@ body::before {
 .portal-overview .portal-card-button {
   position: relative;
   z-index: 4;
-
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 12px;
-
   width: fit-content;
   min-width: 0;
   height: auto;
   min-height: 36px;
-
   margin: 14px 0 0;
   padding: 9px 14px;
-
   border: 1px solid rgba(111, 182, 217, 0.45);
   border-radius: 8px;
-
   background: transparent;
   color: #ffffff;
-
   font-size: 12px;
   font-weight: 500;
   line-height: 1.4;
   text-decoration: none;
   white-space: nowrap;
-
   box-shadow: none;
-
-  transition:
-    background 0.3s ease,
+  transition: background 0.3s ease,
     border-color 0.3s ease,
     box-shadow 0.3s ease,
     transform 0.3s ease;
@@ -2844,17 +2732,13 @@ body::before {
 
 .portal-overview .portal-card-button::after {
   content: "›";
-
   display: inline-block;
-
   color: #6fb6d9;
   font-family: Arial, sans-serif;
   font-size: 23px;
   font-weight: 300;
   line-height: 0.7;
-
-  transition:
-    transform 0.3s ease,
+  transition: transform 0.3s ease,
     color 0.3s ease;
 }
 
@@ -2863,21 +2747,15 @@ body::before {
 .portal-overview .portal-card-button:not(.disabled):hover,
 .portal-overview .portal-card-button:not(.disabled):active,
 .portal-overview .portal-card-button:not(.disabled):focus-visible {
-  background:
-    linear-gradient(
+  background: linear-gradient(
       110deg,
       var(--portal-glow-strong) 0%,
       var(--portal-glow-soft) 55%,
       rgba(8, 19, 31, 0.85) 100%
     );
-
   border-color: var(--portal-accent);
-
   color: #ffffff;
-
-  box-shadow:
-    0 0 16px var(--portal-glow-soft);
-
+  box-shadow: 0 0 16px var(--portal-glow-soft);
   transform: translateY(-2px);
 }
 
@@ -2887,16 +2765,12 @@ body::before {
   transform: translateX(3px);
 }
 
-
 /* Hover */
 
 .portal-overview .portal-card:not(:has(.portal-card-button.disabled)):hover {
   transform: translateY(-5px);
-
   border-color: var(--portal-accent);
-
-  box-shadow:
-    0 12px 35px rgba(0, 0, 0, 0.3),
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3),
     0 0 22px var(--portal-glow);
 }
 
@@ -2909,18 +2783,14 @@ body::before {
 .portal-overview .portal-card-placeholder {
   position: absolute;
   inset: 0;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
-  background:
-    radial-gradient(
+  background: radial-gradient(
       ellipse at center,
       var(--portal-glow),
       transparent 75%
     );
-
   color: rgba(255, 255, 255, 0.15);
   font-size: 22px;
   font-weight: 700;
@@ -2932,13 +2802,13 @@ body::before {
   cursor: default;
 }
 
-
 /* Responsive */
 
 @media (max-width: 900px) {
   .portal-overview {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
 }
 
 @media (max-width: 520px) {
@@ -2951,16 +2821,15 @@ body::before {
   .portal-overview .portal-card {
     min-height: 370px;
   }
-}
 
+}
 
 /* =========================================
    PORTALE – INDIVIDUELLE FARBVERLÄUFE
    ========================================= */
 
 .portal-overview .portal-card {
-  background:
-    linear-gradient(
+  background: linear-gradient(
       145deg,
       var(--portal-glow-strong) -80%,
       transparent 75%
@@ -2995,16 +2864,13 @@ body::before {
 /* Farbverlauf über der Bildebene,
    aber hinter Text und Buttons */
 
-
 .portal-overview .portal-card::before {
   content: "";
   position: absolute;
   inset: 0;
   z-index: -1;
   pointer-events: none;
-
-  background:
-    /* Dunkle Ecke oben rechts */
+  background: /* Dunkle Ecke oben rechts */
     radial-gradient(
       ellipse at 95% 5%,
       rgba(1, 5, 12, 0.65) 0%,
@@ -3033,7 +2899,6 @@ body::before {
       rgba(2, 6, 12, 0.55) 100%
     );
 }
-
 
 /* Individuelle, kräftigere Farben */
 
@@ -3080,7 +2945,6 @@ body::before {
   z-index: 2;
 }
 
-
 /* =========================================
    PORTALE – GESAMTE KACHEL KLICKBAR
    ========================================= */
@@ -3115,19 +2979,21 @@ body::before {
 
 /* =====================================================
    RICHWIN DESIGN – MEGA-MENÜ
-   DIESEN BLOCK GANZ UNTEN an style.css ANHÄNGEN
+   Zentrale Navigation
    ===================================================== */
 
 .site-header {
   z-index: 1000;
   overflow: visible;
 }
+
 .main-nav .mega-trigger {
   display: inline-flex;
   align-items: center;
   gap: 7px;
   white-space: nowrap;
 }
+
 .main-nav .mega-chevron {
   color: #82bdd8;
   font-size: 17px;
@@ -3135,8 +3001,15 @@ body::before {
   transform: translateY(-2px);
   transition: transform .2s ease;
 }
-.main-nav .mega-hovered .mega-chevron { transform: translateY(-2px) rotate(180deg); }
-.main-nav a.mega-hovered { color: #fff; }
+
+.main-nav .mega-hovered .mega-chevron {
+  transform: translateY(-2px) rotate(180deg);
+}
+
+.main-nav a.mega-hovered {
+  color: #fff;
+}
+
 .main-nav a.mega-hovered::after {
   content: "";
   position: absolute;
@@ -3149,7 +3022,10 @@ body::before {
   transform: translateX(-50%);
 }
 
-.mega-menu-panel[hidden] { display: none !important; }
+.mega-menu-panel[hidden] {
+  display: none !important;
+}
+
 .mega-menu-panel {
   position: absolute;
   z-index: 1100;
@@ -3168,16 +3044,39 @@ body::before {
   backdrop-filter: blur(18px);
   color: #fff;
 }
-.mega-menu-panel[data-menu="genealogie"] { grid-template-columns: minmax(0, 1.4fr) minmax(230px, .8fr); max-width: 700px; }
-.mega-menu-panel[data-menu="kontakt"] { display: block; max-width: 310px; left: auto; right: max(24px, calc((100vw - 1200px) / 2 + 175px)); transform: none; }
-.mega-column { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
-.mega-column + .mega-column { border-left: 1px solid rgba(111,182,217,.25); padding-left: 24px; }
+
+.mega-menu-panel[data-menu="genealogie"] {
+  grid-template-columns: minmax(0, 1.4fr) minmax(230px, .8fr);
+  max-width: 700px;
+}
+
+.mega-menu-panel[data-menu="kontakt"] {
+  display: block;
+  max-width: 310px;
+  left: auto;
+  right: max(24px, calc((100vw - 1200px) / 2 + 175px));
+  transform: none;
+}
+
+.mega-column {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.mega-column + .mega-column {
+  border-left: 1px solid rgba(111,182,217,.25);
+  padding-left: 24px;
+}
+
 .mega-heading {
   margin: 0 0 8px;
   color: #f1f8fc;
   font-size: 14px;
   font-weight: 700;
 }
+
 .mega-link {
   min-height: 34px;
   display: flex;
@@ -3191,23 +3090,50 @@ body::before {
   text-decoration: none;
   transition: background .18s ease, color .18s ease;
 }
-.mega-link-icon { width: 17px; flex: 0 0 17px; color: #7cb9d3; text-align: center; font-size: 16px; }
+
+.mega-link-icon {
+  width: 17px;
+  flex: 0 0 17px;
+  color: #7cb9d3;
+  text-align: center;
+  font-size: 16px;
+}
+
 a.mega-link:hover,
 a.mega-link:focus-visible {
   background: linear-gradient(90deg, rgba(67,139,177,.25), rgba(67,139,177,.07));
   color: #fff;
   outline: 1px solid rgba(111,182,217,.35);
 }
-.mega-link-pending { opacity: .52; cursor: default; }
-.mega-link-pending small { margin-left: auto; font-size: 10px; opacity: .75; }
+
+.mega-link-pending {
+  opacity: .52;
+  cursor: default;
+}
+
+.mega-link-pending small {
+  margin-left: auto;
+  font-size: 10px;
+  opacity: .75;
+}
+
 .mega-group-title {
   margin: 10px 0 1px;
   color: #fff;
   font-size: 13px;
   font-weight: 700;
 }
-.mega-genealogy-group .mega-link { padding-left: 16px; min-height: 27px; font-size: 12px; }
-.mega-genealogy-group .mega-link-icon { font-size: 12px; }
+
+.mega-genealogy-group .mega-link {
+  padding-left: 16px;
+  min-height: 27px;
+  font-size: 12px;
+}
+
+.mega-genealogy-group .mega-link-icon {
+  font-size: 12px;
+}
+
 .mega-preview {
   position: relative;
   display: flex;
@@ -3216,6 +3142,7 @@ a.mega-link:focus-visible {
   color: #fff;
   text-decoration: none;
 }
+
 .mega-preview img {
   display: block;
   width: 100%;
@@ -3226,24 +3153,81 @@ a.mega-link:focus-visible {
   border-radius: 8px;
   background: #0e1924;
 }
-.mega-preview strong { font-size: 15px; }
-.mega-preview > span { color: #c4d4dd; font-size: 12px; line-height: 1.5; padding-right: 22px; }
-.mega-preview b { position: absolute; right: 0; bottom: 0; color: #93d5ed; font-size: 23px; font-weight: 400; }
-.mega-preview:hover strong { color: #9ed7ef; }
+
+.mega-preview strong {
+  font-size: 15px;
+}
+
+.mega-preview > span {
+  color: #c4d4dd;
+  font-size: 12px;
+  line-height: 1.5;
+  padding-right: 22px;
+}
+
+.mega-preview b {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  color: #93d5ed;
+  font-size: 23px;
+  font-weight: 400;
+}
+
+.mega-preview:hover strong {
+  color: #9ed7ef;
+}
 
 /* Tablet und Smartphone: Menü wird unter dem Header umgebrochen. */
+
 @media (max-width: 950px) {
-  .header-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 9px 18px; padding: 12px 20px; }
-  .header-logo { flex: 0 0 auto; }
-  .main-nav { order: 3; width: 100%; justify-content: center; flex-wrap: wrap; gap: 15px 22px; }
-  .main-nav a { padding: 10px 0 12px; font-size: 13px; }
+  .header-inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 9px 18px;
+    padding: 12px 20px;
+  }
+
+  .header-logo {
+    flex: 0 0 auto;
+  }
+
+  .main-nav {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px 22px;
+  }
+
+  .main-nav a {
+    padding: 10px 0 12px;
+    font-size: 13px;
+  }
+
   .main-nav a.active::after,
   .main-nav a:hover::after,
-  .main-nav a.mega-hovered::after { bottom: 5px; }
-  .social-links { margin-left: auto; }
-  .mega-menu-panel { width: calc(100vw - 24px); padding: 18px; gap: 16px; }
-  .mega-column + .mega-column { padding-left: 16px; }
+  .main-nav a.mega-hovered::after {
+    bottom: 5px;
+  }
+
+  .social-links {
+    margin-left: auto;
+  }
+
+  .mega-menu-panel {
+    width: calc(100vw - 24px);
+    padding: 18px;
+    gap: 16px;
+  }
+
+  .mega-column + .mega-column {
+    padding-left: 16px;
+  }
+
 }
+
 @media (max-width: 620px) {
   .mega-menu-panel,
   .mega-menu-panel[data-menu="genealogie"] {
@@ -3252,14 +3236,30 @@ a.mega-link:focus-visible {
     max-height: 70vh;
     overflow-y: auto;
   }
+
   .mega-menu-panel[data-menu="kontakt"] {
     width: min(320px, calc(100vw - 24px));
     right: 12px;
   }
-  .mega-column + .mega-column { border-left: 0; border-top: 1px solid rgba(111,182,217,.25); padding: 14px 0 0; }
-  .mega-preview img { height: 120px; }
-  .main-nav { gap: 4px 14px; }
-  .main-nav a { font-size: 12px; }
+
+  .mega-column + .mega-column {
+    border-left: 0;
+    border-top: 1px solid rgba(111,182,217,.25);
+    padding: 14px 0 0;
+  }
+
+  .mega-preview img {
+    height: 120px;
+  }
+
+  .main-nav {
+    gap: 4px 14px;
+  }
+
+  .main-nav a {
+    font-size: 12px;
+  }
+
 }
 
 /* =========================================
@@ -3355,9 +3355,7 @@ a.mega-link:focus-visible {
   width: min(800px, calc(100vw - 32px));
   padding: 16px 18px;
   gap: 12px;
-
-  grid-template-columns:
-    minmax(0, 1fr)
+  grid-template-columns: minmax(0, 1fr)
     minmax(0, 1fr)
     minmax(0, 1.05fr);
 }
@@ -3381,11 +3379,9 @@ a.mega-link:focus-visible {
   min-height: 26px;
   padding: 3px 6px;
   gap: 8px;
-
   font-size: 14px;
   font-weight: 400;
   line-height: 1.25;
-
   color: #dce8ee;
 }
 
@@ -3421,8 +3417,7 @@ a.mega-link:focus-visible {
 .mega-menu-panel[data-menu="genealogie"] {
   width: min(620px, calc(100vw - 32px));
   max-width: 620px;
-  grid-template-columns:
-    minmax(0, 1.35fr)
+  grid-template-columns: minmax(0, 1.35fr)
     minmax(0, 0.85fr);
   gap: 12px;
 }
@@ -3469,6 +3464,7 @@ a.mega-link:focus-visible {
   .mega-column + .mega-column {
     padding-left: 10px;
   }
+
 }
 
 /* Smartphone */
@@ -3484,6 +3480,7 @@ a.mega-link:focus-visible {
   .mega-column + .mega-column {
     padding: 10px 0 0;
   }
+
 }
 
 /* =========================================
@@ -3491,8 +3488,8 @@ a.mega-link:focus-visible {
    ========================================= */
 
 @media (min-width: 951px) {
-
   /* Gesamtmenü schmaler */
+
   .mega-menu-panel {
     width: min(650px, calc(100vw - 32px));
     grid-template-columns: 1fr 1fr 1.05fr;
@@ -3501,11 +3498,13 @@ a.mega-link:focus-visible {
   }
 
   /* Abstand an den Trennlinien reduzieren */
+
   .mega-column + .mega-column {
     padding-left: 7px;
   }
 
   /* Genealogie ebenfalls schmaler */
+
   .mega-menu-panel[data-menu="genealogie"] {
     width: min(510px, calc(100vw - 32px));
     max-width: 510px;
@@ -3514,11 +3513,14 @@ a.mega-link:focus-visible {
   }
 
   /* Kontakt behält seine kompakte Breite */
+
   .mega-menu-panel[data-menu="kontakt"] {
     width: 270px;
     max-width: 270px;
   }
+
 }
+
 /* Einleitungsbereiche – Hintergrund wie Genealogie */
 
 .intro-section,
@@ -3536,7 +3538,6 @@ a.mega-link:focus-visible {
 
 .photo-compare {
   --split: 50%;
-
   position: relative;
   width: 100%;
   aspect-ratio: 1386 / 962;
@@ -3568,7 +3569,6 @@ a.mega-link:focus-visible {
   position: absolute;
   inset: 0;
   z-index: 1;
-
   clip-path: inset(0 0 0 var(--split));
 }
 
@@ -3595,27 +3595,21 @@ a.mega-link:focus-visible {
 
 .photo-compare-line::after {
   content: "‹ ›";
-
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   width: 36px;
   height: 36px;
-
   border-radius: 50%;
   background: #fff;
   color: #111;
-
   font-size: 20px;
   font-weight: 700;
   white-space: nowrap;
-
   box-shadow: 0 3px 12px rgba(0,0,0,.25);
 }
 
@@ -3625,11 +3619,9 @@ a.mega-link:focus-visible {
   position: absolute;
   inset: 0;
   z-index: 5;
-
   width: 100%;
   height: 100%;
   margin: 0;
-
   opacity: 0;
   cursor: ew-resize;
   touch-action: pan-y;
@@ -3668,6 +3660,7 @@ a.mega-link:focus-visible {
   .photo-project-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
 }
 
 /* Smartphone */
@@ -3681,6 +3674,7 @@ a.mega-link:focus-visible {
     height: auto;
     aspect-ratio: 4 / 3;
   }
+
 }
 
 /* =========================================
@@ -3699,41 +3693,31 @@ a.mega-link:focus-visible {
 .genealogy-card {
   min-height: 285px;
   padding: 30px 24px 25px;
-
-  background:
-    radial-gradient(
+  background: radial-gradient(
       ellipse at 20% 10%,
       rgba(215,155,69,.18),
       transparent 72%
     ),
     linear-gradient(150deg, #111b25, #050a10 95%);
-
   border: 1px solid var(--genealogy-border);
   border-radius: 14px;
   overflow: hidden;
-
   box-shadow: 0 12px 30px rgba(0,0,0,.2);
-
-  transition:
-    transform .3s ease,
+  transition: transform .3s ease,
     border-color .3s ease,
     box-shadow .3s ease;
 }
 
 .genealogy-card:hover {
-  background:
-    radial-gradient(
+  background: radial-gradient(
       ellipse at 20% 10%,
       rgba(215,155,69,.24),
       transparent 72%
     ),
     linear-gradient(150deg, #111b25, #050a10 95%);
-
   transform: translateY(-4px);
   border-color: #d79b45;
-
-  box-shadow:
-    0 16px 35px rgba(0,0,0,.35),
+  box-shadow: 0 16px 35px rgba(0,0,0,.35),
     0 0 22px rgba(215,155,69,.13);
 }
 
@@ -3777,20 +3761,15 @@ a.mega-link:focus-visible {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
   margin-top: auto;
   padding: 9px 14px;
-
   border: 1px solid rgba(111,182,217,.5);
   border-radius: 8px;
-
   color: #fff;
   background: transparent;
-
   font-size: 12px;
   font-weight: 500;
   text-decoration: none;
-
   transition: .25s ease;
 }
 
@@ -3806,36 +3785,28 @@ a.mega-link:focus-visible {
 
 .genealogy-line-card {
   min-height: 340px;
-
-  background:
-    radial-gradient(
+  background: radial-gradient(
       ellipse at 50% 10%,
       rgba(215,155,69,.15),
       transparent 73%
     ),
     linear-gradient(160deg, #101923, #050a10 95%);
-
   border: 1px solid var(--genealogy-border);
   border-radius: 14px;
   overflow: hidden;
-
   box-shadow: 0 12px 30px rgba(0,0,0,.2);
-
-  transition:
-    transform .3s ease,
+  transition: transform .3s ease,
     border-color .3s ease,
     box-shadow .3s ease;
 }
 
 .genealogy-line-card:hover {
-  background:
-    radial-gradient(
+  background: radial-gradient(
       ellipse at 50% 10%,
       rgba(215,155,69,.22),
       transparent 73%
     ),
     linear-gradient(160deg, #101923, #050a10 95%);
-
   transform: translateY(-4px);
   border-color: #d79b45;
   box-shadow: 0 0 24px rgba(215,155,69,.12);
@@ -3859,15 +3830,12 @@ a.mega-link:focus-visible {
   width: auto;
   margin: auto 20px 22px;
   padding: 10px 14px;
-
   border: 1px solid rgba(111,182,217,.5);
   border-radius: 8px;
-
   background: transparent;
   color: #fff;
   text-decoration: none;
   font-size: 12px;
-
   transition: .25s ease;
 }
 
@@ -3912,4 +3880,5 @@ body:has(.genealogy-page) footer {
   .genealogy-line-link {
     margin: auto 20px 20px;
   }
+
 }
