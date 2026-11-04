@@ -165,7 +165,7 @@ min-height: 0;
   flex-direction: column;
   align-items: flex-start;
 
-  padding: 8px 20px 20px;
+  padding: 8px 20px 16px;
 }
 
 .merch-card h2 {
@@ -290,7 +290,7 @@ margin-top: 12px;
   }
 
   .merch-card {
-    min-height: 350px;
+    min-height: 0px;
   }
 
   .merch-card-image-link {
