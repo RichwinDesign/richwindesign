@@ -4410,3 +4410,34 @@ body:has(.genealogy-page) footer {
   cursor: default;
 }
 
+
+/* =========================================
+   PORTALE & GENEALOGIE – TEXT ABDUNKLUNG
+   ========================================= */
+
+.portfolio-wide-text {
+  position: relative;
+  z-index: 2;
+  isolation: isolate;
+}
+
+/* Dezente schwarze Fläche hinter dem Text */
+.portfolio-wide-text::before {
+  content: "";
+  position: absolute;
+
+  top: -25px;
+  bottom: -25px;
+  left: -40px;
+  right: -35px;
+
+  z-index: -1;
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.20) 0%,
+    rgba(0, 0, 0, 0.15) 55%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
