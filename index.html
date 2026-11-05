@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="de">
 
@@ -16,9 +17,9 @@
     <div class="site-intro-name">RichwinDesign</div>
   </div>
 
+  <!-- ZENTRALE NAVIGATION -->
 
-<div id="site-header"></div>
-
+  <div id="site-header"></div>
 
   <main>
 
@@ -35,8 +36,8 @@
           </p>
 
           <h1>
-  Ich bin <span>Bianca Richwin</span>
-</h1>
+            Ich bin <span>Bianca Richwin</span>
+          </h1>
 
           <p>
             Ich arbeite an der Schnittstelle von Gestaltung, Technik und Recherche.
@@ -70,63 +71,54 @@
 
     <!-- PORTFOLIO -->
 
-    <section
-      class="portfolio-overview"
-      id="portfolio"
-    >
+    <section class="portfolio-overview" id="portfolio">
 
-      <!-- 4 KACHELN -->
+      <!-- VIER PORTFOLIO-KACHELN -->
 
       <div class="portfolio-grid">
 
-
         <!-- MOTION & VISUALS -->
 
-        
-<!-- MOTION & VISUALS -->
+        <article class="portfolio-card motion-banner">
 
-<article class="portfolio-card motion-banner">
+          <video
+            class="motion-card-video"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            aria-hidden="true"
+          >
+            <source
+              src="images/general/ezgif-63e5835f813aed5e.webm"
+              type="video/webm"
+            >
+          </video>
 
-  <!-- Animierter Videohintergrund -->
-  <video
-    class="motion-card-video"
-    autoplay
-    muted
-    loop
-    playsinline
-    preload="metadata"
-    aria-hidden="true"
-  >
-    <source
-      src="images/general/ezgif-63e5835f813aed5e.webm"
-      type="video/webm"
-    >
-  </video>
+          <div class="portfolio-card-content">
 
-  <div class="portfolio-card-content">
+            <h2>
+              <a href="portfolio/motion-visuals.html">
+                Motion & Visuals
+              </a>
+            </h2>
 
-    <h2>
-      <a href="portfolio/motion-visuals.html">
-        Motion & Visuals
-      </a>
-    </h2>
+            <p>
+              Animationen, Bewegtbild und visuelle Kampagnen.
+            </p>
 
-    <p>
-      Animationen, Bewegtbild und visuelle Kampagnen.
-    </p>
+            <a
+              class="portfolio-card-button"
+              href="portfolio/motion-visuals.html"
+              aria-label="Motion & Visuals öffnen"
+            >
+              Ansehen <span aria-hidden="true">›</span>
+            </a>
 
-    <a
-      class="portfolio-card-button"
-      href="portfolio/motion-visuals.html"
-      aria-label="Motion & Visuals öffnen"
-    >
-      →
-    </a>
+          </div>
 
-  </div>
-
-</article>
-
+        </article>
 
 
         <!-- PRINT MEDIEN -->
@@ -150,10 +142,21 @@
               href="portfolio/print-medien.html"
               aria-label="Print Medien öffnen"
             >
-              →
+              Ansehen <span aria-hidden="true">›</span>
             </a>
 
           </div>
+
+          <button
+            class="ai-label portfolio-card-ai"
+            type="button"
+            aria-label="Hinweis: KI-generiertes Bild"
+          >
+            <img
+              src="images/icons/icon_ki-hinweis.png"
+              alt=""
+            >
+          </button>
 
         </article>
 
@@ -179,10 +182,21 @@
               href="portfolio/landing-pages.html"
               aria-label="Landing Pages öffnen"
             >
-              →
+              Ansehen <span aria-hidden="true">›</span>
             </a>
 
           </div>
+
+          <button
+            class="ai-label portfolio-card-ai"
+            type="button"
+            aria-label="Hinweis: KI-generiertes Bild"
+          >
+            <img
+              src="images/icons/icon_ki-hinweis.png"
+              alt=""
+            >
+          </button>
 
         </article>
 
@@ -208,7 +222,7 @@
               href="portfolio/fotografie.html"
               aria-label="Fotografie öffnen"
             >
-              →
+              Ansehen <span aria-hidden="true">›</span>
             </a>
 
           </div>
@@ -232,7 +246,6 @@
       <!-- BREITE BANNER -->
 
       <div class="portfolio-wide-stack">
-
 
         <!-- PORTALE -->
 
@@ -262,15 +275,18 @@
               href="portale.html"
               aria-label="Portale öffnen"
             >
-              →
+              Entdecken <span aria-hidden="true">›</span>
             </a>
 
           </div>
 
+          <!-- NUR DAS HERO-BILD IST KI-GENERIERT -->
+
           <button
             class="ai-label portfolio-wide-ai"
             type="button"
-            aria-label="Hinweis: KI-generiertes Bild"
+            aria-label="KI-Hinweis zum Hero-Bild der Portale"
+            data-ai-message="Nur das Hero-Bild dieser Sektion wurde mithilfe generativer KI gestaltet. Die ursprünglichen Holzboxen sind echte, von Hand bemalte Unikate und wurden nicht mit KI erstellt."
           >
             <img
               src="images/icons/icon_ki-hinweis.png"
@@ -306,7 +322,7 @@
               href="genealogie.html"
               aria-label="Genealogie öffnen"
             >
-              →
+              Entdecken <span aria-hidden="true">›</span>
             </a>
 
           </div>
@@ -367,6 +383,8 @@
 
   </div>
 
+
+  <!-- JAVASCRIPT -->
 
   <script src="script.js"></script>
 
