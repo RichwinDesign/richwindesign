@@ -4074,3 +4074,138 @@ body:has(.genealogy-page) footer {
     flex-shrink: 0;
   }
 }
+
+
+/* =========================================
+   STARTSEITE – PORTFOLIO-KACHELN
+   ========================================= */
+
+/* Größere Schrift, linksbündig */
+.portfolio-card-content {
+  padding: 24px;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.portfolio-card-content h2 {
+  font-size: 27px;
+  line-height: 1.15;
+  margin-bottom: 12px;
+}
+
+.portfolio-card-content p {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  max-width: 240px;
+}
+
+/* Breite Banner: Texte */
+.portfolio-wide-text {
+  width: min(420px, 48%);
+  text-align: left;
+}
+
+.portfolio-wide-text h2 {
+  font-size: 36px;
+  line-height: 1.15;
+}
+
+.portfolio-wide-text p {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* Buttons im Portal-Stil */
+.portfolio-card-button,
+.portfolio-wide-button {
+  flex: 0 0 auto;
+  width: auto;
+  min-width: 0;
+  height: 38px;
+  padding: 9px 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border: 1px solid rgba(111, 182, 217, 0.5);
+  border-radius: 8px;
+  background: transparent;
+  color: #fff;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition:
+    background .25s ease,
+    border-color .25s ease,
+    box-shadow .25s ease,
+    transform .25s ease;
+}
+
+.portfolio-card-button span,
+.portfolio-wide-button span {
+  color: #85c9e5;
+  font-size: 23px;
+  font-weight: 300;
+  line-height: .7;
+}
+
+.portfolio-card-button:hover,
+.portfolio-wide-button:hover {
+  background: rgba(111, 182, 217, .13);
+  border-color: #85c9e5;
+  color: #fff;
+  box-shadow: 0 0 16px rgba(111, 182, 217, .15);
+  transform: translateY(-2px);
+}
+
+/* KI-Icons neben den Buttons der kleinen Kacheln */
+.ai-label.portfolio-card-ai {
+  left: 134px;
+  right: auto;
+  top: auto;
+  bottom: 28px;
+  z-index: 5;
+}
+
+/* Breite Banner: Button und KI-Icon */
+.portfolio-wide-button {
+  margin-right: 44px;
+}
+
+.ai-label.portfolio-wide-ai {
+  left: auto;
+  right: 36px;
+  top: 50%;
+  bottom: auto;
+  transform: translateY(-50%);
+  z-index: 5;
+}
+
+/* Smartphone */
+@media (max-width: 700px) {
+  .portfolio-card-content h2 {
+    font-size: 25px;
+  }
+
+  .portfolio-wide-text {
+    width: min(100%, 420px);
+  }
+
+  .portfolio-wide-text h2 {
+    font-size: 30px;
+  }
+
+  .portfolio-wide-text p {
+    font-size: 14px;
+  }
+
+  .portfolio-wide-button {
+    margin-right: 38px;
+  }
+
+  .ai-label.portfolio-wide-ai {
+    right: 14px;
+  }
+}
