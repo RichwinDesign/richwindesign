@@ -772,9 +772,11 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelector("main");
     }
 
-    if (activePage === "kontakt") {
-      targetContainer = document.querySelector(".contact-heading");
-    }
+   if (activePage === "kontakt") {
+  targetContainer =
+    document.querySelector(".contact-heading") ||
+    document.querySelector(".legal-heading");
+}
 
     if (targetContainer) {
 
