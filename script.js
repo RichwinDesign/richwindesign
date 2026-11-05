@@ -637,7 +637,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="mega-heading">Kontakt &amp; Rechtliches</div>
         ${item("Kontakt", "kontakt/kontakt.html", "✉")}
         ${item("Impressum", "kontakt/impressum.html", "§")}
-        ${item("Datenschutzerklärung", null, "§")}
+        ${item("Datenschutzerklärung", "kontakt/datenschutz.html", "§")}
       </div>
     `
   };
