@@ -4469,3 +4469,38 @@ body:has(.genealogy-page) footer {
     transform: none;
   }
 }
+
+/* =========================================
+   STARTSEITE – INTRO OHNE PORTRÄT
+   Text nur über den ersten zwei Kacheln
+   ========================================= */
+
+.intro-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  align-items: start;
+  min-height: 0;
+  padding-top: 55px;
+  padding-bottom: 70px;
+}
+
+.intro-text {
+  grid-column: 1;
+  width: 100%;
+  max-width: none;
+}
+
+.intro-image {
+  display: none;
+}
+
+/* Smartphone: Text nutzt volle Breite */
+
+@media (max-width: 700px) {
+  .intro-inner {
+    grid-template-columns: 1fr;
+    padding-top: 40px;
+    padding-bottom: 55px;
+  }
+}
