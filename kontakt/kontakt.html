@@ -1,1 +1,227 @@
 
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+    content="Kontakt zu Richwin Design – Anfragen zu Mediengestaltung, Print- und Digitaldesign sowie kreativen Projekten.">
+
+  <title>Kontakt | Richwin Design</title>
+
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="kontakt.css">
+</head>
+
+<body>
+
+  <!-- ZENTRALE NAVIGATION -->
+
+  <div id="site-header"></div>
+
+
+  <!-- KONTAKTSEITE -->
+
+  <main class="contact-page">
+
+    <section class="contact-section">
+
+      <!-- SEITENÜBERSCHRIFT -->
+
+      <div class="contact-heading">
+
+        <p class="contact-eyebrow">
+          RICHWIN DESIGN · KONTAKT
+        </p>
+
+        <h1>
+          Kontakt<span>.</span>
+        </h1>
+
+        <p>
+          Du hast ein Projekt im Kopf oder möchtest dich
+          über eine Zusammenarbeit austauschen?
+        </p>
+
+      </div>
+
+
+      <!-- ZWEISPALTIGES LAYOUT -->
+
+      <div class="contact-grid">
+
+        <!-- LINKE SPALTE -->
+
+        <div class="contact-information">
+
+          <h2>
+            Lass uns sprechen.
+          </h2>
+
+          <p>
+            Ob Print, Digitaldesign oder individuelle
+            Gestaltung – ich freue mich über deine Nachricht.
+          </p>
+
+          <div class="contact-divider"></div>
+
+          <div class="contact-methods">
+
+            <div class="contact-method">
+
+              <div class="contact-method-icon">
+                ✉
+              </div>
+
+              <div>
+                <h3>E-Mail</h3>
+                <p>Für Projektanfragen und Zusammenarbeit.</p>
+              </div>
+
+            </div>
+
+
+            <div class="contact-method">
+
+              <div class="contact-method-icon">
+                in
+              </div>
+
+              <div>
+                <h3>LinkedIn</h3>
+                <p>Beruflicher Austausch und Vernetzung.</p>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- RECHTE SPALTE -->
+
+        <div class="contact-form-card">
+
+          <h2>
+            Nachricht senden
+          </h2>
+
+          <p class="contact-form-intro">
+            Schreib mir gern eine Nachricht.
+          </p>
+
+          <!-- Formularversand wird später eingerichtet -->
+
+          <form class="contact-form" id="contactForm">
+
+            <div class="contact-field">
+
+              <label for="contactName">
+                Dein Name
+              </label>
+
+              <input
+                type="text"
+                id="contactName"
+                name="name"
+                placeholder="Vor- und Nachname"
+                autocomplete="name"
+                required
+              >
+
+            </div>
+
+
+            <div class="contact-field">
+
+              <label for="contactEmail">
+                Deine E-Mail-Adresse
+              </label>
+
+              <input
+                type="email"
+                id="contactEmail"
+                name="email"
+                placeholder="name@beispiel.de"
+                autocomplete="email"
+                required
+              >
+
+            </div>
+
+
+            <div class="contact-field">
+
+              <label for="contactSubject">
+                Betreff
+              </label>
+
+              <input
+                type="text"
+                id="contactSubject"
+                name="subject"
+                placeholder="Worum geht es?"
+                required
+              >
+
+            </div>
+
+
+            <div class="contact-field">
+
+              <label for="contactMessage">
+                Deine Nachricht
+              </label>
+
+              <textarea
+                id="contactMessage"
+                name="message"
+                placeholder="Erzähl mir von deinem Anliegen ..."
+                rows="6"
+                required
+              ></textarea>
+
+            </div>
+
+
+            <p class="contact-privacy">
+              Bitte sende keine vertraulichen oder
+              sensiblen Informationen über dieses Formular.
+            </p>
+
+            <button
+              class="contact-submit"
+              type="submit"
+              disabled
+              title="Der Nachrichtenversand wird noch eingerichtet"
+            >
+              Nachricht senden
+              <span aria-hidden="true">›</span>
+            </button>
+
+            <p class="contact-form-status">
+              Der Nachrichtenversand wird noch eingerichtet.
+            </p>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- ZENTRALES JAVASCRIPT -->
+
+  <script src="../script.js"></script>
+
+</body>
+
+</html>
+
