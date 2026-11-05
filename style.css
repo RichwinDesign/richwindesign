@@ -4076,66 +4076,132 @@ body:has(.genealogy-page) footer {
 }
 
 
+
 /* =========================================
-   STARTSEITE – PORTFOLIO-KACHELN
+   STARTSEITE – KACHELN FINAL
    ========================================= */
 
-/* Größere Schrift, linksbündig */
+/* VIER KLEINE KACHELN */
+
+/* Text oben links, Button unten links */
 .portfolio-card-content {
-  padding: 24px;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: flex-start;
+  height: 100%;
+  padding: 24px;
   text-align: left;
 }
 
 .portfolio-card-content h2 {
+  margin: 0 0 12px;
   font-size: 27px;
   line-height: 1.15;
-  margin-bottom: 12px;
 }
 
 .portfolio-card-content p {
+  max-width: 240px;
+  margin: 0;
   font-size: 14px;
   line-height: 1.6;
-  margin-bottom: 20px;
-  max-width: 240px;
 }
 
-/* Breite Banner: Texte */
+/* Button am unteren linken Rand */
+.portfolio-card-button {
+  margin-top: auto;
+}
+
+/* KI-Icons ganz unten rechts */
+.ai-label.portfolio-card-ai {
+  position: absolute;
+  left: auto;
+  right: 20px;
+  top: auto;
+  bottom: 24px;
+  z-index: 5;
+  transform: none;
+}
+
+
+/* =========================================
+   BREITE BANNER – PORTALE & GENEALOGIE
+   ========================================= */
+
+/* Text links, Button rechts */
+.portfolio-wide-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  width: 100%;
+  min-height: 250px;
+  padding: 36px 40px;
+}
+
 .portfolio-wide-text {
-  width: min(420px, 48%);
+  width: min(400px, 45%);
+  margin: 0;
   text-align: left;
 }
 
 .portfolio-wide-text h2 {
+  margin: 0 0 12px;
   font-size: 36px;
   line-height: 1.15;
 }
 
 .portfolio-wide-text p {
+  margin: 0;
   font-size: 15px;
   line-height: 1.6;
 }
 
-/* Buttons im Portal-Stil */
+/* Button rechts */
+.portfolio-wide-button {
+  margin: 0;
+  flex-shrink: 0;
+}
+
+/* KI-Icon unten rechts */
+.ai-label.portfolio-wide-ai {
+  position: absolute;
+  left: auto;
+  right: 22px;
+  top: auto;
+  bottom: 20px;
+  z-index: 5;
+  transform: none;
+}
+
+
+/* =========================================
+   BUTTONS – WIE AUF DER PORTAL-SEITE
+   ========================================= */
+
 .portfolio-card-button,
 .portfolio-wide-button {
-  flex: 0 0 auto;
-  width: auto;
-  min-width: 0;
-  height: 38px;
-  padding: 9px 14px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 12px;
-  border: 1px solid rgba(111, 182, 217, 0.5);
+  flex: 0 0 auto;
+  width: fit-content;
+  min-width: 0;
+  height: 38px;
+  padding: 9px 14px;
+  border: 1px solid rgba(111, 182, 217, .5);
   border-radius: 8px;
   background: transparent;
   color: #fff;
-  text-decoration: none;
   font-size: 12px;
   font-weight: 500;
   white-space: nowrap;
+  text-decoration: none;
   transition:
     background .25s ease,
     border-color .25s ease,
@@ -4143,6 +4209,12 @@ body:has(.genealogy-page) footer {
     transform .25s ease;
 }
 
+/* Kleinen Button unten halten */
+.portfolio-card-button {
+  margin-top: auto;
+}
+
+/* Pfeile */
 .portfolio-card-button span,
 .portfolio-wide-button span {
   color: #85c9e5;
@@ -4151,6 +4223,7 @@ body:has(.genealogy-page) footer {
   line-height: .7;
 }
 
+/* Hover */
 .portfolio-card-button:hover,
 .portfolio-wide-button:hover {
   background: rgba(111, 182, 217, .13);
@@ -4160,33 +4233,35 @@ body:has(.genealogy-page) footer {
   transform: translateY(-2px);
 }
 
-/* KI-Icons neben den Buttons der kleinen Kacheln */
-.ai-label.portfolio-card-ai {
-  left: 134px;
-  right: auto;
-  top: auto;
-  bottom: 28px;
-  z-index: 5;
-}
 
-/* Breite Banner: Button und KI-Icon */
-.portfolio-wide-button {
-  margin-right: 44px;
-}
+/* =========================================
+   MOBILE ANPASSUNGEN
+   ========================================= */
 
-.ai-label.portfolio-wide-ai {
-  left: auto;
-  right: 36px;
-  top: 50%;
-  bottom: auto;
-  transform: translateY(-50%);
-  z-index: 5;
-}
-
-/* Smartphone */
 @media (max-width: 700px) {
+
+  .portfolio-card-content {
+    padding: 22px;
+  }
+
   .portfolio-card-content h2 {
     font-size: 25px;
+  }
+
+  .portfolio-card-content p {
+    font-size: 14px;
+  }
+
+  .ai-label.portfolio-card-ai {
+    right: 20px;
+    bottom: 22px;
+  }
+
+  .portfolio-wide-content {
+    min-height: 330px;
+    padding: 30px 24px;
+    align-items: flex-end;
+    gap: 16px;
   }
 
   .portfolio-wide-text {
@@ -4202,10 +4277,11 @@ body:has(.genealogy-page) footer {
   }
 
   .portfolio-wide-button {
-    margin-right: 38px;
+    margin-bottom: 34px;
   }
 
   .ai-label.portfolio-wide-ai {
-    right: 14px;
+    right: 20px;
+    bottom: 16px;
   }
 }
