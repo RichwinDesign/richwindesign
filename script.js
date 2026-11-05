@@ -2,7 +2,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   /* =========================================
-     RICHWIN DESIGN – KI-HINWEISE
+     KI-HINWEISE
      ========================================= */
 
   const aiButtons = document.querySelectorAll(".ai-label");
@@ -41,10 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
     aiModalBackdrop.addEventListener("click", closeAiModal);
 
     document.addEventListener("keydown", (event) => {
-      if (
-        event.key === "Escape" &&
-        aiModal.classList.contains("is-open")
-      ) {
+      if (event.key === "Escape" && aiModal.classList.contains("is-open")) {
         closeAiModal();
       }
     });
@@ -56,7 +53,6 @@ document.addEventListener("DOMContentLoaded", () => {
      ========================================= */
 
   document.querySelectorAll("[data-compare]").forEach((compare) => {
-
     const slider = compare.querySelector(".image-compare-slider");
     const overlay = compare.querySelector(".image-compare-overlay");
     const line = compare.querySelector(".image-compare-line");
@@ -71,10 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     updateCompare(slider.value);
-
-    slider.addEventListener("input", () => {
-      updateCompare(slider.value);
-    });
+    slider.addEventListener("input", () => updateCompare(slider.value));
   });
 
 
@@ -95,23 +88,19 @@ document.addEventListener("DOMContentLoaded", () => {
     : new URL("script.js", document.baseURI);
 
   const url = (path) => new URL(path, scriptURL).href;
-
-  const rootURL = new URL("./", scriptURL);
-  const rootPath = rootURL.pathname;
+  const rootPath = new URL("./", scriptURL).pathname;
 
   const currentPath = window.location.pathname;
-
   const relativePath = currentPath.startsWith(rootPath)
     ? currentPath.slice(rootPath.length)
     : currentPath;
 
 
   /* =========================================
-     AKTUELLEN WEBSITE-BEREICH ERKENNEN
+     WEBSITE-BEREICH ERKENNEN
      ========================================= */
 
   function getPageArea(path) {
-
     if (
       path === "portale.html" ||
       path.startsWith("portale/")
@@ -137,19 +126,17 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const activePage = getPageArea(relativePath);
-
   document.body.dataset.page = activePage;
+
+  const homeURL = url("index.html");
+  const aboutURL = url("ueber-mich/ueber-mich.html");
 
 
   /* =========================================
      SICHERE INTERNE RÜCKSPRUNGZIELE
      ========================================= */
 
-  const aboutPageURL = url("ueber-mich/ueber-mich.html");
-  const homeURL = url("index.html");
-
   function getInternalDestination(address) {
-
     if (!address) return null;
 
     try {
@@ -160,6 +147,13 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       if (!destination.pathname.startsWith(rootPath)) {
+        return null;
+      }
+
+      if (
+        destination.pathname === window.location.pathname &&
+        destination.search === window.location.search
+      ) {
         return null;
       }
 
@@ -188,7 +182,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const originKey = "richwindesign-about-origin";
 
   document.addEventListener("click", (event) => {
-
     const link = event.target.closest("a[href]");
 
     if (!link) return;
@@ -196,23 +189,20 @@ document.addEventListener("DOMContentLoaded", () => {
     const destination = new URL(link.href, window.location.href);
 
     if (
-      destination.pathname === new URL(aboutPageURL).pathname &&
+      destination.pathname === new URL(aboutURL).pathname &&
       activePage !== "ueber-mich"
     ) {
       try {
-        sessionStorage.setItem(
-          originKey,
-          window.location.href
-        );
+        sessionStorage.setItem(originKey, window.location.href);
       } catch (error) {
-        // Navigation funktioniert auch ohne Session-Speicher.
+        // Navigation bleibt auch ohne Speicher funktionsfähig.
       }
     }
   });
 
 
   /* =========================================
-     ZURÜCK-LINK BESTIMMEN
+     ZURÜCKZIEL BESTIMMEN
      ========================================= */
 
   function getBackDestination() {
@@ -224,7 +214,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (activePage === "ueber-mich") {
-
       try {
         const remembered = getInternalDestination(
           sessionStorage.getItem(originKey)
@@ -233,32 +222,33 @@ document.addEventListener("DOMContentLoaded", () => {
         if (remembered) {
           return remembered;
         }
-
       } catch (error) {
-        // Fallback auf die Startseite.
+        // Kein gespeicherter Rücksprung.
       }
     }
 
-    if (activePage === "portale") {
+    // Direkter Aufruf einer Portal-Unterseite:
+    // Zur Portalübersicht zurück.
+    if (
+      activePage === "portale" &&
+      relativePath.startsWith("portale/")
+    ) {
       return url("portale.html");
     }
 
-    if (activePage === "genealogie") {
-      return url("genealogie.html");
-    }
-
-    return homeURL;
+    // Ohne bekannte Herkunft keinen falschen
+    // Zurück-Link zur Startseite erzeugen.
+    return null;
   }
 
   const backDestination = getBackDestination();
 
 
   /* =========================================
-     HAUPTMENÜ – LINKS
+     HAUPTNAVIGATION – LINKFUNKTION
      ========================================= */
 
   function navLink(label, target, key) {
-
     const active = activePage === key;
 
     return `
@@ -272,28 +262,16 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
   }
 
-  function backNavLink() {
-
-    return `
-      <a
-        class="nav-back-link"
-        href="${backDestination}"
-        aria-label="Zurück zur vorherigen Seite"
-      >
-        ← Zurück
-      </a>
-    `;
-  }
-
 
   /* =========================================
-     SICHTBARKEIT NACH WEBSITE-BEREICH
+     MENÜ NACH WEBSITE-BEREICH
      ========================================= */
 
   let navigationHTML = "";
 
   if (activePage === "portfolio") {
 
+    // STARTSEITE: ALLES SICHTBAR
     navigationHTML = `
       ${navLink("Portfolio", "index.html#portfolio", "portfolio")}
       ${navLink("Portale", "portale.html", "portale")}
@@ -304,23 +282,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
   } else if (activePage === "portale") {
 
+    // PORTALE: NUR PORTALE UND KONTAKT
     navigationHTML = `
-      ${backNavLink()}
       ${navLink("Portale", "portale.html", "portale")}
       ${navLink("Kontakt", "index.html#kontakt", "kontakt")}
     `;
 
   } else if (activePage === "genealogie") {
 
+    // GENEALOGIE: NUR GENEALOGIE UND KONTAKT
     navigationHTML = `
-      ${backNavLink()}
       ${navLink("Genealogie", "genealogie.html", "genealogie")}
-      ${navLink("Über mich", "ueber-mich/ueber-mich.html", "ueber-mich")}
       ${navLink("Kontakt", "index.html#kontakt", "kontakt")}
     `;
 
   } else if (activePage === "ueber-mich") {
 
+    // ÜBER MICH: NUR ÜBER MICH UND KONTAKT
     navigationHTML = `
       ${navLink("Über mich", "ueber-mich/ueber-mich.html", "ueber-mich")}
       ${navLink("Kontakt", "index.html#kontakt", "kontakt")}
@@ -333,10 +311,8 @@ document.addEventListener("DOMContentLoaded", () => {
      ========================================= */
 
   const header = document.createElement("header");
-
   header.className = "site-header";
 
-  // Das BR-Logo bleibt innerhalb des aktuellen Bereichs.
   let logoDestination = homeURL;
 
   if (activePage === "portale") {
@@ -348,7 +324,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   if (activePage === "ueber-mich") {
-    logoDestination = backDestination;
+    logoDestination = backDestination || aboutURL;
   }
 
   header.innerHTML = `
@@ -379,19 +355,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* =========================================
-     HEADER IN DIE SEITE EINSETZEN
+     HEADER EINSETZEN
      ========================================= */
 
-  const existingHeader = document.querySelector(
-    "header.site-header"
-  );
-
-  const placeholder = document.getElementById(
-    "site-header"
-  );
+  const existingHeader = document.querySelector("header.site-header");
+  const placeholder = document.getElementById("site-header");
 
   if (placeholder) {
-
     placeholder.replaceWith(header);
 
     if (existingHeader) {
@@ -406,8 +376,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.body.insertBefore(
       header,
-      document.querySelector("main") ||
-      document.body.firstChild
+      document.querySelector("main") || document.body.firstChild
     );
   }
 
@@ -418,33 +387,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const mainNav = header.querySelector(".main-nav");
 
-  const item = (label, path, icon = "◇") => {
-
-    if (path) {
-      return `
+  const item = (label, path, icon = "◇") =>
+    path
+      ? `
         <a class="mega-link" href="${url(path)}">
-          <span class="mega-link-icon" aria-hidden="true">
-            ${icon}
-          </span>
+          <span class="mega-link-icon" aria-hidden="true">${icon}</span>
           <span>${label}</span>
         </a>
-      `;
-    }
-
-    return `
-      <span
-        class="mega-link mega-link-pending"
-        aria-disabled="true"
-        title="Seite noch in Arbeit"
-      >
-        <span class="mega-link-icon" aria-hidden="true">
-          ${icon}
+      `
+      : `
+        <span
+          class="mega-link mega-link-pending"
+          aria-disabled="true"
+          title="Seite noch in Arbeit"
+        >
+          <span class="mega-link-icon" aria-hidden="true">${icon}</span>
+          <span>${label}</span>
+          <small>geplant</small>
         </span>
-        <span>${label}</span>
-        <small>geplant</small>
-      </span>
-    `;
-  };
+      `;
 
 
   /* =========================================
@@ -625,13 +586,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let currentMenu = null;
 
-
   function closeMenu() {
-
     currentMenu = null;
     panel.hidden = true;
     panel.innerHTML = "";
-
     header.classList.remove("mega-open");
 
     triggers.forEach((link) => {
@@ -640,9 +598,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-
   function openMenu(name) {
-
     if (!name || !panels[name]) {
       closeMenu();
       return;
@@ -659,7 +615,6 @@ document.addEventListener("DOMContentLoaded", () => {
     header.classList.add("mega-open");
 
     triggers.forEach((link) => {
-
       const active = link.dataset.nav === name;
 
       link.classList.toggle("mega-hovered", active);
@@ -676,42 +631,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const name = link.dataset.nav;
 
-    // Über mich bekommt kein Dropdown.
+    // Über mich hat kein Dropdown.
     if (!name || !panels[name]) {
-
       link.addEventListener("mouseenter", closeMenu);
       link.addEventListener("focus", closeMenu);
-
       return;
     }
 
     link.classList.add("mega-trigger");
-
     link.setAttribute("aria-controls", panel.id);
     link.setAttribute("aria-expanded", "false");
 
-    link.addEventListener("mouseenter", () => {
-      openMenu(name);
-    });
+    link.addEventListener("mouseenter", () => openMenu(name));
+    link.addEventListener("focus", () => openMenu(name));
 
-    link.addEventListener("focus", () => {
-      openMenu(name);
-    });
-
+    // Erster Touch: Menü öffnen.
+    // Zweiter Touch: Link öffnen.
     link.addEventListener("touchstart", (event) => {
-
       if (currentMenu !== name) {
         event.preventDefault();
         openMenu(name);
       }
-
     }, { passive: false });
   });
-
-
-  /* =========================================
-     MEGA-MENÜ – SCHLIESSEN
-     ========================================= */
 
   header.addEventListener("mouseleave", closeMenu);
 
@@ -722,7 +664,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   document.addEventListener("pointerdown", (event) => {
-
     if (!header.contains(event.target)) {
       closeMenu();
     }
@@ -730,31 +671,44 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* =========================================
-     ÜBER MICH – ZURÜCK-BUTTON OBEN LINKS
+     ZURÜCK-BUTTON IM SEITENINHALT
      ========================================= */
 
-  if (activePage === "ueber-mich") {
+  if (activePage !== "portfolio" && backDestination) {
 
-    const heroCopy = document.querySelector(
-      ".about-hero-copy"
-    );
+    let targetContainer = null;
 
-    if (heroCopy) {
+    if (activePage === "ueber-mich") {
+      targetContainer = document.querySelector(".about-hero-copy");
+    }
 
-      const aboutBackLink = document.createElement("a");
+    if (activePage === "genealogie") {
+      targetContainer = document.querySelector(".genealogy-intro");
+    }
 
-      aboutBackLink.className = "about-back-link";
-      aboutBackLink.href = backDestination;
-      aboutBackLink.textContent = "← Zurück";
+    if (activePage === "portale") {
+      targetContainer =
+        document.querySelector(".portal-intro-inner") ||
+        document.querySelector(".portal-detail-hero-text") ||
+        document.querySelector(".portal-page main") ||
+        document.querySelector("main");
+    }
 
-      aboutBackLink.setAttribute(
+    if (targetContainer) {
+
+      const backLink = document.createElement("a");
+
+      backLink.className = "about-back-link";
+      backLink.href = backDestination;
+      backLink.textContent = "← Zurück";
+      backLink.setAttribute(
         "aria-label",
-        "Zurück zur vorherigen Seite"
+        "Zurück zur vorherigen internen Seite"
       );
 
-      heroCopy.insertBefore(
-        aboutBackLink,
-        heroCopy.firstChild
+      targetContainer.insertBefore(
+        backLink,
+        targetContainer.firstChild
       );
     }
   }
@@ -798,16 +752,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     .main-nav .nav-back-link {
-      color: #85c9e5;
-      white-space: nowrap;
-    }
-
-    .main-nav .nav-back-link::after {
       display: none;
-    }
-
-    .main-nav .nav-back-link:hover {
-      color: #ffffff;
     }
   `;
 
@@ -822,30 +767,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  const photoComparisons = document.querySelectorAll(
-    ".photo-compare"
-  );
+  const photoComparisons = document.querySelectorAll(".photo-compare");
 
   photoComparisons.forEach((compare) => {
-
-    const slider = compare.querySelector(
-      ".photo-compare-range"
-    );
+    const slider = compare.querySelector(".photo-compare-range");
 
     if (!slider) return;
 
     function updatePhotoCompare() {
-      compare.style.setProperty(
-        "--split",
-        slider.value + "%"
-      );
+      compare.style.setProperty("--split", slider.value + "%");
     }
 
     updatePhotoCompare();
-
-    slider.addEventListener(
-      "input",
-      updatePhotoCompare
-    );
+    slider.addEventListener("input", updatePhotoCompare);
   });
 });
