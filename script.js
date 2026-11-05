@@ -12,16 +12,28 @@ document.addEventListener("DOMContentLoaded", () => {
     function openAiModal(event) {
       event.preventDefault();
       event.stopPropagation();
+
+      const message = aiModal.querySelector(".ai-modal-window p");
+
+      if (message) {
+        message.textContent =
+          event.currentTarget.dataset.aiMessage ||
+          "Dieses Bild wurde mithilfe generativer KI erstellt.";
+      }
+
       aiModal.classList.add("is-open");
       aiModal.setAttribute("aria-hidden", "false");
     }
+
     function closeAiModal() {
       aiModal.classList.remove("is-open");
       aiModal.setAttribute("aria-hidden", "true");
     }
+
     aiButtons.forEach((button) => button.addEventListener("click", openAiModal));
     aiModalClose.addEventListener("click", closeAiModal);
     aiModalBackdrop.addEventListener("click", closeAiModal);
+
     document.addEventListener("keydown", (event) => {
       if (event.key === "Escape" && aiModal.classList.contains("is-open")) {
         closeAiModal();
@@ -37,12 +49,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const overlay = compare.querySelector(".image-compare-overlay");
     const line = compare.querySelector(".image-compare-line");
     const handle = compare.querySelector(".image-compare-handle");
+
     if (!slider || !overlay || !line || !handle) return;
+
     function updateCompare(value) {
       overlay.style.width = value + "%";
       line.style.left = value + "%";
       handle.style.left = value + "%";
     }
+
     updateCompare(slider.value);
     slider.addEventListener("input", () => updateCompare(slider.value));
   });
