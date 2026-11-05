@@ -1,0 +1,35 @@
+
+/* =========================================
+   RICHWIN DESIGN – DATENSCHUTZ
+   ========================================= */
+
+.privacy-card {
+  max-width: 850px;
+}
+
+.privacy-card .legal-block p + p {
+  margin-top: 16px;
+}
+
+.privacy-rights {
+  margin: 20px 0;
+  padding-left: 22px;
+  color: #b9c7d2;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.privacy-rights li {
+  margin-bottom: 8px;
+  padding-left: 4px;
+}
+
+.privacy-rights li::marker {
+  color: #85c9e5;
+}
+
+@media (max-width: 700px) {
+  .privacy-rights {
+    font-size: 13px;
+  }
+}
