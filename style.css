@@ -3054,9 +3054,9 @@ body::before {
 .mega-menu-panel[data-menu="kontakt"] {
   display: block;
   max-width: 310px;
-  left: auto;
-  right: max(24px, calc((100vw - 1200px) / 2 + 175px));
-  transform: none;
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
 }
 
 .mega-column {
@@ -4440,4 +4440,32 @@ body:has(.genealogy-page) footer {
     rgba(0, 0, 0, 0.15) 55%,
     rgba(0, 0, 0, 0) 100%
   );
+}
+
+/* =========================================
+   KONTAKT-DROPDOWN – DYNAMISCHE POSITION
+   Folgt dem tatsächlichen Kontakt-Menüpunkt,
+   unabhängig von der Anzahl der Header-Links.
+   ========================================= */
+
+.main-nav a[data-nav="kontakt"] {
+  anchor-name: --richwin-kontakt-trigger;
+}
+
+@supports (left: anchor(center)) {
+  .mega-menu-panel[data-menu="kontakt"] {
+    position-anchor: --richwin-kontakt-trigger;
+    left: anchor(center);
+    right: auto;
+    transform: translateX(-50%);
+  }
+}
+
+/* Auf schmalen Mobilbildschirmen vollständig sichtbar. */
+@media (max-width: 620px) {
+  .mega-menu-panel[data-menu="kontakt"] {
+    left: auto;
+    right: 12px;
+    transform: none;
+  }
 }
