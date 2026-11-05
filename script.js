@@ -783,7 +783,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const backLink = document.createElement("a");
 
       backLink.className = "about-back-link";
-      backLink.href = backDestination || homeURL;
+      backLink.href = backDestination ||
+  (relativePath === "kontakt/kontakt.html" ? homeURL : contactURL);
       backLink.textContent = "← Zurück";
 
       backLink.setAttribute(
