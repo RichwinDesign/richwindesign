@@ -4318,3 +4318,44 @@ body:has(.genealogy-page) footer {
     align-self: flex-start;
   }
 }
+
+/* =========================================
+   STARTSEITE – KACHELN KOMPLETT KLICKBAR
+   ========================================= */
+
+/* Kacheln als Klickfläche vorbereiten */
+.portfolio-card,
+.portfolio-wide {
+  position: relative;
+  cursor: pointer;
+}
+
+/* Vorhandenen Überschriften-Link
+   über die gesamte Kachel ausdehnen */
+.portfolio-card-content h2 a::after,
+.portfolio-wide-text h2 a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+}
+
+/* Eigentliche Links weiterhin bedienbar */
+.portfolio-card-content,
+.portfolio-wide-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* KI-Buttons liegen über der Klickfläche */
+.ai-label.portfolio-card-ai,
+.ai-label.portfolio-wide-ai {
+  position: absolute;
+  z-index: 10;
+}
+
+/* Hover-Effekt bei Klickfläche */
+.portfolio-card:hover,
+.portfolio-wide:hover {
+  cursor: pointer;
+}
