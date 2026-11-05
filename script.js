@@ -53,6 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
      ========================================= */
 
   document.querySelectorAll("[data-compare]").forEach((compare) => {
+
     const slider = compare.querySelector(".image-compare-slider");
     const overlay = compare.querySelector(".image-compare-overlay");
     const line = compare.querySelector(".image-compare-line");
@@ -101,6 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
      ========================================= */
 
   function getPageArea(path) {
+
     if (
       path === "portale.html" ||
       path.startsWith("portale/")
@@ -122,6 +124,13 @@ document.addEventListener("DOMContentLoaded", () => {
       return "ueber-mich";
     }
 
+    if (
+      path === "kontakt.html" ||
+      path.startsWith("kontakt/")
+    ) {
+      return "kontakt";
+    }
+
     return "portfolio";
   }
 
@@ -130,13 +139,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const homeURL = url("index.html");
   const aboutURL = url("ueber-mich/ueber-mich.html");
+  const contactURL = url("kontakt/kontakt.html");
 
 
   /* =========================================
-     SICHERE INTERNE RÜCKSPRUNGZIELE
+     INTERNE RÜCKSPRUNGZIELE
      ========================================= */
 
   function getInternalDestination(address) {
+
     if (!address) return null;
 
     try {
@@ -159,10 +170,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const path = destination.pathname.slice(rootPath.length);
 
+      if (!path) return null;
+
+      // Über mich darf nicht auf sich selbst zurückführen.
       if (
-        !path ||
-        path === "ueber-mich.html" ||
-        path.startsWith("ueber-mich/")
+        activePage === "ueber-mich" &&
+        (
+          path === "ueber-mich.html" ||
+          path.startsWith("ueber-mich/")
+        )
+      ) {
+        return null;
+      }
+
+      // Kontakt darf nicht auf sich selbst zurückführen.
+      if (
+        activePage === "kontakt" &&
+        (
+          path === "kontakt.html" ||
+          path.startsWith("kontakt/")
+        )
       ) {
         return null;
       }
@@ -176,27 +203,54 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* =========================================
-     HERKUNFT FÜR "ÜBER MICH" MERKEN
+     HERKUNFT FÜR ÜBER MICH & KONTAKT MERKEN
      ========================================= */
 
-  const originKey = "richwindesign-about-origin";
+  const aboutOriginKey = "richwindesign-about-origin";
+  const contactOriginKey = "richwindesign-contact-origin";
 
   document.addEventListener("click", (event) => {
+
     const link = event.target.closest("a[href]");
 
     if (!link) return;
 
-    const destination = new URL(link.href, window.location.href);
+    let destination;
 
-    if (
-      destination.pathname === new URL(aboutURL).pathname &&
-      activePage !== "ueber-mich"
-    ) {
-      try {
-        sessionStorage.setItem(originKey, window.location.href);
-      } catch (error) {
-        // Navigation bleibt auch ohne Speicher funktionsfähig.
+    try {
+      destination = new URL(link.href, window.location.href);
+    } catch (error) {
+      return;
+    }
+
+    if (destination.origin !== window.location.origin) {
+      return;
+    }
+
+    try {
+
+      if (
+        destination.pathname === new URL(aboutURL).pathname &&
+        activePage !== "ueber-mich"
+      ) {
+        sessionStorage.setItem(
+          aboutOriginKey,
+          window.location.href
+        );
       }
+
+      if (
+        destination.pathname === new URL(contactURL).pathname &&
+        activePage !== "kontakt"
+      ) {
+        sessionStorage.setItem(
+          contactOriginKey,
+          window.location.href
+        );
+      }
+
+    } catch (error) {
+      // Die Navigation funktioniert auch ohne Session-Speicher.
     }
   });
 
@@ -213,22 +267,28 @@ document.addEventListener("DOMContentLoaded", () => {
       return referrer;
     }
 
-    if (activePage === "ueber-mich") {
+    if (
+      activePage === "ueber-mich" ||
+      activePage === "kontakt"
+    ) {
+
+      const storageKey = activePage === "ueber-mich"
+        ? aboutOriginKey
+        : contactOriginKey;
+
       try {
         const remembered = getInternalDestination(
-          sessionStorage.getItem(originKey)
+          sessionStorage.getItem(storageKey)
         );
 
         if (remembered) {
           return remembered;
         }
       } catch (error) {
-        // Kein gespeicherter Rücksprung.
+        // Kein gespeicherter Rücksprung vorhanden.
       }
     }
 
-    // Direkter Aufruf einer Portal-Unterseite:
-    // Zur Portalübersicht zurück.
     if (
       activePage === "portale" &&
       relativePath.startsWith("portale/")
@@ -236,8 +296,6 @@ document.addEventListener("DOMContentLoaded", () => {
       return url("portale.html");
     }
 
-    // Ohne bekannte Herkunft keinen falschen
-    // Zurück-Link zur Startseite erzeugen.
     return null;
   }
 
@@ -245,10 +303,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* =========================================
-     HAUPTNAVIGATION – LINKFUNKTION
+     HAUPTNAVIGATION – LINKS
      ========================================= */
 
   function navLink(label, target, key) {
+
     const active = activePage === key;
 
     return `
@@ -271,37 +330,49 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (activePage === "portfolio") {
 
-    // STARTSEITE: ALLES SICHTBAR
+    // STARTSEITE: ALLE MENÜPUNKTE
+
     navigationHTML = `
       ${navLink("Portfolio", "index.html#portfolio", "portfolio")}
       ${navLink("Portale", "portale.html", "portale")}
       ${navLink("Genealogie", "genealogie.html", "genealogie")}
       ${navLink("Über mich", "ueber-mich/ueber-mich.html", "ueber-mich")}
-      ${navLink("Kontakt", "index.html#kontakt", "kontakt")}
+      ${navLink("Kontakt", "kontakt/kontakt.html", "kontakt")}
     `;
 
   } else if (activePage === "portale") {
 
     // PORTALE: NUR PORTALE UND KONTAKT
+
     navigationHTML = `
       ${navLink("Portale", "portale.html", "portale")}
-      ${navLink("Kontakt", "index.html#kontakt", "kontakt")}
+      ${navLink("Kontakt", "kontakt/kontakt.html", "kontakt")}
     `;
 
   } else if (activePage === "genealogie") {
 
     // GENEALOGIE: NUR GENEALOGIE UND KONTAKT
+
     navigationHTML = `
       ${navLink("Genealogie", "genealogie.html", "genealogie")}
-      ${navLink("Kontakt", "index.html#kontakt", "kontakt")}
+      ${navLink("Kontakt", "kontakt/kontakt.html", "kontakt")}
     `;
 
   } else if (activePage === "ueber-mich") {
 
-    // ÜBER MICH: NUR ÜBER MICH UND KONTAKT
+    // ÜBER MICH: ÜBER MICH UND KONTAKT
+
     navigationHTML = `
       ${navLink("Über mich", "ueber-mich/ueber-mich.html", "ueber-mich")}
-      ${navLink("Kontakt", "index.html#kontakt", "kontakt")}
+      ${navLink("Kontakt", "kontakt/kontakt.html", "kontakt")}
+    `;
+
+  } else if (activePage === "kontakt") {
+
+    // KONTAKT: NUR KONTAKT
+
+    navigationHTML = `
+      ${navLink("Kontakt", "kontakt/kontakt.html", "kontakt")}
     `;
   }
 
@@ -325,6 +396,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (activePage === "ueber-mich") {
     logoDestination = backDestination || aboutURL;
+  }
+
+  if (activePage === "kontakt") {
+    logoDestination = backDestination || contactURL;
   }
 
   header.innerHTML = `
@@ -362,6 +437,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const placeholder = document.getElementById("site-header");
 
   if (placeholder) {
+
     placeholder.replaceWith(header);
 
     if (existingHeader) {
@@ -559,7 +635,7 @@ document.addEventListener("DOMContentLoaded", () => {
     kontakt: `
       <div class="mega-column">
         <div class="mega-heading">Kontakt &amp; Rechtliches</div>
-        ${item("Kontakt", "index.html#kontakt", "✉")}
+        ${item("Kontakt", "kontakt/kontakt.html", "✉")}
         ${item("Impressum", null, "§")}
         ${item("Datenschutzerklärung", null, "§")}
       </div>
@@ -587,6 +663,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentMenu = null;
 
   function closeMenu() {
+
     currentMenu = null;
     panel.hidden = true;
     panel.innerHTML = "";
@@ -599,6 +676,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function openMenu(name) {
+
     if (!name || !panels[name]) {
       closeMenu();
       return;
@@ -694,6 +772,10 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelector("main");
     }
 
+    if (activePage === "kontakt") {
+      targetContainer = document.querySelector(".contact-heading");
+    }
+
     if (targetContainer) {
 
       const backLink = document.createElement("a");
@@ -701,6 +783,7 @@ document.addEventListener("DOMContentLoaded", () => {
       backLink.className = "about-back-link";
       backLink.href = backDestination;
       backLink.textContent = "← Zurück";
+
       backLink.setAttribute(
         "aria-label",
         "Zurück zur vorherigen internen Seite"
@@ -770,6 +853,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const photoComparisons = document.querySelectorAll(".photo-compare");
 
   photoComparisons.forEach((compare) => {
+
     const slider = compare.querySelector(".photo-compare-range");
 
     if (!slider) return;
