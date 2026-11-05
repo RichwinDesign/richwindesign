@@ -752,7 +752,7 @@ document.addEventListener("DOMContentLoaded", () => {
      ZURÜCK-BUTTON IM SEITENINHALT
      ========================================= */
 
-  if (activePage !== "portfolio" && backDestination) {
+  if (activePage !== "portfolio" && (backDestination || activePage === "kontakt")) {
 
     let targetContainer = null;
 
@@ -781,7 +781,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const backLink = document.createElement("a");
 
       backLink.className = "about-back-link";
-      backLink.href = backDestination;
+      backLink.href = backDestination || homeURL;
       backLink.textContent = "← Zurück";
 
       backLink.setAttribute(
