@@ -1,0 +1,133 @@
+
+/* =========================================
+   RICHWIN DESIGN – IMPRESSUM
+   ========================================= */
+
+.legal-page {
+  min-height: calc(100vh - 73px);
+  color: #ffffff;
+}
+
+.legal-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 75px 32px 110px;
+}
+
+/* ÜBERSCHRIFT */
+
+.legal-heading {
+  margin-bottom: 45px;
+}
+
+.legal-eyebrow {
+  margin: 0 0 18px;
+  color: #85c9e5;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.legal-heading h1 {
+  margin: 0 0 20px;
+  font-size: clamp(42px, 5vw, 64px);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.legal-heading h1 span {
+  color: #85c9e5;
+}
+
+.legal-heading > p:last-child {
+  color: #b9c7d2;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* INHALTSKARTE */
+
+.legal-card {
+  max-width: 760px;
+  padding: 40px;
+  border: 1px solid rgba(111, 182, 217, .32);
+  border-radius: 14px;
+  background: linear-gradient(
+    145deg,
+    #101d2a 0%,
+    #09121c 55%,
+    #060c12 100%
+  );
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, .25),
+    0 0 25px rgba(111, 182, 217, .035);
+}
+
+.legal-block h2 {
+  margin: 0 0 18px;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.legal-block p {
+  margin: 0;
+  color: #b9c7d2;
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+.legal-block a {
+  color: #85c9e5;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  transition: color .2s ease;
+}
+
+.legal-block a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.legal-block .legal-reference {
+  margin-bottom: 10px;
+  color: #85c9e5;
+  font-size: 13px;
+}
+
+/* TRENNLINIEN */
+
+.legal-divider {
+  height: 1px;
+  margin: 32px 0;
+  background: linear-gradient(
+    90deg,
+    rgba(111, 182, 217, .38),
+    transparent
+  );
+}
+
+/* SMARTPHONE */
+
+@media (max-width: 700px) {
+
+  .legal-container {
+    padding: 50px 20px 80px;
+  }
+
+  .legal-heading h1 {
+    font-size: 42px;
+  }
+
+  .legal-card {
+    padding: 28px 22px;
+  }
+
+  .legal-block h2 {
+    font-size: 18px;
+  }
+
+  .legal-block p {
+    font-size: 14px;
+  }
+}
