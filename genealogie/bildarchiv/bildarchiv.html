@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="de">
 
@@ -5,57 +6,260 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description"
-        content="Historische Zeichnungen und Gemälde aus dem Familienarchiv Klotz. Werke von Erich Willy Klotz und Hans-Georg Klotz.">
+  <meta
+    name="description"
+    content="Historische Zeichnungen und Gemälde aus dem Familienarchiv Klotz. Werke von Erich Willy Klotz und Hans-Georg Klotz."
+  >
 
   <title>Bildarchiv | Richwin Design</title>
 
-  <!-- Zentrale Website-CSS -->
+  <!-- ZENTRALE WEBSITE-CSS -->
   <link rel="stylesheet" href="../../style.css">
 
-  <!-- CSS für das Kunstarchiv -->
+  <!-- BILDARCHIV-CSS -->
   <link rel="stylesheet" href="bildarchiv.css">
-  <!-- Seitenwechsel: Ergänzung zur bestehenden Galerie-CSS -->
+
+  <!-- =====================================
+       HORIZONTALE BILDERGALERIEN
+       ===================================== -->
+
   <style>
-    .art-pagination {
+
+    /* Bestehende Masonry-Darstellung überschreiben */
+
+    .art-carousel {
+      position: relative;
+      width: 100%;
+      padding: 0 45px;
+    }
+
+    .art-gallery.art-carousel-track {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: stretch;
+
+      column-count: auto;
+      column-gap: normal;
+      gap: 15px;
+
+      width: 100%;
+      overflow-x: auto;
+      overflow-y: hidden;
+
+      scroll-behavior: smooth;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+
+      overscroll-behavior-x: contain;
+    }
+
+    .art-gallery.art-carousel-track::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Vier Werke pro Ansicht */
+
+    .art-carousel-track .art-gallery-item {
+      display: flex;
+      flex-direction: column;
+
+      flex: 0 0 calc((100% - 45px) / 4);
+      width: auto;
+      min-width: 0;
+
+      margin: 0;
+      padding: 0;
+
+      break-inside: auto;
+      scroll-snap-align: start;
+    }
+
+    /* Einheitliche Bildhöhe ohne Zuschnitt */
+
+    .art-carousel-track .art-gallery-item img {
+      display: block;
+      width: 100%;
+      height: 350px;
+
+      object-fit: contain;
+      object-position: center;
+
+      background: #101820;
+    }
+
+    .art-carousel-track .art-gallery-item figcaption {
+      margin-top: auto;
+      padding: 12px 13px;
+
+      background: #0a131c;
+      color: #8fa8b9;
+
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .12em;
+    }
+
+    /* Navigation */
+
+    .art-carousel-arrow {
+      position: absolute;
+      top: 50%;
+      z-index: 2;
+
       display: flex;
       align-items: center;
       justify-content: center;
-      flex-wrap: wrap;
-      gap: 18px;
-      margin-top: 38px;
-      padding: 15px 0;
-    }
-    .art-page-button {
-      min-width: 110px;
-      padding: 12px 18px;
-      border: 1px solid rgba(111, 182, 217, .45);
-      border-radius: 7px;
-      background: #0b1823;
-      color: #eaf4f9;
+
+      width: 36px;
+      height: 58px;
+
+      border: 1px solid rgba(111, 182, 217, .4);
+      border-radius: 8px;
+
+      background: rgba(11, 24, 35, .95);
+      color: #a1d6ef;
+
       font-family: inherit;
-      font-size: 13px;
-      font-weight: 600;
+      font-size: 30px;
+      line-height: 1;
+
       cursor: pointer;
+      transform: translateY(-50%);
+
+      transition:
+        background .25s ease,
+        border-color .25s ease,
+        opacity .25s ease;
     }
-    .art-page-button:hover:not(:disabled) {
-      background: rgba(111, 182, 217, .14);
-      border-color: #86c5e2;
+
+    .art-carousel-prev {
+      left: 0;
     }
-    .art-page-button:disabled { opacity: .35; cursor: not-allowed; }
-    .art-page-button:focus-visible { outline: 2px solid #86c5e2; outline-offset: 3px; }
-    .art-page-status { color: #9fb6c5; font-size: 12px; text-align: center; }
+
+    .art-carousel-next {
+      right: 0;
+    }
+
+    .art-carousel-arrow:hover:not(:disabled) {
+      background: #193344;
+      border-color: #87c6e3;
+    }
+
+    .art-carousel-arrow:disabled {
+      opacity: .25;
+      cursor: default;
+    }
+
+    .art-carousel-arrow:focus-visible {
+      outline: 2px solid #87c6e3;
+      outline-offset: 3px;
+    }
+
+    /* Zähler unter der Bilderreihe */
+
+    .art-carousel-status {
+      margin: 17px 0 0;
+      color: #89a9ba;
+
+      font-size: 11px;
+      letter-spacing: .06em;
+      text-align: center;
+    }
+
+    /* Bereiche etwas kompakter */
+
+    .art-artist {
+      margin-bottom: 95px;
+    }
+
+    .art-artist + .art-artist {
+      margin-top: 0;
+    }
+
+    /* TABLET */
+
+    @media (max-width: 1000px) {
+
+      .art-carousel-track .art-gallery-item {
+        flex-basis: calc((100% - 30px) / 3);
+      }
+
+      .art-carousel-track .art-gallery-item img {
+        height: 310px;
+      }
+    }
+
+    /* KLEINERE DISPLAYS */
+
+    @media (max-width: 700px) {
+
+      .art-carousel {
+        padding: 0 36px;
+      }
+
+      .art-gallery.art-carousel-track {
+        gap: 12px;
+      }
+
+      .art-carousel-track .art-gallery-item {
+        flex-basis: calc((100% - 12px) / 2);
+      }
+
+      .art-carousel-track .art-gallery-item img {
+        height: 270px;
+      }
+
+      .art-carousel-arrow {
+        width: 29px;
+        height: 48px;
+        font-size: 25px;
+      }
+    }
+
+    /* SMARTPHONE */
+
     @media (max-width: 450px) {
-      .art-pagination { gap: 10px; }
-      .art-page-button { min-width: 85px; padding: 11px; font-size: 12px; }
-      .art-page-status { font-size: 11px; }
+
+      .art-carousel {
+        padding: 0 34px;
+      }
+
+      .art-gallery.art-carousel-track {
+        gap: 8px;
+      }
+
+      .art-carousel-track .art-gallery-item {
+        flex-basis: 100%;
+      }
+
+      .art-carousel-track .art-gallery-item img {
+        height: 350px;
+      }
+
+      .art-artist {
+        margin-bottom: 75px;
+      }
     }
+
+    /* REDUZIERTE BEWEGUNG */
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .art-gallery.art-carousel-track {
+        scroll-behavior: auto;
+      }
+
+      .art-carousel-arrow {
+        transition: none;
+      }
+    }
+
   </style>
 </head>
 
 <body>
 
-  <!-- Zentral eingebundene Navigation -->
+  <!-- ZENTRALE NAVIGATION -->
   <div id="site-header"></div>
 
   <main class="art-page">
@@ -75,9 +279,7 @@
         FAMILIENFORSCHUNG · KUNSTARCHIV
       </p>
 
-      <h1>
-  Bildarchiv
-</h1>
+      <h1>Bildarchiv</h1>
 
       <p class="art-intro-lead">
         Historische Zeichnungen, Gemälde und künstlerische
@@ -91,8 +293,6 @@
         macht sie für die familiengeschichtliche
         Forschung zugänglich.
       </p>
-
-      <!-- Künstlernavigation -->
 
       <nav class="art-quicknav" aria-label="Künstler auswählen">
 
@@ -112,15 +312,13 @@
 
 
     <!-- =====================================
-         HINWEISE ZUM BILDARCHIV
+         HINWEISE
          ===================================== -->
 
     <section
       class="art-notices"
       aria-label="Hinweise zum Bildarchiv"
     >
-
-      <!-- Hinweis zum Bildarchiv -->
 
       <article class="art-notice">
 
@@ -158,12 +356,12 @@
       </article>
 
 
-      <!-- Hinweis zum Urheberrecht -->
-
       <article class="art-notice">
 
-        <div class="art-notice-icon art-notice-copyright"
-             aria-hidden="true">
+        <div
+          class="art-notice-icon art-notice-copyright"
+          aria-hidden="true"
+        >
           ©
         </div>
 
@@ -199,8 +397,7 @@
 
 
     <!-- =====================================
-         ERICH WILLY KLOTZ
-         9 KUNSTWERKE
+         KÜNSTLER 01 – ERICH WILLY KLOTZ
          ===================================== -->
 
     <section
@@ -242,20 +439,43 @@
 
       </div>
 
-      <!-- Hier fügt JavaScript die 9 Bilder ein -->
+      <!-- EINE HORIZONTALE BILDERREIHE -->
 
-      <div
-        class="art-gallery"
-        id="gallery-erich"
-        aria-label="Werke von Erich Willy Klotz"
-      ></div>
+      <div class="art-carousel" data-carousel>
+
+        <button
+          class="art-carousel-arrow art-carousel-prev"
+          type="button"
+          aria-label="Vorheriges Werk von Erich Willy Klotz"
+          disabled
+        >‹</button>
+
+        <div
+          class="art-gallery art-carousel-track"
+          id="gallery-erich"
+          aria-label="Werke von Erich Willy Klotz"
+          tabindex="0"
+        ></div>
+
+        <button
+          class="art-carousel-arrow art-carousel-next"
+          type="button"
+          aria-label="Nächstes Werk von Erich Willy Klotz"
+        >›</button>
+
+      </div>
+
+      <p
+        class="art-carousel-status"
+        id="status-erich"
+        aria-live="polite"
+      ></p>
 
     </section>
 
 
     <!-- =====================================
-         HANS-GEORG KLOTZ
-         91 ZEICHNUNGEN
+         KÜNSTLER 02 – HANS-GEORG KLOTZ
          ===================================== -->
 
     <section
@@ -289,9 +509,7 @@
               aria-hidden="true"
             ></span>
 
-            <span id="hans-count">
-              91 Zeichnungen im Archiv
-            </span>
+            <span>91 Zeichnungen im Archiv</span>
 
           </div>
 
@@ -299,19 +517,43 @@
 
       </div>
 
-      <!-- Hier fügt JavaScript die 91 Bilder ein -->
+      <!-- EINE HORIZONTALE BILDERREIHE -->
 
-      <div
-        class="art-gallery"
-        id="gallery-hans"
-        aria-label="Zeichnungen von Hans-Georg Klotz"
-      ></div>
+      <div class="art-carousel" data-carousel>
+
+        <button
+          class="art-carousel-arrow art-carousel-prev"
+          type="button"
+          aria-label="Vorheriges Werk von Hans-Georg Klotz"
+          disabled
+        >‹</button>
+
+        <div
+          class="art-gallery art-carousel-track"
+          id="gallery-hans"
+          aria-label="Werke von Hans-Georg Klotz"
+          tabindex="0"
+        ></div>
+
+        <button
+          class="art-carousel-arrow art-carousel-next"
+          type="button"
+          aria-label="Nächstes Werk von Hans-Georg Klotz"
+        >›</button>
+
+      </div>
+
+      <p
+        class="art-carousel-status"
+        id="status-hans"
+        aria-live="polite"
+      ></p>
 
     </section>
 
 
     <!-- =====================================
-         ABSCHLUSSBEREICH
+         ABSCHLUSS
          ===================================== -->
 
     <div class="art-ending">
@@ -335,114 +577,275 @@
   </main>
 
 
-  <!-- =====================================
-       ZENTRALE WEBSITE-FUNKTIONEN
-       ===================================== -->
-
+  <!-- ZENTRALE WEBSITE-FUNKTIONEN -->
   <script src="../../script.js"></script>
 
 
   <!-- =====================================
-       GALERIEN – 9 WERKE / 12 PRO SEITE
+       BILDERGALERIEN
        ===================================== -->
+
   <script>
     (() => {
+
       "use strict";
 
-      const erichImages = Array.from({ length: 9 }, (_, i) => i + 1);
-      const hansImages = Array.from({ length: 91 }, (_, i) => i + 1);
+      const erichImages = Array.from(
+        { length: 9 },
+        (_, index) => index + 1
+      );
+
+      const hansImages = Array.from(
+        { length: 91 },
+        (_, index) => index + 1
+      );
+
+
+      /* =====================================
+         GALERIE ERSTELLEN
+         ===================================== */
 
       function createGallery(options) {
-        const container = document.getElementById(options.containerId);
-        if (!container) return;
 
-        const pageSize = options.pageSize;
-        const totalPages = Math.ceil(options.images.length / pageSize);
-        let currentPage = 1;
+        const track = document.getElementById(
+          options.containerId
+        );
 
-        const pagination = document.createElement("nav");
-        pagination.className = "art-pagination";
-        pagination.setAttribute("aria-label", "Galerieseiten von " + options.artist);
-        container.insertAdjacentElement("afterend", pagination);
+        const status = document.getElementById(
+          options.statusId
+        );
 
-        function showPage() {
-          const start = (currentPage - 1) * pageSize;
-          const pageImages = options.images.slice(start, start + pageSize);
-          const fragment = document.createDocumentFragment();
+        if (!track) return;
 
-          pageImages.forEach((number, index) => {
-            const fileNumber = String(number).padStart(2, "0");
-            const figure = document.createElement("figure");
-            figure.className = "art-gallery-item";
+        const carousel = track.closest(".art-carousel");
 
-            const img = document.createElement("img");
-            img.src = options.folder + "/" + options.prefix + fileNumber + ".webp";
-            img.alt = options.artist + " – Kunstwerk " + fileNumber;
-            img.loading = index < 3 ? "eager" : "lazy";
-            img.decoding = "async";
-            img.draggable = false;
-            img.addEventListener("contextmenu", (event) => event.preventDefault());
-            img.addEventListener("error", () => figure.remove());
+        const previous = carousel.querySelector(
+          ".art-carousel-prev"
+        );
 
-            const caption = document.createElement("figcaption");
-            caption.textContent = "WERK " + fileNumber;
-            figure.append(img, caption);
-            fragment.appendChild(figure);
+        const next = carousel.querySelector(
+          ".art-carousel-next"
+        );
+
+        const fragment = document.createDocumentFragment();
+
+        /* Bilder erstellen */
+
+        options.images.forEach((number, index) => {
+
+          const fileNumber = String(number).padStart(2, "0");
+
+          const imagePath =
+            options.folder + "/" +
+            options.prefix + fileNumber + ".webp";
+
+          const figure = document.createElement("figure");
+          figure.className = "art-gallery-item";
+
+          const img = document.createElement("img");
+
+          img.src = imagePath;
+
+          img.alt =
+            options.artist + " – Kunstwerk " + fileNumber;
+
+          img.loading = index < 4 ? "eager" : "lazy";
+          img.decoding = "async";
+          img.draggable = false;
+
+          img.addEventListener("contextmenu", (event) => {
+            event.preventDefault();
           });
 
-          container.replaceChildren(fragment);
-          pagination.replaceChildren();
-          if (totalPages <= 1) return;
+          img.addEventListener("error", () => {
+            figure.remove();
+            updateNavigation();
+          });
 
-          const back = document.createElement("button");
-          back.type = "button";
-          back.className = "art-page-button";
-          back.textContent = "‹ Zurück";
-          back.disabled = currentPage === 1;
+          const caption = document.createElement("figcaption");
+          caption.textContent = "WERK " + fileNumber;
 
-          const status = document.createElement("span");
-          status.className = "art-page-status";
-          status.textContent = "Seite " + currentPage + " von " + totalPages;
+          figure.appendChild(img);
+          figure.appendChild(caption);
 
-          const next = document.createElement("button");
-          next.type = "button";
-          next.className = "art-page-button";
-          next.textContent = "Weiter ›";
-          next.disabled = currentPage === totalPages;
+          fragment.appendChild(figure);
 
-          function changePage(nextPage) {
-            if (nextPage < 1 || nextPage > totalPages) return;
-            currentPage = nextPage;
-            showPage();
-            const section = container.closest(".art-artist");
-            if (section) section.scrollIntoView({ behavior: "auto", block: "start" });
+        });
+
+        track.appendChild(fragment);
+
+
+        /* =====================================
+           NAVIGATION AKTUALISIEREN
+           ===================================== */
+
+        function updateNavigation() {
+
+          const items = [
+            ...track.querySelectorAll(".art-gallery-item")
+          ];
+
+          const maxScroll =
+            track.scrollWidth - track.clientWidth;
+
+          const atStart = track.scrollLeft <= 2;
+
+          const atEnd =
+            track.scrollLeft >= maxScroll - 2;
+
+          previous.disabled = atStart;
+          next.disabled = atEnd;
+
+          if (status && items.length) {
+
+            let firstVisible = 0;
+            let lastVisible = 0;
+
+            const left = track.scrollLeft;
+            const right = left + track.clientWidth;
+
+            items.forEach((item, index) => {
+
+              const itemLeft = item.offsetLeft - track.offsetLeft;
+              const itemRight = itemLeft + item.offsetWidth;
+
+              if (
+                itemRight > left + 2 &&
+                itemLeft < right - 2
+              ) {
+                if (!firstVisible) {
+                  firstVisible = index + 1;
+                }
+
+                lastVisible = index + 1;
+              }
+
+            });
+
+            if (!firstVisible) {
+              firstVisible = 1;
+              lastVisible = 1;
+            }
+
+            status.textContent =
+              "Werk " + firstVisible +
+              "–" + lastVisible +
+              " von " + items.length;
+
           }
 
-          back.addEventListener("click", () => changePage(currentPage - 1));
-          next.addEventListener("click", () => changePage(currentPage + 1));
-          pagination.append(back, status, next);
         }
 
-        showPage();
+
+        /* =====================================
+           EIN WERK WEITERBLÄTTERN
+           ===================================== */
+
+        function moveGallery(direction) {
+
+          const firstItem = track.querySelector(
+            ".art-gallery-item"
+          );
+
+          if (!firstItem) return;
+
+          const styles = getComputedStyle(track);
+
+          const gap = parseFloat(styles.columnGap) || 0;
+
+          const distance = firstItem.getBoundingClientRect().width + gap;
+
+          const reducedMotion = window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+          ).matches;
+
+          track.scrollBy({
+            left: direction * distance,
+            behavior: reducedMotion ? "instant" : "smooth"
+          });
+
+        }
+
+        previous.addEventListener("click", () => {
+          moveGallery(-1);
+        });
+
+        next.addEventListener("click", () => {
+          moveGallery(1);
+        });
+
+        track.addEventListener(
+          "scroll",
+          updateNavigation,
+          { passive: true }
+        );
+
+        window.addEventListener(
+          "resize",
+          updateNavigation
+        );
+
+        /* Tastatursteuerung */
+
+        track.addEventListener("keydown", (event) => {
+
+          if (event.key === "ArrowRight") {
+            event.preventDefault();
+            moveGallery(1);
+          }
+
+          if (event.key === "ArrowLeft") {
+            event.preventDefault();
+            moveGallery(-1);
+          }
+
+        });
+
+        updateNavigation();
       }
 
-      createGallery({
-        containerId: "gallery-erich",
-        images: erichImages,
-        pageSize: 9,
-        folder: "../../images/genealogie/kunstarchiv/erich-willy-klotz",
-        prefix: "kunst_erich-klotz_",
-        artist: "Erich Willy Klotz"
-      });
+
+      /* =====================================
+         GALERIE ERICH WILLY KLOTZ
+         ===================================== */
 
       createGallery({
-        containerId: "gallery-hans",
-        images: hansImages,
-        pageSize: 12,
-        folder: "../../images/genealogie/kunstarchiv/hans-georg-klotz",
-        prefix: "kunst_hans-georg-klotz_",
-        artist: "Hans-Georg Klotz"
+
+        containerId: "gallery-erich",
+        statusId: "status-erich",
+
+        images: erichImages,
+
+        folder:
+          "../../images/genealogie/kunstarchiv/erich-willy-klotz",
+
+        prefix: "kunst_erich-klotz_",
+
+        artist: "Erich Willy Klotz"
+
       });
+
+
+      /* =====================================
+         GALERIE HANS-GEORG KLOTZ
+         ===================================== */
+
+      createGallery({
+
+        containerId: "gallery-hans",
+        statusId: "status-hans",
+
+        images: hansImages,
+
+        folder:
+          "../../images/genealogie/kunstarchiv/hans-georg-klotz",
+
+        prefix: "kunst_hans-georg-klotz_",
+
+        artist: "Hans-Georg Klotz"
+
+      });
+
     })();
   </script>
 
