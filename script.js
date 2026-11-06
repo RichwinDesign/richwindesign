@@ -944,6 +944,30 @@ transition: width .25s ease, min-width .25s ease;
       flex-shrink: 0;
     }
 
+/* PORTFOLIO-LINKS – EINHEITLICHER HOVER-EFFEKT */
+
+#richwin-mega-menu[data-menu="portfolio"] .mega-link {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+
+  transition: color .2s ease, text-shadow .2s ease;
+}
+
+#richwin-mega-menu[data-menu="portfolio"] .mega-link:hover {
+  background: transparent !important;
+  box-shadow: none !important;
+  transform: none !important;
+
+  color: #8bc9e7 !important;
+  text-shadow: 0 0 9px rgba(139, 201, 231, .3);
+}
+
+#richwin-mega-menu[data-menu="portfolio"] .mega-link:hover span {
+  color: #8bc9e7;
+}
+
     /* HAUPTÜBERSCHRIFT */
 
     #richwin-mega-menu[data-menu="portfolio"]
