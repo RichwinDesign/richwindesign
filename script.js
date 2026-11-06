@@ -861,14 +861,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   portfolioMenuStyle.textContent = `
 
-    /* SCHMALERES DROPDOWN */
+    /* =========================================
+       DYNAMISCHE MENÜBREITE
+       ========================================= */
 
     #richwin-mega-menu[data-menu="portfolio"] {
       box-sizing: border-box;
 
       width: min(230px, calc(100vw - 24px));
-min-width: min(230px, calc(100vw - 24px));
-transition: width .25s ease, min-width .25s ease;
+      min-width: min(230px, calc(100vw - 24px));
       max-width: calc(100vw - 24px);
 
       max-height: min(76vh, 720px);
@@ -879,27 +880,34 @@ transition: width .25s ease, min-width .25s ease;
       overscroll-behavior: contain;
       scrollbar-width: thin;
       scrollbar-color: #476a7d #0a141d;
+
+      transition:
+        width .25s ease,
+        min-width .25s ease;
     }
 
-/* Breiter, wenn Unterkategorien geöffnet sind */
+    /* PORTALE GEÖFFNET */
 
-#richwin-mega-menu[data-menu="portfolio"]:has(
-  .mega-portfolio-group:not(.mega-portfolio-subgroup)[open]
-) {
-  width: min(260px, calc(100vw - 24px));
-  min-width: min(260px, calc(100vw - 24px));
-}
+    #richwin-mega-menu[data-menu="portfolio"]:has(
+      .mega-portfolio-group:not(.mega-portfolio-subgroup)[open]
+    ) {
+      width: min(260px, calc(100vw - 24px));
+      min-width: min(260px, calc(100vw - 24px));
+    }
 
-/* Genealogie benötigt etwas mehr Platz */
+    /* GENEALOGIE GEÖFFNET */
 
-#richwin-mega-menu[data-menu="portfolio"]:has(
-  .mega-portfolio-group:not(.mega-portfolio-subgroup):last-child[open]
-) {
-  width: min(310px, calc(100vw - 24px));
-  min-width: min(310px, calc(100vw - 24px));
-}
+    #richwin-mega-menu[data-menu="portfolio"]:has(
+      .mega-portfolio-group:not(.mega-portfolio-subgroup):last-child[open]
+    ) {
+      width: min(310px, calc(100vw - 24px));
+      min-width: min(310px, calc(100vw - 24px));
+    }
 
-    /* SPALTE */
+
+    /* =========================================
+       MENÜSPALTE
+       ========================================= */
 
     #richwin-mega-menu[data-menu="portfolio"]
     .mega-portfolio-column {
@@ -916,7 +924,10 @@ transition: width .25s ease, min-width .25s ease;
       flex: 1 1 100%;
     }
 
-    /* ALLE EINTRÄGE EINZEILIG */
+
+    /* =========================================
+       PORTFOLIO-LINKS – GRUNDGESTALTUNG
+       ========================================= */
 
     #richwin-mega-menu[data-menu="portfolio"]
     .mega-link {
@@ -931,6 +942,22 @@ transition: width .25s ease, min-width .25s ease;
 
       white-space: nowrap;
       line-height: 1.5;
+
+      background: transparent !important;
+      background-color: transparent !important;
+      background-image: none !important;
+
+      border: none !important;
+      outline: none !important;
+      box-shadow: none !important;
+      border-radius: 0 !important;
+
+      text-decoration: none !important;
+      transform: none !important;
+
+      transition:
+        color .2s ease,
+        text-shadow .2s ease;
     }
 
     #richwin-mega-menu[data-menu="portfolio"]
@@ -944,31 +971,104 @@ transition: width .25s ease, min-width .25s ease;
       flex-shrink: 0;
     }
 
-/* PORTFOLIO-LINKS – EINHEITLICHER HOVER-EFFEKT */
 
-#richwin-mega-menu[data-menu="portfolio"] .mega-link {
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  border-radius: 0 !important;
+    /* =========================================
+       HOVER-KÄSTEN VOLLSTÄNDIG ENTFERNEN
+       ========================================= */
 
-  transition: color .2s ease, text-shadow .2s ease;
-}
+    #richwin-mega-menu[data-menu="portfolio"]
+    .mega-link:hover,
 
-#richwin-mega-menu[data-menu="portfolio"] .mega-link:hover {
-  background: transparent !important;
-  box-shadow: none !important;
-  transform: none !important;
+    #richwin-mega-menu[data-menu="portfolio"]
+    .mega-link:focus,
 
-  color: #8bc9e7 !important;
-  text-shadow: 0 0 9px rgba(139, 201, 231, .3);
-}
+    #richwin-mega-menu[data-menu="portfolio"]
+    .mega-link:focus-visible,
 
-#richwin-mega-menu[data-menu="portfolio"] .mega-link:hover span {
-  color: #8bc9e7;
-}
+    #richwin-mega-menu[data-menu="portfolio"]
+    .mega-link:active {
+      background: transparent !important;
+      background-color: transparent !important;
+      background-image: none !important;
 
-    /* HAUPTÜBERSCHRIFT */
+      border: none !important;
+      outline: none !important;
+      box-shadow: none !important;
+      border-radius: 0 !important;
+
+      text-decoration: none !important;
+      transform: none !important;
+    }
+
+    /* DEKORATIVE RAHMEN ENTFERNEN */
+
+    #richwin-mega-menu[data-menu="portfolio"]
+    .mega-link::before,
+
+    #richwin-mega-menu[data-menu="portfolio"]
+    .mega-link::after,
+
+    #richwin-mega-menu[data-menu="portfolio"]
+    .mega-link:hover::before,
+
+    #richwin-mega-menu[data-menu="portfolio"]
+    .mega-link:hover::after {
+      content: none !important;
+      display: none !important;
+      border: none !important;
+      box-shadow: none !important;
+    }
+
+    /* AUCH INNERE SPANS OHNE HOVER-HINTERGRUND */
+
+    #richwin-mega-menu[data-menu="portfolio"]
+    .mega-link span,
+
+    #richwin-mega-menu[data-menu="portfolio"]
+    .mega-link:hover span {
+      background: transparent !important;
+      background-color: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+    }
+
+
+    /* =========================================
+       HELLBLAUER HOVER-EFFEKT
+       ========================================= */
+
+    #richwin-mega-menu[data-menu="portfolio"]
+    .mega-link:hover,
+
+    #richwin-mega-menu[data-menu="portfolio"]
+    .mega-link:focus-visible {
+      color: #8bc9e7 !important;
+
+      text-shadow:
+        0 0 9px rgba(139, 201, 231, .3);
+    }
+
+    #richwin-mega-menu[data-menu="portfolio"]
+    .mega-link:hover span,
+
+    #richwin-mega-menu[data-menu="portfolio"]
+    .mega-link:focus-visible span {
+      color: #8bc9e7 !important;
+    }
+
+    /* TASTATURFOKUS OHNE KASTEN */
+
+    #richwin-mega-menu[data-menu="portfolio"]
+    .mega-link:focus-visible {
+      text-decoration: underline !important;
+      text-decoration-color: #8bc9e7 !important;
+      text-underline-offset: 4px;
+    }
+
+
+    /* =========================================
+       HAUPTÜBERSCHRIFT
+       ========================================= */
 
     #richwin-mega-menu[data-menu="portfolio"]
     .mega-heading {
@@ -976,7 +1076,10 @@ transition: width .25s ease, min-width .25s ease;
       white-space: nowrap;
     }
 
-    /* TRENNLINIEN */
+
+    /* =========================================
+       TRENNLINIEN ZWISCHEN DEN BEREICHEN
+       ========================================= */
 
     #richwin-mega-menu[data-menu="portfolio"]
     .mega-portfolio-group {
@@ -985,10 +1088,14 @@ transition: width .25s ease, min-width .25s ease;
       margin-top: 15px;
       padding-top: 10px;
 
-      border-top: 1px solid rgba(111, 182, 217, .17);
+      border-top:
+        1px solid rgba(111, 182, 217, .17);
     }
 
-    /* PORTALE UND GENEALOGIE */
+
+    /* =========================================
+       PORTALE UND GENEALOGIE
+       ========================================= */
 
     #richwin-mega-menu[data-menu="portfolio"]
     .mega-portfolio-group > summary {
@@ -1008,7 +1115,10 @@ transition: width .25s ease, min-width .25s ease;
       user-select: none;
     }
 
-    /* PFEILE ENTFERNEN */
+
+    /* =========================================
+       STANDARDPFEILE ENTFERNEN
+       ========================================= */
 
     #richwin-mega-menu[data-menu="portfolio"]
     summary::-webkit-details-marker {
@@ -1020,41 +1130,50 @@ transition: width .25s ease, min-width .25s ease;
       content: "";
     }
 
-    /* KLICKBARER TITEL MIT BLAUER LINIE */
+
+    /* =========================================
+       KLICKBARER TITEL MIT BLAUER LINIE
+       ========================================= */
 
     #richwin-mega-menu[data-menu="portfolio"]
     .mega-portfolio-title {
       display: inline-block;
-      text-decoration: none;
 
       padding-bottom: 7px;
 
-      border-bottom: 2px solid rgba(130, 194, 225, .8);
+      border-bottom:
+        2px solid rgba(130, 194, 225, .8);
 
       color: #f1f7fa;
+
       font-size: 13px;
       font-weight: 700;
       line-height: 1.4;
 
       white-space: nowrap;
+      text-decoration: none;
 
       transition:
         color .2s ease,
         border-color .2s ease;
     }
 
-    /* UNTERKATEGORIEN UNTEREINANDER */
+
+    /* =========================================
+       VORSCHAU UNTEREINANDER
+       ========================================= */
 
     #richwin-mega-menu[data-menu="portfolio"]
     .mega-portfolio-hint {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      gap: 3px;
 
+      gap: 3px;
       max-width: 100%;
 
       color: #7996a7;
+
       font-size: 10px;
       font-weight: 400;
       line-height: 1.6;
@@ -1063,21 +1182,30 @@ transition: width .25s ease, min-width .25s ease;
       letter-spacing: .015em;
     }
 
-    /* ERSTE VORSCHAU: 80 % */
+
+    /* =========================================
+       ERSTE VORSCHAU – 80 %
+       ========================================= */
 
     #richwin-mega-menu[data-menu="portfolio"]
     .mega-portfolio-hint > span:first-child {
       opacity: .8;
     }
 
-    /* ZWEITE VORSCHAU: 30 % */
+
+    /* =========================================
+       ZWEITE VORSCHAU – 30 %
+       ========================================= */
 
     #richwin-mega-menu[data-menu="portfolio"]
     .mega-portfolio-hint > span:nth-child(2) {
       opacity: .3;
     }
 
-    /* VORSCHAU BEIM AUFKLAPPEN AUSBLENDEN */
+
+    /* =========================================
+       BEIM AUFKLAPPEN VORSCHAU AUSBLENDEN
+       ========================================= */
 
     #richwin-mega-menu[data-menu="portfolio"]
     .mega-portfolio-group[open] > summary
@@ -1085,7 +1213,10 @@ transition: width .25s ease, min-width .25s ease;
       display: none;
     }
 
-    /* HOVER */
+
+    /* =========================================
+       HOVER AUF PORTALE UND GENEALOGIE
+       ========================================= */
 
     #richwin-mega-menu[data-menu="portfolio"]
     .mega-portfolio-group > summary:hover
@@ -1108,7 +1239,10 @@ transition: width .25s ease, min-width .25s ease;
       border-radius: 4px;
     }
 
-    /* AUSGEKLAPPTE UNTERSEITEN */
+
+    /* =========================================
+       AUSGEKLAPPTE UNTERSEITEN
+       ========================================= */
 
     #richwin-mega-menu[data-menu="portfolio"]
     .mega-portfolio-children {
@@ -1119,13 +1253,13 @@ transition: width .25s ease, min-width .25s ease;
       align-items: stretch;
 
       gap: 3px;
-
       min-width: 0;
 
       margin: 0 0 13px 9px;
       padding-left: 15px;
 
-      border-left: 1px solid rgba(111, 182, 217, .23);
+      border-left:
+        1px solid rgba(111, 182, 217, .23);
     }
 
     #richwin-mega-menu[data-menu="portfolio"]
@@ -1134,7 +1268,10 @@ transition: width .25s ease, min-width .25s ease;
       white-space: nowrap;
     }
 
-    /* PORTAL-MERCH */
+
+    /* =========================================
+       PORTAL-MERCH
+       ========================================= */
 
     #richwin-mega-menu[data-menu="portfolio"]
     .mega-portfolio-subgroup {
@@ -1163,7 +1300,10 @@ transition: width .25s ease, min-width .25s ease;
       font-size: 10px;
     }
 
-    /* GENEALOGIE-UNTERÜBERSCHRIFTEN */
+
+    /* =========================================
+       GENEALOGIE-UNTERÜBERSCHRIFTEN
+       ========================================= */
 
     #richwin-mega-menu[data-menu="portfolio"]
     .mega-portfolio-section-title {
@@ -1171,6 +1311,7 @@ transition: width .25s ease, min-width .25s ease;
       padding: 2px 4px;
 
       color: #d8e8f0;
+
       font-size: 12px;
       font-weight: 700;
 
@@ -1183,7 +1324,10 @@ transition: width .25s ease, min-width .25s ease;
       margin-bottom: 6px;
     }
 
-    /* SMARTPHONES */
+
+    /* =========================================
+       SMARTPHONES
+       ========================================= */
 
     @media (max-width: 480px) {
 
@@ -1206,10 +1350,24 @@ transition: width .25s ease, min-width .25s ease;
 
     }
 
+
+    /* =========================================
+       REDUZIERTE BEWEGUNG
+       ========================================= */
+
     @media (prefers-reduced-motion: reduce) {
+
+      #richwin-mega-menu[data-menu="portfolio"] {
+        transition: none;
+      }
 
       #richwin-mega-menu[data-menu="portfolio"]
       .mega-portfolio-title {
+        transition: none;
+      }
+
+      #richwin-mega-menu[data-menu="portfolio"]
+      .mega-link {
         transition: none;
       }
 
