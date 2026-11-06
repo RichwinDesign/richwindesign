@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (
-      path === "genealogie.html" ||
+      path === "genealogie/genealogie.html" ||
       path.startsWith("genealogie/")
     ) {
       return "genealogie";
@@ -353,7 +353,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // GENEALOGIE: UNVERÄNDERT
 
     navigationHTML = `
-      ${navLink("Genealogie", "genealogie.html", "genealogie")}
+      ${navLink("Genealogie", "genealogie/genealogie.html", "genealogie")}
       ${navLink("Kontakt", "kontakt/kontakt.html", "kontakt")}
     `;
 
@@ -390,7 +390,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   if (activePage === "genealogie") {
-    logoDestination = url("genealogie.html");
+    logoDestination = url("genealogie/genealogie.html");
   }
 
   if (activePage === "ueber-mich") {
@@ -624,7 +624,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         <div class="mega-portfolio-children">
 
-          ${item("Genealogie – Übersicht", "genealogie.html", "❖")}
+          ${item("Genealogie – Übersicht", "genealogie/genealogie.html", "❖")}
 
           <div class="mega-portfolio-section-title">
             Familienlinie
@@ -734,7 +734,7 @@ document.addEventListener("DOMContentLoaded", () => {
     genealogie: `
       <div class="mega-column">
         <div class="mega-heading">Familienforschung</div>
-        ${item("Genealogie – Übersicht", "genealogie.html", "❖")}
+        ${item("Genealogie – Übersicht", "genealogie/genealogie.html", "❖")}
         ${genealogyItems}
       </div>
 
@@ -743,7 +743,7 @@ document.addEventListener("DOMContentLoaded", () => {
           "images/general/Hero_Genealogie.webp",
           "Genealogie",
           "Familienlinien, Archive und historische Spuren.",
-          "genealogie.html"
+          "genealogie/genealogie.html"
         )}
       </div>
     `,
