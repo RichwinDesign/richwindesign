@@ -537,8 +537,9 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>
 
     <div class="mega-genealogy-group">
-      <div class="mega-group-title">Bildarchiv</div>
-      ${item("Zeichnungen &amp; Gemälde", null)}
+      <div class="mega-group-title">
+        <a href="${url("genealogie/bildarchiv/bildarchiv.html")}" style="color: inherit; text-decoration: none;">Bildarchiv</a>
+      </div>
     </div>
   `;
 
@@ -772,11 +773,11 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelector("main");
     }
 
-   if (activePage === "kontakt") {
-  targetContainer =
-    document.querySelector(".contact-heading") ||
-    document.querySelector(".legal-heading");
-}
+    if (activePage === "kontakt") {
+      targetContainer =
+        document.querySelector(".contact-heading") ||
+        document.querySelector(".legal-heading");
+    }
 
     if (targetContainer) {
 
@@ -784,7 +785,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       backLink.className = "about-back-link";
       backLink.href = backDestination ||
-  (relativePath === "kontakt/kontakt.html" ? homeURL : contactURL);
+        (relativePath === "kontakt/kontakt.html" ? homeURL : contactURL);
       backLink.textContent = "← Zurück";
 
       backLink.setAttribute(
