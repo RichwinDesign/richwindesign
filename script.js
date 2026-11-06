@@ -331,8 +331,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (activePage === "portfolio") {
 
-    // STARTSEITE:
-    // NUR PORTFOLIO, ÜBER MICH UND KONTAKT
+    // STARTSEITE: NUR 3 HAUPTMENÜPUNKTE
 
     navigationHTML = `
       ${navLink("Portfolio", "index.html#portfolio", "portfolio")}
@@ -486,7 +485,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* =========================================
      PORTAL-EINTRÄGE
-     FÜR DIE BESTEHENDE PORTALE-SEITE
+     BISHERIGE PORTALE-SEITE
      ========================================= */
 
   const portalItems = [
@@ -513,7 +512,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* =========================================
      GENEALOGIE-EINTRÄGE
-     FÜR DIE BESTEHENDE GENEALOGIE-SEITE
+     BISHERIGE GENEALOGIE-SEITE
      ========================================= */
 
   const genealogyItems = `
@@ -548,8 +547,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* =========================================
-     NEUES PORTFOLIO-DROPDOWN
-     NUR FÜR DIE STARTSEITE
+     PORTFOLIO-DROPDOWN
+     NUR AUF DER STARTSEITE
      ========================================= */
 
   const portfolioDropdown = `
@@ -563,7 +562,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
       <details class="mega-portfolio-group">
 
-        <summary>Portale</summary>
+        <summary>
+          <span class="mega-portfolio-title">Portale</span>
+          <span class="mega-portfolio-hint">
+            Portal-Merch · Portal 01 · Portal 02
+          </span>
+        </summary>
 
         <div class="mega-portfolio-children">
 
@@ -571,7 +575,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
           <details class="mega-portfolio-group mega-portfolio-subgroup">
 
-            <summary>Portal-Merch</summary>
+            <summary>
+              <span class="mega-portfolio-title">
+                Portal-Merch
+              </span>
+              <span class="mega-portfolio-hint">
+                Sticker · Anhänger · Acrylaufsteller
+              </span>
+            </summary>
 
             <div class="mega-portfolio-children">
 
@@ -602,7 +613,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
       <details class="mega-portfolio-group">
 
-        <summary>Genealogie</summary>
+        <summary>
+          <span class="mega-portfolio-title">
+            Genealogie
+          </span>
+          <span class="mega-portfolio-hint">
+            Familienlinien · Personenverzeichnis · Bildarchiv
+          </span>
+        </summary>
 
         <div class="mega-portfolio-children">
 
@@ -613,10 +631,12 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
 
           <div class="mega-portfolio-children">
+
             ${item("Linie Richwin", null)}
             ${item("Linie Schmidt", null)}
             ${item("Linie Klotz", null)}
             ${item("Linie Nielebock", null)}
+
           </div>
 
           <div class="mega-portfolio-section-title">
@@ -674,12 +694,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const panels = {
 
-    /* NUR DIE STARTSEITE HAT DAS NEUE MENÜ */
+    /* STARTSEITE */
 
     portfolio: portfolioDropdown,
 
 
-    /* PORTALE-SEITE: BISHERIGES MENÜ */
+    /* PORTALE-SEITE: UNVERÄNDERT */
 
     portale: `
       <div class="mega-column">
@@ -709,7 +729,7 @@ document.addEventListener("DOMContentLoaded", () => {
     `,
 
 
-    /* GENEALOGIE-SEITE: BISHERIGES MENÜ */
+    /* GENEALOGIE-SEITE: UNVERÄNDERT */
 
     genealogie: `
       <div class="mega-column">
@@ -729,7 +749,7 @@ document.addEventListener("DOMContentLoaded", () => {
     `,
 
 
-    /* KONTAKT-SEITE: BISHERIGES MENÜ */
+    /* KONTAKT-SEITE: UNVERÄNDERT */
 
     kontakt: `
       <div class="mega-column">
@@ -845,126 +865,312 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* =========================================
-     PORTFOLIO-MENÜ – EIGENES DESIGN
-     GILT NUR FÜR DAS PORTFOLIO-DROPDOWN
+     PORTFOLIO-MENÜ – ÜBERARBEITETES DESIGN
+
+     - ALLE TEXTE EINZEILIG
+     - BREITERES DROPDOWN
+     - KEINE PFEILE
+     - FEINE BLAUE LINIEN
+     - DEZENTE VORSCHAU DER UNTERSEITEN
      ========================================= */
 
   const portfolioMenuStyle = document.createElement("style");
 
   portfolioMenuStyle.textContent = `
 
+    /* GRÖSSE DES PORTFOLIO-DROPDOWNS */
+
     #richwin-mega-menu[data-menu="portfolio"] {
       box-sizing: border-box;
-      width: min(420px, calc(100vw - 32px));
-      max-width: calc(100vw - 32px);
-      max-height: min(75vh, 680px);
+
+      width: min(430px, calc(100vw - 24px));
+      min-width: min(430px, calc(100vw - 24px));
+      max-width: calc(100vw - 24px);
+
+      max-height: min(76vh, 720px);
+
       overflow-x: hidden;
       overflow-y: auto;
+
       overscroll-behavior: contain;
       scrollbar-width: thin;
       scrollbar-color: #476a7d #0a141d;
     }
 
-    #richwin-mega-menu[data-menu="portfolio"] .mega-portfolio-column {
+    /* SPALTE AUF VOLLE BREITE */
+
+    #richwin-mega-menu[data-menu="portfolio"]
+    .mega-portfolio-column {
       box-sizing: border-box;
+
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+
       width: 100%;
       min-width: 0;
       max-width: 100%;
+
       flex: 1 1 100%;
     }
 
-    #richwin-mega-menu[data-menu="portfolio"] .mega-portfolio-group {
-      display: block;
-      margin-top: 8px;
-      border-top: 1px solid rgba(111, 182, 217, .18);
+    /* ALLE NORMALEN MENÜEINTRÄGE EINZEILIG */
+
+    #richwin-mega-menu[data-menu="portfolio"]
+    .mega-link {
+      box-sizing: border-box;
+
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+
+      width: 100%;
+      min-width: 0;
+
+      white-space: nowrap;
+      line-height: 1.5;
     }
 
-    #richwin-mega-menu[data-menu="portfolio"] .mega-portfolio-group > summary {
+    #richwin-mega-menu[data-menu="portfolio"]
+    .mega-link > span {
+      flex-shrink: 0;
+      white-space: nowrap;
+    }
+
+    #richwin-mega-menu[data-menu="portfolio"]
+    .mega-link > small {
+      flex-shrink: 0;
+    }
+
+    /* HAUPTÜBERSCHRIFT */
+
+    #richwin-mega-menu[data-menu="portfolio"]
+    .mega-heading {
+      margin-bottom: 13px;
+      white-space: nowrap;
+    }
+
+    /* TRENNUNG ZWISCHEN DEN BEREICHEN */
+
+    #richwin-mega-menu[data-menu="portfolio"]
+    .mega-portfolio-group {
+      display: block;
+
+      margin-top: 15px;
+      padding-top: 10px;
+
+      border-top: 1px solid rgba(111, 182, 217, .17);
+    }
+
+    /* PORTALE UND GENEALOGIE */
+
+    #richwin-mega-menu[data-menu="portfolio"]
+    .mega-portfolio-group > summary {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-      padding: 12px 4px;
-      color: #eaf5fa;
-      font-size: 13px;
-      font-weight: 700;
-      line-height: 1.4;
+      flex-direction: column;
+      align-items: flex-start;
+
+      position: relative;
+      gap: 7px;
+
+      padding: 6px 6px 12px;
+
+      color: #f1f7fa;
       list-style: none;
+
       cursor: pointer;
       user-select: none;
     }
 
-    #richwin-mega-menu[data-menu="portfolio"] summary::-webkit-details-marker {
+    /* STANDARDPFEILE VOLLSTÄNDIG ENTFERNEN */
+
+    #richwin-mega-menu[data-menu="portfolio"]
+    summary::-webkit-details-marker {
       display: none;
     }
 
-    #richwin-mega-menu[data-menu="portfolio"] .mega-portfolio-group > summary::after {
-      content: "⌄";
-      color: #8bc9e7;
-      font-size: 18px;
+    #richwin-mega-menu[data-menu="portfolio"]
+    summary::marker {
+      content: "";
+    }
+
+    /* ÜBERSCHRIFT */
+
+    #richwin-mega-menu[data-menu="portfolio"]
+    .mega-portfolio-title {
+      display: inline-block;
+
+      padding-bottom: 7px;
+
+      border-bottom: 2px solid rgba(130, 194, 225, .8);
+
+      color: #f1f7fa;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.4;
+
+      white-space: nowrap;
+
+      transition:
+        color .2s ease,
+        border-color .2s ease;
+    }
+
+    /* DEZENTE UNTERKATEGORIE-VORSCHAU */
+
+    #richwin-mega-menu[data-menu="portfolio"]
+    .mega-portfolio-hint {
+      display: block;
+
+      max-width: 100%;
+
+      color: #7996a7;
+      font-size: 10px;
       font-weight: 400;
-      line-height: 1;
-      transition: transform .2s ease;
+      line-height: 1.6;
+
+      white-space: nowrap;
+      letter-spacing: .015em;
     }
 
-    #richwin-mega-menu[data-menu="portfolio"] .mega-portfolio-group[open] > summary::after {
-      transform: rotate(180deg);
+    /* BEIM AUFKLAPPEN VORSCHAU AUSBLENDEN */
+
+    #richwin-mega-menu[data-menu="portfolio"]
+    .mega-portfolio-group[open] > summary
+    .mega-portfolio-hint {
+      display: none;
     }
 
-    #richwin-mega-menu[data-menu="portfolio"] .mega-portfolio-group > summary:hover {
+    /* HOVER UND AKTIVER BEREICH */
+
+    #richwin-mega-menu[data-menu="portfolio"]
+    .mega-portfolio-group > summary:hover
+    .mega-portfolio-title {
       color: #8bc9e7;
+      border-color: #8bc9e7;
     }
 
-    #richwin-mega-menu[data-menu="portfolio"] .mega-portfolio-group > summary:focus-visible {
+    #richwin-mega-menu[data-menu="portfolio"]
+    .mega-portfolio-group[open] > summary
+    .mega-portfolio-title {
+      color: #8bc9e7;
+      border-color: #8bc9e7;
+    }
+
+    #richwin-mega-menu[data-menu="portfolio"]
+    .mega-portfolio-group > summary:focus-visible {
       outline: 2px solid #8bc9e7;
-      outline-offset: 2px;
+      outline-offset: 3px;
       border-radius: 4px;
     }
 
-    #richwin-mega-menu[data-menu="portfolio"] .mega-portfolio-children {
+    /* AUSGEKLAPPTE UNTERSEITEN */
+
+    #richwin-mega-menu[data-menu="portfolio"]
+    .mega-portfolio-children {
+      box-sizing: border-box;
+
       display: flex;
       flex-direction: column;
       align-items: stretch;
-      gap: 2px;
+
+      gap: 3px;
+
       min-width: 0;
-      margin: 0 0 10px 12px;
-      padding-left: 12px;
-      border-left: 1px solid rgba(111, 182, 217, .22);
+
+      margin: 0 0 13px 9px;
+      padding-left: 15px;
+
+      border-left: 1px solid rgba(111, 182, 217, .23);
     }
 
-    #richwin-mega-menu[data-menu="portfolio"] .mega-portfolio-children .mega-link {
+    #richwin-mega-menu[data-menu="portfolio"]
+    .mega-portfolio-children .mega-link {
       width: 100%;
-      box-sizing: border-box;
+      white-space: nowrap;
     }
 
-    #richwin-mega-menu[data-menu="portfolio"] .mega-portfolio-subgroup {
-      margin: 4px 0;
+    /* PORTAL-MERCH ALS UNTERKATEGORIE */
+
+    #richwin-mega-menu[data-menu="portfolio"]
+    .mega-portfolio-subgroup {
+      margin: 6px 0;
+      padding-top: 0;
       border-top: none;
     }
 
-    #richwin-mega-menu[data-menu="portfolio"] .mega-portfolio-subgroup > summary {
-      padding: 8px 4px;
-      font-size: 12px;
-      font-weight: 600;
+    #richwin-mega-menu[data-menu="portfolio"]
+    .mega-portfolio-subgroup > summary {
+      padding: 6px 4px 10px;
     }
 
-    #richwin-mega-menu[data-menu="portfolio"] .mega-portfolio-section-title {
+    #richwin-mega-menu[data-menu="portfolio"]
+    .mega-portfolio-subgroup
+    .mega-portfolio-title {
+      font-size: 12px;
+      font-weight: 600;
+
+      border-bottom-width: 1px;
+    }
+
+    #richwin-mega-menu[data-menu="portfolio"]
+    .mega-portfolio-subgroup
+    .mega-portfolio-hint {
+      font-size: 10px;
+    }
+
+    /* GENEALOGIE: UNTERÜBERSCHRIFTEN */
+
+    #richwin-mega-menu[data-menu="portfolio"]
+    .mega-portfolio-section-title {
       margin: 10px 0 3px;
       padding: 2px 4px;
+
       color: #d8e8f0;
       font-size: 12px;
       font-weight: 700;
+
+      white-space: nowrap;
     }
 
-    #richwin-mega-menu[data-menu="portfolio"] .mega-portfolio-section-title
+    #richwin-mega-menu[data-menu="portfolio"]
+    .mega-portfolio-section-title
     + .mega-portfolio-children {
-      margin-bottom: 5px;
+      margin-bottom: 6px;
     }
+
+    /* SMARTPHONES */
+
+    @media (max-width: 480px) {
+
+      #richwin-mega-menu[data-menu="portfolio"] {
+        width: min(400px, calc(100vw - 20px));
+        min-width: 0;
+        max-width: calc(100vw - 20px);
+      }
+
+      #richwin-mega-menu[data-menu="portfolio"]
+      .mega-portfolio-hint {
+        font-size: 9px;
+      }
+
+      #richwin-mega-menu[data-menu="portfolio"]
+      .mega-portfolio-children {
+        margin-left: 5px;
+        padding-left: 10px;
+      }
+
+    }
+
+    /* REDUZIERTE BEWEGUNG */
 
     @media (prefers-reduced-motion: reduce) {
-      #richwin-mega-menu[data-menu="portfolio"] summary::after {
+
+      #richwin-mega-menu[data-menu="portfolio"]
+      .mega-portfolio-title {
         transition: none;
       }
+
     }
 
   `;
