@@ -866,8 +866,9 @@ document.addEventListener("DOMContentLoaded", () => {
     #richwin-mega-menu[data-menu="portfolio"] {
       box-sizing: border-box;
 
-      width: min(310px, calc(100vw - 24px));
-      min-width: min(310px, calc(100vw - 24px));
+      width: min(230px, calc(100vw - 24px));
+min-width: min(230px, calc(100vw - 24px));
+transition: width .25s ease, min-width .25s ease;
       max-width: calc(100vw - 24px);
 
       max-height: min(76vh, 720px);
@@ -879,6 +880,24 @@ document.addEventListener("DOMContentLoaded", () => {
       scrollbar-width: thin;
       scrollbar-color: #476a7d #0a141d;
     }
+
+/* Breiter, wenn Unterkategorien geöffnet sind */
+
+#richwin-mega-menu[data-menu="portfolio"]:has(
+  .mega-portfolio-group:not(.mega-portfolio-subgroup)[open]
+) {
+  width: min(260px, calc(100vw - 24px));
+  min-width: min(260px, calc(100vw - 24px));
+}
+
+/* Genealogie benötigt etwas mehr Platz */
+
+#richwin-mega-menu[data-menu="portfolio"]:has(
+  .mega-portfolio-group:not(.mega-portfolio-subgroup):last-child[open]
+) {
+  width: min(310px, calc(100vw - 24px));
+  min-width: min(310px, calc(100vw - 24px));
+}
 
     /* SPALTE */
 
