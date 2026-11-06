@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* =========================================
-     ZENTRALE NAVIGATION – DATEIPFADE
+     ZENTRALE DATEIPFADE
      ========================================= */
 
   const scriptElement = [
@@ -204,7 +204,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* =========================================
-     HERKUNFT FÜR ÜBER MICH & KONTAKT MERKEN
+     HERKUNFT FÜR ÜBER MICH & KONTAKT
      ========================================= */
 
   const aboutOriginKey = "richwindesign-about-origin";
@@ -251,7 +251,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
     } catch (error) {
-      // Die Navigation funktioniert auch ohne Session-Speicher.
+      // Navigation funktioniert auch ohne Session-Speicher.
     }
   });
 
@@ -304,7 +304,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* =========================================
-     HAUPTNAVIGATION – LINKS
+     HAUPTNAVIGATION
      ========================================= */
 
   function navLink(label, target, key) {
@@ -322,16 +322,9 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
   }
 
-
-  /* =========================================
-     MENÜ NACH WEBSITE-BEREICH
-     ========================================= */
-
   let navigationHTML = "";
 
   if (activePage === "portfolio") {
-
-    // STARTSEITE: NUR 3 HAUPTMENÜPUNKTE
 
     navigationHTML = `
       ${navLink("Portfolio", "index.html#portfolio", "portfolio")}
@@ -341,16 +334,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   } else if (activePage === "portale") {
 
-    // PORTALE: UNVERÄNDERT
-
     navigationHTML = `
       ${navLink("Portale", "portale.html", "portale")}
       ${navLink("Kontakt", "kontakt/kontakt.html", "kontakt")}
     `;
 
   } else if (activePage === "genealogie") {
-
-    // GENEALOGIE: UNVERÄNDERT
 
     navigationHTML = `
       ${navLink("Genealogie", "genealogie/genealogie.html", "genealogie")}
@@ -359,16 +348,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   } else if (activePage === "ueber-mich") {
 
-    // ÜBER MICH: UNVERÄNDERT
-
     navigationHTML = `
       ${navLink("Über mich", "ueber-mich/ueber-mich.html", "ueber-mich")}
       ${navLink("Kontakt", "kontakt/kontakt.html", "kontakt")}
     `;
 
   } else if (activePage === "kontakt") {
-
-    // KONTAKT: UNVERÄNDERT
 
     navigationHTML = `
       ${navLink("Kontakt", "kontakt/kontakt.html", "kontakt")}
@@ -457,7 +442,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* =========================================
-     MEGA-MENÜ – EINTRÄGE
+     MEGA-MENÜ – LINKS
      ========================================= */
 
   const mainNav = header.querySelector(".main-nav");
@@ -485,7 +470,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* =========================================
      PORTAL-EINTRÄGE
-     BISHERIGE PORTALE-SEITE
      ========================================= */
 
   const portalItems = [
@@ -512,7 +496,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* =========================================
      GENEALOGIE-EINTRÄGE
-     BISHERIGE GENEALOGIE-SEITE
      ========================================= */
 
   const genealogyItems = `
@@ -563,24 +546,38 @@ document.addEventListener("DOMContentLoaded", () => {
       <details class="mega-portfolio-group">
 
         <summary>
-          <span class="mega-portfolio-title">Portale</span>
-          <span class="mega-portfolio-hint">
-            Portal-Merch · Portal 01 · Portal 02
+          <a
+            class="mega-portfolio-title"
+            href="${url("portale.html")}"
+            onclick="event.stopPropagation()"
+          >Portale</a>
+
+          <span
+            class="mega-portfolio-hint"
+            aria-label="Unterseiten aufklappen"
+          >
+            <span>Portal-Merch</span>
+            <span>Portal 01</span>
           </span>
         </summary>
 
         <div class="mega-portfolio-children">
 
-          ${item("Alle Portale", "portale.html", "◈")}
-
           <details class="mega-portfolio-group mega-portfolio-subgroup">
 
             <summary>
-              <span class="mega-portfolio-title">
-                Portal-Merch
-              </span>
-              <span class="mega-portfolio-hint">
-                Sticker · Anhänger · Acrylaufsteller
+              <a
+                class="mega-portfolio-title"
+                href="${url("portale/portal-merch.html")}"
+                onclick="event.stopPropagation()"
+              >Portal-Merch</a>
+
+              <span
+                class="mega-portfolio-hint"
+                aria-label="Produkte aufklappen"
+              >
+                <span>Sticker</span>
+                <span>Anhänger</span>
               </span>
             </summary>
 
@@ -614,29 +611,32 @@ document.addEventListener("DOMContentLoaded", () => {
       <details class="mega-portfolio-group">
 
         <summary>
-          <span class="mega-portfolio-title">
-            Genealogie
-          </span>
-          <span class="mega-portfolio-hint">
-            Familienlinien · Personenverzeichnis · Bildarchiv
+          <a
+            class="mega-portfolio-title"
+            href="${url("genealogie/genealogie.html")}"
+            onclick="event.stopPropagation()"
+          >Genealogie</a>
+
+          <span
+            class="mega-portfolio-hint"
+            aria-label="Unterseiten aufklappen"
+          >
+            <span>Familienlinie</span>
+            <span>Personenverzeichnis</span>
           </span>
         </summary>
 
         <div class="mega-portfolio-children">
-
-          ${item("Genealogie – Übersicht", "genealogie/genealogie.html", "❖")}
 
           <div class="mega-portfolio-section-title">
             Familienlinie
           </div>
 
           <div class="mega-portfolio-children">
-
             ${item("Linie Richwin", null)}
             ${item("Linie Schmidt", null)}
             ${item("Linie Klotz", null)}
             ${item("Linie Nielebock", null)}
-
           </div>
 
           <div class="mega-portfolio-section-title">
@@ -694,12 +694,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const panels = {
 
-    /* STARTSEITE */
-
     portfolio: portfolioDropdown,
-
-
-    /* PORTALE-SEITE: UNVERÄNDERT */
 
     portale: `
       <div class="mega-column">
@@ -728,9 +723,6 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
     `,
 
-
-    /* GENEALOGIE-SEITE: UNVERÄNDERT */
-
     genealogie: `
       <div class="mega-column">
         <div class="mega-heading">Familienforschung</div>
@@ -748,9 +740,6 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
     `,
 
-
-    /* KONTAKT-SEITE: UNVERÄNDERT */
-
     kontakt: `
       <div class="mega-column">
         <div class="mega-heading">Kontakt &amp; Rechtliches</div>
@@ -763,7 +752,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* =========================================
-     MEGA-MENÜ – GRUNDFUNKTION
+     MEGA-MENÜ – FUNKTIONEN
      ========================================= */
 
   const triggers = [
@@ -865,26 +854,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* =========================================
-     PORTFOLIO-MENÜ – ÜBERARBEITETES DESIGN
-
-     - ALLE TEXTE EINZEILIG
-     - BREITERES DROPDOWN
-     - KEINE PFEILE
-     - FEINE BLAUE LINIEN
-     - DEZENTE VORSCHAU DER UNTERSEITEN
+     PORTFOLIO-MENÜ – DESIGN
      ========================================= */
 
   const portfolioMenuStyle = document.createElement("style");
 
   portfolioMenuStyle.textContent = `
 
-    /* GRÖSSE DES PORTFOLIO-DROPDOWNS */
+    /* SCHMALERES DROPDOWN */
 
     #richwin-mega-menu[data-menu="portfolio"] {
       box-sizing: border-box;
 
-      width: min(430px, calc(100vw - 24px));
-      min-width: min(430px, calc(100vw - 24px));
+      width: min(310px, calc(100vw - 24px));
+      min-width: min(310px, calc(100vw - 24px));
       max-width: calc(100vw - 24px);
 
       max-height: min(76vh, 720px);
@@ -897,7 +880,7 @@ document.addEventListener("DOMContentLoaded", () => {
       scrollbar-color: #476a7d #0a141d;
     }
 
-    /* SPALTE AUF VOLLE BREITE */
+    /* SPALTE */
 
     #richwin-mega-menu[data-menu="portfolio"]
     .mega-portfolio-column {
@@ -914,7 +897,7 @@ document.addEventListener("DOMContentLoaded", () => {
       flex: 1 1 100%;
     }
 
-    /* ALLE NORMALEN MENÜEINTRÄGE EINZEILIG */
+    /* ALLE EINTRÄGE EINZEILIG */
 
     #richwin-mega-menu[data-menu="portfolio"]
     .mega-link {
@@ -950,7 +933,7 @@ document.addEventListener("DOMContentLoaded", () => {
       white-space: nowrap;
     }
 
-    /* TRENNUNG ZWISCHEN DEN BEREICHEN */
+    /* TRENNLINIEN */
 
     #richwin-mega-menu[data-menu="portfolio"]
     .mega-portfolio-group {
@@ -982,7 +965,7 @@ document.addEventListener("DOMContentLoaded", () => {
       user-select: none;
     }
 
-    /* STANDARDPFEILE VOLLSTÄNDIG ENTFERNEN */
+    /* PFEILE ENTFERNEN */
 
     #richwin-mega-menu[data-menu="portfolio"]
     summary::-webkit-details-marker {
@@ -994,11 +977,12 @@ document.addEventListener("DOMContentLoaded", () => {
       content: "";
     }
 
-    /* ÜBERSCHRIFT */
+    /* KLICKBARER TITEL MIT BLAUER LINIE */
 
     #richwin-mega-menu[data-menu="portfolio"]
     .mega-portfolio-title {
       display: inline-block;
+      text-decoration: none;
 
       padding-bottom: 7px;
 
@@ -1016,11 +1000,14 @@ document.addEventListener("DOMContentLoaded", () => {
         border-color .2s ease;
     }
 
-    /* DEZENTE UNTERKATEGORIE-VORSCHAU */
+    /* UNTERKATEGORIEN UNTEREINANDER */
 
     #richwin-mega-menu[data-menu="portfolio"]
     .mega-portfolio-hint {
-      display: block;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 3px;
 
       max-width: 100%;
 
@@ -1033,7 +1020,21 @@ document.addEventListener("DOMContentLoaded", () => {
       letter-spacing: .015em;
     }
 
-    /* BEIM AUFKLAPPEN VORSCHAU AUSBLENDEN */
+    /* ERSTE VORSCHAU: 80 % */
+
+    #richwin-mega-menu[data-menu="portfolio"]
+    .mega-portfolio-hint > span:first-child {
+      opacity: .8;
+    }
+
+    /* ZWEITE VORSCHAU: 30 % */
+
+    #richwin-mega-menu[data-menu="portfolio"]
+    .mega-portfolio-hint > span:nth-child(2) {
+      opacity: .3;
+    }
+
+    /* VORSCHAU BEIM AUFKLAPPEN AUSBLENDEN */
 
     #richwin-mega-menu[data-menu="portfolio"]
     .mega-portfolio-group[open] > summary
@@ -1041,7 +1042,7 @@ document.addEventListener("DOMContentLoaded", () => {
       display: none;
     }
 
-    /* HOVER UND AKTIVER BEREICH */
+    /* HOVER */
 
     #richwin-mega-menu[data-menu="portfolio"]
     .mega-portfolio-group > summary:hover
@@ -1090,7 +1091,7 @@ document.addEventListener("DOMContentLoaded", () => {
       white-space: nowrap;
     }
 
-    /* PORTAL-MERCH ALS UNTERKATEGORIE */
+    /* PORTAL-MERCH */
 
     #richwin-mega-menu[data-menu="portfolio"]
     .mega-portfolio-subgroup {
@@ -1119,7 +1120,7 @@ document.addEventListener("DOMContentLoaded", () => {
       font-size: 10px;
     }
 
-    /* GENEALOGIE: UNTERÜBERSCHRIFTEN */
+    /* GENEALOGIE-UNTERÜBERSCHRIFTEN */
 
     #richwin-mega-menu[data-menu="portfolio"]
     .mega-portfolio-section-title {
@@ -1144,7 +1145,7 @@ document.addEventListener("DOMContentLoaded", () => {
     @media (max-width: 480px) {
 
       #richwin-mega-menu[data-menu="portfolio"] {
-        width: min(400px, calc(100vw - 20px));
+        width: min(310px, calc(100vw - 20px));
         min-width: 0;
         max-width: calc(100vw - 20px);
       }
@@ -1162,8 +1163,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
-    /* REDUZIERTE BEWEGUNG */
-
     @media (prefers-reduced-motion: reduce) {
 
       #richwin-mega-menu[data-menu="portfolio"]
@@ -1179,7 +1178,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* =========================================
-     ZURÜCK-BUTTON IM SEITENINHALT
+     ZURÜCK-BUTTON
      ========================================= */
 
   if (
