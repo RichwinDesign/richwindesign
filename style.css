@@ -4504,3 +4504,9 @@ body:has(.genealogy-page) footer {
     padding-bottom: 55px;
   }
 }
+/* Abstand zwischen Intro und Portfolio verkleinern */
+@media (min-width: 801px) {
+  .portfolio-overview {
+    margin-top: -65px;
+  }
+}
