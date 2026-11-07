@@ -18,7 +18,9 @@
 
   <main class="about-page">
 
-    <!-- ÜBER MICH – EINLEITUNG -->
+    <!-- =====================================
+         ÜBER MICH – EINLEITUNG
+         ===================================== -->
 
     <section class="about-hero" aria-labelledby="about-title">
 
@@ -72,7 +74,9 @@
     </section>
 
 
-    <!-- EXPERIMENTELLER WERDEGANG -->
+    <!-- =====================================
+         MEIN WERDEGANG
+         ===================================== -->
 
     <section
       class="about-journey-section"
@@ -105,14 +109,18 @@
 
       <ol class="journey-timeline">
 
-        <!-- ZEITLINIE -->
+        <!-- MITTLERE ZEITLINIE -->
 
         <li class="journey-track" aria-hidden="true">
           <div class="journey-track-progress"></div>
         </li>
 
 
-        <!-- 2026 – KI-WEITERBILDUNG -->
+        <!-- =====================================
+             2026 – KI-WEITERBILDUNG
+             LINKS: BILD UND TEXT
+             RECHTS: JAHRESZAHL
+             ===================================== -->
 
         <li class="journey-entry journey-left">
 
@@ -167,7 +175,11 @@
         </li>
 
 
-        <!-- 2023–2025 – NETWORK.HAMBURG -->
+        <!-- =====================================
+             2023–2025 – NETWORK.HAMBURG
+             RECHTS: BILD UND TEXT
+             LINKS: JAHRESZAHL
+             ===================================== -->
 
         <li class="journey-entry journey-right">
 
@@ -220,7 +232,9 @@
         </li>
 
 
-        <!-- 2021–2025 – EIGENSTÄNDIGE TÄTIGKEIT -->
+        <!-- =====================================
+             2021–2025 – EIGENSTÄNDIGE TÄTIGKEIT
+             ===================================== -->
 
         <li class="journey-entry journey-left">
 
@@ -272,7 +286,9 @@
         </li>
 
 
-        <!-- 2018–2021 – AUSBILDUNG -->
+        <!-- =====================================
+             2018–2021 – AUSBILDUNG
+             ===================================== -->
 
         <li class="journey-entry journey-right">
 
@@ -326,7 +342,10 @@
         </li>
 
 
-        <!-- 2016–2017 – WOOLWORTH -->
+        <!-- =====================================
+             2016–2017 – WOOLWORTH
+             NUR TEXT
+             ===================================== -->
 
         <li class="journey-entry journey-left journey-text-only">
 
@@ -356,7 +375,9 @@
         </li>
 
 
-        <!-- 2014–2015 – HTK -->
+        <!-- =====================================
+             2014–2015 – HTK
+             ===================================== -->
 
         <li class="journey-entry journey-right">
 
@@ -405,7 +426,10 @@
         </li>
 
 
-        <!-- 2014 – FRISEUR KLINCK -->
+        <!-- =====================================
+             2014 – FRISEUR KLINCK
+             NUR TEXT
+             ===================================== -->
 
         <li class="journey-entry journey-left journey-text-only">
 
@@ -436,7 +460,10 @@
         </li>
 
 
-        <!-- 2011–2014 – FRISEURAUSBILDUNG -->
+        <!-- =====================================
+             2011–2014 – FRISEURAUSBILDUNG
+             NUR TEXT
+             ===================================== -->
 
         <li class="journey-entry journey-right journey-text-only">
 
@@ -468,7 +495,10 @@
         </li>
 
 
-        <!-- 2010–2011 – MALERHANDWERK -->
+        <!-- =====================================
+             2010–2011 – MALERHANDWERK
+             NUR TEXT
+             ===================================== -->
 
         <li class="journey-entry journey-left journey-text-only">
 
@@ -503,7 +533,9 @@
     </section>
 
 
-    <!-- KOMPETENZEN & WERKZEUGE -->
+    <!-- =====================================
+         KOMPETENZEN & WERKZEUGE
+         ===================================== -->
 
     <section class="about-skills-section" aria-labelledby="skills-title">
 
@@ -559,7 +591,9 @@
     </section>
 
 
-    <!-- EIGENE PROJEKTE -->
+    <!-- =====================================
+         EIGENE PROJEKTE
+         ===================================== -->
 
     <section class="about-projects-section" aria-labelledby="projects-title">
 
@@ -631,7 +665,9 @@
   <script src="../script.js"></script>
 
 
-  <!-- SCROLL-TO-ZOOM – NUR ÜBER-MICH-SEITE -->
+  <!-- =====================================
+       SCROLL-ZOOM & ZEITSTRAHL
+       ===================================== -->
 
   <script>
     (() => {
@@ -641,48 +677,63 @@
 
       if (!timeline || !entries.length) return;
 
-      const reduceMotion = window.matchMedia(
+      const mediaEntries = [
+        ...entries
+      ].filter((entry) => entry.querySelector(".journey-media-inner"));
+
+      const reducedMotion = window.matchMedia(
         "(prefers-reduced-motion: reduce)"
       ).matches;
 
-      if (reduceMotion) return;
+      const clamp = (value, min, max) =>
+        Math.max(min, Math.min(max, value));
 
-      document.documentElement.classList.add("journey-js");
+      const smoothstep = (value) =>
+        value * value * (3 - 2 * value);
 
-      // Einblendung der Berufsstationen
 
-      if ("IntersectionObserver" in window) {
+      /* =====================================
+         EINBLENDEN DER STATIONEN
+         ===================================== */
 
-        const observer = new IntersectionObserver((items) => {
+      if (!reducedMotion) {
 
-          items.forEach((item) => {
+        document.documentElement.classList.add("journey-js");
 
-            if (item.isIntersecting) {
-              item.target.classList.add("journey-visible");
-              observer.unobserve(item.target);
-            }
+        if ("IntersectionObserver" in window) {
 
+          const observer = new IntersectionObserver((items) => {
+
+            items.forEach((item) => {
+
+              if (item.isIntersecting) {
+                item.target.classList.add("journey-visible");
+                observer.unobserve(item.target);
+              }
+
+            });
+
+          }, {
+            threshold: 0.05,
+            rootMargin: "0px 0px 90px 0px"
           });
 
-        }, {
-          threshold: 0.08,
-          rootMargin: "0px 0px 70px 0px"
-        });
+          entries.forEach((entry) => observer.observe(entry));
 
-        entries.forEach((entry) => observer.observe(entry));
+        } else {
 
-      } else {
+          entries.forEach((entry) => {
+            entry.classList.add("journey-visible");
+          });
 
-        entries.forEach((entry) => {
-          entry.classList.add("journey-visible");
-        });
+        }
 
       }
 
 
-      /* =========================================
-         ZEITLINIE & SCROLL-ZOOM
-         ========================================= */
+      /* =====================================
+         SCROLL-ZOOM
+         ===================================== */
 
       let ticking = false;
 
@@ -691,81 +742,82 @@
         const viewportHeight = window.innerHeight;
         const timelineRect = timeline.getBoundingClientRect();
 
-        // Fortschritt der mittleren Zeitlinie
+        // Fortschritt der blauen Mittellinie
 
-        const lineProgress = Math.max(
+        const lineProgress = clamp(
+          (viewportHeight * 0.55 - timelineRect.top) /
+          timelineRect.height,
           0,
-          Math.min(
-            1,
-            (viewportHeight * 0.55 - timelineRect.top) /
-            timelineRect.height
-          )
+          1
         );
 
         timeline.style.setProperty(
           "--journey-progress",
-          lineProgress
+          lineProgress.toFixed(4)
         );
 
-        entries.forEach((entry) => {
+        mediaEntries.forEach((entry) => {
 
+          const figure = entry.querySelector(".journey-media");
           const media = entry.querySelector(".journey-media-inner");
 
-          if (!media) return;
+          if (!figure || !media) return;
 
-          const figure = media.closest(".journey-media");
+          if (
+            reducedMotion ||
+            window.matchMedia("(max-width: 700px)").matches
+          ) {
+            media.style.setProperty("--journey-zoom", "1");
+            figure.classList.remove("journey-zooming");
+            return;
+          }
+
+          // Die unskalierte Figur als Referenz verwenden.
+          // Dadurch verändert der Zoom nicht seine eigene
+          // Scrollberechnung.
+
           const rect = figure.getBoundingClientRect();
 
-          // Bildmitte ermitteln
+          const imageCenter = rect.top + media.offsetHeight / 2;
+          const screenCenter = viewportHeight * 0.50;
 
-          const imageCenter = rect.top + rect.height / 2;
+          const distance = Math.abs(imageCenter - screenCenter);
 
-          // Zoom erst in der Bildschirmmitte aktivieren
+          // Der Zoom beginnt weit vor der Bildschirmmitte,
+          // erreicht dort sein Maximum und klingt danach ab.
 
-          const screenCenter = viewportHeight * 0.5;
+          const zoomRange = viewportHeight * 0.55;
 
-          // Entfernung zur Bildschirmmitte
-
-          const distance = Math.abs(
-            imageCenter - screenCenter
-          );
-
-          // Zoombereich: 32 % der Bildschirmhöhe
-
-          const zoomRange = viewportHeight * 0.32;
-
-          const progress = Math.max(
+          const progress = clamp(
+            1 - distance / zoomRange,
             0,
-            Math.min(
-              1,
-              1 - distance / zoomRange
-            )
+            1
           );
 
-          // Weiche Bewegung
+          const intensity = smoothstep(progress);
 
-          const smooth =
-            progress * progress * (3 - 2 * progress);
+          // Maximalbreite: rund 96 % des Zeitstrahls.
+          // Die Zielgröße wird aus der tatsächlichen
+          // Bildbreite berechnet.
 
-          // 100 % → 158 % → 100 %
+          const availableWidth = timeline.clientWidth * 0.96;
 
-          const zoom = 1 + 0.58 * smooth;
+          const maximumZoom = clamp(
+            availableWidth / media.offsetWidth,
+            1,
+            3.25
+          );
+
+          const zoom = 1 + (maximumZoom - 1) * intensity;
 
           media.style.setProperty(
             "--journey-zoom",
             zoom.toFixed(4)
           );
 
-          media.style.setProperty(
-            "--journey-shift",
-            "0px"
-          );
-
-          // Bild während des Zooms über die Linie legen
-
           figure.classList.toggle(
             "journey-zooming",
-            zoom > 1.05
+            zoom > 1.03
           );
 
         });
@@ -779,9 +831,9 @@
         if (ticking) return;
 
         ticking = true;
-
         requestAnimationFrame(updateJourney);
       }
+
 
       window.addEventListener(
         "scroll",
@@ -791,6 +843,11 @@
 
       window.addEventListener(
         "resize",
+        requestJourneyUpdate
+      );
+
+      window.addEventListener(
+        "load",
         requestJourneyUpdate
       );
 
