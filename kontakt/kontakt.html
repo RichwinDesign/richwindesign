@@ -6,8 +6,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description"
-    content="Kontakt zu Richwin Design – Anfragen zu Mediengestaltung, Print- und Digitaldesign sowie kreativen Projekten.">
+  <meta
+    name="description"
+    content="Kontakt zu Richwin Design – Anfragen zu Mediengestaltung, Print- und Digitaldesign sowie kreativen Projekten."
+  >
 
   <title>Kontakt | Richwin Design</title>
 
@@ -69,29 +71,54 @@
 
           <div class="contact-methods">
 
+            <!-- E-MAIL -->
+
             <div class="contact-method">
 
-              <div class="contact-method-icon">
+              <div class="contact-method-icon" aria-hidden="true">
                 ✉
               </div>
 
-              <div>
-                <h3>E-Mail</h3>
-                <p>Für Projektanfragen und Zusammenarbeit.</p>
+              <div class="contact-method-content">
+
+                <h3>
+                  E-Mail
+                </h3>
+
+                <a
+                  class="contact-method-link"
+                  href="mailto:brichwin@mai.de"
+                >
+                  brichwin@mai.de
+                </a>
+
+                <p>
+                  Für Projektanfragen und Zusammenarbeit.
+                </p>
+
               </div>
 
             </div>
 
 
+            <!-- LINKEDIN -->
+
             <div class="contact-method">
 
-              <div class="contact-method-icon">
+              <div class="contact-method-icon" aria-hidden="true">
                 in
               </div>
 
-              <div>
-                <h3>LinkedIn</h3>
-                <p>Beruflicher Austausch und Vernetzung.</p>
+              <div class="contact-method-content">
+
+                <h3>
+                  LinkedIn
+                </h3>
+
+                <p>
+                  Beruflicher Austausch und Vernetzung.
+                </p>
+
               </div>
 
             </div>
@@ -113,9 +140,30 @@
             Schreib mir gern eine Nachricht.
           </p>
 
-          <!-- Formularversand wird später eingerichtet -->
 
-          <form class="contact-form" id="contactForm">
+          <!--
+            FORMULARVERSAND MIT FORMSPREE
+
+            WICHTIG:
+            DEINE_FORMULAR_ID durch die echte
+            Formspree-ID ersetzen.
+
+            Beispiel:
+            https://formspree.io/f/abcdefgh
+
+            Die Nachricht wird anschließend
+            an das bei Formspree hinterlegte
+            E-Mail-Postfach weitergeleitet.
+          -->
+
+          <form
+            class="contact-form"
+            id="contactForm"
+            action="https://formspree.io/f/DEINE_FORMULAR_ID"
+            method="POST"
+          >
+
+            <!-- NAME -->
 
             <div class="contact-field">
 
@@ -129,11 +177,14 @@
                 name="name"
                 placeholder="Vor- und Nachname"
                 autocomplete="name"
+                maxlength="120"
                 required
               >
 
             </div>
 
+
+            <!-- E-MAIL -->
 
             <div class="contact-field">
 
@@ -147,11 +198,14 @@
                 name="email"
                 placeholder="name@beispiel.de"
                 autocomplete="email"
+                maxlength="254"
                 required
               >
 
             </div>
 
+
+            <!-- BETREFF -->
 
             <div class="contact-field">
 
@@ -164,11 +218,14 @@
                 id="contactSubject"
                 name="subject"
                 placeholder="Worum geht es?"
+                maxlength="180"
                 required
               >
 
             </div>
 
+
+            <!-- NACHRICHT -->
 
             <div class="contact-field">
 
@@ -181,30 +238,92 @@
                 name="message"
                 placeholder="Erzähl mir von deinem Anliegen ..."
                 rows="6"
+                maxlength="10000"
                 required
               ></textarea>
 
             </div>
 
 
+            <!-- FORMSPREE-BETREFF -->
+
+            <input
+              type="hidden"
+              name="_subject"
+              value="Neue Kontaktanfrage über Richwin Design"
+            >
+
+
+            <!-- SPAMSCHUTZ: VERSTECKTES FELD -->
+
+            <div
+              class="contact-honeypot"
+              aria-hidden="true"
+            >
+              <label for="contactWebsite">
+                Website
+              </label>
+
+              <input
+                type="text"
+                id="contactWebsite"
+                name="_gotcha"
+                tabindex="-1"
+                autocomplete="off"
+              >
+            </div>
+
+
+            <!-- DATENSCHUTZ -->
+
+            <div class="contact-consent">
+
+              <input
+                type="checkbox"
+                id="contactConsent"
+                name="datenschutz_zur_kenntnis_genommen"
+                value="Ja"
+                required
+              >
+
+              <label for="contactConsent">
+                Ich habe die
+                <a href="../datenschutz.html">
+                  Datenschutzhinweise
+                </a>
+                zur Kenntnis genommen.
+              </label>
+
+            </div>
+
             <p class="contact-privacy">
               Bitte sende keine vertraulichen oder
               sensiblen Informationen über dieses Formular.
+              Deine Angaben werden zur Bearbeitung
+              deiner Anfrage verwendet.
             </p>
+
+
+            <!-- ABSENDEBUTTON -->
 
             <button
               class="contact-submit"
+              id="contactSubmit"
               type="submit"
-              disabled
-              title="Der Nachrichtenversand wird noch eingerichtet"
             >
               Nachricht senden
               <span aria-hidden="true">›</span>
             </button>
 
-            <p class="contact-form-status">
-              Der Nachrichtenversand wird noch eingerichtet.
-            </p>
+
+            <!-- STATUSMELDUNG -->
+
+            <p
+              class="contact-form-status"
+              id="contactFormStatus"
+              role="status"
+              aria-live="polite"
+            ></p>
 
           </form>
 
@@ -217,11 +336,122 @@
   </main>
 
 
-  <!-- ZENTRALES JAVASCRIPT -->
+  <!-- ZENTRALE WEBSITE-FUNKTIONEN -->
 
   <script src="../script.js"></script>
+
+
+  <!-- KONTAKTFORMULAR -->
+
+  <script>
+    (() => {
+
+      const form = document.getElementById("contactForm");
+      const submitButton = document.getElementById("contactSubmit");
+      const status = document.getElementById("contactFormStatus");
+
+      if (!form || !submitButton || !status) return;
+
+      const originalButtonContent = submitButton.innerHTML;
+
+      function showStatus(message, type = "") {
+        status.textContent = message;
+        status.className = "contact-form-status";
+
+        if (type) {
+          status.classList.add("contact-status-" + type);
+        }
+      }
+
+      form.addEventListener("submit", async (event) => {
+
+        event.preventDefault();
+
+        if (!form.reportValidity()) return;
+
+        const endpoint = form.action;
+
+        // Verhindert einen vermeintlichen Versand,
+        // solange die Formspree-ID nicht eingetragen ist.
+
+        if (
+          endpoint.includes("DEINE_FORMULAR_ID") ||
+          !endpoint.startsWith("https://formspree.io/f/")
+        ) {
+          showStatus(
+            "Das Kontaktformular wird noch eingerichtet. Bitte nutze vorerst die angegebene E-Mail-Adresse.",
+            "error"
+          );
+          return;
+        }
+
+        submitButton.disabled = true;
+        submitButton.textContent = "Nachricht wird gesendet …";
+
+        showStatus("Deine Nachricht wird übertragen …");
+
+        try {
+
+          const formData = new FormData(form);
+
+          const response = await fetch(endpoint, {
+            method: "POST",
+            body: formData,
+            headers: {
+              "Accept": "application/json"
+            }
+          });
+
+          if (!response.ok) {
+
+            let errorMessage =
+              "Deine Nachricht konnte nicht gesendet werden. Bitte versuche es erneut oder schreibe mir eine E-Mail.";
+
+            try {
+              const result = await response.json();
+
+              if (
+                Array.isArray(result.errors) &&
+                result.errors.length
+              ) {
+                errorMessage = result.errors
+                  .map(error => error.message)
+                  .join(" ");
+              }
+            } catch (ignored) {
+              // Allgemeine Fehlermeldung verwenden
+            }
+
+            throw new Error(errorMessage);
+          }
+
+          form.reset();
+
+          showStatus(
+            "Vielen Dank! Deine Nachricht wurde erfolgreich übermittelt.",
+            "success"
+          );
+
+        } catch (error) {
+
+          showStatus(
+            error.message ||
+            "Beim Senden ist ein Fehler aufgetreten.",
+            "error"
+          );
+
+        } finally {
+
+          submitButton.disabled = false;
+          submitButton.innerHTML = originalButtonContent;
+
+        }
+
+      });
+
+    })();
+  </script>
 
 </body>
 
 </html>
-
