@@ -808,6 +808,12 @@ document.addEventListener("DOMContentLoaded", () => {
     // Menü um seine eigene halbe Breite verschieben
     let panelLeft = triggerCenter - panelWidth / 2;
 
+// Portfolio-Dropdown nach rechts verschieben,
+// damit der Inhalt bündig zum Menüpunkt steht.
+if (currentMenu === "portfolio" && window.innerWidth > 950) {
+  panelLeft = triggerRect.left - 14;
+}
+
     // Verhindert, dass das Dropdown aus dem Bildschirm ragt
     const maxLeft = Math.max(
       margin,
