@@ -8,6 +8,7 @@
   <meta name="description" content="Bianca Richwin – Mediengestalterin Digital und Print. Beruflicher Werdegang, Erfahrungen, Kompetenzen und eigene Projekte.">
   <meta name="robots" content="noindex">
   <title>Über mich | Richwin Design</title>
+
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="ueber-mich.css">
 </head>
@@ -18,7 +19,7 @@
 
   <main class="about-page">
 
-    <!-- ÜBER MICH – EINLEITUNG -->
+    <!-- EINLEITUNG -->
 
     <section class="about-hero" aria-labelledby="about-title">
 
@@ -72,7 +73,7 @@
     </section>
 
 
-    <!-- MEIN WERDEGANG -->
+    <!-- WERDEGANG -->
 
     <section
       class="about-journey-section"
@@ -102,22 +103,22 @@
         <span class="journey-down-arrow">↓</span>
       </div>
 
+
       <ol class="journey-timeline">
 
-        <!-- MITTLERE ZEITLINIE -->
+        <!-- MITTELLINIE -->
 
         <li class="journey-track" aria-hidden="true">
           <div class="journey-track-progress"></div>
         </li>
 
 
-        <!-- 2026 – KI-WEITERBILDUNG -->
+        <!-- 2026 -->
 
         <li class="journey-entry journey-left">
 
           <div class="journey-year">
             <span>2026</span>
-            <i aria-hidden="true"></i>
           </div>
 
           <figure class="journey-media journey-media-wide">
@@ -166,13 +167,12 @@
         </li>
 
 
-        <!-- 2023–2025 – NETWORK.HAMBURG -->
+        <!-- 2023–2025 -->
 
         <li class="journey-entry journey-right">
 
           <div class="journey-year">
             <span>2023–2025</span>
-            <i aria-hidden="true"></i>
           </div>
 
           <figure class="journey-media journey-media-large">
@@ -219,13 +219,12 @@
         </li>
 
 
-        <!-- 2021–2025 – EIGENSTÄNDIGE TÄTIGKEIT -->
+        <!-- 2021–2025 -->
 
         <li class="journey-entry journey-left">
 
           <div class="journey-year">
             <span>2021–2025</span>
-            <i aria-hidden="true"></i>
           </div>
 
           <figure class="journey-media journey-media-medium">
@@ -271,13 +270,12 @@
         </li>
 
 
-        <!-- 2018–2021 – AUSBILDUNG -->
+        <!-- 2018–2021 -->
 
         <li class="journey-entry journey-right">
 
           <div class="journey-year">
             <span>2018–2021</span>
-            <i aria-hidden="true"></i>
           </div>
 
           <figure class="journey-media journey-media-wide">
@@ -325,13 +323,12 @@
         </li>
 
 
-        <!-- 2016–2017 – WOOLWORTH -->
+        <!-- 2016–2017 -->
 
         <li class="journey-entry journey-left journey-text-only">
 
           <div class="journey-year">
             <span>2016–2017</span>
-            <i aria-hidden="true"></i>
           </div>
 
           <div class="journey-copy">
@@ -355,13 +352,12 @@
         </li>
 
 
-        <!-- 2014–2015 – HTK -->
+        <!-- 2014–2015 -->
 
         <li class="journey-entry journey-right">
 
           <div class="journey-year">
             <span>2014–2015</span>
-            <i aria-hidden="true"></i>
           </div>
 
           <figure class="journey-media journey-media-medium">
@@ -404,13 +400,12 @@
         </li>
 
 
-        <!-- 2014 – FRISEUR KLINCK -->
+        <!-- 2014 -->
 
         <li class="journey-entry journey-left journey-text-only">
 
           <div class="journey-year">
             <span>2014</span>
-            <i aria-hidden="true"></i>
           </div>
 
           <div class="journey-copy">
@@ -435,13 +430,12 @@
         </li>
 
 
-        <!-- 2011–2014 – FRISEURAUSBILDUNG -->
+        <!-- 2011–2014 -->
 
         <li class="journey-entry journey-right journey-text-only">
 
           <div class="journey-year">
             <span>2011–2014</span>
-            <i aria-hidden="true"></i>
           </div>
 
           <div class="journey-copy">
@@ -467,13 +461,12 @@
         </li>
 
 
-        <!-- 2010–2011 – MALERHANDWERK -->
+        <!-- 2010–2011 -->
 
         <li class="journey-entry journey-left journey-text-only">
 
           <div class="journey-year">
             <span>2010–2011</span>
-            <i aria-hidden="true"></i>
           </div>
 
           <div class="journey-copy">
@@ -624,89 +617,42 @@
 
   </main>
 
-
   <!-- ZENTRALE WEBSITE-FUNKTIONEN -->
 
   <script src="../script.js"></script>
 
 
-  <!-- SCROLL-ZOOM & ZEITSTRAHL -->
+  <!-- 2-COLUMN-SCROLLANIMATION -->
 
   <script>
     (() => {
 
       const timeline = document.querySelector(".journey-timeline");
-      const entries = [...document.querySelectorAll(".journey-entry")];
 
-      if (!timeline || !entries.length) return;
+      if (!timeline) return;
 
-      const mediaEntries = entries.filter(
-        entry => entry.querySelector(".journey-media-inner")
-      );
+      const entries = [
+        ...timeline.querySelectorAll(".journey-entry")
+      ];
 
-      const motionPreference = window.matchMedia(
+      const reducedMotion = window.matchMedia(
         "(prefers-reduced-motion: reduce)"
       );
 
-      const mobileQuery = window.matchMedia(
+      const mobile = window.matchMedia(
         "(max-width: 700px)"
       );
 
       const clamp = (value, min, max) =>
         Math.max(min, Math.min(max, value));
 
-      const smoothstep = value =>
-        value * value * (3 - 2 * value);
-
-
-      /* EINBLENDEN DER STATIONEN */
-
-      if (!motionPreference.matches) {
-
-        document.documentElement.classList.add("journey-js");
-
-        if ("IntersectionObserver" in window) {
-
-          const observer = new IntersectionObserver(items => {
-
-            items.forEach(item => {
-
-              if (item.isIntersecting) {
-                item.target.classList.add("journey-visible");
-                observer.unobserve(item.target);
-              }
-
-            });
-
-          }, {
-            threshold: 0.05,
-            rootMargin: "0px 0px 90px 0px"
-          });
-
-          entries.forEach(entry => observer.observe(entry));
-
-        } else {
-
-          entries.forEach(entry => {
-            entry.classList.add("journey-visible");
-          });
-
-        }
-      }
-
-
-      /* =========================================
-         SCROLL-ZOOM – DREI PHASEN
-         ========================================= */
-
       let ticking = false;
 
-      function updateJourney() {
+      function updateTimeline() {
 
         const viewportHeight = window.innerHeight;
-        const timelineRect = timeline.getBoundingClientRect();
 
-        // Fortschritt der Mittellinie
+        const timelineRect = timeline.getBoundingClientRect();
 
         const lineProgress = clamp(
           (viewportHeight * 0.55 - timelineRect.top) /
@@ -720,161 +666,64 @@
           lineProgress.toFixed(4)
         );
 
-        const disableZoom =
-          motionPreference.matches || mobileQuery.matches;
+        entries.forEach((entry) => {
 
-        mediaEntries.forEach(entry => {
+          const rect = entry.getBoundingClientRect();
 
-          const figure = entry.querySelector(".journey-media");
-          const media = entry.querySelector(".journey-media-inner");
+          const center =
+            rect.top + rect.height / 2;
 
-          if (!figure || !media) return;
+          const distance =
+            center - viewportHeight / 2;
 
-          if (disableZoom) {
-
-            media.style.setProperty("--journey-zoom", "1");
-            media.style.setProperty("--journey-x", "0px");
-            figure.style.setProperty("--journey-overflow", "0px");
-            figure.classList.remove("journey-zooming");
-
-            return;
-          }
-
-          const imageWidth = media.offsetWidth;
-          const imageHeight = media.offsetHeight;
-
-          if (!imageWidth || !imageHeight) return;
-
-          // Stabile Ausgangsposition:
-          // Weder der Zoom noch der dynamische
-          // Bildabstand verändern diese Berechnung.
-
-          const entryRect = entry.getBoundingClientRect();
-
-          const entryPaddingTop =
-            parseFloat(getComputedStyle(entry).paddingTop) || 0;
-
-          const originalImageCenter =
-            entryRect.top + entryPaddingTop + imageHeight / 2;
-
-          const screenCenter = viewportHeight * 0.50;
-
-          const relativePosition =
-            originalImageCenter - screenCenter;
-
-          /*
-             PHASE 1 – EINZOOMEN
-             Das Bild kommt von unten.
-
-             PHASE 2 – GROSS BLEIBEN
-             Nach der Bildschirmmitte behält
-             es seine maximale Größe.
-
-             PHASE 3 – AUSZOOMEN
-             Erst deutlich weiter oben
-             wird es wieder kleiner.
-          */
-
-          const zoomInDistance = viewportHeight * 0.70;
-          const holdDistance = viewportHeight * 0.70;
-          const zoomOutDistance = viewportHeight * 0.90;
-
-          let intensity = 0;
-
-          if (relativePosition >= 0) {
-
-            // Einzoomen
-
-            const progress = clamp(
-              1 - relativePosition / zoomInDistance,
-              0,
-              1
-            );
-
-            intensity = smoothstep(progress);
-
-          } else if (relativePosition >= -holdDistance) {
-
-            // Groß bleiben
-
-            intensity = 1;
-
-          } else {
-
-            // Später auszoomen
-
-            const distanceAfterHold =
-              -relativePosition - holdDistance;
-
-            const progress = clamp(
-              1 - distanceAfterHold / zoomOutDistance,
-              0,
-              1
-            );
-
-            intensity = smoothstep(progress);
-
-          }
-
-          // Maximale Bildbreite:
-          // Links und rechts bleibt derselbe Rand.
-
-          const sideMargin = clamp(
-            timeline.clientWidth * 0.035,
-            25,
-            45
+          const movement = clamp(
+            distance / (viewportHeight * 0.75),
+            -1,
+            1
           );
 
-          const targetWidth =
-            timeline.clientWidth - sideMargin * 2;
+          // Kein Parallax auf kleinen Displays oder
+          // bei reduzierter Bewegung.
 
-          const maximumZoom = Math.max(
-            1,
-            targetWidth / imageWidth
+          const strength =
+            reducedMotion.matches || mobile.matches
+              ? 0
+              : 34;
+
+          // Bild und Text bewegen sich gegeneinander.
+          // Bei jeder Station wechselt die Anordnung.
+
+          const mediaShift =
+            movement * strength;
+
+          const copyShift =
+            movement * -strength;
+
+          entry.style.setProperty(
+            "--media-shift",
+            mediaShift.toFixed(2) + "px"
           );
 
-          const zoom =
-            1 + (maximumZoom - 1) * intensity;
-
-          // Linke Bilder wachsen nach rechts,
-          // rechte Bilder nach links.
-
-          const direction =
-            entry.classList.contains("journey-left")
-              ? 1
-              : -1;
-
-          const horizontalShift =
-            direction * sideMargin * intensity;
-
-          media.style.setProperty(
-            "--journey-zoom",
-            zoom.toFixed(4)
+          entry.style.setProperty(
+            "--copy-shift",
+            copyShift.toFixed(2) + "px"
           );
 
-          media.style.setProperty(
-            "--journey-x",
-            horizontalShift.toFixed(2) + "px"
+          // Markierung der aktiven Station
+
+          const visible =
+            rect.top < viewportHeight * 0.85 &&
+            rect.bottom > viewportHeight * 0.15;
+
+          entry.classList.toggle(
+            "journey-visible",
+            visible
           );
 
-          // Bild wächst auch nach oben und unten.
-          // Für diese zusätzliche Höhe wird Platz
-          // reserviert, damit der Text darunter bleibt.
-
-          const verticalOverflow =
-            Math.max(
-              0,
-              (imageHeight * (zoom - 1)) / 2
-            );
-
-          figure.style.setProperty(
-            "--journey-overflow",
-            verticalOverflow.toFixed(2) + "px"
-          );
-
-          figure.classList.toggle(
-            "journey-zooming",
-            zoom > 1.03
+          entry.classList.toggle(
+            "journey-active",
+            rect.top < viewportHeight * 0.58 &&
+            rect.bottom > viewportHeight * 0.42
           );
 
         });
@@ -883,38 +732,46 @@
       }
 
 
-      function requestJourneyUpdate() {
+      function requestUpdate() {
 
         if (ticking) return;
 
         ticking = true;
-        requestAnimationFrame(updateJourney);
+
+        requestAnimationFrame(updateTimeline);
       }
 
       window.addEventListener(
         "scroll",
-        requestJourneyUpdate,
+        requestUpdate,
         { passive: true }
       );
 
       window.addEventListener(
         "resize",
-        requestJourneyUpdate
+        requestUpdate
       );
 
       window.addEventListener(
         "load",
-        requestJourneyUpdate
+        requestUpdate
       );
 
-      if (motionPreference.addEventListener) {
-        motionPreference.addEventListener(
+      if (reducedMotion.addEventListener) {
+        reducedMotion.addEventListener(
           "change",
-          requestJourneyUpdate
+          requestUpdate
         );
       }
 
-      updateJourney();
+      if (mobile.addEventListener) {
+        mobile.addEventListener(
+          "change",
+          requestUpdate
+        );
+      }
+
+      updateTimeline();
 
     })();
   </script>
