@@ -1,1 +1,431 @@
 
+/* =========================================
+   RICHWIN DESIGN – FAMILIENNUMMERN 001–200
+   GENEALOGIE / BRAUN-GOLD
+   ========================================= */
+
+body:has(.register-detail-page) {
+  background: #15110d;
+}
+
+.register-detail-page {
+  --reg-gold: #b38a5a;
+  --reg-light: #d8b890;
+  --reg-text: #f5efe6;
+  --reg-muted: #cdbeaf;
+  --reg-border: #4b3a2c;
+
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 42px 32px 110px;
+
+  color: var(--reg-text);
+  line-height: 1.7;
+}
+
+.register-detail-page * {
+  box-sizing: border-box;
+}
+
+.register-detail-page a {
+  color: var(--reg-light);
+}
+
+/* =========================================
+   ZURÜCK-BUTTON
+   ========================================= */
+
+.register-back {
+  display: inline-flex;
+  padding: 9px 15px;
+  margin-bottom: 36px;
+
+  border: 1px solid var(--reg-border);
+  border-radius: 7px;
+
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.register-back:hover {
+  border-color: var(--reg-gold);
+  background: rgba(179, 138, 90, .1);
+}
+
+/* =========================================
+   EINLEITUNG
+   ========================================= */
+
+.register-detail-intro {
+  max-width: 820px;
+  margin-bottom: 32px;
+}
+
+.register-eyebrow {
+  color: var(--reg-light);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  margin: 0 0 14px;
+}
+
+.register-detail-intro h1 {
+  color: var(--reg-text);
+  font-size: clamp(34px, 4.5vw, 54px);
+  line-height: 1.15;
+  margin: 0 0 18px;
+}
+
+.register-detail-intro h1 span {
+  color: var(--reg-light);
+}
+
+.register-lead {
+  color: var(--reg-light);
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0 0 12px;
+}
+
+.register-description {
+  color: var(--reg-muted);
+  font-size: 14px;
+  margin: 0;
+}
+
+/* =========================================
+   NAVIGATION ZWISCHEN REGISTERBEREICHEN
+   ========================================= */
+
+.register-range-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 30px 0;
+}
+
+.register-range-nav a {
+  border: 1px solid var(--reg-border);
+  border-radius: 8px;
+
+  padding: 10px 17px;
+
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.register-range-nav a:hover,
+.register-range-nav a[aria-current="page"] {
+  background: #b38a5a;
+  color: #15110d;
+  border-color: #b38a5a;
+}
+
+/* =========================================
+   DATENSCHUTZHINWEIS
+   ========================================= */
+
+.register-privacy {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr);
+  gap: 18px;
+
+  padding: 25px 28px;
+  margin: 0 0 52px;
+
+  background: #211a14;
+  border: 1px solid var(--reg-border);
+  border-radius: 12px;
+}
+
+.register-privacy-icon {
+  display: grid;
+  place-items: center;
+
+  width: 32px;
+  height: 32px;
+
+  border: 1px solid var(--reg-gold);
+  border-radius: 50%;
+
+  font: italic 20px Georgia, serif;
+  color: var(--reg-light);
+}
+
+.register-privacy h2 {
+  font-size: 17px;
+  color: var(--reg-light);
+  margin: 0 0 8px;
+}
+
+.register-privacy p {
+  font-size: 12px;
+  line-height: 1.8;
+  color: var(--reg-muted);
+  margin: 0 0 10px;
+}
+
+.register-privacy a {
+  font-size: 12px;
+  text-decoration: none;
+}
+
+/* =========================================
+   NUMMERNVERZEICHNIS
+   ========================================= */
+
+.register-index {
+  padding: 27px;
+  margin-bottom: 60px;
+
+  border: 1px solid var(--reg-border);
+  border-radius: 12px;
+
+  background: linear-gradient(
+    145deg,
+    #281f18,
+    #19130e
+  );
+
+  scroll-margin-top: 90px;
+}
+
+.register-index-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.register-index-heading h2 {
+  font-size: 25px;
+  margin: 0;
+  color: var(--reg-text);
+}
+
+.register-index-heading > span {
+  font-size: 12px;
+  color: var(--reg-muted);
+}
+
+.register-index > p {
+  font-size: 13px;
+  color: var(--reg-muted);
+  margin: 10px 0 22px;
+}
+
+.register-number-grid {
+  display: grid;
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+  gap: 7px;
+}
+
+.register-number-grid a {
+  display: grid;
+  place-items: center;
+  min-height: 39px;
+
+  border: 1px solid #634b35;
+  border-radius: 5px;
+
+  color: var(--reg-text);
+  font-size: 12px;
+  text-decoration: none;
+
+  background: #1c1611;
+}
+
+.register-number-grid a:hover,
+.register-number-grid a:focus-visible {
+  border-color: var(--reg-light);
+  color: #15110d;
+  background: var(--reg-light);
+}
+
+/* =========================================
+   EINZELNE FAMILIENABSCHNITTE
+   ========================================= */
+
+.register-entries {
+  display: grid;
+  gap: 18px;
+}
+
+.register-entry {
+  min-width: 0;
+  padding: 25px 29px;
+
+  border: 1px solid var(--reg-border);
+  border-radius: 11px;
+
+  background: linear-gradient(
+    145deg,
+    #231b15,
+    #17120f
+  );
+
+  scroll-margin-top: 95px;
+}
+
+.register-entry:target {
+  border-color: var(--reg-gold);
+  box-shadow: 0 0 0 2px rgba(179, 138, 90, .1);
+}
+
+.register-entry-heading {
+  border-bottom: 1px solid var(--reg-border);
+  margin-bottom: 17px;
+  padding-bottom: 15px;
+}
+
+.register-entry-id {
+  display: block;
+
+  color: var(--reg-gold);
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .14em;
+
+  margin-bottom: 7px;
+}
+
+.register-entry-heading h3 {
+  color: var(--reg-text);
+  font-size: clamp(18px, 2vw, 23px);
+  line-height: 1.35;
+  margin: 0 0 8px;
+}
+
+.register-top {
+  font-size: 11px;
+  text-decoration: none;
+}
+
+/* =========================================
+   GENEALOGISCHE DATEN UND QUELLEN
+   ========================================= */
+
+.register-entry-body {
+  font-size: 13px;
+  color: var(--reg-muted);
+  overflow-wrap: anywhere;
+}
+
+.register-entry-body p {
+  margin: 0 0 12px;
+  line-height: 1.85;
+}
+
+.register-entry-body p:last-child {
+  margin-bottom: 0;
+}
+
+.register-entry-body strong {
+  color: var(--reg-text);
+  font-weight: 650;
+}
+
+.register-entry-body em {
+  color: #bdab97;
+}
+
+.register-entry-body blockquote {
+  margin: 16px 0 0;
+  padding: 12px 0 2px 19px;
+  border-left: 2px solid var(--reg-gold);
+}
+
+.register-entry-body a {
+  color: var(--reg-light);
+  text-underline-offset: 3px;
+}
+
+.register-private {
+  font-size: 12px;
+  color: #bca78e;
+  font-style: italic;
+}
+
+/* =========================================
+   ABSCHLUSS
+   ========================================= */
+
+.register-detail-ending {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  gap: 15px;
+  border-top: 1px solid var(--reg-border);
+
+  margin-top: 40px;
+  padding-top: 25px;
+
+  font-size: 12px;
+}
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 800px) {
+
+  .register-number-grid {
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+  }
+
+  .register-detail-page {
+    padding: 35px 24px 80px;
+  }
+
+}
+
+/* =========================================
+   SMARTPHONE
+   ========================================= */
+
+@media (max-width: 550px) {
+
+  .register-detail-page {
+    padding: 28px 16px 65px;
+  }
+
+  .register-number-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 5px;
+  }
+
+  .register-index {
+    padding: 17px;
+  }
+
+  .register-entry {
+    padding: 19px 16px;
+  }
+
+  .register-privacy {
+    grid-template-columns: 1fr;
+    padding: 19px;
+  }
+
+  .register-entry-body {
+    font-size: 12px;
+  }
+
+}
+
+/* =========================================
+   REDUZIERTE BEWEGUNG
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .register-detail-page * {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+
+}
+
