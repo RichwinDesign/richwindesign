@@ -869,15 +869,15 @@ body:has(.portal-overview) {
   margin-bottom: 0;
 }
 
+
 .portal-overview {
   width: min(1136px, calc(100% - 48px));
   max-width: 1136px;
   margin: 0 auto;
-  padding: 50px 0 34px;
+  padding: 60px 0 34px;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 16px;
-  align-items: stretch;
 }
 
 .portal-overview .portal-card {
