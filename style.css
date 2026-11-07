@@ -3887,3 +3887,15 @@ a.mega-link:focus-visible {
   }
 
 }
+
+/* =========================================
+   DROPDOWN – LINKS AN PORTFOLIO AUSRICHTEN
+   ========================================= */
+
+@media (min-width: 951px) {
+
+  .mega-menu-panel[data-menu="portfolio"] {
+    left: calc(50% + 60px);
+  }
+
+}
