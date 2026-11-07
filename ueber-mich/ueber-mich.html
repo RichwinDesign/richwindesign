@@ -102,7 +102,6 @@
         <span class="journey-down-arrow">↓</span>
       </div>
 
-
       <ol class="journey-timeline">
 
         <!-- MITTLERE ZEITLINIE -->
@@ -696,7 +695,9 @@
       }
 
 
-      /* SCROLL-ZOOM */
+      /* =========================================
+         SCROLL-ZOOM – DREI PHASEN
+         ========================================= */
 
       let ticking = false;
 
@@ -734,8 +735,8 @@
             media.style.setProperty("--journey-zoom", "1");
             media.style.setProperty("--journey-x", "0px");
             figure.style.setProperty("--journey-overflow", "0px");
-
             figure.classList.remove("journey-zooming");
+
             return;
           }
 
@@ -744,8 +745,9 @@
 
           if (!imageWidth || !imageHeight) return;
 
-          // Position aus der Station berechnen,
-          // nicht aus dem skalierten Bild.
+          // Stabile Ausgangsposition:
+          // Weder der Zoom noch der dynamische
+          // Bildabstand verändern diese Berechnung.
 
           const entryRect = entry.getBoundingClientRect();
 
@@ -757,40 +759,65 @@
 
           const screenCenter = viewportHeight * 0.50;
 
-          // POSITIV: Bild kommt von unten
-          // NEGATIV: Bild ist über die Bildschirmmitte hinaus
-
           const relativePosition =
             originalImageCenter - screenCenter;
 
-          // LANGSAMERES AUSZOOMEN:
-          // Vor der Bildschirmmitte normal einzoomen.
-          // Danach bleibt das Bild länger groß.
+          /*
+             PHASE 1 – EINZOOMEN
+             Das Bild kommt von unten.
 
-          let progress;
+             PHASE 2 – GROSS BLEIBEN
+             Nach der Bildschirmmitte behält
+             es seine maximale Größe.
+
+             PHASE 3 – AUSZOOMEN
+             Erst deutlich weiter oben
+             wird es wieder kleiner.
+          */
+
+          const zoomInDistance = viewportHeight * 0.70;
+          const holdDistance = viewportHeight * 0.70;
+          const zoomOutDistance = viewportHeight * 0.90;
+
+          let intensity = 0;
 
           if (relativePosition >= 0) {
 
-            progress = clamp(
-              1 - relativePosition / (viewportHeight * 0.65),
+            // Einzoomen
+
+            const progress = clamp(
+              1 - relativePosition / zoomInDistance,
               0,
               1
             );
+
+            intensity = smoothstep(progress);
+
+          } else if (relativePosition >= -holdDistance) {
+
+            // Groß bleiben
+
+            intensity = 1;
 
           } else {
 
-            progress = clamp(
-              1 + relativePosition / (viewportHeight * 1.15),
+            // Später auszoomen
+
+            const distanceAfterHold =
+              -relativePosition - holdDistance;
+
+            const progress = clamp(
+              1 - distanceAfterHold / zoomOutDistance,
               0,
               1
             );
 
+            intensity = smoothstep(progress);
+
           }
 
-          const intensity = smoothstep(progress);
-
-          // Gleicher Abstand links und rechts
-          // beim maximalen Zoom.
+          // Maximale Bildbreite:
+          // Links und rechts bleibt derselbe Rand.
 
           const sideMargin = clamp(
             timeline.clientWidth * 0.035,
@@ -809,7 +836,7 @@
           const zoom =
             1 + (maximumZoom - 1) * intensity;
 
-          // Linke Bilder nach rechts vergrößern,
+          // Linke Bilder wachsen nach rechts,
           // rechte Bilder nach links.
 
           const direction =
@@ -830,13 +857,15 @@
             horizontalShift.toFixed(2) + "px"
           );
 
-          // Zusätzlichen Platz für das
-          // vergrößerte Bild reservieren.
-          // Die Bildunterschrift und der Text
-          // wandern dadurch nach unten.
+          // Bild wächst auch nach oben und unten.
+          // Für diese zusätzliche Höhe wird Platz
+          // reserviert, damit der Text darunter bleibt.
 
           const verticalOverflow =
-            Math.max(0, (imageHeight * (zoom - 1)) / 2);
+            Math.max(
+              0,
+              (imageHeight * (zoom - 1)) / 2
+            );
 
           figure.style.setProperty(
             "--journey-overflow",
@@ -868,8 +897,15 @@
         { passive: true }
       );
 
-      window.addEventListener("resize", requestJourneyUpdate);
-      window.addEventListener("load", requestJourneyUpdate);
+      window.addEventListener(
+        "resize",
+        requestJourneyUpdate
+      );
+
+      window.addEventListener(
+        "load",
+        requestJourneyUpdate
+      );
 
       if (motionPreference.addEventListener) {
         motionPreference.addEventListener(
