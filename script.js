@@ -71,7 +71,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     updateCompare(slider.value);
-    slider.addEventListener("input", () => updateCompare(slider.value));
+
+    slider.addEventListener("input", () => {
+      updateCompare(slider.value);
+    });
   });
 
 
@@ -95,6 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const rootPath = new URL("./", scriptURL).pathname;
 
   const currentPath = window.location.pathname;
+
   const relativePath = currentPath.startsWith(rootPath)
     ? currentPath.slice(rootPath.length)
     : currentPath;
@@ -138,6 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const activePage = getPageArea(relativePath);
+
   document.body.dataset.page = activePage;
 
   const homeURL = url("index.html");
@@ -285,6 +290,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (remembered) {
           return remembered;
         }
+
       } catch (error) {
         // Kein gespeicherter Rücksprung vorhanden.
       }
@@ -715,7 +721,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       <div class="mega-column mega-column-preview">
         ${preview(
-          "images/portale/portal_merch.png",
+          "images/portale/portal_merch.webp",
           "Portal-Merch",
           "Kleine Welten zum Mitnehmen.",
           "portale/portal-merch.html"
@@ -770,11 +776,106 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let currentMenu = null;
 
+
+  /* =========================================
+     NEU: DROPDOWN MITTIG UNTER MENÜPUNKT
+     ========================================= */
+
+  function positionMenu() {
+
+    if (!currentMenu || panel.hidden) return;
+
+    const trigger = triggers.find(
+      (link) => link.dataset.nav === currentMenu
+    );
+
+    if (!trigger) return;
+
+    const triggerRect = trigger.getBoundingClientRect();
+    const headerRect = header.getBoundingClientRect();
+
+    const viewportWidth = document.documentElement.clientWidth;
+
+    const panelRect = panel.getBoundingClientRect();
+    const panelWidth = panelRect.width;
+
+    const margin = 12;
+
+    // Exakte horizontale Mitte des Menüpunktes
+    const triggerCenter =
+      triggerRect.left + triggerRect.width / 2;
+
+    // Menü um seine eigene halbe Breite verschieben
+    let panelLeft = triggerCenter - panelWidth / 2;
+
+    // Verhindert, dass das Dropdown aus dem Bildschirm ragt
+    const maxLeft = Math.max(
+      margin,
+      viewportWidth - panelWidth - margin
+    );
+
+    panelLeft = Math.max(
+      margin,
+      Math.min(panelLeft, maxLeft)
+    );
+
+    // Direkt an der Unterkante des Headers
+    const panelTop = headerRect.bottom - 1;
+
+    panel.style.setProperty(
+      "position",
+      "fixed",
+      "important"
+    );
+
+    panel.style.setProperty(
+      "left",
+      `${panelLeft}px`,
+      "important"
+    );
+
+    panel.style.setProperty(
+      "top",
+      `${panelTop}px`,
+      "important"
+    );
+
+    panel.style.setProperty(
+      "right",
+      "auto",
+      "important"
+    );
+
+    panel.style.setProperty(
+      "bottom",
+      "auto",
+      "important"
+    );
+
+    panel.style.setProperty(
+      "transform",
+      "none",
+      "important"
+    );
+
+    panel.style.setProperty(
+      "z-index",
+      "9999",
+      "important"
+    );
+  }
+
+
+  /* =========================================
+     MENÜ SCHLIESSEN
+     ========================================= */
+
   function closeMenu() {
 
     currentMenu = null;
     panel.hidden = true;
     panel.innerHTML = "";
+
     header.classList.remove("mega-open");
 
     triggers.forEach((link) => {
@@ -782,6 +883,11 @@ document.addEventListener("DOMContentLoaded", () => {
       link.setAttribute("aria-expanded", "false");
     });
   }
+
+
+  /* =========================================
+     MENÜ ÖFFNEN
+     ========================================= */
 
   function openMenu(name) {
 
@@ -801,11 +907,42 @@ document.addEventListener("DOMContentLoaded", () => {
     header.classList.add("mega-open");
 
     triggers.forEach((link) => {
+
       const active = link.dataset.nav === name;
 
       link.classList.toggle("mega-hovered", active);
       link.setAttribute("aria-expanded", String(active));
     });
+
+    // Neue Position unmittelbar berechnen
+    positionMenu();
+  }
+
+
+  /* =========================================
+     MENÜ BEI GRÖSSENÄNDERUNG NACHFÜHREN
+     ========================================= */
+
+  window.addEventListener("resize", positionMenu);
+
+  window.addEventListener(
+    "scroll",
+    positionMenu,
+    { passive: true }
+  );
+
+  // Wichtig für Portfolio:
+  // Wenn Portale oder Genealogie aufgeklappt werden,
+  // verändert sich die Breite des Dropdowns.
+  // Es bleibt trotzdem mittig unter Portfolio.
+
+  if ("ResizeObserver" in window) {
+
+    const menuResizeObserver = new ResizeObserver(() => {
+      positionMenu();
+    });
+
+    menuResizeObserver.observe(panel);
   }
 
 
@@ -818,35 +955,47 @@ document.addEventListener("DOMContentLoaded", () => {
     const name = link.dataset.nav;
 
     if (!name || !panels[name]) {
+
       link.addEventListener("mouseenter", closeMenu);
       link.addEventListener("focus", closeMenu);
+
       return;
     }
 
     link.classList.add("mega-trigger");
+
     link.setAttribute("aria-controls", panel.id);
     link.setAttribute("aria-expanded", "false");
 
-    link.addEventListener("mouseenter", () => openMenu(name));
-    link.addEventListener("focus", () => openMenu(name));
+    link.addEventListener("mouseenter", () => {
+      openMenu(name);
+    });
+
+    link.addEventListener("focus", () => {
+      openMenu(name);
+    });
 
     link.addEventListener("touchstart", (event) => {
+
       if (currentMenu !== name) {
         event.preventDefault();
         openMenu(name);
       }
+
     }, { passive: false });
   });
 
   header.addEventListener("mouseleave", closeMenu);
 
   document.addEventListener("keydown", (event) => {
+
     if (event.key === "Escape") {
       closeMenu();
     }
   });
 
   document.addEventListener("pointerdown", (event) => {
+
     if (!header.contains(event.target)) {
       closeMenu();
     }
@@ -878,6 +1027,7 @@ document.addEventListener("DOMContentLoaded", () => {
       overflow-y: auto;
 
       overscroll-behavior: contain;
+
       scrollbar-width: thin;
       scrollbar-color: #476a7d #0a141d;
 
@@ -885,6 +1035,7 @@ document.addEventListener("DOMContentLoaded", () => {
         width .25s ease,
         min-width .25s ease;
     }
+
 
     /* PORTALE GEÖFFNET */
 
@@ -894,6 +1045,7 @@ document.addEventListener("DOMContentLoaded", () => {
       width: min(260px, calc(100vw - 24px));
       min-width: min(260px, calc(100vw - 24px));
     }
+
 
     /* GENEALOGIE GEÖFFNET */
 
@@ -1000,6 +1152,7 @@ document.addEventListener("DOMContentLoaded", () => {
       transform: none !important;
     }
 
+
     /* DEKORATIVE RAHMEN ENTFERNEN */
 
     #richwin-mega-menu[data-menu="portfolio"]
@@ -1018,6 +1171,7 @@ document.addEventListener("DOMContentLoaded", () => {
       border: none !important;
       box-shadow: none !important;
     }
+
 
     /* AUCH INNERE SPANS OHNE HOVER-HINTERGRUND */
 
@@ -1055,6 +1209,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .mega-link:focus-visible span {
       color: #8bc9e7 !important;
     }
+
 
     /* TASTATURFOKUS OHNE KASTEN */
 
@@ -1446,18 +1601,24 @@ document.addEventListener("DOMContentLoaded", () => {
       display: inline-flex;
       align-items: center;
       justify-content: center;
+
       width: fit-content;
       min-height: 36px;
+
       margin: 0 0 24px;
       padding: 9px 16px;
+
       border: 1px solid rgba(111, 182, 217, 0.5);
       border-radius: 8px;
+
       background: transparent;
       color: #ffffff;
+
       font-size: 13px;
       font-weight: 500;
       line-height: 1.3;
       text-decoration: none;
+
       transition:
         background .25s ease,
         border-color .25s ease,
@@ -1501,6 +1662,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     updatePhotoCompare();
+
     slider.addEventListener("input", updatePhotoCompare);
   });
 });
