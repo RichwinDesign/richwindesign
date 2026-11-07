@@ -13,270 +13,31 @@
 
   <title>Bildarchiv | Richwin Design</title>
 
-  <!-- ZENTRALE WEBSITE-CSS -->
   <link rel="stylesheet" href="../../style.css">
-
-  <!-- BILDARCHIV-CSS -->
+  <link rel="stylesheet" href="../genealogie.css">
   <link rel="stylesheet" href="bildarchiv.css">
-
-  <!-- =====================================
-       HORIZONTALE BILDERGALERIEN
-       ===================================== -->
-
-  <style>
-
-    /* Bestehende Masonry-Darstellung überschreiben */
-
-    .art-carousel {
-      position: relative;
-      width: 100%;
-      padding: 0 45px;
-    }
-
-    .art-gallery.art-carousel-track {
-      display: flex;
-      flex-wrap: nowrap;
-      align-items: stretch;
-
-      column-count: auto;
-      column-gap: normal;
-      gap: 15px;
-
-      width: 100%;
-      overflow-x: auto;
-      overflow-y: hidden;
-
-      scroll-behavior: smooth;
-      scroll-snap-type: x mandatory;
-      scrollbar-width: none;
-
-      overscroll-behavior-x: contain;
-    }
-
-    .art-gallery.art-carousel-track::-webkit-scrollbar {
-      display: none;
-    }
-
-    /* Vier Werke pro Ansicht */
-
-    .art-carousel-track .art-gallery-item {
-      display: flex;
-      flex-direction: column;
-
-      flex: 0 0 calc((100% - 45px) / 4);
-      width: auto;
-      min-width: 0;
-
-      margin: 0;
-      padding: 0;
-
-      break-inside: auto;
-      scroll-snap-align: start;
-    }
-
-    /* Einheitliche Bildhöhe ohne Zuschnitt */
-
-    .art-carousel-track .art-gallery-item img {
-      display: block;
-      width: 100%;
-      height: 350px;
-
-      object-fit: contain;
-      object-position: center;
-
-      background: #101820;
-    }
-
-    .art-carousel-track .art-gallery-item figcaption {
-      margin-top: auto;
-      padding: 12px 13px;
-
-      background: #0a131c;
-      color: #8fa8b9;
-
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: .12em;
-    }
-
-    /* Navigation */
-
-    .art-carousel-arrow {
-      position: absolute;
-      top: 50%;
-      z-index: 2;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      width: 36px;
-      height: 58px;
-
-      border: 1px solid rgba(111, 182, 217, .4);
-      border-radius: 8px;
-
-      background: rgba(11, 24, 35, .95);
-      color: #a1d6ef;
-
-      font-family: inherit;
-      font-size: 30px;
-      line-height: 1;
-
-      cursor: pointer;
-      transform: translateY(-50%);
-
-      transition:
-        background .25s ease,
-        border-color .25s ease,
-        opacity .25s ease;
-    }
-
-    .art-carousel-prev {
-      left: 0;
-    }
-
-    .art-carousel-next {
-      right: 0;
-    }
-
-    .art-carousel-arrow:hover:not(:disabled) {
-      background: #193344;
-      border-color: #87c6e3;
-    }
-
-    .art-carousel-arrow:disabled {
-      opacity: .25;
-      cursor: default;
-    }
-
-    .art-carousel-arrow:focus-visible {
-      outline: 2px solid #87c6e3;
-      outline-offset: 3px;
-    }
-
-    /* Zähler unter der Bilderreihe */
-
-    .art-carousel-status {
-      margin: 17px 0 0;
-      color: #89a9ba;
-
-      font-size: 11px;
-      letter-spacing: .06em;
-      text-align: center;
-    }
-
-    /* Bereiche etwas kompakter */
-
-    .art-artist {
-      margin-bottom: 95px;
-    }
-
-    .art-artist + .art-artist {
-      margin-top: 0;
-    }
-
-    /* TABLET */
-
-    @media (max-width: 1000px) {
-
-      .art-carousel-track .art-gallery-item {
-        flex-basis: calc((100% - 30px) / 3);
-      }
-
-      .art-carousel-track .art-gallery-item img {
-        height: 310px;
-      }
-    }
-
-    /* KLEINERE DISPLAYS */
-
-    @media (max-width: 700px) {
-
-      .art-carousel {
-        padding: 0 36px;
-      }
-
-      .art-gallery.art-carousel-track {
-        gap: 12px;
-      }
-
-      .art-carousel-track .art-gallery-item {
-        flex-basis: calc((100% - 12px) / 2);
-      }
-
-      .art-carousel-track .art-gallery-item img {
-        height: 270px;
-      }
-
-      .art-carousel-arrow {
-        width: 29px;
-        height: 48px;
-        font-size: 25px;
-      }
-    }
-
-    /* SMARTPHONE */
-
-    @media (max-width: 450px) {
-
-      .art-carousel {
-        padding: 0 34px;
-      }
-
-      .art-gallery.art-carousel-track {
-        gap: 8px;
-      }
-
-      .art-carousel-track .art-gallery-item {
-        flex-basis: 100%;
-      }
-
-      .art-carousel-track .art-gallery-item img {
-        height: 350px;
-      }
-
-      .art-artist {
-        margin-bottom: 75px;
-      }
-    }
-
-    /* REDUZIERTE BEWEGUNG */
-
-    @media (prefers-reduced-motion: reduce) {
-
-      .art-gallery.art-carousel-track {
-        scroll-behavior: auto;
-      }
-
-      .art-carousel-arrow {
-        transition: none;
-      }
-    }
-
-  </style>
 </head>
 
 <body>
 
   <!-- ZENTRALE NAVIGATION -->
+
   <div id="site-header"></div>
+
 
   <main class="art-page">
 
-    <!-- =====================================
-         EINLEITUNG
-         ===================================== -->
+    <!-- EINLEITUNG -->
 
     <header class="art-intro">
 
-      <a class="art-back" href="../../genealogie.html">
+      <a class="art-back" href="../genealogie.html">
         <span aria-hidden="true">‹</span>
         Zurück zur Genealogie
       </a>
 
       <p class="art-eyebrow">
-        FAMILIENFORSCHUNG · KUNSTARCHIV
+        GENEALOGIE / BILDARCHIV
       </p>
 
       <h1>Bildarchiv</h1>
@@ -294,7 +55,12 @@
         Forschung zugänglich.
       </p>
 
-      <nav class="art-quicknav" aria-label="Künstler auswählen">
+      <!-- KÜNSTLER-SCHNELLNAVIGATION -->
+
+      <nav
+        class="art-quicknav"
+        aria-label="Künstler auswählen"
+      >
 
         <a href="#erich-willy-klotz">
           Erich Willy Klotz
@@ -311,14 +77,14 @@
     </header>
 
 
-    <!-- =====================================
-         HINWEISE
-         ===================================== -->
+    <!-- HINWEISE -->
 
     <section
       class="art-notices"
       aria-label="Hinweise zum Bildarchiv"
     >
+
+      <!-- HINWEIS ZUM ARCHIV -->
 
       <article class="art-notice">
 
@@ -355,6 +121,8 @@
 
       </article>
 
+
+      <!-- URHEBERRECHT -->
 
       <article class="art-notice">
 
@@ -396,9 +164,7 @@
     </section>
 
 
-    <!-- =====================================
-         KÜNSTLER 01 – ERICH WILLY KLOTZ
-         ===================================== -->
+    <!-- KÜNSTLER 01 – ERICH WILLY KLOTZ -->
 
     <section
       class="art-artist"
@@ -415,7 +181,7 @@
         <div class="art-artist-info">
 
           <p class="art-eyebrow">
-            FAMILIENARCHIV · KÜNSTLER
+            FAMILIENARCHIV / KÜNSTLER
           </p>
 
           <h2 id="erich-title">
@@ -439,7 +205,8 @@
 
       </div>
 
-      <!-- EINE HORIZONTALE BILDERREIHE -->
+
+      <!-- HORIZONTALE GALERIE -->
 
       <div class="art-carousel" data-carousel>
 
@@ -474,9 +241,7 @@
     </section>
 
 
-    <!-- =====================================
-         KÜNSTLER 02 – HANS-GEORG KLOTZ
-         ===================================== -->
+    <!-- KÜNSTLER 02 – HANS-GEORG KLOTZ -->
 
     <section
       class="art-artist"
@@ -493,7 +258,7 @@
         <div class="art-artist-info">
 
           <p class="art-eyebrow">
-            FAMILIENARCHIV · KÜNSTLER
+            FAMILIENARCHIV / KÜNSTLER
           </p>
 
           <h2 id="hans-title">
@@ -517,7 +282,8 @@
 
       </div>
 
-      <!-- EINE HORIZONTALE BILDERREIHE -->
+
+      <!-- HORIZONTALE GALERIE -->
 
       <div class="art-carousel" data-carousel>
 
@@ -552,9 +318,7 @@
     </section>
 
 
-    <!-- =====================================
-         ABSCHLUSS
-         ===================================== -->
+    <!-- ABSCHLUSS -->
 
     <div class="art-ending">
 
@@ -567,8 +331,8 @@
         Kunstwerke als Teil unserer Familiengeschichte.
       </p>
 
-      <a href="../../genealogie.html">
-        Zur Familienforschung
+      <a href="../genealogie.html">
+        Zur Genealogie
         <span aria-hidden="true">›</span>
       </a>
 
@@ -578,12 +342,11 @@
 
 
   <!-- ZENTRALE WEBSITE-FUNKTIONEN -->
+
   <script src="../../script.js"></script>
 
 
-  <!-- =====================================
-       BILDERGALERIEN
-       ===================================== -->
+  <!-- BILDERGALERIEN -->
 
   <script>
     (() => {
@@ -601,9 +364,7 @@
       );
 
 
-      /* =====================================
-         GALERIE ERSTELLEN
-         ===================================== */
+      /* GALERIE ERSTELLEN */
 
       function createGallery(options) {
 
@@ -629,7 +390,8 @@
 
         const fragment = document.createDocumentFragment();
 
-        /* Bilder erstellen */
+
+        /* BILDER ERSTELLEN */
 
         options.images.forEach((number, index) => {
 
@@ -675,9 +437,7 @@
         track.appendChild(fragment);
 
 
-        /* =====================================
-           NAVIGATION AKTUALISIEREN
-           ===================================== */
+        /* NAVIGATION AKTUALISIEREN */
 
         function updateNavigation() {
 
@@ -713,11 +473,13 @@
                 itemRight > left + 2 &&
                 itemLeft < right - 2
               ) {
+
                 if (!firstVisible) {
                   firstVisible = index + 1;
                 }
 
                 lastVisible = index + 1;
+
               }
 
             });
@@ -737,9 +499,7 @@
         }
 
 
-        /* =====================================
-           EIN WERK WEITERBLÄTTERN
-           ===================================== */
+        /* GALERIE VERSCHIEBEN */
 
         function moveGallery(direction) {
 
@@ -753,7 +513,8 @@
 
           const gap = parseFloat(styles.columnGap) || 0;
 
-          const distance = firstItem.getBoundingClientRect().width + gap;
+          const distance =
+            firstItem.getBoundingClientRect().width + gap;
 
           const reducedMotion = window.matchMedia(
             "(prefers-reduced-motion: reduce)"
@@ -765,6 +526,7 @@
           });
 
         }
+
 
         previous.addEventListener("click", () => {
           moveGallery(-1);
@@ -785,7 +547,8 @@
           updateNavigation
         );
 
-        /* Tastatursteuerung */
+
+        /* TASTATURSTEUERUNG */
 
         track.addEventListener("keydown", (event) => {
 
@@ -802,12 +565,11 @@
         });
 
         updateNavigation();
+
       }
 
 
-      /* =====================================
-         GALERIE ERICH WILLY KLOTZ
-         ===================================== */
+      /* ERICH WILLY KLOTZ */
 
       createGallery({
 
@@ -826,9 +588,7 @@
       });
 
 
-      /* =====================================
-         GALERIE HANS-GEORG KLOTZ
-         ===================================== */
+      /* HANS-GEORG KLOTZ */
 
       createGallery({
 
