@@ -1,18 +1,32 @@
 
 /* =========================================
-   RICHWIN DESIGN – KUNSTARCHIV
-   ZEICHNUNGEN & GEMÄLDE
+   RICHWIN DESIGN – BILDARCHIV
+   GENEALOGIE / BRAUN-GOLD
    ========================================= */
 
 .art-page {
+  --art-bg: #15110d;
+  --art-surface: #211a14;
+  --art-border: #4b3a2c;
+  --art-gold: #b38a5a;
+  --art-gold-light: #d8b890;
+  --art-text: #f5efe6;
+  --art-muted: #cdbeaf;
+
   max-width: 1200px;
   margin: 0 auto;
-  padding: 65px 32px 110px;
+  padding: 42px 32px 110px;
+  color: var(--art-text);
 }
 
 .art-page * {
   box-sizing: border-box;
 }
+
+body:has(.art-page) {
+  background: #15110d;
+}
+
 
 /* =========================================
    EINLEITUNG
@@ -20,39 +34,45 @@
 
 .art-intro {
   max-width: 920px;
-  margin-bottom: 75px;
+  margin-bottom: 70px;
 }
 
 .art-back {
   display: inline-flex;
   align-items: center;
   gap: 9px;
-  margin-bottom: 57px;
+
+  margin-bottom: 36px;
   padding: 10px 16px;
-  border: 1px solid rgba(111, 182, 217, .45);
+
+  border: 1px solid var(--art-border);
   border-radius: 7px;
-  color: #e2edf3;
+
+  color: var(--art-text);
   text-decoration: none;
   font-size: 12px;
+
   transition:
     border-color .25s ease,
     background .25s ease;
 }
 
 .art-back span {
-  color: #87c6e3;
+  color: var(--art-gold-light);
   font-size: 21px;
   line-height: .5;
 }
 
 .art-back:hover {
-  background: rgba(111, 182, 217, .1);
-  border-color: #87c6e3;
+  background: rgba(179,138,90,.1);
+  border-color: var(--art-gold);
 }
 
 .art-eyebrow {
   margin: 0 0 18px;
-  color: #82bdd8;
+
+  color: var(--art-gold-light);
+
   font-size: 11px;
   font-weight: 700;
   line-height: 1.5;
@@ -61,33 +81,40 @@
 
 .art-intro h1 {
   margin: 0 0 28px;
-  color: #fff;
-  font-size: clamp(42px, 5.5vw, 74px);
-  line-height: 1.06;
+
+  color: var(--art-text);
+
+  font-size: clamp(36px, 4.5vw, 54px);
+  line-height: 1.1;
   font-weight: 800;
-  letter-spacing: -.045em;
+  letter-spacing: -.035em;
 }
 
 .art-intro h1 span {
-  color: #80bad6;
+  color: var(--art-gold-light);
 }
 
 .art-intro-lead {
   max-width: 680px;
   margin: 0 0 20px;
-  color: #fff;
-  font-size: 19px;
+
+  color: var(--art-gold-light);
+
+  font-size: 15px;
   font-weight: 600;
-  line-height: 1.55;
+  line-height: 1.65;
 }
 
 .art-intro-description {
-  max-width: 680px;
+  max-width: 700px;
   margin: 0;
-  color: #b8c7d1;
+
+  color: var(--art-muted);
+
   font-size: 14px;
-  line-height: 1.85;
+  line-height: 1.75;
 }
+
 
 /* =========================================
    KÜNSTLER-SCHNELLNAVIGATION
@@ -105,13 +132,18 @@
   justify-content: space-between;
   align-items: center;
   gap: 25px;
+
   padding: 13px 18px;
-  border: 1px solid rgba(111, 182, 217, .3);
+
+  border: 1px solid rgba(179,138,90,.4);
   border-radius: 8px;
-  background: rgba(11, 24, 35, .75);
-  color: #fff;
+
+  background: rgba(42,33,25,.75);
+  color: var(--art-text);
+
   font-size: 13px;
   text-decoration: none;
+
   transition:
     background .25s ease,
     border-color .25s ease,
@@ -119,15 +151,16 @@
 }
 
 .art-quicknav a span {
-  color: #89cbe8;
+  color: var(--art-gold-light);
   font-size: 17px;
 }
 
 .art-quicknav a:hover {
-  background: rgba(111, 182, 217, .12);
-  border-color: #80bad6;
+  background: rgba(179,138,90,.14);
+  border-color: var(--art-gold-light);
   transform: translateY(-2px);
 }
+
 
 /* =========================================
    HINWEISE
@@ -137,7 +170,7 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 18px;
-  margin-bottom: 110px;
+  margin-bottom: 95px;
 }
 
 .art-notice {
@@ -146,12 +179,14 @@
   align-items: start;
   gap: 17px;
   padding: 27px 25px;
-  border: 1px solid rgba(111, 182, 217, .17);
+
+  border: 1px solid var(--art-border);
   border-radius: 10px;
+
   background: linear-gradient(
     145deg,
-    rgba(16, 31, 43, .8),
-    rgba(5, 11, 17, .65)
+    #291f17,
+    #17120e
   );
 }
 
@@ -159,11 +194,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
   width: 30px;
   height: 30px;
-  border: 1px solid rgba(134, 195, 222, .6);
+
+  border: 1px solid var(--art-gold);
   border-radius: 50%;
-  color: #91cee8;
+
+  color: var(--art-gold-light);
+
   font-family: Georgia, serif;
   font-size: 18px;
   font-style: italic;
@@ -177,7 +216,9 @@
 
 .art-notice-content h2 {
   margin: 1px 0 16px;
-  color: #fff;
+
+  color: var(--art-gold-light);
+
   font-size: 18px;
   font-weight: 700;
   line-height: 1.3;
@@ -185,7 +226,9 @@
 
 .art-notice-content p {
   margin: 0 0 12px;
-  color: #b7c6d1;
+
+  color: var(--art-muted);
+
   font-size: 12px;
   line-height: 1.8;
 }
@@ -194,27 +237,36 @@
   margin-bottom: 0;
 }
 
+
 /* =========================================
    KÜNSTLERBEREICHE
    ========================================= */
 
 .art-artist {
-  margin-bottom: 115px;
+  margin-bottom: 95px;
   scroll-margin-top: 100px;
+}
+
+.art-artist + .art-artist {
+  margin-top: 0;
 }
 
 .art-artist-heading {
   display: flex;
   align-items: center;
   gap: 30px;
+
   margin-bottom: 43px;
   padding-bottom: 29px;
-  border-bottom: 1px solid rgba(111, 182, 217, .28);
+
+  border-bottom: 1px solid var(--art-border);
 }
 
 .art-artist-number {
   flex: 0 0 auto;
-  color: rgba(111, 182, 217, .27);
+
+  color: rgba(179,138,90,.3);
+
   font-size: clamp(65px, 8vw, 100px);
   font-weight: 800;
   line-height: .9;
@@ -231,7 +283,9 @@
 
 .art-artist-info h2 {
   margin: 0 0 17px;
-  color: #fff;
+
+  color: var(--art-text);
+
   font-size: clamp(29px, 4vw, 48px);
   font-weight: 800;
   line-height: 1.1;
@@ -239,7 +293,7 @@
 }
 
 .art-artist-info h2 span {
-  color: #80bad6;
+  color: var(--art-gold-light);
 }
 
 .art-artist-details {
@@ -247,40 +301,39 @@
   flex-wrap: wrap;
   align-items: center;
   gap: 13px;
-  color: #b5c5d0;
+
+  color: var(--art-muted);
   font-size: 13px;
 }
 
 .art-details-dot {
   width: 4px;
   height: 4px;
+
   border-radius: 50%;
-  background: #7db9d5;
+  background: var(--art-gold);
 }
+
 
 /* =========================================
-   MASONRY-BILDERGALERIE
-   Originale Seitenverhältnisse erhalten
+   GALERIE-ELEMENTE
    ========================================= */
-
-.art-gallery {
-  column-count: 4;
-  column-gap: 15px;
-}
 
 .art-gallery-item {
   position: relative;
-  display: inline-block;
-  width: 100%;
-  margin: 0 0 15px;
+
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+  margin: 0;
   padding: 0;
   overflow: hidden;
-  break-inside: avoid;
-  -webkit-column-break-inside: avoid;
 
-  border: 1px solid rgba(111, 182, 217, .16);
+  border: 1px solid var(--art-border);
   border-radius: 5px;
-  background: #101820;
+
+  background: #1c1611;
 
   transition:
     border-color .3s ease,
@@ -290,45 +343,162 @@
 
 .art-gallery-item img {
   display: block;
+
   width: 100%;
-  height: auto;
+  height: 350px;
+
   margin: 0;
   padding: 0;
+
   object-fit: contain;
   object-position: center;
-  background: #101820;
+
+  background: #1c1611;
 
   user-select: none;
   -webkit-user-select: none;
   -webkit-user-drag: none;
 }
 
-/* Bildnummern */
-
 .art-gallery-item figcaption {
-  position: relative;
-  padding: 11px 13px;
-  border-top: 1px solid rgba(111, 182, 217, .12);
-  background: #0a131c;
-  color: #8fa8b9;
+  margin-top: auto;
+  padding: 12px 13px;
+
+  border-top: 1px solid var(--art-border);
+
+  background: #19130e;
+  color: var(--art-muted);
+
   font-size: 10px;
   font-weight: 700;
   letter-spacing: .12em;
 }
 
-/* Dezenter Hover-Effekt */
-
 .art-gallery-item:hover {
-  border-color: rgba(111, 182, 217, .5);
+  border-color: var(--art-gold);
+
   box-shadow:
-    0 12px 30px rgba(0, 0, 0, .3),
-    0 0 16px rgba(111, 182, 217, .07);
+    0 12px 30px rgba(0,0,0,.3),
+    0 0 16px rgba(179,138,90,.08);
+
   transform: translateY(-3px);
 }
 
-.art-artist + .art-artist {
-  margin-top: 55px;
+
+/* =========================================
+   HORIZONTALE BILDERGALERIEN
+   ========================================= */
+
+.art-carousel {
+  position: relative;
+  width: 100%;
+  padding: 0 45px;
 }
+
+.art-gallery.art-carousel-track {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
+
+  gap: 15px;
+  width: 100%;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+}
+
+.art-carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* Vier Werke nebeneinander */
+
+.art-carousel-track .art-gallery-item {
+  flex: 0 0 calc((100% - 45px) / 4);
+  width: auto;
+
+  scroll-snap-align: start;
+}
+
+
+/* =========================================
+   GALERIE-PFEILE
+   ========================================= */
+
+.art-carousel-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 36px;
+  height: 58px;
+
+  border: 1px solid rgba(179,138,90,.55);
+  border-radius: 8px;
+
+  background: rgba(33,26,20,.96);
+  color: var(--art-gold-light);
+
+  font-family: inherit;
+  font-size: 30px;
+  line-height: 1;
+
+  cursor: pointer;
+  transform: translateY(-50%);
+
+  transition:
+    background .25s ease,
+    border-color .25s ease,
+    opacity .25s ease;
+}
+
+.art-carousel-prev {
+  left: 0;
+}
+
+.art-carousel-next {
+  right: 0;
+}
+
+.art-carousel-arrow:hover:not(:disabled) {
+  background: #3c2c1f;
+  border-color: var(--art-gold-light);
+}
+
+.art-carousel-arrow:disabled {
+  opacity: .25;
+  cursor: default;
+}
+
+.art-carousel-arrow:focus-visible {
+  outline: 2px solid var(--art-gold-light);
+  outline-offset: 3px;
+}
+
+
+/* =========================================
+   GALERIE-ZÄHLER
+   ========================================= */
+
+.art-carousel-status {
+  margin: 17px 0 0;
+
+  color: var(--art-muted);
+
+  font-size: 11px;
+  letter-spacing: .06em;
+  text-align: center;
+}
+
 
 /* =========================================
    ABSCHLUSS
@@ -338,22 +508,30 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+
   gap: 20px;
   padding: 55px 20px 0;
+
   text-align: center;
 }
 
 .art-ending-line {
   display: block;
+
   width: 38px;
   height: 1px;
-  background: #80bad6;
-  box-shadow: 0 0 9px rgba(111, 182, 217, .55);
+
+  background: var(--art-gold);
+
+  box-shadow:
+    0 0 9px rgba(179,138,90,.35);
 }
 
 .art-ending p {
   margin: 0;
-  color: #b7c6d1;
+
+  color: var(--art-muted);
+
   font-size: 13px;
   line-height: 1.6;
 }
@@ -362,27 +540,32 @@
   display: inline-flex;
   align-items: center;
   gap: 18px;
+
   padding: 12px 18px;
-  border: 1px solid rgba(111, 182, 217, .45);
+
+  border: 1px solid rgba(179,138,90,.55);
   border-radius: 8px;
-  color: #fff;
+
+  color: var(--art-text);
   font-size: 12px;
   text-decoration: none;
+
   transition:
     background .25s ease,
     border-color .25s ease;
 }
 
 .art-ending a span {
-  color: #89cbe8;
+  color: var(--art-gold-light);
   font-size: 23px;
   line-height: .7;
 }
 
 .art-ending a:hover {
-  background: rgba(111, 182, 217, .12);
-  border-color: #89cbe8;
+  background: rgba(179,138,90,.12);
+  border-color: var(--art-gold-light);
 }
+
 
 /* =========================================
    TABLET
@@ -390,8 +573,12 @@
 
 @media (max-width: 1000px) {
 
-  .art-gallery {
-    column-count: 3;
+  .art-carousel-track .art-gallery-item {
+    flex-basis: calc((100% - 30px) / 3);
+  }
+
+  .art-gallery-item img {
+    height: 310px;
   }
 
   .art-notices {
@@ -404,6 +591,7 @@
 
 }
 
+
 /* =========================================
    KLEINERE DISPLAYS
    ========================================= */
@@ -411,11 +599,11 @@
 @media (max-width: 700px) {
 
   .art-page {
-    padding: 45px 20px 75px;
+    padding: 35px 20px 75px;
   }
 
   .art-back {
-    margin-bottom: 45px;
+    margin-bottom: 35px;
   }
 
   .art-intro {
@@ -427,7 +615,7 @@
   }
 
   .art-intro-lead {
-    font-size: 17px;
+    font-size: 15px;
   }
 
   .art-intro-description {
@@ -457,16 +645,30 @@
     font-size: 30px;
   }
 
-  .art-gallery {
-    column-count: 2;
-    column-gap: 12px;
+  .art-carousel {
+    padding: 0 36px;
   }
 
-  .art-gallery-item {
-    margin-bottom: 12px;
+  .art-gallery.art-carousel-track {
+    gap: 12px;
+  }
+
+  .art-carousel-track .art-gallery-item {
+    flex-basis: calc((100% - 12px) / 2);
+  }
+
+  .art-gallery-item img {
+    height: 270px;
+  }
+
+  .art-carousel-arrow {
+    width: 29px;
+    height: 48px;
+    font-size: 25px;
   }
 
 }
+
 
 /* =========================================
    SMARTPHONE
@@ -509,13 +711,24 @@
     gap: 9px;
   }
 
-  .art-gallery {
-    column-count: 2;
-    column-gap: 8px;
+  .art-carousel {
+    padding: 0 34px;
   }
 
-  .art-gallery-item {
-    margin-bottom: 8px;
+  .art-gallery.art-carousel-track {
+    gap: 8px;
+  }
+
+  .art-carousel-track .art-gallery-item {
+    flex-basis: 100%;
+  }
+
+  .art-gallery-item img {
+    height: 350px;
+  }
+
+  .art-artist {
+    margin-bottom: 75px;
   }
 
   .art-gallery-item figcaption {
@@ -536,13 +749,6 @@
 
 }
 
-@media (max-width: 340px) {
-
-  .art-gallery {
-    column-count: 1;
-  }
-
-}
 
 /* =========================================
    REDUZIERTE BEWEGUNG
@@ -557,9 +763,12 @@
     transition: none !important;
   }
 
+  .art-gallery.art-carousel-track {
+    scroll-behavior: auto;
+  }
+
   .art-gallery-item:hover {
     transform: none;
   }
 
 }
-
