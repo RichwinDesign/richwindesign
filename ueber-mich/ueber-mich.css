@@ -820,3 +820,123 @@
   }
 
 }
+
+/* =========================================
+   ZEITSTRAHL – BILD ÜBER TEXT
+   ========================================= */
+
+@media (min-width: 701px) {
+
+  .journey-entry:not(.journey-text-only) {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    column-gap: 110px;
+    row-gap: 32px;
+    align-items: start;
+    padding-top: 110px;
+    padding-bottom: 90px;
+  }
+
+  /* Linke Stationen */
+
+  .journey-left:not(.journey-text-only) .journey-media {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: start;
+  }
+
+  .journey-left:not(.journey-text-only) .journey-copy {
+    grid-column: 1;
+    grid-row: 2;
+    justify-self: start;
+  }
+
+  /* Rechte Stationen */
+
+  .journey-right:not(.journey-text-only) .journey-media {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
+  }
+
+  .journey-right:not(.journey-text-only) .journey-copy {
+    grid-column: 2;
+    grid-row: 2;
+    justify-self: end;
+    width: 100%;
+  }
+
+  /* Bilder im Normalzustand kleiner */
+
+  .journey-media-wide {
+    width: 78%;
+  }
+
+  .journey-media-large {
+    width: 73%;
+  }
+
+  .journey-media-medium {
+    width: 68%;
+  }
+
+  .journey-media-small {
+    width: 60%;
+  }
+
+  /* Bilder nicht durch alte Abstände verschieben */
+
+  .journey-entry:nth-child(3n) .journey-media,
+  .journey-entry:nth-child(4n) .journey-media {
+    margin-top: 0;
+  }
+
+  /* Zoom nach innen */
+
+  .journey-left .journey-media-inner {
+    transform-origin: left center;
+  }
+
+  .journey-right .journey-media-inner {
+    transform-origin: right center;
+  }
+
+  /* Nur während des Zooms über der Zeitlinie */
+
+  .journey-media {
+    z-index: 1;
+  }
+
+  .journey-media.journey-zooming {
+    z-index: 7;
+  }
+
+  .journey-track {
+    z-index: 2;
+  }
+
+  .journey-year {
+    z-index: 8;
+  }
+
+  /* Text bleibt unter dem Bild */
+
+  .journey-copy {
+    max-width: 100%;
+    z-index: 3;
+  }
+
+  .journey-media-inner {
+    --journey-zoom: 1;
+  }
+
+}
+
+/* Mobil bleibt alles untereinander und ohne Zoom */
+
+@media (max-width: 700px) {
+  .journey-media-inner {
+    transform: none !important;
+  }
+}
