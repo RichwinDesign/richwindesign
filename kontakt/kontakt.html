@@ -50,282 +50,82 @@
       </div>
 
 
-      <!-- ZWEISPALTIGES LAYOUT -->
+      <!-- KONTAKTINFORMATIONEN -->
 
-      <div class="contact-grid">
+      <div class="contact-information">
 
-        <!-- LINKE SPALTE -->
+        <h2>
+          Lass uns sprechen.
+        </h2>
 
-        <div class="contact-information">
+        <p>
+          Ob Print, Digitaldesign oder individuelle
+          Gestaltung – ich freue mich über deine Nachricht.
+        </p>
 
-          <h2>
-            Lass uns sprechen.
-          </h2>
+        <div class="contact-divider"></div>
 
-          <p>
-            Ob Print, Digitaldesign oder individuelle
-            Gestaltung – ich freue mich über deine Nachricht.
-          </p>
 
-          <div class="contact-divider"></div>
+        <!-- KONTAKTWEGE -->
 
-          <div class="contact-methods">
+        <div class="contact-methods">
 
-            <!-- E-MAIL -->
+          <!-- E-MAIL -->
 
-            <div class="contact-method">
+          <div class="contact-method">
 
-              <div class="contact-method-icon" aria-hidden="true">
-                ✉
-              </div>
-
-              <div class="contact-method-content">
-
-                <h3>
-                  E-Mail
-                </h3>
-
-                <a
-                  class="contact-method-link"
-                  href="mailto:brichwin@mail.de"
-                >
-                  brichwin@mail.de
-                </a>
-
-                <p>
-                  Für Projektanfragen und Zusammenarbeit.
-                </p>
-
-              </div>
-
+            <div class="contact-method-icon" aria-hidden="true">
+              ✉
             </div>
 
+            <div class="contact-method-content">
 
-            <!-- LINKEDIN -->
+              <h3>E-Mail</h3>
 
-            <div class="contact-method">
+              <a
+                class="contact-method-link"
+                href="mailto:brichwin@mail.de"
+              >
+                brichwin@mail.de
+              </a>
 
-              <div class="contact-method-icon" aria-hidden="true">
-                in
-              </div>
-
-              <div class="contact-method-content">
-
-                <h3>
-                  LinkedIn
-                </h3>
-
-                <p>
-                  Beruflicher Austausch und Vernetzung.
-                </p>
-
-              </div>
+              <p>
+                Für Projektanfragen und Zusammenarbeit.
+              </p>
 
             </div>
 
           </div>
 
-        </div>
 
+          <!-- LINKEDIN -->
 
-        <!-- RECHTE SPALTE -->
+          <div class="contact-method">
 
-        <div class="contact-form-card">
+            <div class="contact-method-icon" aria-hidden="true">
+              in
+            </div>
 
-          <h2>
-            Nachricht senden
-          </h2>
+            <div class="contact-method-content">
 
-          <p class="contact-form-intro">
-            Schreib mir gern eine Nachricht.
-          </p>
+              <h3>LinkedIn</h3>
 
-
-          <!--
-            FORMULARVERSAND MIT FORMSPREE
-
-            WICHTIG:
-            DEINE_FORMULAR_ID durch die echte
-            Formspree-ID ersetzen.
-
-            Beispiel:
-            https://formspree.io/f/abcdefgh
-
-            Die Nachricht wird anschließend
-            an das bei Formspree hinterlegte
-            E-Mail-Postfach weitergeleitet.
-          -->
-
-          <form
-            class="contact-form"
-            id="contactForm"
-            action="https://formspree.io/f/DEINE_FORMULAR_ID"
-            method="POST"
-          >
-
-            <!-- NAME -->
-
-            <div class="contact-field">
-
-              <label for="contactName">
-                Dein Name
-              </label>
-
-              <input
-                type="text"
-                id="contactName"
-                name="name"
-                placeholder="Vor- und Nachname"
-                autocomplete="name"
-                maxlength="120"
-                required
+              <a
+                class="contact-method-link"
+                href="https://www.linkedin.com/in/bianca-christine-richwin/"
+                target="_blank"
+                rel="noopener noreferrer"
               >
+                Mein LinkedIn-Profil
+              </a>
+
+              <p>
+                Beruflicher Austausch und Vernetzung.
+              </p>
 
             </div>
 
-
-            <!-- E-MAIL -->
-
-            <div class="contact-field">
-
-              <label for="contactEmail">
-                Deine E-Mail-Adresse
-              </label>
-
-              <input
-                type="email"
-                id="contactEmail"
-                name="email"
-                placeholder="name@beispiel.de"
-                autocomplete="email"
-                maxlength="254"
-                required
-              >
-
-            </div>
-
-
-            <!-- BETREFF -->
-
-            <div class="contact-field">
-
-              <label for="contactSubject">
-                Betreff
-              </label>
-
-              <input
-                type="text"
-                id="contactSubject"
-                name="subject"
-                placeholder="Worum geht es?"
-                maxlength="180"
-                required
-              >
-
-            </div>
-
-
-            <!-- NACHRICHT -->
-
-            <div class="contact-field">
-
-              <label for="contactMessage">
-                Deine Nachricht
-              </label>
-
-              <textarea
-                id="contactMessage"
-                name="message"
-                placeholder="Erzähl mir von deinem Anliegen ..."
-                rows="6"
-                maxlength="10000"
-                required
-              ></textarea>
-
-            </div>
-
-
-            <!-- FORMSPREE-BETREFF -->
-
-            <input
-              type="hidden"
-              name="_subject"
-              value="Neue Kontaktanfrage über Richwin Design"
-            >
-
-
-            <!-- SPAMSCHUTZ: VERSTECKTES FELD -->
-
-            <div
-              class="contact-honeypot"
-              aria-hidden="true"
-            >
-              <label for="contactWebsite">
-                Website
-              </label>
-
-              <input
-                type="text"
-                id="contactWebsite"
-                name="_gotcha"
-                tabindex="-1"
-                autocomplete="off"
-              >
-            </div>
-
-
-            <!-- DATENSCHUTZ -->
-
-            <div class="contact-consent">
-
-              <input
-                type="checkbox"
-                id="contactConsent"
-                name="datenschutz_zur_kenntnis_genommen"
-                value="Ja"
-                required
-              >
-
-              <label for="contactConsent">
-                Ich habe die
-                <a href="../datenschutz.html">
-                  Datenschutzhinweise
-                </a>
-                zur Kenntnis genommen.
-              </label>
-
-            </div>
-
-            <p class="contact-privacy">
-              Bitte sende keine vertraulichen oder
-              sensiblen Informationen über dieses Formular.
-              Deine Angaben werden zur Bearbeitung
-              deiner Anfrage verwendet.
-            </p>
-
-
-            <!-- ABSENDEBUTTON -->
-
-            <button
-              class="contact-submit"
-              id="contactSubmit"
-              type="submit"
-            >
-              Nachricht senden
-              <span aria-hidden="true">›</span>
-            </button>
-
-
-            <!-- STATUSMELDUNG -->
-
-            <p
-              class="contact-form-status"
-              id="contactFormStatus"
-              role="status"
-              aria-live="polite"
-            ></p>
-
-          </form>
+          </div>
 
         </div>
 
@@ -336,122 +136,9 @@
   </main>
 
 
-  <!-- ZENTRALE WEBSITE-FUNKTIONEN -->
+  <!-- ZENTRALES JAVASCRIPT -->
 
   <script src="../script.js"></script>
 
-
-  <!-- KONTAKTFORMULAR -->
-
-  <script>
-    (() => {
-
-      const form = document.getElementById("contactForm");
-      const submitButton = document.getElementById("contactSubmit");
-      const status = document.getElementById("contactFormStatus");
-
-      if (!form || !submitButton || !status) return;
-
-      const originalButtonContent = submitButton.innerHTML;
-
-      function showStatus(message, type = "") {
-        status.textContent = message;
-        status.className = "contact-form-status";
-
-        if (type) {
-          status.classList.add("contact-status-" + type);
-        }
-      }
-
-      form.addEventListener("submit", async (event) => {
-
-        event.preventDefault();
-
-        if (!form.reportValidity()) return;
-
-        const endpoint = form.action;
-
-        // Verhindert einen vermeintlichen Versand,
-        // solange die Formspree-ID nicht eingetragen ist.
-
-        if (
-          endpoint.includes("DEINE_FORMULAR_ID") ||
-          !endpoint.startsWith("https://formspree.io/f/")
-        ) {
-          showStatus(
-            "Das Kontaktformular wird noch eingerichtet. Bitte nutze vorerst die angegebene E-Mail-Adresse.",
-            "error"
-          );
-          return;
-        }
-
-        submitButton.disabled = true;
-        submitButton.textContent = "Nachricht wird gesendet …";
-
-        showStatus("Deine Nachricht wird übertragen …");
-
-        try {
-
-          const formData = new FormData(form);
-
-          const response = await fetch(endpoint, {
-            method: "POST",
-            body: formData,
-            headers: {
-              "Accept": "application/json"
-            }
-          });
-
-          if (!response.ok) {
-
-            let errorMessage =
-              "Deine Nachricht konnte nicht gesendet werden. Bitte versuche es erneut oder schreibe mir eine E-Mail.";
-
-            try {
-              const result = await response.json();
-
-              if (
-                Array.isArray(result.errors) &&
-                result.errors.length
-              ) {
-                errorMessage = result.errors
-                  .map(error => error.message)
-                  .join(" ");
-              }
-            } catch (ignored) {
-              // Allgemeine Fehlermeldung verwenden
-            }
-
-            throw new Error(errorMessage);
-          }
-
-          form.reset();
-
-          showStatus(
-            "Vielen Dank! Deine Nachricht wurde erfolgreich übermittelt.",
-            "success"
-          );
-
-        } catch (error) {
-
-          showStatus(
-            error.message ||
-            "Beim Senden ist ein Fehler aufgetreten.",
-            "error"
-          );
-
-        } finally {
-
-          submitButton.disabled = false;
-          submitButton.innerHTML = originalButtonContent;
-
-        }
-
-      });
-
-    })();
-  </script>
-
 </body>
-
 </html>
