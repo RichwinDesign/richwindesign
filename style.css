@@ -3811,3 +3811,79 @@ a.mega-link:focus-visible {
     margin-top: -48px;
   }
 }
+
+
+/* =========================================
+   GENEALOGIE – 4 HAUPTKACHELN
+   Passend zur Menüstruktur
+   ========================================= */
+
+/* Vier gleich große Spalten */
+
+.genealogy-overview-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+/* Gleiche Kachelgröße */
+
+.genealogy-overview-grid .genealogy-card {
+  grid-column: auto;
+  min-height: 285px;
+  padding: 28px 19px 23px;
+}
+
+/* Gleiche Icongröße */
+
+.genealogy-overview-grid .genealogy-card-icon img {
+  width: 68px;
+  height: 68px;
+  object-fit: contain;
+}
+
+/* Einheitliche Überschriften */
+
+.genealogy-overview-grid .genealogy-card h3 {
+  font-size: 18px;
+}
+
+/* Beschreibungen */
+
+.genealogy-overview-grid .genealogy-card p {
+  max-width: 230px;
+  margin-bottom: 20px;
+}
+
+/* Buttons unten ausrichten */
+
+.genealogy-overview-grid .genealogy-card-link {
+  margin-top: auto;
+}
+
+/* =========================================
+   TABLET – 2 SPALTEN
+   ========================================= */
+
+@media (max-width: 950px) {
+
+  .genealogy-overview-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+/* =========================================
+   SMARTPHONE – 1 SPALTE
+   ========================================= */
+
+@media (max-width: 650px) {
+
+  .genealogy-overview-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .genealogy-overview-grid .genealogy-card {
+    min-height: 250px;
+  }
+
+}
