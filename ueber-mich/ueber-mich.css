@@ -219,11 +219,10 @@
   row-gap: 35px;
 
   align-items: start;
-
   min-height: 0;
 
-  /* Platz oberhalb des Bildes
-     für Jahreszahl und Verbindung */
+  /* Jahreszahl oberhalb des Bildes,
+     darunter genug Platz für den Zoom */
 
   padding: 205px 0 65px;
 }
@@ -254,8 +253,8 @@
   white-space: nowrap;
 }
 
-/* Linkes Bild:
-   Jahreszahl LINKS der Mittellinie */
+/* Bild links:
+   Jahreszahl links der Mittellinie */
 
 .journey-left .journey-year {
   right: calc(50% + 45px);
@@ -263,8 +262,8 @@
   flex-direction: row-reverse;
 }
 
-/* Rechtes Bild:
-   Jahreszahl RECHTS der Mittellinie */
+/* Bild rechts:
+   Jahreszahl rechts der Mittellinie */
 
 .journey-right .journey-year {
   left: calc(50% + 45px);
@@ -323,15 +322,11 @@
   pointer-events: none;
 }
 
-/* Verbindung von links nach rechts */
-
 .journey-left .journey-year::before {
   left: calc(100% - 4px);
   right: auto;
   transform: rotate(180deg);
 }
-
-/* Verbindung von rechts nach links */
 
 .journey-right .journey-year::before {
   right: calc(100% - 4px);
@@ -370,29 +365,49 @@
    BILD UND TEXT – WECHSELNDE SEITEN
    ========================================= */
 
+/* Linke Station:
+   Bild und Text haben dieselbe linke Kante. */
+
 .journey-left .journey-media {
   grid-column: 1;
   grid-row: 1;
   justify-self: start;
+  margin-left: 0;
+  margin-right: auto;
 }
 
 .journey-left .journey-copy {
   grid-column: 1;
   grid-row: 2;
   justify-self: start;
+  margin-left: 0;
+  margin-right: auto;
+  text-align: left;
 }
+
+/* Rechte Station:
+   Bild und Text haben dieselbe rechte Kante. */
 
 .journey-right .journey-media {
   grid-column: 2;
   grid-row: 1;
   justify-self: end;
+  margin-left: auto;
+  margin-right: 0;
 }
 
 .journey-right .journey-copy {
   grid-column: 2;
   grid-row: 2;
   justify-self: end;
+  margin-left: auto;
+  margin-right: 0;
+  text-align: left;
 }
+
+/* Text erhält die Spaltenbreite.
+   So bleibt seine Außenkante mit
+   der jeweiligen Bildkante bündig. */
 
 .journey-entry:not(.journey-text-only) .journey-copy {
   width: 100%;
@@ -411,10 +426,11 @@
   z-index: 1;
 
   width: 100%;
-  margin: 0;
+  margin-top: 0;
+  margin-bottom: 0;
 
-  /* Oberer Puffer für das
-     vergrößerte Bild */
+  /* Zusätzliche Höhe oberhalb des Bildes
+     reservieren, wenn der Zoom aktiv ist. */
 
   padding-top: var(--journey-overflow);
 }
@@ -433,6 +449,30 @@
 
 .journey-media-small {
   width: 60%;
+}
+
+/* Bei linken Bildern bleibt die
+   linke Kante exakt an der Textkante. */
+
+.journey-left .journey-media-wide,
+.journey-left .journey-media-large,
+.journey-left .journey-media-medium,
+.journey-left .journey-media-small {
+  justify-self: start;
+  margin-left: 0;
+  margin-right: auto;
+}
+
+/* Bei rechten Bildern bleibt die
+   rechte Kante exakt an der Textkante. */
+
+.journey-right .journey-media-wide,
+.journey-right .journey-media-large,
+.journey-right .journey-media-medium,
+.journey-right .journey-media-small {
+  justify-self: end;
+  margin-left: auto;
+  margin-right: 0;
 }
 
 
@@ -481,19 +521,27 @@
   will-change: transform;
 }
 
-/* Linke Bilder wachsen nach rechts */
+/* Linkes Bild wächst nach rechts */
 
 .journey-left .journey-media-inner {
   transform-origin: left center;
 }
 
-/* Rechte Bilder wachsen nach links */
+/* Rechtes Bild wächst nach links */
 
 .journey-right .journey-media-inner {
   transform-origin: right center;
 }
 
-/* Über der Zeitlinie nur beim Zoom */
+/* Die Mittellinie bleibt beim
+   kleinen Bild sichtbar. */
+
+.journey-media {
+  z-index: 1;
+}
+
+/* Nur das vergrößerte Bild darf
+   über die Mittellinie wachsen. */
 
 .journey-media.journey-zooming {
   z-index: 7;
@@ -522,6 +570,13 @@
   color: #8095a5;
   font-size: 11px;
   line-height: 1.5;
+}
+
+/* Auf der rechten Seite folgt auch
+   die Bildunterschrift der Bildfläche. */
+
+.journey-right .journey-media figcaption {
+  text-align: left;
 }
 
 
@@ -866,7 +921,7 @@
     padding-top: 20px;
   }
 
-  /* Linie links */
+  /* Zeitlinie auf Smartphones links */
 
   .journey-track {
     left: 12px;
@@ -879,13 +934,12 @@
     align-items: stretch;
 
     gap: 22px;
-
     min-height: auto;
 
     padding: 105px 0 55px 42px;
   }
 
-  /* Jahreszahlen auf Smartphones links */
+  /* Jahreszahlen links neben der Station */
 
   .journey-year,
   .journey-left .journey-year,
@@ -914,7 +968,8 @@
     left: 12px;
   }
 
-  /* Auf Mobilgeräten ohne Zoom */
+  /* Bilder ohne Zoom und in voller
+     verfügbarer Smartphone-Breite */
 
   .journey-media,
   .journey-media-wide,
