@@ -801,17 +801,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const margin = 12;
 
-    // Exakte horizontale Mitte des Menüpunktes
-    const triggerCenter =
-      triggerRect.left + triggerRect.width / 2;
+    // Alle Dropdowns am jeweiligen Menüpunkt ausrichten
 
-    // Menü um seine eigene halbe Breite verschieben
-    let panelLeft = triggerCenter - panelWidth / 2;
+// Innenabstand des Dropdowns aus dem CSS auslesen
+const panelPaddingLeft =
+  parseFloat(window.getComputedStyle(panel).paddingLeft) || 0;
 
-// Portfolio-Dropdown nach rechts verschieben,
-// damit der Inhalt bündig zum Menüpunkt steht.
-if (currentMenu === "portfolio" && window.innerWidth > 950) {
-  panelLeft = triggerRect.left - 14;
+// Desktop: Text im Dropdown bündig mit Menüpunkt
+// Mobil: bisherige zentrierte Position beibehalten
+
+let panelLeft;
+
+if (window.innerWidth > 950) {
+
+  panelLeft = triggerRect.left - panelPaddingLeft;
+
+} else {
+
+  const triggerCenter =
+    triggerRect.left + triggerRect.width / 2;
+
+  panelLeft = triggerCenter - panelWidth / 2;
+
 }
 
     // Verhindert, dass das Dropdown aus dem Bildschirm ragt
