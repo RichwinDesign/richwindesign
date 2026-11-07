@@ -102,6 +102,7 @@
         <span class="journey-down-arrow">↓</span>
       </div>
 
+
       <ol class="journey-timeline">
 
         <!-- MITTLERE ZEITLINIE -->
@@ -743,11 +744,8 @@
 
           if (!imageWidth || !imageHeight) return;
 
-          // WICHTIG:
-          // Die Scrollposition wird relativ zum Anfang
-          // der Station berechnet, nicht anhand der
-          // dynamisch vergrößerten Bildhöhe.
-          // Dadurch bleibt die Animation stabil.
+          // Position aus der Station berechnen,
+          // nicht aus dem skalierten Bild.
 
           const entryRect = entry.getBoundingClientRect();
 
@@ -759,26 +757,40 @@
 
           const screenCenter = viewportHeight * 0.50;
 
-          const distance = Math.abs(
-            originalImageCenter - screenCenter
-          );
+          // POSITIV: Bild kommt von unten
+          // NEGATIV: Bild ist über die Bildschirmmitte hinaus
 
-          // Zoom beginnt vor der Bildschirmmitte,
-          // erreicht dort die maximale Größe
-          // und verkleinert sich danach wieder.
+          const relativePosition =
+            originalImageCenter - screenCenter;
 
-          const zoomRange = viewportHeight * 0.55;
+          // LANGSAMERES AUSZOOMEN:
+          // Vor der Bildschirmmitte normal einzoomen.
+          // Danach bleibt das Bild länger groß.
 
-          const progress = clamp(
-            1 - distance / zoomRange,
-            0,
-            1
-          );
+          let progress;
+
+          if (relativePosition >= 0) {
+
+            progress = clamp(
+              1 - relativePosition / (viewportHeight * 0.65),
+              0,
+              1
+            );
+
+          } else {
+
+            progress = clamp(
+              1 + relativePosition / (viewportHeight * 1.15),
+              0,
+              1
+            );
+
+          }
 
           const intensity = smoothstep(progress);
 
-          // Der Zoom endet mit gleichem Abstand
-          // links und rechts vom Zeitstrahl.
+          // Gleicher Abstand links und rechts
+          // beim maximalen Zoom.
 
           const sideMargin = clamp(
             timeline.clientWidth * 0.035,
@@ -797,11 +809,8 @@
           const zoom =
             1 + (maximumZoom - 1) * intensity;
 
-          // Linke Bilder bleiben links verankert,
-          // rechte Bilder entsprechend rechts.
-          // Beide verschieben sich beim maximalen
-          // Zoom um den gleichen Seitenabstand
-          // nach innen.
+          // Linke Bilder nach rechts vergrößern,
+          // rechte Bilder nach links.
 
           const direction =
             entry.classList.contains("journey-left")
@@ -821,12 +830,10 @@
             horizontalShift.toFixed(2) + "px"
           );
 
-          // Ein zentriert vergrößertes Bild ragt
-          // oben und unten über seine Grundhöhe.
-          // Dieser Überstand wird als echter Platz
-          // im Layout reserviert.
-          // Dadurch wandert die Bildunterschrift
-          // und der Text nach unten.
+          // Zusätzlichen Platz für das
+          // vergrößerte Bild reservieren.
+          // Die Bildunterschrift und der Text
+          // wandern dadurch nach unten.
 
           const verticalOverflow =
             Math.max(0, (imageHeight * (zoom - 1)) / 2);
