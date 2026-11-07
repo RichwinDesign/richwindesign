@@ -220,21 +220,21 @@
 
   align-items: start;
 
-  min-height: 300px;
+  min-height: 0;
 
-  /* Mehr Platz oberhalb des Bildes
-     für die Jahreszahl und Verbindung */
+  /* Platz oberhalb des Bildes
+     für Jahreszahl und Verbindung */
 
-  padding: 205px 0 145px;
+  padding: 205px 0 65px;
 }
 
 .journey-entry:not(.journey-text-only) {
-  min-height: 650px;
+  min-height: 0;
 }
 
 
 /* =========================================
-   JAHRESZAHLEN OBERHALB DER BILDER
+   JAHRESZAHLEN – WECHSELNDE SEITEN
    ========================================= */
 
 .journey-year {
@@ -255,19 +255,21 @@
 }
 
 /* Linkes Bild:
-   Jahreszahl rechts der Mittellinie */
+   Jahreszahl LINKS der Mittellinie */
 
 .journey-left .journey-year {
-  left: calc(50% + 45px);
-  flex-direction: row;
+  right: calc(50% + 45px);
+  left: auto;
+  flex-direction: row-reverse;
 }
 
 /* Rechtes Bild:
-   Jahreszahl links der Mittellinie */
+   Jahreszahl RECHTS der Mittellinie */
 
 .journey-right .journey-year {
-  right: calc(50% + 45px);
-  flex-direction: row-reverse;
+  left: calc(50% + 45px);
+  right: auto;
+  flex-direction: row;
 }
 
 .journey-year span {
@@ -298,7 +300,10 @@
     0 0 11px rgba(111, 182, 217, .25);
 }
 
-/* Feine Verbindung zur Mittellinie */
+
+/* =========================================
+   VERBINDUNG ZUR ZEITLINIE
+   ========================================= */
 
 .journey-year::before {
   content: "";
@@ -318,13 +323,20 @@
   pointer-events: none;
 }
 
+/* Verbindung von links nach rechts */
+
 .journey-left .journey-year::before {
-  right: calc(100% - 4px);
+  left: calc(100% - 4px);
+  right: auto;
+  transform: rotate(180deg);
 }
 
+/* Verbindung von rechts nach links */
+
 .journey-right .journey-year::before {
-  left: calc(100% - 4px);
-  transform: rotate(180deg);
+  right: calc(100% - 4px);
+  left: auto;
+  transform: none;
 }
 
 
@@ -401,12 +413,8 @@
   width: 100%;
   margin: 0;
 
-  /* Der obere Puffer wird beim Zoom
-     genauso hoch wie der Überstand
-     über der ursprünglichen Bildkante.
-
-     Das vergrößerte Bild bleibt dadurch
-     unterhalb der Jahreszahl. */
+  /* Oberer Puffer für das
+     vergrößerte Bild */
 
   padding-top: var(--journey-overflow);
 }
@@ -473,22 +481,19 @@
   will-change: transform;
 }
 
-/* Linke Bilder:
-   Vergrößerung nach rechts */
+/* Linke Bilder wachsen nach rechts */
 
 .journey-left .journey-media-inner {
   transform-origin: left center;
 }
 
-/* Rechte Bilder:
-   Vergrößerung nach links */
+/* Rechte Bilder wachsen nach links */
 
 .journey-right .journey-media-inner {
   transform-origin: right center;
 }
 
-/* Nur vergrößerte Bilder dürfen
-   über die mittlere Zeitlinie gehen */
+/* Über der Zeitlinie nur beim Zoom */
 
 .journey-media.journey-zooming {
   z-index: 7;
@@ -511,10 +516,6 @@
 .journey-media figcaption {
   position: relative;
   z-index: 1;
-
-  /* Da das Bild beim Zoom auch nach unten
-     wächst, wird die Bildunterschrift
-     um denselben Betrag verschoben. */
 
   margin-top: calc(13px + var(--journey-overflow));
 
@@ -597,10 +598,10 @@
    ========================================= */
 
 .journey-text-only {
-  min-height: 220px;
+  min-height: 0;
 
   padding-top: 120px;
-  padding-bottom: 100px;
+  padding-bottom: 60px;
 
   grid-template-rows: auto;
 }
@@ -736,7 +737,6 @@
 
 .about-project-year {
   display: block;
-
   margin-bottom: 18px;
 
   color: #81bbd4;
@@ -753,11 +753,9 @@
 
 .about-project-card p {
   min-height: 95px;
-
   margin: 0 0 24px;
 
   color: #c0ced8;
-
   font-size: 13px;
   line-height: 1.75;
 }
@@ -810,11 +808,11 @@
 
   .journey-entry {
     column-gap: 70px;
-    padding-bottom: 135px;
+    padding-bottom: 65px;
   }
 
   .journey-entry:not(.journey-text-only) {
-    min-height: 520px;
+    min-height: 0;
   }
 
   .journey-copy h3 {
@@ -887,7 +885,7 @@
     padding: 105px 0 55px 42px;
   }
 
-  /* Jahreszahl links */
+  /* Jahreszahlen auf Smartphones links */
 
   .journey-year,
   .journey-left .journey-year,
@@ -1039,4 +1037,3 @@
   }
 
 }
-
