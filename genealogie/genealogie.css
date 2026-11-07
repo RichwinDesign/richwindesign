@@ -1,1 +1,635 @@
 
+/* =========================================
+   RICHWIN DESIGN
+   GENEALOGIE – GEMEINSAME FARBWELT
+   ========================================= */
+
+:root {
+  --genealogy-bg: #15110d;
+  --genealogy-surface: #211a14;
+  --genealogy-surface-light: #2a2119;
+
+  --genealogy-border: #4b3a2c;
+
+  --genealogy-accent: #b38a5a;
+  --genealogy-accent-light: #d8b890;
+
+  --genealogy-text: #f5efe6;
+  --genealogy-text-soft: #cdbeaf;
+}
+
+
+/* =========================================
+   FAMILIENLINIEN – GRUNDLAYOUT
+   ========================================= */
+
+.family-lines-page {
+  min-height: calc(100vh - 72px);
+  padding: 38px 32px 110px;
+
+  background:
+    radial-gradient(
+      ellipse at 12% 5%,
+      rgba(104, 71, 45, 0.11),
+      transparent 45%
+    ),
+    var(--genealogy-bg);
+
+  color: var(--genealogy-text);
+}
+
+
+/* =========================================
+   GEMEINSAME INHALTSBREITE
+   ========================================= */
+
+.family-lines-intro,
+.family-lines-section,
+.family-sources-section {
+  width: 100%;
+  max-width: 1136px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* =========================================
+   EINLEITUNG
+   ========================================= */
+
+.family-lines-intro {
+  margin-bottom: 46px;
+}
+
+.family-lines-back {
+  display: inline-flex;
+  align-items: center;
+
+  margin-bottom: 30px;
+  padding: 10px 14px;
+
+  border: 1px solid var(--genealogy-border);
+  border-radius: 7px;
+
+  color: var(--genealogy-text);
+  background: transparent;
+
+  font-size: 12px;
+  line-height: 1.4;
+  text-decoration: none;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.family-lines-back:hover {
+  border-color: var(--genealogy-accent);
+  background: rgba(179, 138, 90, 0.09);
+}
+
+.family-lines-eyebrow {
+  margin: 0 0 12px;
+
+  color: var(--genealogy-accent-light);
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  line-height: 1.5;
+}
+
+.family-lines-intro h1 {
+  margin: 0 0 16px;
+
+  font-size: clamp(34px, 4.2vw, 52px);
+  line-height: 1.1;
+  font-weight: 800;
+}
+
+.family-lines-intro > p:last-child {
+  max-width: 680px;
+  margin: 0;
+
+  color: var(--genealogy-text-soft);
+
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+
+/* =========================================
+   SEKTIONSTITEL
+   ========================================= */
+
+.family-lines-heading {
+  margin-bottom: 24px;
+}
+
+.family-lines-heading h2 {
+  margin: 0 0 10px;
+
+  color: var(--genealogy-text);
+
+  font-size: clamp(23px, 3vw, 31px);
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+.family-lines-heading > p:not(.family-lines-eyebrow) {
+  max-width: 700px;
+  margin: 0;
+
+  color: var(--genealogy-text-soft);
+
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+
+/* =========================================
+   FAMILIENLINIEN – SCHNELLNAVIGATION
+   ========================================= */
+
+.family-lines-overview {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.family-lines-overview a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 40px;
+  padding: 10px 18px;
+
+  border: 1px solid var(--genealogy-border);
+  border-radius: 7px;
+
+  color: var(--genealogy-text-soft);
+  background: transparent;
+
+  font-size: 13px;
+  text-decoration: none;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.family-lines-overview a:hover,
+.family-lines-overview a:focus-visible {
+  background: rgba(179, 138, 90, 0.12);
+  border-color: var(--genealogy-accent);
+  color: var(--genealogy-text);
+}
+
+
+/* =========================================
+   FAMILIENLINIEN – EINZELNE ABSCHNITTE
+   ========================================= */
+
+.family-line-entry {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 0.9fr)
+    minmax(0, 1.1fr);
+
+  gap: 0;
+
+  margin-bottom: 16px;
+
+  border: 1px solid var(--genealogy-border);
+  border-radius: 14px;
+
+  overflow: hidden;
+
+  background: linear-gradient(
+    140deg,
+    var(--genealogy-surface-light),
+    var(--genealogy-surface) 65%,
+    #17120e
+  );
+
+  scroll-margin-top: 95px;
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.family-line-entry:hover {
+  border-color: var(--genealogy-accent);
+
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.25),
+    0 0 20px rgba(179, 138, 90, 0.08);
+}
+
+
+/* =========================================
+   KARTENBILDER
+   ========================================= */
+
+.family-line-media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 0;
+  min-height: 380px;
+
+  padding: 24px;
+
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(184, 140, 92, 0.12),
+      transparent 75%
+    ),
+    #191510;
+}
+
+.family-line-media img {
+  display: block;
+
+  width: 100%;
+  max-height: 350px;
+  height: auto;
+
+  object-fit: contain;
+
+  border-radius: 7px;
+}
+
+
+/* =========================================
+   TEXTE DER FAMILIENLINIEN
+   ========================================= */
+
+.family-line-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  min-width: 0;
+
+  padding: 34px 38px;
+}
+
+.family-line-title {
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+
+/* FAMILIENWAPPEN / ICONS */
+
+.family-line-title img {
+  width: 65px;
+  height: 65px;
+
+  flex: 0 0 65px;
+
+  object-fit: contain;
+}
+
+.family-line-title > div {
+  min-width: 0;
+}
+
+.family-line-title span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: var(--genealogy-accent);
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+}
+
+.family-line-title h3 {
+  margin: 0;
+
+  color: var(--genealogy-text);
+
+  font-size: 28px;
+  line-height: 1.1;
+  font-weight: 800;
+}
+
+
+/* =========================================
+   REGION UND ZEITRAUM
+   ========================================= */
+
+.family-line-facts {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 18px;
+
+  width: 100%;
+
+  margin-bottom: 22px;
+  padding-bottom: 18px;
+
+  border-bottom: 1px solid var(--genealogy-border);
+}
+
+.family-line-facts > div {
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+  min-width: 0;
+}
+
+.family-line-facts strong {
+  display: block;
+
+  color: var(--genealogy-accent-light);
+
+  font-size: 11px;
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+.family-line-facts span {
+  display: block;
+
+  color: var(--genealogy-text-soft);
+
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.family-line-content > p {
+  margin: 0 0 13px;
+
+  color: var(--genealogy-text-soft);
+
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+
+/* =========================================
+   FAMILIENLINIEN – BUTTONS
+   ========================================= */
+
+.family-line-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  margin-top: auto;
+  padding: 10px 14px;
+
+  border: 1px solid var(--genealogy-border);
+  border-radius: 8px;
+
+  color: var(--genealogy-text);
+  background: transparent;
+
+  font-size: 12px;
+  line-height: 1.4;
+  text-decoration: none;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.family-line-button span {
+  color: var(--genealogy-accent-light);
+
+  font-size: 20px;
+  line-height: 0.7;
+}
+
+.family-line-button:hover,
+.family-line-button:focus-visible {
+  border-color: var(--genealogy-accent);
+  background: rgba(179, 138, 90, 0.14);
+  color: var(--genealogy-text);
+
+  box-shadow:
+    0 0 16px rgba(179, 138, 90, 0.10);
+}
+
+
+/* =========================================
+   QUELLEN UND METHODEN
+   ========================================= */
+
+.family-sources-section {
+  margin-top: 65px;
+}
+
+.family-sources-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(5, minmax(0, 1fr));
+
+  gap: 14px;
+  align-items: stretch;
+}
+
+.family-source-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  min-width: 0;
+
+  padding: 24px 18px;
+
+  border: 1px solid var(--genealogy-border);
+  border-radius: 12px;
+
+  background: linear-gradient(
+    150deg,
+    var(--genealogy-surface-light),
+    #18130f
+  );
+
+  text-align: center;
+
+  transition:
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.family-source-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--genealogy-accent);
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.20),
+    0 0 15px rgba(179, 138, 90, 0.07);
+}
+
+
+/* QUELLEN-ICONS */
+
+.family-source-card img {
+  display: block;
+
+  width: 70px;
+  height: 70px;
+
+  margin-bottom: 20px;
+
+  object-fit: contain;
+}
+
+.family-source-card h3 {
+  margin: 0 0 12px;
+
+  color: var(--genealogy-text);
+
+  font-size: 15px;
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+.family-source-card p {
+  margin: 0;
+
+  color: var(--genealogy-text-soft);
+
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 1000px) {
+
+  .family-line-entry {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(0, 1fr);
+  }
+
+  .family-line-content {
+    padding: 26px;
+  }
+
+  .family-sources-grid {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+
+}
+
+
+/* =========================================
+   SMARTPHONE / KLEINES TABLET
+   ========================================= */
+
+@media (max-width: 760px) {
+
+  .family-lines-page {
+    padding: 30px 20px 75px;
+  }
+
+  .family-lines-intro {
+    margin-bottom: 35px;
+  }
+
+  .family-line-entry {
+    grid-template-columns: 1fr;
+  }
+
+  .family-line-media {
+    min-height: 260px;
+    padding: 20px;
+  }
+
+  .family-line-media img {
+    max-height: 270px;
+  }
+
+  .family-line-content {
+    padding: 26px 22px;
+  }
+
+  .family-line-title h3 {
+    font-size: 25px;
+  }
+
+  .family-sources-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+/* =========================================
+   KLEINE SMARTPHONES
+   ========================================= */
+
+@media (max-width: 480px) {
+
+  .family-line-facts {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .family-sources-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .family-lines-overview a {
+    flex: 1 1 calc(50% - 10px);
+    text-align: center;
+  }
+
+  .family-line-title img {
+    width: 54px;
+    height: 54px;
+    flex-basis: 54px;
+  }
+
+}
+
+
+/* =========================================
+   REDUZIERTE ANIMATIONEN
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .family-line-entry,
+  .family-line-button,
+  .family-lines-overview a,
+  .family-source-card {
+    transition: none;
+  }
+
+}
+
