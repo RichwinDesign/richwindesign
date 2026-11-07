@@ -102,6 +102,7 @@
         <span class="journey-down-arrow">↓</span>
       </div>
 
+
       <ol class="journey-timeline">
 
         <!-- ZEITLINIE -->
@@ -678,7 +679,10 @@
 
       }
 
-      // Fortschrittslinie und kontinuierlicher Scroll-Zoom
+
+      /* =========================================
+         ZEITLINIE & SCROLL-ZOOM
+         ========================================= */
 
       let ticking = false;
 
@@ -686,6 +690,8 @@
 
         const viewportHeight = window.innerHeight;
         const timelineRect = timeline.getBoundingClientRect();
+
+        // Fortschritt der mittleren Zeitlinie
 
         const lineProgress = Math.max(
           0,
@@ -708,32 +714,42 @@
           if (!media) return;
 
           const figure = media.closest(".journey-media");
-          const rect = entry.getBoundingClientRect();
+          const rect = figure.getBoundingClientRect();
 
-          // Fortschritt der Station durch den Bildschirm
+          // Bildmitte ermitteln
 
-          const travel = Math.max(
+          const imageCenter = rect.top + rect.height / 2;
+
+          // Zoom erst in der Bildschirmmitte aktivieren
+
+          const screenCenter = viewportHeight * 0.5;
+
+          // Entfernung zur Bildschirmmitte
+
+          const distance = Math.abs(
+            imageCenter - screenCenter
+          );
+
+          // Zoombereich: 32 % der Bildschirmhöhe
+
+          const zoomRange = viewportHeight * 0.32;
+
+          const progress = Math.max(
             0,
             Math.min(
               1,
-              (viewportHeight - rect.top) /
-              (viewportHeight + rect.height)
+              1 - distance / zoomRange
             )
           );
 
-          // Zoom: 100 % → 165 % → 100 %
-          // Funktioniert in beide Scrollrichtungen
+          // Weiche Bewegung
 
-          const zoom =
-            1 + 0.65 * Math.pow(Math.sin(Math.PI * travel), 2);
+          const smooth =
+            progress * progress * (3 - 2 * progress);
 
-          const shift = 0;
+          // 100 % → 158 % → 100 %
 
-          // Während des Zooms Bild über die Mittellinie legen
-          figure.classList.toggle(
-            "journey-zooming",
-            zoom > 1.12
-          );
+          const zoom = 1 + 0.58 * smooth;
 
           media.style.setProperty(
             "--journey-zoom",
@@ -742,7 +758,14 @@
 
           media.style.setProperty(
             "--journey-shift",
-            shift.toFixed(2) + "px"
+            "0px"
+          );
+
+          // Bild während des Zooms über die Linie legen
+
+          figure.classList.toggle(
+            "journey-zooming",
+            zoom > 1.05
           );
 
         });
@@ -750,11 +773,13 @@
         ticking = false;
       }
 
+
       function requestJourneyUpdate() {
 
         if (ticking) return;
 
         ticking = true;
+
         requestAnimationFrame(updateJourney);
       }
 
