@@ -145,7 +145,6 @@
 }
 
 @keyframes journeyArrow {
-
   0%, 100% {
     transform: translateY(0);
     opacity: .65;
@@ -155,7 +154,6 @@
     transform: translateY(7px);
     opacity: 1;
   }
-
 }
 
 
@@ -180,7 +178,6 @@
   z-index: 2;
 
   width: 1px;
-
   background: rgba(143, 165, 181, .24);
 
   transform: translateX(-50%);
@@ -219,18 +216,17 @@
   grid-template-rows: auto auto;
 
   column-gap: 110px;
-  row-gap: 38px;
+  row-gap: 35px;
 
   align-items: start;
 
   min-height: 300px;
 
-  padding: 145px 0 185px;
-}
+  /* Mehr Platz oberhalb des Bildes
+     für die Jahreszahl und Verbindung */
 
-/* Jede Bildstation erhält ihren eigenen
-   vertikalen Platz, damit beim Zoom nicht
-   sofort das nächste Bild erscheint. */
+  padding: 205px 0 145px;
+}
 
 .journey-entry:not(.journey-text-only) {
   min-height: 650px;
@@ -238,14 +234,14 @@
 
 
 /* =========================================
-   JAHRESZAHLEN NEBEN DER ZEITLINIE
+   JAHRESZAHLEN OBERHALB DER BILDER
    ========================================= */
 
 .journey-year {
   position: absolute;
   z-index: 9;
 
-  top: 145px;
+  top: 85px;
 
   display: flex;
   align-items: center;
@@ -276,10 +272,7 @@
 
 .journey-year span {
   display: block;
-
   padding: 7px 0;
-
-  background: transparent;
 
   color: #e8f4fa;
 
@@ -289,14 +282,11 @@
   letter-spacing: -.035em;
 }
 
-/* Kleiner Diamant auf der Verbindungslinie */
-
 .journey-year i {
   display: block;
 
   width: 8px;
   height: 8px;
-
   flex-shrink: 0;
 
   border: 1px solid #93d2ed;
@@ -308,14 +298,12 @@
     0 0 11px rgba(111, 182, 217, .25);
 }
 
-/* Verbindung zwischen Jahreszahl
-   und mittlerer Zeitlinie */
+/* Feine Verbindung zur Mittellinie */
 
 .journey-year::before {
   content: "";
 
   position: absolute;
-
   top: 50%;
 
   width: 45px;
@@ -341,7 +329,7 @@
 
 
 /* =========================================
-   KLEINER KNOTEN AN DER ZEITLINIE
+   KNOTEN AUF DER ZEITLINIE
    ========================================= */
 
 .journey-entry::before {
@@ -350,7 +338,7 @@
   position: absolute;
   z-index: 5;
 
-  top: 163px;
+  top: 105px;
   left: 50%;
 
   width: 8px;
@@ -370,8 +358,6 @@
    BILD UND TEXT – WECHSELNDE SEITEN
    ========================================= */
 
-/* Bild links */
-
 .journey-left .journey-media {
   grid-column: 1;
   grid-row: 1;
@@ -383,8 +369,6 @@
   grid-row: 2;
   justify-self: start;
 }
-
-/* Bild rechts */
 
 .journey-right .journey-media {
   grid-column: 2;
@@ -398,9 +382,6 @@
   justify-self: end;
 }
 
-/* Beide Seiten haben Bild oben
-   und Beschreibung darunter. */
-
 .journey-entry:not(.journey-text-only) .journey-copy {
   width: 100%;
   max-width: 100%;
@@ -408,20 +389,27 @@
 
 
 /* =========================================
-   BILDFLÄCHEN – NORMALZUSTAND
+   BILDER – NORMALZUSTAND
    ========================================= */
 
 .journey-media {
+  --journey-overflow: 0px;
+
   position: relative;
   z-index: 1;
 
   width: 100%;
   margin: 0;
-}
 
-/* Im Normalzustand bleiben die
-   Bilder bewusst kleiner als die
-   jeweilige Hälfte des Zeitstrahls. */
+  /* Der obere Puffer wird beim Zoom
+     genauso hoch wie der Überstand
+     über der ursprünglichen Bildkante.
+
+     Das vergrößerte Bild bleibt dadurch
+     unterhalb der Jahreszahl. */
+
+  padding-top: var(--journey-overflow);
+}
 
 .journey-media-wide {
   width: 78%;
@@ -439,7 +427,10 @@
   width: 60%;
 }
 
-/* Bildformate */
+
+/* =========================================
+   BILDFORMATE
+   ========================================= */
 
 .journey-media-wide .journey-media-inner {
   aspect-ratio: 1.75 / 1;
@@ -459,41 +450,45 @@
 
 
 /* =========================================
-   SCROLL-ZOOM – BILD VERGRÖSSERN
+   SCROLL-ZOOM
    ========================================= */
 
 .journey-media-inner {
   --journey-zoom: 1;
+  --journey-x: 0px;
 
   position: relative;
 
   width: 100%;
   aspect-ratio: 1.55 / 1;
-
   overflow: hidden;
 
   background: #0c1721;
 
-  transform: translate3d(0, 0, 0)
-             scale(var(--journey-zoom));
+  transform:
+    translate3d(var(--journey-x), 0, 0)
+    scale(var(--journey-zoom));
 
   transition: none;
   will-change: transform;
 }
 
-/* Wichtig:
-   Bilder zoomen immer zur Mitte hin. */
+/* Linke Bilder:
+   Vergrößerung nach rechts */
 
 .journey-left .journey-media-inner {
   transform-origin: left center;
 }
 
+/* Rechte Bilder:
+   Vergrößerung nach links */
+
 .journey-right .journey-media-inner {
   transform-origin: right center;
 }
 
-/* Während des Zooms darf das Bild
-   über die Mittellinie wachsen. */
+/* Nur vergrößerte Bilder dürfen
+   über die mittlere Zeitlinie gehen */
 
 .journey-media.journey-zooming {
   z-index: 7;
@@ -508,11 +503,20 @@
   object-fit: cover;
 }
 
+
+/* =========================================
+   BILDUNTERSCHRIFT
+   ========================================= */
+
 .journey-media figcaption {
   position: relative;
   z-index: 1;
 
-  margin-top: 13px;
+  /* Da das Bild beim Zoom auch nach unten
+     wächst, wird die Bildunterschrift
+     um denselben Betrag verschoben. */
+
+  margin-top: calc(13px + var(--journey-overflow));
 
   color: #8095a5;
   font-size: 11px;
@@ -602,11 +606,11 @@
 }
 
 .journey-text-only .journey-year {
-  top: 105px;
+  top: 45px;
 }
 
 .journey-text-only::before {
-  top: 123px;
+  top: 65px;
 }
 
 .journey-text-only .journey-copy {
@@ -626,10 +630,8 @@
 
 
 /* =========================================
-   EINBLENDANIMATION DER STATIONEN
+   EINBLENDANIMATION
    ========================================= */
-
-/* Ohne JavaScript bleibt alles sichtbar. */
 
 .journey-js .journey-entry .journey-media,
 .journey-js .journey-entry .journey-copy,
@@ -702,7 +704,6 @@
   margin: 0;
 
   color: #bfcbd5;
-
   font-size: 12px;
   line-height: 1.75;
 }
@@ -735,6 +736,7 @@
 
 .about-project-year {
   display: block;
+
   margin-bottom: 18px;
 
   color: #81bbd4;
@@ -751,6 +753,7 @@
 
 .about-project-card p {
   min-height: 95px;
+
   margin: 0 0 24px;
 
   color: #c0ced8;
@@ -865,7 +868,7 @@
     padding-top: 20px;
   }
 
-  /* Zeitlinie links */
+  /* Linie links */
 
   .journey-track {
     left: 12px;
@@ -884,7 +887,7 @@
     padding: 105px 0 55px 42px;
   }
 
-  /* Jahreszahl am linken Rand */
+  /* Jahreszahl links */
 
   .journey-year,
   .journey-left .journey-year,
@@ -902,10 +905,7 @@
     font-size: 19px;
   }
 
-  .journey-year i {
-    display: none;
-  }
-
+  .journey-year i,
   .journey-year::before {
     display: none;
   }
@@ -916,7 +916,7 @@
     left: 12px;
   }
 
-  /* Bilder einheitlich */
+  /* Auf Mobilgeräten ohne Zoom */
 
   .journey-media,
   .journey-media-wide,
@@ -925,20 +925,25 @@
   .journey-media-small {
     width: 100%;
     max-width: 100%;
+
     margin: 0;
+    padding-top: 0;
   }
 
   .journey-media-inner {
     aspect-ratio: 1.55 / 1 !important;
+
     transform: none !important;
     will-change: auto;
+  }
+
+  .journey-media figcaption {
+    margin-top: 13px;
   }
 
   .journey-media.journey-zooming {
     z-index: 1;
   }
-
-  /* Texte darunter */
 
   .journey-copy,
   .journey-text-only .journey-copy {
@@ -953,8 +958,6 @@
   .journey-copy p {
     font-size: 13px;
   }
-
-  /* Textstationen */
 
   .journey-text-only {
     min-height: auto;
@@ -1022,9 +1025,18 @@
     translate: 0 0 !important;
   }
 
+  .journey-media {
+    padding-top: 0 !important;
+  }
+
+  .journey-media figcaption {
+    margin-top: 13px !important;
+  }
+
   .journey-media-inner {
     transform: none !important;
     will-change: auto;
   }
 
 }
+
