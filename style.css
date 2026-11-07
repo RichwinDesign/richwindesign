@@ -820,6 +820,12 @@ body::before {
 }
 
 /* =========================================
+   KACHEL-START AUF ALLEN 3 HAUPTSEITEN
+   Desktop-Abgleich anhand der aktuellen Seiten
+   Portfolio: Referenz | Portale: +30px | Genealogie: -10px
+   ========================================= */
+
+/* =========================================
    PORTALE – HAUPTÜBERSICHT
    Eigenständige Farbwelt, kompakter Einstieg,
    einheitliche Kacheln, 15 Portal-Akzente
@@ -867,7 +873,7 @@ body:has(.portal-overview) {
   width: min(1136px, calc(100% - 48px));
   max-width: 1136px;
   margin: 0 auto;
-  padding: 20px 0 34px;
+  padding: 50px 0 34px;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 16px;
@@ -1196,6 +1202,7 @@ body:has(.portal-overview) {
   .portal-overview {
     grid-template-columns: 1fr;
     gap: 14px;
+    padding-top: 20px;
   }
   .portal-overview .portal-card {
     height: 380px;
@@ -2294,7 +2301,7 @@ body:has(.genealogy-page) {
 
 .genealogy-intro {
   max-width: 720px;
-  margin-bottom: 22px;
+  margin-bottom: 12px;
 }
 
 .genealogy-intro h1 {
