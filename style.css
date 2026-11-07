@@ -3910,3 +3910,25 @@ a.mega-link:focus-visible {
     gap: 18px;
   }
 }
+
+/* =========================================
+   PORTFOLIO-DROPDOWN BÜNDIG AUSRICHTEN
+   ========================================= */
+
+@media (min-width: 951px) {
+
+  .main-nav a[data-nav="portfolio"] {
+    anchor-name: --portfolio-menu;
+  }
+
+  @supports (left: anchor(left)) {
+
+    .mega-menu-panel[data-menu="portfolio"] {
+      position-anchor: --portfolio-menu;
+      left: anchor(left);
+      transform: none;
+    }
+
+  }
+
+}
