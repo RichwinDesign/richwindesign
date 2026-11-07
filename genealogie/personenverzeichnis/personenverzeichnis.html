@@ -1,1 +1,645 @@
 
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Personenverzeichnis | Richwin Design</title>
+
+  <meta
+    name="description"
+    content="Alphabetisches Personenverzeichnis der genealogischen Forschung mit Lebensdaten, Herkunftsorten und historischen Quellen."
+  >
+
+  <link rel="stylesheet" href="../../style.css">
+  <link rel="stylesheet" href="../genealogie.css">
+  <link rel="stylesheet" href="personenverzeichnis.css">
+
+</head>
+
+<body>
+
+  <!-- ZENTRALE NAVIGATION -->
+
+  <div id="site-header"></div>
+
+
+  <main class="persons-page">
+
+    <!-- EINLEITUNG -->
+
+    <section class="persons-intro">
+
+      <a
+        class="persons-back"
+        href="../genealogie.html"
+      >
+        ← Zurück zur Genealogie
+      </a>
+
+      <p class="persons-eyebrow">
+        GENEALOGIE / PERSONENVERZEICHNIS
+      </p>
+
+      <h1>Personenverzeichnis</h1>
+
+      <p class="persons-lead">
+        Alphabetische Übersicht aller bisher
+        erfassten Personen meiner Familienforschung.
+      </p>
+
+      <p class="persons-description">
+        Wählen Sie einen Anfangsbuchstaben, um die
+        dazugehörigen Personeneinträge zu öffnen.
+        Umfangreiche Buchstaben sind zur besseren
+        Übersicht in mehrere Namensbereiche unterteilt.
+      </p>
+
+    </section>
+
+
+    <!-- ALPHABETISCHES REGISTER -->
+
+    <section class="persons-register">
+
+      <div class="persons-section-heading">
+
+        <div>
+
+          <p class="persons-eyebrow">
+            RECHERCHE &amp; REGISTER
+          </p>
+
+          <h2>Alphabetisches Register</h2>
+
+          <p>
+            Direkte Navigation zu den Personeneinträgen
+            von A bis Z.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- BUCHSTABENNAVIGATION -->
+
+      <nav
+        class="persons-alphabet"
+        aria-label="Alphabetisches Personenverzeichnis"
+      >
+
+        <a
+          class="persons-letter persons-letter-start"
+          href="personenverzeichnis.html"
+          aria-current="page"
+        >
+          Start
+        </a>
+
+        <a class="persons-letter" href="personen/a.html">A</a>
+
+        <button
+          class="persons-letter persons-letter-group"
+          type="button"
+          data-letter="b"
+          aria-expanded="false"
+          aria-controls="persons-group-b"
+        >B</button>
+
+        <button
+          class="persons-letter persons-letter-group"
+          type="button"
+          data-letter="c"
+          aria-expanded="false"
+          aria-controls="persons-group-c"
+        >C</button>
+
+        <a class="persons-letter" href="personen/d.html">D</a>
+        <a class="persons-letter" href="personen/e.html">E</a>
+        <a class="persons-letter" href="personen/f.html">F</a>
+        <a class="persons-letter" href="personen/g.html">G</a>
+
+        <button
+          class="persons-letter persons-letter-group"
+          type="button"
+          data-letter="h"
+          aria-expanded="false"
+          aria-controls="persons-group-h"
+        >H</button>
+
+        <a class="persons-letter" href="personen/i.html">I</a>
+        <a class="persons-letter" href="personen/j.html">J</a>
+
+        <button
+          class="persons-letter persons-letter-group"
+          type="button"
+          data-letter="k"
+          aria-expanded="false"
+          aria-controls="persons-group-k"
+        >K</button>
+
+        <a class="persons-letter" href="personen/l.html">L</a>
+
+        <button
+          class="persons-letter persons-letter-group"
+          type="button"
+          data-letter="m"
+          aria-expanded="false"
+          aria-controls="persons-group-m"
+        >M</button>
+
+        <a class="persons-letter" href="personen/n.html">N</a>
+        <a class="persons-letter" href="personen/o.html">O</a>
+        <a class="persons-letter" href="personen/p.html">P</a>
+        <a class="persons-letter" href="personen/q.html">Q</a>
+        <a class="persons-letter" href="personen/r.html">R</a>
+
+        <button
+          class="persons-letter persons-letter-group"
+          type="button"
+          data-letter="s"
+          aria-expanded="false"
+          aria-controls="persons-group-s"
+        >S</button>
+
+        <a class="persons-letter" href="personen/t.html">T</a>
+        <a class="persons-letter" href="personen/u.html">U</a>
+        <a class="persons-letter" href="personen/v.html">V</a>
+        <a class="persons-letter" href="personen/w.html">W</a>
+
+        <!-- X IST DERZEIT NICHT BELEGT -->
+
+        <span
+          class="persons-letter persons-letter-disabled"
+          aria-label="X – keine Einträge vorhanden"
+          title="Keine Einträge vorhanden"
+        >
+          X
+        </span>
+
+        <a class="persons-letter" href="personen/y-z.html#y">Y</a>
+        <a class="persons-letter" href="personen/y-z.html#z">Z</a>
+
+      </nav>
+
+
+      <!-- AUFKLAPPBARE NAMENSBEREICHE -->
+
+      <div
+        class="persons-subgroups"
+        id="persons-subgroups"
+        aria-live="polite"
+      >
+
+        <!-- B -->
+
+        <div
+          class="persons-subgroup"
+          id="persons-group-b"
+          data-subgroup="b"
+          hidden
+        >
+
+          <div class="persons-subgroup-heading">
+
+            <div>
+              <span>BUCHSTABE B</span>
+              <h3>Namensbereiche B</h3>
+            </div>
+
+            <a href="personen/b.html">
+              Gesamtübersicht B →
+            </a>
+
+          </div>
+
+          <div class="persons-subgroup-links">
+
+            <a href="personen/ba-bi.html">Ba–Bi <span>›</span></a>
+            <a href="personen/bl-bo.html">Bl–Bo <span>›</span></a>
+            <a href="personen/br-by.html">Br–By <span>›</span></a>
+
+          </div>
+
+        </div>
+
+
+        <!-- C -->
+
+        <div
+          class="persons-subgroup"
+          id="persons-group-c"
+          data-subgroup="c"
+          hidden
+        >
+
+          <div class="persons-subgroup-heading">
+
+            <div>
+              <span>BUCHSTABE C</span>
+              <h3>Namensbereiche C</h3>
+            </div>
+
+            <a href="personen/c.html">
+              Gesamtübersicht C →
+            </a>
+
+          </div>
+
+          <div class="persons-subgroup-links">
+
+            <a href="personen/ca-ch.html">Ca–Ch <span>›</span></a>
+            <a href="personen/ci-cl.html">Ci–Cl <span>›</span></a>
+            <a href="personen/co-cu.html">Co–Cu <span>›</span></a>
+
+          </div>
+
+        </div>
+
+
+        <!-- H -->
+
+        <div
+          class="persons-subgroup"
+          id="persons-group-h"
+          data-subgroup="h"
+          hidden
+        >
+
+          <div class="persons-subgroup-heading">
+
+            <div>
+              <span>BUCHSTABE H</span>
+              <h3>Namensbereiche H</h3>
+            </div>
+
+            <a href="personen/h.html">
+              Gesamtübersicht H →
+            </a>
+
+          </div>
+
+          <div class="persons-subgroup-links">
+
+            <a href="personen/ha-he.html">Ha–He <span>›</span></a>
+            <a href="personen/hi-hu.html">Hi–Hu <span>›</span></a>
+
+          </div>
+
+        </div>
+
+
+        <!-- K -->
+
+        <div
+          class="persons-subgroup"
+          id="persons-group-k"
+          data-subgroup="k"
+          hidden
+        >
+
+          <div class="persons-subgroup-heading">
+
+            <div>
+              <span>BUCHSTABE K</span>
+              <h3>Namensbereiche K</h3>
+            </div>
+
+            <a href="personen/k.html">
+              Gesamtübersicht K →
+            </a>
+
+          </div>
+
+          <div class="persons-subgroup-links">
+
+            <a href="personen/ka-ki.html">Ka–Ki <span>›</span></a>
+            <a href="personen/kl-ko.html">Kl–Ko <span>›</span></a>
+            <a href="personen/kr-ku.html">Kr–Ku <span>›</span></a>
+
+          </div>
+
+        </div>
+
+
+        <!-- M -->
+
+        <div
+          class="persons-subgroup"
+          id="persons-group-m"
+          data-subgroup="m"
+          hidden
+        >
+
+          <div class="persons-subgroup-heading">
+
+            <div>
+              <span>BUCHSTABE M</span>
+              <h3>Namensbereiche M</h3>
+            </div>
+
+            <a href="personen/m.html">
+              Gesamtübersicht M →
+            </a>
+
+          </div>
+
+          <div class="persons-subgroup-links">
+
+            <a href="personen/ma-mi.html">Ma–Mi <span>›</span></a>
+            <a href="personen/mn-my.html">Mn–My <span>›</span></a>
+
+          </div>
+
+        </div>
+
+
+        <!-- S -->
+
+        <div
+          class="persons-subgroup"
+          id="persons-group-s"
+          data-subgroup="s"
+          hidden
+        >
+
+          <div class="persons-subgroup-heading">
+
+            <div>
+              <span>BUCHSTABE S</span>
+              <h3>Namensbereiche S</h3>
+            </div>
+
+            <a href="personen/s.html">
+              Gesamtübersicht S →
+            </a>
+
+          </div>
+
+          <div class="persons-subgroup-links">
+
+            <a href="personen/sa-schm.html">Sa–Schm <span>›</span></a>
+            <a href="personen/schn-se.html">Schn–Se <span>›</span></a>
+            <a href="personen/sh-sp.html">Sh–Sp <span>›</span></a>
+            <a href="personen/st-sy.html">St–Sy <span>›</span></a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <p class="persons-register-hint">
+        Die Buchstaben B, C, H, K, M und S enthalten
+        zusätzliche Namensbereiche. Wählen Sie einen
+        dieser Buchstaben, um die Unterteilungen anzuzeigen.
+      </p>
+
+    </section>
+
+
+    <!-- NAMENSVERZEICHNIS -->
+
+    <section class="persons-name-index">
+
+      <div>
+
+        <p class="persons-eyebrow">
+          SCHNELLORIENTIERUNG
+        </p>
+
+        <h2>Sie suchen einen Familiennamen?</h2>
+
+        <p>
+          Neben dem Personenverzeichnis steht Ihnen
+          ein separates Namensverzeichnis zur Verfügung.
+          Dort finden Sie eine alphabetische Übersicht
+          der erforschten Familiennamen.
+        </p>
+
+      </div>
+
+      <a
+        class="persons-action"
+        href="namensverzeichnis.html"
+      >
+        Namensverzeichnis öffnen
+        <span aria-hidden="true">›</span>
+      </a>
+
+    </section>
+
+
+    <!-- INFORMATIONEN -->
+
+    <section class="persons-information">
+
+      <div class="persons-section-heading">
+
+        <p class="persons-eyebrow">
+          INFORMATIONEN ZUM ARCHIV
+        </p>
+
+        <h2>Über das Personenverzeichnis</h2>
+
+      </div>
+
+      <div class="persons-information-grid">
+
+
+        <!-- ERFASSTE PERSONEN -->
+
+        <article class="persons-info-card">
+
+          <div class="persons-info-number">01</div>
+
+          <h3>Erfasste Personen</h3>
+
+          <p>
+            In diesem Verzeichnis finden Sie bisher
+            dokumentierte Personen, alphabetisch
+            nach Familiennamen geordnet.
+          </p>
+
+          <p>
+            Die Einträge werden fortlaufend
+            recherchiert und ergänzt.
+          </p>
+
+        </article>
+
+
+        <!-- GENEALOGISCHE INFORMATIONEN -->
+
+        <article class="persons-info-card">
+
+          <div class="persons-info-number">02</div>
+
+          <h3>Genealogische Angaben</h3>
+
+          <p>
+            Zu vielen Personen sind Lebensdaten,
+            Herkunftsorte, Familienbeziehungen,
+            Quellen und weitere Informationen
+            verfügbar.
+          </p>
+
+          <p>
+            Umfang und Genauigkeit der Angaben
+            hängen von der jeweiligen Quellenlage ab.
+          </p>
+
+        </article>
+
+
+        <!-- DATENSCHUTZ -->
+
+        <article class="persons-info-card">
+
+          <div class="persons-info-number">03</div>
+
+          <h3>Datenschutz</h3>
+
+          <p>
+            Angaben zu lebenden Personen werden
+            aus Datenschutzgründen nur
+            eingeschränkt veröffentlicht.
+          </p>
+
+          <p>
+            Hinweise auf fehlerhafte oder unerwünschte
+            Veröffentlichungen können über die
+            Kontaktseite mitgeteilt werden.
+          </p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- DATENSCHUTZHINWEIS -->
+
+    <section class="persons-notice">
+
+      <div class="persons-notice-symbol" aria-hidden="true">
+        i
+      </div>
+
+      <div>
+
+        <h2>Hinweis zu personenbezogenen Daten</h2>
+
+        <p>
+          Dieses Archiv dient der privaten genealogischen
+          Forschung. Sollten sich dennoch personenbezogene
+          Daten auf dieser Website befinden, deren
+          Veröffentlichung Sie nicht wünschen,
+          kontaktieren Sie mich bitte.
+        </p>
+
+        <p>
+          Ich werde Ihr Anliegen zeitnah prüfen und
+          entsprechende Daten korrigieren oder entfernen,
+          soweit dies erforderlich ist.
+        </p>
+
+        <a href="../../kontakt/kontakt.html">
+          Kontakt aufnehmen →
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- DATENSTAND -->
+
+    <section class="persons-status">
+
+      <p>
+        Die Forschungsdaten werden kontinuierlich
+        überprüft, ergänzt und erweitert.
+      </p>
+
+    </section>
+
+  </main>
+
+
+  <!-- ZENTRALES JAVASCRIPT -->
+
+  <script src="../../script.js"></script>
+
+
+  <!-- BUCHSTABEN-AUSWAHL -->
+
+  <script>
+
+    document.addEventListener("DOMContentLoaded", () => {
+
+      const groupButtons = document.querySelectorAll(
+        ".persons-letter-group"
+      );
+
+      const subgroups = document.querySelectorAll(
+        ".persons-subgroup"
+      );
+
+      function closeGroups() {
+
+        groupButtons.forEach((button) => {
+          button.classList.remove("is-active");
+          button.setAttribute("aria-expanded", "false");
+        });
+
+        subgroups.forEach((group) => {
+          group.hidden = true;
+        });
+
+      }
+
+      groupButtons.forEach((button) => {
+
+        button.addEventListener("click", () => {
+
+          const letter = button.dataset.letter;
+
+          const target = document.querySelector(
+            '[data-subgroup="' + letter + '"]'
+          );
+
+          const wasOpen = button.classList.contains(
+            "is-active"
+          );
+
+          closeGroups();
+
+          if (!wasOpen && target) {
+
+            target.hidden = false;
+
+            button.classList.add("is-active");
+
+            button.setAttribute(
+              "aria-expanded",
+              "true"
+            );
+
+          }
+
+        });
+
+      });
+
+    });
+
+  </script>
+
+</body>
+</html>
+
