@@ -3899,3 +3899,14 @@ a.mega-link:focus-visible {
   }
 
 }
+
+/* =========================================
+   GENEALOGIE – KACHELABSTÄNDE
+   ========================================= */
+
+@media (min-width: 951px) {
+  .genealogy-page .genealogy-overview-grid {
+    margin-top: 40px;
+    gap: 18px;
+  }
+}
