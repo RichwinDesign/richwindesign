@@ -3889,18 +3889,6 @@ a.mega-link:focus-visible {
 }
 
 /* =========================================
-   DROPDOWN – LINKS AN PORTFOLIO AUSRICHTEN
-   ========================================= */
-
-@media (min-width: 951px) {
-
-  .mega-menu-panel[data-menu="portfolio"] {
-    left: calc(50% + 60px);
-  }
-
-}
-
-/* =========================================
    GENEALOGIE – KACHELABSTÄNDE
    ========================================= */
 
@@ -3911,15 +3899,3 @@ a.mega-link:focus-visible {
   }
 }
 
-/* =========================================
-   PORTFOLIO-DROPDOWN – POSITION KORRIGIEREN
-   ========================================= */
-
-@media (min-width: 951px) {
-
-  .site-header .mega-menu-panel[data-menu="portfolio"] {
-    left: 50% !important;
-    transform: translateX(calc(-50% + 50px)) !important;
-  }
-
-}
