@@ -23,7 +23,7 @@
 }
 
 body:has(.persons-page) {
-  background: var(--persons-bg, #15110d);
+  background: #15110d;
 }
 
 
@@ -193,6 +193,9 @@ body:has(.persons-page) {
     transform .2s ease;
 }
 
+
+/* STARTSEITE HERVORHEBEN */
+
 .persons-letter-start {
   flex-basis: 75px;
 
@@ -201,9 +204,12 @@ body:has(.persons-page) {
   color: #15110d;
 }
 
+
+/* HOVER UND AKTIVE BUCHSTABEN */
+
 .persons-letter:hover,
 .persons-letter:focus-visible,
-.persons-letter.is-active {
+.persons-letter[aria-current="page"] {
   background: var(--persons-gold);
   border-color: var(--persons-gold-light);
 
@@ -216,6 +222,16 @@ body:has(.persons-page) {
 .persons-letter-start:focus-visible {
   background: var(--persons-gold-light);
 }
+
+
+/* BUCHSTABEN MIT NAMENSÜBERSICHT */
+
+.persons-letter-index {
+  border-color: var(--persons-gold);
+}
+
+
+/* X – NICHT BELEGT */
 
 .persons-letter-disabled {
   border-color: #63352f;
@@ -235,112 +251,7 @@ body:has(.persons-page) {
 }
 
 
-/* =========================================
-   AUFKLAPPBARE NAMENSBEREICHE
-   ========================================= */
-
-.persons-subgroups {
-  margin-top: 0;
-}
-
-.persons-subgroup {
-  margin-top: 24px;
-  padding: 23px;
-
-  border: 1px solid rgba(179,138,90,.38);
-  border-radius: 10px;
-
-  background: rgba(13,10,8,.55);
-}
-
-.persons-subgroup[hidden] {
-  display: none;
-}
-
-.persons-subgroup-heading {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-
-  gap: 16px;
-  margin-bottom: 21px;
-}
-
-.persons-subgroup-heading span {
-  display: block;
-
-  margin-bottom: 6px;
-
-  color: var(--persons-gold);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-}
-
-.persons-subgroup-heading h3 {
-  margin: 0;
-
-  color: var(--persons-text);
-
-  font-size: 20px;
-  line-height: 1.25;
-}
-
-.persons-subgroup-heading > a {
-  color: var(--persons-gold-light);
-
-  font-size: 12px;
-  text-decoration: none;
-}
-
-.persons-subgroup-heading > a:hover {
-  text-decoration: underline;
-  text-underline-offset: 4px;
-}
-
-.persons-subgroup-links {
-  display: grid;
-  grid-template-columns:
-    repeat(3, minmax(0, 1fr));
-
-  gap: 10px;
-}
-
-.persons-subgroup-links a {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  gap: 12px;
-  min-height: 52px;
-  padding: 12px 16px;
-
-  border: 1px solid var(--persons-border);
-  border-radius: 8px;
-
-  background: var(--persons-surface-light);
-  color: var(--persons-text);
-
-  font-size: 13px;
-  font-weight: 600;
-  text-decoration: none;
-
-  transition:
-    background .2s ease,
-    border-color .2s ease;
-}
-
-.persons-subgroup-links a span {
-  color: var(--persons-gold-light);
-  font-size: 23px;
-  line-height: .7;
-}
-
-.persons-subgroup-links a:hover {
-  border-color: var(--persons-gold);
-  background: rgba(179,138,90,.15);
-}
+/* INFORMATION UNTER DEM ALPHABET */
 
 .persons-register-hint {
   margin: 23px 0 0;
@@ -597,11 +508,6 @@ body:has(.persons-page) {
     padding: 35px 24px 80px;
   }
 
-  .persons-subgroup-links {
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
-  }
-
   .persons-information-grid {
     grid-template-columns:
       repeat(2, minmax(0, 1fr));
@@ -641,14 +547,6 @@ body:has(.persons-page) {
     flex-basis: 70px;
   }
 
-  .persons-subgroup {
-    padding: 18px 14px;
-  }
-
-  .persons-subgroup-links {
-    grid-template-columns: 1fr;
-  }
-
   .persons-name-index {
     flex-direction: column;
     align-items: flex-start;
@@ -682,10 +580,8 @@ body:has(.persons-page) {
 
 @media (prefers-reduced-motion: reduce) {
 
-  .persons-page a,
-  .persons-page button {
+  .persons-page a {
     transition: none;
   }
 
 }
-
