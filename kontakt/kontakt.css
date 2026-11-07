@@ -8,10 +8,7 @@
   color: #ffffff;
 }
 
-
-/* =========================================
-   HAUPTBEREICH
-   ========================================= */
+/* HAUPTBEREICH */
 
 .contact-section {
   max-width: 1200px;
@@ -19,10 +16,7 @@
   padding: 75px 32px 110px;
 }
 
-
-/* =========================================
-   SEITENÜBERSCHRIFT
-   ========================================= */
+/* SEITENÜBERSCHRIFT */
 
 .contact-heading {
   margin-bottom: 55px;
@@ -54,28 +48,10 @@
   line-height: 1.75;
 }
 
-
-/* =========================================
-   ZWEISPALTIGES LAYOUT
-   ========================================= */
-
-.contact-grid {
-  display: grid;
-  grid-template-columns:
-    minmax(0, 1fr)
-    minmax(0, 1fr);
-
-  gap: 80px;
-  align-items: start;
-}
-
-
-/* =========================================
-   LINKE SPALTE
-   ========================================= */
+/* KONTAKTINFORMATIONEN */
 
 .contact-information {
-  padding-top: 30px;
+  max-width: 560px;
 }
 
 .contact-information h2 {
@@ -97,7 +73,6 @@
   max-width: 420px;
   height: 1px;
   margin: 35px 0;
-
   background: linear-gradient(
     90deg,
     rgba(111, 182, 217, .45),
@@ -105,15 +80,12 @@
   );
 }
 
-
-/* =========================================
-   KONTAKTWEGE
-   ========================================= */
+/* KONTAKTWEGE */
 
 .contact-methods {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 32px;
 }
 
 .contact-method {
@@ -127,14 +99,9 @@
   min-width: 0;
 }
 
-
-/* =========================================
-   KONTAKT-ICONS – OHNE KÄSTEN
-   ========================================= */
+/* ICONS – OHNE KÄSTEN, MIT BLAUEM LEUCHTEN */
 
 .contact-method-icon {
-  position: relative;
-
   flex: 0 0 40px;
   width: 40px;
   height: 40px;
@@ -145,7 +112,6 @@
 
   border: none;
   border-radius: 0;
-
   background: transparent;
 
   color: #85c9e5;
@@ -185,20 +151,15 @@
   line-height: 1.6;
 }
 
-
-/* =========================================
-   E-MAIL-LINK
-   ========================================= */
+/* ANKLICKBARER KONTAKT */
 
 .contact-method-link {
   display: inline-block;
-
   max-width: 100%;
 
   color: #85c9e5;
   font-size: 14px;
   line-height: 1.6;
-
   text-decoration: none;
   overflow-wrap: anywhere;
 
@@ -215,298 +176,22 @@
     0 0 12px rgba(111, 182, 217, .5);
 }
 
-
-/* =========================================
-   FORMULARKARTE
-   ========================================= */
-
-.contact-form-card {
-  padding: 36px;
-
-  border: 1px solid rgba(111, 182, 217, .32);
-  border-radius: 14px;
-
-  background: linear-gradient(
-    145deg,
-    #101d2a 0%,
-    #09121c 55%,
-    #060c12 100%
-  );
-
-  box-shadow:
-    0 18px 45px rgba(0, 0, 0, .25),
-    0 0 25px rgba(111, 182, 217, .035);
-}
-
-.contact-form-card h2 {
-  margin: 0 0 10px;
-  font-size: 25px;
-  font-weight: 700;
-}
-
-.contact-form-intro {
-  margin: 0 0 30px;
-  color: #aebfcb;
-  font-size: 14px;
-  line-height: 1.6;
-}
-
-
-/* =========================================
-   FORMULAR
-   ========================================= */
-
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 22px;
-}
-
-.contact-field {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.contact-field label {
-  color: #e2ebf1;
-  font-size: 13px;
-  font-weight: 600;
-}
-
-.contact-field input,
-.contact-field textarea {
-  width: 100%;
-  padding: 13px 15px;
-
-  border: 1px solid rgba(111, 182, 217, .25);
-  border-radius: 7px;
-  outline: none;
-
-  background: #071019;
-  color: #ffffff;
-
-  font-family: Arial, sans-serif;
-  font-size: 14px;
-  line-height: 1.5;
-
-  transition:
-    border-color .25s ease,
-    box-shadow .25s ease;
-}
-
-.contact-field textarea {
-  min-height: 150px;
-  resize: vertical;
-}
-
-.contact-field input::placeholder,
-.contact-field textarea::placeholder {
-  color: #778c9d;
-}
-
-.contact-field input:focus,
-.contact-field textarea:focus {
-  border-color: #85c9e5;
-
-  box-shadow:
-    0 0 12px rgba(111, 182, 217, .12);
-}
-
-
-/* =========================================
-   VERSTECKTES SPAMSCHUTZFELD
-   ========================================= */
-
-.contact-honeypot {
-  position: absolute !important;
-
-  width: 1px !important;
-  height: 1px !important;
-  padding: 0 !important;
-  margin: -1px !important;
-
-  overflow: hidden !important;
-  clip-path: inset(50%) !important;
-  white-space: nowrap !important;
-
-  border: 0 !important;
-}
-
-
-/* =========================================
-   DATENSCHUTZ-CHECKBOX
-   ========================================= */
-
-.contact-consent {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-}
-
-.contact-consent input {
-  flex: 0 0 17px;
-
-  width: 17px;
-  height: 17px;
-
-  margin: 2px 0 0;
-
-  accent-color: #85c9e5;
-  cursor: pointer;
-}
-
-.contact-consent label {
-  flex: 1;
-
-  color: #aebfcb;
-  font-size: 12px;
-  line-height: 1.7;
-
-  cursor: pointer;
-}
-
-.contact-consent a {
-  color: #85c9e5;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-
-  transition:
-    color .25s ease,
-    text-shadow .25s ease;
-}
-
-.contact-consent a:hover,
-.contact-consent a:focus-visible {
-  color: #c4efff;
-
-  text-shadow:
-    0 0 10px rgba(111, 182, 217, .4);
-}
-
-
-/* =========================================
-   DATENSCHUTZHINWEIS
-   ========================================= */
-
-.contact-privacy {
-  margin: -4px 0 0;
-
-  color: #93a6b4;
-  font-size: 11px;
-  line-height: 1.7;
-}
-
-
-/* =========================================
-   ABSENDEBUTTON
-   ========================================= */
-
-.contact-submit {
-  width: fit-content;
-  min-height: 44px;
-
-  padding: 11px 19px;
-
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
-
-  border: 1px solid rgba(111, 182, 217, .55);
-  border-radius: 8px;
-
-  background: rgba(111, 182, 217, .08);
-  color: #ffffff;
-
-  font-family: Arial, sans-serif;
-  font-size: 13px;
-  font-weight: 600;
-
-  cursor: pointer;
-
-  transition:
-    background .25s ease,
-    border-color .25s ease,
-    box-shadow .25s ease,
-    transform .25s ease,
-    opacity .25s ease;
-}
-
-.contact-submit span {
-  color: #85c9e5;
-  font-size: 23px;
-  line-height: .7;
-}
-
-.contact-submit:not(:disabled):hover {
-  background: rgba(111, 182, 217, .16);
-
-  border-color: #85c9e5;
-
-  box-shadow:
-    0 0 16px rgba(111, 182, 217, .2);
-
-  transform: translateY(-2px);
-}
-
-.contact-submit:focus-visible {
-  outline: 2px solid #85c9e5;
+.contact-method-link:focus-visible {
+  outline: 1px solid #85c9e5;
   outline-offset: 4px;
 }
 
-.contact-submit:disabled {
-  opacity: .55;
-  cursor: wait;
-  transform: none;
-}
-
-
-/* =========================================
-   FORMULARSTATUS
-   ========================================= */
-
-.contact-form-status {
-  margin: -6px 0 0;
-
-  color: #93a6b4;
-  font-size: 12px;
-  line-height: 1.6;
-}
-
-.contact-form-status:empty {
-  display: none;
-}
-
-.contact-status-success {
-  color: #9cdbc5;
-}
-
-.contact-status-error {
-  color: #ffb5b5;
-}
-
-
-/* =========================================
-   TABLET
-   ========================================= */
+/* TABLET */
 
 @media (max-width: 950px) {
 
-  .contact-grid {
-    gap: 38px;
-  }
-
-  .contact-form-card {
-    padding: 28px;
+  .contact-heading {
+    margin-bottom: 45px;
   }
 
 }
 
-
-/* =========================================
-   SMARTPHONE
-   ========================================= */
+/* SMARTPHONE */
 
 @media (max-width: 700px) {
 
@@ -522,21 +207,8 @@
     font-size: 42px;
   }
 
-  .contact-grid {
-    grid-template-columns: 1fr;
-    gap: 45px;
-  }
-
-  .contact-information {
-    padding-top: 0;
-  }
-
   .contact-information h2 {
     font-size: 25px;
-  }
-
-  .contact-form-card {
-    padding: 25px 20px;
   }
 
   .contact-method {
@@ -545,19 +217,12 @@
 
 }
 
-
-/* =========================================
-   SEHR KLEINE BILDSCHIRME
-   ========================================= */
+/* SEHR KLEINE DISPLAYS */
 
 @media (max-width: 450px) {
 
   .contact-heading h1 {
     font-size: 39px;
-  }
-
-  .contact-form-card {
-    padding: 23px 17px;
   }
 
   .contact-method-icon {
@@ -567,10 +232,7 @@
 
 }
 
-
-/* =========================================
-   REDUZIERTE BEWEGUNG
-   ========================================= */
+/* REDUZIERTE BEWEGUNG */
 
 @media (prefers-reduced-motion: reduce) {
 
