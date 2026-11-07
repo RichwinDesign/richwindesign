@@ -731,7 +731,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     genealogie: `
       <div class="mega-column">
-        <div class="mega-heading">Familienforschung</div>
+        <div class="mega-heading">Genealogie</div>
         ${item("Genealogie – Übersicht", "genealogie/genealogie.html", "❖")}
         ${genealogyItems}
       </div>
