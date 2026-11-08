@@ -4520,3 +4520,84 @@ body:has(.portal-overview) {
   font-size: 12px;
   font-weight: 600;
 }
+
+/* =========================================
+   HAUPTSEITEN – EINHEITLICHES RASTER
+   ========================================= */
+
+@media (min-width: 951px) {
+
+  /* Gleiche Höhe der Einleitungsbereiche */
+  .intro-section,
+  .portal-intro {
+    height: 330px;
+  }
+
+  /* Portfolio: gleiche Startposition */
+  .intro-inner {
+    grid-template-columns: 1fr;
+    min-height: 0;
+    padding-top: 42px;
+    padding-bottom: 0;
+  }
+
+  /* Einleitungstexte breiter */
+  .intro-text {
+    grid-column: 1;
+    width: 100%;
+    max-width: 900px;
+  }
+
+  .portal-intro-text {
+    max-width: 900px;
+  }
+
+  /* Hei! = Position des Zurück-Buttons */
+  .intro-text > .intro-small {
+    display: flex;
+    align-items: center;
+    min-height: 36px;
+    margin: 0 0 24px;
+    font-size: 14px;
+  }
+
+  /* Gleicher Beginn der Kachelbereiche */
+  .portfolio-overview {
+    margin-top: 0;
+    padding-top: 25px;
+  }
+
+  .portal-overview {
+    padding-top: 25px;
+  }
+
+}
+
+/* Tablet und Smartphone: flexible Höhe */
+@media (max-width: 950px) {
+
+  .intro-section,
+  .portal-intro {
+    height: auto;
+  }
+
+  .intro-inner {
+    min-height: 0;
+  }
+
+  .intro-text,
+  .portal-intro-text {
+    max-width: 100%;
+  }
+
+  .intro-text > .intro-small {
+    min-height: 36px;
+    margin-bottom: 24px;
+    font-size: 14px;
+  }
+
+  .portfolio-overview {
+    margin-top: 0;
+  }
+
+}
