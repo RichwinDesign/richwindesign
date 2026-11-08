@@ -4601,3 +4601,19 @@ body:has(.portal-overview) {
   }
 
 }
+
+/* =========================================
+   EINHEITLICHE EINLEITUNGSTEXTE
+   Vorlage: Portale
+   ========================================= */
+
+.intro-text > p:not(.intro-small),
+.portal-intro-text p,
+.genealogy-intro-text p {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.55;
+  letter-spacing: normal;
+}
