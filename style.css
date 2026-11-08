@@ -51,70 +51,69 @@ body::before {
 
 /* =========================================
    HEADER – DREI GEDÄMPFTE FARBWELTEN
-   Nur Darstellung; Navigation und Menülogik unverändert
+   Zwei begrenzte Lichtinseln, dunkle Mitte.
+   Die Menüstruktur und Funktionen bleiben unverändert.
    ========================================= */
 
-/* Portfolio und allgemeine Seiten: Navy / Petrol */
+/* Portfolio und allgemeine Seiten */
 body[data-page="portfolio"],
 body[data-page="ueber-mich"],
 body[data-page="kontakt"] {
-  --header-base: #07111a;
-  --header-glow-left: rgba(19, 105, 145, .37);
-  --header-glow-right: rgba(13, 78, 112, .21);
-  --header-glow-center: rgba(16, 79, 114, .22);
+  --header-base: #050c13;
+  --header-light-left: rgba(13, 88, 129, .50);
+  --header-light-right: rgba(10, 65, 102, .43);
   --header-accent: #89d7f1;
-  --header-border-color: rgba(112, 194, 224, .58);
+  --header-border-color: rgba(112, 194, 224, .46);
   --header-accent-glow: rgba(104, 202, 236, .45);
 }
 
-/* Portale einschließlich Unterseiten: tiefe, rauchige Violetttöne */
+/* Portale und Portal-Unterseiten */
 body[data-page="portale"] {
-  --header-base: #100d18;
-  --header-glow-left: rgba(100, 41, 133, .39);
-  --header-glow-right: rgba(73, 36, 116, .30);
-  --header-glow-center: rgba(91, 39, 128, .28);
+  --header-base: #0d0a13;
+  --header-light-left: rgba(93, 35, 128, .52);
+  --header-light-right: rgba(67, 35, 104, .46);
   --header-accent: #c888e9;
-  --header-border-color: rgba(164, 107, 202, .56);
+  --header-border-color: rgba(164, 107, 202, .46);
   --header-accent-glow: rgba(176, 96, 222, .42);
 }
 
-/* Genealogie einschließlich Unterseiten: Umbra / Pergament */
+/* Genealogie und genealogische Unterseiten */
 body[data-page="genealogie"] {
-  --header-base: #19120d;
-  --header-glow-left: rgba(123, 77, 43, .39);
-  --header-glow-right: rgba(100, 63, 38, .29);
-  --header-glow-center: rgba(117, 78, 46, .24);
+  --header-base: #100d0b;
+  --header-light-left: rgba(113, 66, 35, .55);
+  --header-light-right: rgba(93, 58, 35, .43);
   --header-accent: #e1bb8d;
-  --header-border-color: rgba(204, 157, 103, .61);
+  --header-border-color: rgba(204, 157, 103, .47);
   --header-accent-glow: rgba(221, 164, 98, .42);
 }
 
 .site-header {
   position: relative;
-  z-index: 20;
+  z-index: 1000;
+  overflow: visible;
   isolation: isolate;
-  background:
-    radial-gradient(ellipse 38% 165% at 15% 85%, var(--header-glow-left, rgba(19, 105, 145, .37)) 0%, transparent 100%),
-    radial-gradient(ellipse 45% 145% at 83% 16%, var(--header-glow-right, rgba(13, 78, 112, .21)) 0%, transparent 100%),
-    radial-gradient(ellipse 31% 110% at 50% 140%, var(--header-glow-center, rgba(16, 79, 114, .22)) 0%, transparent 100%),
-    linear-gradient(110deg, rgba(3, 6, 11, .1), transparent 49%, rgba(3, 6, 11, .25)),
-    var(--header-base, #07111a);
-  border-bottom: 1px solid var(--header-border-color, rgba(112, 194, 224, .58));
+  background-color: var(--header-base, #050c13);
+  background-image:
+    radial-gradient(ellipse 27% 180% at 24% 50%, var(--header-light-left, rgba(13, 88, 129, .50)) 0%, transparent 96%),
+    radial-gradient(ellipse 29% 165% at 78% 60%, var(--header-light-right, rgba(10, 65, 102, .43)) 0%, transparent 96%);
+  border-bottom: 1px solid var(--header-border-color, rgba(112, 194, 224, .46));
   backdrop-filter: blur(10px);
 }
 
-/* Feiner Lichtsaum entlang der bestehenden Unterkante */
+/* Schmale, ruhige Linie statt einer durchgehenden Leuchtkante */
 .site-header::after {
   content: "";
   position: absolute;
-  inset: auto 0 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   height: 1px;
   pointer-events: none;
-  background: linear-gradient(90deg, transparent 2%, var(--header-accent, #89d7f1) 28%, transparent 68%, var(--header-accent, #89d7f1) 91%, transparent);
-  opacity: .36;
+  background: linear-gradient(90deg, transparent 5%, var(--header-accent, #89d7f1) 25%, transparent 49%, var(--header-accent, #89d7f1) 77%, transparent 97%);
+  opacity: .26;
 }
 
-/* Nur die Farben vorhandener Header-Details vereinheitlichen */
+/* Vorhandene Details farblich anpassen, ohne ihre Logik zu ändern */
 .site-header .header-logo {
   text-shadow: 0 0 18px var(--header-accent-glow, rgba(104, 202, 236, .45));
 }
