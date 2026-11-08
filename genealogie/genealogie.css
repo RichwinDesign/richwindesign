@@ -699,3 +699,15 @@
   min-height: 0;
   align-self: start;
 }
+
+/* HAUPTBUTTONS UNTEN BÜNDIG AUSRICHTEN */
+
+.genealogy-overview-grid .genealogy-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.genealogy-overview-grid .genealogy-card-link {
+  margin-top: auto;
+}
