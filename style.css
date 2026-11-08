@@ -49,18 +49,42 @@ body::before {
     );
 }
 
-/* HEADER */
+/* HEADER – zentrale Gestaltung, ohne Änderung der Navigation */
+
+/* Portfolio, Über mich und Kontakt: Navy/Petrol */
+body[data-page="portfolio"],
+body[data-page="ueber-mich"],
+body[data-page="kontakt"] {
+  --header-color-left: #102735;
+  --header-color-mid: #0a1a27;
+  --header-color-right: #060d13;
+  --header-border-color: rgba(127, 185, 214, 0.42);
+}
+
+/* Portale und alle Portal-Unterseiten: gedämpftes Violett */
+body[data-page="portale"] {
+  --header-color-left: #231b2f;
+  --header-color-mid: #171421;
+  --header-color-right: #0b111a;
+  --header-border-color: rgba(161, 74, 201, 0.40);
+}
+
+/* Genealogie und alle Genealogie-Unterseiten: Umbra/Tiefbraun */
+body[data-page="genealogie"] {
+  --header-color-left: #352518;
+  --header-color-mid: #241a14;
+  --header-color-right: #15110d;
+  --header-border-color: rgba(216, 184, 144, 0.43);
+}
 
 .site-header {
   position: relative;
   z-index: 20;
-  background: radial-gradient(
-      circle at 12% 50%,
-      rgba(111, 182, 217, 0.10) 0%,
-      transparent 22%
-    ),
-    rgba(4, 6, 8, 0.94);
-  border-bottom: 1px solid rgba(111, 182, 217, 0.35);
+  background: linear-gradient(105deg,
+    var(--header-color-left, #102735) 0%,
+    var(--header-color-mid, #0a1a27) 48%,
+    var(--header-color-right, #060d13) 100%);
+  border-bottom: 1px solid var(--header-border-color, rgba(127, 185, 214, 0.42));
   backdrop-filter: blur(10px);
 }
 
@@ -3898,4 +3922,3 @@ a.mega-link:focus-visible {
     gap: 18px;
   }
 }
-
