@@ -4171,3 +4171,16 @@ a.mega-link:focus-visible {
 .mega-column {
   gap: 0;
 }
+
+/* Portale – Raute vor Portal-Merch */
+
+#richwin-mega-menu[data-menu="portale"]
+.mega-portfolio-title::before {
+  content: "◇";
+  display: inline-block;
+  color: #c888e9;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+  margin-right: 7px;
+}
