@@ -4618,3 +4618,17 @@ body:has(.portal-overview) {
   letter-spacing: normal;
   color: #d0d4dc;
 }
+
+/* EINHEITLICHER ABSTAND ZWISCHEN H1 UND FLIESSTEXT */
+
+.intro-text h1,
+.portal-intro h1,
+.genealogy-intro h1 {
+  margin-bottom: 16px;
+}
+
+.intro-text > p:not(.intro-small),
+.portal-intro-text p,
+.genealogy-intro-text p {
+  margin-top: 0;
+}
