@@ -210,34 +210,49 @@ body[data-page="genealogie"] {
   transform: translateX(-50%);
 }
 
-/* SOCIAL */
+/* SOCIAL – gleiche Position auf allen Seiten */
 
 .social-links {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  justify-self: end;
   gap: 13px;
+  margin: 0;
+  padding: 0;
 }
 
 .social-links a {
-  width: auto;
-  height: auto;
   display: inline-flex;
+  flex: 0 0 20px;
   align-items: center;
   justify-content: center;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  margin: 0;
+  border: 0;
   background: transparent;
-  border-radius: 0;
-  color: rgba(255, 255, 255, 0.82);
   text-decoration: none;
-  font-size: 13px;
-  font-weight: 700;
-  transition: color 0.2s ease,
-    transform 0.2s ease;
+  transition: transform .2s ease, opacity .2s ease;
+}
+
+.social-links img {
+  display: block;
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
 }
 
 .social-links a:hover {
-  color: #6fb6d9;
-  transform: translateY(-1px);
+  opacity: .75;
+  transform: translateY(-2px);
+}
+
+.social-links a:focus-visible {
+  outline: 2px solid var(--header-accent, #89d7f1);
+  outline-offset: 4px;
+  border-radius: 3px;
 }
 
 /* INTRO */
