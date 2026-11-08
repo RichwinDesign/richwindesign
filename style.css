@@ -255,6 +255,112 @@ body[data-page="genealogie"] {
   border-radius: 3px;
 }
 
+/* =========================================
+   EINHEITLICHE MEGA-MENÜS – KATEGORIEFARBEN
+   Gleiches Verhalten und Layout, eigene Farbwelt.
+   ========================================= */
+
+body[data-page="portfolio"],
+body[data-page="kontakt"],
+body[data-page="ueber-mich"] {
+  --menu-hint: #8ba9ba;
+}
+
+body[data-page="portale"] {
+  --menu-hint: #af92c5;
+}
+
+body[data-page="genealogie"] {
+  --menu-hint: #c5aa8b;
+}
+
+#richwin-mega-menu {
+  display: block;
+  box-sizing: border-box;
+  width: min(230px, calc(100vw - 24px));
+  min-width: 0;
+  max-width: calc(100vw - 24px);
+  max-height: min(76vh, 720px);
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 16px 18px;
+  border: 1px solid var(--header-border-color);
+  border-radius: 0 0 12px 12px;
+  background-color: var(--header-base);
+  background-image:
+    radial-gradient(ellipse at 15% 0%, var(--header-light-left), transparent 75%),
+    radial-gradient(ellipse at 100% 100%, var(--header-light-right), transparent 85%);
+  box-shadow: 0 20px 45px rgba(0,0,0,.55);
+  scrollbar-width: thin;
+  scrollbar-color: var(--header-border-color) transparent;
+}
+
+#richwin-mega-menu[data-menu="portale"] {
+  width: min(265px, calc(100vw - 24px));
+}
+#richwin-mega-menu[data-menu="genealogie"] {
+  width: min(315px, calc(100vw - 24px));
+}
+#richwin-mega-menu[data-menu="kontakt"] {
+  width: min(245px, calc(100vw - 24px));
+}
+
+#richwin-mega-menu .mega-portfolio-column {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  min-width: 0;
+  gap: 0;
+}
+
+/* Die Kontakt-Links verhalten sich wie die Links unter Portfolio. */
+#richwin-mega-menu .mega-link,
+#richwin-mega-menu .mega-link:hover,
+#richwin-mega-menu .mega-link:focus-visible {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+#richwin-mega-menu .mega-link:hover,
+#richwin-mega-menu .mega-link:focus-visible,
+#richwin-mega-menu .mega-portfolio-title:hover,
+#richwin-mega-menu .mega-portfolio-title:focus-visible {
+  color: var(--header-accent);
+}
+
+#richwin-mega-menu .mega-link-icon {
+  color: var(--header-accent);
+}
+
+#richwin-mega-menu .mega-portfolio-title {
+  border-bottom-color: var(--header-border-color);
+}
+
+#richwin-mega-menu .mega-portfolio-group {
+  border-top-color: var(--header-border-color);
+}
+
+#richwin-mega-menu .mega-portfolio-children {
+  border-left-color: var(--header-border-color);
+}
+
+#richwin-mega-menu .mega-portfolio-hint {
+  color: var(--menu-hint);
+}
+
+#richwin-mega-menu .mega-simple-link {
+  padding: 13px 6px 8px;
+}
+
+@media (max-width: 480px) {
+  #richwin-mega-menu {
+    max-height: 70vh;
+  }
+}
+
 /* INTRO */
 
 .intro-section {
