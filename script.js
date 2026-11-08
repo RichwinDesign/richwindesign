@@ -407,13 +407,39 @@ document.addEventListener("DOMContentLoaded", () => {
         ${navigationHTML}
       </nav>
 
-      <div class="social-links">
-        <a href="#" aria-label="Weitere Links">+</a>
-        <a href="#" aria-label="YouTube">▶</a>
-        <a href="#" aria-label="LinkedIn">in</a>
-        <a href="#" aria-label="Pinterest">p</a>
-        <a href="#" aria-label="Social Media">◉</a>
-      </div>
+     
+<div class="social-links" aria-label="Social Media">
+
+  <a href="https://www.deviantart.com/richwindesign"
+     target="_blank" rel="noopener noreferrer"
+     aria-label="DeviantArt">
+    <img src="${url("images/general/icons/icon_social_deviantart.webp")}"
+         alt="" width="20" height="20">
+  </a>
+
+  <a href="https://www.instagram.com/richwindesign/"
+     target="_blank" rel="noopener noreferrer"
+     aria-label="Instagram">
+    <img src="${url("images/general/icons/icon_social_instagram.webp")}"
+         alt="" width="20" height="20">
+  </a>
+
+  <a href="https://www.linkedin.com/in/bianca-christine-richwin/"
+     target="_blank" rel="noopener noreferrer"
+     aria-label="LinkedIn">
+    <img src="${url("images/general/icons/icon_social_linkedin.webp")}"
+         alt="" width="20" height="20">
+  </a>
+
+  <a href="https://de.pinterest.com/RichwinDesign/"
+     target="_blank" rel="noopener noreferrer"
+     aria-label="Pinterest">
+    <img src="${url("images/general/icons/icon_social_pinterest.webp")}"
+         alt="" width="20" height="20">
+  </a>
+
+</div>
+
 
     </div>
   `;
