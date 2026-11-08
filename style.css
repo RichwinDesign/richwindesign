@@ -1197,9 +1197,9 @@ body:has(.portal-overview) {
   height: 100%;
   padding: 14px 10px 92px;
   object-fit: contain;
-  object-position: center 30%;
+  object-position: center 15%;
   filter: drop-shadow(0 12px 20px rgba(0,0,0,.35));
-  transition: transform .4s ease;
+  transform: translateY(-15px);
 }
 
 .portal-overview .portal-card-04 .portal-card-image img {
@@ -1350,7 +1350,7 @@ body:has(.portal-overview) {
 }
 
 .portal-overview .portal-card:hover .portal-card-image img {
-  transform: scale(1.045);
+  transform: translateY(-15px) scale(1.045);
 }
 
 /* Die Bildverlinkung macht die gesamte aktive Kachel anklickbar. */
