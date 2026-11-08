@@ -1330,7 +1330,7 @@ body:has(.portal-overview) {
   color: rgba(255,255,255,.16);
   font-size: 22px;
   font-weight: 800;
-  padding-bottom: 90px;
+  padding-bottom: 150px;
 }
 
 .portal-overview .portal-card-button.disabled {
@@ -1393,8 +1393,8 @@ body:has(.portal-overview) {
     padding-top: 20px;
   }
   .portal-overview .portal-card {
-    height: 310px;
-    min-height: 310px;
+    height: 260px;
+    min-height: 260px;
   }
 }
 
