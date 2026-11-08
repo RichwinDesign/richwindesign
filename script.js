@@ -583,7 +583,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 class="mega-portfolio-title"
                 href="${url("portale/portal-merch.html")}"
                 onclick="event.stopPropagation()"
-              >Portal-Merch</a>
+              ><span class="portal-menu-icon">◇</span> Portal-Merch</a>
 
               <span
                 class="mega-portfolio-hint"
