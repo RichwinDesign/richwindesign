@@ -4602,11 +4602,24 @@ body:has(.portal-overview) {
 
 }
 
+
 /* =========================================
-   EINHEITLICHE EINLEITUNGSTEXTE
+   HAUPTSEITEN – EINHEITLICHE TYPOGRAFIE
    Vorlage: Portale
    ========================================= */
 
+/* Hauptüberschriften */
+.intro-text h1,
+.portal-intro h1,
+.genealogy-intro h1 {
+  font-family: Arial, sans-serif;
+  font-size: clamp(28px, 3vw, 34px);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+/* Fließtexte */
 .intro-text > p:not(.intro-small),
 .portal-intro-text p,
 .genealogy-intro-text p {
@@ -4617,18 +4630,12 @@ body:has(.portal-overview) {
   line-height: 1.55;
   letter-spacing: normal;
   color: #d0d4dc;
+  margin: 0 0 10px;
 }
 
-/* EINHEITLICHER ABSTAND ZWISCHEN H1 UND FLIESSTEXT */
-
-.intro-text h1,
-.portal-intro h1,
-.genealogy-intro h1 {
-  margin-bottom: 16px;
-}
-
-.intro-text > p:not(.intro-small),
-.portal-intro-text p,
-.genealogy-intro-text p {
-  margin-top: 0;
+/* Letzter Absatz ohne zusätzlichen Abstand */
+.intro-text > p:last-child,
+.portal-intro-text p:last-child,
+.genealogy-intro-text p:last-child {
+  margin-bottom: 0;
 }
