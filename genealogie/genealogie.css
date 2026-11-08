@@ -688,14 +688,14 @@
   .genealogy-quicklinks a { transition: none; }
 }
 
-/* GENEALOGIE – KACHELHÖHE KORRIGIEREN */
+/* GENEALOGIE – KACHELHÖHE */
 
 .genealogy-overview-grid {
   align-items: start;
 }
 
 .genealogy-overview-grid .genealogy-card {
-  height: 265px;
+  height: 285px;
   min-height: 0;
   align-self: start;
 }
