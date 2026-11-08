@@ -4085,3 +4085,37 @@ a.mega-link:focus-visible {
     gap: 18px;
   }
 }
+
+/* PORTALE – MENÜABSTÄNDE */
+
+#richwin-mega-menu[data-menu="portale"]
+.mega-portfolio-group {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+/* Portal-Merch ohne lange Unterstreichung */
+
+#richwin-mega-menu[data-menu="portale"]
+.mega-portfolio-title {
+  padding-bottom: 4px;
+  border-bottom: none;
+}
+
+/* Trennlinie erst vor Portal 01 */
+
+#richwin-mega-menu[data-menu="portale"]
+.mega-portfolio-group + .mega-link {
+  margin-top: 10px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(200, 136, 233, .22);
+}
+
+/* Kompakte Vorschau */
+
+#richwin-mega-menu[data-menu="portale"]
+.mega-portfolio-hint {
+  gap: 2px;
+  font-size: 10px;
+}
