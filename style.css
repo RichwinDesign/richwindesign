@@ -4459,3 +4459,64 @@ body:has(.portal-overview) {
     ),
     linear-gradient(#090b10, #090b10);
 }
+
+
+/* =========================================
+   EINHEITLICHE TYPOGRAFIE – HAUPTSEITEN
+   Vorlage: Portale
+   ========================================= */
+
+/* HAUPTÜBERSCHRIFTEN */
+
+.intro-text h1,
+.portal-intro h1,
+.genealogy-intro h1 {
+  font-family: Arial, sans-serif;
+  font-size: clamp(28px, 3vw, 34px);
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+/* EINLEITUNGSTEXTE */
+
+.intro-text p,
+.portal-intro-text p,
+.genealogy-intro-text p {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.55;
+}
+
+/* KACHELÜBERSCHRIFTEN */
+
+.portfolio-card-content h2,
+.portal-overview .portal-card-content h2,
+.genealogy-card h3 {
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+/* KACHELBESCHREIBUNGEN */
+
+.portfolio-card-content p,
+.genealogy-card p {
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.55;
+}
+
+/* PORTAL-SUBLINES */
+
+.portal-overview .portal-card-type {
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.portal-overview .portal-card-title {
+  font-size: 12px;
+  font-weight: 600;
+}
