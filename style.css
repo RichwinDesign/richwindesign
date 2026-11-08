@@ -4119,3 +4119,55 @@ a.mega-link:focus-visible {
   gap: 2px;
   font-size: 10px;
 }
+
+/* PORTALE – KOMPAKTES DROPDOWN */
+
+#richwin-mega-menu[data-menu="portale"]
+.mega-portfolio-group {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+#richwin-mega-menu[data-menu="portale"]
+.mega-portfolio-group > summary {
+  gap: 2px;
+  padding: 2px 6px 3px;
+}
+
+#richwin-mega-menu[data-menu="portale"]
+.mega-portfolio-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0;
+  border: none;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+#richwin-mega-menu[data-menu="portale"]
+.portal-menu-icon {
+  color: #c888e9;
+  font-size: 14px;
+}
+
+#richwin-mega-menu[data-menu="portale"]
+.mega-portfolio-hint {
+  gap: 1px;
+  margin: 0 0 2px 20px;
+  font-size: 10px;
+  line-height: 1.3;
+}
+
+#richwin-mega-menu[data-menu="portale"]
+.mega-portfolio-group + .mega-link {
+  margin-top: 2px;
+  padding-top: 3px;
+  border-top: none;
+}
+
+#richwin-mega-menu[data-menu="portale"]
+.mega-column {
+  gap: 0;
+}
