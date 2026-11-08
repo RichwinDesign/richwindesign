@@ -4270,7 +4270,8 @@ a.mega-link:focus-visible {
 #richwin-mega-menu[data-menu="genealogie"]:has(
   .mega-portfolio-group[open]
 ) {
-  width: 245px;
+  width: 300px;
+  max-width: calc(100vw - 24px);
 }
 
 /* Alle Hauptkategorien linksbündig */
