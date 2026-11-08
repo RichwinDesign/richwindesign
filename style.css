@@ -1287,7 +1287,7 @@ body:has(.portal-overview) {
   min-height: 36px;
   margin: 18px 0 0;
   padding: 9px 13px;
-  border: 1px solid rgba(133,201,229,.42);
+  border: 1px solid var(--portal-accent);
   border-radius: 8px;
   background: transparent;
   color: #fff;
