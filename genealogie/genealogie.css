@@ -700,14 +700,22 @@
   align-self: start;
 }
 
-/* HAUPTBUTTONS UNTEN BÜNDIG AUSRICHTEN */
+
+/* HAUPTBUTTONS IN ALLEN 4 KACHELN UNTEN BÜNDIG */
 
 .genealogy-overview-grid .genealogy-card {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+  padding-bottom: 55px;
 }
 
-.genealogy-overview-grid .genealogy-card-link {
-  margin-top: auto;
+.genealogy-overview-grid .genealogy-card > .genealogy-card-link {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  white-space: nowrap;
 }
