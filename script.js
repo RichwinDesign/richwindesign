@@ -407,39 +407,20 @@ document.addEventListener("DOMContentLoaded", () => {
         ${navigationHTML}
       </nav>
 
-     
-<div class="social-links" aria-label="Social Media">
-
-  <a href="https://www.deviantart.com/richwindesign"
-     target="_blank" rel="noopener noreferrer"
-     aria-label="DeviantArt">
-    <img src="${url("images/general/icons/icon_social_deviantart.webp")}"
-         alt="" width="20" height="20">
-  </a>
-
-  <a href="https://www.instagram.com/richwindesign/"
-     target="_blank" rel="noopener noreferrer"
-     aria-label="Instagram">
-    <img src="${url("images/general/icons/icon_social_instagram.webp")}"
-         alt="" width="20" height="20">
-  </a>
-
-  <a href="https://www.linkedin.com/in/bianca-christine-richwin/"
-     target="_blank" rel="noopener noreferrer"
-     aria-label="LinkedIn">
-    <img src="${url("images/general/icons/icon_social_linkedin.webp")}"
-         alt="" width="20" height="20">
-  </a>
-
-  <a href="https://de.pinterest.com/RichwinDesign/"
-     target="_blank" rel="noopener noreferrer"
-     aria-label="Pinterest">
-    <img src="${url("images/general/icons/icon_social_pinterest.webp")}"
-         alt="" width="20" height="20">
-  </a>
-
-</div>
-
+      <div class="social-links" aria-label="Social Media">
+        <a href="https://www.deviantart.com/richwindesign" target="_blank" rel="noopener noreferrer" aria-label="RichwinDesign auf DeviantArt (öffnet in neuem Tab)">
+          <img src="${url("images/general/icons/icon_social_deviantart.webp")}" alt="" width="20" height="20">
+        </a>
+        <a href="https://www.instagram.com/richwindesign/" target="_blank" rel="noopener noreferrer" aria-label="RichwinDesign auf Instagram (öffnet in neuem Tab)">
+          <img src="${url("images/general/icons/icon_social_instagram.webp")}" alt="" width="20" height="20">
+        </a>
+        <a href="https://www.linkedin.com/in/bianca-christine-richwin/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn-Profil von Bianca Christine Richwin (öffnet in neuem Tab)">
+          <img src="${url("images/general/icons/icon_social_linkedin.webp")}" alt="" width="20" height="20">
+        </a>
+        <a href="https://de.pinterest.com/RichwinDesign/" target="_blank" rel="noopener noreferrer" aria-label="RichwinDesign auf Pinterest (öffnet in neuem Tab)">
+          <img src="${url("images/general/icons/icon_social_pinterest.webp")}" alt="" width="20" height="20">
+        </a>
+      </div>
 
     </div>
   `;
@@ -533,21 +514,21 @@ document.addEventListener("DOMContentLoaded", () => {
   const genealogyItems = `
     <div class="mega-genealogy-group">
       <div class="mega-group-title">Familienlinie</div>
-      ${item("Linie Richwin", null)}
-      ${item("Linie Schmidt", null)}
-      ${item("Linie Klotz", null)}
-      ${item("Linie Nielebock", null)}
+      ${item("Linie Richwin", "genealogie/familienlinien/richwin.html")}
+      ${item("Linie Schmidt", "genealogie/familienlinien/schmidt.html")}
+      ${item("Linie Klotz", "genealogie/familienlinien/klotz.html")}
+      ${item("Linie Nielebock", "genealogie/familienlinien/nielebock.html")}
     </div>
 
     <div class="mega-genealogy-group">
       <div class="mega-group-title">Personenverzeichnis</div>
-      ${item("Namensverzeichnis", null)}
+      ${item("Namensverzeichnis", "genealogie/personenverzeichnis/namensverzeichnis.html")}
     </div>
 
     <div class="mega-genealogy-group">
       <div class="mega-group-title">Familienregister</div>
-      ${item("Familiennummern 1 bis 200", null)}
-      ${item("Familiennummern 201 bis 400", null)}
+      ${item("Familiennummern 1 bis 200", "genealogie/familienregister/familiennummern-001-200.html")}
+      ${item("Familiennummern 201 bis 400", "genealogie/familienregister/familiennummern-201-400.html")}
     </div>
 
     <div class="mega-genealogy-group">
@@ -665,10 +646,10 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
 
           <div class="mega-portfolio-children">
-            ${item("Linie Richwin", null)}
-            ${item("Linie Schmidt", null)}
-            ${item("Linie Klotz", null)}
-            ${item("Linie Nielebock", null)}
+            ${item("Linie Richwin", "genealogie/familienlinien/richwin.html")}
+            ${item("Linie Schmidt", "genealogie/familienlinien/schmidt.html")}
+            ${item("Linie Klotz", "genealogie/familienlinien/klotz.html")}
+            ${item("Linie Nielebock", "genealogie/familienlinien/nielebock.html")}
           </div>
 
           <div class="mega-portfolio-section-title">
@@ -676,7 +657,7 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
 
           <div class="mega-portfolio-children">
-            ${item("Namensverzeichnis", null)}
+            ${item("Namensverzeichnis", "genealogie/personenverzeichnis/namensverzeichnis.html")}
           </div>
 
           <div class="mega-portfolio-section-title">
@@ -684,8 +665,8 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
 
           <div class="mega-portfolio-children">
-            ${item("Familiennummern 1 bis 200", null)}
-            ${item("Familiennummern 201 bis 400", null)}
+            ${item("Familiennummern 1 bis 200", "genealogie/familienregister/familiennummern-001-200.html")}
+            ${item("Familiennummern 201 bis 400", "genealogie/familienregister/familiennummern-201-400.html")}
           </div>
 
           ${item(
@@ -729,51 +710,91 @@ document.addEventListener("DOMContentLoaded", () => {
     portfolio: portfolioDropdown,
 
     portale: `
-      <div class="mega-column">
-        <div class="mega-heading">Portalwelten</div>
-        ${portalItems}
-      </div>
+      <div class="mega-column mega-portfolio-column">
+        <div class="mega-heading">Portale</div>
+        <div class="mega-portfolio-section-title">
+          <a class="mega-portfolio-title" href="${url("portale.html")}">Alle Portale</a>
+        </div>
 
-      <div class="mega-column">
-        <div class="mega-heading">Entdecken</div>
-        ${item("Alle Portale", "portale.html", "◈")}
-        ${item("Sticker", "portale/merch/sticker.html", "✧")}
-        ${item("Anhänger", "portale/merch/anhaenger.html", "✧")}
-        ${item("Acrylaufsteller", "portale/merch/aufsteller.html", "✧")}
-        ${item("Pins", "portale/merch/pins.html", "✧")}
-        ${item("Magnete", "portale/merch/magnete.html", "✧")}
-        ${item("Prints", "portale/merch/prints.html", "✧")}
-      </div>
+        <details class="mega-portfolio-group">
+          <summary>
+            <a class="mega-portfolio-title" href="${url("portale/portal-merch.html")}" onclick="event.stopPropagation()">Portal-Merch</a>
+            <span class="mega-portfolio-hint" aria-label="Produkte aufklappen">
+              <span>Sticker</span><span>Anhänger</span>
+            </span>
+          </summary>
+          <div class="mega-portfolio-children">
+            ${item("Alle Produkte", "portale/portal-merch.html", "✧")}
+            ${item("Sticker", "portale/merch/sticker.html")}
+            ${item("Anhänger", "portale/merch/anhaenger.html")}
+            ${item("Acrylaufsteller", "portale/merch/aufsteller.html")}
+            ${item("Pins", "portale/merch/pins.html")}
+            ${item("Magnete", "portale/merch/magnete.html")}
+            ${item("Prints", "portale/merch/prints.html")}
+          </div>
+        </details>
 
-      <div class="mega-column mega-column-preview">
-        ${preview(
-          "images/portale/portal_merch.webp",
-          "Portal-Merch",
-          "Kleine Welten zum Mitnehmen.",
-          "portale/portal-merch.html"
-        )}
+        ${item("Portal 01", "portale/portal-01.html")}
+        ${item("Portal 02", "portale/portal-02.html")}
+        ${item("Portal 03", "portale/portal-03.html")}
+        ${item("Portal 04", "portale/portal-04.html")}
+        ${item("Portal 05", "portale/portal-05.html")}
       </div>
     `,
 
     genealogie: `
-      <div class="mega-column">
+      <div class="mega-column mega-portfolio-column">
         <div class="mega-heading">Genealogie</div>
-        ${item("Genealogie – Übersicht", "genealogie/genealogie.html", "❖")}
-        ${genealogyItems}
-      </div>
 
-      <div class="mega-column mega-column-preview">
-        ${preview(
-          "images/general/Hero_Genealogie.webp",
-          "Genealogie",
-          "Familienlinien, Archive und historische Spuren.",
-          "genealogie/genealogie.html"
-        )}
+        <details class="mega-portfolio-group">
+          <summary>
+            <a class="mega-portfolio-title" href="${url("genealogie/familienlinien/familienlinien.html")}" onclick="event.stopPropagation()">Familienlinien</a>
+            <span class="mega-portfolio-hint" aria-label="Familienlinien aufklappen">
+              <span>Richwin · Schmidt</span><span>Klotz · Nielebock</span>
+            </span>
+          </summary>
+          <div class="mega-portfolio-children">
+            ${item("Linie Richwin", "genealogie/familienlinien/richwin.html")}
+            ${item("Linie Schmidt", "genealogie/familienlinien/schmidt.html")}
+            ${item("Linie Klotz", "genealogie/familienlinien/klotz.html")}
+            ${item("Linie Nielebock", "genealogie/familienlinien/nielebock.html")}
+          </div>
+        </details>
+
+        <details class="mega-portfolio-group">
+          <summary>
+            <a class="mega-portfolio-title" href="${url("genealogie/personenverzeichnis/personenverzeichnis.html")}" onclick="event.stopPropagation()">Personenverzeichnis</a>
+            <span class="mega-portfolio-hint" aria-label="Personenverzeichnis aufklappen">
+              <span>Namensverzeichnis</span><span>Personenlisten A–Z</span>
+            </span>
+          </summary>
+          <div class="mega-portfolio-children">
+            ${item("Namensverzeichnis", "genealogie/personenverzeichnis/namensverzeichnis.html")}
+            ${item("Personenlisten A–Z", "genealogie/personenverzeichnis/personenverzeichnis.html")}
+          </div>
+        </details>
+
+        <details class="mega-portfolio-group">
+          <summary>
+            <a class="mega-portfolio-title" href="${url("genealogie/familienregister/familienregister.html")}" onclick="event.stopPropagation()">Familienregister</a>
+            <span class="mega-portfolio-hint" aria-label="Familienregister aufklappen">
+              <span>Familiennummern 1 bis 200</span><span>201 bis 400</span>
+            </span>
+          </summary>
+          <div class="mega-portfolio-children">
+            ${item("Familiennummern 1 bis 200", "genealogie/familienregister/familiennummern-001-200.html")}
+            ${item("Familiennummern 201 bis 400", "genealogie/familienregister/familiennummern-201-400.html")}
+          </div>
+        </details>
+
+        <div class="mega-portfolio-group mega-simple-link">
+          <a class="mega-portfolio-title" href="${url("genealogie/bildarchiv/bildarchiv.html")}">Bildarchiv</a>
+        </div>
       </div>
     `,
 
     kontakt: `
-      <div class="mega-column">
+      <div class="mega-column mega-portfolio-column">
         <div class="mega-heading">Kontakt &amp; Rechtliches</div>
         ${item("Kontakt", "kontakt/kontakt.html", "✉")}
         ${item("Impressum", "kontakt/impressum.html", "§")}
@@ -1057,7 +1078,7 @@ if (window.innerWidth > 950) {
        DYNAMISCHE MENÜBREITE
        ========================================= */
 
-    #richwin-mega-menu[data-menu="portfolio"] {
+    #richwin-mega-menu {
       box-sizing: border-box;
 
       width: min(230px, calc(100vw - 24px));
@@ -1104,7 +1125,7 @@ if (window.innerWidth > 950) {
        MENÜSPALTE
        ========================================= */
 
-    #richwin-mega-menu[data-menu="portfolio"]
+    #richwin-mega-menu
     .mega-portfolio-column {
       box-sizing: border-box;
 
@@ -1124,7 +1145,7 @@ if (window.innerWidth > 950) {
        PORTFOLIO-LINKS – GRUNDGESTALTUNG
        ========================================= */
 
-    #richwin-mega-menu[data-menu="portfolio"]
+    #richwin-mega-menu
     .mega-link {
       box-sizing: border-box;
 
@@ -1155,13 +1176,13 @@ if (window.innerWidth > 950) {
         text-shadow .2s ease;
     }
 
-    #richwin-mega-menu[data-menu="portfolio"]
+    #richwin-mega-menu
     .mega-link > span {
       flex-shrink: 0;
       white-space: nowrap;
     }
 
-    #richwin-mega-menu[data-menu="portfolio"]
+    #richwin-mega-menu
     .mega-link > small {
       flex-shrink: 0;
     }
@@ -1171,16 +1192,16 @@ if (window.innerWidth > 950) {
        HOVER-KÄSTEN VOLLSTÄNDIG ENTFERNEN
        ========================================= */
 
-    #richwin-mega-menu[data-menu="portfolio"]
+    #richwin-mega-menu
     .mega-link:hover,
 
-    #richwin-mega-menu[data-menu="portfolio"]
+    #richwin-mega-menu
     .mega-link:focus,
 
-    #richwin-mega-menu[data-menu="portfolio"]
+    #richwin-mega-menu
     .mega-link:focus-visible,
 
-    #richwin-mega-menu[data-menu="portfolio"]
+    #richwin-mega-menu
     .mega-link:active {
       background: transparent !important;
       background-color: transparent !important;
@@ -1198,16 +1219,16 @@ if (window.innerWidth > 950) {
 
     /* DEKORATIVE RAHMEN ENTFERNEN */
 
-    #richwin-mega-menu[data-menu="portfolio"]
+    #richwin-mega-menu
     .mega-link::before,
 
-    #richwin-mega-menu[data-menu="portfolio"]
+    #richwin-mega-menu
     .mega-link::after,
 
-    #richwin-mega-menu[data-menu="portfolio"]
+    #richwin-mega-menu
     .mega-link:hover::before,
 
-    #richwin-mega-menu[data-menu="portfolio"]
+    #richwin-mega-menu
     .mega-link:hover::after {
       content: none !important;
       display: none !important;
@@ -1218,10 +1239,10 @@ if (window.innerWidth > 950) {
 
     /* AUCH INNERE SPANS OHNE HOVER-HINTERGRUND */
 
-    #richwin-mega-menu[data-menu="portfolio"]
+    #richwin-mega-menu
     .mega-link span,
 
-    #richwin-mega-menu[data-menu="portfolio"]
+    #richwin-mega-menu
     .mega-link:hover span {
       background: transparent !important;
       background-color: transparent !important;
@@ -1234,32 +1255,32 @@ if (window.innerWidth > 950) {
        HELLBLAUER HOVER-EFFEKT
        ========================================= */
 
-    #richwin-mega-menu[data-menu="portfolio"]
+    #richwin-mega-menu
     .mega-link:hover,
 
-    #richwin-mega-menu[data-menu="portfolio"]
+    #richwin-mega-menu
     .mega-link:focus-visible {
-      color: #8bc9e7 !important;
+      color: var(--header-accent, #8bc9e7) !important;
 
       text-shadow:
         0 0 9px rgba(139, 201, 231, .3);
     }
 
-    #richwin-mega-menu[data-menu="portfolio"]
+    #richwin-mega-menu
     .mega-link:hover span,
 
-    #richwin-mega-menu[data-menu="portfolio"]
+    #richwin-mega-menu
     .mega-link:focus-visible span {
-      color: #8bc9e7 !important;
+      color: var(--header-accent, #8bc9e7) !important;
     }
 
 
     /* TASTATURFOKUS OHNE KASTEN */
 
-    #richwin-mega-menu[data-menu="portfolio"]
+    #richwin-mega-menu
     .mega-link:focus-visible {
       text-decoration: underline !important;
-      text-decoration-color: #8bc9e7 !important;
+      text-decoration-color: var(--header-accent, #8bc9e7) !important;
       text-underline-offset: 4px;
     }
 
@@ -1268,7 +1289,7 @@ if (window.innerWidth > 950) {
        HAUPTÜBERSCHRIFT
        ========================================= */
 
-    #richwin-mega-menu[data-menu="portfolio"]
+    #richwin-mega-menu
     .mega-heading {
       margin-bottom: 13px;
       white-space: nowrap;
@@ -1279,7 +1300,7 @@ if (window.innerWidth > 950) {
        TRENNLINIEN ZWISCHEN DEN BEREICHEN
        ========================================= */
 
-    #richwin-mega-menu[data-menu="portfolio"]
+    #richwin-mega-menu
     .mega-portfolio-group {
       display: block;
 
@@ -1295,7 +1316,7 @@ if (window.innerWidth > 950) {
        PORTALE UND GENEALOGIE
        ========================================= */
 
-    #richwin-mega-menu[data-menu="portfolio"]
+    #richwin-mega-menu
     .mega-portfolio-group > summary {
       display: flex;
       flex-direction: column;
@@ -1318,12 +1339,12 @@ if (window.innerWidth > 950) {
        STANDARDPFEILE ENTFERNEN
        ========================================= */
 
-    #richwin-mega-menu[data-menu="portfolio"]
+    #richwin-mega-menu
     summary::-webkit-details-marker {
       display: none;
     }
 
-    #richwin-mega-menu[data-menu="portfolio"]
+    #richwin-mega-menu
     summary::marker {
       content: "";
     }
@@ -1333,7 +1354,7 @@ if (window.innerWidth > 950) {
        KLICKBARER TITEL MIT BLAUER LINIE
        ========================================= */
 
-    #richwin-mega-menu[data-menu="portfolio"]
+    #richwin-mega-menu
     .mega-portfolio-title {
       display: inline-block;
 
@@ -1361,7 +1382,7 @@ if (window.innerWidth > 950) {
        VORSCHAU UNTEREINANDER
        ========================================= */
 
-    #richwin-mega-menu[data-menu="portfolio"]
+    #richwin-mega-menu
     .mega-portfolio-hint {
       display: flex;
       flex-direction: column;
@@ -1370,7 +1391,7 @@ if (window.innerWidth > 950) {
       gap: 3px;
       max-width: 100%;
 
-      color: #7996a7;
+      color: var(--menu-hint, #7996a7);
 
       font-size: 10px;
       font-weight: 400;
@@ -1385,7 +1406,7 @@ if (window.innerWidth > 950) {
        ERSTE VORSCHAU – 80 %
        ========================================= */
 
-    #richwin-mega-menu[data-menu="portfolio"]
+    #richwin-mega-menu
     .mega-portfolio-hint > span:first-child {
       opacity: .8;
     }
@@ -1395,7 +1416,7 @@ if (window.innerWidth > 950) {
        ZWEITE VORSCHAU – 30 %
        ========================================= */
 
-    #richwin-mega-menu[data-menu="portfolio"]
+    #richwin-mega-menu
     .mega-portfolio-hint > span:nth-child(2) {
       opacity: .3;
     }
@@ -1405,7 +1426,7 @@ if (window.innerWidth > 950) {
        BEIM AUFKLAPPEN VORSCHAU AUSBLENDEN
        ========================================= */
 
-    #richwin-mega-menu[data-menu="portfolio"]
+    #richwin-mega-menu
     .mega-portfolio-group[open] > summary
     .mega-portfolio-hint {
       display: none;
@@ -1416,23 +1437,23 @@ if (window.innerWidth > 950) {
        HOVER AUF PORTALE UND GENEALOGIE
        ========================================= */
 
-    #richwin-mega-menu[data-menu="portfolio"]
+    #richwin-mega-menu
     .mega-portfolio-group > summary:hover
     .mega-portfolio-title {
-      color: #8bc9e7;
-      border-color: #8bc9e7;
+      color: var(--header-accent, #8bc9e7);
+      border-color: var(--header-accent, #8bc9e7);
     }
 
-    #richwin-mega-menu[data-menu="portfolio"]
+    #richwin-mega-menu
     .mega-portfolio-group[open] > summary
     .mega-portfolio-title {
-      color: #8bc9e7;
-      border-color: #8bc9e7;
+      color: var(--header-accent, #8bc9e7);
+      border-color: var(--header-accent, #8bc9e7);
     }
 
-    #richwin-mega-menu[data-menu="portfolio"]
+    #richwin-mega-menu
     .mega-portfolio-group > summary:focus-visible {
-      outline: 2px solid #8bc9e7;
+      outline: 2px solid var(--header-accent, #8bc9e7);
       outline-offset: 3px;
       border-radius: 4px;
     }
@@ -1442,7 +1463,7 @@ if (window.innerWidth > 950) {
        AUSGEKLAPPTE UNTERSEITEN
        ========================================= */
 
-    #richwin-mega-menu[data-menu="portfolio"]
+    #richwin-mega-menu
     .mega-portfolio-children {
       box-sizing: border-box;
 
@@ -1460,7 +1481,7 @@ if (window.innerWidth > 950) {
         1px solid rgba(111, 182, 217, .23);
     }
 
-    #richwin-mega-menu[data-menu="portfolio"]
+    #richwin-mega-menu
     .mega-portfolio-children .mega-link {
       width: 100%;
       white-space: nowrap;
@@ -1471,19 +1492,19 @@ if (window.innerWidth > 950) {
        PORTAL-MERCH
        ========================================= */
 
-    #richwin-mega-menu[data-menu="portfolio"]
+    #richwin-mega-menu
     .mega-portfolio-subgroup {
       margin: 6px 0;
       padding-top: 0;
       border-top: none;
     }
 
-    #richwin-mega-menu[data-menu="portfolio"]
+    #richwin-mega-menu
     .mega-portfolio-subgroup > summary {
       padding: 6px 4px 10px;
     }
 
-    #richwin-mega-menu[data-menu="portfolio"]
+    #richwin-mega-menu
     .mega-portfolio-subgroup
     .mega-portfolio-title {
       font-size: 12px;
@@ -1492,7 +1513,7 @@ if (window.innerWidth > 950) {
       border-bottom-width: 1px;
     }
 
-    #richwin-mega-menu[data-menu="portfolio"]
+    #richwin-mega-menu
     .mega-portfolio-subgroup
     .mega-portfolio-hint {
       font-size: 10px;
@@ -1503,12 +1524,12 @@ if (window.innerWidth > 950) {
        GENEALOGIE-UNTERÜBERSCHRIFTEN
        ========================================= */
 
-    #richwin-mega-menu[data-menu="portfolio"]
+    #richwin-mega-menu
     .mega-portfolio-section-title {
       margin: 10px 0 3px;
       padding: 2px 4px;
 
-      color: #d8e8f0;
+      color: var(--header-accent, #d8e8f0);
 
       font-size: 12px;
       font-weight: 700;
@@ -1516,7 +1537,7 @@ if (window.innerWidth > 950) {
       white-space: nowrap;
     }
 
-    #richwin-mega-menu[data-menu="portfolio"]
+    #richwin-mega-menu
     .mega-portfolio-section-title
     + .mega-portfolio-children {
       margin-bottom: 6px;
@@ -1529,18 +1550,18 @@ if (window.innerWidth > 950) {
 
     @media (max-width: 480px) {
 
-      #richwin-mega-menu[data-menu="portfolio"] {
+      #richwin-mega-menu {
         width: min(310px, calc(100vw - 20px));
         min-width: 0;
         max-width: calc(100vw - 20px);
       }
 
-      #richwin-mega-menu[data-menu="portfolio"]
+      #richwin-mega-menu
       .mega-portfolio-hint {
         font-size: 9px;
       }
 
-      #richwin-mega-menu[data-menu="portfolio"]
+      #richwin-mega-menu
       .mega-portfolio-children {
         margin-left: 5px;
         padding-left: 10px;
@@ -1555,16 +1576,16 @@ if (window.innerWidth > 950) {
 
     @media (prefers-reduced-motion: reduce) {
 
-      #richwin-mega-menu[data-menu="portfolio"] {
+      #richwin-mega-menu {
         transition: none;
       }
 
-      #richwin-mega-menu[data-menu="portfolio"]
+      #richwin-mega-menu
       .mega-portfolio-title {
         transition: none;
       }
 
-      #richwin-mega-menu[data-menu="portfolio"]
+      #richwin-mega-menu
       .mega-link {
         transition: none;
       }
