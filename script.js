@@ -709,38 +709,47 @@ document.addEventListener("DOMContentLoaded", () => {
 
     portfolio: portfolioDropdown,
 
-    portale: `
-      <div class="mega-column mega-portfolio-column">
-        <div class="mega-heading">Portale</div>
-        <div class="mega-portfolio-section-title">
-          <a class="mega-portfolio-title" href="${url("portale.html")}">Alle Portale</a>
-        </div>
+    
+portale: `
+  <div class="mega-column mega-portfolio-column">
 
-        <details class="mega-portfolio-group">
-          <summary>
-            <a class="mega-portfolio-title" href="${url("portale/portal-merch.html")}" onclick="event.stopPropagation()">Portal-Merch</a>
-            <span class="mega-portfolio-hint" aria-label="Produkte aufklappen">
-              <span>Sticker</span><span>Anhänger</span>
-            </span>
-          </summary>
-          <div class="mega-portfolio-children">
-            ${item("Alle Produkte", "portale/portal-merch.html", "✧")}
-            ${item("Sticker", "portale/merch/sticker.html")}
-            ${item("Anhänger", "portale/merch/anhaenger.html")}
-            ${item("Acrylaufsteller", "portale/merch/aufsteller.html")}
-            ${item("Pins", "portale/merch/pins.html")}
-            ${item("Magnete", "portale/merch/magnete.html")}
-            ${item("Prints", "portale/merch/prints.html")}
-          </div>
-        </details>
+    <div class="mega-heading">Portalwelten</div>
 
-        ${item("Portal 01", "portale/portal-01.html")}
-        ${item("Portal 02", "portale/portal-02.html")}
-        ${item("Portal 03", "portale/portal-03.html")}
-        ${item("Portal 04", "portale/portal-04.html")}
-        ${item("Portal 05", "portale/portal-05.html")}
+    <details class="mega-portfolio-group">
+      <summary>
+        <a
+          class="mega-portfolio-title"
+          href="${url("portale/portal-merch.html")}"
+          onclick="event.stopPropagation()"
+        >Portal-Merch</a>
+
+        <span class="mega-portfolio-hint"
+              aria-label="Produkte aufklappen">
+          <span>Sticker</span>
+          <span>Anhänger</span>
+        </span>
+      </summary>
+
+      <div class="mega-portfolio-children">
+        ${item("Sticker", "portale/merch/sticker.html")}
+        ${item("Anhänger", "portale/merch/anhaenger.html")}
+        ${item("Acrylaufsteller", "portale/merch/aufsteller.html")}
+        ${item("Pins", "portale/merch/pins.html")}
+        ${item("Magnete", "portale/merch/magnete.html")}
+        ${item("Prints", "portale/merch/prints.html")}
       </div>
-    `,
+    </details>
+
+    ${item("Portal 01", "portale/portal-01.html")}
+    ${item("Portal 02", "portale/portal-02.html")}
+    ${item("Portal 03", "portale/portal-03.html")}
+    ${item("Portal 04", "portale/portal-04.html")}
+    ${item("Portal 05", "portale/portal-05.html")}
+
+  </div>
+`,
+
+
 
     genealogie: `
       <div class="mega-column mega-portfolio-column">
