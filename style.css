@@ -4639,3 +4639,34 @@ body:has(.portal-overview) {
 .genealogy-intro-text p:last-child {
   margin-bottom: 0;
 }
+
+/* =========================================
+   HEADER – KONTAKT IMMER FEST ZENTRIERT
+   ========================================= */
+
+@media (min-width: 951px) {
+
+  .header-inner {
+    grid-template-columns: 120px 1fr 180px;
+  }
+
+  .main-nav {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 38px;
+
+    width: 100%;
+    padding-right: calc(50% - 35px);
+  }
+
+  /* Kontakt erhält eine feste Position */
+  .main-nav a[data-nav="kontakt"] {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+}
+
