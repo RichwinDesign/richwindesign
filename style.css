@@ -4312,3 +4312,74 @@ a.mega-link:focus-visible {
 ) {
   width: 190px;
 }
+
+/* =========================================
+   PORTALE – NEUER HEADER-FARBVERLAUF
+   ========================================= */
+
+body[data-page="portale"] {
+  --header-base: #130b1e;
+  --header-accent: #e5a2f5;
+  --header-border-color: rgba(221, 111, 193, .55);
+  --header-accent-glow: rgba(216, 104, 244, .55);
+}
+
+body[data-page="portale"] .site-header {
+  background-color: #130b1e;
+  background-image:
+    radial-gradient(
+      ellipse 28% 150% at 7% 45%,
+      rgba(190, 55, 48, .65),
+      transparent 95%
+    ),
+    radial-gradient(
+      ellipse 34% 180% at 29% 50%,
+      rgba(120, 18, 158, .55),
+      transparent 95%
+    ),
+    radial-gradient(
+      ellipse 32% 150% at 66% 60%,
+      rgba(209, 42, 117, .54),
+      transparent 95%
+    ),
+    radial-gradient(
+      ellipse 30% 160% at 83% 32%,
+      rgba(255, 135, 17, .72),
+      transparent 95%
+    ),
+    linear-gradient(
+      90deg,
+      #1b0c16 0%,
+      #230d38 40%,
+      #351027 70%,
+      #22100e 100%
+    );
+}
+
+/* Feine zweifarbige Linie am unteren Rand */
+
+body[data-page="portale"] .site-header {
+  border-bottom: 1px solid rgba(220, 95, 167, .55);
+}
+
+body[data-page="portale"] .site-header::after {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 135, 65, .65),
+    rgba(221, 105, 245, .85) 45%,
+    rgba(255, 143, 60, .65)
+  );
+  opacity: .65;
+}
+
+/* Logo-Lichtstrich */
+
+body[data-page="portale"] .header-logo::after {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #f58bb1,
+    transparent
+  );
+  opacity: .85;
+}
