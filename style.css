@@ -1225,9 +1225,9 @@ body:has(.portal-overview) {
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  flex: 0 0 160px;
+  flex: 0 0 200px;
   width: 100%;
-  min-height: 160px;
+  min-height: 200px;
   margin: 0;
   padding: 18px;
   background: transparent;
@@ -1330,6 +1330,7 @@ body:has(.portal-overview) {
   color: rgba(255,255,255,.16);
   font-size: 22px;
   font-weight: 800;
+  padding-bottom: 90px;
 }
 
 .portal-overview .portal-card-button.disabled {
@@ -1392,8 +1393,8 @@ body:has(.portal-overview) {
     padding-top: 20px;
   }
   .portal-overview .portal-card {
-    height: 340px;
-    min-height: 340px;
+    height: 310px;
+    min-height: 310px;
   }
 }
 
