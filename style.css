@@ -4251,3 +4251,45 @@ a.mega-link:focus-visible {
   padding-top: 3px;
   border-top: none;
 }
+
+/* =========================================
+   GENEALOGIE – AUSRICHTUNG & MENÜBREITE
+   ========================================= */
+
+/* Schmal, wenn alle Kategorien geschlossen sind */
+
+#richwin-mega-menu[data-menu="genealogie"] {
+  width: 190px;
+  max-width: calc(100vw - 24px);
+  grid-template-columns: minmax(0, 1fr);
+  transition: width .25s ease;
+}
+
+/* Breiter, sobald eine Kategorie geöffnet ist */
+
+#richwin-mega-menu[data-menu="genealogie"]:has(
+  .mega-portfolio-group[open]
+) {
+  width: 245px;
+}
+
+/* Alle Hauptkategorien linksbündig */
+
+#richwin-mega-menu[data-menu="genealogie"]
+.mega-portfolio-group > summary {
+  padding-left: 0;
+}
+
+/* Bildarchiv ebenfalls bündig */
+
+#richwin-mega-menu[data-menu="genealogie"]
+.mega-column > .mega-link {
+  padding-left: 0;
+}
+
+/* Unterkategorien leicht eingerückt lassen */
+
+#richwin-mega-menu[data-menu="genealogie"]
+.mega-portfolio-children {
+  padding-left: 12px;
+}
