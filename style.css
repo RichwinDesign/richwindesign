@@ -4387,3 +4387,49 @@ body[data-page="portale"] .header-logo::after {
   );
   opacity: .6;
 }
+
+
+/* PORTALE – KOMPAKTE KACHELN UND BILDPOSITION */
+
+.portal-overview .portal-card {
+  height: 290px;
+  min-height: 290px;
+}
+
+/* Bilder oben, direkt über den Überschriften */
+.portal-overview .portal-card-image img {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 100%;
+  height: 125px;
+  padding: 0 12px;
+  object-fit: contain;
+  object-position: center;
+  transform: none;
+}
+
+/* Text und Buttons kompakt darunter */
+.portal-overview .portal-card-content {
+  flex: 0 0 155px;
+  min-height: 155px;
+  padding: 12px 18px 14px;
+}
+
+/* Bisherigen Hover-Effekt erhalten */
+.portal-overview .portal-card:hover .portal-card-image img {
+  transform: scale(1.045);
+}
+
+/* Platzhalter 06 und 07 */
+.portal-overview .portal-card-placeholder {
+  padding-bottom: 110px;
+}
+
+/* Smartphone */
+@media (max-width: 600px) {
+  .portal-overview .portal-card {
+    height: 290px;
+    min-height: 290px;
+  }
+}
