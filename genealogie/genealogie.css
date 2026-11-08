@@ -633,3 +633,57 @@
 
 }
 
+/* =========================================
+   GENEALOGIE – SCHNELLZUGRIFFE UNTER KACHELN
+   In genealogie/genealogie.css ergänzen
+   ========================================= */
+
+.genealogy-overview-grid > .genealogy-category {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.genealogy-category > .genealogy-card {
+  width: 100%;
+  height: 100%;
+  flex: 0 0 auto;
+}
+
+.genealogy-quicklinks {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  width: 100%;
+}
+
+.genealogy-quicklinks a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 36px;
+  padding: 9px 12px;
+  border: 1px solid #4b3a2c;
+  border-radius: 7px;
+  background: rgba(42, 33, 25, .55);
+  color: #e6d5b5;
+  text-decoration: none;
+  font-size: 12px;
+  line-height: 1.4;
+  transition: background .2s ease, border-color .2s ease;
+}
+
+.genealogy-quicklinks a span { color: #d8b890; }
+
+.genealogy-quicklinks a:hover,
+.genealogy-quicklinks a:focus-visible {
+  background: rgba(179, 138, 90, .14);
+  border-color: #b38a5a;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .genealogy-quicklinks a { transition: none; }
+}
