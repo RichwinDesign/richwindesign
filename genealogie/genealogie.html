@@ -1,42 +1,26 @@
-
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="genealogie.css">
-
   <title>Genealogie | Richwin Design</title>
 </head>
-
 <body>
-
   <!-- ZENTRALE NAVIGATION -->
-
   <div id="site-header"></div>
 
   <main class="genealogy-page">
-
     <!-- EINLEITUNG -->
-
     <section class="genealogy-intro">
-
       <h1>Genealogie</h1>
-
       <p class="genealogy-intro-lead">
         Die Ahnen- und Familiengeschichtsforschung
         befindet sich derzeit im Aufbau.
       </p>
-
       <div class="genealogy-intro-text">
-
-        <p>
-          Willkommen in meinem digitalen Familienarchiv.
-        </p>
-
+        <p>Willkommen in meinem digitalen Familienarchiv.</p>
         <p>
           Hier dokumentiere ich die Geschichte meiner
           Vorfahren und Familien über mehrere Jahrhunderte
@@ -45,183 +29,104 @@
           zu dokumentieren und das gesammelte Wissen
           dauerhaft zu bewahren.
         </p>
-
         <p>
           Auf den folgenden Seiten finden Sie einen
           Überblick über meine Forschung, historische
           Quellen sowie alle bisher erfassten Personen
           und Familien.
         </p>
-
       </div>
-
     </section>
 
-
-    <!-- HAUPTBEREICHE -->
-
+    <!-- HAUPTBEREICHE: KACHEL + SCHNELLZUGRIFFE JE SPALTE -->
     <section class="genealogy-section">
-
-  
-
       <div class="genealogy-overview-grid">
-
-
         <!-- 01 FAMILIENLINIEN -->
-
-        <article class="genealogy-card">
-
-          <a
-            class="genealogy-card-icon"
-            href="familienlinien/familienlinien.html"
-          >
-            <img
-              src="../images/genealogie/navigation/icon_genealogie_familienlinien.webp"
-              alt="Familienlinien"
-            >
-          </a>
-
-          <h3>
-            <a href="familienlinien/familienlinien.html">
-              Familienlinien
+        <div class="genealogy-category">
+          <article class="genealogy-card">
+            <a class="genealogy-card-icon" href="familienlinien/familienlinien.html">
+              <img src="../images/genealogie/navigation/icon_genealogie_familienlinien.webp" alt="Familienlinien">
             </a>
-          </h3>
-
-          <p>
-            Entdecken Sie die vier erforschten
-            Familienlinien Richwin, Schmidt,
-            Klotz und Nielebock sowie ihre
-            Herkunft und Geschichte.
-          </p>
-
-          <a
-            class="genealogy-card-link"
-            href="familienlinien/familienlinien.html"
-          >
-            Familienlinien öffnen →
-          </a>
-
-        </article>
-
+            <h3><a href="familienlinien/familienlinien.html">Familienlinien</a></h3>
+            <p>
+              Entdecken Sie die vier erforschten
+              Familienlinien Richwin, Schmidt,
+              Klotz und Nielebock sowie ihre
+              Herkunft und Geschichte.
+            </p>
+            <a class="genealogy-card-link" href="familienlinien/familienlinien.html">Familienlinien öffnen →</a>
+          </article>
+          <nav class="genealogy-quicklinks" aria-label="Familienlinien – Schnellzugriffe">
+            <a href="familienlinien/richwin.html">Richwin <span aria-hidden="true">→</span></a>
+            <a href="familienlinien/schmidt.html">Schmidt <span aria-hidden="true">→</span></a>
+            <a href="familienlinien/klotz.html">Klotz <span aria-hidden="true">→</span></a>
+            <a href="familienlinien/nielebock.html">Nielebock <span aria-hidden="true">→</span></a>
+          </nav>
+        </div>
 
         <!-- 02 FAMILIENREGISTER -->
-
-        <article class="genealogy-card">
-
-          <a
-            class="genealogy-card-icon"
-            href="familienregister/familienregister.html"
-          >
-            <img
-              src="../images/genealogie/navigation/icon_genealogie_familienregister.webp"
-              alt="Familienregister"
-            >
-          </a>
-
-          <h3>
-            <a href="familienregister/familienregister.html">
-              Familienregister
+        <div class="genealogy-category">
+          <article class="genealogy-card">
+            <a class="genealogy-card-icon" href="familienregister/familienregister.html">
+              <img src="../images/genealogie/navigation/icon_genealogie_familienregister.webp" alt="Familienregister">
             </a>
-          </h3>
-
-          <p>
-            Übersicht der dokumentierten
-            Familienverbände, geordnet nach
-            Familiennummern und genealogischen
-            Zusammenhängen.
-          </p>
-
-          <a
-            class="genealogy-card-link"
-            href="familienregister/familienregister.html"
-          >
-            Register öffnen →
-          </a>
-
-        </article>
-
+            <h3><a href="familienregister/familienregister.html">Familienregister</a></h3>
+            <p>
+              Übersicht der dokumentierten
+              Familienverbände, geordnet nach
+              Familiennummern und genealogischen
+              Zusammenhängen.
+            </p>
+            <a class="genealogy-card-link" href="familienregister/familienregister.html">Register öffnen →</a>
+          </article>
+          <nav class="genealogy-quicklinks" aria-label="Familienregister – Schnellzugriffe">
+            <a href="familienregister/familiennummern-001-200.html">Familiennummern 001–200 <span aria-hidden="true">→</span></a>
+            <a href="familienregister/familiennummern-201-400.html">Familiennummern 201–400 <span aria-hidden="true">→</span></a>
+          </nav>
+        </div>
 
         <!-- 03 PERSONENVERZEICHNIS -->
-
-        <article class="genealogy-card">
-
-          <a
-            class="genealogy-card-icon"
-            href="personenverzeichnis/personenverzeichnis.html"
-          >
-            <img
-              src="../images/genealogie/navigation/icon_genealogie_personenverzeichnis.webp"
-              alt="Personenverzeichnis"
-            >
-          </a>
-
-          <h3>
-            <a href="personenverzeichnis/personenverzeichnis.html">
-              Personenverzeichnis
+        <div class="genealogy-category">
+          <article class="genealogy-card">
+            <a class="genealogy-card-icon" href="personenverzeichnis/personenverzeichnis.html">
+              <img src="../images/genealogie/navigation/icon_genealogie_personenverzeichnis.webp" alt="Personenverzeichnis">
             </a>
-          </h3>
-
-          <p>
-            Alphabetische Übersicht erfasster
-            Personen und Familiennamen mit
-            ihren genealogischen Informationen.
-          </p>
-
-          <a
-            class="genealogy-card-link"
-            href="personenverzeichnis/personenverzeichnis.html"
-          >
-            Personen anzeigen →
-          </a>
-
-        </article>
-
+            <h3><a href="personenverzeichnis/personenverzeichnis.html">Personenverzeichnis</a></h3>
+            <p>
+              Alphabetische Übersicht erfasster
+              Personen und Familiennamen mit
+              ihren genealogischen Informationen.
+            </p>
+            <a class="genealogy-card-link" href="personenverzeichnis/personenverzeichnis.html">Personen anzeigen →</a>
+          </article>
+          <nav class="genealogy-quicklinks" aria-label="Personenverzeichnis – Schnellzugriffe">
+            <a href="personenverzeichnis/namensverzeichnis.html">Namensverzeichnis <span aria-hidden="true">→</span></a>
+            <a href="personenverzeichnis/personenverzeichnis.html">Personenlisten A–Z <span aria-hidden="true">→</span></a>
+          </nav>
+        </div>
 
         <!-- 04 BILDARCHIV -->
-
-        <article class="genealogy-card">
-
-          <a
-            class="genealogy-card-icon"
-            href="bildarchiv/bildarchiv.html"
-          >
-            <img
-              src="../images/genealogie/navigation/icon_genealogie_bildarchiv.webp"
-              alt="Bildarchiv"
-            >
-          </a>
-
-          <h3>
-            <a href="bildarchiv/bildarchiv.html">
-              Bildarchiv
+        <div class="genealogy-category">
+          <article class="genealogy-card">
+            <a class="genealogy-card-icon" href="bildarchiv/bildarchiv.html">
+              <img src="../images/genealogie/navigation/icon_genealogie_bildarchiv.webp" alt="Bildarchiv">
             </a>
-          </h3>
-
-          <p>
-            Historische Fotografien, Dokumente,
-            Kirchenbücher, Grabsteine und
-            weitere Bildquellen der Forschung.
-          </p>
-
-          <a
-            class="genealogy-card-link"
-            href="bildarchiv/bildarchiv.html"
-          >
-            Bildarchiv öffnen →
-          </a>
-
-        </article>
-
+            <h3><a href="bildarchiv/bildarchiv.html">Bildarchiv</a></h3>
+            <p>
+              Historische Fotografien, Dokumente,
+              Kirchenbücher, Grabsteine und
+              weitere Bildquellen der Forschung.
+            </p>
+            <a class="genealogy-card-link" href="bildarchiv/bildarchiv.html">Bildarchiv öffnen →</a>
+          </article>
+          <nav class="genealogy-quicklinks" aria-label="Bildarchiv – Schnellzugriffe">
+            <a href="bildarchiv/bildarchiv.html#erich-willy-klotz">Erich Willy Klotz <span aria-hidden="true">→</span></a>
+            <a href="bildarchiv/bildarchiv.html#hans-georg-klotz">Hans Georg Klotz <span aria-hidden="true">→</span></a>
+          </nav>
+        </div>
       </div>
-
     </section>
-
   </main>
-
-
-  <!-- JAVASCRIPT -->
-
   <script src="../script.js"></script>
-
 </body>
 </html>
