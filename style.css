@@ -4655,7 +4655,7 @@ body:has(.portal-overview) {
 
   .main-nav {
     display: grid;
-    grid-template-columns: 130px 130px 130px;
+    grid-template-columns: 105px 105px 105px;
     justify-content: center;
     align-items: center;
     gap: 0;
