@@ -761,3 +761,10 @@
   }
 
 }
+.genealogy-intro h1 {
+  margin-bottom: 16px;
+}
+
+.genealogy-intro-text p:first-child {
+  margin-top: 0;
+}
