@@ -4640,16 +4640,19 @@ body:has(.portal-overview) {
   margin-bottom: 0;
 }
 
+
 /* =========================================
-   HEADER – KONTAKT IMMER FEST ZENTRIERT
+   HEADER – FESTE NAVIGATIONSPOSITIONEN
    ========================================= */
 
 @media (min-width: 951px) {
 
+  /* Symmetrisches Header-Raster */
   .header-inner {
-    grid-template-columns: 120px 1fr 180px;
+    grid-template-columns: 180px minmax(0, 1fr) 180px;
   }
 
+  /* Alle Menüpunkte links von Kontakt */
   .main-nav {
     position: relative;
     display: flex;
@@ -4658,15 +4661,17 @@ body:has(.portal-overview) {
     gap: 38px;
 
     width: 100%;
-    padding-right: calc(50% - 35px);
+    padding-right: calc(50% + 66px);
   }
 
-  /* Kontakt erhält eine feste Position */
+  /* Kontakt exakt in der Mitte */
   .main-nav a[data-nav="kontakt"] {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    white-space: nowrap;
   }
 
 }
+
 
