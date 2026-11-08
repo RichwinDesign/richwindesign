@@ -719,3 +719,45 @@
   margin: 0;
   white-space: nowrap;
 }
+
+/* =========================================
+   GENEALOGIE – EINHEITLICHES SEITENRASTER
+   ========================================= */
+
+@media (min-width: 951px) {
+
+  /* Einleitung erhält denselben Platz */
+  .genealogy-intro {
+    max-width: 100%;
+    min-height: 313px;
+    margin-bottom: 0;
+  }
+
+  /* Text darf weiter nach rechts laufen */
+  .genealogy-intro-text {
+    max-width: 900px;
+  }
+
+  /* Kacheln beginnen auf gleicher Höhe */
+  .genealogy-page .genealogy-overview-grid {
+    margin-top: 0;
+  }
+
+}
+
+/* Tablet und Smartphone bleiben flexibel */
+@media (max-width: 950px) {
+
+  .genealogy-intro {
+    min-height: 0;
+  }
+
+  .genealogy-intro-text {
+    max-width: 100%;
+  }
+
+  .genealogy-page .genealogy-overview-grid {
+    margin-top: 0;
+  }
+
+}
