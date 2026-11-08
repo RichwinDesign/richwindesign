@@ -4313,73 +4313,77 @@ a.mega-link:focus-visible {
   width: 190px;
 }
 
+
 /* =========================================
-   PORTALE – NEUER HEADER-FARBVERLAUF
+   PORTALE – DUNKLER HEADER MIT FARBLICHT
    ========================================= */
 
 body[data-page="portale"] {
-  --header-base: #130b1e;
-  --header-accent: #e5a2f5;
-  --header-border-color: rgba(221, 111, 193, .55);
-  --header-accent-glow: rgba(216, 104, 244, .55);
+  --header-base: #090b10;
+  --header-accent: #c888e9;
+  --header-border-color: rgba(164, 107, 202, .28);
+  --header-accent-glow: rgba(176, 96, 222, .25);
 }
 
 body[data-page="portale"] .site-header {
-  background-color: #130b1e;
+  background-color: #090b10;
+
   background-image:
     radial-gradient(
-      ellipse 28% 150% at 7% 45%,
-      rgba(190, 55, 48, .65),
-      transparent 95%
+      ellipse 30% 140% at 8% 0%,
+      rgba(130, 40, 52, .22),
+      transparent 90%
     ),
+
     radial-gradient(
-      ellipse 34% 180% at 29% 50%,
-      rgba(120, 18, 158, .55),
-      transparent 95%
+      ellipse 35% 150% at 32% 5%,
+      rgba(100, 27, 145, .25),
+      transparent 90%
     ),
+
     radial-gradient(
-      ellipse 32% 150% at 66% 60%,
-      rgba(209, 42, 117, .54),
-      transparent 95%
+      ellipse 32% 140% at 67% 0%,
+      rgba(160, 35, 96, .20),
+      transparent 90%
     ),
+
     radial-gradient(
-      ellipse 30% 160% at 83% 32%,
-      rgba(255, 135, 17, .72),
-      transparent 95%
+      ellipse 28% 140% at 86% 0%,
+      rgba(205, 102, 32, .23),
+      transparent 90%
     ),
+
     linear-gradient(
-      90deg,
-      #1b0c16 0%,
-      #230d38 40%,
-      #351027 70%,
-      #22100e 100%
+      to bottom,
+      #10101a 0%,
+      #0b0d14 65%,
+      #090b10 100%
     );
+
+  border-bottom: 1px solid rgba(164, 107, 202, .20);
 }
 
-/* Feine zweifarbige Linie am unteren Rand */
-
-body[data-page="portale"] .site-header {
-  border-bottom: 1px solid rgba(220, 95, 167, .55);
-}
+/* Dezente untere Lichtkante */
 
 body[data-page="portale"] .site-header::after {
   background: linear-gradient(
     90deg,
-    rgba(255, 135, 65, .65),
-    rgba(221, 105, 245, .85) 45%,
-    rgba(255, 143, 60, .65)
+    transparent,
+    rgba(184, 96, 200, .35) 45%,
+    rgba(205, 110, 60, .22) 75%,
+    transparent
   );
-  opacity: .65;
+  opacity: .45;
 }
 
-/* Logo-Lichtstrich */
+/* Dezenter Logo-Lichtstrich */
 
 body[data-page="portale"] .header-logo::after {
   background: linear-gradient(
     90deg,
     transparent,
-    #f58bb1,
+    rgba(210, 125, 165, .55),
     transparent
   );
-  opacity: .85;
+  opacity: .6;
 }
