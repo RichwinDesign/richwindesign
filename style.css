@@ -49,43 +49,86 @@ body::before {
     );
 }
 
-/* HEADER – zentrale Gestaltung, ohne Änderung der Navigation */
+/* =========================================
+   HEADER – DREI GEDÄMPFTE FARBWELTEN
+   Nur Darstellung; Navigation und Menülogik unverändert
+   ========================================= */
 
-/* Portfolio, Über mich und Kontakt: Navy/Petrol */
+/* Portfolio und allgemeine Seiten: Navy / Petrol */
 body[data-page="portfolio"],
 body[data-page="ueber-mich"],
 body[data-page="kontakt"] {
-  --header-color-left: #102735;
-  --header-color-mid: #0a1a27;
-  --header-color-right: #060d13;
-  --header-border-color: rgba(127, 185, 214, 0.42);
+  --header-base: #07111a;
+  --header-glow-left: rgba(19, 105, 145, .37);
+  --header-glow-right: rgba(13, 78, 112, .21);
+  --header-glow-center: rgba(16, 79, 114, .22);
+  --header-accent: #89d7f1;
+  --header-border-color: rgba(112, 194, 224, .58);
+  --header-accent-glow: rgba(104, 202, 236, .45);
 }
 
-/* Portale und alle Portal-Unterseiten: gedämpftes Violett */
+/* Portale einschließlich Unterseiten: tiefe, rauchige Violetttöne */
 body[data-page="portale"] {
-  --header-color-left: #231b2f;
-  --header-color-mid: #171421;
-  --header-color-right: #0b111a;
-  --header-border-color: rgba(161, 74, 201, 0.40);
+  --header-base: #100d18;
+  --header-glow-left: rgba(100, 41, 133, .39);
+  --header-glow-right: rgba(73, 36, 116, .30);
+  --header-glow-center: rgba(91, 39, 128, .28);
+  --header-accent: #c888e9;
+  --header-border-color: rgba(164, 107, 202, .56);
+  --header-accent-glow: rgba(176, 96, 222, .42);
 }
 
-/* Genealogie und alle Genealogie-Unterseiten: Umbra/Tiefbraun */
+/* Genealogie einschließlich Unterseiten: Umbra / Pergament */
 body[data-page="genealogie"] {
-  --header-color-left: #352518;
-  --header-color-mid: #241a14;
-  --header-color-right: #15110d;
-  --header-border-color: rgba(216, 184, 144, 0.43);
+  --header-base: #19120d;
+  --header-glow-left: rgba(123, 77, 43, .39);
+  --header-glow-right: rgba(100, 63, 38, .29);
+  --header-glow-center: rgba(117, 78, 46, .24);
+  --header-accent: #e1bb8d;
+  --header-border-color: rgba(204, 157, 103, .61);
+  --header-accent-glow: rgba(221, 164, 98, .42);
 }
 
 .site-header {
   position: relative;
   z-index: 20;
-  background: linear-gradient(105deg,
-    var(--header-color-left, #102735) 0%,
-    var(--header-color-mid, #0a1a27) 48%,
-    var(--header-color-right, #060d13) 100%);
-  border-bottom: 1px solid var(--header-border-color, rgba(127, 185, 214, 0.42));
+  isolation: isolate;
+  background:
+    radial-gradient(ellipse 38% 165% at 15% 85%, var(--header-glow-left, rgba(19, 105, 145, .37)) 0%, transparent 100%),
+    radial-gradient(ellipse 45% 145% at 83% 16%, var(--header-glow-right, rgba(13, 78, 112, .21)) 0%, transparent 100%),
+    radial-gradient(ellipse 31% 110% at 50% 140%, var(--header-glow-center, rgba(16, 79, 114, .22)) 0%, transparent 100%),
+    linear-gradient(110deg, rgba(3, 6, 11, .1), transparent 49%, rgba(3, 6, 11, .25)),
+    var(--header-base, #07111a);
+  border-bottom: 1px solid var(--header-border-color, rgba(112, 194, 224, .58));
   backdrop-filter: blur(10px);
+}
+
+/* Feiner Lichtsaum entlang der bestehenden Unterkante */
+.site-header::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 1px;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent 2%, var(--header-accent, #89d7f1) 28%, transparent 68%, var(--header-accent, #89d7f1) 91%, transparent);
+  opacity: .36;
+}
+
+/* Nur die Farben vorhandener Header-Details vereinheitlichen */
+.site-header .header-logo {
+  text-shadow: 0 0 18px var(--header-accent-glow, rgba(104, 202, 236, .45));
+}
+.site-header .header-logo::after {
+  background: linear-gradient(90deg, transparent, var(--header-accent, #89d7f1), transparent);
+  opacity: .62;
+}
+.site-header .main-nav a.mega-trigger::after,
+.site-header .main-nav a.mega-trigger:hover::after,
+.site-header .main-nav a.mega-trigger.active::after,
+.site-header .main-nav a.mega-trigger.mega-hovered::after {
+  background: var(--header-accent, #89d7f1);
+  box-shadow: 0 0 5px var(--header-accent-glow, rgba(104, 202, 236, .45)),
+              0 0 12px var(--header-accent-glow, rgba(104, 202, 236, .45));
 }
 
 .header-inner {
