@@ -4434,31 +4434,27 @@ body[data-page="portale"] .header-logo::after {
   }
 }
 
-/* =========================================
-   PORTALE – DEZENTE FARBHIGHLIGHTS
-   ========================================= */
+
+/* PORTALE – SICHTBARE, DEZENTE LICHTINSELN */
 
 body:has(.portal-overview) {
   background-color: #090b10;
 
   background-image:
     radial-gradient(
-      ellipse 22% 18% at 12% 18%,
-      rgba(125, 50, 165, 0.075),
+      ellipse 250px 190px at 15% 20%,
+      rgba(145, 60, 190, 0.16),
       transparent 100%
     ),
-
     radial-gradient(
-      ellipse 20% 24% at 88% 48%,
-      rgba(185, 55, 110, 0.055),
+      ellipse 280px 230px at 85% 50%,
+      rgba(205, 55, 115, 0.12),
       transparent 100%
     ),
-
     radial-gradient(
-      ellipse 24% 18% at 20% 85%,
-      rgba(205, 105, 45, 0.045),
+      ellipse 260px 210px at 20% 85%,
+      rgba(225, 115, 40, 0.11),
       transparent 100%
     ),
-
-    #090b10;
+    linear-gradient(#090b10, #090b10);
 }
