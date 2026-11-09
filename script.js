@@ -542,108 +542,92 @@ document.addEventListener("DOMContentLoaded", () => {
   `;
 
 
-  /* =========================================
-     PORTFOLIO-DROPDOWN
-     NUR AUF DER STARTSEITE
-     ========================================= */
+  
+/* =========================================
+   PORTFOLIO-DROPDOWN
+   ========================================= */
 
-  const portfolioDropdown = `
-    <div class="mega-column mega-portfolio-column">
+const portfolioDropdown = `
+  <div class="mega-column mega-portfolio-column">
 
-      <div class="mega-heading">Portfolio</div>
+    <div class="mega-heading">Portfolio</div>
 
-      ${portfolioItems}
+    ${portfolioItems}
 
-      <!-- PORTALE -->
+    <!-- PORTALE -->
+    <details class="mega-portfolio-group">
+      <summary>
+        <a class="mega-portfolio-title"
+           href="${url("portale.html")}"
+           onclick="event.stopPropagation()">Portale</a>
 
-      <details class="mega-portfolio-group">
+        <span class="mega-portfolio-hint">
+          <span>Portal-Merch</span>
+          <span>Portal 01</span>
+        </span>
+      </summary>
 
-        <summary>
-          <a
-            class="mega-portfolio-title"
-            href="${url("portale.html")}"
-            onclick="event.stopPropagation()"
-          >Portale</a>
+      <div class="mega-portfolio-children">
 
-          <span
-            class="mega-portfolio-hint"
-            aria-label="Unterseiten aufklappen"
-          >
-            <span>Portal-Merch</span>
-            <span>Portal 01</span>
-          </span>
-        </summary>
+        <details class="mega-portfolio-group mega-portfolio-subgroup">
+          <summary>
+            <a class="mega-portfolio-title"
+               href="${url("portale/portal-merch.html")}"
+               onclick="event.stopPropagation()">
+              Portal-Merch
+            </a>
 
-        <div class="mega-portfolio-children">
+            <span class="mega-portfolio-hint">
+              <span>Sticker</span>
+              <span>Anhänger</span>
+            </span>
+          </summary>
 
-          <details class="mega-portfolio-group mega-portfolio-subgroup">
-
-            <summary>
-              <a
-                class="mega-portfolio-title"
-                href="${url("portale/portal-merch.html")}"
-                onclick="event.stopPropagation()"
-              ><span class="portal-menu-icon">◇</span> Portal-Merch</a>
-
-              <span
-                class="mega-portfolio-hint"
-                aria-label="Produkte aufklappen"
-              >
-                <span>Sticker</span>
-                <span>Anhänger</span>
-              </span>
-            </summary>
-
-            <div class="mega-portfolio-children">
-
-              ${item("Alle Produkte", "portale/portal-merch.html", "✧")}
-              ${item("Sticker", "portale/merch/sticker.html")}
-              ${item("Anhänger", "portale/merch/anhaenger.html")}
-              ${item("Acrylaufsteller", "portale/merch/aufsteller.html")}
-              ${item("Pins", "portale/merch/pins.html")}
-              ${item("Magnete", "portale/merch/magnete.html")}
-              ${item("Prints", "portale/merch/prints.html")}
-
-            </div>
-
-          </details>
-
-          ${item("Portal 01", "portale/portal-01.html")}
-          ${item("Portal 02", "portale/portal-02.html")}
-          ${item("Portal 03", "portale/portal-03.html")}
-          ${item("Portal 04", "portale/portal-04.html")}
-          ${item("Portal 05", "portale/portal-05.html")}
-
-        </div>
-
-      </details>
-
-
-      <!-- GENEALOGIE -->
-
-      <details class="mega-portfolio-group">
-
-        <summary>
-          <a
-            class="mega-portfolio-title"
-            href="${url("genealogie/genealogie.html")}"
-            onclick="event.stopPropagation()"
-          >Genealogie</a>
-
-          <span
-            class="mega-portfolio-hint"
-            aria-label="Unterseiten aufklappen"
-          >
-            <span>Familienlinie</span>
-            <span>Personenverzeichnis</span>
-          </span>
-        </summary>
-
-        <div class="mega-portfolio-children">
-
-          <div class="mega-portfolio-section-title">
-            Familienlinie
+          <div class="mega-portfolio-children">
+            ${item("Sticker", "portale/merch/sticker.html")}
+            ${item("Anhänger", "portale/merch/anhaenger.html")}
+            ${item("Acrylaufsteller", "portale/merch/aufsteller.html")}
+            ${item("Pins", "portale/merch/pins.html")}
+            ${item("Magnete", "portale/merch/magnete.html")}
+            ${item("Prints", "portale/merch/prints.html")}
           </div>
+        </details>
+
+        ${item("Portal 01", "portale/portal-01.html")}
+        ${item("Portal 02", "portale/portal-02.html")}
+        ${item("Portal 03", "portale/portal-03.html")}
+        ${item("Portal 04", "portale/portal-04.html")}
+        ${item("Portal 05", "portale/portal-05.html")}
+
+      </div>
+    </details>
+
+    <!-- GENEALOGIE -->
+    <details class="mega-portfolio-group">
+      <summary>
+        <a class="mega-portfolio-title"
+           href="${url("genealogie/genealogie.html")}"
+           onclick="event.stopPropagation()">Genealogie</a>
+
+        <span class="mega-portfolio-hint">
+          <span>Familienlinien</span>
+          <span>Personenverzeichnis</span>
+        </span>
+      </summary>
+
+      <div class="mega-portfolio-children">
+
+        <details class="mega-portfolio-group mega-portfolio-subgroup">
+          <summary>
+            <a class="mega-portfolio-title"
+               href="${url("genealogie/familienlinien/familienlinien.html")}"
+               onclick="event.stopPropagation()">Familienlinien</a>
+
+            <span class="mega-portfolio-hint">
+              <span>Richwin · Schmidt</span>
+              <span>Klotz · Nielebock</span>
+            </span>
+          </summary>
 
           <div class="mega-portfolio-children">
             ${item("Linie Richwin", "genealogie/familienlinien/richwin.html")}
@@ -651,36 +635,51 @@ document.addEventListener("DOMContentLoaded", () => {
             ${item("Linie Klotz", "genealogie/familienlinien/klotz.html")}
             ${item("Linie Nielebock", "genealogie/familienlinien/nielebock.html")}
           </div>
+        </details>
 
-          <div class="mega-portfolio-section-title">
-            Personenverzeichnis
-          </div>
+        <details class="mega-portfolio-group mega-portfolio-subgroup">
+          <summary>
+            <a class="mega-portfolio-title"
+               href="${url("genealogie/personenverzeichnis/personenverzeichnis.html")}"
+               onclick="event.stopPropagation()">Personenverzeichnis</a>
+
+            <span class="mega-portfolio-hint">
+              <span>Namensverzeichnis</span>
+              <span>Personenlisten A–Z</span>
+            </span>
+          </summary>
 
           <div class="mega-portfolio-children">
             ${item("Namensverzeichnis", "genealogie/personenverzeichnis/namensverzeichnis.html")}
+            ${item("Personenlisten A–Z", "genealogie/personenverzeichnis/personenverzeichnis.html")}
           </div>
+        </details>
 
-          <div class="mega-portfolio-section-title">
-            Familienregister
-          </div>
+        <details class="mega-portfolio-group mega-portfolio-subgroup">
+          <summary>
+            <a class="mega-portfolio-title"
+               href="${url("genealogie/familienregister/familienregister.html")}"
+               onclick="event.stopPropagation()">Familienregister</a>
+
+            <span class="mega-portfolio-hint">
+              <span>Familiennummern 1 bis 200</span>
+              <span>201 bis 400</span>
+            </span>
+          </summary>
 
           <div class="mega-portfolio-children">
             ${item("Familiennummern 1 bis 200", "genealogie/familienregister/familiennummern-001-200.html")}
             ${item("Familiennummern 201 bis 400", "genealogie/familienregister/familiennummern-201-400.html")}
           </div>
+        </details>
 
-          ${item(
-            "Bildarchiv",
-            "genealogie/bildarchiv/bildarchiv.html",
-            "▣"
-          )}
+        ${item("Bildarchiv", "genealogie/bildarchiv/bildarchiv.html", "▣")}
 
-        </div>
+      </div>
+    </details>
 
-      </details>
-
-    </div>
-  `;
+  </div>
+`;
 
 
   /* =========================================
