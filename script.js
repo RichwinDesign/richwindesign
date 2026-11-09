@@ -1469,32 +1469,39 @@ if (window.innerWidth > 950) {
 
 
     /* =========================================
-       AUSGEKLAPPTE UNTERSEITEN
-       ========================================= */
+   AUSGEKLAPPTE UNTERSEITEN
+   ========================================= */
 
-    #richwin-mega-menu
-    .mega-portfolio-children {
-      box-sizing: border-box;
+#richwin-mega-menu
+.mega-portfolio-children {
+  box-sizing: border-box;
 
-      display: flex;
-      flex-direction: column;
-      align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 
-      gap: 3px;
-      min-width: 0;
+  gap: 3px;
+  min-width: 0;
 
-      margin: 0 0 13px 9px;
-      padding-left: 15px;
+  margin: 0 0 13px 9px;
+  padding-left: 15px;
 
-      border-left:
-        1px solid rgba(111, 182, 217, .23);
-    }
+  border-left:
+    1px solid rgba(111, 182, 217, .23);
+}
 
-    #richwin-mega-menu
-    .mega-portfolio-children .mega-link {
-      width: 100%;
-      white-space: nowrap;
-    }
+#richwin-mega-menu
+.mega-portfolio-children .mega-link {
+  width: 100%;
+  white-space: nowrap;
+}
+
+/* Geschlossene Untermenüs ausblenden */
+
+#richwin-mega-menu
+details:not([open]) > .mega-portfolio-children {
+  display: none !important;
+}
 
 
     /* =========================================
