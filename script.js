@@ -1661,29 +1661,32 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* =========================================
-       PORTALE – RAUTEN
-       ========================================= */
+   /* =========================================
+   PORTALE – OHNE RAUTEN BEI HAUPTLINKS
+   ========================================= */
 
-    #richwin-mega-menu[data-menu="portale"]
-    .mega-portfolio-title::before {
-      content: "◇";
-      display: inline-block;
-      margin-right: 7px;
+#richwin-mega-menu[data-menu="portale"]
+.mega-portfolio-title::before {
+  content: none;
+  display: none;
+}
 
-      color: var(--dropdown-symbol);
-      font-size: 13px;
-      font-weight: 400;
-      line-height: 1;
-    }
+#richwin-mega-menu[data-menu="portale"]
+.mega-link-icon {
+  display: none;
+}
 
-    /* Unterstreichung unter Portal-Merch */
+#richwin-mega-menu[data-menu="portale"]
+.mega-link {
+  padding-left: 0;
+  font-weight: 400;
+}
 
-    #richwin-mega-menu[data-menu="portale"]
-    .mega-portfolio-title {
-      background-size: 34px 1px;
-    }
-
+#richwin-mega-menu[data-menu="portale"]
+.mega-portfolio-title {
+  font-weight: 500;
+  background-size: 34px 1px;
+}
 
     /* =========================================
        GENEALOGIE – OUTLINE-KREISE
@@ -1709,10 +1712,10 @@ document.addEventListener("DOMContentLoaded", () => {
       color: #d8b890;
     }
 
-    #richwin-mega-menu[data-menu="genealogie"]
-    .mega-portfolio-children {
-      border-left-color: rgba(216, 184, 144, .25);
-    }
+  #richwin-mega-menu[data-menu="genealogie"]
+.mega-portfolio-children {
+  border-left: none;
+}
 
     #richwin-mega-menu[data-menu="genealogie"]
     .mega-portfolio-title {
@@ -1754,6 +1757,29 @@ document.addEventListener("DOMContentLoaded", () => {
     .mega-portale-section .mega-link-icon {
       color: #c888e9;
     }
+
+#richwin-mega-menu[data-menu="portfolio"]
+.mega-portale-section > summary .mega-portfolio-title {
+  background-image: linear-gradient(#c888e9, #c888e9);
+}
+
+#richwin-mega-menu[data-menu="portfolio"]
+.mega-portale-section > summary .mega-portfolio-title::before {
+  content: "◇";
+  margin-right: 7px;
+  color: #c888e9;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+#richwin-mega-menu[data-menu="portfolio"]
+.mega-genealogy-section > summary .mega-portfolio-title::before {
+  content: "○";
+  margin-right: 7px;
+  color: #d8b890;
+  font-size: 13px;
+  font-weight: 400;
+}
 
     #richwin-mega-menu[data-menu="portfolio"]
     .mega-genealogy-section .mega-portfolio-title {
