@@ -50,7 +50,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-
   /* =========================================
      FOTOGRAFIE – BILDVERGLEICH 1
      ========================================= */
@@ -102,7 +101,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const relativePath = currentPath.startsWith(rootPath)
     ? currentPath.slice(rootPath.length)
     : currentPath;
-
 
   /* =========================================
      WEBSITE-BEREICH ERKENNEN
