@@ -1661,30 +1661,36 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-   /* =========================================
-   PORTALE – OHNE RAUTEN BEI HAUPTLINKS
+   
+/* =========================================
+   PORTALE – LILA RAUTEN
    ========================================= */
 
 #richwin-mega-menu[data-menu="portale"]
 .mega-portfolio-title::before {
-  content: none;
-  display: none;
+  content: "◇";
+  display: inline-block;
+  margin-right: 7px;
+  color: #c888e9;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1;
 }
 
 #richwin-mega-menu[data-menu="portale"]
 .mega-link-icon {
-  display: none;
+  display: inline-block;
+  color: #c888e9;
 }
 
 #richwin-mega-menu[data-menu="portale"]
 .mega-link {
-  padding-left: 0;
   font-weight: 400;
 }
 
 #richwin-mega-menu[data-menu="portale"]
 .mega-portfolio-title {
-  font-weight: 500;
+  font-weight: 400;
   background-size: 34px 1px;
 }
 
