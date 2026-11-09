@@ -540,144 +540,143 @@ document.addEventListener("DOMContentLoaded", () => {
   `;
 
 
-  
-/* =========================================
-   PORTFOLIO-DROPDOWN
-   ========================================= */
+  /* =========================================
+     PORTFOLIO-DROPDOWN
+     ========================================= */
 
-const portfolioDropdown = `
-  <div class="mega-column mega-portfolio-column">
+  const portfolioDropdown = `
+    <div class="mega-column mega-portfolio-column">
 
-    <div class="mega-heading">Portfolio</div>
+      <div class="mega-heading">Portfolio</div>
 
-    ${portfolioItems}
+      ${portfolioItems}
 
-    <!-- PORTALE -->
-    <details class="mega-portfolio-group">
-      <summary>
-        <a class="mega-portfolio-title"
-           href="${url("portale.html")}"
-           onclick="event.stopPropagation()">Portale</a>
+      <!-- PORTALE -->
+      <details class="mega-portfolio-group mega-portale-section">
+        <summary>
+          <a class="mega-portfolio-title"
+             href="${url("portale.html")}"
+             onclick="event.stopPropagation()">Portale</a>
 
-        <span class="mega-portfolio-hint">
-          <span>Portal-Merch</span>
-          <span>Portal 01</span>
-        </span>
-      </summary>
+          <span class="mega-portfolio-hint">
+            <span>Portal-Merch</span>
+            <span>Portal 01</span>
+          </span>
+        </summary>
 
-      <div class="mega-portfolio-children">
+        <div class="mega-portfolio-children">
 
-        <details class="mega-portfolio-group mega-portfolio-subgroup">
-          <summary>
-            <a class="mega-portfolio-title"
-               href="${url("portale/portal-merch.html")}"
-               onclick="event.stopPropagation()">
-              Portal-Merch
-            </a>
+          <details class="mega-portfolio-group mega-portfolio-subgroup">
+            <summary>
+              <a class="mega-portfolio-title"
+                 href="${url("portale/portal-merch.html")}"
+                 onclick="event.stopPropagation()">
+                Portal-Merch
+              </a>
 
-            <span class="mega-portfolio-hint">
-              <span>Sticker</span>
-              <span>Anhänger</span>
-            </span>
-          </summary>
+              <span class="mega-portfolio-hint">
+                <span>Sticker</span>
+                <span>Anhänger</span>
+              </span>
+            </summary>
 
-          <div class="mega-portfolio-children">
-            ${item("Sticker", "portale/merch/sticker.html")}
-            ${item("Anhänger", "portale/merch/anhaenger.html")}
-            ${item("Acrylaufsteller", "portale/merch/aufsteller.html")}
-            ${item("Pins", "portale/merch/pins.html")}
-            ${item("Magnete", "portale/merch/magnete.html")}
-            ${item("Prints", "portale/merch/prints.html")}
-          </div>
-        </details>
+            <div class="mega-portfolio-children">
+              ${item("Sticker", "portale/merch/sticker.html")}
+              ${item("Anhänger", "portale/merch/anhaenger.html")}
+              ${item("Acrylaufsteller", "portale/merch/aufsteller.html")}
+              ${item("Pins", "portale/merch/pins.html")}
+              ${item("Magnete", "portale/merch/magnete.html")}
+              ${item("Prints", "portale/merch/prints.html")}
+            </div>
+          </details>
 
-        ${item("Portal 01", "portale/portal-01.html")}
-        ${item("Portal 02", "portale/portal-02.html")}
-        ${item("Portal 03", "portale/portal-03.html")}
-        ${item("Portal 04", "portale/portal-04.html")}
-        ${item("Portal 05", "portale/portal-05.html")}
+          ${item("Portal 01", "portale/portal-01.html")}
+          ${item("Portal 02", "portale/portal-02.html")}
+          ${item("Portal 03", "portale/portal-03.html")}
+          ${item("Portal 04", "portale/portal-04.html")}
+          ${item("Portal 05", "portale/portal-05.html")}
 
-      </div>
-    </details>
+        </div>
+      </details>
 
-    <!-- GENEALOGIE -->
-    <details class="mega-portfolio-group">
-      <summary>
-        <a class="mega-portfolio-title"
-           href="${url("genealogie/genealogie.html")}"
-           onclick="event.stopPropagation()">Genealogie</a>
+      <!-- GENEALOGIE -->
+      <details class="mega-portfolio-group mega-genealogy-section">
+        <summary>
+          <a class="mega-portfolio-title"
+             href="${url("genealogie/genealogie.html")}"
+             onclick="event.stopPropagation()">Genealogie</a>
 
-        <span class="mega-portfolio-hint">
-          <span>Familienlinien</span>
-          <span>Personenverzeichnis</span>
-        </span>
-      </summary>
+          <span class="mega-portfolio-hint">
+            <span>Familienlinien</span>
+            <span>Personenverzeichnis</span>
+          </span>
+        </summary>
 
-      <div class="mega-portfolio-children">
+        <div class="mega-portfolio-children">
 
-        <details class="mega-portfolio-group mega-portfolio-subgroup">
-          <summary>
-            <a class="mega-portfolio-title"
-               href="${url("genealogie/familienlinien/familienlinien.html")}"
-               onclick="event.stopPropagation()">Familienlinien</a>
+          <details class="mega-portfolio-group mega-portfolio-subgroup mega-genealogy-subgroup">
+            <summary>
+              <a class="mega-portfolio-title"
+                 href="${url("genealogie/familienlinien/familienlinien.html")}"
+                 onclick="event.stopPropagation()">Familienlinien</a>
 
-            <span class="mega-portfolio-hint">
-              <span>Richwin · Schmidt</span>
-              <span>Klotz · Nielebock</span>
-            </span>
-          </summary>
+              <span class="mega-portfolio-hint">
+                <span>Richwin · Schmidt</span>
+                <span>Klotz · Nielebock</span>
+              </span>
+            </summary>
 
-          <div class="mega-portfolio-children">
-            ${item("Linie Richwin", "genealogie/familienlinien/richwin.html")}
-            ${item("Linie Schmidt", "genealogie/familienlinien/schmidt.html")}
-            ${item("Linie Klotz", "genealogie/familienlinien/klotz.html")}
-            ${item("Linie Nielebock", "genealogie/familienlinien/nielebock.html")}
-          </div>
-        </details>
+            <div class="mega-portfolio-children">
+              ${item("Linie Richwin", "genealogie/familienlinien/richwin.html")}
+              ${item("Linie Schmidt", "genealogie/familienlinien/schmidt.html")}
+              ${item("Linie Klotz", "genealogie/familienlinien/klotz.html")}
+              ${item("Linie Nielebock", "genealogie/familienlinien/nielebock.html")}
+            </div>
+          </details>
 
-        <details class="mega-portfolio-group mega-portfolio-subgroup">
-          <summary>
-            <a class="mega-portfolio-title"
-               href="${url("genealogie/personenverzeichnis/personenverzeichnis.html")}"
-               onclick="event.stopPropagation()">Personenverzeichnis</a>
+          <details class="mega-portfolio-group mega-portfolio-subgroup mega-genealogy-subgroup">
+            <summary>
+              <a class="mega-portfolio-title"
+                 href="${url("genealogie/personenverzeichnis/personenverzeichnis.html")}"
+                 onclick="event.stopPropagation()">Personenverzeichnis</a>
 
-            <span class="mega-portfolio-hint">
-              <span>Namensverzeichnis</span>
-              <span>Personenlisten A–Z</span>
-            </span>
-          </summary>
+              <span class="mega-portfolio-hint">
+                <span>Namensverzeichnis</span>
+                <span>Personenlisten A–Z</span>
+              </span>
+            </summary>
 
-          <div class="mega-portfolio-children">
-            ${item("Namensverzeichnis", "genealogie/personenverzeichnis/namensverzeichnis.html")}
-            ${item("Personenlisten A–Z", "genealogie/personenverzeichnis/personenverzeichnis.html")}
-          </div>
-        </details>
+            <div class="mega-portfolio-children">
+              ${item("Namensverzeichnis", "genealogie/personenverzeichnis/namensverzeichnis.html")}
+              ${item("Personenlisten A–Z", "genealogie/personenverzeichnis/personenverzeichnis.html")}
+            </div>
+          </details>
 
-        <details class="mega-portfolio-group mega-portfolio-subgroup">
-          <summary>
-            <a class="mega-portfolio-title"
-               href="${url("genealogie/familienregister/familienregister.html")}"
-               onclick="event.stopPropagation()">Familienregister</a>
+          <details class="mega-portfolio-group mega-portfolio-subgroup mega-genealogy-subgroup">
+            <summary>
+              <a class="mega-portfolio-title"
+                 href="${url("genealogie/familienregister/familienregister.html")}"
+                 onclick="event.stopPropagation()">Familienregister</a>
 
-            <span class="mega-portfolio-hint">
-              <span>Familiennummern 1 bis 200</span>
-              <span>201 bis 400</span>
-            </span>
-          </summary>
+              <span class="mega-portfolio-hint">
+                <span>Familiennummern 1 bis 200</span>
+                <span>201 bis 400</span>
+              </span>
+            </summary>
 
-          <div class="mega-portfolio-children">
-            ${item("Familiennummern 1 bis 200", "genealogie/familienregister/familiennummern-001-200.html")}
-            ${item("Familiennummern 201 bis 400", "genealogie/familienregister/familiennummern-201-400.html")}
-          </div>
-        </details>
+            <div class="mega-portfolio-children">
+              ${item("Familiennummern 1 bis 200", "genealogie/familienregister/familiennummern-001-200.html")}
+              ${item("Familiennummern 201 bis 400", "genealogie/familienregister/familiennummern-201-400.html")}
+            </div>
+          </details>
 
-        ${item("Bildarchiv", "genealogie/bildarchiv/bildarchiv.html", "▣")}
+          ${item("Bildarchiv", "genealogie/bildarchiv/bildarchiv.html", "▣")}
 
-      </div>
-    </details>
+        </div>
+      </details>
 
-  </div>
-`;
+    </div>
+  `;
 
 
   /* =========================================
@@ -706,47 +705,44 @@ const portfolioDropdown = `
 
     portfolio: portfolioDropdown,
 
-    
-portale: `
-  <div class="mega-column mega-portfolio-column">
+    portale: `
+      <div class="mega-column mega-portfolio-column">
 
-    <div class="mega-heading">Portalwelten</div>
+        <div class="mega-heading">Portalwelten</div>
 
-    <details class="mega-portfolio-group">
-      <summary>
-        <a
-          class="mega-portfolio-title"
-          href="${url("portale/portal-merch.html")}"
-          onclick="event.stopPropagation()"
-        >Portal-Merch</a>
+        <details class="mega-portfolio-group">
+          <summary>
+            <a
+              class="mega-portfolio-title"
+              href="${url("portale/portal-merch.html")}"
+              onclick="event.stopPropagation()"
+            >Portal-Merch</a>
 
-        <span class="mega-portfolio-hint"
-              aria-label="Produkte aufklappen">
-          <span>Sticker</span>
-          <span>Anhänger</span>
-        </span>
-      </summary>
+            <span class="mega-portfolio-hint"
+                  aria-label="Produkte aufklappen">
+              <span>Sticker</span>
+              <span>Anhänger</span>
+            </span>
+          </summary>
 
-      <div class="mega-portfolio-children">
-        ${item("Sticker", "portale/merch/sticker.html")}
-        ${item("Anhänger", "portale/merch/anhaenger.html")}
-        ${item("Acrylaufsteller", "portale/merch/aufsteller.html")}
-        ${item("Pins", "portale/merch/pins.html")}
-        ${item("Magnete", "portale/merch/magnete.html")}
-        ${item("Prints", "portale/merch/prints.html")}
+          <div class="mega-portfolio-children">
+            ${item("Sticker", "portale/merch/sticker.html")}
+            ${item("Anhänger", "portale/merch/anhaenger.html")}
+            ${item("Acrylaufsteller", "portale/merch/aufsteller.html")}
+            ${item("Pins", "portale/merch/pins.html")}
+            ${item("Magnete", "portale/merch/magnete.html")}
+            ${item("Prints", "portale/merch/prints.html")}
+          </div>
+        </details>
+
+        ${item("Portal 01", "portale/portal-01.html")}
+        ${item("Portal 02", "portale/portal-02.html")}
+        ${item("Portal 03", "portale/portal-03.html")}
+        ${item("Portal 04", "portale/portal-04.html")}
+        ${item("Portal 05", "portale/portal-05.html")}
+
       </div>
-    </details>
-
-    ${item("Portal 01", "portale/portal-01.html")}
-    ${item("Portal 02", "portale/portal-02.html")}
-    ${item("Portal 03", "portale/portal-03.html")}
-    ${item("Portal 04", "portale/portal-04.html")}
-    ${item("Portal 05", "portale/portal-05.html")}
-
-  </div>
-`,
-
-
+    `,
 
     genealogie: `
       <div class="mega-column mega-portfolio-column">
@@ -754,9 +750,13 @@ portale: `
 
         <details class="mega-portfolio-group">
           <summary>
-            <a class="mega-portfolio-title" href="${url("genealogie/familienlinien/familienlinien.html")}" onclick="event.stopPropagation()">Familienlinien</a>
-            <span class="mega-portfolio-hint" aria-label="Familienlinien aufklappen">
-              <span>Richwin · Schmidt</span><span>Klotz · Nielebock</span>
+            <a class="mega-portfolio-title"
+               href="${url("genealogie/familienlinien/familienlinien.html")}"
+               onclick="event.stopPropagation()">Familienlinien</a>
+            <span class="mega-portfolio-hint"
+                  aria-label="Familienlinien aufklappen">
+              <span>Richwin · Schmidt</span>
+              <span>Klotz · Nielebock</span>
             </span>
           </summary>
           <div class="mega-portfolio-children">
@@ -769,9 +769,13 @@ portale: `
 
         <details class="mega-portfolio-group">
           <summary>
-            <a class="mega-portfolio-title" href="${url("genealogie/personenverzeichnis/personenverzeichnis.html")}" onclick="event.stopPropagation()">Personenverzeichnis</a>
-            <span class="mega-portfolio-hint" aria-label="Personenverzeichnis aufklappen">
-              <span>Namensverzeichnis</span><span>Personenlisten A–Z</span>
+            <a class="mega-portfolio-title"
+               href="${url("genealogie/personenverzeichnis/personenverzeichnis.html")}"
+               onclick="event.stopPropagation()">Personenverzeichnis</a>
+            <span class="mega-portfolio-hint"
+                  aria-label="Personenverzeichnis aufklappen">
+              <span>Namensverzeichnis</span>
+              <span>Personenlisten A–Z</span>
             </span>
           </summary>
           <div class="mega-portfolio-children">
@@ -782,9 +786,13 @@ portale: `
 
         <details class="mega-portfolio-group">
           <summary>
-            <a class="mega-portfolio-title" href="${url("genealogie/familienregister/familienregister.html")}" onclick="event.stopPropagation()">Familienregister</a>
-            <span class="mega-portfolio-hint" aria-label="Familienregister aufklappen">
-              <span>Familiennummern 1 bis 200</span><span>201 bis 400</span>
+            <a class="mega-portfolio-title"
+               href="${url("genealogie/familienregister/familienregister.html")}"
+               onclick="event.stopPropagation()">Familienregister</a>
+            <span class="mega-portfolio-hint"
+                  aria-label="Familienregister aufklappen">
+              <span>Familiennummern 1 bis 200</span>
+              <span>201 bis 400</span>
             </span>
           </summary>
           <div class="mega-portfolio-children">
@@ -794,7 +802,8 @@ portale: `
         </details>
 
         <div class="mega-portfolio-group mega-simple-link">
-          <a class="mega-portfolio-title" href="${url("genealogie/bildarchiv/bildarchiv.html")}">Bildarchiv</a>
+          <a class="mega-portfolio-title"
+             href="${url("genealogie/bildarchiv/bildarchiv.html")}">Bildarchiv</a>
         </div>
       </div>
     `,
@@ -831,7 +840,7 @@ portale: `
 
 
   /* =========================================
-     NEU: DROPDOWN MITTIG UNTER MENÜPUNKT
+     NEU: DROPDOWN UNTER MENÜPUNKT
      ========================================= */
 
   function positionMenu() {
@@ -848,37 +857,23 @@ portale: `
     const headerRect = header.getBoundingClientRect();
 
     const viewportWidth = document.documentElement.clientWidth;
-
-    const panelRect = panel.getBoundingClientRect();
-    const panelWidth = panelRect.width;
-
+    const panelWidth = panel.getBoundingClientRect().width;
     const margin = 12;
 
-    // Alle Dropdowns am jeweiligen Menüpunkt ausrichten
+    const panelPaddingLeft =
+      parseFloat(window.getComputedStyle(panel).paddingLeft) || 0;
 
-// Innenabstand des Dropdowns aus dem CSS auslesen
-const panelPaddingLeft =
-  parseFloat(window.getComputedStyle(panel).paddingLeft) || 0;
+    let panelLeft;
 
-// Desktop: Text im Dropdown bündig mit Menüpunkt
-// Mobil: bisherige zentrierte Position beibehalten
+    if (window.innerWidth > 950) {
+      panelLeft = triggerRect.left - panelPaddingLeft;
+    } else {
+      const triggerCenter =
+        triggerRect.left + triggerRect.width / 2;
 
-let panelLeft;
+      panelLeft = triggerCenter - panelWidth / 2;
+    }
 
-if (window.innerWidth > 950) {
-
-  panelLeft = triggerRect.left - panelPaddingLeft;
-
-} else {
-
-  const triggerCenter =
-    triggerRect.left + triggerRect.width / 2;
-
-  panelLeft = triggerCenter - panelWidth / 2;
-
-}
-
-    // Verhindert, dass das Dropdown aus dem Bildschirm ragt
     const maxLeft = Math.max(
       margin,
       viewportWidth - panelWidth - margin
@@ -889,56 +884,22 @@ if (window.innerWidth > 950) {
       Math.min(panelLeft, maxLeft)
     );
 
-    // Direkt an der Unterkante des Headers
     const panelTop = headerRect.bottom - 1;
 
-    panel.style.setProperty(
-      "position",
-      "fixed",
-      "important"
-    );
-
-    panel.style.setProperty(
-      "left",
-      `${panelLeft}px`,
-      "important"
-    );
-
-    panel.style.setProperty(
-      "top",
-      `${panelTop}px`,
-      "important"
-    );
-
-    panel.style.setProperty(
-      "right",
-      "auto",
-      "important"
-    );
-
-    panel.style.setProperty(
-      "bottom",
-      "auto",
-      "important"
-    );
-
-    panel.style.setProperty(
-      "transform",
-      "none",
-      "important"
-    );
-
-    panel.style.setProperty(
-      "z-index",
-      "9999",
-      "important"
-    );
+    panel.style.setProperty("position", "fixed", "important");
+    panel.style.setProperty("left", `${panelLeft}px`, "important");
+    panel.style.setProperty("top", `${panelTop}px`, "important");
+    panel.style.setProperty("right", "auto", "important");
+    panel.style.setProperty("bottom", "auto", "important");
+    panel.style.setProperty("transform", "none", "important");
+    panel.style.setProperty("z-index", "9999", "important");
   }
 
 
   /* =========================================
      MENÜ SCHLIESSEN
      ========================================= */
+
 
   function closeMenu() {
 
@@ -984,7 +945,6 @@ if (window.innerWidth > 950) {
       link.setAttribute("aria-expanded", String(active));
     });
 
-    // Neue Position unmittelbar berechnen
     positionMenu();
   }
 
@@ -1000,11 +960,6 @@ if (window.innerWidth > 950) {
     positionMenu,
     { passive: true }
   );
-
-  // Wichtig für Portfolio:
-  // Wenn Portale oder Genealogie aufgeklappt werden,
-  // verändert sich die Breite des Dropdowns.
-  // Es bleibt trotzdem mittig unter Portfolio.
 
   if ("ResizeObserver" in window) {
 
@@ -1438,7 +1393,7 @@ if (window.innerWidth > 950) {
       display: none;
     }
 
-
+    
     /* =========================================
        HOVER AUF PORTALE UND GENEALOGIE
        ========================================= */
@@ -1466,43 +1421,46 @@ if (window.innerWidth > 950) {
 
 
     /* =========================================
-   AUSGEKLAPPTE UNTERSEITEN
-   ========================================= */
+       AUSGEKLAPPTE UNTERSEITEN
+       ========================================= */
 
-#richwin-mega-menu
-.mega-portfolio-children {
-  box-sizing: border-box;
+    #richwin-mega-menu
+    .mega-portfolio-children {
+      box-sizing: border-box;
 
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
 
-  gap: 3px;
-  min-width: 0;
+      gap: 3px;
+      min-width: 0;
 
-  margin: 0 0 13px 9px;
-  padding-left: 15px;
+      margin: 0 0 13px 9px;
+      padding-left: 15px;
 
-  border-left:
-    1px solid rgba(111, 182, 217, .23);
-}
+      border-left:
+        1px solid rgba(111, 182, 217, .23);
+    }
 
-#richwin-mega-menu
-.mega-portfolio-children .mega-link {
-  width: 100%;
-  white-space: nowrap;
-}
-
-/* Geschlossene Untermenüs ausblenden */
-
-#richwin-mega-menu
-details:not([open]) > .mega-portfolio-children {
-  display: none !important;
-}
+    #richwin-mega-menu
+    .mega-portfolio-children .mega-link {
+      width: 100%;
+      white-space: nowrap;
+    }
 
 
     /* =========================================
-       PORTAL-MERCH
+       GESCHLOSSENE UNTERMENÜS AUSBLENDEN
+       ========================================= */
+
+    #richwin-mega-menu
+    details:not([open]) > .mega-portfolio-children {
+      display: none !important;
+    }
+
+
+    /* =========================================
+       PORTAL-MERCH – UNTERGRUPPE
        ========================================= */
 
     #richwin-mega-menu
@@ -1522,7 +1480,6 @@ details:not([open]) > .mega-portfolio-children {
     .mega-portfolio-title {
       font-size: 12px;
       font-weight: 600;
-
       border-bottom-width: 1px;
     }
 
@@ -1546,7 +1503,6 @@ details:not([open]) > .mega-portfolio-children {
 
       font-size: 12px;
       font-weight: 700;
-
       white-space: nowrap;
     }
 
@@ -1603,6 +1559,237 @@ details:not([open]) > .mega-portfolio-children {
         transition: none;
       }
 
+    }
+
+
+    /* =========================================
+       EINHEITLICHE DROPDOWNS
+       PORTALE ALS VORLAGE
+       ========================================= */
+
+    #richwin-mega-menu[data-menu="portfolio"],
+    #richwin-mega-menu[data-menu="portale"],
+    #richwin-mega-menu[data-menu="genealogie"] {
+      --dropdown-accent: #84c5e4;
+      --dropdown-symbol: #84c5e4;
+    }
+
+    #richwin-mega-menu[data-menu="portale"] {
+      --dropdown-accent: #c888e9;
+      --dropdown-symbol: #c888e9;
+    }
+
+    #richwin-mega-menu[data-menu="genealogie"] {
+      --dropdown-accent: #d8b890;
+      --dropdown-symbol: #d8b890;
+    }
+
+
+    /* Einheitliche Abstände */
+
+    #richwin-mega-menu .mega-portfolio-column {
+      gap: 0;
+    }
+
+    #richwin-mega-menu .mega-heading {
+      margin-bottom: 9px;
+    }
+
+    #richwin-mega-menu .mega-portfolio-group > summary {
+      gap: 2px;
+      padding: 3px 4px 5px;
+    }
+
+    #richwin-mega-menu .mega-portfolio-hint {
+      gap: 1px;
+      line-height: 1.3;
+      font-size: 10px;
+      margin: 0 0 3px 0;
+    }
+
+
+    /* Kurze Unterstreichungen */
+
+    #richwin-mega-menu .mega-portfolio-title {
+      display: inline-flex;
+      width: fit-content;
+      align-items: center;
+
+      padding: 0 0 4px;
+      border: none;
+
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.4;
+      text-decoration: none;
+
+      background-image:
+        linear-gradient(var(--dropdown-accent), var(--dropdown-accent));
+      background-size: 34px 1px;
+      background-position: left bottom;
+      background-repeat: no-repeat;
+    }
+
+    #richwin-mega-menu .mega-portfolio-title::after {
+      content: none;
+      display: none;
+    }
+
+    #richwin-mega-menu
+    .mega-portfolio-group > summary:hover .mega-portfolio-title,
+    #richwin-mega-menu
+    .mega-portfolio-group[open] > summary .mega-portfolio-title {
+      color: var(--dropdown-accent);
+    }
+
+
+    /* Portale und Genealogie kompakt */
+
+    #richwin-mega-menu[data-menu="portale"] .mega-portfolio-group,
+    #richwin-mega-menu[data-menu="genealogie"] .mega-portfolio-group {
+      margin: 0;
+      padding: 0;
+      border: 0;
+    }
+
+    #richwin-mega-menu[data-menu="portale"] .mega-link,
+    #richwin-mega-menu[data-menu="genealogie"] .mega-link,
+    #richwin-mega-menu[data-menu="portfolio"]
+    > .mega-portfolio-column > .mega-link {
+      padding-top: 3px;
+      padding-bottom: 3px;
+    }
+
+
+    /* =========================================
+       PORTALE – RAUTEN
+       ========================================= */
+
+    #richwin-mega-menu[data-menu="portale"]
+    .mega-portfolio-title::before {
+      content: "◇";
+      display: inline-block;
+      margin-right: 7px;
+
+      color: var(--dropdown-symbol);
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 1;
+    }
+
+    /* Unterstreichung unter Portal-Merch */
+
+    #richwin-mega-menu[data-menu="portale"]
+    .mega-portfolio-title {
+      background-size: 34px 1px;
+    }
+
+
+    /* =========================================
+       GENEALOGIE – OUTLINE-KREISE
+       ========================================= */
+
+    #richwin-mega-menu[data-menu="genealogie"] .mega-link-icon,
+    #richwin-mega-menu[data-menu="portfolio"]
+    .mega-genealogy-section .mega-link-icon {
+      font-size: 0;
+      width: 13px;
+      min-width: 13px;
+      line-height: 1;
+    }
+
+    #richwin-mega-menu[data-menu="genealogie"]
+    .mega-link-icon::before,
+    #richwin-mega-menu[data-menu="portfolio"]
+    .mega-genealogy-section .mega-link-icon::before {
+      content: "○";
+      display: inline-block;
+
+      font-size: 13px;
+      color: #d8b890;
+    }
+
+    #richwin-mega-menu[data-menu="genealogie"]
+    .mega-portfolio-children {
+      border-left-color: rgba(216, 184, 144, .25);
+    }
+
+    #richwin-mega-menu[data-menu="genealogie"]
+    .mega-portfolio-title {
+      background-size: 34px 1px;
+    }
+
+    #richwin-mega-menu[data-menu="genealogie"]
+    .mega-simple-link {
+      margin-top: 2px;
+      padding: 3px 4px 5px;
+    }
+
+
+    /* =========================================
+       PORTFOLIO – BEREICHE
+       ========================================= */
+
+    #richwin-mega-menu[data-menu="portfolio"]
+    .mega-portfolio-column > .mega-portfolio-group {
+      margin: 10px 0 0;
+      padding-top: 8px;
+      border-top: 1px solid rgba(111, 182, 217, .17);
+    }
+
+    #richwin-mega-menu[data-menu="portfolio"]
+    .mega-portfolio-subgroup {
+      margin: 0;
+      padding: 0;
+      border: none;
+    }
+
+    #richwin-mega-menu[data-menu="portfolio"]
+    .mega-portfolio-subgroup > summary {
+      gap: 2px;
+      padding: 3px 4px 5px;
+    }
+
+    #richwin-mega-menu[data-menu="portfolio"]
+    .mega-portale-section .mega-link-icon {
+      color: #c888e9;
+    }
+
+    #richwin-mega-menu[data-menu="portfolio"]
+    .mega-genealogy-section .mega-portfolio-title {
+      background-image: linear-gradient(#d8b890, #d8b890);
+    }
+
+    #richwin-mega-menu[data-menu="portfolio"]
+    .mega-genealogy-section
+    .mega-portfolio-subgroup > summary
+    .mega-portfolio-title::before {
+      content: "○";
+      margin-right: 7px;
+
+      color: #d8b890;
+      font-size: 13px;
+      font-weight: 400;
+    }
+
+    #richwin-mega-menu[data-menu="portfolio"]
+    .mega-portale-section
+    .mega-portfolio-subgroup > summary
+    .mega-portfolio-title::before {
+      content: "◇";
+      margin-right: 7px;
+
+      color: #c888e9;
+      font-size: 13px;
+      font-weight: 400;
+    }
+
+
+    /* Untermenüs erst bei eigenem Klick anzeigen */
+
+    #richwin-mega-menu
+    details:not([open]) > .mega-portfolio-children {
+      display: none !important;
     }
 
   `;
@@ -1743,3 +1930,4 @@ document.addEventListener("DOMContentLoaded", () => {
     slider.addEventListener("input", updatePhotoCompare);
   });
 });
+                      
