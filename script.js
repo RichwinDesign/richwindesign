@@ -1786,7 +1786,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 #richwin-mega-menu[data-menu="portfolio"]
 .mega-portale-section > summary .mega-portfolio-title {
-  background-image: linear-gradient(#c888e9, #c888e9);
+  background-image: linear-gradient(#c888e9, #c888e9) !important;
 }
 
 #richwin-mega-menu[data-menu="portfolio"]
