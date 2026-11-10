@@ -4644,20 +4644,8 @@ body:has(.portal-overview) {
 
 /* =========================================
    HEADER – FESTE MENÜPOSITIONEN
-   Kategorie mittig, Kontakt rechts
-   ========================================= */
-
-@media (min-width: 951px) {
-
-  .header-inner {
-    grid-template-columns: 180px minmax(0, 1fr) 180px;
-  }
-
-  .main-nav {
-    display: grid;
-    grid-template-columns: 
-/* =========================================
-   HEADER – FESTE MENÜPOSITIONEN
+   Portfolio und Kontakt unverändert,
+   Über mich rechts neben Kontakt
    ========================================= */
 
 @media (min-width: 951px) {
@@ -4676,7 +4664,7 @@ body:has(.portal-overview) {
     width: 100%;
   }
 
-  /* Kategorie bleibt mittig */
+  /* Portfolio / Portale / Genealogie bleibt mittig */
   .main-nav a[data-nav="portfolio"],
   .main-nav a[data-nav="portale"],
   .main-nav a[data-nav="genealogie"] {
@@ -4685,15 +4673,7 @@ body:has(.portal-overview) {
     justify-self: center;
   }
 
-  /* Über mich rechts neben Kontakt */
-  .main-nav a[data-nav="ueber-mich"] {
-    grid-column: 3;
-    grid-row: 1;
-    justify-self: start;
-    margin-left: 105px;
-  }
-
-  /* Kontakt bleibt unverändert */
+  /* Kontakt bleibt exakt an seiner Position */
   .main-nav a[data-nav="kontakt"] {
     position: relative;
     grid-column: 3;
@@ -4703,39 +4683,12 @@ body:has(.portal-overview) {
     transform: none;
   }
 
-}
-
-    justify-content: center;
-    align-items: center;
-    gap: 0;
-    padding: 0;
-    width: 100%;
-  }
-
-  /* Kategorie immer in der Mitte */
-  .main-nav a[data-nav="portfolio"],
-  .main-nav a[data-nav="portale"],
-  .main-nav a[data-nav="genealogie"] {
-    grid-column: 2;
-    grid-row: 1;
-    justify-self: center;
-  }
-
-  /* Über mich links */
+  /* Nur Über mich rechts von Kontakt platzieren */
   .main-nav a[data-nav="ueber-mich"] {
-    grid-column: 1;
-    grid-row: 1;
-    justify-self: center;
-  }
-
-  /* Kontakt immer rechts */
-  .main-nav a[data-nav="kontakt"] {
-    position: relative;
     grid-column: 3;
     grid-row: 1;
     justify-self: center;
-    left: auto;
-    transform: none;
+    transform: translateX(105px);
   }
 
 }
