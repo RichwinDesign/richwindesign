@@ -329,11 +329,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (activePage === "portfolio") {
 
-    navigationHTML = `
-      ${navLink("Portfolio", "index.html#portfolio", "portfolio")}
-      ${navLink("Über mich", "ueber-mich/ueber-mich.html", "ueber-mich")}
-      ${navLink("Kontakt", "kontakt/kontakt.html", "kontakt")}
-    `;
+navigationHTML = `
+  ${navLink("Portfolio", "index.html#portfolio", "portfolio")}
+  ${navLink("Kontakt", "kontakt/kontakt.html", "kontakt")}
+  ${navLink("Über mich", "ueber-mich/ueber-mich.html", "ueber-mich")}
+`;
 
   } else if (activePage === "portale") {
 
