@@ -1766,7 +1766,13 @@ document.addEventListener("DOMContentLoaded", () => {
   color: #c888e9;
 }
 
-/* PORTFOLIO – Portal-Merch lila unterstreichen */
+
+/* PORTFOLIO – Portal-Merch lila */
+
+#richwin-mega-menu[data-menu="portfolio"]
+.mega-portale-section .mega-link-icon {
+  color: #c888e9;
+}
 
 #richwin-mega-menu[data-menu="portfolio"]
 .mega-portale-section
@@ -1774,17 +1780,7 @@ document.addEventListener("DOMContentLoaded", () => {
 .mega-portfolio-title {
   background-image: linear-gradient(#c888e9, #c888e9) !important;
 }
- {
-      color: #c888e9;
-      
-/* PORTFOLIO – Portal-Merch lila unterstreichen */
 
-#richwin-mega-menu[data-menu="portfolio"]
-.mega-portale-section
-.mega-portfolio-subgroup > summary
-.mega-portfolio-title {
-  background-image: linear-gradient(#c888e9, #c888e9) !important;
-}
 
     }
 
