@@ -4739,19 +4739,3 @@ body:has(.portal-overview) {
   }
 
 }
-
-
-/* Navigation – Reihenfolge */
-
-.main-nav a[data-nav="portfolio"] {
-  order: 1 !important;
-}
-
-.main-nav a[data-nav="kontakt"] {
-  order: 2 !important;
-}
-
-.main-nav a[data-nav="ueber-mich"] {
-  order: 3 !important;
-}
-
