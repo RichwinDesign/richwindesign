@@ -1734,44 +1734,44 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* =========================================
-       PORTFOLIO – BEREICHE
-       ========================================= */
+   
+/* =========================================
+   PORTFOLIO – BEREICHE
+   ========================================= */
 
-    #richwin-mega-menu[data-menu="portfolio"]
-    .mega-portfolio-column > .mega-portfolio-group {
-      margin: 10px 0 0;
-      padding-top: 8px;
-      border-top: 1px solid rgba(111, 182, 217, .17);
-    }
+#richwin-mega-menu[data-menu="portfolio"]
+.mega-portfolio-column > .mega-portfolio-group {
+  margin: 10px 0 0;
+  padding-top: 8px;
+  border-top: 1px solid rgba(111, 182, 217, .17);
+}
 
-    #richwin-mega-menu[data-menu="portfolio"]
-    .mega-portfolio-subgroup {
-      margin: 0;
-      padding: 0;
-      border: none;
-    }
+#richwin-mega-menu[data-menu="portfolio"]
+.mega-portfolio-subgroup {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
 
-    #richwin-mega-menu[data-menu="portfolio"]
-    .mega-portfolio-subgroup > summary {
-      gap: 2px;
-      padding: 3px 4px 5px;
-    }
+#richwin-mega-menu[data-menu="portfolio"]
+.mega-portfolio-subgroup > summary {
+  gap: 2px;
+  padding: 3px 4px 5px;
+}
 
-    #richwin-mega-menu[data-menu="portfolio"]
-    
+
+/* =========================================
+   PORTFOLIO – PORTALE LILA
+   ========================================= */
+
+/* Rauten der Portal-Links */
+
 #richwin-mega-menu[data-menu="portfolio"]
 .mega-portale-section .mega-link-icon {
   color: #c888e9;
 }
 
-
-/* PORTFOLIO – Portal-Merch lila */
-
-#richwin-mega-menu[data-menu="portfolio"]
-.mega-portale-section .mega-link-icon {
-  color: #c888e9;
-}
+/* Kurze Linie unter Portal-Merch */
 
 #richwin-mega-menu[data-menu="portfolio"]
 .mega-portale-section
@@ -1780,13 +1780,14 @@ document.addEventListener("DOMContentLoaded", () => {
   background-image: linear-gradient(#c888e9, #c888e9) !important;
 }
 
-
-    }
+/* Kurze Linie unter Portale */
 
 #richwin-mega-menu[data-menu="portfolio"]
 .mega-portale-section > summary .mega-portfolio-title {
   background-image: linear-gradient(#c888e9, #c888e9) !important;
 }
+
+/* Raute vor Portale */
 
 #richwin-mega-menu[data-menu="portfolio"]
 .mega-portale-section > summary .mega-portfolio-title::before {
@@ -1797,6 +1798,13 @@ document.addEventListener("DOMContentLoaded", () => {
   font-weight: 400;
 }
 
+
+/* =========================================
+   PORTFOLIO – GENEALOGIE GOLD
+   ========================================= */
+
+/* Kreis vor Genealogie */
+
 #richwin-mega-menu[data-menu="portfolio"]
 .mega-genealogy-section > summary .mega-portfolio-title::before {
   content: "○";
@@ -1806,47 +1814,52 @@ document.addEventListener("DOMContentLoaded", () => {
   font-weight: 400;
 }
 
-    #richwin-mega-menu[data-menu="portfolio"]
-    .mega-genealogy-section .mega-portfolio-title {
-      background-image: linear-gradient(#d8b890, #d8b890);
-    }
+/* Goldene Linien */
 
-    #richwin-mega-menu[data-menu="portfolio"]
-    .mega-genealogy-section
-    .mega-portfolio-subgroup > summary
-    .mega-portfolio-title::before {
-      content: "○";
-      margin-right: 7px;
+#richwin-mega-menu[data-menu="portfolio"]
+.mega-genealogy-section .mega-portfolio-title {
+  background-image: linear-gradient(#d8b890, #d8b890);
+}
 
-      color: #d8b890;
-      font-size: 13px;
-      font-weight: 400;
-    }
+/* Kreise vor Genealogie-Untergruppen */
 
-    #richwin-mega-menu[data-menu="portfolio"]
-    .mega-portale-section
-    .mega-portfolio-subgroup > summary
-    .mega-portfolio-title::before {
-      content: "◇";
-      margin-right: 7px;
+#richwin-mega-menu[data-menu="portfolio"]
+.mega-genealogy-section
+.mega-portfolio-subgroup > summary
+.mega-portfolio-title::before {
+  content: "○";
+  margin-right: 7px;
+  color: #d8b890;
+  font-size: 13px;
+  font-weight: 400;
+}
 
-      color: #c888e9;
-      font-size: 13px;
-      font-weight: 400;
-    }
+/* Raute vor Portal-Merch */
+
+#richwin-mega-menu[data-menu="portfolio"]
+.mega-portale-section
+.mega-portfolio-subgroup > summary
+.mega-portfolio-title::before {
+  content: "◇";
+  margin-right: 7px;
+  color: #c888e9;
+  font-size: 13px;
+  font-weight: 400;
+}
 
 
-    /* Untermenüs erst bei eigenem Klick anzeigen */
+/* =========================================
+   UNTERMENÜS ERST BEI KLICK ANZEIGEN
+   ========================================= */
 
-    #richwin-mega-menu
-    details:not([open]) > .mega-portfolio-children {
-      display: none !important;
-    }
+#richwin-mega-menu
+details:not([open]) > .mega-portfolio-children {
+  display: none !important;
+}
 
-  `;
+`;
 
-  document.head.appendChild(portfolioMenuStyle);
-
+document.head.appendChild(portfolioMenuStyle);
 
   /* =========================================
      ZURÜCK-BUTTON
