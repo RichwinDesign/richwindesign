@@ -1,278 +1,124 @@
-
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="fotografie.css">
   <title>Fotografie | Richwin Design</title>
 </head>
-
 <body>
-
- <div id="site-header"></div>
-
-
+  <div id="site-header"></div>
   <main>
-
-    <!-- HERO -->
-
-    <section class="photo-page-hero">
-
+    <!-- HERO: vorhandenes Motiv aus der globalen style.css beibehalten -->
+    <section class="photo-page-hero" aria-label="Fotografie">
       <div class="photo-page-hero-inner">
-
-        <div class="photo-page-text">
-
-          <h1>Fotografien</h1>
-
-          <p class="photo-page-subtitle">
-            Identität durch Licht
-          </p>
-
-          <p>
-            Ich halte Momente, Produkte und Orte mit einem Gespür für Licht,
-            Komposition und Details fest. Mein Fokus liegt auf authentischen
-            Fotografien, die Emotionen wecken, Geschichten erzählen und durch
-            ihre klare Bildsprache nachhaltig wirken.
-          </p>
-
-        </div>
-
-        <button
-          class="ai-label photo-page-ai"
-          type="button"
-          aria-label="Hinweis: KI-generiertes Bild"
-        >
-          <img
-            src="../images/icons/icon_ki-hinweis.png"
-            alt=""
-          >
+        <div class="photo-page-text"><h1>Fotografien</h1></div>
+        <button class="ai-label photo-page-ai" type="button" aria-label="Hinweis: KI-generiertes Hero-Bild" data-ai-message="Dieses Hero-Bild wurde mithilfe generativer KI erstellt.">
+          <img src="../images/general/icons/icon_ki-hinweis.webp" alt="">
         </button>
-
       </div>
-
     </section>
 
+    <!-- TEXT UNTER DEM HERO -->
+    <section class="photo-description" aria-label="Über Fotografie">
+      <div class="photo-description-inner">
+        <p class="photo-page-subtitle">Identität durch Licht.</p>
+        <p>Ich halte Momente, Produkte und Orte mit einem Gespür für Licht, Komposition und Details fest. Mein Fokus liegt auf authentischen Fotografien, die Emotionen wecken, Geschichten erzählen und durch ihre klare Bildsprache nachhaltig wirken.</p>
+      </div>
+    </section>
 
-    <!-- VORHER / NACHHER -->
+    <!-- ALLE PROJEKTE: gleiche einklappbare Struktur wie Motion und Print -->
+    <section class="photo-showcase" aria-label="Ausgewählte Fotografien">
+      <div class="photo-showcase-intro"><span>Ausgewählte Arbeiten</span><p>Fotografie und Bildbearbeitung – nach Projekten sortiert.</p></div>
 
-    <section class="photo-compare-section">
-
-      <div class="photo-compare-block">
-
-        <div class="photo-compare">
-
-          <img
-            class="photo-compare-before"
-            src="../images/portfolio/fotografie/fotografie_kontrast-vorher.jpg"
-            alt="Kontrast vorher"
-          >
-
-          <div class="photo-compare-after-wrap">
-            <img
-              class="photo-compare-after"
-              src="../images/portfolio/fotografie/fotografie_kontrast-nachher.jpg"
-              alt="Kontrast nachher"
-            >
-          </div>
-
-          <input
-            class="photo-compare-range"
-            type="range"
-            min="0"
-            max="100"
-            value="50"
-            aria-label="Vorher-Nachher-Vergleich Kontrast"
-          >
-
-          <div class="photo-compare-line"></div>
-
+      <details class="photo-project photo-project--compare" open>
+        <summary class="photo-project-heading">
+          <div><h2>Vorher &amp; Nachher</h2><p>Bildbearbeitung mit interaktivem Schieberegler</p></div>
+          <span class="photo-project-count">2 Vergleiche</span><span class="photo-project-action" aria-hidden="true">Einklappen</span>
+        </summary>
+        <div class="photo-project-grid photo-compare-grid">
+          <figure class="photo-work photo-work--compare">
+            <div class="photo-compare" style="--compare-position:50%">
+              <img class="photo-compare-before" src="../images/portfolio/fotografie/fotografie_kontrast-vorher.jpg" alt="Kontrast – vor der Bearbeitung" loading="lazy">
+              <div class="photo-compare-after-wrap"><img class="photo-compare-after" src="../images/portfolio/fotografie/fotografie_kontrast-nachher.jpg" alt="Kontrast – nach der Bearbeitung" loading="lazy"></div>
+              <div class="photo-compare-line" aria-hidden="true"><span class="photo-compare-handle">↔</span></div>
+              <span class="photo-compare-label photo-compare-label--before" aria-hidden="true">Vorher</span><span class="photo-compare-label photo-compare-label--after" aria-hidden="true">Nachher</span>
+              <input class="photo-compare-range" type="range" min="0" max="100" value="50" aria-label="Kontrast: Vorher-Nachher-Schieberegler">
+            </div>
+            <figcaption>Kontrast – Bildbearbeitung</figcaption>
+          </figure>
+          <figure class="photo-work photo-work--compare">
+            <div class="photo-compare" style="--compare-position:50%">
+              <img class="photo-compare-before" src="../images/portfolio/fotografie/fotografie_stillleben-vorher.jpg" alt="Stillleben – vor der Bearbeitung" loading="lazy">
+              <div class="photo-compare-after-wrap"><img class="photo-compare-after" src="../images/portfolio/fotografie/fotografie_stillleben-nachher.jpg" alt="Stillleben – nach der Bearbeitung" loading="lazy"></div>
+              <div class="photo-compare-line" aria-hidden="true"><span class="photo-compare-handle">↔</span></div>
+              <span class="photo-compare-label photo-compare-label--before" aria-hidden="true">Vorher</span><span class="photo-compare-label photo-compare-label--after" aria-hidden="true">Nachher</span>
+              <input class="photo-compare-range" type="range" min="0" max="100" value="50" aria-label="Stillleben: Vorher-Nachher-Schieberegler">
+            </div>
+            <figcaption>Stillleben – Bildbearbeitung</figcaption>
+          </figure>
         </div>
+      </details>
 
-        <h2>Kontrast</h2>
-
-      </div>
-
-
-      <div class="photo-compare-block">
-
-        <div class="photo-compare">
-
-          <img
-            class="photo-compare-before"
-            src="../images/portfolio/fotografie/fotografie_stillleben-vorher.jpg"
-            alt="Stillleben vorher"
-          >
-
-          <div class="photo-compare-after-wrap">
-            <img
-              class="photo-compare-after"
-              src="../images/portfolio/fotografie/fotografie_stillleben-nachher.jpg"
-              alt="Stillleben nachher"
-            >
-          </div>
-
-          <input
-            class="photo-compare-range"
-            type="range"
-            min="0"
-            max="100"
-            value="50"
-            aria-label="Vorher-Nachher-Vergleich Stillleben"
-          >
-
-          <div class="photo-compare-line"></div>
-
+      <details class="photo-project" open>
+        <summary class="photo-project-heading">
+          <div><h2>Blauer Kran – Hamburg</h2><p>Architektur, Perspektive und industrielle Details</p></div>
+          <span class="photo-project-count">4 Motive</span><span class="photo-project-action" aria-hidden="true">Einklappen</span>
+        </summary>
+        <div class="photo-project-grid">
+          <figure class="photo-work"><div class="photo-work-media"><img src="../images/portfolio/fotografie/fotografie_blauer-kran-01.png" alt="Blauer Kran in Hamburg – Aufnahme 1" loading="lazy"></div><figcaption>Blauer Kran – Aufnahme 1</figcaption></figure>
+          <figure class="photo-work"><div class="photo-work-media"><img src="../images/portfolio/fotografie/fotografie_blauer-kran-02.png" alt="Blauer Kran in Hamburg – Aufnahme 2" loading="lazy"></div><figcaption>Blauer Kran – Aufnahme 2</figcaption></figure>
+          <figure class="photo-work"><div class="photo-work-media"><img src="../images/portfolio/fotografie/fotografie_blauer-kran-03.png" alt="Blauer Kran in Hamburg – Aufnahme 3" loading="lazy"></div><figcaption>Blauer Kran – Aufnahme 3</figcaption></figure>
+          <figure class="photo-work"><div class="photo-work-media"><img src="../images/portfolio/fotografie/fotografie_blauer-kran-04.png" alt="Blauer Kran in Hamburg – Aufnahme 4" loading="lazy"></div><figcaption>Blauer Kran – Aufnahme 4</figcaption></figure>
         </div>
+      </details>
 
-        <h2>Stillleben</h2>
+      <details class="photo-project" open>
+        <summary class="photo-project-heading">
+          <div><h2>Dom – Hoch hinaus</h2><p>Perspektiven und Eindrücke vom Hamburger Dom</p></div>
+          <span class="photo-project-count">4 Motive</span><span class="photo-project-action" aria-hidden="true">Einklappen</span>
+        </summary>
+        <div class="photo-project-grid">
+          <figure class="photo-work"><div class="photo-work-media"><img src="../images/portfolio/fotografie/fotografie_dom-01.jpg" alt="Dom – Hoch hinaus, Aufnahme 1" loading="lazy"></div><figcaption>Dom – Aufnahme 1</figcaption></figure>
+          <figure class="photo-work"><div class="photo-work-media"><img src="../images/portfolio/fotografie/fotografie_dom-02.jpg" alt="Dom – Hoch hinaus, Aufnahme 2" loading="lazy"></div><figcaption>Dom – Aufnahme 2</figcaption></figure>
+          <figure class="photo-work"><div class="photo-work-media"><img src="../images/portfolio/fotografie/fotografie_dom-03.jpg" alt="Dom – Hoch hinaus, Aufnahme 3" loading="lazy"></div><figcaption>Dom – Aufnahme 3</figcaption></figure>
+          <figure class="photo-work"><div class="photo-work-media"><img src="../images/portfolio/fotografie/fotografie_dom-04.jpg" alt="Dom – Hoch hinaus, Aufnahme 4" loading="lazy"></div><figcaption>Dom – Aufnahme 4</figcaption></figure>
+        </div>
+      </details>
 
-      </div>
-
+      <details class="photo-project" open>
+        <summary class="photo-project-heading">
+          <div><h2>Elmshorn – Teppich Kibek</h2><p>Architekturfotografie und urbane Eindrücke</p></div>
+          <span class="photo-project-count">4 Motive</span><span class="photo-project-action" aria-hidden="true">Einklappen</span>
+        </summary>
+        <div class="photo-project-grid">
+          <figure class="photo-work"><div class="photo-work-media"><img src="../images/portfolio/fotografie/fotografie_kibek-01.png" alt="Teppich Kibek in Elmshorn – Aufnahme 1" loading="lazy"></div><figcaption>Teppich Kibek – Aufnahme 1</figcaption></figure>
+          <figure class="photo-work"><div class="photo-work-media"><img src="../images/portfolio/fotografie/fotografie_kibek-02.png" alt="Teppich Kibek in Elmshorn – Aufnahme 2" loading="lazy"></div><figcaption>Teppich Kibek – Aufnahme 2</figcaption></figure>
+          <figure class="photo-work"><div class="photo-work-media"><img src="../images/portfolio/fotografie/fotografie_kibek-03.png" alt="Teppich Kibek in Elmshorn – Aufnahme 3" loading="lazy"></div><figcaption>Teppich Kibek – Aufnahme 3</figcaption></figure>
+          <figure class="photo-work"><div class="photo-work-media"><img src="../images/portfolio/fotografie/fotografie_kibek-04.png" alt="Teppich Kibek in Elmshorn – Aufnahme 4" loading="lazy"></div><figcaption>Teppich Kibek – Aufnahme 4</figcaption></figure>
+        </div>
+      </details>
     </section>
-
-
-    <!-- BLAUER KRAN -->
-
-    <section class="photo-project-section">
-
-      <h2>Blauer Kran – Hamburg</h2>
-
-      <div class="photo-project-grid">
-
-        <img
-          src="../images/portfolio/fotografie/fotografie_blauer-kran-01.png"
-          alt="Blauer Kran Hamburg 01"
-        >
-
-        <img
-          src="../images/portfolio/fotografie/fotografie_blauer-kran-02.png"
-          alt="Blauer Kran Hamburg 02"
-        >
-
-        <img
-          src="../images/portfolio/fotografie/fotografie_blauer-kran-03.png"
-          alt="Blauer Kran Hamburg 03"
-        >
-
-        <img
-          src="../images/portfolio/fotografie/fotografie_blauer-kran-04.png"
-          alt="Blauer Kran Hamburg 04"
-        >
-
-      </div>
-
-    </section>
-
-
-    <!-- DOM -->
-
-    <section class="photo-project-section">
-
-      <h2>Dom – Hoch hinaus</h2>
-
-      <div class="photo-project-grid">
-
-        <img
-          src="../images/portfolio/fotografie/fotografie_dom-01.jpg"
-          alt="Dom Hoch hinaus 01"
-        >
-
-        <img
-          src="../images/portfolio/fotografie/fotografie_dom-02.jpg"
-          alt="Dom Hoch hinaus 02"
-        >
-
-        <img
-          src="../images/portfolio/fotografie/fotografie_dom-03.jpg"
-          alt="Dom Hoch hinaus 03"
-        >
-
-        <img
-          src="../images/portfolio/fotografie/fotografie_dom-04.jpg"
-          alt="Dom Hoch hinaus 04"
-        >
-
-      </div>
-
-    </section>
-
-
-    <!-- KIBEK -->
-
-    <section class="photo-project-section">
-
-      <h2>Elmshorn – Teppich Kibek</h2>
-
-      <div class="photo-project-grid">
-
-        <img
-          src="../images/portfolio/fotografie/fotografie_kibek-01.png"
-          alt="Teppich Kibek Elmshorn 01"
-        >
-
-        <img
-          src="../images/portfolio/fotografie/fotografie_kibek-02.png"
-          alt="Teppich Kibek Elmshorn 02"
-        >
-
-        <img
-          src="../images/portfolio/fotografie/fotografie_kibek-03.png"
-          alt="Teppich Kibek Elmshorn 03"
-        >
-
-        <img
-          src="../images/portfolio/fotografie/fotografie_kibek-04.png"
-          alt="Teppich Kibek Elmshorn 04"
-        >
-
-      </div>
-
-    </section>
-
   </main>
 
-
-  <!-- KI POPUP -->
-
-  <div
-    class="ai-modal"
-    id="aiModal"
-    aria-hidden="true"
-  >
-
+  <div class="ai-modal" id="aiModal" aria-hidden="true">
     <div class="ai-modal-backdrop"></div>
-
-    <div
-      class="ai-modal-window"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="aiModalTitle"
-    >
-
-      <h2 id="aiModalTitle">
-        KI-generiertes Bild
-      </h2>
-
-      <p>
-        Dieses Bild wurde mithilfe generativer KI erstellt.
-      </p>
-
-      <button
-        type="button"
-        id="aiModalClose"
-      >
-        Okay
-      </button>
-
+    <div class="ai-modal-window" role="dialog" aria-modal="true" aria-labelledby="aiModalTitle">
+      <h2 id="aiModalTitle">KI-generiertes Bild</h2>
+      <p>Dieses Bild wurde mithilfe generativer KI erstellt.</p>
+      <button type="button" id="aiModalClose">Okay</button>
     </div>
-
   </div>
-
-
   <script src="../script.js"></script>
-
+  <script>
+    // Beide Vorher/Nachher-Regler – unabhängig voneinander.
+    document.querySelectorAll('.photo-compare').forEach((compare) => {
+      const range = compare.querySelector('.photo-compare-range');
+      const update = () => compare.style.setProperty('--compare-position', `${range.value}%`);
+      range.addEventListener('input', update);
+      update();
+    });
+  </script>
 </body>
-
 </html>
