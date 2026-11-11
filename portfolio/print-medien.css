@@ -1,1 +1,115 @@
+/* PRINT MEDIEN – gleiche Gestaltung wie Motion & Visuals.
+   Nur auf der Print-Unterseite eingebunden. Die globale style.css bleibt unverändert. */
 
+/* Hero: altes Hintergrundbild aus style.css beibehalten, nur Höhe und Inhalt ändern */
+.print-page-hero { min-height:430px; background-position:center 49%; }
+.print-page-hero-inner {
+  min-height:430px; padding:52px 42px 66px;
+  align-items:center;
+}
+.print-page-text { width:auto; max-width:none; }
+.print-page-text h1 {
+  margin:0; font-size:clamp(3.3rem,7.1vw,6.3rem);
+  font-weight:800; letter-spacing:-.035em; line-height:.99;
+}
+.print-page-ai { left:4%; bottom:24px; }
+
+/* Beschreibung wie bei Motion unter dem Hero */
+.print-description { width:100%; background:#040b10; color:#eef4f9; }
+.print-description-inner { width:min(100%,1136px); margin:0 auto; padding:30px 24px 4px; }
+.print-description .print-page-subtitle {
+  margin:0 0 10px; color:#8dcced; font-size:19px; line-height:1.35; font-weight:700;
+}
+.print-description-inner > p:not(.print-page-subtitle) {
+  max-width:540px; margin:0; font-size:15px; line-height:1.75; color:#c4cfda;
+}
+
+/* Kategorien / Projektgruppen */
+.print-showcase { width:min(100%,1136px); margin:0 auto; padding:34px 24px 90px; color:#f4f7fb; }
+.print-showcase-intro {
+  display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap;
+  gap:10px 25px; padding-bottom:16px; margin-bottom:35px;
+  border-bottom:1px solid rgba(125,184,215,.22);
+}
+.print-showcase-intro > span {
+  font-size:12px; font-weight:700; letter-spacing:.15em; text-transform:uppercase; color:#8dcced;
+}
+.print-showcase-intro p { font-size:13px; line-height:1.5; color:#aebbc8; margin:0; }
+.print-project { margin:0 0 48px; }
+.print-showcase details.print-project > summary.print-project-heading {
+  display:flex; align-items:center; gap:16px; padding-bottom:13px; margin:0 0 15px;
+  border-bottom:1px solid rgba(125,184,215,.2); cursor:pointer;
+  list-style:none; user-select:none;
+}
+.print-showcase summary.print-project-heading::-webkit-details-marker {display:none;}
+.print-showcase summary.print-project-heading::marker {content:"";}
+.print-project-heading > div { min-width:0; }
+.print-project-heading h2 { font-size:clamp(20px,2.4vw,27px); font-weight:700; line-height:1.15; margin:0 0 5px; }
+.print-project-heading p { font-size:12px; line-height:1.5; color:#aeb8c2; margin:0; }
+.print-project-count { margin-left:auto; white-space:nowrap; color:#98aaba; font-size:11px; }
+.print-project-action {
+  display:inline-flex; align-items:center; gap:9px; white-space:nowrap;
+  font-size:12px; color:#8dcced; margin-left:4px;
+}
+.print-project-action::after {
+  content:""; width:8px; height:8px; display:block;
+  border-right:2px solid currentColor; border-bottom:2px solid currentColor;
+  transform:rotate(225deg) translate(-2px,-2px); transition:transform .2s ease;
+}
+.print-project:not([open]) .print-project-action {font-size:0;}
+.print-project:not([open]) .print-project-action::before {content:"Aufklappen";font-size:12px;}
+.print-project:not([open]) .print-project-action::after {transform:rotate(45deg) translate(-2px,-2px);}
+.print-project-heading:hover .print-project-action {color:#c7efff;}
+.print-project-heading:focus-visible {outline:2px solid #8dcced;outline-offset:5px;border-radius:3px;}
+
+/* Karten: Bilder proportional, ohne Hochskalierung oder Beschnitt */
+.print-project-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:stretch;}
+.print-work {
+  min-width:0; margin:0; padding:12px; display:flex; flex-direction:column;
+  align-items:stretch; justify-content:space-between; gap:10px; overflow:hidden;
+  background:linear-gradient(155deg,rgba(15,26,37,.88),rgba(7,11,17,.97));
+  border:1px solid rgba(122,170,205,.23); border-radius:11px;
+  transition:border-color .2s ease,transform .2s ease;
+}
+.print-work:hover {border-color:rgba(124,195,232,.58);transform:translateY(-2px);}
+.print-work-media {height:250px;min-height:0;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.print-work-media img {
+  display:block; width:auto !important; height:auto !important;
+  max-width:100% !important; max-height:100% !important;
+  object-fit:contain; border:0; border-radius:2px; margin:0 auto;
+}
+.print-work figcaption {align-self:stretch;text-align:center;font-size:11px;line-height:1.45;color:#9eafbc;}
+
+/* Flyer & Folder: kompakt mit vier Motiven pro Reihe */
+.print-showcase .print-project--four .print-project-grid {grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;}
+.print-project--four .print-work {padding:11px 8px;}
+.print-project--four .print-work-media {height:215px;}
+.print-project--four .print-work figcaption {font-size:10px;}
+
+@media(max-width:900px) {
+  .print-showcase .print-project--four .print-project-grid {grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+@media(max-width:680px) {
+  .print-page-hero,.print-page-hero-inner {min-height:350px;}
+  .print-page-hero-inner {padding:42px 22px 60px;}
+  .print-page-text h1 {font-size:clamp(2.8rem,9.2vw,4.8rem);}
+  .print-page-ai {left:22px;bottom:19px;}
+  .print-description-inner {padding:25px 18px 4px;}
+  .print-showcase {padding:29px 16px 65px;}
+  .print-project {margin-bottom:35px;}
+  .print-project-grid {gap:10px;}
+  .print-work {padding:9px;gap:8px;}
+  .print-work-media,.print-project--four .print-work-media {height:190px;}
+  .print-work figcaption {font-size:10px;}
+}
+@media(max-width:560px) {
+  .print-project-heading {flex-wrap:wrap;}
+  .print-project-action {margin-left:auto;}
+}
+@media(max-width:470px) {
+  .print-project-grid,.print-showcase .print-project--four .print-project-grid {grid-template-columns:1fr;}
+  .print-work-media,.print-project--four .print-work-media {height:235px;}
+  .print-project-count {font-size:10px;}
+}
+@media(max-width:380px) {.print-page-text h1 {font-size:2.65rem;}}
+@media(prefers-reduced-motion:reduce) {.print-work,.print-project-action::after {transition:none;}.print-work:hover {transform:none;}}

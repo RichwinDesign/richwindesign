@@ -1,227 +1,153 @@
-
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="print-medien.css">
   <title>Print Medien | Richwin Design</title>
 </head>
-
 <body>
-
   <div id="site-header"></div>
-
-
   <main>
-
-    <!-- HERO -->
-
-    <section class="print-page-hero">
-
+    <!-- Hero: wie auf der Motion-Seite nur die Headline und KI-Hinweis -->
+    <section class="print-page-hero" aria-label="Print Medien">
       <div class="print-page-hero-inner">
-
-        <div class="print-page-text">
-
-          <h1>Print Medien</h1>
-
-          <p class="print-page-subtitle">
-            Ideen zum Anfassen.
-          </p>
-
-          <p>
-            Ich gestalte Printmedien von der Konzeption bis zur Reinzeichnung.
-            Ob Flyer, Broschüren oder Poster – mein Fokus liegt auf einer klaren
-            Gestaltung, einer durchdachten Struktur und einer präzisen visuellen
-            Umsetzung, die Inhalte wirkungsvoll vermittelt.
-          </p>
-
-        </div>
-
-        <button
-          class="ai-label print-page-ai"
-          type="button"
-          aria-label="Hinweis: KI-generiertes Bild"
-        >
-          <img
-            src="../images/icons/icon_ki-hinweis.png"
-            alt=""
-          >
+        <div class="print-page-text"><h1>Print<br>Medien</h1></div>
+        <button class="ai-label print-page-ai" type="button" aria-label="Hinweis: KI-generiertes Bild"
+          data-ai-message="Dieses Hero-Bild wurde mithilfe generativer KI erstellt.">
+          <img src="../images/general/icons/icon_ki-hinweis.webp" alt="">
         </button>
-
       </div>
-
     </section>
 
-
-    <!-- GALERIE -->
-
-    <section class="print-gallery">
-
-      <figure class="print-gallery-item print-gallery-item-large">
-        <img
-          src="../images/portfolio/print/print_bifold-a4.png"
-          alt="Bifold A4 Printdesign"
-        >
-      </figure>
-
-      <figure class="print-gallery-item">
-        <img
-          src="../images/portfolio/print/print_startbeileger.jpg"
-          alt="Startbeileger"
-        >
-      </figure>
-
-      <figure class="print-gallery-item print-gallery-item-tall">
-        <img
-          src="../images/portfolio/print/print_anzeige-kloenschnack.webp"
-          alt="Anzeige Klönschnack"
-        >
-      </figure>
-
-      <figure class="print-gallery-item">
-        <img
-          src="../images/portfolio/print/print_57749.png"
-          alt="Printprojekt"
-        >
-      </figure>
-
-      <figure class="print-gallery-item">
-        <img
-          src="../images/portfolio/print/print_img-20170614.jpg"
-          alt="Printprojekt"
-        >
-      </figure>
-
-      <figure class="print-gallery-item print-gallery-item-wide">
-        <img
-          src="../images/portfolio/print/print_lekkerland-02.webp"
-          alt="Lekkerland Printdesign"
-        >
-      </figure>
-
-      <figure class="print-gallery-item">
-        <img
-          src="../images/portfolio/print/print_img-20211030-0036.jpg"
-          alt="Printprojekt"
-        >
-      </figure>
-
-      <figure class="print-gallery-item print-gallery-item-tall">
-        <img
-          src="../images/portfolio/print/print_maklergalgen.webp"
-          alt="Maklergalgen Gestaltung"
-        >
-      </figure>
-
-      <figure class="print-gallery-item print-gallery-item-large">
-        <img
-          src="../images/portfolio/print/print_fh127-innen.png"
-          alt="FH127 Innengestaltung"
-        >
-      </figure>
-
-      <figure class="print-gallery-item">
-        <img
-          src="../images/portfolio/print/print_img-20211030-0038.webp"
-          alt="Printprojekt"
-        >
-      </figure>
-
-      <figure class="print-gallery-item">
-        <img
-          src="../images/portfolio/print/print_kalender-a3.png"
-          alt="A3 Kalender Gestaltung"
-        >
-      </figure>
-
-      <figure class="print-gallery-item">
-        <img
-          src="../images/portfolio/print/print_5650456.png"
-          alt="Printprojekt"
-        >
-      </figure>
-
-      <figure class="print-gallery-item">
-        <img
-          src="../images/portfolio/print/print_lila-2.png"
-          alt="Printprojekt"
-        >
-      </figure>
-
-      <figure class="print-gallery-item print-gallery-item-wide">
-        <img
-          src="../images/portfolio/print/print_folder-georia.png"
-          alt="Folder Gestaltung"
-        >
-      </figure>
-
-      <figure class="print-gallery-item">
-        <img
-          src="../images/portfolio/print/print_img-20211030-0039.jpg"
-          alt="Printprojekt"
-        >
-      </figure>
-
-      <figure class="print-gallery-item print-gallery-item-large">
-        <img
-          src="../images/portfolio/print/print_z-fold-flyer.jpg"
-          alt="Z-Fold Flyer"
-        >
-      </figure>
-
-      <figure class="print-gallery-item print-gallery-item-large">
-        <img
-          src="../images/portfolio/print/print_a4-flyer-grid.png"
-          alt="A4 Flyer Grid"
-        >
-      </figure>
-
+    <!-- Beschreibung unterhalb des Hero-Bildes -->
+    <section class="print-description" aria-label="Über Print Medien">
+      <div class="print-description-inner">
+        <p class="print-page-subtitle">Ideen zum Anfassen.</p>
+        <p>Ich gestalte Printmedien von der Konzeption bis zur Reinzeichnung. Ob Flyer, Broschüren oder Poster – mein Fokus liegt auf klarer Gestaltung, durchdachter Struktur und präziser Umsetzung für überzeugende Druckergebnisse.</p>
+      </div>
     </section>
 
+    <!-- Galerie mit einklappbaren Kategorien -->
+    <section class="print-showcase" aria-label="Printarbeiten">
+      <div class="print-showcase-intro"><span>Ausgewählte Arbeiten</span><p>Printdesign, Layout und Reinzeichnung – nach Kategorien sortiert.</p></div>
+      <details class="print-project print-project--four" open>
+        <summary class="print-project-heading">
+          <div><h2>Flyer &amp; Folder</h2><p>Falzprodukte, Flyer und mehrseitige Printformate</p></div>
+          <span class="print-project-count">4 Motive</span>
+          <span class="print-project-action" aria-hidden="true">Einklappen</span>
+        </summary>
+        <div class="print-project-grid">
+          <figure class="print-work">
+            <div class="print-work-media"><img src="../images/portfolio/print/print_bifold-a4.png" alt="Bifold im A4-Format" loading="lazy" decoding="async"></div>
+            <figcaption>Bifold im A4-Format</figcaption>
+          </figure>
+          <figure class="print-work">
+            <div class="print-work-media"><img src="../images/portfolio/print/print_folder-georia.png" alt="Folder – Georia" loading="lazy" decoding="async"></div>
+            <figcaption>Folder – Georia</figcaption>
+          </figure>
+          <figure class="print-work">
+            <div class="print-work-media"><img src="../images/portfolio/print/print_z-fold-flyer.jpg" alt="Z-Fold-Flyer" loading="lazy" decoding="async"></div>
+            <figcaption>Z-Fold-Flyer</figcaption>
+          </figure>
+          <figure class="print-work">
+            <div class="print-work-media"><img src="../images/portfolio/print/print_a4-flyer-grid.png" alt="A4-Flyer – Layout und Raster" loading="lazy" decoding="async"></div>
+            <figcaption>A4-Flyer – Layout und Raster</figcaption>
+          </figure>
+        </div>
+      </details>
+      <details class="print-project print-project--two" open>
+        <summary class="print-project-heading">
+          <div><h2>Anzeigen &amp; Werbemittel</h2><p>Anzeigen, Beileger und großformatige Werbegestaltung</p></div>
+          <span class="print-project-count">4 Motive</span>
+          <span class="print-project-action" aria-hidden="true">Einklappen</span>
+        </summary>
+        <div class="print-project-grid">
+          <figure class="print-work">
+            <div class="print-work-media"><img src="../images/portfolio/print/print_anzeige-kloenschnack.webp" alt="Anzeige – Klönschnack" loading="lazy" decoding="async"></div>
+            <figcaption>Anzeige – Klönschnack</figcaption>
+          </figure>
+          <figure class="print-work">
+            <div class="print-work-media"><img src="../images/portfolio/print/print_startbeileger.jpg" alt="Startbeileger" loading="lazy" decoding="async"></div>
+            <figcaption>Startbeileger</figcaption>
+          </figure>
+          <figure class="print-work">
+            <div class="print-work-media"><img src="../images/portfolio/print/print_lekkerland-02.webp" alt="Lekkerland – Printgestaltung" loading="lazy" decoding="async"></div>
+            <figcaption>Lekkerland – Printgestaltung</figcaption>
+          </figure>
+          <figure class="print-work">
+            <div class="print-work-media"><img src="../images/portfolio/print/print_maklergalgen.webp" alt="Maklergalgen – Werbegestaltung" loading="lazy" decoding="async"></div>
+            <figcaption>Maklergalgen – Werbegestaltung</figcaption>
+          </figure>
+        </div>
+      </details>
+      <details class="print-project print-project--two" open>
+        <summary class="print-project-heading">
+          <div><h2>Editorial &amp; Kalender</h2><p>Innenlayout und Kalendergestaltung</p></div>
+          <span class="print-project-count">2 Motive</span>
+          <span class="print-project-action" aria-hidden="true">Einklappen</span>
+        </summary>
+        <div class="print-project-grid">
+          <figure class="print-work">
+            <div class="print-work-media"><img src="../images/portfolio/print/print_fh127-innen.png" alt="FH127 – Innengestaltung" loading="lazy" decoding="async"></div>
+            <figcaption>FH127 – Innengestaltung</figcaption>
+          </figure>
+          <figure class="print-work">
+            <div class="print-work-media"><img src="../images/portfolio/print/print_kalender-a3.png" alt="A3-Kalender" loading="lazy" decoding="async"></div>
+            <figcaption>A3-Kalender</figcaption>
+          </figure>
+        </div>
+      </details>
+      <details class="print-project print-project--two" open>
+        <summary class="print-project-heading">
+          <div><h2>Weitere Printarbeiten</h2><p>Weitere Layouts und Gestaltungsprojekte</p></div>
+          <span class="print-project-count">7 Motive</span>
+          <span class="print-project-action" aria-hidden="true">Einklappen</span>
+        </summary>
+        <div class="print-project-grid">
+          <figure class="print-work">
+            <div class="print-work-media"><img src="../images/portfolio/print/print_57749.png" alt="Printprojekt 57749" loading="lazy" decoding="async"></div>
+            <figcaption>Printprojekt 57749</figcaption>
+          </figure>
+          <figure class="print-work">
+            <div class="print-work-media"><img src="../images/portfolio/print/print_img-20170614.jpg" alt="Printprojekt 2017" loading="lazy" decoding="async"></div>
+            <figcaption>Printprojekt 2017</figcaption>
+          </figure>
+          <figure class="print-work">
+            <div class="print-work-media"><img src="../images/portfolio/print/print_img-20211030-0036.jpg" alt="Printprojekt 0036" loading="lazy" decoding="async"></div>
+            <figcaption>Printprojekt 0036</figcaption>
+          </figure>
+          <figure class="print-work">
+            <div class="print-work-media"><img src="../images/portfolio/print/print_img-20211030-0038.webp" alt="Printprojekt 0038" loading="lazy" decoding="async"></div>
+            <figcaption>Printprojekt 0038</figcaption>
+          </figure>
+          <figure class="print-work">
+            <div class="print-work-media"><img src="../images/portfolio/print/print_5650456.png" alt="Printprojekt 5650456" loading="lazy" decoding="async"></div>
+            <figcaption>Printprojekt 5650456</figcaption>
+          </figure>
+          <figure class="print-work">
+            <div class="print-work-media"><img src="../images/portfolio/print/print_lila-2.png" alt="Printprojekt Lila" loading="lazy" decoding="async"></div>
+            <figcaption>Printprojekt Lila</figcaption>
+          </figure>
+          <figure class="print-work">
+            <div class="print-work-media"><img src="../images/portfolio/print/print_img-20211030-0039.jpg" alt="Printprojekt 0039" loading="lazy" decoding="async"></div>
+            <figcaption>Printprojekt 0039</figcaption>
+          </figure>
+        </div>
+      </details>
+    </section>
   </main>
 
-
-  <!-- KI POPUP -->
-
-  <div
-    class="ai-modal"
-    id="aiModal"
-    aria-hidden="true"
-  >
-
+  <!-- Das bestehende KI-Popup bleibt erhalten -->
+  <div class="ai-modal" id="aiModal" aria-hidden="true">
     <div class="ai-modal-backdrop"></div>
-
-    <div
-      class="ai-modal-window"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="aiModalTitle"
-    >
-
-      <h2 id="aiModalTitle">
-        KI-generiertes Bild
-      </h2>
-
-      <p>
-        Dieses Bild wurde mithilfe generativer KI erstellt.
-      </p>
-
-      <button
-        type="button"
-        id="aiModalClose"
-      >
-        Okay
-      </button>
-
+    <div class="ai-modal-window" role="dialog" aria-modal="true" aria-labelledby="aiModalTitle">
+      <h2 id="aiModalTitle">KI-generiertes Bild</h2>
+      <p>Dieses Bild wurde mithilfe generativer KI erstellt.</p>
+      <button type="button" id="aiModalClose">Okay</button>
     </div>
-
   </div>
-
-
   <script src="../script.js"></script>
-
 </body>
-
 </html>
