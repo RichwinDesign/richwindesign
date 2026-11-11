@@ -4690,3 +4690,80 @@ body:has(.portal-overview) {
     transform: none;
   }
 }
+
+
+/* =========================================
+   HAUPTSEITEN – EINHEITLICHE KACHELBREITEN
+   Portfolio / Portale / Genealogie
+   4 gleich breite Spalten; 16px Abstand.
+   Individuelle Kachelhöhen bleiben erhalten.
+   ========================================= */
+
+/* Alle drei Inhaltsraster haben denselben Außenabstand. */
+.portfolio-overview,
+.genealogy-page {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+.portal-overview {
+  width: calc(100% - 64px);
+  max-width: 1136px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Gleiche Spalten- und Reihenabstände für die vier Hauptkacheln. */
+.portfolio-grid,
+.portal-overview,
+.genealogy-page .genealogy-overview-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+/* Inhalte dürfen die gemeinsame Spaltenbreite nicht aufweiten. */
+.portfolio-grid > *,
+.portal-overview > *,
+.genealogy-page .genealogy-overview-grid > * {
+  min-width: 0;
+}
+
+@media (max-width: 950px) {
+  .portfolio-overview,
+  .genealogy-page {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .portal-overview {
+    width: calc(100% - 48px);
+  }
+
+  .portfolio-grid,
+  .portal-overview,
+  .genealogy-page .genealogy-overview-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .portfolio-overview,
+  .genealogy-page {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .portal-overview {
+    width: calc(100% - 40px);
+  }
+
+  .portfolio-grid,
+  .portal-overview,
+  .genealogy-page .genealogy-overview-grid {
+    grid-template-columns: 1fr;
+  }
+}
