@@ -117,6 +117,84 @@
 @media(max-width: 380px) {
   .motion-page-text h1 {font-size: 2.65rem;}
 }
-.motion-page-intro h2 {
-  color: #8ED8FF;
+
+
+/* INDIVIDUELLE GALERIE-RASTER – nur die benannten Kampagnen.
+   Die Gruppe „Weitere Kampagnen“ bleibt unverändert. */
+
+/* Lekkerland: vier kleine, gleichmäßige Karten nebeneinander */
+.motion-showcase .motion-project--lekkerland .motion-project-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+.motion-project--lekkerland .motion-work {padding: 11px 8px;}
+.motion-project--lekkerland .motion-work-media {height: 205px;}
+.motion-project--lekkerland .motion-work figcaption {font-size: 10px;}
+
+/* Mitakon: drei Spalten; ein sechstes Motiv passt später automatisch in die zweite Reihe. */
+.motion-showcase .motion-project--mitakon .motion-project-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+.motion-project--mitakon .motion-work-media,
+.motion-project--mitakon .motion-work--wide .motion-work-media {height: 205px;}
+
+/* Nissin: zwei kleine Formate oben, Leaderboard über die volle Breite unten */
+.motion-showcase .motion-project--nissin .motion-project-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.motion-project--nissin .motion-work-media {height: 235px;}
+.motion-project--nissin .motion-work--portrait .motion-work-media {height: 235px;}
+.motion-showcase .motion-project--nissin .motion-work--wide {
+  grid-column: 1 / -1 !important;
+}
+.motion-project--nissin .motion-work--wide .motion-work-media {height: 118px;}
+
+/* Tokina/HAPA: breite Banner gemeinsam oben lassen, darunter die Content-Ads.
+   Geringere Medienhöhe macht die Kacheln kompakter. */
+.motion-project--tokina .motion-work--wide .motion-work-media {height: 110px;}
+.motion-project--tokina .motion-work:not(.motion-work--wide) .motion-work-media {height: 225px;}
+
+/* Vimbal/Yamaha: Leaderboard ganz oben, drei kleine Motive in einer Zeile,
+   zwei Hochformate darunter. Weniger Leerraum um die Grafiken. */
+.motion-showcase .motion-project--vimbal .motion-project-grid {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 12px;
+}
+.motion-showcase .motion-project--vimbal .motion-work {grid-column: span 2 !important;}
+.motion-showcase .motion-project--vimbal .motion-work--wide {grid-column: 1 / -1 !important;}
+.motion-showcase .motion-project--vimbal .motion-work--portrait {grid-column: span 3 !important;}
+.motion-project--vimbal .motion-work:not(.motion-work--portrait):not(.motion-work--wide) .motion-work-media {height: 190px;}
+.motion-project--vimbal .motion-work--wide .motion-work-media {height: 112px;}
+.motion-project--vimbal .motion-work--portrait .motion-work-media {height: 280px;}
+
+/* Tablet und Smartphone: keine Miniaturkarten und kein horizontales Scrollen */
+@media (max-width: 900px) {
+  .motion-showcase .motion-project--lekkerland .motion-project-grid,
+  .motion-showcase .motion-project--mitakon .motion-project-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .motion-showcase .motion-project--vimbal .motion-project-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .motion-showcase .motion-project--vimbal .motion-work,
+  .motion-showcase .motion-project--vimbal .motion-work--portrait {grid-column:auto !important;}
+  .motion-showcase .motion-project--vimbal .motion-work--wide {grid-column:1 / -1 !important;}
+  .motion-project--lekkerland .motion-work-media {height: 190px;}
+}
+@media (max-width: 470px) {
+  .motion-showcase .motion-project--lekkerland .motion-project-grid,
+  .motion-showcase .motion-project--mitakon .motion-project-grid,
+  .motion-showcase .motion-project--nissin .motion-project-grid,
+  .motion-showcase .motion-project--vimbal .motion-project-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .motion-showcase .motion-project--nissin .motion-work--wide,
+  .motion-showcase .motion-project--vimbal .motion-work--wide {grid-column:1 / -1 !important;}
+  .motion-project--mitakon .motion-work-media,
+  .motion-project--mitakon .motion-work--wide .motion-work-media {height: 195px;}
+  .motion-project--nissin .motion-work-media,
+  .motion-project--nissin .motion-work--portrait .motion-work-media {height: 240px;}
+  .motion-project--vimbal .motion-work--portrait .motion-work-media {height: 310px;}
 }
