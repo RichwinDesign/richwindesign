@@ -1,0 +1,30 @@
+/* MOTION & VISUALS – EDITORIAL SHOWCASE
+   Eigenständige Ergänzung, nur die Motion-Unterseite betroffen.
+   Nicht in die bestehende style.css kopieren: Datei als motion-editorial.css im Repo-Hauptordner speichern. */
+.motion-showcase{max-width:1200px;margin:0 auto;padding:50px 32px 105px;color:#f4f7fb}
+.motion-showcase-intro{margin:0 0 46px;display:flex;align-items:baseline;justify-content:space-between;gap:20px;border-bottom:1px solid rgba(125,184,215,.19);padding-bottom:18px}
+.motion-showcase-intro>span{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#8dcced}
+.motion-showcase-intro p{font-size:13px;line-height:1.5;color:#adb7c3;margin:0}
+.motion-project{margin:0 0 68px}
+.motion-project-heading{display:flex;align-items:baseline;gap:18px;margin-bottom:19px;padding-bottom:15px;border-bottom:1px solid rgba(126,175,207,.2)}
+.motion-project-number{font-size:13px;letter-spacing:.1em;color:#7cc3e9;font-weight:700}
+.motion-project-heading h2{font-size:clamp(22px,2.8vw,30px);font-weight:750;line-height:1.1;margin:0 0 5px}
+.motion-project-heading p{font-size:13px;line-height:1.5;color:#aeb8c2;margin:0}
+.motion-project-count{margin-left:auto;white-space:nowrap;color:#879aa7;font-size:12px}
+.motion-project-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:14px;align-items:start}
+.motion-work{grid-column:span 4;min-width:0;margin:0;padding:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:11px;background:linear-gradient(155deg,rgba(15,26,37,.90),rgba(7,11,17,.96));border:1px solid rgba(122,170,205,.18);border-radius:11px;overflow:hidden;transition:border-color .2s,transform .2s}
+.motion-work:hover{border-color:rgba(124,195,232,.58);transform:translateY(-2px)}
+.motion-work-feature{grid-column:1 / -1;padding:18px 24px;min-height:0}
+.motion-work img,.motion-work video{display:block;width:auto;max-width:100%;height:auto;max-height:410px;object-fit:contain;margin:0 auto;border-radius:2px}
+.motion-work-feature img,.motion-work-feature video{max-width:100%;max-height:400px}
+.motion-work figcaption{text-align:center;font-size:11px;line-height:1.5;color:#98a9b8}
+.motion-work-feature figcaption{align-self:flex-end}
+/* Breite Banner – mehr Platz für Lesbarkeit; ihre Originalhöhe bleibt erhalten. */
+.motion-work:has(img[src*="728x90"]),.motion-work:has(video source[data-src*="728x90"]),
+.motion-work:has(img[src*="leaderboard"]),.motion-work:has(img[src*="460x60"]){grid-column:span 6}
+.motion-work-feature{grid-column:1 / -1!important}
+/* Hochformate kompakt, nicht strecken und nicht beschneiden. */
+.motion-work:has(img[src*="300x600"]),.motion-work:has(video source[data-src*="300x600"]),.motion-work:has(img[src*="160x600"]){grid-column:span 3}
+@media(max-width:850px){.motion-project-grid{grid-template-columns:repeat(6,minmax(0,1fr))}.motion-work{grid-column:span 3}.motion-work-feature{grid-column:1/-1!important}.motion-work:has(img[src*="728x90"]),.motion-work:has(video source[data-src*="728x90"]),.motion-work:has(img[src*="leaderboard"]){grid-column:span 6}}
+@media(max-width:560px){.motion-showcase{padding:32px 18px 70px}.motion-showcase-intro{display:block}.motion-showcase-intro p{margin-top:7px}.motion-project{margin-bottom:45px}.motion-project-heading{gap:11px}.motion-project-count{font-size:10px}.motion-project-heading p{font-size:12px}.motion-project-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.motion-work{grid-column:span 1!important;padding:9px;gap:7px}.motion-work-feature,.motion-work:has(img[src*="728x90"]),.motion-work:has(video source[data-src*="728x90"]),.motion-work:has(img[src*="leaderboard"]),.motion-work:has(img[src*="460x60"]){grid-column:1/-1!important}.motion-work img,.motion-work video{max-height:300px}.motion-work figcaption{font-size:10px}}
+@media(prefers-reduced-motion:reduce){.motion-work{transition:none}.motion-work:hover{transform:none}}
