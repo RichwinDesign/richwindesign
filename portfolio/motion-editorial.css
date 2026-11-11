@@ -98,7 +98,7 @@
   font-weight: 700;
 }
 .motion-description-inner > p:not(.motion-page-subtitle) {
-  max-width: 760px;
+  max-width: 540px;
   margin: 0;
   font-size: 15px;
   line-height: 1.75;
