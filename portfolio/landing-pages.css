@@ -1,1 +1,120 @@
+/* LANDING PAGES – gleiche Gestaltung wie Motion & Visuals.
+   Nur auf der Landing-Unterseite eingebunden. Die globale style.css bleibt unverändert. */
 
+/* Hero: altes Hintergrundbild aus style.css beibehalten, nur Höhe und Inhalt ändern */
+.landing-page-hero { min-height:430px; background-position:center 49%; }
+.landing-page-hero-inner {
+  min-height:430px; padding:52px 42px 66px;
+  align-items:center;
+}
+.landing-page-text { width:auto; max-width:none; }
+.landing-page-text h1 {
+  margin:0; font-size:clamp(3.3rem,7.1vw,6.3rem);
+  font-weight:800; letter-spacing:-.035em; line-height:.99;
+}
+.landing-page-ai { left:4%; bottom:24px; }
+
+/* Beschreibung wie bei Motion unter dem Hero */
+.landing-description { width:100%; background:#040b10; color:#eef4f9; }
+.landing-description-inner { width:min(100%,1136px); margin:0 auto; padding:30px 24px 4px; }
+.landing-description .landing-page-subtitle {
+  margin:0 0 10px; color:#8dcced; font-size:19px; line-height:1.35; font-weight:700;
+}
+.landing-description-inner > p:not(.landing-page-subtitle) {
+  max-width:540px; margin:0; font-size:15px; line-height:1.75; color:#c4cfda;
+}
+
+/* Kategorien / Projektgruppen */
+.landing-showcase { width:min(100%,1136px); margin:0 auto; padding:34px 24px 90px; color:#f4f7fb; }
+.landing-showcase-intro {
+  display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap;
+  gap:10px 25px; padding-bottom:16px; margin-bottom:35px;
+  border-bottom:1px solid rgba(125,184,215,.22);
+}
+.landing-showcase-intro > span {
+  font-size:12px; font-weight:700; letter-spacing:.15em; text-transform:uppercase; color:#8dcced;
+}
+.landing-showcase-intro p { font-size:13px; line-height:1.5; color:#aebbc8; margin:0; }
+.landing-project { margin:0 0 48px; }
+.landing-showcase details.landing-project > summary.landing-project-heading {
+  display:flex; align-items:center; gap:16px; padding-bottom:13px; margin:0 0 15px;
+  border-bottom:1px solid rgba(125,184,215,.2); cursor:pointer;
+  list-style:none; user-select:none;
+}
+.landing-showcase summary.landing-project-heading::-webkit-details-marker {display:none;}
+.landing-showcase summary.landing-project-heading::marker {content:"";}
+.landing-project-heading > div { min-width:0; }
+.landing-project-heading h2 { font-size:clamp(20px,2.4vw,27px); font-weight:700; line-height:1.15; margin:0 0 5px; }
+.landing-project-heading p { font-size:12px; line-height:1.5; color:#aeb8c2; margin:0; }
+.landing-project-count { margin-left:auto; white-space:nowrap; color:#98aaba; font-size:11px; }
+.landing-project-action {
+  display:inline-flex; align-items:center; gap:9px; white-space:nowrap;
+  font-size:12px; color:#8dcced; margin-left:4px;
+}
+.landing-project-action::after {
+  content:""; width:8px; height:8px; display:block;
+  border-right:2px solid currentColor; border-bottom:2px solid currentColor;
+  transform:rotate(225deg) translate(-2px,-2px); transition:transform .2s ease;
+}
+.landing-project:not([open]) .landing-project-action {font-size:0;}
+.landing-project:not([open]) .landing-project-action::before {content:"Aufklappen";font-size:12px;}
+.landing-project:not([open]) .landing-project-action::after {transform:rotate(45deg) translate(-2px,-2px);}
+.landing-project-heading:hover .landing-project-action {color:#c7efff;}
+.landing-project-heading:focus-visible {outline:2px solid #8dcced;outline-offset:5px;border-radius:3px;}
+
+/* Karten: Bilder proportional, ohne Hochskalierung oder Beschnitt */
+.landing-project-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:stretch;}
+.landing-work {
+  min-width:0; margin:0; padding:12px; display:flex; flex-direction:column;
+  align-items:stretch; justify-content:space-between; gap:10px; overflow:hidden;
+  background:linear-gradient(155deg,rgba(15,26,37,.88),rgba(7,11,17,.97));
+  border:1px solid rgba(122,170,205,.23); border-radius:11px;
+  transition:border-color .2s ease,transform .2s ease;
+}
+.landing-work:hover {border-color:rgba(124,195,232,.58);transform:translateY(-2px);}
+.landing-work-media {height:250px;min-height:0;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.landing-work-media img {
+  display:block; width:auto !important; height:auto !important;
+  max-width:100% !important; max-height:100% !important;
+  object-fit:contain; border:0; border-radius:2px; margin:0 auto;
+}
+.landing-work figcaption {align-self:stretch;text-align:center;font-size:11px;line-height:1.45;color:#9eafbc;}
+
+/* Flyer & Folder: kompakt mit vier Motiven pro Reihe */
+.landing-showcase .landing-project--four .landing-project-grid {grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;}
+.landing-project--four .landing-work {padding:11px 8px;}
+.landing-project--four .landing-work-media {height:215px;}
+.landing-project--four .landing-work figcaption {font-size:10px;}
+
+@media(max-width:900px) {
+  .landing-showcase .landing-project--four .landing-project-grid {grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+@media(max-width:680px) {
+  .landing-page-hero,.landing-page-hero-inner {min-height:350px;}
+  .landing-page-hero-inner {padding:42px 22px 60px;}
+  .landing-page-text h1 {font-size:clamp(2.8rem,9.2vw,4.8rem);}
+  .landing-page-ai {left:22px;bottom:19px;}
+  .landing-description-inner {padding:25px 18px 4px;}
+  .landing-showcase {padding:29px 16px 65px;}
+  .landing-project {margin-bottom:35px;}
+  .landing-project-grid {gap:10px;}
+  .landing-work {padding:9px;gap:8px;}
+  .landing-work-media,.landing-project--four .landing-work-media {height:190px;}
+  .landing-work figcaption {font-size:10px;}
+}
+@media(max-width:560px) {
+  .landing-project-heading {flex-wrap:wrap;}
+  .landing-project-action {margin-left:auto;}
+}
+@media(max-width:470px) {
+  .landing-project-grid,.landing-showcase .landing-project--four .landing-project-grid {grid-template-columns:1fr;}
+  .landing-work-media,.landing-project--four .landing-work-media {height:235px;}
+  .landing-project-count {font-size:10px;}
+}
+@media(max-width:380px) {.landing-page-text h1 {font-size:2.65rem;}}
+@media(prefers-reduced-motion:reduce) {.landing-work,.landing-project-action::after {transition:none;}.landing-work:hover {transform:none;}}
+
+/* Einzelprojekte über die volle Rasterbreite, Motiv selbst bleibt proportional */
+.landing-showcase .landing-project--single .landing-project-grid {grid-template-columns:minmax(0,1fr);}
+.landing-project--single .landing-work-media {height:320px;}
+@media(max-width:680px){.landing-project--single .landing-work-media {height:230px;}}
