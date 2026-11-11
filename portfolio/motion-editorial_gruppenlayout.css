@@ -1,0 +1,200 @@
+/* MOTION & VISUALS – KOMPAKTE ZWEISPALTIGE GALERIE
+   Liegt in /portfolio/motion-editorial.css; betrifft nur .motion-showcase.
+   Andere Webseitenbereiche bleiben unverändert. */
+.motion-showcase{width:min(100%,1136px);margin:0 auto;padding:45px 24px 90px;color:#f4f7fb}
+.motion-showcase-intro{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:10px 25px;padding-bottom:16px;margin-bottom:35px;border-bottom:1px solid rgba(125,184,215,.22)}
+.motion-showcase-intro>span{font-size:12px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#8dcced}
+.motion-showcase-intro p{font-size:13px;line-height:1.5;color:#aebbc8;margin:0}
+.motion-project{margin:0 0 48px}
+.motion-project-heading{display:flex;align-items:baseline;gap:15px;padding-bottom:13px;margin:0 0 15px;border-bottom:1px solid rgba(125,184,215,.2)}
+.motion-project-number{font-size:12px;font-weight:700;letter-spacing:.08em;color:#7cc3e9}
+.motion-project-heading h2{font-size:clamp(20px,2.4vw,27px);font-weight:700;line-height:1.15;margin:0 0 5px}
+.motion-project-heading p{font-size:12px;line-height:1.5;color:#aeb8c2;margin:0}
+.motion-project-count{margin-left:auto;white-space:nowrap;color:#98aaba;font-size:11px}
+.motion-project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:stretch}
+.motion-work,.motion-work.motion-work-feature{min-width:0;grid-column:auto!important;margin:0;padding:14px;display:flex;flex-direction:column;align-items:stretch;justify-content:space-between;gap:10px;overflow:hidden;background:linear-gradient(155deg,rgba(15,26,37,.88),rgba(7,11,17,.97));border:1px solid rgba(122,170,205,.23);border-radius:11px;transition:border-color .2s ease,transform .2s ease}
+.motion-work:hover{border-color:rgba(124,195,232,.58);transform:translateY(-2px)}
+.motion-work-media{min-height:0;height:210px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.motion-work--wide .motion-work-media{height:150px}
+.motion-work--portrait .motion-work-media{height:300px}
+.motion-work-media img,.motion-work-media video{display:block;width:auto!important;max-width:100%!important;height:auto!important;max-height:100%!important;object-fit:contain;border:0;border-radius:2px;margin:0 auto}
+.motion-work figcaption,.motion-work.motion-work-feature figcaption{align-self:stretch;text-align:center;font-size:11px;line-height:1.45;color:#9eafbc}
+@media(max-width:680px){.motion-showcase{padding:30px 16px 65px}.motion-project{margin-bottom:35px}.motion-project-grid{gap:10px}.motion-work{padding:9px;gap:8px}.motion-work-media{height:150px}.motion-work--wide .motion-work-media{height:105px}.motion-work--portrait .motion-work-media{height:225px}.motion-work figcaption{font-size:10px}}
+@media(max-width:470px){.motion-project-grid{grid-template-columns:1fr}.motion-work-media{height:200px}.motion-work--wide .motion-work-media{height:130px}.motion-work--portrait .motion-work-media{height:290px}.motion-project-heading{gap:9px}.motion-project-count{font-size:10px}}
+@media(prefers-reduced-motion:reduce){.motion-work{transition:none}.motion-work:hover{transform:none}}
+
+/* Auf- und zuklappbare Projektgruppen – nur Motion-Seite */
+.motion-showcase details.motion-project > summary.motion-project-heading {
+  cursor:pointer; list-style:none; align-items:center; user-select:none;
+}
+.motion-showcase details.motion-project > summary.motion-project-heading::-webkit-details-marker {display:none;}
+.motion-showcase details.motion-project > summary.motion-project-heading::marker {content:"";}
+.motion-showcase .motion-project-heading > div {min-width:0;}
+.motion-showcase .motion-project-count {margin-left:auto;}
+.motion-showcase .motion-project-action {
+  display:inline-flex;align-items:center;gap:9px;white-space:nowrap;
+  font-size:12px;color:#8dcced;margin-left:4px;
+}
+.motion-showcase .motion-project-action::after {
+  content:"";width:8px;height:8px;display:block;
+  border-right:2px solid currentColor;border-bottom:2px solid currentColor;
+  transform:rotate(225deg) translate(-2px,-2px);transition:transform .2s ease;
+}
+.motion-showcase details.motion-project:not([open]) .motion-project-action::after {
+  transform:rotate(45deg) translate(-2px,-2px);
+}
+.motion-showcase details.motion-project:not([open]) .motion-project-action {font-size:0;}
+.motion-showcase details.motion-project:not([open]) .motion-project-action::before {
+  content:"Aufklappen";font-size:12px;
+}
+.motion-showcase summary.motion-project-heading:hover .motion-project-action,
+.motion-showcase summary.motion-project-heading:focus-visible .motion-project-action {color:#c7efff;}
+.motion-showcase summary.motion-project-heading:focus-visible {outline:2px solid #8dcced;outline-offset:5px;border-radius:3px;}
+@media(max-width:560px){
+  .motion-showcase .motion-project-heading{flex-wrap:wrap;}
+  .motion-showcase .motion-project-action{margin-left:auto;}
+}
+@media(prefers-reduced-motion:reduce){.motion-showcase .motion-project-action::after{transition:none;}}
+
+
+/* HERO – kürzer, zweizeilige Headline und Text darunter.
+   Nur die Motion-Unterseite wird geändert. */
+.motion-page-hero {
+  min-height: 430px;
+  background-position: center 49%;
+}
+.motion-page-hero-inner {
+  min-height: 430px;
+  padding: 52px 42px 66px;
+  align-items: center;
+}
+.motion-page-text {
+  width: auto;
+  max-width: none;
+}
+.motion-page-text h1 {
+  margin: 0;
+  font-size: clamp(3.3rem, 7.1vw, 6.3rem);
+  line-height: .99;
+  letter-spacing: -.035em;
+}
+.motion-title-line { white-space: nowrap; }
+.motion-page-ai { bottom: 24px; left: 4%; }
+.motion-description {
+  width: 100%;
+  background: #040b10;
+  color: #eef4f9;
+}
+.motion-description-inner {
+  width: min(100%, 1136px);
+  margin: 0 auto;
+  padding: 30px 24px 4px;
+}
+.motion-description .motion-page-subtitle {
+  margin: 0 0 10px;
+  font-size: 19px;
+  line-height: 1.35;
+  color: #8dcced;
+  font-weight: 700;
+}
+.motion-description-inner > p:not(.motion-page-subtitle) {
+  max-width: 760px;
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.75;
+  color: #c4cfda;
+}
+.motion-showcase {padding-top: 34px;}
+.motion-showcase .motion-project-heading {gap: 16px;}
+@media(max-width: 680px) {
+  .motion-page-hero, .motion-page-hero-inner {min-height: 350px;}
+  .motion-page-hero-inner {padding: 42px 22px 60px;}
+  .motion-page-text h1 {font-size: clamp(2.8rem, 9.2vw, 4.8rem);}
+  .motion-page-ai {left: 22px;bottom: 19px;}
+  .motion-description-inner {padding: 25px 18px 4px;}
+  .motion-showcase {padding-top: 29px;}
+}
+@media(max-width: 380px) {
+  .motion-page-text h1 {font-size: 2.65rem;}
+}
+
+
+/* INDIVIDUELLE GALERIE-RASTER – nur die benannten Kampagnen.
+   Die Gruppe „Weitere Kampagnen“ bleibt unverändert. */
+
+/* Lekkerland: vier kleine, gleichmäßige Karten nebeneinander */
+.motion-showcase .motion-project--lekkerland .motion-project-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+.motion-project--lekkerland .motion-work {padding: 11px 8px;}
+.motion-project--lekkerland .motion-work-media {height: 205px;}
+.motion-project--lekkerland .motion-work figcaption {font-size: 10px;}
+
+/* Mitakon: drei Spalten; ein sechstes Motiv passt später automatisch in die zweite Reihe. */
+.motion-showcase .motion-project--mitakon .motion-project-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+.motion-project--mitakon .motion-work-media,
+.motion-project--mitakon .motion-work--wide .motion-work-media {height: 205px;}
+
+/* Nissin: zwei kleine Formate oben, Leaderboard über die volle Breite unten */
+.motion-showcase .motion-project--nissin .motion-project-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.motion-project--nissin .motion-work-media {height: 235px;}
+.motion-project--nissin .motion-work--portrait .motion-work-media {height: 235px;}
+.motion-showcase .motion-project--nissin .motion-work--wide {
+  grid-column: 1 / -1 !important;
+}
+.motion-project--nissin .motion-work--wide .motion-work-media {height: 118px;}
+
+/* Tokina/HAPA: breite Banner gemeinsam oben lassen, darunter die Content-Ads.
+   Geringere Medienhöhe macht die Kacheln kompakter. */
+.motion-project--tokina .motion-work--wide .motion-work-media {height: 110px;}
+.motion-project--tokina .motion-work:not(.motion-work--wide) .motion-work-media {height: 225px;}
+
+/* Vimbal/Yamaha: Leaderboard ganz oben, drei kleine Motive in einer Zeile,
+   zwei Hochformate darunter. Weniger Leerraum um die Grafiken. */
+.motion-showcase .motion-project--vimbal .motion-project-grid {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 12px;
+}
+.motion-showcase .motion-project--vimbal .motion-work {grid-column: span 2 !important;}
+.motion-showcase .motion-project--vimbal .motion-work--wide {grid-column: 1 / -1 !important;}
+.motion-showcase .motion-project--vimbal .motion-work--portrait {grid-column: span 3 !important;}
+.motion-project--vimbal .motion-work:not(.motion-work--portrait):not(.motion-work--wide) .motion-work-media {height: 190px;}
+.motion-project--vimbal .motion-work--wide .motion-work-media {height: 112px;}
+.motion-project--vimbal .motion-work--portrait .motion-work-media {height: 280px;}
+
+/* Tablet und Smartphone: keine Miniaturkarten und kein horizontales Scrollen */
+@media (max-width: 900px) {
+  .motion-showcase .motion-project--lekkerland .motion-project-grid,
+  .motion-showcase .motion-project--mitakon .motion-project-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .motion-showcase .motion-project--vimbal .motion-project-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .motion-showcase .motion-project--vimbal .motion-work,
+  .motion-showcase .motion-project--vimbal .motion-work--portrait {grid-column:auto !important;}
+  .motion-showcase .motion-project--vimbal .motion-work--wide {grid-column:1 / -1 !important;}
+  .motion-project--lekkerland .motion-work-media {height: 190px;}
+}
+@media (max-width: 470px) {
+  .motion-showcase .motion-project--lekkerland .motion-project-grid,
+  .motion-showcase .motion-project--mitakon .motion-project-grid,
+  .motion-showcase .motion-project--nissin .motion-project-grid,
+  .motion-showcase .motion-project--vimbal .motion-project-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .motion-showcase .motion-project--nissin .motion-work--wide,
+  .motion-showcase .motion-project--vimbal .motion-work--wide {grid-column:1 / -1 !important;}
+  .motion-project--mitakon .motion-work-media,
+  .motion-project--mitakon .motion-work--wide .motion-work-media {height: 195px;}
+  .motion-project--nissin .motion-work-media,
+  .motion-project--nissin .motion-work--portrait .motion-work-media {height: 240px;}
+  .motion-project--vimbal .motion-work--portrait .motion-work-media {height: 310px;}
+}
