@@ -1995,3 +1995,61 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
                       
+
+/* =========================================
+   HAUPTKACHELN – GESAMTE FLÄCHE ANKLICKBAR
+   Vorhandene Links nutzen, KI-Buttons ausnehmen.
+   ========================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const cardSelectors = [
+    ".portfolio-wide",
+    ".portal-overview .portal-card",
+    ".genealogy-overview-grid .genealogy-card"
+  ];
+
+  document.querySelectorAll(
+    cardSelectors.join(", ")
+  ).forEach((card) => {
+
+    // Deaktivierte Portal-Kacheln ignorieren
+    if (card.matches(
+      ".portal-card:has(.portal-card-button.disabled)"
+    )) return;
+
+    // Vorhandenes Linkziel der Kachel ermitteln
+    const link = card.querySelector(
+      ".portfolio-wide-text h2 a[href], " +
+      ".portal-card-image > a[href], " +
+      ".genealogy-card-link[href], " +
+      ".genealogy-card h3 a[href]"
+    );
+
+    if (!link || link.classList.contains("disabled")) return;
+
+    card.classList.add("full-card-link");
+    card.style.cursor = "pointer";
+
+    card.addEventListener("click", (event) => {
+
+      // Links, Buttons und KI-Hinweise
+      // behalten ihr normales Verhalten
+      if (
+        event.defaultPrevented ||
+        event.target.closest(
+          "a, button, input, select, textarea, summary, [role='button']"
+        )
+      ) return;
+
+      // Textauswahl soll keine Navigation auslösen
+      if (window.getSelection()?.toString()) return;
+
+      // Zur verlinkten Seite wechseln
+      link.click();
+
+    });
+
+  });
+
+});
