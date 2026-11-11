@@ -198,3 +198,19 @@
   .motion-project--nissin .motion-work--portrait .motion-work-media {height: 240px;}
   .motion-project--vimbal .motion-work--portrait .motion-work-media {height: 310px;}
 }
+/* 728 × 90 Banner in Originalgröße */
+.motion-showcase .motion-work-media img[src*="728x90"],
+.motion-showcase .motion-work-media video[src*="728x90"] {
+  width: auto !important;
+  max-width: min(100%, 728px) !important;
+  height: auto !important;
+}
+
+/* Auch die kleinen Banner vor Hochskalierung schützen */
+.motion-showcase .motion-work-media img,
+.motion-showcase .motion-work-media video {
+  width: auto !important;
+  max-width: 100% !important;
+  height: auto !important;
+  object-fit: contain;
+}
