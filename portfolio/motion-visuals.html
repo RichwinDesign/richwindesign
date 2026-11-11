@@ -1,200 +1,207 @@
-
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style.css">
-  <title>Motion & Visuals | Richwin Design</title>
+  <title>Motion &amp; Visuals | Richwin Design</title>
+  <style>
+    /* Nur Ergänzungen für die Motion-Galerie; bestehende CSS bleibt erhalten. */
+    .motion-gallery-video {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+  </style>
 </head>
-
 <body>
-
- <div id="site-header"></div>
-
+  <div id="site-header"></div>
   <main>
-
-    <section class="motion-page-hero">
-
+    <section class="motion-page-hero" style="background-image: url('../images/portfolio/motion-visuals/hero_motion-visuals.webp');">
       <div class="motion-page-hero-inner">
-
         <div class="motion-page-text">
-
-          <h1>Motion & Visuals</h1>
-
-          <p class="motion-page-subtitle">
-            Werbung, die bewegt.
-          </p>
-
+          <h1>Motion &amp; Visuals</h1>
+          <p class="motion-page-subtitle">Werbung, die bewegt.</p>
           <p>
             Ich entwickle animierte Werbebanner für Webseiten,
             Google Ads und Social Media. Mein Fokus liegt auf einer
             klaren Kommunikation, prägnanten Animationen und einer
             starken visuellen Wirkung, die Inhalte gezielt in Szene setzt.
           </p>
-
         </div>
-
         <button
           class="ai-label motion-page-ai"
           type="button"
           aria-label="Hinweis: KI-generiertes Bild"
+          data-ai-message="Dieses Hero-Bild wurde mithilfe generativer KI erstellt."
         >
-          <img
-            src="../images/icons/icon_ki-hinweis.png"
-            alt=""
-          >
+          <img src="../images/general/icons/icon_ki-hinweis.webp" alt="">
         </button>
-
       </div>
-
     </section>
 
-
-    <section class="motion-gallery">
-
+    <!-- GIFs bleiben animiert, WebPs bleiben Bilder, MP4s laufen stumm im Loop. -->
+    <section class="motion-gallery" aria-label="Motion- und Werbebanner-Galerie">
       <div class="motion-gallery-column motion-gallery-left">
 
-        <img
-          src="../images/portfolio/motion-visuals/motion_vimbal-300x250.gif"
-          alt="Motion Banner Vimbal 300x250"
-        >
+        <img src="../images/portfolio/motion-visuals/motion_vimbal-300x250.gif" alt="Vimbal – Banner 300 × 250" loading="lazy" decoding="async">
 
-        <img
-          src="../images/portfolio/motion-visuals/motion_yamaha-300x600.gif"
-          alt="Motion Banner Yamaha 300x600"
-        >
+        <img src="../images/portfolio/motion-visuals/motion_vimbal_300x250_v02.gif" alt="Vimbal – Banner 300 × 250, Variante 2" loading="lazy" decoding="async">
 
-        <img
-          src="../images/portfolio/motion-visuals/motion_mitakon_600x600.gif"
-          alt="Mitakon Banner 600x600"
-        >
+        <video class="motion-gallery-video" muted loop playsinline preload="none" aria-label="Vimbal – Banner 200 × 200">
+          <source data-src="../images/portfolio/motion-visuals/motion_vimbal_200x200.mp4" type="video/mp4">
+          Dein Browser unterstützt dieses Video nicht.
+        </video>
+
+        <video class="motion-gallery-video" muted loop playsinline preload="none" aria-label="Vimbal – Banner 300 × 600">
+          <source data-src="../images/portfolio/motion-visuals/motion_vimbal_300x600.mp4" type="video/mp4">
+          Dein Browser unterstützt dieses Video nicht.
+        </video>
+
+        <img src="../images/portfolio/motion-visuals/motion_yamaha-300x600.gif" alt="Yamaha – Banner 300 × 600" loading="lazy" decoding="async">
+
+        <img src="../images/portfolio/motion-visuals/motion_mitakon_600x600.gif" alt="Mitakon – Banner 600 × 600" loading="lazy" decoding="async">
+
+        <video class="motion-gallery-video" muted loop playsinline preload="none" aria-label="Mitakon – Responsive-Banner 600 × 600">
+          <source data-src="../images/portfolio/motion-visuals/motion_mitakon_responsive-03_600x600.mp4" type="video/mp4">
+          Dein Browser unterstützt dieses Video nicht.
+        </video>
+
+        <img src="../images/portfolio/motion-visuals/motion_mitakon_responsive-animiert_600x600.gif" alt="Mitakon – animierter Banner 600 × 600" loading="lazy" decoding="async">
+
+        <video class="motion-gallery-video" muted loop playsinline preload="none" aria-label="Nissin – Banner 300 × 250">
+          <source data-src="../images/portfolio/motion-visuals/motion_nissin_300x250.mp4" type="video/mp4">
+          Dein Browser unterstützt dieses Video nicht.
+        </video>
+
+        <video class="motion-gallery-video" muted loop playsinline preload="none" aria-label="Nissin – Banner 300 × 600">
+          <source data-src="../images/portfolio/motion-visuals/motion_nissin_300x600.mp4" type="video/mp4">
+          Dein Browser unterstützt dieses Video nicht.
+        </video>
+
+        <video class="motion-gallery-video" muted loop playsinline preload="none" aria-label="OR – Banner 300 × 250">
+          <source data-src="../images/portfolio/motion-visuals/motion_or_300x250.mp4" type="video/mp4">
+          Dein Browser unterstützt dieses Video nicht.
+        </video>
+
+        <img src="../images/portfolio/motion-visuals/motion_p-typo_160x600.gif" alt="P-Typo – Skyscraper 160 × 600" loading="lazy" decoding="async">
+
+        <img src="../images/portfolio/motion-visuals/motion_phparts_ratsred_300x250.gif" alt="PHPARTS – ratsRed 300 × 250" loading="lazy" decoding="async">
 
       </div>
-
 
       <div class="motion-gallery-column motion-gallery-center">
 
-        <img
-          src="../images/portfolio/motion-visuals/motion_1a_728x90.gif"
-          alt="1A Leaderboard 728x90"
-        >
+        <img src="../images/portfolio/motion-visuals/motion_1a_728x90.gif" alt="1A – Leaderboard 728 × 90" loading="lazy" decoding="async">
 
-        <img
-          src="../images/portfolio/motion-visuals/motion_tokina_leaderboard.webp"
-          alt="Tokina Leaderboard"
-        >
+        <img src="../images/portfolio/motion-visuals/motion_content-ad_728x90.gif" alt="Content Ad – Leaderboard 728 × 90" loading="lazy" decoding="async">
 
-        <img
-          src="../images/portfolio/motion-visuals/motion_leaderboard_02.webp"
-          alt="Leaderboard 02"
-        >
+        <img src="../images/portfolio/motion-visuals/motion_tokina_leaderboard.webp" alt="Tokina – Leaderboard" loading="lazy" decoding="async">
 
-        <img
-          src="../images/portfolio/motion-visuals/motion_leaderboard_03.webp"
-          alt="Leaderboard 03"
-        >
+        <img src="../images/portfolio/motion-visuals/motion_leaderboard_02.webp" alt="Leaderboard – Motiv 2" loading="lazy" decoding="async">
 
-        <img
-          src="../images/portfolio/motion-visuals/motion_hapa_profifoto_460x60.webp"
-          alt="Hapa Profifoto Banner 460x60"
-        >
+        <img src="../images/portfolio/motion-visuals/motion_leaderboard_03.webp" alt="Leaderboard – Motiv 3" loading="lazy" decoding="async">
 
-        <img
-          src="../images/portfolio/motion-visuals/motion_facebook-ad.gif"
-          alt="Facebook Ad"
-        >
+        <img src="../images/portfolio/motion-visuals/motion_leaderboard_04.webp" alt="Leaderboard – Motiv 4" loading="lazy" decoding="async">
 
-        <img
-          src="../images/portfolio/motion-visuals/hero_motion_visuals.gif"
-          alt="Motion Banner Hero"
-        >
+        <img src="../images/portfolio/motion-visuals/motion_hapa_profifoto_460x60.webp" alt="HAPA – Profifoto-Banner 460 × 60" loading="lazy" decoding="async">
 
-        <img
-          src="../images/portfolio/motion-visuals/motion_vimbal_728x90.gif"
-          alt="Vimbal Leaderboard 728x90"
-        >
+        <img src="../images/portfolio/motion-visuals/motion_hapa_728x90.gif" alt="HAPA – Banner 728 × 90" loading="lazy" decoding="async">
 
-        <img
-          src="../images/portfolio/motion-visuals/motion_leaderboard_04.webp"
-          alt="Leaderboard 04"
-        >
+        <img src="../images/portfolio/motion-visuals/motion_vimbal_728x90.gif" alt="Vimbal – Leaderboard 728 × 90" loading="lazy" decoding="async">
 
-        <img
-          src="../images/portfolio/motion-visuals/motion_hapa_728x90.gif"
-          alt="Hapa Banner 728x90"
-        >
+        <video class="motion-gallery-video" muted loop playsinline preload="none" aria-label="Nissin – Leaderboard 728 × 90">
+          <source data-src="../images/portfolio/motion-visuals/motion_nissin_728x90.mp4" type="video/mp4">
+          Dein Browser unterstützt dieses Video nicht.
+        </video>
+
+        <video class="motion-gallery-video" muted loop playsinline preload="none" aria-label="Mitakon – Responsive-Motiv 1920 × 1080, Variante 2">
+          <source data-src="../images/portfolio/motion-visuals/motion_mitakon_responsive-02_1920x1080.mp4" type="video/mp4">
+          Dein Browser unterstützt dieses Video nicht.
+        </video>
+
+        <video class="motion-gallery-video" muted loop playsinline preload="none" aria-label="Mitakon – Responsive-Motiv 1920 × 1080, Variante 3">
+          <source data-src="../images/portfolio/motion-visuals/motion_mitakon_responsive-03_1920x1080.mp4" type="video/mp4">
+          Dein Browser unterstützt dieses Video nicht.
+        </video>
+
+        <img src="../images/portfolio/motion-visuals/motion_mitakon_responsive-animiert.gif" alt="Mitakon – animiertes Responsive-Motiv" loading="lazy" decoding="async">
+
+        <img src="../images/portfolio/motion-visuals/motion_facebook-ad.gif" alt="Facebook Ad" loading="lazy" decoding="async">
 
       </div>
-
 
       <div class="motion-gallery-column motion-gallery-right">
 
-        <img
-          src="../images/portfolio/motion-visuals/motion_lekkerland_ausbildung.gif"
-          alt="Lekkerland Ausbildungsbanner"
-        >
+        <img src="../images/portfolio/motion-visuals/motion_lekkerland_ausbildung.gif" alt="Lekkerland – Ausbildung" loading="lazy" decoding="async">
 
-        <img
-          src="../images/portfolio/motion-visuals/motion_lekkerland_duales-studium.gif"
-          alt="Lekkerland Duales Studium"
-        >
+        <img src="../images/portfolio/motion-visuals/motion_lekkerland_duales-studium.gif" alt="Lekkerland – Duales Studium" loading="lazy" decoding="async">
 
-        <img
-          src="../images/portfolio/motion-visuals/motion_lekkerland_berufserfahrene.gif"
-          alt="Lekkerland Berufserfahrene"
-        >
+        <img src="../images/portfolio/motion-visuals/motion_lekkerland_berufserfahrene.gif" alt="Lekkerland – Berufserfahrene" loading="lazy" decoding="async">
 
-        <img
-          src="../images/portfolio/motion-visuals/motion_lekkerland_trainee.webp"
-          alt="Lekkerland Trainee"
-        >
+        <img src="../images/portfolio/motion-visuals/motion_lekkerland_trainee.webp" alt="Lekkerland – Trainee" loading="lazy" decoding="async">
+
+        <img src="../images/portfolio/motion-visuals/motion_content-ad_300x250.gif" alt="Content Ad – Banner 300 × 250" loading="lazy" decoding="async">
+
+        <img src="../images/portfolio/motion-visuals/motion_go-heller_content-ad.gif" alt="Go heller! – Content Ad" loading="lazy" decoding="async">
+
+        <img src="../images/portfolio/motion-visuals/motion_go-heller_content-ad_v02.gif" alt="Go heller! – Content Ad, Variante 2" loading="lazy" decoding="async">
+
+        <img src="../images/portfolio/motion-visuals/motion_tokina_content-ad.gif" alt="Tokina – Content Ad" loading="lazy" decoding="async">
+
+        <img src="../images/portfolio/motion-visuals/motion_tokina_content-ad_v02.gif" alt="Tokina – Content Ad, Variante 2" loading="lazy" decoding="async">
+
+        <video class="motion-gallery-video" muted loop playsinline preload="none" aria-label="HAPA – AZ Profibanner">
+          <source data-src="../images/portfolio/motion-visuals/motion_hapa_az-profibanner.mp4" type="video/mp4">
+          Dein Browser unterstützt dieses Video nicht.
+        </video>
 
       </div>
-
     </section>
-
   </main>
 
-
-  <div
-    class="ai-modal"
-    id="aiModal"
-    aria-hidden="true"
-  >
-
+  <div class="ai-modal" id="aiModal" aria-hidden="true">
     <div class="ai-modal-backdrop"></div>
-
-    <div
-      class="ai-modal-window"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="aiModalTitle"
-    >
-
-      <h2 id="aiModalTitle">
-        KI-generiertes Bild
-      </h2>
-
-      <p>
-        Dieses Bild wurde mithilfe generativer KI erstellt.
-      </p>
-
-      <button
-        type="button"
-        id="aiModalClose"
-      >
-        Okay
-      </button>
-
+    <div class="ai-modal-window" role="dialog" aria-modal="true" aria-labelledby="aiModalTitle">
+      <h2 id="aiModalTitle">KI-generiertes Bild</h2>
+      <p>Dieses Bild wurde mithilfe generativer KI erstellt.</p>
+      <button type="button" id="aiModalClose">Okay</button>
     </div>
-
   </div>
 
-
   <script src="../script.js"></script>
-
+  <script>
+    // MP4-Dateien erst laden, wenn sie in die Nähe des sichtbaren Bereichs kommen.
+    // Nicht sichtbare Videos pausieren; GIFs werden davon nicht beeinflusst.
+    (() => {
+      const videos = document.querySelectorAll('.motion-gallery-video');
+      if (!('IntersectionObserver' in window)) {
+        videos.forEach((video) => {
+          const source = video.querySelector('source[data-src]');
+          source.src = source.dataset.src;
+          video.load();
+          video.play().catch(() => {});
+        });
+        return;
+      }
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          const video = entry.target;
+          if (entry.isIntersecting) {
+            const source = video.querySelector('source[data-src]');
+            if (source && !source.src) {
+              source.src = source.dataset.src;
+              video.load();
+            }
+            video.play().catch(() => {});
+          } else {
+            video.pause();
+          }
+        });
+      }, { rootMargin: '250px 0px', threshold: 0.01 });
+      videos.forEach((video) => observer.observe(video));
+    })();
+  </script>
 </body>
-
 </html>
