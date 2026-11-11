@@ -55,3 +55,65 @@
   .motion-showcase .motion-project-action{margin-left:auto;}
 }
 @media(prefers-reduced-motion:reduce){.motion-showcase .motion-project-action::after{transition:none;}}
+
+
+/* HERO – kürzer, zweizeilige Headline und Text darunter.
+   Nur die Motion-Unterseite wird geändert. */
+.motion-page-hero {
+  min-height: 430px;
+  background-position: center 49%;
+}
+.motion-page-hero-inner {
+  min-height: 430px;
+  padding: 52px 42px 66px;
+  align-items: center;
+}
+.motion-page-text {
+  width: auto;
+  max-width: none;
+}
+.motion-page-text h1 {
+  margin: 0;
+  font-size: clamp(3.3rem, 7.1vw, 6.3rem);
+  line-height: .99;
+  letter-spacing: -.035em;
+}
+.motion-title-line { white-space: nowrap; }
+.motion-page-ai { bottom: 24px; left: 4%; }
+.motion-description {
+  width: 100%;
+  background: #040b10;
+  color: #eef4f9;
+}
+.motion-description-inner {
+  width: min(100%, 1136px);
+  margin: 0 auto;
+  padding: 30px 24px 4px;
+}
+.motion-description .motion-page-subtitle {
+  margin: 0 0 10px;
+  font-size: 19px;
+  line-height: 1.35;
+  color: #00d99a;
+  font-weight: 700;
+}
+.motion-description-inner > p:not(.motion-page-subtitle) {
+  max-width: 760px;
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.75;
+  color: #c4cfda;
+}
+.motion-showcase {padding-top: 34px;}
+.motion-showcase .motion-project-heading {gap: 16px;}
+@media(max-width: 680px) {
+  .motion-page-hero, .motion-page-hero-inner {min-height: 350px;}
+  .motion-page-hero-inner {padding: 42px 22px 60px;}
+  .motion-page-text h1 {font-size: clamp(2.8rem, 9.2vw, 4.8rem);}
+  .motion-page-ai {left: 22px;bottom: 19px;}
+  .motion-description-inner {padding: 25px 18px 4px;}
+  .motion-showcase {padding-top: 29px;}
+}
+@media(max-width: 380px) {
+  .motion-page-text h1 {font-size: 2.65rem;}
+}
