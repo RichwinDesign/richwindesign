@@ -4644,38 +4644,37 @@ body:has(.portal-overview) {
 
 /* =========================================
    HEADER – FESTE MENÜPOSITIONEN
-   Portfolio und Kontakt unverändert,
-   Über mich rechts neben Kontakt
+   Portfolio und Kontakt bleiben an ihren Positionen.
+   Über mich steht rechts neben Kontakt.
    ========================================= */
 
 @media (min-width: 951px) {
-
   .header-inner {
     grid-template-columns: 180px minmax(0, 1fr) 180px;
   }
 
   .main-nav {
     display: grid;
-    grid-template-columns: 105px 105px 105px;
+    grid-template-columns: repeat(4, 105px);
     justify-content: center;
     align-items: center;
     gap: 0;
-    padding: 0;
     width: 100%;
+    /* Verschiebt das vierteilige Raster so, dass die bisherigen
+       Mittelpunkte von Portfolio und Kontakt erhalten bleiben. */
+    padding: 0 0 0 105px;
   }
 
-  /* Portfolio / Portale / Genealogie bleibt mittig */
   .main-nav a[data-nav="portfolio"],
   .main-nav a[data-nav="portale"],
   .main-nav a[data-nav="genealogie"] {
     grid-column: 2;
     grid-row: 1;
     justify-self: center;
+    transform: none;
   }
 
-  /* Kontakt bleibt exakt an seiner Position */
   .main-nav a[data-nav="kontakt"] {
-    position: relative;
     grid-column: 3;
     grid-row: 1;
     justify-self: center;
@@ -4683,12 +4682,11 @@ body:has(.portal-overview) {
     transform: none;
   }
 
-  /* Nur Über mich rechts von Kontakt platzieren */
   .main-nav a[data-nav="ueber-mich"] {
-    grid-column: 3;
+    grid-column: 4;
     grid-row: 1;
     justify-self: center;
-    transform: translateX(105px);
+    left: auto;
+    transform: none;
   }
-
 }
