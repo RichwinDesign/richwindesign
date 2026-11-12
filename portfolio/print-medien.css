@@ -264,3 +264,13 @@
   .print-interactive-showcase .print-compare-stage{height:260px;aspect-ratio:auto;}
   .print-interactive-showcase .print-compare-grid .print-feature-extra .print-work-media{height:260px;}
 }
+
+/* V4: Gelbe Fahrzeugserie – alle 3,5 Sekunden sanft überblenden. */
+.print-interactive-showcase .print-yellow-carousel .print-carousel-slide {
+  transform:none;
+  transition:opacity .9s ease, visibility .9s ease;
+}
+.print-interactive-showcase .print-yellow-carousel .print-carousel-slide.is-current {transform:none;}
+@media(prefers-reduced-motion:reduce){
+  .print-interactive-showcase .print-yellow-carousel .print-carousel-slide {transition:none;}
+}
