@@ -1991,7 +1991,7 @@ body:has(.portal-overview) {
 .print-page-hero {
   position: relative;
   min-height: 650px;
-  background-image: url("images/portfolio/print/hero_print-medien.png");
+  background-image: url("images/portfolio/print/hero_print-medien.webp");
   background-size: cover;
   background-position: center;
   overflow: hidden;
