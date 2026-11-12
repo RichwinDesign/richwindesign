@@ -2053,3 +2053,21 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 });
+/* Zurueck-Button nur auf den vier Portfolio-Unterseiten einfuegen. */
+document.addEventListener('DOMContentLoaded', () => {
+  const hero = document.querySelector(
+    '.motion-page-hero, .print-page-hero, .landing-page-hero, .photo-page-hero'
+  );
+  if (!hero || document.querySelector('.portfolio-back-nav')) return;
+
+  const nav = document.createElement('nav');
+  nav.className = 'portfolio-back-nav';
+  nav.setAttribute('aria-label', 'Zurueck zur Portfolio-Uebersicht');
+
+  const link = document.createElement('a');
+  link.href = '../index.html#portfolio';
+  link.textContent = '← Zurück zum Portfolio';
+
+  nav.appendChild(link);
+  hero.insertAdjacentElement('afterend', nav);
+});
