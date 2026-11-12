@@ -1,0 +1,41 @@
+/* Webdesign & Digital Ads — eigenständige Portfolio-Unterseite. */
+/* Bestehende globale Hero-Struktur verwenden, Bildpfad gezielt überschreiben. */
+.landing-page-hero{min-height:430px;background-image:url("../images/portfolio/webdesign-digital-ads/hero_webdesign-digital-ads.webp");background-position:center 49%;}
+.landing-page-hero-inner{min-height:430px;padding:52px 42px 66px;align-items:center}
+.landing-page-text{width:auto;max-width:none}
+.landing-page-text h1{margin:0;font-size:clamp(3rem,6.8vw,6rem);font-weight:800;letter-spacing:-.035em;line-height:1.03}
+.web-amp{color:#a8d8f1}
+.landing-page-ai{left:4%;bottom:24px}
+.web-description{background:#040b10;color:#eef4f9}
+.web-description-inner{width:min(100%,1136px);margin:auto;padding:30px 24px 4px}
+.web-page-subtitle{margin:0 0 10px;color:#8dcced;font-size:19px;font-weight:700;line-height:1.35}
+.web-description-inner>p:not(.web-page-subtitle){max-width:590px;margin:0;font-size:15px;line-height:1.75;color:#c4cfda}
+.web-showcase{width:min(100%,1136px);margin:auto;padding:34px 24px 90px;color:#f4f7fb}
+.web-showcase-intro{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:10px 25px;padding-bottom:16px;margin-bottom:35px;border-bottom:1px solid rgba(125,184,215,.22)}
+.web-showcase-intro>span{font-size:12px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#8dcced}
+.web-showcase-intro p{font-size:13px;line-height:1.5;color:#aebbc8;margin:0}
+.web-project{margin:0 0 48px}
+.web-showcase details.web-project>summary.web-project-heading{display:flex;align-items:center;gap:16px;padding-bottom:13px;margin:0 0 15px;border-bottom:1px solid rgba(125,184,215,.2);cursor:pointer;list-style:none;user-select:none}
+.web-project-heading::-webkit-details-marker{display:none}.web-project-heading::marker{content:""}
+.web-project-heading>div{min-width:0}
+.web-project-heading h2{font-size:clamp(20px,2.4vw,27px);font-weight:700;line-height:1.15;margin:0 0 5px}
+.web-project-heading p{font-size:12px;line-height:1.5;color:#aeb8c2;margin:0}
+.web-project-count{margin-left:auto;white-space:nowrap;color:#98aaba;font-size:11px}
+.web-project-action{display:inline-flex;align-items:center;gap:9px;white-space:nowrap;font-size:12px;color:#8dcced;margin-left:4px}
+.web-project-action::after{content:"";width:8px;height:8px;display:block;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(225deg) translate(-2px,-2px);transition:transform .2s ease}
+.web-project:not([open]) .web-project-action{font-size:0}
+.web-project:not([open]) .web-project-action::before{content:"Aufklappen";font-size:12px}
+.web-project:not([open]) .web-project-action::after{transform:rotate(45deg) translate(-2px,-2px)}
+.web-project-heading:hover .web-project-action{color:#c7efff}
+.web-project-heading:focus-visible{outline:2px solid #8dcced;outline-offset:5px;border-radius:3px}
+.web-project-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;align-items:stretch}
+.web-work{min-width:0;margin:0;padding:11px 8px;display:flex;flex-direction:column;align-items:stretch;justify-content:space-between;gap:10px;overflow:hidden;background:linear-gradient(155deg,rgba(15,26,37,.88),rgba(7,11,17,.97));border:1px solid rgba(122,170,205,.23);border-radius:11px;transition:border-color .2s ease,transform .2s ease}
+.web-work:hover{border-color:rgba(124,195,232,.58);transform:translateY(-2px)}
+.web-work-media{height:215px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.web-work-media img{display:block;width:auto!important;height:auto!important;max-width:100%!important;max-height:100%!important;object-fit:contain;border:0;border-radius:2px;margin:0 auto}
+.web-work figcaption{text-align:center;font-size:10px;line-height:1.45;color:#9eafbc}
+@media(max-width:900px){.web-project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:680px){.landing-page-hero,.landing-page-hero-inner{min-height:350px}.landing-page-hero-inner{padding:42px 22px 60px}.landing-page-text h1{font-size:clamp(2.6rem,9.2vw,4.6rem)}.landing-page-ai{left:22px;bottom:19px}.web-description-inner{padding:25px 18px 4px}.web-showcase{padding:29px 16px 65px}.web-project{margin-bottom:35px}.web-project-grid{gap:10px}.web-work{padding:9px;gap:8px}.web-work-media{height:190px}}
+@media(max-width:560px){.web-project-heading{flex-wrap:wrap}.web-project-action{margin-left:auto}}
+@media(max-width:470px){.web-project-grid{grid-template-columns:1fr}.web-work-media{height:235px}.web-project-count{font-size:10px}}
+@media(prefers-reduced-motion:reduce){.web-work,.web-project-action::after{transition:none}.web-work:hover{transform:none}}
