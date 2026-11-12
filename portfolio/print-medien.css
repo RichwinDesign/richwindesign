@@ -296,22 +296,29 @@
 .print-interactive-showcase .print-combined-grid .print-vehicle-extra .print-work-media {height:215px;}
 
 
-/* FIX: Außenwerbung und Fahrzeugbeklebung bilden EIN gemeinsames Raster.
-   Der breite Gebäude-Vergleich bleibt ein gezielter 2-Spalten-Akzent. */
-.print-interactive-showcase {display:block; margin-top:18px;}
-.print-interactive-showcase .print-combined-grid {
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:13px;
-  align-items:stretch;
+/* Einzelmotive in der gemeinsamen Galerie mittig ausrichten.
+   Die Bildproportionen bleiben erhalten, ohne Beschnitt oder Hochskalierung. */
+.print-interactive-showcase .print-combined-grid .print-centered-extra {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
 }
-.print-interactive-showcase .print-combined-grid > * {min-width:0;}
-.print-interactive-showcase .print-combined-grid .print-compare--wide {grid-column:span 2;}
-.print-interactive-showcase .print-combined-grid .print-feature-extra .print-work-media {height:215px;}
-@media(max-width:900px) {
-  .print-interactive-showcase .print-combined-grid {grid-template-columns:repeat(2,minmax(0,1fr));}
+.print-interactive-showcase .print-combined-grid .print-centered-extra .print-work-media {
+  flex: 1 1 auto;
+  height: auto;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-@media(max-width:600px) {
-  .print-interactive-showcase .print-combined-grid {grid-template-columns:minmax(0,1fr);}
-  .print-interactive-showcase .print-combined-grid .print-compare--wide {grid-column:auto;}
+.print-interactive-showcase .print-combined-grid .print-centered-extra .print-work-media img {
+  width: auto !important;
+  height: auto !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  object-fit: contain;
+}
+.print-interactive-showcase .print-combined-grid .print-centered-extra figcaption {
+  flex: 0 0 auto;
+  margin-top: 10px;
 }
