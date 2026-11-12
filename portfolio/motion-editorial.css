@@ -318,3 +318,13 @@
 .motion-lekkerland-icon:has(img[src*="icon_einarbeitung.gif"]) {
   order: 7;
 }
+
+/* 4 – Vorstellungsgespräch statt Austausch */
+.motion-lekkerland-icon:has(img[src*="icon_vorstellungsgespraech.gif"]) {
+  order: 4;
+}
+
+/* Austausch wieder zu den übrigen Icons */
+.motion-lekkerland-icon:has(img[src*="icon_austausch.gif"]) {
+  order: 10;
+}
