@@ -2135,7 +2135,7 @@ body:has(.portal-overview) {
 .landing-page-hero {
   position: relative;
   min-height: 650px;
-  background-image: url("images/portfolio/landing-pages/hero_landing-pages.png");
+background-image: url("images/portfolio/webdesign-digital-ads/hero_webdesign-digital-ads.webp");
   background-size: cover;
   background-position: center;
   overflow: hidden;
