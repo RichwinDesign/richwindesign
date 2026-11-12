@@ -499,7 +499,7 @@ navigationHTML = `
   const portfolioItems = [
     item("Motion & Visuals", "portfolio/motion-visuals.html", "▣"),
     item("Print Medien", "portfolio/print-medien.html", "▤"),
-    item("Landing Pages", "portfolio/landing-pages.html", "▱"),
+    item("Webdesign & Digital Ads", "portfolio/webdesign-digital-ads.html", "▱"),
     item("Fotografie", "portfolio/fotografie.html", "◎")
   ].join("");
 
