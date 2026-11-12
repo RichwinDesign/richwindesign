@@ -4767,3 +4767,13 @@ body:has(.portal-overview) {
     grid-template-columns: 1fr;
   }
 }
+
+/* Bildbeschriftungen unter den Portfolio-Bildern ausblenden */
+.motion-showcase figcaption,
+.print-showcase figcaption,
+.web-showcase figcaption,
+.photo-showcase figcaption,
+.web-showcase .web-loop-caption {
+  display: none !important;
+}
+
