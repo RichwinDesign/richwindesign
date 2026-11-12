@@ -25,7 +25,7 @@
       btn.className = 'print-carousel-dot';
       btn.setAttribute('aria-label', `Ansicht ${idx + 1} zeigen`);
       btn.addEventListener('click', () => { show(idx); restart(); });
-      dots.append(btn);
+      if (dots) dots.append(btn);
       return btn;
     });
     function show(next) {
@@ -40,21 +40,25 @@
         btn.classList.toggle('is-current', active);
         btn.setAttribute('aria-pressed', String(active));
       });
-      counter.textContent = `${index + 1} / ${slides.length}`;
+      if (counter) counter.textContent = `${index + 1} / ${slides.length}`;
     }
     function stop() { if (timer !== null) { clearInterval(timer); timer = null; } }
     function start() {
       if (box.dataset.auto !== 'true' || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
       stop();
-      timer = setInterval(() => { if (!document.hidden) show(index + 1); }, 4400);
+      timer = setInterval(() => { if (!document.hidden) show(index + 1); }, Number(box.dataset.interval || 4400));
     }
     function restart() { stop(); start(); }
-    box.querySelector('.print-carousel-prev').addEventListener('click', () => { show(index - 1); restart(); });
-    box.querySelector('.print-carousel-next').addEventListener('click', () => { show(index + 1); restart(); });
-    box.addEventListener('mouseenter', stop);
-    box.addEventListener('mouseleave', start);
-    box.addEventListener('focusin', stop);
-    box.addEventListener('focusout', event => { if (!box.contains(event.relatedTarget)) start(); });
+    const previous = box.querySelector('.print-carousel-prev');
+    const next = box.querySelector('.print-carousel-next');
+    if (previous) previous.addEventListener('click', () => { show(index - 1); restart(); });
+    if (next) next.addEventListener('click', () => { show(index + 1); restart(); });
+    if (!box.classList.contains('print-carservice-carousel')) {
+      box.addEventListener('mouseenter', stop);
+      box.addEventListener('mouseleave', start);
+      box.addEventListener('focusin', stop);
+      box.addEventListener('focusout', event => { if (!box.contains(event.relatedTarget)) start(); });
+    }
     show(0); start();
   });
 
