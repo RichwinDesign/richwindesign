@@ -237,3 +237,30 @@
 @media(prefers-reduced-motion:reduce){
   .print-interactive-showcase .print-carservice-carousel .print-carousel-slide{transition:none;}
 }
+
+/* V3: Ostermann 01 in Reihe 1, Gebäude-Vergleich breit in Reihe 2.
+   Die Vergleichsbilder haben eine einheitliche sichtbare Höhe. */
+@media(min-width:901px){
+  .print-interactive-showcase .print-compare--wide {grid-column:span 2;}
+}
+.print-interactive-showcase .print-compare-stage{
+  aspect-ratio:auto;
+  height:280px;
+}
+/* Deckungsgleiche Bildebenen; Breite darf beschnitten werden, obere Kante bleibt erhalten. */
+.print-interactive-showcase .print-compare-stage > img,
+.print-interactive-showcase .print-compare-after > img{
+  object-fit:cover;
+  object-position:center top;
+}
+.print-interactive-showcase .print-compare-grid .print-feature-extra .print-work-media{
+  height:280px;
+}
+@media(max-width:900px){
+  .print-interactive-showcase .print-compare--wide{grid-column:span 2;}
+}
+@media(max-width:600px){
+  .print-interactive-showcase .print-compare--wide{grid-column:auto;}
+  .print-interactive-showcase .print-compare-stage{height:260px;aspect-ratio:auto;}
+  .print-interactive-showcase .print-compare-grid .print-feature-extra .print-work-media{height:260px;}
+}
