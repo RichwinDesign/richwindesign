@@ -95,3 +95,45 @@
 @media(prefers-reduced-motion:reduce) {
   .web-carservice-loop .web-loop-stage .web-loop-slide {transition:none;}
 }
+
+/* Streamer-Emotes: kompakte Galerie, unabhängig vom Carservice-Loop. */
+.web-showcase .web-emotes-grid {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 11px;
+}
+.web-showcase .web-emotes-grid > .web-emote-card {
+  min-width: 0;
+  padding: 12px;
+  gap: 0;
+  justify-content: center;
+}
+.web-showcase .web-emotes-grid .web-emote-card .web-work-media {
+  width: 100%;
+  height: 114px;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.web-showcase .web-emotes-grid .web-emote-card .web-work-media img {
+  display: block;
+  width: auto !important;
+  height: auto !important;
+  max-width: 100% !important;
+  max-height: 105px !important;
+  object-fit: contain !important;
+}
+@media (max-width: 900px) {
+  .web-showcase .web-emotes-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+@media (max-width: 470px) {
+  .web-showcase .web-emotes-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+  }
+  .web-showcase .web-emotes-grid .web-emote-card { padding: 8px; }
+  .web-showcase .web-emotes-grid .web-emote-card .web-work-media { height: 94px; }
+  .web-showcase .web-emotes-grid .web-emote-card .web-work-media img { max-height: 88px !important; }
+}
