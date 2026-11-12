@@ -274,3 +274,19 @@
 @media(prefers-reduced-motion:reduce){
   .print-interactive-showcase .print-yellow-carousel .print-carousel-slide {transition:none;}
 }
+
+/* V5: Gelbes Auto – reine automatische Bildpräsentation ohne Bedienelemente. */
+.print-interactive-showcase .print-yellow-carousel .print-carousel-stage {
+  height:265px;
+}
+.print-interactive-showcase .print-yellow-carousel .print-carousel-slide {
+  gap:0;
+}
+.print-interactive-showcase .print-yellow-carousel .print-carousel-slide img {
+  max-width:100%!important;
+  max-height:245px!important;
+}
+@media(max-width:470px){
+  .print-interactive-showcase .print-yellow-carousel .print-carousel-stage {height:235px;}
+  .print-interactive-showcase .print-yellow-carousel .print-carousel-slide img{max-height:215px!important;}
+}

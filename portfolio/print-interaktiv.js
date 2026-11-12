@@ -53,12 +53,6 @@
     const next = box.querySelector('.print-carousel-next');
     if (previous) previous.addEventListener('click', () => { show(index - 1); restart(); });
     if (next) next.addEventListener('click', () => { show(index + 1); restart(); });
-    if (!box.classList.contains('print-carservice-carousel')) {
-      box.addEventListener('mouseenter', stop);
-      box.addEventListener('mouseleave', start);
-      box.addEventListener('focusin', stop);
-      box.addEventListener('focusout', event => { if (!box.contains(event.relatedTarget)) start(); });
-    }
     show(0); start();
   });
 
