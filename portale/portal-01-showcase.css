@@ -330,3 +330,34 @@
     height: 98px;
   }
 }
+
+
+/* EXAKT DER HINTERGRUND DER PORTALÜBERSICHT (aus style.css).
+   Der Verlauf sitzt auf body – nicht auf main. Dadurch gibt es keine
+   Kante am Seitenende, auch wenn das Dokument sehr hoch ist. */
+body:has(.portal01-page) {
+  background-color: #090b10;
+  background-image:
+    radial-gradient(
+      ellipse 250px 190px at 15% 20%,
+      rgba(145, 60, 190, 0.16),
+      transparent 100%
+    ),
+    radial-gradient(
+      ellipse 280px 230px at 85% 50%,
+      rgba(205, 55, 115, 0.12),
+      transparent 100%
+    ),
+    radial-gradient(
+      ellipse 260px 210px at 20% 85%,
+      rgba(225, 115, 40, 0.11),
+      transparent 100%
+    ),
+    linear-gradient(#090b10, #090b10);
+}
+/* Der bisherige eigene Portal-01-Main-Hintergrund wird ausgeschaltet. */
+body:has(.portal01-page) main.portal01-page {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+}
