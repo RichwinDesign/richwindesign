@@ -69,11 +69,8 @@
           <div><span class="portal01-eyebrow">02 / HINTER DEN KULISSEN</span><h2 id="portal01-process-title">Vom Holz zum Portal</h2></div>
           <span class="portal01-index"><span id="portal01-step-count">01</span> / 09</span>
         </div>
-        <p class="portal01-section-description">Vom unbehandelten Holz bis zu den letzten Goldverzierungen: Alle neun dokumentierten Arbeitsschritte bleiben erhalten. Klicke auf einen Schritt, um die Entwicklung genauer zu betrachten.</p>
+        <p class="portal01-section-description">Von der Rohbox bis zu den Goldverzierungen: Alle neun Arbeitsschritte wechseln automatisch alle 2,5 Sekunden. Mit den Pfeilen kannst du auch selbst durch die Entstehung blättern.</p>
         <div class="portal01-process-layout">
-          <div class="portal01-step-rail" aria-label="Entstehungsschritt auswählen">
-            <button class="portal01-step-tab is-active" type="button" data-step-index="0" aria-pressed="true"><span class="portal01-step-num">01</span><img src="../images/portale/portal-01/portal_01_process_01.webp" alt="" loading="lazy"><span class="portal01-step-name">Rohbox</span><span aria-hidden="true">↗</span></button><button class="portal01-step-tab" type="button" data-step-index="1" aria-pressed="false"><span class="portal01-step-num">02</span><img src="../images/portale/portal-01/portal_01_process_02.webp" alt="" loading="lazy"><span class="portal01-step-name">Skizze</span><span aria-hidden="true">↗</span></button><button class="portal01-step-tab" type="button" data-step-index="2" aria-pressed="false"><span class="portal01-step-num">03</span><img src="../images/portale/portal-01/portal_01_process_03.webp" alt="" loading="lazy"><span class="portal01-step-name">Erste Farben</span><span aria-hidden="true">↗</span></button><button class="portal01-step-tab" type="button" data-step-index="3" aria-pressed="false"><span class="portal01-step-num">04</span><img src="../images/portale/portal-01/portal_01_process_04.webp" alt="" loading="lazy"><span class="portal01-step-name">Portal</span><span aria-hidden="true">↗</span></button><button class="portal01-step-tab" type="button" data-step-index="4" aria-pressed="false"><span class="portal01-step-num">05</span><img src="../images/portale/portal-01/portal_01_process_05.webp" alt="" loading="lazy"><span class="portal01-step-name">Landschaft</span><span aria-hidden="true">↗</span></button><button class="portal01-step-tab" type="button" data-step-index="5" aria-pressed="false"><span class="portal01-step-num">06</span><img src="../images/portale/portal-01/portal_01_process_06.webp" alt="" loading="lazy"><span class="portal01-step-name">Vegetation</span><span aria-hidden="true">↗</span></button><button class="portal01-step-tab" type="button" data-step-index="6" aria-pressed="false"><span class="portal01-step-num">07</span><img src="../images/portale/portal-01/portal_01_process_07.webp" alt="" loading="lazy"><span class="portal01-step-name">Feine Details</span><span aria-hidden="true">↗</span></button><button class="portal01-step-tab" type="button" data-step-index="7" aria-pressed="false"><span class="portal01-step-num">08</span><img src="../images/portale/portal-01/portal_01_process_08.webp" alt="" loading="lazy"><span class="portal01-step-name">Licht &amp; Schatten</span><span aria-hidden="true">↗</span></button><button class="portal01-step-tab" type="button" data-step-index="8" aria-pressed="false"><span class="portal01-step-num">09</span><img src="../images/portale/portal-01/portal_01_process_09.webp" alt="" loading="lazy"><span class="portal01-step-name">Goldverzierungen</span><span aria-hidden="true">↗</span></button>
-          </div>
           <figure class="portal01-step-feature">
             <div class="portal01-step-image-wrap"><img id="portal01-step-image" src="../images/portale/portal-01/portal_01_process_01.webp" alt="Portal #01 – Rohbox" loading="lazy"><button id="portal01-step-zoom" type="button" class="portal01-zoom-button" aria-label="Prozessbild vergrößern">⤢ Bild vergrößern</button></div>
             <figcaption><span class="portal01-eyebrow">ARBEITSSCHRITT <span id="portal01-step-number">01</span></span><h3 id="portal01-step-title">Rohbox</h3><div class="portal01-gallery-arrows"><button id="portal01-step-prev" type="button" aria-label="Vorheriger Arbeitsschritt">←</button><button id="portal01-step-next" type="button" aria-label="Nächster Arbeitsschritt">→</button></div></figcaption>
@@ -129,7 +126,6 @@
       $('portal01-step-count').textContent = padded(stepIndex);
       $('portal01-step-number').textContent = padded(stepIndex);
       $('portal01-step-title').textContent = title;
-      updateActive('[data-step-index]', 'stepIndex', stepIndex);
     }
     function openLightbox(image, title) {
       lightboxImage.src = image;
@@ -138,17 +134,43 @@
       if (typeof lightbox.showModal === 'function') lightbox.showModal();
     }
     document.querySelectorAll('[data-detail-index]').forEach(button => button.addEventListener('click', () => renderDetail(Number(button.dataset.detailIndex))));
-    document.querySelectorAll('[data-step-index]').forEach(button => button.addEventListener('click', () => renderStep(Number(button.dataset.stepIndex))));
     $('portal01-detail-prev').addEventListener('click', () => renderDetail(detailIndex - 1));
     $('portal01-detail-next').addEventListener('click', () => renderDetail(detailIndex + 1));
-    $('portal01-step-prev').addEventListener('click', () => renderStep(stepIndex - 1));
-    $('portal01-step-next').addEventListener('click', () => renderStep(stepIndex + 1));
+    // Autoplay: alle neun Arbeitsschritte in einer Endlosschleife, alle 2,5 Sekunden.
+    // Pfeile bleiben nutzbar und setzen den Countdown zurück.
+    let processTimer;
+    const stopProcessLoop = () => {
+      window.clearInterval(processTimer);
+      processTimer = undefined;
+    };
+    const startProcessLoop = () => {
+      stopProcessLoop();
+      if (document.hidden || lightbox.open) return;
+      processTimer = window.setInterval(() => renderStep(stepIndex + 1), 2500);
+    };
+    $('portal01-step-prev').addEventListener('click', () => {
+      renderStep(stepIndex - 1);
+      startProcessLoop();
+    });
+    $('portal01-step-next').addEventListener('click', () => {
+      renderStep(stepIndex + 1);
+      startProcessLoop();
+    });
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) stopProcessLoop();
+      else startProcessLoop();
+    });
+    lightbox.addEventListener('close', startProcessLoop);
     $('portal01-detail-zoom').addEventListener('click', () => openLightbox(details[detailIndex][0], details[detailIndex][1]));
-    $('portal01-step-zoom').addEventListener('click', () => openLightbox(steps[stepIndex][0], steps[stepIndex][1]));
+    $('portal01-step-zoom').addEventListener('click', () => {
+      stopProcessLoop();
+      openLightbox(steps[stepIndex][0], steps[stepIndex][1]);
+    });
     lightbox.querySelector('.portal01-lightbox-close').addEventListener('click', () => lightbox.close());
     lightbox.addEventListener('click', event => {if (event.target === lightbox) lightbox.close();});
     renderDetail(0);
     renderStep(0);
+    startProcessLoop();
   })();
   </script>
 </body>
