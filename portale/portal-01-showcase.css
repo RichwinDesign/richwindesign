@@ -236,3 +236,47 @@
   .portal01-page .portal01-process-layout .portal01-step-feature {width:100%;max-width:630px;margin:0 auto;}
   .portal01-page .portal01-process-layout .portal01-step-image-wrap {height:clamp(240px,48vw,360px);}
 }
+
+
+/* Portal #01 – Korrektur: nur ein Zurück-Button, ruhigere Abstände. */
+.portal01-page .portal01-hero-back { display: none !important; }
+.portal01-page .portal01-content { margin-top: 39px; }
+.portal01-page .portal01-intro { margin-bottom: 31px; }
+.portal01-page .portal01-intro h2 { margin-bottom: 12px; }
+.portal01-page .portal01-section { margin-bottom: 58px; }
+
+/* Detailgalerie: Hauptbild schmaler und alle 7 Vorschaubilder größer.
+   Bei Desktop: 3 Reihen à 145px + 2 Zwischenräume à 12px = 459px.
+   Damit endet Kachel 07 exakt auf Höhe der linken Gesamtansicht. */
+@media (min-width: 901px) {
+  .portal01-page .portal01-gallery-shell {
+    grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+    gap: 16px;
+    align-items: start;
+  }
+  .portal01-page .portal01-gallery-main { height: 459px; }
+  .portal01-page .portal01-main-image-wrap {
+    height: 359px;
+    padding: 8px;
+  }
+  .portal01-page .portal01-image-caption {
+    height: 98px;
+    min-height: 98px;
+    padding: 13px 18px;
+  }
+  .portal01-page .portal01-thumb-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    align-content: start;
+  }
+  .portal01-page .portal01-thumb {
+    width: 100%;
+    height: 145px;
+    aspect-ratio: auto;
+  }
+}
+@media (max-width: 650px) {
+  .portal01-page .portal01-content { margin-top: 30px; }
+  .portal01-page .portal01-intro { margin-bottom: 27px; }
+  .portal01-page .portal01-section { margin-bottom: 48px; }
+}
