@@ -280,3 +280,15 @@
   .portal01-page .portal01-intro { margin-bottom: 27px; }
   .portal01-page .portal01-section { margin-bottom: 48px; }
 }
+
+
+/* Nur die grosse Detailansicht: breites, bildfuellendes Querformat.
+   object-fit:cover erhaelt die Proportionen ohne Verzerrung;
+   bei hochkantigen Quellbildern wird der Rand beschnitten.
+   Die Vollbildansicht zeigt weiterhin das vollstaendige Original. */
+.portal01-page .portal01-main-image-wrap > img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+}
