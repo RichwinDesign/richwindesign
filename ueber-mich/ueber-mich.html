@@ -10,12 +10,19 @@
 <style>
 /* Über mich – gezielte Bildmodule, bestehender Zeitstrahl bleibt erhalten */
 .journey-media-video .journey-media-inner {aspect-ratio:1.75 / 1;}
+.journey-media-banner .journey-media-inner {aspect-ratio:6 / 5;}
+.journey-media-placeholder .journey-media-inner{aspect-ratio:1.75 / 1;display:grid;place-items:center;background:linear-gradient(135deg,#112538 0%,#0f3554 38%,#08131e 100%);border:1px solid rgba(141,204,237,.16);position:relative;overflow:hidden;}
+.journey-media-placeholder .journey-media-inner::before{content:"";position:absolute;inset:-20%;background:radial-gradient(circle at 20% 20%,rgba(141,204,237,.18),transparent 35%),radial-gradient(circle at 80% 30%,rgba(82,164,214,.16),transparent 28%),radial-gradient(circle at 50% 100%,rgba(255,255,255,.08),transparent 34%);pointer-events:none;}
+.journey-placeholder-copy{position:relative;z-index:1;text-align:center;padding:24px;}
+.journey-placeholder-copy strong{display:block;font-size:clamp(24px,3vw,40px);line-height:1.05;color:#f3f8fc;}
+.journey-placeholder-copy span{display:block;margin-top:8px;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#8dcced;}
 .journey-media-video video {display:block;width:100%;height:100%;object-fit:contain;}
 .journey-media-emotes .journey-media-inner.journey-emotes-grid {
  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));
- gap:9px;padding:14px;aspect-ratio:1.4 / 1;
+ gap:12px;padding:16px;aspect-ratio:1.28 / 1;
 }
-.journey-media-emotes .journey-emotes-grid img {display:block;width:100%;height:100%;max-height:155px;object-fit:contain;min-width:0;}
+.journey-media-emotes .journey-emote-card{display:flex;align-items:center;justify-content:center;border-radius:14px;background:linear-gradient(180deg,rgba(17,37,56,.92),rgba(7,15,24,.95));border:1px solid rgba(141,204,237,.12);padding:10px;box-shadow:inset 0 1px 0 rgba(255,255,255,.03);}
+.journey-media-emotes .journey-emotes-grid img {display:block;width:100%;height:100%;max-height:140px;object-fit:contain;min-width:0;}
 .journey-media-sofa .journey-media-inner.journey-sofa-compare {
  position:relative;isolation:isolate;aspect-ratio:1.4 / 1;overflow:hidden;--sofa-position:50%;
 }
@@ -57,43 +64,44 @@
 <ol class="journey-timeline">
 <li class="journey-track" aria-hidden="true"><div class="journey-track-progress"></div></li>
 <li class="journey-entry journey-left"><div class="journey-year"><span>2026</span></div>
- <figure class="journey-media journey-media-wide"><div class="journey-media-inner">
- <img src="../images/portfolio/webdesign-digital-ads/webdesign_website-25.webp" alt="Digitales Webseitenlayout aus dem Portfolio" loading="lazy" decoding="async">
- </div><figcaption>Digitalgestaltung · Beispiel aus meinem Portfolio</figcaption></figure>
+ <figure class="journey-media journey-media-wide journey-media-placeholder"><div class="journey-media-inner"><div class="journey-placeholder-copy"><strong>KI-Projekt in Vorbereitung</strong><span>Platzhalter für neuen Inhalt</span></div></div><figcaption>Digitalgestaltung · Platzhalter für ein neues Beispiel</figcaption></figure>
  <div class="journey-copy"><span class="journey-category">SEIT 10/2026 · WEITERBILDUNG</span><h3>KI-gestützte Mediengestaltung</h3>
  <p class="journey-place">alfatraining · Vollzeit</p><p>Erweiterung meiner gestalterischen Arbeit durch Adobe Creative Cloud, KI-Bildgenerierung und Promptentwicklung. Praxisprojekte verbinden unterschiedliche Gestaltungsvarianten mit nachvollziehbarer Dokumentation.</p><p class="journey-keywords">Adobe CC · Adobe Firefly · KI-Workflows</p></div>
  </li>
 <li class="journey-entry journey-right"><div class="journey-year"><span>2023–2025</span></div>
  <figure class="journey-media journey-media-large"><div class="journey-media-inner">
- <img src="../images/portfolio/fotografie/fotografie_wirelane-01.webp" alt="Bildbearbeitung – Ladeinfrastruktur mit integrierter Säule" loading="lazy" decoding="async">
+ <img src="../images/portfolio/fotografie/fotografie_wirelane-03.webp" alt="Bildbearbeitung – Ladeinfrastruktur mit integrierter Säule" loading="lazy" decoding="async">
  </div><figcaption>Wirelane · Bildbearbeitung und Composing</figcaption></figure>
  <div class="journey-copy"><span class="journey-category">05/2023 – 03/2025 · BERUFSERFAHRUNG</span><h3>Mediengestalterin</h3>
  <p class="journey-place">Network Punkt Hamburg UG · Hamburg</p><p>Erstellung, Adaption und Optimierung von Layouts, Reinzeichnung, komplexe Bildbearbeitung und Retusche. Dazu kamen Produktionsaufgaben und Recherchen.</p><p class="journey-keywords">Reinzeichnung · Retusche · Produktion</p></div>
  </li>
 <li class="journey-entry journey-left"><div class="journey-year"><span>2021–2025</span></div>
  <figure class="journey-media journey-media-medium journey-media-emotes">
-<div class="journey-media-inner journey-emotes-grid"><img src="../images/portfolio/webdesign-digital-ads/emotes/web_emote_hey.webp" alt="Streamer-Emote 1" loading="lazy" decoding="async"><img src="../images/portfolio/webdesign-digital-ads/emotes/web_emote_katze_verliebt.webp" alt="Streamer-Emote 2" loading="lazy" decoding="async"><img src="../images/portfolio/webdesign-digital-ads/emotes/web_emote_katze_schock.webp" alt="Streamer-Emote 3" loading="lazy" decoding="async"><img src="../images/portfolio/webdesign-digital-ads/emotes/web_emote_wuetend.webp" alt="Streamer-Emote 4" loading="lazy" decoding="async"></div>
+<div class="journey-media-inner journey-emotes-grid">
+<div class="journey-emote-card"><img src="../images/portfolio/webdesign-digital-ads/emotes/web_emote_hey.webp" alt="Streamer-Emote: Hey!" loading="lazy" decoding="async"></div>
+<div class="journey-emote-card"><img src="../images/portfolio/webdesign-digital-ads/emotes/web_emote_tee.webp" alt="Streamer-Emote: Tee (vorläufiger Platzhalter)" loading="lazy" decoding="async"></div>
+<div class="journey-emote-card"><img src="../images/portfolio/webdesign-digital-ads/emotes/web_emote_katze_schock.webp" alt="Streamer-Emote: Katze – Schock" loading="lazy" decoding="async"></div>
+<div class="journey-emote-card"><img src="../images/portfolio/webdesign-digital-ads/emotes/web_emote_wuetend.webp" alt="Streamer-Emote: Wütend" loading="lazy" decoding="async"></div>
+</div>
 <figcaption>Streamer-Emotes · Gestaltung für digitale Communities</figcaption>
 </figure>
  <div class="journey-copy"><span class="journey-category">10/2021 – 12/2025 · EIGENSTÄNDIGE TÄTIGKEIT</span><h3>Mediengestaltung &amp; Affiliate-Marketing</h3>
  <p class="journey-place">Pinneberg</p><p>Eigenständige Tätigkeit an der Schnittstelle von visueller Gestaltung und digitalen Projekten.</p><p class="journey-keywords">Digitaldesign · Kommunikation</p></div>
  </li>
 <li class="journey-entry journey-right"><div class="journey-year"><span>2018–2021</span></div>
- <figure class="journey-media journey-media-wide journey-media-video">
+ <figure class="journey-media journey-media-medium journey-media-video journey-media-banner">
 <div class="journey-media-inner"><video autoplay muted loop playsinline preload="metadata" aria-label="Nissin – animierter Werbebanner">
 <source src="../images/portfolio/motion-visuals/motion_nissin_300x250.mp4" type="video/mp4">Dein Browser unterstützt das Video nicht.
 </video></div><figcaption>Animierter Werbebanner · Beispiel aus meiner Ausbildung</figcaption></figure>
  <div class="journey-copy"><span class="journey-category">08/2018 – 06/2021 · AUSBILDUNG</span><h3>Mediengestalterin Digital und Print</h3>
  <p class="journey-place">TAXi-AD GmbH → UP-Advertising GmbH</p><p>Ausbildung in der Fachrichtung Gestaltung und Technik. Zunächst bei TAXi-AD (08/2018–06/2019), anschließend bei UP-Advertising (07/2019–06/2021). <strong>Abschluss 2021.</strong></p><p class="journey-keywords">Print · Digital · Gestaltung &amp; Technik</p></div>
  </li>
-<li class="journey-entry journey-left journey-text-only"><div class="journey-year"><span>2016–2017</span></div>
- <div class="journey-copy"><span class="journey-category">12/2016 – 02/2017</span><h3>Verkaufshilfe</h3>
- <p class="journey-place">Woolworth · Elmshorn</p><p>Berufliche Station im Einzelhandel.</p></div></li>
+
 <li class="journey-entry journey-right"><div class="journey-year"><span>2014–2015</span></div>
  <figure class="journey-media journey-media-medium journey-media-sofa">
  <div class="journey-media-inner journey-sofa-compare" style="--sofa-position:50%">
-  <img class="journey-sofa-before" src="../images/portfolio/fotografie/fotografie_composing-sofa-vorher.webp" alt="Sofa-Composing – Vorher" loading="lazy">
-  <div class="journey-sofa-after-wrap"><img class="journey-sofa-after" src="../images/portfolio/fotografie/fotografie_composing-sofa-nachher.webp" alt="Sofa-Composing – Nachher" loading="lazy"></div>
+  <img class="journey-sofa-before" src="../images/portfolio/fotografie/fotografie_composing-sofa-nachher.webp" alt="Sofa-Composing – Vorher" loading="lazy">
+  <div class="journey-sofa-after-wrap"><img class="journey-sofa-after" src="../images/portfolio/fotografie/fotografie_composing-sofa-vorher.webp" alt="Sofa-Composing – Nachher" loading="lazy"></div>
   <div class="journey-sofa-line" aria-hidden="true"><span class="journey-sofa-handle">↔</span></div>
   <span class="journey-sofa-label journey-sofa-label-before">Vorher</span><span class="journey-sofa-label journey-sofa-label-after">Nachher</span>
   <input type="range" class="journey-sofa-range" min="0" max="100" value="50" aria-label="Sofa-Composing: Vorher und Nachher vergleichen">
