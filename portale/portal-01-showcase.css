@@ -168,3 +168,21 @@
     height: 310px;
   }
 }
+
+
+/* Detailansichten: Hauptfläche schmaler, Vorschauen etwas größer.
+   Drei Thumbnail-Spalten füllen die Seitenhöhe harmonisch aus. */
+@media (min-width: 901px) {
+  .portal01-page .portal01-gallery-shell {
+    grid-template-columns: minmax(0, 1fr) 375px;
+    gap: 16px;
+  }
+  .portal01-page .portal01-thumb-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .portal01-page .portal01-main-image-wrap {
+    height: 390px;
+    padding: 8px;
+  }
+}
