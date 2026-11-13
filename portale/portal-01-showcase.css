@@ -239,7 +239,10 @@
 
 
 /* Portal #01 – Korrektur: nur ein Zurück-Button, ruhigere Abstände. */
-.portal01-page .portal01-hero-back { display: none !important; }
+/* Der Zurück-Button unter dem BR-Logo bleibt sichtbar. */
+.portal01-page .portal01-hero-back { display: inline-flex !important; }
+/* Der durch das globale script.js zusätzlich eingefügte Button über PORTAL #01 verschwindet nur hier. */
+.portal01-page .portal-detail-hero-text > .about-back-link { display: none !important; }
 .portal01-page .portal01-content { margin-top: 39px; }
 .portal01-page .portal01-intro { margin-bottom: 31px; }
 .portal01-page .portal01-intro h2 { margin-bottom: 12px; }
@@ -291,4 +294,39 @@
   height: 100% !important;
   object-fit: cover !important;
   object-position: center center !important;
+}
+
+
+/* Portal #01 – Wunschlayout: Hauptansicht wieder größer, Vorschauen kleiner.
+   Die Prozessgalerie rechts erhält dieselbe Breite und Gesamthöhe wie
+   die große Detailgalerie links. Keine Änderungen an anderen Portalen. */
+@media (min-width: 901px) {
+  .portal01-page .portal01-gallery-shell {
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+    gap: 16px;
+  }
+  .portal01-page .portal01-gallery-main {height: 459px;}
+  .portal01-page .portal01-main-image-wrap {height:359px;}
+  .portal01-page .portal01-image-caption {height:98px;}
+  .portal01-page .portal01-thumb-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+  }
+  .portal01-page .portal01-thumb {height:145px;}
+
+  .portal01-page .portal01-process-layout {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+    gap: 16px;
+  }
+  .portal01-page .portal01-process-layout .portal01-step-feature {
+    max-width: none;
+    height: 459px;
+  }
+  .portal01-page .portal01-process-layout .portal01-step-image-wrap {
+    height: 359px;
+  }
+  .portal01-page .portal01-process-layout .portal01-step-feature figcaption {
+    min-height: 98px;
+    height: 98px;
+  }
 }
