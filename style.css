@@ -4843,3 +4843,51 @@ body:has(.portal-overview) {
     object-fit: contain;
   }
 }
+/* ============================================================
+   PORTALE 01–05 – dunkler, klarer Hero-Hintergrund
+   Ganz am ENDE der vorhandenen style.css ergänzen.
+   Die Boxfotos, Beschriftungen und Galerien bleiben unberührt.
+   ============================================================ */
+
+/* Weicher Schatten unter dem Header; Bild bleibt sichtbar statt milchig. */
+.portal-detail-hero.portal-detail-hero-01,
+.portal-detail-hero.portal-detail-hero-02,
+.portal-detail-hero.portal-detail-hero-03,
+.portal-detail-hero.portal-detail-hero-04,
+.portal-detail-hero.portal-detail-hero-05 {
+  background-image:
+    linear-gradient(
+      180deg,
+      rgba(14, 7, 22, 0.78) 0%,
+      rgba(9, 9, 16, 0.52) 24%,
+      rgba(5, 8, 13, 0.37) 57%,
+      rgba(5, 8, 13, 0.58) 100%
+    ),
+    var(--portal-landscape);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* Korrekte Dateiendungen: die Hintergrundbilder liegen als WebP vor. */
+.portal-detail-hero.portal-detail-hero-01 {
+  --portal-landscape: url("images/portale/portal-01/portal_01_hero-background.webp");
+}
+.portal-detail-hero.portal-detail-hero-02 {
+  --portal-landscape: url("images/portale/portal-02/portal_02_hero-background.webp");
+}
+.portal-detail-hero.portal-detail-hero-03 {
+  --portal-landscape: url("images/portale/portal-03/portal_03_hero-background.webp");
+}
+.portal-detail-hero.portal-detail-hero-04 {
+  --portal-landscape: url("images/portale/portal-04/portal_04_hero-background.webp");
+}
+.portal-detail-hero.portal-detail-hero-05 {
+  --portal-landscape: url("images/portale/portal-05/portal_05_hero-background.webp");
+}
+
+/* Text und Holzbox bleiben bewusst oberhalb der Hintergründe. */
+.portal-detail-hero .portal-detail-hero-inner {
+  position: relative;
+  z-index: 1;
+}
