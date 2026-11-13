@@ -1,295 +1,154 @@
-
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../style.css">
+  <meta name="description" content="Portal #01 – Der Pfad der Entscheidung. Ein handbemaltes Unikat mit Detailansichten und dokumentiertem Entstehungsprozess.">
   <title>Portal #01 | Richwin Design</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="portal-01-showcase.css">
 </head>
-
 <body>
-
   <div id="site-header"></div>
-
-  <main>
-
-    <!-- HERO -->
-
+  <main class="portal01-page">
+    <!-- Bestehender Portal-Hero mit demselben Bild und Text -->
     <section class="portal-detail-hero portal-detail-hero-01">
-
       <div class="portal-detail-hero-inner">
-
         <div class="portal-detail-hero-image">
-          <img
-            src="../images/portale/portal-01/portal_01_hero.webp"
-            alt="Portal #01 – Der Pfad der Entscheidung"
-          >
+          <img src="../images/portale/portal-01/portal_01_hero.webp" alt="Portal #01 – Der Pfad der Entscheidung" fetchpriority="high">
         </div>
-
         <div class="portal-detail-hero-text">
-
-          <p class="portal-detail-number">
-            PORTAL #01
-          </p>
-
-          <h1>
-            Der Pfad der Entscheidung
-          </h1>
-
-          <p class="portal-detail-description">
-            Zwischen Hoffnung und Vergänglichkeit öffnet sich ein Tor in zwei
-            gegensätzliche Welten. Jeder Schritt erinnert daran, dass jede
-            Entscheidung unseren Weg verändert.
-          </p>
-
-          <a class="portal-detail-buy disabled" href="#">
-            Unikat kaufen
-          </a>
-
+          <p class="portal-detail-number">PORTAL #01</p>
+          <h1>Der Pfad der Entscheidung</h1>
+          <p class="portal-detail-description">Zwischen Hoffnung und Vergänglichkeit öffnet sich ein Tor in zwei gegensätzliche Welten. Jeder Schritt erinnert daran, dass jede Entscheidung unseren Weg verändert.</p>
+          <a class="portal-detail-buy disabled" href="#" aria-disabled="true">Unikat kaufen</a>
         </div>
-
       </div>
-
     </section>
 
-
-    <!-- NAVIGATION OBEN -->
-
-    <nav class="portal-detail-navigation">
-
-      <a href="../portale.html">
-        ← Portalübersicht
-      </a>
-
-      <a href="portal-02.html">
-        Portal #02 →
-      </a>
-
+    <nav class="portal-detail-navigation" aria-label="Portalnavigation oben">
+      <a href="../portale.html">← Portalübersicht</a>
+      <a href="portal-02.html">Portal #02 →</a>
     </nav>
 
-
-    <!-- INHALT -->
-
-    <section class="portal-detail-content">
-
-      <!-- DETAILANSICHTEN -->
-
-      <div class="portal-detail-section">
-
-        <div class="portal-detail-section-heading">
-
-          <h2>Detailansichten</h2>
-
-          <p>
-            Nahaufnahmen zeigen die feinen Pinselstriche, Texturen und Details
-            des fertigen Unikats.
-          </p>
-
-        </div>
-
-        <div class="portal-detail-gallery">
-
-          <img
-            src="../images/portale/portal-01/portal_01_detail_front.webp"
-            alt="Portal #01 Vorderansicht"
-          >
-
-          <img
-            src="../images/portale/portal-01/portal_01_detail_verschluss.webp"
-            alt="Portal #01 Detail am Verschluss"
-          >
-
-          <img
-            src="../images/portale/portal-01/portal_01_detail_frontverschluss.webp"
-            alt="Portal #01 Vorderseite mit Verschluss"
-          >
-
-          <img
-            src="../images/portale/portal-01/portal_01_detail_offen.webp"
-            alt="Portal #01 geöffnet"
-          >
-
-          <img
-            src="../images/portale/portal-01/portal_01_detail_wiese.webp"
-            alt="Portal #01 Landschaftsdetail"
-          >
-
-          <img
-            src="../images/portale/portal-01/portal_01_detail_portal.webp"
-            alt="Portal #01 Portalansicht"
-          >
-
-          <img
-            src="../images/portale/portal-01/portal_01_detail_oben.webp"
-            alt="Portal #01 Oberseite"
-          >
-
-        </div>
-
+    <div class="portal01-content">
+      <div class="portal01-intro">
+        <p class="portal01-eyebrow">DAS WERK ENTDECKEN</p>
+        <h2>Ein Portal. Viele Details.</h2>
+        <p>Jede Ansicht erzählt einen anderen Teil der Geschichte – vom Portal bis zu den fein gemalten Details. Wähle eine Ansicht aus oder öffne das Bild in voller Größe.</p>
       </div>
 
-
-      <!-- ENTSTEHUNGSPROZESS -->
-
-      <div class="portal-process-section">
-
-        <div class="portal-detail-section-heading">
-
-          <h2>Entstehungsprozess</h2>
-
-          <p>
-            Vom unbehandelten Holz bis zum fertigen Portal.
-            Jeder Schritt wurde von Hand gemalt und dokumentiert.
-          </p>
-
+      <section class="portal01-section" aria-labelledby="portal01-details-title">
+        <div class="portal01-section-top">
+          <div><span class="portal01-eyebrow">01 / DAS UNIKAT</span><h2 id="portal01-details-title">Detailansichten</h2></div>
+          <span class="portal01-index"><span id="portal01-detail-count">01</span> / 07</span>
         </div>
-
-        <div class="portal-process-grid">
-
-          <article class="portal-process-card">
-
-            <p>
-              <span>#01</span> – Rohbox
-            </p>
-
-            <img
-              src="../images/portale/portal-01/portal_01_process_01.webp"
-              alt="Portal #01 – Rohbox"
-            >
-
-          </article>
-
-          <article class="portal-process-card">
-
-            <p>
-              <span>#02</span> – Skizze
-            </p>
-
-            <img
-              src="../images/portale/portal-01/portal_01_process_02.webp"
-              alt="Portal #01 – Skizze"
-            >
-
-          </article>
-
-          <article class="portal-process-card">
-
-            <p>
-              <span>#03</span> – Erste Farben
-            </p>
-
-            <img
-              src="../images/portale/portal-01/portal_01_process_03.webp"
-              alt="Portal #01 – Erste Farben"
-            >
-
-          </article>
-
-          <article class="portal-process-card">
-
-            <p>
-              <span>#04</span> – Portal
-            </p>
-
-            <img
-              src="../images/portale/portal-01/portal_01_process_04.webp"
-              alt="Portal #01 – Portal"
-            >
-
-          </article>
-
-          <article class="portal-process-card">
-
-            <p>
-              <span>#05</span> – Landschaft
-            </p>
-
-            <img
-              src="../images/portale/portal-01/portal_01_process_05.webp"
-              alt="Portal #01 – Landschaft"
-            >
-
-          </article>
-
-          <article class="portal-process-card">
-
-            <p>
-              <span>#06</span> – Vegetation
-            </p>
-
-            <img
-              src="../images/portale/portal-01/portal_01_process_06.webp"
-              alt="Portal #01 – Vegetation"
-            >
-
-          </article>
-
-          <article class="portal-process-card">
-
-            <p>
-              <span>#07</span> – Feine Details
-            </p>
-
-            <img
-              src="../images/portale/portal-01/portal_01_process_07.webp"
-              alt="Portal #01 – Feine Details"
-            >
-
-          </article>
-
-          <article class="portal-process-card">
-
-            <p>
-              <span>#08</span> – Licht &amp; Schatten
-            </p>
-
-            <img
-              src="../images/portale/portal-01/portal_01_process_08.webp"
-              alt="Portal #01 – Licht und Schatten"
-            >
-
-          </article>
-
-          <article class="portal-process-card">
-
-            <p>
-              <span>#09</span> – Goldverzierungen
-            </p>
-
-            <img
-              src="../images/portale/portal-01/portal_01_process_09.webp"
-              alt="Portal #01 – Goldverzierungen"
-            >
-
-          </article>
-
+        <div class="portal01-gallery-shell">
+          <div class="portal01-gallery-main">
+            <div class="portal01-main-image-wrap">
+              <button id="portal01-detail-zoom" class="portal01-zoom-button" type="button" aria-label="Detailbild vergrößern" title="Bild vergrößern">⤢ Bild vergrößern</button>
+              <img id="portal01-detail-image" src="../images/portale/portal-01/portal_01_detail_front.webp" alt="Die komplette Vorderseite" decoding="async">
+            </div>
+            <div class="portal01-image-caption"><div><span class="portal01-eyebrow">AUSGEWÄHLTE ANSICHT</span><h3 id="portal01-detail-title">Gesamtansicht</h3><p id="portal01-detail-description">Die komplette Vorderseite</p></div><div class="portal01-gallery-arrows"><button id="portal01-detail-prev" type="button" aria-label="Vorheriges Detail">←</button><button id="portal01-detail-next" type="button" aria-label="Nächstes Detail">→</button></div></div>
+          </div>
+          <div class="portal01-thumb-grid" aria-label="Detailansicht auswählen">
+            <button class="portal01-thumb is-active" type="button" data-detail-index="0" aria-label="Gesamtansicht anzeigen" aria-pressed="true" title="Gesamtansicht"><img src="../images/portale/portal-01/portal_01_detail_front.webp" alt="" loading="lazy" decoding="async"><span>01</span></button>
+<button class="portal01-thumb" type="button" data-detail-index="1" aria-label="Verschluss anzeigen" aria-pressed="false" title="Verschluss"><img src="../images/portale/portal-01/portal_01_detail_verschluss.webp" alt="" loading="lazy" decoding="async"><span>02</span></button>
+<button class="portal01-thumb" type="button" data-detail-index="2" aria-label="Vorderseite anzeigen" aria-pressed="false" title="Vorderseite"><img src="../images/portale/portal-01/portal_01_detail_frontverschluss.webp" alt="" loading="lazy" decoding="async"><span>03</span></button>
+<button class="portal01-thumb" type="button" data-detail-index="3" aria-label="Innenansicht anzeigen" aria-pressed="false" title="Innenansicht"><img src="../images/portale/portal-01/portal_01_detail_offen.webp" alt="" loading="lazy" decoding="async"><span>04</span></button>
+<button class="portal01-thumb" type="button" data-detail-index="4" aria-label="Wiesenlandschaft anzeigen" aria-pressed="false" title="Wiesenlandschaft"><img src="../images/portale/portal-01/portal_01_detail_wiese.webp" alt="" loading="lazy" decoding="async"><span>05</span></button>
+<button class="portal01-thumb" type="button" data-detail-index="5" aria-label="Portal anzeigen" aria-pressed="false" title="Portal"><img src="../images/portale/portal-01/portal_01_detail_portal.webp" alt="" loading="lazy" decoding="async"><span>06</span></button>
+<button class="portal01-thumb" type="button" data-detail-index="6" aria-label="Draufsicht anzeigen" aria-pressed="false" title="Draufsicht"><img src="../images/portale/portal-01/portal_01_detail_oben.webp" alt="" loading="lazy" decoding="async"><span>07</span></button>
+          </div>
         </div>
+      </section>
 
-      </div>
+      <section class="portal01-section portal01-process" aria-labelledby="portal01-process-title">
+        <div class="portal01-section-top">
+          <div><span class="portal01-eyebrow">02 / HINTER DEN KULISSEN</span><h2 id="portal01-process-title">Vom Holz zum Portal</h2></div>
+          <span class="portal01-index"><span id="portal01-step-count">01</span> / 09</span>
+        </div>
+        <p class="portal01-section-description">Vom unbehandelten Holz bis zu den letzten Goldverzierungen: Alle neun dokumentierten Arbeitsschritte bleiben erhalten. Klicke auf einen Schritt, um die Entwicklung genauer zu betrachten.</p>
+        <div class="portal01-process-layout">
+          <div class="portal01-step-rail" aria-label="Entstehungsschritt auswählen">
+            <button class="portal01-step-tab is-active" type="button" data-step-index="0" aria-pressed="true"><span class="portal01-step-num">01</span><img src="../images/portale/portal-01/portal_01_process_01.webp" alt="" loading="lazy"><span class="portal01-step-name">Rohbox</span><span aria-hidden="true">↗</span></button><button class="portal01-step-tab" type="button" data-step-index="1" aria-pressed="false"><span class="portal01-step-num">02</span><img src="../images/portale/portal-01/portal_01_process_02.webp" alt="" loading="lazy"><span class="portal01-step-name">Skizze</span><span aria-hidden="true">↗</span></button><button class="portal01-step-tab" type="button" data-step-index="2" aria-pressed="false"><span class="portal01-step-num">03</span><img src="../images/portale/portal-01/portal_01_process_03.webp" alt="" loading="lazy"><span class="portal01-step-name">Erste Farben</span><span aria-hidden="true">↗</span></button><button class="portal01-step-tab" type="button" data-step-index="3" aria-pressed="false"><span class="portal01-step-num">04</span><img src="../images/portale/portal-01/portal_01_process_04.webp" alt="" loading="lazy"><span class="portal01-step-name">Portal</span><span aria-hidden="true">↗</span></button><button class="portal01-step-tab" type="button" data-step-index="4" aria-pressed="false"><span class="portal01-step-num">05</span><img src="../images/portale/portal-01/portal_01_process_05.webp" alt="" loading="lazy"><span class="portal01-step-name">Landschaft</span><span aria-hidden="true">↗</span></button><button class="portal01-step-tab" type="button" data-step-index="5" aria-pressed="false"><span class="portal01-step-num">06</span><img src="../images/portale/portal-01/portal_01_process_06.webp" alt="" loading="lazy"><span class="portal01-step-name">Vegetation</span><span aria-hidden="true">↗</span></button><button class="portal01-step-tab" type="button" data-step-index="6" aria-pressed="false"><span class="portal01-step-num">07</span><img src="../images/portale/portal-01/portal_01_process_07.webp" alt="" loading="lazy"><span class="portal01-step-name">Feine Details</span><span aria-hidden="true">↗</span></button><button class="portal01-step-tab" type="button" data-step-index="7" aria-pressed="false"><span class="portal01-step-num">08</span><img src="../images/portale/portal-01/portal_01_process_08.webp" alt="" loading="lazy"><span class="portal01-step-name">Licht &amp; Schatten</span><span aria-hidden="true">↗</span></button><button class="portal01-step-tab" type="button" data-step-index="8" aria-pressed="false"><span class="portal01-step-num">09</span><img src="../images/portale/portal-01/portal_01_process_09.webp" alt="" loading="lazy"><span class="portal01-step-name">Goldverzierungen</span><span aria-hidden="true">↗</span></button>
+          </div>
+          <figure class="portal01-step-feature">
+            <div class="portal01-step-image-wrap"><img id="portal01-step-image" src="../images/portale/portal-01/portal_01_process_01.webp" alt="Portal #01 – Rohbox" loading="lazy"><button id="portal01-step-zoom" type="button" class="portal01-zoom-button" aria-label="Prozessbild vergrößern">⤢ Bild vergrößern</button></div>
+            <figcaption><span class="portal01-eyebrow">ARBEITSSCHRITT <span id="portal01-step-number">01</span></span><h3 id="portal01-step-title">Rohbox</h3><div class="portal01-gallery-arrows"><button id="portal01-step-prev" type="button" aria-label="Vorheriger Arbeitsschritt">←</button><button id="portal01-step-next" type="button" aria-label="Nächster Arbeitsschritt">→</button></div></figcaption>
+          </figure>
+        </div>
+      </section>
 
-    </section>
+      <aside class="portal01-outro" aria-label="Über das Kunstwerk"><span class="portal01-eyebrow">HANDARBEIT &amp; ORIGINAL</span><p>Ein bemaltes Holzobjekt – mit eigener Geschichte, eigenen Details und dokumentierter Entstehung.</p></aside>
+    </div>
 
-
-    <!-- NAVIGATION UNTEN -->
-
-    <nav class="portal-detail-navigation portal-detail-navigation-bottom">
-
-      <a href="../portale.html">
-        ← Portalübersicht
-      </a>
-
-      <a href="portal-02.html">
-        Portal #02 →
-      </a>
-
+    <nav class="portal-detail-navigation portal-detail-navigation-bottom" aria-label="Portalnavigation unten">
+      <a href="../portale.html">← Portalübersicht</a>
+      <a href="portal-02.html">Portal #02 →</a>
     </nav>
-
   </main>
 
+  <dialog id="portal01-lightbox" class="portal01-lightbox" aria-label="Bild in voller Größe ansehen">
+    <div class="portal01-lightbox-inner"><button class="portal01-lightbox-close" type="button" aria-label="Vergrößerung schließen">✕</button><img id="portal01-lightbox-image" src="" alt=""><p id="portal01-lightbox-caption"></p></div>
+  </dialog>
   <script src="../script.js"></script>
-
+  <script>
+  (() => {
+    const details = [('../images/portale/portal-01/portal_01_detail_front.webp', 'Gesamtansicht', 'Die komplette Vorderseite'), ('../images/portale/portal-01/portal_01_detail_verschluss.webp', 'Verschluss', 'Nahaufnahme des Verschlusses'), ('../images/portale/portal-01/portal_01_detail_frontverschluss.webp', 'Vorderseite', 'Vorderseite mit Verschluss'), ('../images/portale/portal-01/portal_01_detail_offen.webp', 'Innenansicht', 'Das geöffnete Portal'), ('../images/portale/portal-01/portal_01_detail_wiese.webp', 'Wiesenlandschaft', 'Die bemalte Landschaft'), ('../images/portale/portal-01/portal_01_detail_portal.webp', 'Portal', 'Das gemalte Tor'), ('../images/portale/portal-01/portal_01_detail_oben.webp', 'Draufsicht', 'Ansicht von oben')];
+    const steps = [('../images/portale/portal-01/portal_01_process_01.webp', 'Rohbox'), ('../images/portale/portal-01/portal_01_process_02.webp', 'Skizze'), ('../images/portale/portal-01/portal_01_process_03.webp', 'Erste Farben'), ('../images/portale/portal-01/portal_01_process_04.webp', 'Portal'), ('../images/portale/portal-01/portal_01_process_05.webp', 'Landschaft'), ('../images/portale/portal-01/portal_01_process_06.webp', 'Vegetation'), ('../images/portale/portal-01/portal_01_process_07.webp', 'Feine Details'), ('../images/portale/portal-01/portal_01_process_08.webp', 'Licht & Schatten'), ('../images/portale/portal-01/portal_01_process_09.webp', 'Goldverzierungen')];
+    const $ = id => document.getElementById(id);
+    const padded = n => String(n+1).padStart(2,'0');
+    const lightbox = $('portal01-lightbox');
+    const lightboxImage = $('portal01-lightbox-image');
+    const lightboxCaption = $('portal01-lightbox-caption');
+    let detailIndex = 0, stepIndex = 0;
+    const updateActive = (selector, dataKey, index) => {
+      document.querySelectorAll(selector).forEach(button => {
+        const current = Number(button.dataset[dataKey]) === index;
+        button.classList.toggle('is-active', current);
+        button.setAttribute('aria-pressed', String(current));
+      });
+    };
+    function renderDetail(index) {
+      detailIndex = (index + details.length) % details.length;
+      const [src, title, description] = details[detailIndex];
+      $('portal01-detail-image').src = src;
+      $('portal01-detail-image').alt = description;
+      $('portal01-detail-title').textContent = title;
+      $('portal01-detail-description').textContent = description;
+      $('portal01-detail-count').textContent = padded(detailIndex);
+      updateActive('[data-detail-index]', 'detailIndex', detailIndex);
+    }
+    function renderStep(index) {
+      stepIndex = (index + steps.length) % steps.length;
+      const [src, title] = steps[stepIndex];
+      $('portal01-step-image').src = src;
+      $('portal01-step-image').alt = 'Portal #01 – ' + title;
+      $('portal01-step-count').textContent = padded(stepIndex);
+      $('portal01-step-number').textContent = padded(stepIndex);
+      $('portal01-step-title').textContent = title;
+      updateActive('[data-step-index]', 'stepIndex', stepIndex);
+    }
+    function openLightbox(image, title) {
+      lightboxImage.src = image;
+      lightboxImage.alt = title;
+      lightboxCaption.textContent = title;
+      if (typeof lightbox.showModal === 'function') lightbox.showModal();
+    }
+    document.querySelectorAll('[data-detail-index]').forEach(button => button.addEventListener('click', () => renderDetail(Number(button.dataset.detailIndex))));
+    document.querySelectorAll('[data-step-index]').forEach(button => button.addEventListener('click', () => renderStep(Number(button.dataset.stepIndex))));
+    $('portal01-detail-prev').addEventListener('click', () => renderDetail(detailIndex - 1));
+    $('portal01-detail-next').addEventListener('click', () => renderDetail(detailIndex + 1));
+    $('portal01-step-prev').addEventListener('click', () => renderStep(stepIndex - 1));
+    $('portal01-step-next').addEventListener('click', () => renderStep(stepIndex + 1));
+    $('portal01-detail-zoom').addEventListener('click', () => openLightbox(details[detailIndex][0], details[detailIndex][1]));
+    $('portal01-step-zoom').addEventListener('click', () => openLightbox(steps[stepIndex][0], steps[stepIndex][1]));
+    lightbox.querySelector('.portal01-lightbox-close').addEventListener('click', () => lightbox.close());
+    lightbox.addEventListener('click', event => {if (event.target === lightbox) lightbox.close();});
+    renderDetail(0);
+    renderStep(0);
+  })();
+  </script>
 </body>
-
 </html>
