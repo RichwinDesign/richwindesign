@@ -39,6 +39,68 @@
 .journey-sofa-range {position:absolute;inset:0;width:100%;height:100%;margin:0;padding:0;opacity:0;cursor:ew-resize;z-index:5;touch-action:pan-y;}
 .journey-sofa-range:focus-visible {opacity:.07;outline:2px solid #8dcced;outline-offset:-3px;}
 @media(max-width:700px) {.journey-media-emotes .journey-media-inner.journey-emotes-grid {aspect-ratio:1.4 / 1;gap:6px;padding:8px;}}
+
+/* Passgenaue Bildrahmen auf dem Zeitstrahl.
+   Die Bilder behalten ihre volle Breite und bestimmen die Rahmenhöhe selbst. */
+.about-page .journey-entry .journey-media:not(.journey-media-placeholder):not(.journey-media-emotes):not(.journey-media-sofa):not(.journey-media-video) .journey-media-inner {
+  aspect-ratio: auto;
+  height: auto;
+  display: block;
+}
+.about-page .journey-entry .journey-media:not(.journey-media-placeholder):not(.journey-media-emotes):not(.journey-media-sofa):not(.journey-media-video) .journey-media-inner > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+/* Animierter Nissin-Banner: exaktes Bildseitenverhältnis 300 : 250. */
+.about-page .journey-media-banner .journey-media-inner {
+  aspect-ratio: 6 / 5;
+  padding: 0;
+}
+.about-page .journey-media-banner video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+/* Vier eigenständige Emote-Karten, ohne gemeinsamen äußeren Kasten. */
+.about-page .journey-media-emotes .journey-media-inner.journey-emotes-grid {
+  aspect-ratio: auto;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+  gap: 12px;
+  grid-template-rows: auto auto;
+  overflow: visible;
+}
+.about-page .journey-media-emotes .journey-emote-card {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+.about-page .journey-media-emotes .journey-emotes-grid img {
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+@media(max-width:700px) {
+  /* Die globale mobile aspect-ratio:1.55/1-Regel für normale Bilder aufheben. */
+  .about-page .journey-entry .journey-media:not(.journey-media-placeholder):not(.journey-media-emotes):not(.journey-media-sofa):not(.journey-media-video) .journey-media-inner {
+    aspect-ratio: auto !important;
+  }
+  .about-page .journey-media-emotes .journey-media-inner.journey-emotes-grid {
+    aspect-ratio: auto !important;
+    padding: 0;
+  }
+  .about-page .journey-media-banner .journey-media-inner {
+    aspect-ratio: 6 / 5 !important;
+  }
+  .about-page .journey-media-sofa .journey-media-inner.journey-sofa-compare {
+    aspect-ratio: 1.4 / 1 !important;
+  }
+}
 </style>
 </head>
 <body>
