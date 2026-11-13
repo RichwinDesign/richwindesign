@@ -186,3 +186,53 @@
     padding: 8px;
   }
 }
+
+
+/* Portal #01 – Prozess kompakter: Erklaerung links, Loop-Galerie rechts.
+   Die Detailgalerie oben bleibt unveraendert. */
+@media (min-width: 901px) {
+  .portal01-page .portal01-process-layout {
+    display: grid;
+    grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+    gap: 34px;
+    align-items: center;
+  }
+  .portal01-page .portal01-process-intro {align-self: center;}
+  .portal01-page .portal01-process-intro .portal01-section-top {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 17px;
+  }
+  .portal01-page .portal01-process-intro .portal01-section-top h2 {
+    font-size: clamp(25px, 2.5vw, 34px);
+  }
+  .portal01-page .portal01-process-intro .portal01-section-description {
+    max-width: 380px;
+    margin: 0;
+  }
+  .portal01-page .portal01-process-layout .portal01-step-feature {
+    width: 100%;
+    min-width: 0;
+    max-width: 545px;
+    justify-self: end;
+  }
+  .portal01-page .portal01-process-layout .portal01-step-image-wrap {
+    height: 310px;
+    padding: 12px;
+  }
+  .portal01-page .portal01-process-layout .portal01-step-feature figcaption {
+    min-height: 77px;
+    padding: 14px 110px 14px 18px;
+  }
+  .portal01-page .portal01-process-layout .portal01-step-feature figcaption .portal01-gallery-arrows {
+    top: 16px;
+    right: 15px;
+  }
+}
+@media (max-width: 900px) {
+  .portal01-page .portal01-process-layout {display: grid;grid-template-columns: 1fr;gap: 16px;}
+  .portal01-page .portal01-process-intro .portal01-section-description {margin:0;}
+  .portal01-page .portal01-process-layout .portal01-step-feature {width:100%;max-width:630px;margin:0 auto;}
+  .portal01-page .portal01-process-layout .portal01-step-image-wrap {height:clamp(240px,48vw,360px);}
+}
