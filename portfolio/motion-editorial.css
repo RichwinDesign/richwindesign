@@ -279,52 +279,14 @@
   .motion-showcase .motion-lekkerland-icon img {max-width: 68px !important; max-height: 68px !important;}
 }
 
-/* Lekkerland – nummerierte Icons 1 bis 7 zuerst */
-.motion-lekkerland-icon-grid > .motion-lekkerland-icon {
-  order: 10;
-}
 
-/* 1 – Stellenportal */
-.motion-lekkerland-icon:has(img[src*="icon_stellenportal.gif"]) {
-  order: 1;
-}
-
-/* 2 – Bewerbungsprüfung */
-.motion-lekkerland-icon:has(img[src*="icon_bewerbungspruefung.gif"]) {
-  order: 2;
-}
-
-/* 3 – Einladung */
-.motion-lekkerland-icon:has(img[src*="icon_einladung.gif"]) {
-  order: 3;
-}
-
-/* 4 – Austausch */
-.motion-lekkerland-icon:has(img[src*="icon_austausch.gif"]) {
-  order: 4;
-}
-
-/* 5 – Telefonat */
-.motion-lekkerland-icon:has(img[src*="icon_telefonat.gif"]) {
-  order: 5;
-}
-
-/* 6 – Vertragsunterzeichnung */
-.motion-lekkerland-icon:has(img[src*="icon_vertragsunterzeichnung.gif"]) {
-  order: 6;
-}
-
-/* 7 – Einarbeitung */
-.motion-lekkerland-icon:has(img[src*="icon_einarbeitung.gif"]) {
-  order: 7;
-}
-
-/* 4 – Vorstellungsgespräch statt Austausch */
-.motion-lekkerland-icon:has(img[src*="icon_vorstellungsgespraech.gif"]) {
-  order: 4;
-}
-
-/* Austausch wieder zu den übrigen Icons */
-.motion-lekkerland-icon:has(img[src*="icon_austausch.gif"]) {
-  order: 10;
-}
+/* Lekkerland – nummerierte Icons 1–7 in der ersten Reihe. */
+.motion-lekkerland-icon-grid > .motion-lekkerland-icon { order: 10; }
+.motion-lekkerland-icon:has(img[src*="icon_stellenportal.gif"]) { order: 1; }
+.motion-lekkerland-icon:has(img[src*="icon_bewerbungspruefung.gif"]) { order: 2; }
+.motion-lekkerland-icon:has(img[src*="icon_einladung.gif"]) { order: 3; }
+.motion-lekkerland-icon:has(img[src*="icon_vorstellungsgespraech.gif"]) { order: 4; }
+.motion-lekkerland-icon:has(img[src*="icon_telefonat.gif"]) { order: 5; }
+.motion-lekkerland-icon:has(img[src*="icon_vertragsunterzeichnung.gif"]) { order: 6; }
+.motion-lekkerland-icon:has(img[src*="icon_einarbeitung.gif"]) { order: 7; }
+.motion-lekkerland-icon:has(img[src*="icon_austausch.gif"]) { order: 10; }
