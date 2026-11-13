@@ -1,5 +1,5 @@
 /* Portal #03 – isolierte Musterseite. Andere Portale bleiben unverändert. */
-.portal03-page { --portal-accent:#ff8652; --portal-muted:#a6b5b6; }
+.portal03-page { --portal-accent:#D97A34; --portal-highlight:#F3A35F; --portal-muted:#a6b5b6; }
 /* Hero: richtiger WebP-Pfad, weniger milchige Fläche, sanfter Schatten von oben. */
 .portal03-page .portal-detail-hero.portal-detail-hero-01 {
  background-image:linear-gradient(180deg,rgba(9,6,14,.93) 0%,rgba(11,10,14,.73) 19%,rgba(15,17,17,.50) 46%,rgba(9,13,12,.52) 75%,rgba(5,9,12,.82) 100%),url("../images/portale/portal-03/portal_03_hero-background.webp");
@@ -391,11 +391,52 @@ body:has(.portal03-page) main.portal03-page {
 .portal03-merch-heading p {margin:0;color:#c3c3cd;line-height:1.6;font-size:13px;}
 .portal03-merch-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;}
 .portal03-merch-card {min-width:0;display:grid;grid-template-columns:145px minmax(0,1fr);align-items:center;gap:18px;text-decoration:none;background:rgba(15,15,23,.83);border:1px solid rgba(180,172,193,.22);border-radius:13px;padding:13px;color:#fff;transition:transform .2s,border-color .2s;}
-.portal03-merch-card:hover {transform:translateY(-2px);border-color:#ff8652;}
+.portal03-merch-card:hover {transform:translateY(-2px);border-color:#D97A34;}
 .portal03-merch-photo {display:flex;align-items:center;justify-content:center;min-height:142px;background:radial-gradient(circle at center,rgba(120,90,130,.13),transparent 72%);}
 .portal03-merch-photo img {width:100%;height:135px;object-fit:contain;display:block;}
 .portal03-merch-info h3 {font-size:21px;margin:0 0 7px;color:#fff;}
 .portal03-merch-info p {font-size:12px;color:#bbc0c6;line-height:1.5;margin:0 0 16px;}
-.portal03-merch-cta {color:#ff8652;font-size:12px;font-weight:700;}
+.portal03-merch-cta {color:#D97A34;font-size:12px;font-weight:700;}
 @media(max-width:700px) {.portal03-merch-card {grid-template-columns:105px minmax(0,1fr);gap:9px;padding:9px;} .portal03-merch-photo img {height:105px;}}
 @media(max-width:520px) {.portal03-merch-grid {grid-template-columns:1fr;}}
+
+/* 2026-11: portalindividuelle Akzentfarben statt der globalen grünen Portal-01-Defaults.
+   Auf diese Unterseite begrenzt: keine Änderungen an anderen Portal- oder Portfolio-Seiten. */
+.portal03-page .portal-detail-hero-text h1 {
+  color: var(--portal-accent);
+}
+.portal03-page .portal-detail-hero .portal-detail-buy {
+  background: var(--portal-accent);
+  color: #111111;
+}
+.portal03-page .portal-detail-navigation a {
+  border-color: var(--portal-accent);
+  color: var(--portal-accent);
+}
+.portal03-page .portal-detail-navigation a:hover,
+.portal03-page .portal-detail-navigation a:focus-visible {
+  background: var(--portal-accent);
+  color: #111111;
+}
+.portal03-page .portal03-zoom-button:hover,
+.portal03-page .portal03-gallery-arrows button:hover {
+  background: color-mix(in srgb, var(--portal-accent) 20%, #171921);
+  border-color: var(--portal-accent);
+}
+.portal03-page .portal03-step-tab:hover,
+.portal03-page .portal03-step-tab.is-active {
+  background: color-mix(in srgb, var(--portal-accent) 14%, #171921);
+}
+
+
+/* Verbindlicher Farbguide: Portal #03 – Hauptfarbe #D97A34, Lichtfarbe #F3A35F. */
+.portal03-page .portal03-eyebrow,
+.portal03-page .portal03-index span { color: var(--portal-highlight); }
+.portal03-page .portal-detail-hero-text h1 { color: var(--portal-highlight); }
+.portal03-page .portal-detail-hero .portal-detail-buy { background-color: var(--portal-accent); }
+.portal03-page .portal-detail-navigation a { border-color:var(--portal-accent); color:var(--portal-highlight); }
+.portal03-page .portal-detail-navigation a:hover,
+.portal03-page .portal-detail-navigation a:focus-visible { background:var(--portal-accent); color:#111; }
+.portal03-page .portal03-thumb.is-active,
+.portal03-page .portal03-thumb:hover { border-color:var(--portal-accent); }
+.portal03-page .portal03-merch-cta { color:var(--portal-highlight); }
