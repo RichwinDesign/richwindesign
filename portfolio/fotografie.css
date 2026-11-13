@@ -83,3 +83,42 @@
 }
 @media(max-width:380px) {.photo-page-text h1 {font-size:2.65rem;}}
 @media(prefers-reduced-motion:reduce) {.photo-work,.photo-project-action::after {transition:none;}.photo-work:hover {transform:none;}}
+
+
+/* Retusche: sieben Bildvergleiche plus eine animierte Galerie. */
+.photo-showcase .photo-project-grid .photo-work--slideshow {
+  min-width: 0;
+  padding: 14px;
+}
+.photo-showcase .photo-work--slideshow .photo-slideshow {
+  position: relative;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  isolation: isolate;
+  overflow: hidden;
+  background: #05080d;
+  border-radius: 5px;
+}
+.photo-showcase .photo-work--slideshow .photo-slideshow .photo-slide {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: contain;
+  margin: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .7s ease, visibility .7s ease;
+  pointer-events: none;
+}
+.photo-showcase .photo-work--slideshow .photo-slideshow .photo-slide.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+@media (prefers-reduced-motion: reduce) {
+  .photo-showcase .photo-work--slideshow .photo-slideshow .photo-slide { transition: none; }
+}
