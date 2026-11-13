@@ -4808,3 +4808,38 @@ body:has(.portal-overview) {
 @media (max-width: 680px) {
   .portfolio-back-nav { padding: 14px 16px 0; }
 }
+/* PORTAL-UNTERSEITEN #01–#05
+   Gleiche Hero-Hoehe wie Motion & Visuals: 430px am Desktop.
+   Ganz unten in die vorhandene style.css einfuegen.
+   Keine weiteren Dateien oder Seitenelemente aendern. */
+@media (min-width: 701px) {
+  .portal-detail-hero .portal-detail-hero-inner {
+    height: 430px !important;
+    min-height: 430px !important;
+    padding-top: 32px !important;
+    padding-bottom: 32px !important;
+  }
+  .portal-detail-hero .portal-detail-hero-image img {
+    width: auto;
+    max-width: 100%;
+    max-height: 340px;
+    object-fit: contain;
+  }
+}
+
+/* Auf schmalen Displays bleiben die beiden Spalten untereinander;
+   der Inhalt darf hoeher werden, damit nichts ueberlappt. */
+@media (max-width: 700px) {
+  .portal-detail-hero .portal-detail-hero-inner {
+    height: auto !important;
+    min-height: 0 !important;
+    padding-top: 74px !important;
+    padding-bottom: 42px !important;
+  }
+  .portal-detail-hero .portal-detail-hero-image img {
+    width: auto;
+    max-width: 100%;
+    max-height: 300px;
+    object-fit: contain;
+  }
+}
