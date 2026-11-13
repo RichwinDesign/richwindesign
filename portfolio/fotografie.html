@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -10,223 +9,299 @@
 </head>
 <body>
   <div id="site-header"></div>
-
   <main>
-    <!-- HERO -->
     <section class="photo-page-hero" aria-label="Fotografie">
       <div class="photo-page-hero-inner">
-        <div class="photo-page-text">
-          <h1>Fotografien</h1>
-        </div>
-        <button class="ai-label photo-page-ai" type="button"
-                aria-label="Hinweis: KI-generiertes Hero-Bild"
-                data-ai-message="Dieses Hero-Bild wurde mithilfe generativer KI erstellt.">
+        <div class="photo-page-text"><h1>Fotografien</h1></div>
+        <button class="ai-label photo-page-ai" type="button" aria-label="Hinweis: KI-generiertes Hero-Bild" data-ai-message="Dieses Hero-Bild wurde mithilfe generativer KI erstellt.">
           <img src="../images/general/icons/icon_ki-hinweis.webp" alt="">
         </button>
       </div>
     </section>
-
-    <!-- BESCHREIBUNG -->
     <section class="photo-description" aria-label="Über Fotografie">
       <div class="photo-description-inner">
         <p class="photo-page-subtitle">Identität durch Licht.</p>
         <p>Ich halte Momente, Produkte und Orte mit einem Gespür für Licht, Komposition und Details fest. Mein Fokus liegt auf authentischen Fotografien, die Emotionen wecken, Geschichten erzählen und durch ihre klare Bildsprache nachhaltig wirken.</p>
       </div>
     </section>
-
-    <!-- AUSGEWÄHLTE ARBEITEN -->
-    <section class="photo-showcase" aria-label="Ausgewählte Fotografien">
-      <div class="photo-showcase-intro">
-        <span>Ausgewählte Arbeiten</span>
-        <p>Fotografie und Bildgestaltung – nach Projekten sortiert.</p>
-      </div>
-
-      <!-- LICHT & SCHATTEN -->
+    <section class="photo-showcase" aria-label="Ausgewählte Fotografien und Bildbearbeitungen">
+      <div class="photo-showcase-intro"><span>Ausgewählte Arbeiten</span><p>Fotografie, Retusche, Composing und Restauration – nach Projekten sortiert.</p></div>
       <details class="photo-project photo-project--compare" open>
         <summary class="photo-project-heading">
-          <div>
-            <h2>Licht &amp; Schatten</h2>
-            <p>Vergleich unterschiedlicher Lichtsetzungen</p>
-          </div>
+          <div><h2>Licht &amp; Schatten</h2><p>Lichtsetzungen im direkten Vergleich</p></div>
           <span class="photo-project-count">2 Vergleiche</span>
           <span class="photo-project-action" aria-hidden="true">Einklappen</span>
         </summary>
-
         <div class="photo-project-grid photo-compare-grid">
-
           <figure class="photo-work photo-work--compare">
             <div class="photo-compare" style="--compare-position:50%">
-              <img class="photo-compare-before"
-                   src="../images/portfolio/fotografie/fotografie_kontrast-vorher.jpg"
-                   alt="Kontrast – Lichtsetzung 1" loading="lazy">
-
-              <div class="photo-compare-after-wrap">
-                <img class="photo-compare-after"
-                     src="../images/portfolio/fotografie/fotografie_kontrast-nachher.jpg"
-                     alt="Kontrast – Lichtsetzung 2" loading="lazy">
-              </div>
-
-              <div class="photo-compare-line" aria-hidden="true">
-                <span class="photo-compare-handle">↔</span>
-              </div>
-
-              <span class="photo-compare-label photo-compare-label--before"
-                    aria-hidden="true">Lichtsetzung 1</span>
-              <span class="photo-compare-label photo-compare-label--after"
-                    aria-hidden="true">Lichtsetzung 2</span>
-
-              <input class="photo-compare-range" type="range"
-                     min="0" max="100" value="50"
-                     aria-label="Kontrast: Lichtsetzungen vergleichen">
+              <img class="photo-compare-before" src="../images/portfolio/fotografie/fotografie_kontrast-vorher.webp" alt="Kontrast – Lichtsetzung 1" loading="lazy">
+              <div class="photo-compare-after-wrap"><img class="photo-compare-after" src="../images/portfolio/fotografie/fotografie_kontrast-nachher.webp" alt="Kontrast – Lichtsetzung 2" loading="lazy"></div>
+              <div class="photo-compare-line" aria-hidden="true"><span class="photo-compare-handle">↔</span></div>
+              <span class="photo-compare-label photo-compare-label--before" aria-hidden="true">Lichtsetzung 1</span>
+              <span class="photo-compare-label photo-compare-label--after" aria-hidden="true">Lichtsetzung 2</span>
+              <input class="photo-compare-range" type="range" min="0" max="100" value="50" aria-label="Kontrast: Lichtsetzung 1 und Lichtsetzung 2 vergleichen">
             </div>
-            <figcaption>Kontrast – Lichtwirkung im Vergleich</figcaption>
+            <figcaption>Kontrast</figcaption>
           </figure>
-
           <figure class="photo-work photo-work--compare">
             <div class="photo-compare" style="--compare-position:50%">
-              <img class="photo-compare-before"
-                   src="../images/portfolio/fotografie/fotografie_stillleben-vorher.jpg"
-                   alt="Stillleben – Lichtsetzung 1" loading="lazy">
-
-              <div class="photo-compare-after-wrap">
-                <img class="photo-compare-after"
-                     src="../images/portfolio/fotografie/fotografie_stillleben-nachher.jpg"
-                     alt="Stillleben – Lichtsetzung 2" loading="lazy">
-              </div>
-
-              <div class="photo-compare-line" aria-hidden="true">
-                <span class="photo-compare-handle">↔</span>
-              </div>
-
-              <span class="photo-compare-label photo-compare-label--before"
-                    aria-hidden="true">Lichtsetzung 1</span>
-              <span class="photo-compare-label photo-compare-label--after"
-                    aria-hidden="true">Lichtsetzung 2</span>
-
-              <input class="photo-compare-range" type="range"
-                     min="0" max="100" value="50"
-                     aria-label="Stillleben: Lichtsetzungen vergleichen">
+              <img class="photo-compare-before" src="../images/portfolio/fotografie/fotografie_stillleben-vorher.webp" alt="Stillleben – Lichtsetzung 1" loading="lazy">
+              <div class="photo-compare-after-wrap"><img class="photo-compare-after" src="../images/portfolio/fotografie/fotografie_stillleben-nachher.webp" alt="Stillleben – Lichtsetzung 2" loading="lazy"></div>
+              <div class="photo-compare-line" aria-hidden="true"><span class="photo-compare-handle">↔</span></div>
+              <span class="photo-compare-label photo-compare-label--before" aria-hidden="true">Lichtsetzung 1</span>
+              <span class="photo-compare-label photo-compare-label--after" aria-hidden="true">Lichtsetzung 2</span>
+              <input class="photo-compare-range" type="range" min="0" max="100" value="50" aria-label="Stillleben: Lichtsetzung 1 und Lichtsetzung 2 vergleichen">
             </div>
-            <figcaption>Stillleben – Lichtwirkung im Vergleich</figcaption>
+            <figcaption>Stillleben</figcaption>
           </figure>
-
         </div>
       </details>
-
-      <!-- BLAUER KRAN -->
-      <details class="photo-project" open>
+      <details class="photo-project photo-project--compare">
         <summary class="photo-project-heading">
-          <div>
-            <h2>Blauer Kran – Hamburg</h2>
-            <p>Architektur, Perspektive und industrielle Details</p>
-          </div>
+          <div><h2>Retusche &amp; Bildbearbeitung</h2><p>Vorher-Nachher-Ergebnisse von Porträt-, Fahrzeug- und Szenenbearbeitungen</p></div>
+          <span class="photo-project-count">3 Vergleiche</span>
+          <span class="photo-project-action" aria-hidden="true">Einklappen</span>
+        </summary>
+        <div class="photo-project-grid photo-compare-grid">
+          <figure class="photo-work photo-work--compare">
+            <div class="photo-compare" style="--compare-position:50%">
+              <img class="photo-compare-before" src="../images/portfolio/fotografie/fotografie_audi-vorher.webp" alt="Audi – Bildbearbeitung – Vorher" loading="lazy">
+              <div class="photo-compare-after-wrap"><img class="photo-compare-after" src="../images/portfolio/fotografie/fotografie_audi-nachher.webp" alt="Audi – Bildbearbeitung – Nachher" loading="lazy"></div>
+              <div class="photo-compare-line" aria-hidden="true"><span class="photo-compare-handle">↔</span></div>
+              <span class="photo-compare-label photo-compare-label--before" aria-hidden="true">Vorher</span>
+              <span class="photo-compare-label photo-compare-label--after" aria-hidden="true">Nachher</span>
+              <input class="photo-compare-range" type="range" min="0" max="100" value="50" aria-label="Audi – Bildbearbeitung: Vorher und Nachher vergleichen">
+            </div>
+            <figcaption>Audi – Bildbearbeitung</figcaption>
+          </figure>
+          <figure class="photo-work photo-work--compare">
+            <div class="photo-compare" style="--compare-position:50%">
+              <img class="photo-compare-before" src="../images/portfolio/fotografie/fotografie_city-vorher.webp" alt="City – Bildbearbeitung – Vorher" loading="lazy">
+              <div class="photo-compare-after-wrap"><img class="photo-compare-after" src="../images/portfolio/fotografie/fotografie_city-nachher.webp" alt="City – Bildbearbeitung – Nachher" loading="lazy"></div>
+              <div class="photo-compare-line" aria-hidden="true"><span class="photo-compare-handle">↔</span></div>
+              <span class="photo-compare-label photo-compare-label--before" aria-hidden="true">Vorher</span>
+              <span class="photo-compare-label photo-compare-label--after" aria-hidden="true">Nachher</span>
+              <input class="photo-compare-range" type="range" min="0" max="100" value="50" aria-label="City – Bildbearbeitung: Vorher und Nachher vergleichen">
+            </div>
+            <figcaption>City – Bildbearbeitung</figcaption>
+          </figure>
+          <figure class="photo-work photo-work--compare">
+            <div class="photo-compare" style="--compare-position:50%">
+              <img class="photo-compare-before" src="../images/portfolio/fotografie/fotografie_vietnam-vorher.webp" alt="Vietnam – Bildbearbeitung – Vorher" loading="lazy">
+              <div class="photo-compare-after-wrap"><img class="photo-compare-after" src="../images/portfolio/fotografie/fotografie_vietnam-nachher.webp" alt="Vietnam – Bildbearbeitung – Nachher" loading="lazy"></div>
+              <div class="photo-compare-line" aria-hidden="true"><span class="photo-compare-handle">↔</span></div>
+              <span class="photo-compare-label photo-compare-label--before" aria-hidden="true">Vorher</span>
+              <span class="photo-compare-label photo-compare-label--after" aria-hidden="true">Nachher</span>
+              <input class="photo-compare-range" type="range" min="0" max="100" value="50" aria-label="Vietnam – Bildbearbeitung: Vorher und Nachher vergleichen">
+            </div>
+            <figcaption>Vietnam – Bildbearbeitung</figcaption>
+          </figure>
+        </div>
+      </details>
+      <details class="photo-project photo-project--compare">
+        <summary class="photo-project-heading">
+          <div><h2>Restauration &amp; Composing</h2><p>Bildrestauration und digitale Bildkomposition im Vergleich</p></div>
+          <span class="photo-project-count">3 Vergleiche</span>
+          <span class="photo-project-action" aria-hidden="true">Einklappen</span>
+        </summary>
+        <div class="photo-project-grid photo-compare-grid">
+          <figure class="photo-work photo-work--compare">
+            <div class="photo-compare" style="--compare-position:50%">
+              <img class="photo-compare-before" src="../images/portfolio/fotografie/fotografie_restauration-gruppe-vorher.webp" alt="Gruppenfoto – Restauration – Vorher" loading="lazy">
+              <div class="photo-compare-after-wrap"><img class="photo-compare-after" src="../images/portfolio/fotografie/fotografie_restauration-gruppe-nachher.webp" alt="Gruppenfoto – Restauration – Nachher" loading="lazy"></div>
+              <div class="photo-compare-line" aria-hidden="true"><span class="photo-compare-handle">↔</span></div>
+              <span class="photo-compare-label photo-compare-label--before" aria-hidden="true">Vorher</span>
+              <span class="photo-compare-label photo-compare-label--after" aria-hidden="true">Nachher</span>
+              <input class="photo-compare-range" type="range" min="0" max="100" value="50" aria-label="Gruppenfoto – Restauration: Vorher und Nachher vergleichen">
+            </div>
+            <figcaption>Gruppenfoto – Restauration</figcaption>
+          </figure>
+          <figure class="photo-work photo-work--compare">
+            <div class="photo-compare" style="--compare-position:50%">
+              <img class="photo-compare-before" src="../images/portfolio/fotografie/fotografie_restauration-portraet-vorher.webp" alt="Porträt – Restauration – Vorher" loading="lazy">
+              <div class="photo-compare-after-wrap"><img class="photo-compare-after" src="../images/portfolio/fotografie/fotografie_restauration-portraet-nachher.webp" alt="Porträt – Restauration – Nachher" loading="lazy"></div>
+              <div class="photo-compare-line" aria-hidden="true"><span class="photo-compare-handle">↔</span></div>
+              <span class="photo-compare-label photo-compare-label--before" aria-hidden="true">Vorher</span>
+              <span class="photo-compare-label photo-compare-label--after" aria-hidden="true">Nachher</span>
+              <input class="photo-compare-range" type="range" min="0" max="100" value="50" aria-label="Porträt – Restauration: Vorher und Nachher vergleichen">
+            </div>
+            <figcaption>Porträt – Restauration</figcaption>
+          </figure>
+          <figure class="photo-work photo-work--compare">
+            <div class="photo-compare" style="--compare-position:50%">
+              <img class="photo-compare-before" src="../images/portfolio/fotografie/fotografie_composing-sofa-vorher.webp" alt="Sofa – Composing – Vorher" loading="lazy">
+              <div class="photo-compare-after-wrap"><img class="photo-compare-after" src="../images/portfolio/fotografie/fotografie_composing-sofa-nachher.webp" alt="Sofa – Composing – Nachher" loading="lazy"></div>
+              <div class="photo-compare-line" aria-hidden="true"><span class="photo-compare-handle">↔</span></div>
+              <span class="photo-compare-label photo-compare-label--before" aria-hidden="true">Vorher</span>
+              <span class="photo-compare-label photo-compare-label--after" aria-hidden="true">Nachher</span>
+              <input class="photo-compare-range" type="range" min="0" max="100" value="50" aria-label="Sofa – Composing: Vorher und Nachher vergleichen">
+            </div>
+            <figcaption>Sofa – Composing</figcaption>
+          </figure>
+        </div>
+      </details>
+      <details class="photo-project">
+        <summary class="photo-project-heading">
+          <div><h2>Weitere Bildbearbeitungen</h2><p>Retusche, Fashion und Composing-Arbeiten</p></div>
+          <span class="photo-project-count">8 Motive</span>
+          <span class="photo-project-action" aria-hidden="true">Einklappen</span>
+        </summary>
+        <div class="photo-project-grid">
+          <figure class="photo-work">
+            <div class="photo-work-media"><img src="../images/portfolio/fotografie/fotografie_auto-bildbearbeitung.webp" alt="Auto – Bildbearbeitung" loading="lazy" decoding="async"></div>
+            <figcaption>Auto – Bildbearbeitung</figcaption>
+          </figure>
+          <figure class="photo-work">
+            <div class="photo-work-media"><img src="../images/portfolio/fotografie/fotografie_retouching-fashion-01.webp" alt="Fashion – Retusche 01" loading="lazy" decoding="async"></div>
+            <figcaption>Fashion – Retusche 01</figcaption>
+          </figure>
+          <figure class="photo-work">
+            <div class="photo-work-media"><img src="../images/portfolio/fotografie/fotografie_retouching-fashion-02.webp" alt="Fashion – Retusche 02" loading="lazy" decoding="async"></div>
+            <figcaption>Fashion – Retusche 02</figcaption>
+          </figure>
+          <figure class="photo-work">
+            <div class="photo-work-media"><img src="../images/portfolio/fotografie/fotografie_retouching-portraet-01.webp" alt="Porträt – Retusche 01" loading="lazy" decoding="async"></div>
+            <figcaption>Porträt – Retusche 01</figcaption>
+          </figure>
+          <figure class="photo-work">
+            <div class="photo-work-media"><img src="../images/portfolio/fotografie/fotografie_retouching-portraet-02.webp" alt="Porträt – Retusche 02" loading="lazy" decoding="async"></div>
+            <figcaption>Porträt – Retusche 02</figcaption>
+          </figure>
+          <figure class="photo-work">
+            <div class="photo-work-media"><img src="../images/portfolio/fotografie/fotografie_composing-werkbank-01.webp" alt="Werkbank – Composing 01" loading="lazy" decoding="async"></div>
+            <figcaption>Werkbank – Composing 01</figcaption>
+          </figure>
+          <figure class="photo-work">
+            <div class="photo-work-media"><img src="../images/portfolio/fotografie/fotografie_composing-werkbank-02.webp" alt="Werkbank – Composing 02" loading="lazy" decoding="async"></div>
+            <figcaption>Werkbank – Composing 02</figcaption>
+          </figure>
+          <figure class="photo-work">
+            <div class="photo-work-media"><img src="../images/portfolio/fotografie/fotografie_composing-werkbank-03.webp" alt="Werkbank – Composing 03" loading="lazy" decoding="async"></div>
+            <figcaption>Werkbank – Composing 03</figcaption>
+          </figure>
+        </div>
+      </details>
+      <details class="photo-project">
+        <summary class="photo-project-heading">
+          <div><h2>Blauer Kran – Hamburg</h2><p>Architektur, Perspektive und industrielle Details</p></div>
           <span class="photo-project-count">4 Motive</span>
           <span class="photo-project-action" aria-hidden="true">Einklappen</span>
         </summary>
         <div class="photo-project-grid">
           <figure class="photo-work">
-            <div class="photo-work-media"><img src="../images/portfolio/fotografie/fotografie_blauer-kran-01.png" alt="Blauer Kran in Hamburg – Aufnahme 1" loading="lazy"></div>
+            <div class="photo-work-media"><img src="../images/portfolio/fotografie/fotografie_blauer-kran-01.webp" alt="Blauer Kran – Aufnahme 1" loading="lazy" decoding="async"></div>
             <figcaption>Blauer Kran – Aufnahme 1</figcaption>
           </figure>
           <figure class="photo-work">
-            <div class="photo-work-media"><img src="../images/portfolio/fotografie/fotografie_blauer-kran-02.png" alt="Blauer Kran in Hamburg – Aufnahme 2" loading="lazy"></div>
+            <div class="photo-work-media"><img src="../images/portfolio/fotografie/fotografie_blauer-kran-02.webp" alt="Blauer Kran – Aufnahme 2" loading="lazy" decoding="async"></div>
             <figcaption>Blauer Kran – Aufnahme 2</figcaption>
           </figure>
           <figure class="photo-work">
-            <div class="photo-work-media"><img src="../images/portfolio/fotografie/fotografie_blauer-kran-03.png" alt="Blauer Kran in Hamburg – Aufnahme 3" loading="lazy"></div>
+            <div class="photo-work-media"><img src="../images/portfolio/fotografie/fotografie_blauer-kran-03.webp" alt="Blauer Kran – Aufnahme 3" loading="lazy" decoding="async"></div>
             <figcaption>Blauer Kran – Aufnahme 3</figcaption>
           </figure>
           <figure class="photo-work">
-            <div class="photo-work-media"><img src="../images/portfolio/fotografie/fotografie_blauer-kran-04.png" alt="Blauer Kran in Hamburg – Aufnahme 4" loading="lazy"></div>
+            <div class="photo-work-media"><img src="../images/portfolio/fotografie/fotografie_blauer-kran-04.webp" alt="Blauer Kran – Aufnahme 4" loading="lazy" decoding="async"></div>
             <figcaption>Blauer Kran – Aufnahme 4</figcaption>
           </figure>
         </div>
       </details>
-
-      <!-- HAMBURGER DOM -->
-      <details class="photo-project" open>
+      <details class="photo-project">
         <summary class="photo-project-heading">
-          <div>
-            <h2>Dom – Hoch hinaus</h2>
-            <p>Perspektiven und Eindrücke vom Hamburger Dom</p>
-          </div>
+          <div><h2>Dom – Hoch hinaus</h2><p>Perspektiven und Eindrücke vom Hamburger Dom</p></div>
           <span class="photo-project-count">4 Motive</span>
           <span class="photo-project-action" aria-hidden="true">Einklappen</span>
         </summary>
         <div class="photo-project-grid">
           <figure class="photo-work">
-            <div class="photo-work-media"><img src="../images/portfolio/fotografie/fotografie_dom-01.jpg" alt="Dom – Hoch hinaus, Aufnahme 1" loading="lazy"></div>
+            <div class="photo-work-media"><img src="../images/portfolio/fotografie/fotografie_dom-01.webp" alt="Dom – Aufnahme 1" loading="lazy" decoding="async"></div>
             <figcaption>Dom – Aufnahme 1</figcaption>
           </figure>
           <figure class="photo-work">
-            <div class="photo-work-media"><img src="../images/portfolio/fotografie/fotografie_dom-02.jpg" alt="Dom – Hoch hinaus, Aufnahme 2" loading="lazy"></div>
+            <div class="photo-work-media"><img src="../images/portfolio/fotografie/fotografie_dom-02.webp" alt="Dom – Aufnahme 2" loading="lazy" decoding="async"></div>
             <figcaption>Dom – Aufnahme 2</figcaption>
           </figure>
           <figure class="photo-work">
-            <div class="photo-work-media"><img src="../images/portfolio/fotografie/fotografie_dom-03.jpg" alt="Dom – Hoch hinaus, Aufnahme 3" loading="lazy"></div>
+            <div class="photo-work-media"><img src="../images/portfolio/fotografie/fotografie_dom-03.webp" alt="Dom – Aufnahme 3" loading="lazy" decoding="async"></div>
             <figcaption>Dom – Aufnahme 3</figcaption>
           </figure>
           <figure class="photo-work">
-            <div class="photo-work-media"><img src="../images/portfolio/fotografie/fotografie_dom-04.jpg" alt="Dom – Hoch hinaus, Aufnahme 4" loading="lazy"></div>
+            <div class="photo-work-media"><img src="../images/portfolio/fotografie/fotografie_dom-04.webp" alt="Dom – Aufnahme 4" loading="lazy" decoding="async"></div>
             <figcaption>Dom – Aufnahme 4</figcaption>
           </figure>
         </div>
       </details>
-
-      <!-- TEPPICH KIBEK -->
-      <details class="photo-project" open>
+      <details class="photo-project">
         <summary class="photo-project-heading">
-          <div>
-            <h2>Elmshorn – Teppich Kibek</h2>
-            <p>Architekturfotografie und urbane Eindrücke</p>
-          </div>
+          <div><h2>Elmshorn – Teppich Kibek</h2><p>Architekturfotografie und urbane Eindrücke</p></div>
           <span class="photo-project-count">4 Motive</span>
           <span class="photo-project-action" aria-hidden="true">Einklappen</span>
         </summary>
         <div class="photo-project-grid">
           <figure class="photo-work">
-            <div class="photo-work-media"><img src="../images/portfolio/fotografie/fotografie_kibek-01.png" alt="Teppich Kibek in Elmshorn – Aufnahme 1" loading="lazy"></div>
+            <div class="photo-work-media"><img src="../images/portfolio/fotografie/fotografie_kibek-01.webp" alt="Teppich Kibek – Aufnahme 1" loading="lazy" decoding="async"></div>
             <figcaption>Teppich Kibek – Aufnahme 1</figcaption>
           </figure>
           <figure class="photo-work">
-            <div class="photo-work-media"><img src="../images/portfolio/fotografie/fotografie_kibek-02.png" alt="Teppich Kibek in Elmshorn – Aufnahme 2" loading="lazy"></div>
+            <div class="photo-work-media"><img src="../images/portfolio/fotografie/fotografie_kibek-02.webp" alt="Teppich Kibek – Aufnahme 2" loading="lazy" decoding="async"></div>
             <figcaption>Teppich Kibek – Aufnahme 2</figcaption>
           </figure>
           <figure class="photo-work">
-            <div class="photo-work-media"><img src="../images/portfolio/fotografie/fotografie_kibek-03.png" alt="Teppich Kibek in Elmshorn – Aufnahme 3" loading="lazy"></div>
+            <div class="photo-work-media"><img src="../images/portfolio/fotografie/fotografie_kibek-03.webp" alt="Teppich Kibek – Aufnahme 3" loading="lazy" decoding="async"></div>
             <figcaption>Teppich Kibek – Aufnahme 3</figcaption>
           </figure>
           <figure class="photo-work">
-            <div class="photo-work-media"><img src="../images/portfolio/fotografie/fotografie_kibek-04.png" alt="Teppich Kibek in Elmshorn – Aufnahme 4" loading="lazy"></div>
+            <div class="photo-work-media"><img src="../images/portfolio/fotografie/fotografie_kibek-04.webp" alt="Teppich Kibek – Aufnahme 4" loading="lazy" decoding="async"></div>
             <figcaption>Teppich Kibek – Aufnahme 4</figcaption>
+          </figure>
+        </div>
+      </details>
+      <details class="photo-project">
+        <summary class="photo-project-heading">
+          <div><h2>Wirelane</h2><p>Fotografische Einblicke und Details</p></div>
+          <span class="photo-project-count">4 Motive</span>
+          <span class="photo-project-action" aria-hidden="true">Einklappen</span>
+        </summary>
+        <div class="photo-project-grid">
+          <figure class="photo-work">
+            <div class="photo-work-media"><img src="../images/portfolio/fotografie/fotografie_wirelane-01.webp" alt="Wirelane – Aufnahme 1" loading="lazy" decoding="async"></div>
+            <figcaption>Wirelane – Aufnahme 1</figcaption>
+          </figure>
+          <figure class="photo-work">
+            <div class="photo-work-media"><img src="../images/portfolio/fotografie/fotografie_wirelane-02.webp" alt="Wirelane – Aufnahme 2" loading="lazy" decoding="async"></div>
+            <figcaption>Wirelane – Aufnahme 2</figcaption>
+          </figure>
+          <figure class="photo-work">
+            <div class="photo-work-media"><img src="../images/portfolio/fotografie/fotografie_wirelane-03.webp" alt="Wirelane – Aufnahme 3" loading="lazy" decoding="async"></div>
+            <figcaption>Wirelane – Aufnahme 3</figcaption>
+          </figure>
+          <figure class="photo-work">
+            <div class="photo-work-media"><img src="../images/portfolio/fotografie/fotografie_wirelane-04.webp" alt="Wirelane – Aufnahme 4" loading="lazy" decoding="async"></div>
+            <figcaption>Wirelane – Aufnahme 4</figcaption>
           </figure>
         </div>
       </details>
     </section>
   </main>
-
-  <!-- KI-POPUP -->
   <div class="ai-modal" id="aiModal" aria-hidden="true">
     <div class="ai-modal-backdrop"></div>
-    <div class="ai-modal-window" role="dialog" aria-modal="true"
-         aria-labelledby="aiModalTitle">
+    <div class="ai-modal-window" role="dialog" aria-modal="true" aria-labelledby="aiModalTitle">
       <h2 id="aiModalTitle">KI-generiertes Bild</h2>
       <p>Dieses Bild wurde mithilfe generativer KI erstellt.</p>
       <button type="button" id="aiModalClose">Okay</button>
     </div>
   </div>
-
   <script src="../script.js"></script>
   <script>
-    // Beide Lichtvergleichs-Regler funktionieren unabhängig voneinander.
+    // Alle Vorher-Nachher-Regler lassen sich unabhängig bedienen.
     document.querySelectorAll('.photo-compare').forEach((compare) => {
       const range = compare.querySelector('.photo-compare-range');
-      const update = () =>
-        compare.style.setProperty('--compare-position', `${range.value}%`);
+      if (!range) return;
+      const update = () => compare.style.setProperty('--compare-position', `${range.value}%`);
       range.addEventListener('input', update);
       update();
     });
   </script>
 </body>
 </html>
-

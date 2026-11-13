@@ -1,16 +1,18 @@
-/* FOTOGRAFIE – eigenes Stylesheet, auf Motion & Print abgestimmt.
-   Nur auf portfolio/fotografie.html eingebunden. */
-.photo-page-hero {min-height:430px;background-position:center 49%;}
+/* FOTOGRAFIE – abgestimmt auf die anderen Portfolio-Unterseiten. */
+.photo-page-hero {
+  min-height:430px;
+  background-image:url('../images/portfolio/fotografie/hero_fotografie.webp');
+  background-size:cover;
+  background-position:center 49%;
+}
 .photo-page-hero-inner {min-height:430px;padding:52px 42px 66px;align-items:center;}
 .photo-page-text {width:auto;max-width:none;}
 .photo-page-text h1 {margin:0;font-size:clamp(3.3rem,7.1vw,6.3rem);font-weight:800;letter-spacing:-.035em;line-height:.99;}
 .photo-page-ai {left:4%;bottom:24px;}
-
 .photo-description {width:100%;background:#040b10;color:#eef4f9;}
 .photo-description-inner {width:min(100%,1136px);margin:0 auto;padding:30px 24px 4px;}
 .photo-description .photo-page-subtitle {margin:0 0 10px;color:#8dcced;font-size:19px;line-height:1.35;font-weight:700;}
 .photo-description-inner > p:not(.photo-page-subtitle) {max-width:540px;margin:0;font-size:15px;line-height:1.75;color:#c4cfda;}
-
 .photo-showcase {width:min(100%,1136px);margin:0 auto;padding:34px 24px 90px;color:#f4f7fb;}
 .photo-showcase-intro {display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:10px 25px;padding-bottom:16px;margin-bottom:35px;border-bottom:1px solid rgba(125,184,215,.22);}
 .photo-showcase-intro > span {font-size:12px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#8dcced;}
@@ -31,17 +33,18 @@
 .photo-project-heading:hover .photo-project-action {color:#c7efff;}
 .photo-project-heading:focus-visible {outline:2px solid #8dcced;outline-offset:5px;border-radius:3px;}
 
+/* Fotografien als übersichtliche, gleichmäßige Kacheln. */
 .photo-project-grid {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;align-items:stretch;}
-.photo-work {min-width:0;margin:0;padding:11px 8px;display:flex;flex-direction:column;align-items:stretch;justify-content:space-between;gap:10px;overflow:hidden;background:linear-gradient(155deg,rgba(15,26,37,.88),rgba(7,11,17,.97));border:1px solid rgba(122,170,205,.23);border-radius:11px;transition:border-color .2s ease,transform .2s ease;}
+.photo-work {min-width:0;margin:0;padding:11px 8px;display:flex;flex-direction:column;align-items:stretch;justify-content:center;gap:10px;overflow:hidden;background:linear-gradient(155deg,rgba(15,26,37,.88),rgba(7,11,17,.97));border:1px solid rgba(122,170,205,.23);border-radius:11px;transition:border-color .2s ease,transform .2s ease;}
 .photo-work:hover {border-color:rgba(124,195,232,.58);transform:translateY(-2px);}
 .photo-work-media {height:215px;min-height:0;display:flex;align-items:center;justify-content:center;overflow:hidden;}
 .photo-work-media img {display:block;width:auto!important;height:auto!important;max-width:100%!important;max-height:100%!important;object-fit:contain;border:0;border-radius:2px;margin:0 auto;}
 .photo-work figcaption {align-self:stretch;text-align:center;font-size:10px;line-height:1.45;color:#9eafbc;}
 
-/* Zwei unabhängig bedienbare Vorher/Nachher-Vergleiche */
+/* Unabhängige Vorher-Nachher-Regler. */
 .photo-compare-grid {grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;}
 .photo-work--compare {padding:14px;}
-.photo-compare {position:relative;isolation:isolate;width:100%;aspect-ratio:3 / 2;overflow:hidden;border-radius:5px;background:#05080d;--compare-position:50%;}
+.photo-compare {position:relative;isolation:isolate;width:100%;aspect-ratio:3/2;overflow:hidden;border-radius:5px;background:#05080d;--compare-position:50%;}
 .photo-compare .photo-compare-before,
 .photo-compare .photo-compare-after {position:absolute;inset:0;display:block;width:100%!important;height:100%!important;max-width:none!important;max-height:none!important;object-fit:cover;margin:0;border:0;border-radius:0;}
 .photo-compare-after-wrap {position:absolute;inset:0;clip-path:inset(0 calc(100% - var(--compare-position)) 0 0);pointer-events:none;}
@@ -52,7 +55,6 @@
 .photo-compare-label--after {right:12px;}
 .photo-compare-range {position:absolute;inset:0;z-index:5;width:100%;height:100%;padding:0;margin:0;opacity:0;cursor:ew-resize;touch-action:pan-y;}
 .photo-compare-range:focus-visible {opacity:.08;outline:3px solid #8dcced;outline-offset:-3px;}
-
 @media(max-width:900px) {
   .photo-project-grid {grid-template-columns:repeat(2,minmax(0,1fr));}
   .photo-work-media {height:210px;}
@@ -68,7 +70,6 @@
   .photo-project-grid {gap:10px;}
   .photo-work {padding:9px;gap:8px;}
   .photo-work-media {height:190px;}
-  .photo-work figcaption {font-size:10px;}
 }
 @media(max-width:560px) {
   .photo-project-heading {flex-wrap:wrap;}
