@@ -84,41 +84,55 @@
 @media(max-width:380px) {.photo-page-text h1 {font-size:2.65rem;}}
 @media(prefers-reduced-motion:reduce) {.photo-work,.photo-project-action::after {transition:none;}.photo-work:hover {transform:none;}}
 
-
-/* Retusche: sieben Bildvergleiche plus eine animierte Galerie. */
-.photo-showcase .photo-project-grid .photo-work--slideshow {
-  min-width: 0;
+/* Wirelane: per Schaltfläche wählbare Bildvarianten, kein automatischer Wechsel. */
+.photo-showcase .photo-work--wirelane {
   padding: 14px;
+  justify-content: flex-start;
+  gap: 11px;
 }
-.photo-showcase .photo-work--slideshow .photo-slideshow {
-  position: relative;
+.photo-showcase .photo-wirelane-viewer {
   width: 100%;
-  height: auto;
   aspect-ratio: 3 / 2;
-  isolation: isolate;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: #05080d;
   border-radius: 5px;
 }
-.photo-showcase .photo-work--slideshow .photo-slideshow .photo-slide {
-  position: absolute;
-  inset: 0;
+.photo-showcase .photo-wirelane-image {
   display: block;
   width: 100% !important;
   height: 100% !important;
-  max-width: none !important;
-  max-height: none !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
   object-fit: contain;
-  margin: 0;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity .7s ease, visibility .7s ease;
-  pointer-events: none;
 }
-.photo-showcase .photo-work--slideshow .photo-slideshow .photo-slide.is-active {
-  opacity: 1;
-  visibility: visible;
+.photo-showcase .photo-wirelane-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 7px;
 }
-@media (prefers-reduced-motion: reduce) {
-  .photo-showcase .photo-work--slideshow .photo-slideshow .photo-slide { transition: none; }
+.photo-showcase .photo-wirelane-choice {
+  min-width: 0;
+  padding: 9px 5px;
+  border: 1px solid rgba(125,184,215,.32);
+  border-radius: 6px;
+  background: rgba(14,25,36,.75);
+  color: #c3d4e2;
+  font: inherit;
+  font-size: 11px;
+  cursor: pointer;
+  transition: border-color .2s ease, background .2s ease, color .2s ease;
+}
+.photo-showcase .photo-wirelane-choice:hover,
+.photo-showcase .photo-wirelane-choice:focus-visible,
+.photo-showcase .photo-wirelane-choice.is-active {
+  border-color: #8dcced;
+  background: rgba(125,184,215,.16);
+  color: white;
+}
+.photo-showcase .photo-wirelane-choice:focus-visible {
+  outline: 2px solid #8dcced;
+  outline-offset: 2px;
 }
