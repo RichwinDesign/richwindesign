@@ -1,780 +1,195 @@
-
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Bianca Richwin – Mediengestalterin Digital und Print. Beruflicher Werdegang, Erfahrungen, Kompetenzen und eigene Projekte.">
-  <meta name="robots" content="noindex">
-  <title>Über mich | Richwin Design</title>
-
-  <link rel="stylesheet" href="../style.css">
-  <link rel="stylesheet" href="ueber-mich.css">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Bianca Richwin – Mediengestalterin Digital und Print. Beruflicher Werdegang, Erfahrungen, Kompetenzen und eigene Projekte.">
+<meta name="robots" content="noindex">
+<title>Über mich | Richwin Design</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="ueber-mich.css">
+<style>
+/* Über mich – gezielte Bildmodule, bestehender Zeitstrahl bleibt erhalten */
+.journey-media-video .journey-media-inner {aspect-ratio:1.75 / 1;}
+.journey-media-video video {display:block;width:100%;height:100%;object-fit:contain;}
+.journey-media-emotes .journey-media-inner.journey-emotes-grid {
+ display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));
+ gap:9px;padding:14px;aspect-ratio:1.4 / 1;
+}
+.journey-media-emotes .journey-emotes-grid img {display:block;width:100%;height:100%;max-height:155px;object-fit:contain;min-width:0;}
+.journey-media-sofa .journey-media-inner.journey-sofa-compare {
+ position:relative;isolation:isolate;aspect-ratio:1.4 / 1;overflow:hidden;--sofa-position:50%;
+}
+.journey-sofa-compare .journey-sofa-before,
+.journey-sofa-compare .journey-sofa-after {
+ position:absolute;inset:0;display:block;width:100% !important;height:100% !important;
+ max-width:none !important;max-height:none !important;object-fit:cover;border:0;margin:0;
+}
+.journey-sofa-after-wrap {position:absolute;inset:0;clip-path:inset(0 calc(100% - var(--sofa-position)) 0 0);pointer-events:none;}
+.journey-sofa-line {position:absolute;top:0;bottom:0;left:var(--sofa-position);transform:translateX(-50%);border-left:2px solid #fff;pointer-events:none;z-index:3;filter:drop-shadow(0 1px 3px #0009);}
+.journey-sofa-handle {position:absolute;top:50%;left:0;transform:translate(-50%,-50%);display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#fff;color:#11202d;box-shadow:0 2px 15px #0008;font-size:22px;}
+.journey-sofa-label {position:absolute;top:9px;z-index:4;background:#000b;color:#fff;padding:4px 8px;border-radius:4px;font-size:10px;pointer-events:none;}
+.journey-sofa-label-before {left:9px;}.journey-sofa-label-after {right:9px;}
+.journey-sofa-range {position:absolute;inset:0;width:100%;height:100%;margin:0;padding:0;opacity:0;cursor:ew-resize;z-index:5;touch-action:pan-y;}
+.journey-sofa-range:focus-visible {opacity:.07;outline:2px solid #8dcced;outline-offset:-3px;}
+@media(max-width:700px) {.journey-media-emotes .journey-media-inner.journey-emotes-grid {aspect-ratio:1.4 / 1;gap:6px;padding:8px;}}
+</style>
 </head>
-
 <body>
-
-  <div id="site-header"></div>
-
-  <main class="about-page">
-
-    <!-- EINLEITUNG -->
-
-    <section class="about-hero" aria-labelledby="about-title">
-
-      <div class="about-hero-copy">
-
-        <p class="about-eyebrow">
-          GESTALTUNG · TECHNIK · RECHERCHE
-        </p>
-
-        <h1 id="about-title">
-          Über <span>mich.</span>
-        </h1>
-
-        <p class="about-lead">
-          Ich bin Bianca Richwin, Mediengestalterin Digital und Print
-          mit der Fachrichtung Gestaltung und Technik.
-        </p>
-
-        <p>
-          Mein Schwerpunkt liegt auf Layout, visueller Kommunikation und
-          Bildbearbeitung – von der ersten Idee bis zur technisch sauberen
-          Umsetzung. Ich verbinde gestalterisches Gespür mit einem
-          strukturierten Blick auf Details, Produktionsabläufe und
-          neue digitale Werkzeuge.
-        </p>
-
-        <p>
-          Aktuell erweitere ich meine Praxis durch eine Weiterbildung
-          in KI-gestützter Mediengestaltung mit Adobe Creative Cloud.
-        </p>
-
-      </div>
-
-      <div class="about-portrait-wrap">
-
-        <img
-          class="about-portrait"
-          src="../images/general/profil_bianca-richwin.jpg"
-          alt="Porträt von Bianca Richwin"
-          width="320"
-          height="320"
-          fetchpriority="high"
-        >
-
-        <span class="about-portrait-caption">
-          BIANCA RICHWIN · MEDIENGESTALTERIN
-        </span>
-
-      </div>
-
-    </section>
-
-
-    <!-- WERDEGANG -->
-
-    <section
-      class="about-journey-section"
-      id="werdegang"
-      aria-labelledby="timeline-title"
-    >
-
-      <div class="about-section-heading">
-
-        <p class="about-eyebrow">
-          STATIONEN &amp; ERFAHRUNGEN
-        </p>
-
-        <h2 id="timeline-title">
-          Mein Werdegang
-        </h2>
-
-        <p>
-          Ein Weg durch Gestaltung, Handwerk und digitale Medien –
-          mit Erfahrungen, die sich bis heute ergänzen.
-        </p>
-
-      </div>
-
-      <div class="journey-intro-hint" aria-hidden="true">
-        <span>SCROLLEN &amp; ENTDECKEN</span>
-        <span class="journey-down-arrow">↓</span>
-      </div>
-
-
-      <ol class="journey-timeline">
-
-        <!-- MITTELLINIE -->
-
-        <li class="journey-track" aria-hidden="true">
-          <div class="journey-track-progress"></div>
-        </li>
-
-
-        <!-- 2026 -->
-
-        <li class="journey-entry journey-left">
-
-          <div class="journey-year">
-            <span>2026</span>
-          </div>
-
-          <figure class="journey-media journey-media-wide">
-
-            <div class="journey-media-inner">
-              <img
-                src="../images/portfolio/landing-pages/landing_responsive-devices.webp"
-                alt="Responsive Webdesign auf verschiedenen Endgeräten"
-                loading="lazy"
-                decoding="async"
-              >
-            </div>
-
-            <figcaption>
-              Digitale Gestaltung · Beispiel aus meinem Portfolio
-            </figcaption>
-
-          </figure>
-
-          <div class="journey-copy">
-
-            <span class="journey-category">
-              SEIT 10/2026 · WEITERBILDUNG
-            </span>
-
-            <h3>KI-gestützte Mediengestaltung</h3>
-
-            <p class="journey-place">
-              alfatraining · Vollzeit
-            </p>
-
-            <p>
-              Erweiterung meiner gestalterischen Arbeit durch
-              Adobe Creative Cloud, KI-Bildgenerierung und
-              Promptentwicklung. Praxisprojekte verbinden
-              unterschiedliche Gestaltungsvarianten mit
-              nachvollziehbarer Dokumentation.
-            </p>
-
-            <p class="journey-keywords">
-              Adobe CC · Adobe Firefly · KI-Workflows
-            </p>
-
-          </div>
-
-        </li>
-
-
-        <!-- 2023–2025 -->
-
-        <li class="journey-entry journey-right">
-
-          <div class="journey-year">
-            <span>2023–2025</span>
-          </div>
-
-          <figure class="journey-media journey-media-large">
-
-            <div class="journey-media-inner">
-              <img
-                src="../images/portfolio/motion-visuals/motion_vimbal_300x250.gif"
-                alt="Animierter Vimbal-Werbebanner"
-                loading="lazy"
-                decoding="async"
-              >
-            </div>
-
-            <figcaption>
-              Motion Banner · Beispiel aus meinem Portfolio
-            </figcaption>
-
-          </figure>
-
-          <div class="journey-copy">
-
-            <span class="journey-category">
-              05/2023 – 03/2025 · BERUFSERFAHRUNG
-            </span>
-
-            <h3>Mediengestalterin</h3>
-
-            <p class="journey-place">
-              Network Punkt Hamburg UG · Hamburg
-            </p>
-
-            <p>
-              Erstellung, Adaption und Optimierung von Layouts,
-              Reinzeichnung, komplexe Bildbearbeitung und Retusche.
-              Dazu kamen Produktionsaufgaben und Recherchen.
-            </p>
-
-            <p class="journey-keywords">
-              Reinzeichnung · Retusche · Produktion
-            </p>
-
-          </div>
-
-        </li>
-
-
-        <!-- 2021–2025 -->
-
-        <li class="journey-entry journey-left">
-
-          <div class="journey-year">
-            <span>2021–2025</span>
-          </div>
-
-          <figure class="journey-media journey-media-medium">
-
-            <div class="journey-media-inner">
-              <img
-                src="../images/portfolio/landing-pages/landing_macbook-mockup.png"
-                alt="Landingpage-Mockup auf einem MacBook"
-                loading="lazy"
-                decoding="async"
-              >
-            </div>
-
-            <figcaption>
-              Landingpage-Gestaltung · Beispiel aus meinem Portfolio
-            </figcaption>
-
-          </figure>
-
-          <div class="journey-copy">
-
-            <span class="journey-category">
-              10/2021 – 12/2025 · EIGENSTÄNDIGE TÄTIGKEIT
-            </span>
-
-            <h3>Mediengestaltung &amp; Affiliate-Marketing</h3>
-
-            <p class="journey-place">
-              Pinneberg
-            </p>
-
-            <p>
-              Eigenständige Tätigkeit an der Schnittstelle
-              von visueller Gestaltung und digitalen Projekten.
-            </p>
-
-            <p class="journey-keywords">
-              Digitaldesign · Kommunikation
-            </p>
-
-          </div>
-
-        </li>
-
-
-        <!-- 2018–2021 -->
-
-        <li class="journey-entry journey-right">
-
-          <div class="journey-year">
-            <span>2018–2021</span>
-          </div>
-
-          <figure class="journey-media journey-media-wide">
-
-            <div class="journey-media-inner">
-              <img
-                src="../images/portfolio/print/print_anzeige-kloenschnack.webp"
-                alt="Gestaltete Printanzeige"
-                loading="lazy"
-                decoding="async"
-              >
-            </div>
-
-            <figcaption>
-              Printgestaltung · Beispiel aus meinem Portfolio
-            </figcaption>
-
-          </figure>
-
-          <div class="journey-copy">
-
-            <span class="journey-category">
-              08/2018 – 06/2021 · AUSBILDUNG
-            </span>
-
-            <h3>Mediengestalterin Digital und Print</h3>
-
-            <p class="journey-place">
-              TAXi-AD GmbH → UP-Advertising GmbH
-            </p>
-
-            <p>
-              Ausbildung in der Fachrichtung Gestaltung und Technik.
-              Zunächst bei TAXi-AD (08/2018–06/2019), anschließend
-              bei UP-Advertising (07/2019–06/2021).
-              <strong>Abschluss 2021.</strong>
-            </p>
-
-            <p class="journey-keywords">
-              Print · Digital · Gestaltung &amp; Technik
-            </p>
-
-          </div>
-
-        </li>
-
-
-        <!-- 2016–2017 -->
-
-        <li class="journey-entry journey-left journey-text-only">
-
-          <div class="journey-year">
-            <span>2016–2017</span>
-          </div>
-
-          <div class="journey-copy">
-
-            <span class="journey-category">
-              12/2016 – 02/2017
-            </span>
-
-            <h3>Verkaufshilfe</h3>
-
-            <p class="journey-place">
-              Woolworth · Elmshorn
-            </p>
-
-            <p>
-              Berufliche Station im Einzelhandel.
-            </p>
-
-          </div>
-
-        </li>
-
-
-        <!-- 2014–2015 -->
-
-        <li class="journey-entry journey-right">
-
-          <div class="journey-year">
-            <span>2014–2015</span>
-          </div>
-
-          <figure class="journey-media journey-media-medium">
-
-            <div class="journey-media-inner">
-              <img
-                src="../images/portfolio/print/print_a4-flyer-grid.png"
-                alt="Gestaltungsbeispiel aus dem Printportfolio"
-                loading="lazy"
-                decoding="async"
-                onerror="this.onerror=null;this.src='../images/portfolio/print/print_anzeige-kloenschnack.webp';"
-              >
-            </div>
-
-            <figcaption>
-              Printgestaltung · Vorläufiges Beispielmotiv
-            </figcaption>
-
-          </figure>
-
-          <div class="journey-copy">
-
-            <span class="journey-category">
-              10/2014 – 10/2015 · AUSBILDUNG
-            </span>
-
-            <h3>Kommunikationsdesign</h3>
-
-            <p class="journey-place">
-              HTK – Akademie für Gestaltung · Hamburg
-            </p>
-
-            <p>
-              Schulische Ausbildung im Kommunikationsdesign;
-              nicht abgeschlossen.
-            </p>
-
-          </div>
-
-        </li>
-
-
-        <!-- 2014 -->
-
-        <li class="journey-entry journey-left journey-text-only">
-
-          <div class="journey-year">
-            <span>2014</span>
-          </div>
-
-          <div class="journey-copy">
-
-            <span class="journey-category">
-              09/2014 – 11/2014 · BERUFSERFAHRUNG
-            </span>
-
-            <h3>Friseurin</h3>
-
-            <p class="journey-place">
-              Friseur Klinck · Hamburg
-            </p>
-
-            <p>
-              Berufserfahrung im Friseurhandwerk nach
-              der Gesellenprüfung.
-            </p>
-
-          </div>
-
-        </li>
-
-
-        <!-- 2011–2014 -->
-
-        <li class="journey-entry journey-right journey-text-only">
-
-          <div class="journey-year">
-            <span>2011–2014</span>
-          </div>
-
-          <div class="journey-copy">
-
-            <span class="journey-category">
-              2011 – 2014 · HANDWERK
-            </span>
-
-            <h3>Friseurausbildung &amp; Gesellenprüfung</h3>
-
-            <p class="journey-place">
-              Friseur Susan · Gesellenprüfung 06/2014
-            </p>
-
-            <p>
-              Mein beruflicher Weg begann im kreativen Handwerk –
-              mit einem Blick für Formen, Farben und die Arbeit
-              mit Menschen.
-            </p>
-
-          </div>
-
-        </li>
-
-
-        <!-- 2010–2011 -->
-
-        <li class="journey-entry journey-left journey-text-only">
-
-          <div class="journey-year">
-            <span>2010–2011</span>
-          </div>
-
-          <div class="journey-copy">
-
-            <span class="journey-category">
-              03/2010 – 01/2011 · BERUFSSTART
-            </span>
-
-            <h3>Malerhandwerk</h3>
-
-            <p class="journey-place">
-              R. Schmidt · Praktikum und Ausbildung
-            </p>
-
-            <p>
-              Frühe praktische Erfahrungen im
-              gestalterischen Handwerk.
-            </p>
-
-          </div>
-
-        </li>
-
-      </ol>
-
-    </section>
-
-
-    <!-- KOMPETENZEN & WERKZEUGE -->
-
-    <section class="about-skills-section" aria-labelledby="skills-title">
-
-      <div class="about-section-heading">
-
-        <p class="about-eyebrow">
-          WAS ICH MITBRINGE
-        </p>
-
-        <h2 id="skills-title">
-          Kompetenzen &amp; Werkzeuge
-        </h2>
-
-      </div>
-
-      <div class="about-skills-grid">
-
-        <div class="about-skill-card">
-          <h3>Gestaltung</h3>
-          <p>
-            Layout und Satz, Reinzeichnung, Druckdatenerstellung,
-            Bildretusche und Farbkorrektur, Corporate Design
-            sowie Print- und Digitalgestaltung.
-          </p>
-        </div>
-
-        <div class="about-skill-card">
-          <h3>Adobe Creative Cloud</h3>
-          <p>
-            Photoshop, Illustrator, InDesign, After Effects,
-            Premiere Pro und Acrobat.
-          </p>
-        </div>
-
-        <div class="about-skill-card">
-          <h3>Weitere Software</h3>
-          <p>
-            Affinity Designer, Photo und Publisher, Figma,
-            Adobe XD, DaVinci Resolve, WordPress und OBS.
-          </p>
-        </div>
-
-        <div class="about-skill-card">
-          <h3>KI &amp; Konzeption</h3>
-          <p>
-            ChatGPT, Adobe Firefly, Prompt Engineering, Recherche,
-            Bildgenerierung und gezielte Variantenoptimierung.
-          </p>
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- EIGENE PROJEKTE -->
-
-    <section class="about-projects-section" aria-labelledby="projects-title">
-
-      <div class="about-section-heading">
-
-        <p class="about-eyebrow">
-          ÜBER DEN BERUF HINAUS
-        </p>
-
-        <h2 id="projects-title">
-          Eigene Projekte
-        </h2>
-
-      </div>
-
-      <div class="about-projects-grid">
-
-        <article class="about-project-card">
-
-          <span class="about-project-year">
-            2026 · KUNST &amp; PRODUKTGESTALTUNG
-          </span>
-
-          <h3>Portal-Kunst</h3>
-
-          <p>
-            Handbemalte Holzboxen, digitale Motivaufbereitung,
-            Echtheitszertifikate und Merchandise.
-            Auszeichnung mit dem Sonder-Jurypreis beim
-            Polaris Art Contest 2026.
-          </p>
-
-          <a href="../portale.html">
-            Portale entdecken <span aria-hidden="true">›</span>
-          </a>
-
-        </article>
-
-        <article class="about-project-card">
-
-          <span class="about-project-year">
-            2026 · RECHERCHE &amp; PUBLIKATION
-          </span>
-
-          <h3>Genealogie</h3>
-
-          <p>
-            Familienforschung, Quellenanalyse und Archivarbeit.
-            Ein Fachartikel zur Richwin-Forschung wurde für das
-            Jahrbuch des Roland zu Dortmund eingereicht;
-            die Veröffentlichung ist für Dezember 2026 vorgesehen.
-          </p>
-
-          <a href="../genealogie/genealogie.html">
-            Forschung entdecken <span aria-hidden="true">›</span>
-          </a>
-
-        </article>
-
-      </div>
-
-    </section>
-
-  </main>
-
-  <!-- ZENTRALE WEBSITE-FUNKTIONEN -->
-
-  <script src="../script.js"></script>
-
-
-  <!-- 2-COLUMN-SCROLLANIMATION -->
-
-  <script>
-    (() => {
-
-      const timeline = document.querySelector(".journey-timeline");
-
-      if (!timeline) return;
-
-      const entries = [
-        ...timeline.querySelectorAll(".journey-entry")
-      ];
-
-      const reducedMotion = window.matchMedia(
-        "(prefers-reduced-motion: reduce)"
-      );
-
-      const mobile = window.matchMedia(
-        "(max-width: 700px)"
-      );
-
-      const clamp = (value, min, max) =>
-        Math.max(min, Math.min(max, value));
-
-      let ticking = false;
-
-      function updateTimeline() {
-
-        const viewportHeight = window.innerHeight;
-
-        const timelineRect = timeline.getBoundingClientRect();
-
-        const lineProgress = clamp(
-          (viewportHeight * 0.55 - timelineRect.top) /
-          timelineRect.height,
-          0,
-          1
-        );
-
-        timeline.style.setProperty(
-          "--journey-progress",
-          lineProgress.toFixed(4)
-        );
-
-        entries.forEach((entry) => {
-
-          const rect = entry.getBoundingClientRect();
-
-          const center =
-            rect.top + rect.height / 2;
-
-          const distance =
-            center - viewportHeight / 2;
-
-          const movement = clamp(
-            distance / (viewportHeight * 0.75),
-            -1,
-            1
-          );
-
-          // Kein Parallax auf kleinen Displays oder
-          // bei reduzierter Bewegung.
-
-          const strength =
-            reducedMotion.matches || mobile.matches
-              ? 0
-              : 34;
-
-          // Bild und Text bewegen sich gegeneinander.
-          // Bei jeder Station wechselt die Anordnung.
-
-          const mediaShift =
-            movement * strength;
-
-          const copyShift =
-            movement * -strength;
-
-          entry.style.setProperty(
-            "--media-shift",
-            mediaShift.toFixed(2) + "px"
-          );
-
-          entry.style.setProperty(
-            "--copy-shift",
-            copyShift.toFixed(2) + "px"
-          );
-
-          // Markierung der aktiven Station
-
-          const visible =
-            rect.top < viewportHeight * 0.85 &&
-            rect.bottom > viewportHeight * 0.15;
-
-          entry.classList.toggle(
-            "journey-visible",
-            visible
-          );
-
-          entry.classList.toggle(
-            "journey-active",
-            rect.top < viewportHeight * 0.58 &&
-            rect.bottom > viewportHeight * 0.42
-          );
-
-        });
-
-        ticking = false;
-      }
-
-
-      function requestUpdate() {
-
-        if (ticking) return;
-
-        ticking = true;
-
-        requestAnimationFrame(updateTimeline);
-      }
-
-      window.addEventListener(
-        "scroll",
-        requestUpdate,
-        { passive: true }
-      );
-
-      window.addEventListener(
-        "resize",
-        requestUpdate
-      );
-
-      window.addEventListener(
-        "load",
-        requestUpdate
-      );
-
-      if (reducedMotion.addEventListener) {
-        reducedMotion.addEventListener(
-          "change",
-          requestUpdate
-        );
-      }
-
-      if (mobile.addEventListener) {
-        mobile.addEventListener(
-          "change",
-          requestUpdate
-        );
-      }
-
-      updateTimeline();
-
-    })();
-  </script>
-
-</body>
-</html>
+<div id="site-header"></div>
+<main class="about-page">
+<section class="about-hero" aria-labelledby="about-title">
+ <div class="about-hero-copy">
+  <p class="about-eyebrow">GESTALTUNG · TECHNIK · RECHERCHE</p>
+  <h1 id="about-title">Über <span>mich.</span></h1>
+  <p class="about-lead">Ich bin Bianca Richwin, Mediengestalterin Digital und Print mit der Fachrichtung Gestaltung und Technik.</p>
+  <p>Mein Schwerpunkt liegt auf Layout, visueller Kommunikation und Bildbearbeitung – von der ersten Idee bis zur technisch sauberen Umsetzung. Ich verbinde gestalterisches Gespür mit einem strukturierten Blick auf Details, Produktionsabläufe und neue digitale Werkzeuge.</p>
+  <p>Aktuell erweitere ich meine Praxis durch eine Weiterbildung in KI-gestützter Mediengestaltung mit Adobe Creative Cloud.</p>
+ </div>
+ <div class="about-portrait-wrap">
+  <img class="about-portrait" src="../images/general/profil_bianca-richwin.webp" alt="Porträt von Bianca Richwin" width="320" height="320" fetchpriority="high">
+  <span class="about-portrait-caption">BIANCA RICHWIN · MEDIENGESTALTERIN</span>
+ </div>
+</section>
+<section class="about-journey-section" id="werdegang" aria-labelledby="timeline-title">
+<div class="about-section-heading"><p class="about-eyebrow">STATIONEN &amp; ERFAHRUNGEN</p><h2 id="timeline-title">Mein Werdegang</h2>
+<p>Ein Weg durch Gestaltung, Handwerk und digitale Medien – mit Erfahrungen, die sich bis heute ergänzen.</p></div>
+<div class="journey-intro-hint" aria-hidden="true"><span>SCROLLEN &amp; ENTDECKEN</span><span class="journey-down-arrow">↓</span></div>
+<ol class="journey-timeline">
+<li class="journey-track" aria-hidden="true"><div class="journey-track-progress"></div></li>
+<li class="journey-entry journey-left"><div class="journey-year"><span>2026</span></div>
+ <figure class="journey-media journey-media-wide"><div class="journey-media-inner">
+ <img src="../images/portfolio/webdesign-digital-ads/webdesign_website-25.webp" alt="Digitales Webseitenlayout aus dem Portfolio" loading="lazy" decoding="async">
+ </div><figcaption>Digitalgestaltung · Beispiel aus meinem Portfolio</figcaption></figure>
+ <div class="journey-copy"><span class="journey-category">SEIT 10/2026 · WEITERBILDUNG</span><h3>KI-gestützte Mediengestaltung</h3>
+ <p class="journey-place">alfatraining · Vollzeit</p><p>Erweiterung meiner gestalterischen Arbeit durch Adobe Creative Cloud, KI-Bildgenerierung und Promptentwicklung. Praxisprojekte verbinden unterschiedliche Gestaltungsvarianten mit nachvollziehbarer Dokumentation.</p><p class="journey-keywords">Adobe CC · Adobe Firefly · KI-Workflows</p></div>
+ </li>
+<li class="journey-entry journey-right"><div class="journey-year"><span>2023–2025</span></div>
+ <figure class="journey-media journey-media-large"><div class="journey-media-inner">
+ <img src="../images/portfolio/fotografie/fotografie_wirelane-01.webp" alt="Bildbearbeitung – Ladeinfrastruktur mit integrierter Säule" loading="lazy" decoding="async">
+ </div><figcaption>Wirelane · Bildbearbeitung und Composing</figcaption></figure>
+ <div class="journey-copy"><span class="journey-category">05/2023 – 03/2025 · BERUFSERFAHRUNG</span><h3>Mediengestalterin</h3>
+ <p class="journey-place">Network Punkt Hamburg UG · Hamburg</p><p>Erstellung, Adaption und Optimierung von Layouts, Reinzeichnung, komplexe Bildbearbeitung und Retusche. Dazu kamen Produktionsaufgaben und Recherchen.</p><p class="journey-keywords">Reinzeichnung · Retusche · Produktion</p></div>
+ </li>
+<li class="journey-entry journey-left"><div class="journey-year"><span>2021–2025</span></div>
+ <figure class="journey-media journey-media-medium journey-media-emotes">
+<div class="journey-media-inner journey-emotes-grid"><img src="../images/portfolio/webdesign-digital-ads/emotes/web_emote_hey.webp" alt="Streamer-Emote 1" loading="lazy" decoding="async"><img src="../images/portfolio/webdesign-digital-ads/emotes/web_emote_katze_verliebt.webp" alt="Streamer-Emote 2" loading="lazy" decoding="async"><img src="../images/portfolio/webdesign-digital-ads/emotes/web_emote_katze_schock.webp" alt="Streamer-Emote 3" loading="lazy" decoding="async"><img src="../images/portfolio/webdesign-digital-ads/emotes/web_emote_wuetend.webp" alt="Streamer-Emote 4" loading="lazy" decoding="async"></div>
+<figcaption>Streamer-Emotes · Gestaltung für digitale Communities</figcaption>
+</figure>
+ <div class="journey-copy"><span class="journey-category">10/2021 – 12/2025 · EIGENSTÄNDIGE TÄTIGKEIT</span><h3>Mediengestaltung &amp; Affiliate-Marketing</h3>
+ <p class="journey-place">Pinneberg</p><p>Eigenständige Tätigkeit an der Schnittstelle von visueller Gestaltung und digitalen Projekten.</p><p class="journey-keywords">Digitaldesign · Kommunikation</p></div>
+ </li>
+<li class="journey-entry journey-right"><div class="journey-year"><span>2018–2021</span></div>
+ <figure class="journey-media journey-media-wide journey-media-video">
+<div class="journey-media-inner"><video autoplay muted loop playsinline preload="metadata" aria-label="Nissin – animierter Werbebanner">
+<source src="../images/portfolio/motion-visuals/motion_nissin_300x250.mp4" type="video/mp4">Dein Browser unterstützt das Video nicht.
+</video></div><figcaption>Animierter Werbebanner · Beispiel aus meiner Ausbildung</figcaption></figure>
+ <div class="journey-copy"><span class="journey-category">08/2018 – 06/2021 · AUSBILDUNG</span><h3>Mediengestalterin Digital und Print</h3>
+ <p class="journey-place">TAXi-AD GmbH → UP-Advertising GmbH</p><p>Ausbildung in der Fachrichtung Gestaltung und Technik. Zunächst bei TAXi-AD (08/2018–06/2019), anschließend bei UP-Advertising (07/2019–06/2021). <strong>Abschluss 2021.</strong></p><p class="journey-keywords">Print · Digital · Gestaltung &amp; Technik</p></div>
+ </li>
+<li class="journey-entry journey-left journey-text-only"><div class="journey-year"><span>2016–2017</span></div>
+ <div class="journey-copy"><span class="journey-category">12/2016 – 02/2017</span><h3>Verkaufshilfe</h3>
+ <p class="journey-place">Woolworth · Elmshorn</p><p>Berufliche Station im Einzelhandel.</p></div></li>
+<li class="journey-entry journey-right"><div class="journey-year"><span>2014–2015</span></div>
+ <figure class="journey-media journey-media-medium journey-media-sofa">
+ <div class="journey-media-inner journey-sofa-compare" style="--sofa-position:50%">
+  <img class="journey-sofa-before" src="../images/portfolio/fotografie/fotografie_composing-sofa-vorher.webp" alt="Sofa-Composing – Vorher" loading="lazy">
+  <div class="journey-sofa-after-wrap"><img class="journey-sofa-after" src="../images/portfolio/fotografie/fotografie_composing-sofa-nachher.webp" alt="Sofa-Composing – Nachher" loading="lazy"></div>
+  <div class="journey-sofa-line" aria-hidden="true"><span class="journey-sofa-handle">↔</span></div>
+  <span class="journey-sofa-label journey-sofa-label-before">Vorher</span><span class="journey-sofa-label journey-sofa-label-after">Nachher</span>
+  <input type="range" class="journey-sofa-range" min="0" max="100" value="50" aria-label="Sofa-Composing: Vorher und Nachher vergleichen">
+ </div><figcaption>Sofa-Composing · Vorher-Nachher-Vergleich</figcaption>
+</figure>
+ <div class="journey-copy"><span class="journey-category">10/2014 – 10/2015 · AUSBILDUNG</span><h3>Kommunikationsdesign</h3>
+ <p class="journey-place">HTK – Akademie für Gestaltung · Hamburg</p><p>Schulische Ausbildung im Kommunikationsdesign; nicht abgeschlossen.</p><p class="journey-keywords"></p></div>
+ </li>
+<li class="journey-entry journey-left journey-text-only"><div class="journey-year"><span>2014</span></div>
+ <div class="journey-copy"><span class="journey-category">09/2014 – 11/2014 · BERUFSERFAHRUNG</span><h3>Friseurin</h3>
+ <p class="journey-place">Friseur Klinck · Hamburg</p><p>Berufserfahrung im Friseurhandwerk nach der Gesellenprüfung.</p></div></li>
+<li class="journey-entry journey-right journey-text-only"><div class="journey-year"><span>2011–2014</span></div>
+ <div class="journey-copy"><span class="journey-category">2011 – 2014 · HANDWERK</span><h3>Friseurausbildung &amp; Gesellenprüfung</h3>
+ <p class="journey-place">Friseur Susan · Gesellenprüfung 06/2014</p><p>Mein beruflicher Weg begann im kreativen Handwerk – mit einem Blick für Formen, Farben und die Arbeit mit Menschen.</p></div></li>
+<li class="journey-entry journey-left journey-text-only"><div class="journey-year"><span>2010–2011</span></div>
+ <div class="journey-copy"><span class="journey-category">03/2010 – 01/2011 · BERUFSSTART</span><h3>Malerhandwerk</h3>
+ <p class="journey-place">R. Schmidt · Praktikum und Ausbildung</p><p>Frühe praktische Erfahrungen im gestalterischen Handwerk.</p></div></li>
+</ol></section>
+<section class="about-skills-section" aria-labelledby="skills-title">
+<div class="about-section-heading"><p class="about-eyebrow">WAS ICH MITBRINGE</p><h2 id="skills-title">Kompetenzen &amp; Werkzeuge</h2></div>
+<div class="about-skills-grid">
+<div class="about-skill-card"><h3>Gestaltung</h3><p>Layout und Satz, Reinzeichnung, Druckdatenerstellung, Bildretusche und Farbkorrektur, Corporate Design sowie Print- und Digitalgestaltung.</p></div>
+<div class="about-skill-card"><h3>Adobe Creative Cloud</h3><p>Photoshop, Illustrator, InDesign, After Effects, Premiere Pro und Acrobat.</p></div>
+<div class="about-skill-card"><h3>Weitere Software</h3><p>Affinity Designer, Photo und Publisher, Figma, Adobe XD, DaVinci Resolve, WordPress und OBS.</p></div>
+<div class="about-skill-card"><h3>KI &amp; Konzeption</h3><p>ChatGPT, Adobe Firefly, Prompt Engineering, Recherche, Bildgenerierung und gezielte Variantenoptimierung.</p></div>
+</div></section><section class="about-projects-section" aria-labelledby="projects-title">
+<div class="about-section-heading"><p class="about-eyebrow">ÜBER DEN BERUF HINAUS</p><h2 id="projects-title">Eigene Projekte</h2></div>
+<div class="about-projects-grid">
+<article class="about-project-card"><span class="about-project-year">2026 · KUNST &amp; PRODUKTGESTALTUNG</span><h3>Portal-Kunst</h3>
+<p>Handbemalte Holzboxen, digitale Motivaufbereitung, Echtheitszertifikate und Merchandise. Auszeichnung mit dem Sonder-Jurypreis beim Polaris Art Contest 2026.</p>
+<a href="../portale.html">Portale entdecken <span aria-hidden="true">›</span></a></article>
+<article class="about-project-card"><span class="about-project-year">2026 · RECHERCHE &amp; PUBLIKATION</span><h3>Genealogie</h3>
+<p>Familienforschung, Quellenanalyse und Archivarbeit. Ein Fachartikel zur Richwin-Forschung wurde für das Jahrbuch des Roland zu Dortmund eingereicht; die Veröffentlichung ist für Dezember 2026 vorgesehen.</p>
+<a href="../genealogie/genealogie.html">Forschung entdecken <span aria-hidden="true">›</span></a></article>
+</div></section>
+</main>
+<script src="../script.js"></script>
+<script>
+// Navigation nur auf „Über mich“ vervollständigen. Die existierenden Links
+// werden nicht neu erzeugt: so bleiben ihre Mega-Menü-Handler erhalten.
+document.addEventListener('DOMContentLoaded', () => {
+  const nav = document.querySelector('body[data-page="ueber-mich"] .site-header .main-nav');
+  if (nav && !nav.querySelector('a[data-nav="portfolio"]')) {
+    const link = document.createElement('a');
+    link.href = '../index.html#portfolio';
+    link.dataset.nav = 'portfolio';
+    link.textContent = 'Portfolio';
+    nav.insertBefore(link, nav.firstElementChild);
+    const contact = nav.querySelector('a[data-nav="kontakt"]');
+    if (contact) nav.appendChild(contact);
+    const about = nav.querySelector('a[data-nav="ueber-mich"]');
+    if (about) nav.appendChild(about);
+  }
+
+  const sofa = document.querySelector('.journey-sofa-compare');
+  const range = sofa?.querySelector('.journey-sofa-range');
+  if (range) {
+    const update = () => sofa.style.setProperty('--sofa-position', range.value + '%');
+    range.addEventListener('input', update);
+    update();
+  }
+});
+
+// 2-column scroll animation from the current Über-mich page.
+(() => {
+  const timeline = document.querySelector('.journey-timeline');
+  if (!timeline) return;
+  const entries = [...timeline.querySelectorAll('.journey-entry')];
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const mobile = window.matchMedia('(max-width: 700px)');
+  const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
+  let ticking = false;
+  function updateTimeline() {
+    const viewportHeight = window.innerHeight;
+    const timelineRect = timeline.getBoundingClientRect();
+    const lineProgress = clamp((viewportHeight * .55 - timelineRect.top) / timelineRect.height, 0, 1);
+    timeline.style.setProperty('--journey-progress', lineProgress.toFixed(4));
+    entries.forEach(entry => {
+      const rect = entry.getBoundingClientRect();
+      const distance = rect.top + rect.height / 2 - viewportHeight / 2;
+      const movement = clamp(distance / (viewportHeight * .75), -1, 1);
+      const strength = reducedMotion.matches || mobile.matches ? 0 : 34;
+      entry.style.setProperty('--media-shift', (movement * strength).toFixed(2) + 'px');
+      entry.style.setProperty('--copy-shift', (-movement * strength).toFixed(2) + 'px');
+      entry.classList.toggle('journey-visible', rect.top < viewportHeight * .85 && rect.bottom > viewportHeight * .15);
+      entry.classList.toggle('journey-active', rect.top < viewportHeight * .58 && rect.bottom > viewportHeight * .42);
+    });
+    ticking = false;
+  }
+  function requestUpdate() {if (ticking) return;ticking = true;requestAnimationFrame(updateTimeline);}
+  window.addEventListener('scroll', requestUpdate, {passive:true});
+  window.addEventListener('resize', requestUpdate);
+  window.addEventListener('load', requestUpdate);
+  if (reducedMotion.addEventListener) reducedMotion.addEventListener('change', requestUpdate);
+  if (mobile.addEventListener) mobile.addEventListener('change', requestUpdate);
+  updateTimeline();
+})();
+</script>
+</body></html>
