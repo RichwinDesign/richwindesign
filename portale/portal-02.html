@@ -1,300 +1,186 @@
-
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../style.css">
+  <meta name="description" content="Portal #02 – Das Licht am Horizont. Ein handbemaltes Unikat mit Detailansichten und dokumentiertem Entstehungsprozess.">
   <title>Portal #02 | Richwin Design</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="portal-02-showcase.css">
 </head>
-
 <body>
-
-  <!-- HEADER -->
-
   <div id="site-header"></div>
-
-  <main>
-
-    <!-- HERO -->
-
-    <section class="portal-detail-hero portal-detail-hero-02">
-
+  <main class="portal02-page">
+    <!-- Bestehender Portal-Hero mit demselben Bild und Text -->
+    <section class="portal-detail-hero portal-detail-hero-01">
+      <a class="portal02-hero-back" href="../portale.html" aria-label="Zur Portalübersicht">← Zurück</a>
       <div class="portal-detail-hero-inner">
-
         <div class="portal-detail-hero-image">
-          <img
-            src="../images/portale/portal-02/portal_02_hero.webp"
-            alt="Portal #02 – Das Licht am Horizont"
-          >
+          <img src="../images/portale/portal-02/portal_02_hero.webp" alt="Portal #02 – Das Licht am Horizont" fetchpriority="high">
         </div>
-
         <div class="portal-detail-hero-text">
-
-          <p class="portal-detail-number">
-            PORTAL #02
-          </p>
-
-          <p class="portal-detail-inspiration">
-            Inspiration · Neon Genesis Evangelion
-          </p>
-
-          <h1>
-            Das Licht am Horizont
-          </h1>
-
-          <p class="portal-detail-description">
-            Inmitten einer verlassenen Welt erscheint ein Licht, das selbst in der
-            Dunkelheit den Weg weist. Ein Symbol für Hoffnung, Ausdauer und Neuanfang.
-          </p>
-
-          <a class="portal-detail-buy disabled" href="#">
-            Unikat kaufen
-          </a>
-
+          <p class="portal-detail-number">PORTAL #02</p>
+          <p class="portal-detail-inspiration">Inspiration · Neon Genesis Evangelion</p>
+          <h1>Das Licht am Horizont</h1>
+          <p class="portal-detail-description">Inmitten einer verlassenen Welt erscheint ein Licht, das selbst in der Dunkelheit den Weg weist. Ein Symbol für Hoffnung, Ausdauer und Neuanfang.</p>
+          <a class="portal-detail-buy disabled" href="#" aria-disabled="true">Unikat kaufen</a>
         </div>
-
       </div>
-
     </section>
 
-
-    <!-- NAVIGATION OBEN -->
-
-    <nav class="portal-detail-navigation portal-detail-navigation-02">
-
-      <a href="portal-01.html">
-        ← Portal #01
-      </a>
-
-      <a href="portal-03.html">
-        Portal #03 →
-      </a>
-
+    <nav class="portal-detail-navigation" aria-label="Portalnavigation oben">
+      <a href="portal-01.html">← Portal #01</a>
+      <a href="portal-03.html">Portal #03 →</a>
     </nav>
 
-
-    <!-- INHALT -->
-
-    <section class="portal-detail-content">
-
-      <!-- DETAILANSICHTEN -->
-
-      <div class="portal-detail-section">
-
-        <div class="portal-detail-section-heading">
-
-          <h2>Detailansichten</h2>
-
-          <p>
-            Nahaufnahmen zeigen die feinen Pinselstriche, Texturen und Details
-            des fertigen Unikats.
-          </p>
-
-        </div>
-
-        <div class="portal-detail-gallery">
-
-          <img
-            src="../images/portale/portal-02/portal_02_detail_front.webp"
-            alt="Portal #02 Vorderansicht"
-          >
-
-          <img
-            src="../images/portale/portal-02/portal_02_detail_oben.webp"
-            alt="Portal #02 Oberseite"
-          >
-
-          <img
-            src="../images/portale/portal-02/portal_02_detail_seite.webp"
-            alt="Portal #02 Seitenansicht"
-          >
-
-          <img
-            src="../images/portale/portal-02/portal_02_detail_offen.webp"
-            alt="Portal #02 geöffnet"
-          >
-
-          <img
-            src="../images/portale/portal-02/portal_02_detail.webp"
-            alt="Portal #02 Detailansicht"
-          >
-
-          <img
-            src="../images/portale/portal-02/portal_02_detail_verschluss.webp"
-            alt="Portal #02 Verschluss"
-          >
-
-          <img
-            src="../images/portale/portal-02/portal_02_detail_verschluss-detail.webp"
-            alt="Portal #02 Detail am Verschluss"
-          >
-
-        </div>
-
+    <div class="portal02-content">
+      <div class="portal02-intro">
+        <p class="portal02-eyebrow">DAS WERK ENTDECKEN</p>
+        <h2>Ein Portal. Viele Details.</h2>
+        <p>Sieben Ansichten zeigen die bemalte Portalwelt, ihre Seiten, den geöffneten Innenraum und den Verschluss.</p>
       </div>
 
-
-      <!-- ENTSTEHUNGSPROZESS -->
-
-      <div class="portal-process-section">
-
-        <div class="portal-detail-section-heading">
-
-          <h2>Entstehungsprozess</h2>
-
-          <p>
-            Vom unbehandelten Holz bis zum fertigen Portal.
-            Jeder Schritt wurde von Hand gemalt und dokumentiert.
-          </p>
-
+      <section class="portal02-section" aria-labelledby="portal02-details-title">
+        <div class="portal02-section-top">
+          <div><span class="portal02-eyebrow">01 / DAS UNIKAT</span><h2 id="portal02-details-title">Detailansichten</h2></div>
+          <span class="portal02-index"><span id="portal02-detail-count">01</span> / 07</span>
         </div>
-
-        <div class="portal-process-grid">
-
-          <article class="portal-process-card">
-
-            <p>
-              <span>#01</span> – Rohbox
-            </p>
-
-            <img
-              src="../images/portale/portal-02/portal_02_process_01.webp"
-              alt="Portal #02 – Rohbox"
-            >
-
-          </article>
-
-          <article class="portal-process-card">
-
-            <p>
-              <span>#02</span> – Skizze
-            </p>
-
-            <img
-              src="../images/portale/portal-02/portal_02_process_02.webp"
-              alt="Portal #02 – Skizze"
-            >
-
-          </article>
-
-          <article class="portal-process-card">
-
-            <p>
-              <span>#03</span> – Himmel &amp; Lichtstrahl
-            </p>
-
-            <img
-              src="../images/portale/portal-02/portal_02_process_03.webp"
-              alt="Portal #02 – Himmel und Lichtstrahl"
-            >
-
-          </article>
-
-          <article class="portal-process-card">
-
-            <p>
-              <span>#04</span> – Berge &amp; Horizont
-            </p>
-
-            <img
-              src="../images/portale/portal-02/portal_02_process_04.webp"
-              alt="Portal #02 – Berge und Horizont"
-            >
-
-          </article>
-
-          <article class="portal-process-card">
-
-            <p>
-              <span>#05</span> – Portal &amp; Himmel
-            </p>
-
-            <img
-              src="../images/portale/portal-02/portal_02_process_05.webp"
-              alt="Portal #02 – Portal und Himmel"
-            >
-
-          </article>
-
-          <article class="portal-process-card">
-
-            <p>
-              <span>#06</span> – Erste Stadtstrukturen
-            </p>
-
-            <img
-              src="../images/portale/portal-02/portal_02_process_06.webp"
-              alt="Portal #02 – Erste Stadtstrukturen"
-            >
-
-          </article>
-
-          <article class="portal-process-card">
-
-            <p>
-              <span>#07</span> – Gebäude &amp; Tiefenwirkung
-            </p>
-
-            <img
-              src="../images/portale/portal-02/portal_02_process_07.webp"
-              alt="Portal #02 – Gebäude und Tiefenwirkung"
-            >
-
-          </article>
-
-          <article class="portal-process-card">
-
-            <p>
-              <span>#08</span> – Portalrahmen &amp; Vegetation
-            </p>
-
-            <img
-              src="../images/portale/portal-02/portal_02_process_08.webp"
-              alt="Portal #02 – Portalrahmen und Vegetation"
-            >
-
-          </article>
-
-          <article class="portal-process-card">
-
-            <p>
-              <span>#09</span> – Feinarbeiten
-            </p>
-
-            <img
-              src="../images/portale/portal-02/portal_02_process_09.webp"
-              alt="Portal #02 – Feinarbeiten"
-            >
-
-          </article>
-
+        <div class="portal02-gallery-shell">
+          <div class="portal02-gallery-main">
+            <div class="portal02-main-image-wrap">
+              <button id="portal02-detail-zoom" class="portal02-zoom-button" type="button" aria-label="Detailbild vergrößern" title="Bild vergrößern">⤢ Bild vergrößern</button>
+              <img id="portal02-detail-image" src="../images/portale/portal-02/portal_02_detail_front.webp" alt="Gesamtansicht" decoding="async">
+            </div>
+            <div class="portal02-image-caption"><div><span class="portal02-eyebrow">AUSGEWÄHLTE ANSICHT</span><h3 id="portal02-detail-title">Gesamtansicht</h3><p id="portal02-detail-description">Gesamtansicht</p></div><div class="portal02-gallery-arrows"><button id="portal02-detail-prev" type="button" aria-label="Vorheriges Detail">←</button><button id="portal02-detail-next" type="button" aria-label="Nächstes Detail">→</button></div></div>
+          </div>
+          <div class="portal02-thumb-grid" aria-label="Detailansicht auswählen">
+            <button class="portal02-thumb is-active" type="button" data-detail-index="0" aria-label="Gesamtansicht anzeigen" aria-pressed="true" title="Gesamtansicht"><img src="../images/portale/portal-02/portal_02_detail_front.webp" alt="" loading="lazy" decoding="async"><span>01</span></button>
+            <button class="portal02-thumb" type="button" data-detail-index="1" aria-label="Oberseite anzeigen" aria-pressed="false" title="Oberseite"><img src="../images/portale/portal-02/portal_02_detail_oben.webp" alt="" loading="lazy" decoding="async"><span>02</span></button>
+            <button class="portal02-thumb" type="button" data-detail-index="2" aria-label="Seitenansicht anzeigen" aria-pressed="false" title="Seitenansicht"><img src="../images/portale/portal-02/portal_02_detail_seite.webp" alt="" loading="lazy" decoding="async"><span>03</span></button>
+            <button class="portal02-thumb" type="button" data-detail-index="3" aria-label="Innenansicht anzeigen" aria-pressed="false" title="Innenansicht"><img src="../images/portale/portal-02/portal_02_detail_offen.webp" alt="" loading="lazy" decoding="async"><span>04</span></button>
+            <button class="portal02-thumb" type="button" data-detail-index="4" aria-label="Detailansicht anzeigen" aria-pressed="false" title="Detailansicht"><img src="../images/portale/portal-02/portal_02_detail.webp" alt="" loading="lazy" decoding="async"><span>05</span></button>
+            <button class="portal02-thumb" type="button" data-detail-index="5" aria-label="Verschluss anzeigen" aria-pressed="false" title="Verschluss"><img src="../images/portale/portal-02/portal_02_detail_verschluss.webp" alt="" loading="lazy" decoding="async"><span>06</span></button>
+            <button class="portal02-thumb" type="button" data-detail-index="6" aria-label="Verschlussdetail anzeigen" aria-pressed="false" title="Verschlussdetail"><img src="../images/portale/portal-02/portal_02_detail_verschluss-detail.webp" alt="" loading="lazy" decoding="async"><span>07</span></button>
+          </div>
         </div>
+      </section>
 
-      </div>
+      <section class="portal02-section portal02-process" aria-labelledby="portal02-process-title">
+        <div class="portal02-process-layout">
+          <div class="portal02-process-intro">
+          <div class="portal02-section-top">
+            <div><span class="portal02-eyebrow">02 / HINTER DEN KULISSEN</span><h2 id="portal02-process-title">Vom Holz zum Portal</h2></div>
+            <span class="portal02-index"><span id="portal02-step-count">01</span> / 09</span>
+          </div>
+          <p class="portal02-section-description">Von der Rohbox bis zu den Feinarbeiten: Entdecke die neun dokumentierten Arbeitsschritte im automatischen Bildwechsel.</p>
+          </div>
+          <figure class="portal02-step-feature">
+            <div class="portal02-step-image-wrap"><img id="portal02-step-image" src="../images/portale/portal-02/portal_02_process_01.webp" alt="Portal #02 – Rohbox" loading="lazy"><button id="portal02-step-zoom" type="button" class="portal02-zoom-button" aria-label="Prozessbild vergrößern">⤢ Bild vergrößern</button></div>
+            <figcaption><span class="portal02-eyebrow">ARBEITSSCHRITT <span id="portal02-step-number">01</span></span><h3 id="portal02-step-title">Rohbox</h3><div class="portal02-gallery-arrows"><button id="portal02-step-prev" type="button" aria-label="Vorheriger Arbeitsschritt">←</button><button id="portal02-step-next" type="button" aria-label="Nächster Arbeitsschritt">→</button></div></figcaption>
+          </figure>
+        </div>
+      </section>
 
-    </section>
+      <aside class="portal02-outro" aria-label="Über das Kunstwerk"><span class="portal02-eyebrow">HANDARBEIT &amp; ORIGINAL</span><p>Ein bemaltes Holzobjekt – mit eigener Geschichte, eigenen Details und dokumentierter Entstehung.</p></aside>
 
+      <section class="portal02-merch" aria-labelledby="portal02-merch-title">
+        <div class="portal02-merch-heading"><span class="portal02-eyebrow">KLEINE WELTEN ZUM MITNEHMEN</span><h2 id="portal02-merch-title">Passende Portal-Motive</h2><p>Das Kunstwerk weitergedacht: als Anhänger und Sticker aus der Portal-Kollektion.</p></div>
+        <div class="portal02-merch-grid">        <a class="portal02-merch-card" href="merch/anhaenger.html"><div class="portal02-merch-photo"><img src="../images/portale/merch/anhaenger/anhaenger_evangelion.webp" alt="Anhänger – Portal-Kollektion" loading="lazy"></div><div class="portal02-merch-info"><span class="portal02-eyebrow">PORTAL-MERCH</span><h3>Anhänger</h3><p>Kleine Portalwelt zum Mitnehmen</p><span class="portal02-merch-cta">Motiv entdecken →</span></div></a>
+        <a class="portal02-merch-card" href="merch/sticker.html"><div class="portal02-merch-photo"><img src="../images/portale/merch/sticker/sticker_evangelion.webp" alt="Sticker – Portal-Kollektion" loading="lazy"></div><div class="portal02-merch-info"><span class="portal02-eyebrow">PORTAL-MERCH</span><h3>Sticker</h3><p>Das Portalmotiv als Sticker</p><span class="portal02-merch-cta">Motiv entdecken →</span></div></a></div>
+      </section>
+    </div>
 
-    <!-- NAVIGATION UNTEN -->
-
-    <nav class="portal-detail-navigation portal-detail-navigation-bottom portal-detail-navigation-02">
-
-      <a href="portal-01.html">
-        ← Portal #01
-      </a>
-
-      <a href="portal-03.html">
-        Portal #03 →
-      </a>
-
+    <nav class="portal-detail-navigation portal-detail-navigation-bottom" aria-label="Portalnavigation unten">
+      <a href="portal-01.html">← Portal #01</a>
+      <a href="portal-03.html">Portal #03 →</a>
     </nav>
-
   </main>
 
+  <dialog id="portal02-lightbox" class="portal02-lightbox" aria-label="Bild in voller Größe ansehen">
+    <div class="portal02-lightbox-inner"><button class="portal02-lightbox-close" type="button" aria-label="Vergrößerung schließen">✕</button><img id="portal02-lightbox-image" src="" alt=""><p id="portal02-lightbox-caption"></p></div>
+  </dialog>
   <script src="../script.js"></script>
-
+  <script>
+  (() => {
+    const details = [["../images/portale/portal-02/portal_02_detail_front.webp", "Gesamtansicht", "Gesamtansicht"], ["../images/portale/portal-02/portal_02_detail_oben.webp", "Oberseite", "Oberseite"], ["../images/portale/portal-02/portal_02_detail_seite.webp", "Seitenansicht", "Seitenansicht"], ["../images/portale/portal-02/portal_02_detail_offen.webp", "Innenansicht", "Innenansicht"], ["../images/portale/portal-02/portal_02_detail.webp", "Detailansicht", "Detailansicht"], ["../images/portale/portal-02/portal_02_detail_verschluss.webp", "Verschluss", "Verschluss"], ["../images/portale/portal-02/portal_02_detail_verschluss-detail.webp", "Verschlussdetail", "Verschlussdetail"]];
+    const steps = [["../images/portale/portal-02/portal_02_process_01.webp", "Rohbox"], ["../images/portale/portal-02/portal_02_process_02.webp", "Skizze"], ["../images/portale/portal-02/portal_02_process_03.webp", "Himmel & Lichtstrahl"], ["../images/portale/portal-02/portal_02_process_04.webp", "Berge & Horizont"], ["../images/portale/portal-02/portal_02_process_05.webp", "Portal & Himmel"], ["../images/portale/portal-02/portal_02_process_06.webp", "Erste Stadtstrukturen"], ["../images/portale/portal-02/portal_02_process_07.webp", "Gebäude & Tiefenwirkung"], ["../images/portale/portal-02/portal_02_process_08.webp", "Portalrahmen & Vegetation"], ["../images/portale/portal-02/portal_02_process_09.webp", "Feinarbeiten"]];
+    const $ = id => document.getElementById(id);
+    const padded = n => String(n+1).padStart(2,'0');
+    const lightbox = $('portal02-lightbox');
+    const lightboxImage = $('portal02-lightbox-image');
+    const lightboxCaption = $('portal02-lightbox-caption');
+    let detailIndex = 0, stepIndex = 0;
+    const updateActive = (selector, dataKey, index) => {
+      document.querySelectorAll(selector).forEach(button => {
+        const current = Number(button.dataset[dataKey]) === index;
+        button.classList.toggle('is-active', current);
+        button.setAttribute('aria-pressed', String(current));
+      });
+    };
+    function renderDetail(index) {
+      detailIndex = (index + details.length) % details.length;
+      const [src, title, description] = details[detailIndex];
+      $('portal02-detail-image').src = src;
+      $('portal02-detail-image').alt = description;
+      $('portal02-detail-title').textContent = title;
+      $('portal02-detail-description').textContent = description;
+      $('portal02-detail-count').textContent = padded(detailIndex);
+      updateActive('[data-detail-index]', 'detailIndex', detailIndex);
+    }
+    function renderStep(index) {
+      stepIndex = (index + steps.length) % steps.length;
+      const [src, title] = steps[stepIndex];
+      $('portal02-step-image').src = src;
+      $('portal02-step-image').alt = 'Portal #02 – ' + title;
+      $('portal02-step-count').textContent = padded(stepIndex);
+      $('portal02-step-number').textContent = padded(stepIndex);
+      $('portal02-step-title').textContent = title;
+    }
+    function openLightbox(image, title) {
+      lightboxImage.src = image;
+      lightboxImage.alt = title;
+      lightboxCaption.textContent = title;
+      if (typeof lightbox.showModal === 'function') lightbox.showModal();
+    }
+    document.querySelectorAll('[data-detail-index]').forEach(button => button.addEventListener('click', () => renderDetail(Number(button.dataset.detailIndex))));
+    $('portal02-detail-prev').addEventListener('click', () => renderDetail(detailIndex - 1));
+    $('portal02-detail-next').addEventListener('click', () => renderDetail(detailIndex + 1));
+    // Autoplay: alle neun Arbeitsschritte in einer Endlosschleife, alle 2,5 Sekunden.
+    // Pfeile bleiben nutzbar und setzen den Countdown zurück.
+    let processTimer;
+    const stopProcessLoop = () => {
+      window.clearInterval(processTimer);
+      processTimer = undefined;
+    };
+    const startProcessLoop = () => {
+      stopProcessLoop();
+      if (document.hidden || lightbox.open) return;
+      processTimer = window.setInterval(() => renderStep(stepIndex + 1), 2500);
+    };
+    $('portal02-step-prev').addEventListener('click', () => {
+      renderStep(stepIndex - 1);
+      startProcessLoop();
+    });
+    $('portal02-step-next').addEventListener('click', () => {
+      renderStep(stepIndex + 1);
+      startProcessLoop();
+    });
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) stopProcessLoop();
+      else startProcessLoop();
+    });
+    lightbox.addEventListener('close', startProcessLoop);
+    $('portal02-detail-zoom').addEventListener('click', () => openLightbox(details[detailIndex][0], details[detailIndex][1]));
+    $('portal02-step-zoom').addEventListener('click', () => {
+      stopProcessLoop();
+      openLightbox(steps[stepIndex][0], steps[stepIndex][1]);
+    });
+    lightbox.querySelector('.portal02-lightbox-close').addEventListener('click', () => lightbox.close());
+    lightbox.addEventListener('click', event => {if (event.target === lightbox) lightbox.close();});
+    renderDetail(0);
+    renderStep(0);
+    startProcessLoop();
+  })();
+  </script>
 </body>
-
 </html>

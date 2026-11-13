@@ -1,0 +1,399 @@
+/* Portal #02 – isolierte Musterseite. Andere Portale bleiben unverändert. */
+.portal02-page { --portal-accent:#d952e0; --portal-muted:#a6b5b6; }
+/* Hero: richtiger WebP-Pfad, weniger milchige Fläche, sanfter Schatten von oben. */
+.portal02-page .portal-detail-hero.portal-detail-hero-01 {
+ background-image:linear-gradient(180deg,rgba(9,6,14,.93) 0%,rgba(11,10,14,.73) 19%,rgba(15,17,17,.50) 46%,rgba(9,13,12,.52) 75%,rgba(5,9,12,.82) 100%),url("../images/portale/portal-02/portal_02_hero-background.webp");
+ background-position:center; background-size:cover; background-repeat:no-repeat;
+}
+.portal02-page .portal-detail-hero-inner {position:relative;z-index:1;}
+.portal02-page .portal-detail-buy.disabled {text-decoration:none;opacity:.6;pointer-events:none;}
+.portal02-content {width:min(1120px,calc(100% - 48px));margin:76px auto 80px;color:#f1f5f4;}
+.portal02-content *, .portal02-lightbox * {box-sizing:border-box;}
+.portal02-eyebrow {display:block;margin:0 0 12px;letter-spacing:.18em;font-size:10px;font-weight:750;color:var(--portal-accent);}
+.portal02-intro {max-width:680px;margin:0 0 65px;}
+.portal02-intro h2 {font-size:clamp(30px,4vw,46px);line-height:1.14;margin:0 0 16px;letter-spacing:-.025em;color:#fff;}
+.portal02-intro p:last-child,.portal02-section-description {font-size:14px;color:#aebdc2;line-height:1.8;}
+.portal02-section {margin:0 0 88px;}
+.portal02-section-top {display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:22px;padding-bottom:16px;border-bottom:1px solid rgba(159,195,205,.2);}
+.portal02-section-top h2 {font-size:clamp(25px,3vw,36px);line-height:1.2;margin:0;color:#fff;letter-spacing:-.02em;}
+.portal02-index {font-size:13px;color:#93acb5;white-space:nowrap;letter-spacing:.12em;}
+.portal02-index span {color:var(--portal-accent);font-weight:750;}
+.portal02-gallery-shell {display:grid;grid-template-columns:minmax(0,1fr) 225px;gap:18px;align-items:start;}
+.portal02-gallery-main,.portal02-step-feature {background:linear-gradient(150deg,#0f1d24,#071016);border:1px solid rgba(147,189,204,.21);border-radius:14px;overflow:hidden;min-width:0;}
+.portal02-main-image-wrap,.portal02-step-image-wrap {height:490px;position:relative;display:flex;align-items:center;justify-content:center;padding:16px;background:#060b0f;overflow:hidden;}
+.portal02-main-image-wrap > img,.portal02-step-image-wrap > img {width:100%;height:100%;object-fit:contain;display:block;}
+.portal02-zoom-button {position:absolute;right:17px;bottom:17px;z-index:2;border:1px solid rgba(205,231,235,.44);background:rgba(8,17,22,.85);backdrop-filter:blur(8px);color:#fff;border-radius:8px;padding:10px 13px;font:inherit;font-size:12px;cursor:pointer;}
+.portal02-zoom-button:hover,.portal02-gallery-arrows button:hover {background:#28473a;border-color:var(--portal-accent);}
+.portal02-image-caption {display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px;}
+.portal02-image-caption h3,.portal02-step-feature h3 {font-size:22px;color:#fff;margin:0 0 5px;}
+.portal02-image-caption p {font-size:12px;margin:0;color:#aebdc2;}
+.portal02-gallery-arrows {display:flex;gap:7px;flex-shrink:0;}
+.portal02-gallery-arrows button {font:inherit;font-size:20px;cursor:pointer;width:40px;height:40px;border-radius:8px;color:#fff;border:1px solid rgba(161,202,215,.3);background:#14242a;}
+.portal02-thumb-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;}
+.portal02-thumb {min-width:0;position:relative;overflow:hidden;border:1px solid rgba(165,196,207,.2);border-radius:8px;background:#101d24;aspect-ratio:1/1;padding:4px;cursor:pointer;transition:border-color .2s,transform .2s;}
+.portal02-thumb:hover,.portal02-thumb.is-active {border-color:var(--portal-accent);}
+.portal02-thumb.is-active {box-shadow:0 0 0 1px var(--portal-accent) inset;}
+.portal02-thumb img {display:block;width:100%;height:100%;object-fit:cover;border-radius:5px;}
+.portal02-thumb span {position:absolute;bottom:6px;left:7px;padding:3px 5px;background:rgba(3,11,15,.77);color:#edf2f2;border-radius:3px;font-size:10px;}
+.portal02-section-description {max-width:680px;margin:0 0 24px;}
+.portal02-process-layout {display:grid;grid-template-columns:285px minmax(0,1fr);gap:18px;align-items:start;}
+.portal02-step-rail {display:grid;grid-template-columns:1fr;gap:8px;}
+.portal02-step-tab {min-width:0;display:grid;grid-template-columns:28px 58px minmax(0,1fr) 15px;gap:12px;align-items:center;padding:7px 12px;background:#0d1920;border:1px solid rgba(155,196,204,.2);border-radius:10px;color:#e3eaeb;font:inherit;cursor:pointer;text-align:left;}
+.portal02-step-tab:hover,.portal02-step-tab.is-active {border-color:var(--portal-accent);background:#172b24;}
+.portal02-step-num {font-size:11px;color:var(--portal-accent);font-weight:700;}
+.portal02-step-tab img {width:58px;height:52px;object-fit:cover;border-radius:5px;}
+.portal02-step-name {font-size:13px;line-height:1.35;}
+.portal02-step-feature {margin:0;}
+.portal02-step-image-wrap {height:510px;}
+.portal02-step-feature figcaption {position:relative;min-height:91px;padding:19px 124px 19px 22px;}
+.portal02-step-feature h3 {margin-bottom:0;}
+.portal02-step-feature figcaption .portal02-gallery-arrows {position:absolute;right:19px;top:23px;}
+.portal02-outro {padding:27px 30px;border-top:1px solid rgba(141,193,185,.25);border-bottom:1px solid rgba(141,193,185,.25);margin:12px 0 50px;}
+.portal02-outro p {font-size:17px;line-height:1.6;margin:0;color:#d5e1db;}
+.portal02-lightbox {width:min(1100px,96vw);max-width:96vw;max-height:96vh;padding:12px;border:1px solid rgba(170,211,216,.3);border-radius:14px;background:#050b10;color:white;box-shadow:0 25px 100px #000c;}
+.portal02-lightbox::backdrop {background:rgba(0,4,8,.88);backdrop-filter:blur(4px);}
+.portal02-lightbox-inner {position:relative;display:flex;flex-direction:column;align-items:center;gap:10px;}
+.portal02-lightbox-close {align-self:flex-end;font:inherit;background:#142329;color:#fff;border:1px solid #577d80;cursor:pointer;padding:9px 13px;border-radius:7px;}
+.portal02-lightbox img {max-width:100%;max-height:calc(96vh - 125px);object-fit:contain;}
+.portal02-lightbox p {margin:0 0 4px;color:#c8d6d4;font-size:13px;}
+@media(max-width:900px) {
+ .portal02-gallery-shell {grid-template-columns:1fr;}
+ .portal02-thumb-grid {grid-template-columns:repeat(7,minmax(0,1fr));}
+ .portal02-process-layout {grid-template-columns:1fr;}
+ .portal02-step-rail {grid-template-columns:repeat(3,minmax(0,1fr));}
+ .portal02-step-tab {grid-template-columns:25px 1fr;gap:6px;padding:9px;}
+ .portal02-step-tab img {display:none;}
+ .portal02-step-tab .portal02-step-name {font-size:11px;}
+ .portal02-step-tab > span:last-child {display:none;}
+}
+@media(max-width:650px) {
+ .portal02-content {width:calc(100% - 32px);margin:45px auto 65px;}
+ .portal02-intro {margin-bottom:43px;}
+ .portal02-section {margin-bottom:58px;}
+ .portal02-main-image-wrap,.portal02-step-image-wrap {height:300px;padding:8px;}
+ .portal02-image-caption {padding:15px;}
+ .portal02-image-caption h3 {font-size:19px;}
+ .portal02-thumb-grid {grid-template-columns:repeat(4,minmax(0,1fr));}
+ .portal02-step-rail {grid-template-columns:repeat(2,minmax(0,1fr));}
+ .portal02-section-top {align-items:flex-end;}
+ .portal02-outro {padding:22px 12px;}
+}
+@media(prefers-reduced-motion:reduce) {.portal02-thumb {transition:none;}}
+
+/* Portalwelt: statt Portfolio-Blau ein dunkler Violett-/Waldton. */
+.portal02-page {
+  background:
+    radial-gradient(ellipse 80% 58% at 1% 30%, rgba(51,29,57,.18), transparent 72%),
+    radial-gradient(ellipse 75% 58% at 98% 85%, rgba(23,52,30,.17), transparent 70%),
+    #05070b;
+}
+.portal02-page .portal-detail-hero { isolation:isolate; }
+.portal02-page .portal-detail-hero-inner {z-index:1;}
+.portal02-page .portal-detail-navigation {position:relative;z-index:1;}
+.portal02-page .portal02-hero-back {
+  position:absolute;
+  top:34px;
+  left:max(28px,calc((100% - 1136px)/2));
+  z-index:3;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:35px;
+  padding:7px 14px;
+  border:1px solid rgba(204,224,205,.48);
+  border-radius:8px;
+  color:#f1f6f0;
+  background:rgba(15,13,20,.54);
+  backdrop-filter:blur(5px);
+  font-size:12px;
+  text-decoration:none;
+  transition:background .2s,border-color .2s;
+}
+.portal02-page .portal02-hero-back:hover,
+.portal02-page .portal02-hero-back:focus-visible {
+  border-color:var(--portal-accent);
+  background:rgba(25,22,31,.88);
+}
+/* Die schon vorhandenen 2-spaltigen großen Galerien: neutrale, leicht violette Flächen. */
+.portal02-page .portal02-gallery-main,
+.portal02-page .portal02-step-feature {
+  background:linear-gradient(150deg,#13131b,#0a0c10);
+  border-color:rgba(181,173,193,.24);
+}
+.portal02-page .portal02-main-image-wrap,
+.portal02-page .portal02-step-image-wrap {background:#09090e;}
+.portal02-page .portal02-thumb,
+.portal02-page .portal02-step-tab {
+  background:#11131b;
+  border-color:rgba(183,176,194,.23);
+}
+.portal02-page .portal02-thumb:hover,
+.portal02-page .portal02-thumb.is-active,
+.portal02-page .portal02-step-tab:hover,
+.portal02-page .portal02-step-tab.is-active {border-color:var(--portal-accent);}
+.portal02-page .portal02-step-tab.is-active {background:#20231c;}
+.portal02-page .portal02-gallery-arrows button {background:#171921;border-color:rgba(177,178,188,.3);}
+.portal02-page .portal02-section-top,
+.portal02-page .portal02-outro {border-color:rgba(187,187,178,.18);}
+/* Bilder im großen Format bleiben sichtbar, auch wenn externe Stilregeln stärker sind. */
+.portal02-page .portal02-main-image-wrap > img,
+.portal02-page .portal02-step-image-wrap > img {
+  display:block !important;
+  width:100% !important;
+  height:100% !important;
+  max-width:100% !important;
+  max-height:100% !important;
+  object-fit:contain !important;
+}
+@media(max-width:700px) {
+  .portal02-page .portal02-hero-back {top:16px;left:24px;}
+  .portal02-page .portal-detail-hero-inner {padding-top:80px;}
+}
+
+
+/* Portal #02: neun Arbeitsschritte als automatische Vollbreiten-Galerie.
+   Die linke Schrittliste wurde entfernt. */
+.portal02-page .portal02-process-layout {
+  display: block;
+}
+.portal02-page .portal02-step-feature {
+  width: 100%;
+  max-width: none;
+}
+.portal02-page .portal02-step-image-wrap {
+  height: clamp(330px, 46vw, 600px);
+}
+@media (max-width: 650px) {
+  .portal02-page .portal02-step-image-wrap {
+    height: 310px;
+  }
+}
+
+
+/* Detailansichten: Hauptfläche schmaler, Vorschauen etwas größer.
+   Drei Thumbnail-Spalten füllen die Seitenhöhe harmonisch aus. */
+@media (min-width: 901px) {
+  .portal02-page .portal02-gallery-shell {
+    grid-template-columns: minmax(0, 1fr) 375px;
+    gap: 16px;
+  }
+  .portal02-page .portal02-thumb-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .portal02-page .portal02-main-image-wrap {
+    height: 390px;
+    padding: 8px;
+  }
+}
+
+
+/* Portal #02 – Prozess kompakter: Erklaerung links, Loop-Galerie rechts.
+   Die Detailgalerie oben bleibt unveraendert. */
+@media (min-width: 901px) {
+  .portal02-page .portal02-process-layout {
+    display: grid;
+    grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+    gap: 34px;
+    align-items: center;
+  }
+  .portal02-page .portal02-process-intro {align-self: center;}
+  .portal02-page .portal02-process-intro .portal02-section-top {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 17px;
+  }
+  .portal02-page .portal02-process-intro .portal02-section-top h2 {
+    font-size: clamp(25px, 2.5vw, 34px);
+  }
+  .portal02-page .portal02-process-intro .portal02-section-description {
+    max-width: 380px;
+    margin: 0;
+  }
+  .portal02-page .portal02-process-layout .portal02-step-feature {
+    width: 100%;
+    min-width: 0;
+    max-width: 545px;
+    justify-self: end;
+  }
+  .portal02-page .portal02-process-layout .portal02-step-image-wrap {
+    height: 310px;
+    padding: 12px;
+  }
+  .portal02-page .portal02-process-layout .portal02-step-feature figcaption {
+    min-height: 77px;
+    padding: 14px 110px 14px 18px;
+  }
+  .portal02-page .portal02-process-layout .portal02-step-feature figcaption .portal02-gallery-arrows {
+    top: 16px;
+    right: 15px;
+  }
+}
+@media (max-width: 900px) {
+  .portal02-page .portal02-process-layout {display: grid;grid-template-columns: 1fr;gap: 16px;}
+  .portal02-page .portal02-process-intro .portal02-section-description {margin:0;}
+  .portal02-page .portal02-process-layout .portal02-step-feature {width:100%;max-width:630px;margin:0 auto;}
+  .portal02-page .portal02-process-layout .portal02-step-image-wrap {height:clamp(240px,48vw,360px);}
+}
+
+
+/* Portal #02 – Korrektur: nur ein Zurück-Button, ruhigere Abstände. */
+/* Der Zurück-Button unter dem BR-Logo bleibt sichtbar. */
+.portal02-page .portal02-hero-back { display: inline-flex !important; }
+/* Der durch das globale script.js zusätzlich eingefügte Button über PORTAL #01 verschwindet nur hier. */
+.portal02-page .portal-detail-hero-text > .about-back-link { display: none !important; }
+.portal02-page .portal02-content { margin-top: 39px; }
+.portal02-page .portal02-intro { margin-bottom: 31px; }
+.portal02-page .portal02-intro h2 { margin-bottom: 12px; }
+.portal02-page .portal02-section { margin-bottom: 58px; }
+
+/* Detailgalerie: Hauptbild schmaler und alle 7 Vorschaubilder größer.
+   Bei Desktop: 3 Reihen à 145px + 2 Zwischenräume à 12px = 459px.
+   Damit endet Kachel 07 exakt auf Höhe der linken Gesamtansicht. */
+@media (min-width: 901px) {
+  .portal02-page .portal02-gallery-shell {
+    grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+    gap: 16px;
+    align-items: start;
+  }
+  .portal02-page .portal02-gallery-main { height: 459px; }
+  .portal02-page .portal02-main-image-wrap {
+    height: 359px;
+    padding: 8px;
+  }
+  .portal02-page .portal02-image-caption {
+    height: 98px;
+    min-height: 98px;
+    padding: 13px 18px;
+  }
+  .portal02-page .portal02-thumb-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    align-content: start;
+  }
+  .portal02-page .portal02-thumb {
+    width: 100%;
+    height: 145px;
+    aspect-ratio: auto;
+  }
+}
+@media (max-width: 650px) {
+  .portal02-page .portal02-content { margin-top: 30px; }
+  .portal02-page .portal02-intro { margin-bottom: 27px; }
+  .portal02-page .portal02-section { margin-bottom: 48px; }
+}
+
+
+/* Nur die grosse Detailansicht: breites, bildfuellendes Querformat.
+   object-fit:cover erhaelt die Proportionen ohne Verzerrung;
+   bei hochkantigen Quellbildern wird der Rand beschnitten.
+   Die Vollbildansicht zeigt weiterhin das vollstaendige Original. */
+.portal02-page .portal02-main-image-wrap > img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+}
+
+
+/* Portal #02 – Wunschlayout: Hauptansicht wieder größer, Vorschauen kleiner.
+   Die Prozessgalerie rechts erhält dieselbe Breite und Gesamthöhe wie
+   die große Detailgalerie links. Keine Änderungen an anderen Portalen. */
+@media (min-width: 901px) {
+  .portal02-page .portal02-gallery-shell {
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+    gap: 16px;
+  }
+  .portal02-page .portal02-gallery-main {height: 459px;}
+  .portal02-page .portal02-main-image-wrap {height:359px;}
+  .portal02-page .portal02-image-caption {height:98px;}
+  .portal02-page .portal02-thumb-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+  }
+  .portal02-page .portal02-thumb {height:145px;}
+
+  .portal02-page .portal02-process-layout {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+    gap: 16px;
+  }
+  .portal02-page .portal02-process-layout .portal02-step-feature {
+    max-width: none;
+    height: 459px;
+  }
+  .portal02-page .portal02-process-layout .portal02-step-image-wrap {
+    height: 359px;
+  }
+  .portal02-page .portal02-process-layout .portal02-step-feature figcaption {
+    min-height: 98px;
+    height: 98px;
+  }
+}
+
+
+/* EXAKT DER HINTERGRUND DER PORTALÜBERSICHT (aus style.css).
+   Der Verlauf sitzt auf body – nicht auf main. Dadurch gibt es keine
+   Kante am Seitenende, auch wenn das Dokument sehr hoch ist. */
+body:has(.portal02-page) {
+  background-color: #090b10;
+  background-image:
+    radial-gradient(
+      ellipse 250px 190px at 15% 20%,
+      rgba(145, 60, 190, 0.16),
+      transparent 100%
+    ),
+    radial-gradient(
+      ellipse 280px 230px at 85% 50%,
+      rgba(205, 55, 115, 0.12),
+      transparent 100%
+    ),
+    radial-gradient(
+      ellipse 260px 210px at 20% 85%,
+      rgba(225, 115, 40, 0.11),
+      transparent 100%
+    ),
+    linear-gradient(#090b10, #090b10);
+}
+/* Der bisherige eigene Portal-01-Main-Hintergrund wird ausgeschaltet. */
+body:has(.portal02-page) main.portal02-page {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+
+/* NOV 2026: Hero-Objekt von Portal #02 bewusst etwas kleiner.
+   Die 430px Hero-Hoehe und Textposition bleiben erhalten. */
+@media (min-width: 701px) {
+  .portal02-page .portal-detail-hero-image img {
+    max-width: 350px !important;
+    max-height: 275px !important;
+    width: auto !important;
+    height: auto !important;
+    object-fit: contain;
+  }
+}
+@media (max-width: 700px) {
+  .portal02-page .portal-detail-hero-image img {
+    max-width: min(82vw, 320px) !important;
+    max-height: 265px !important;
+    object-fit: contain;
+  }
+}
+
+/* Die Merch-Ecke ist ein dezenter Nachsatz unter dem Original. */
+.portal02-merch {margin:42px 0 62px;}
+.portal02-merch-heading {margin-bottom:21px;}
+.portal02-merch-heading h2 {margin:0 0 8px;font-size:clamp(23px,2.7vw,32px);color:#fff;}
+.portal02-merch-heading p {margin:0;color:#c3c3cd;line-height:1.6;font-size:13px;}
+.portal02-merch-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;}
+.portal02-merch-card {min-width:0;display:grid;grid-template-columns:145px minmax(0,1fr);align-items:center;gap:18px;text-decoration:none;background:rgba(15,15,23,.83);border:1px solid rgba(180,172,193,.22);border-radius:13px;padding:13px;color:#fff;transition:transform .2s,border-color .2s;}
+.portal02-merch-card:hover {transform:translateY(-2px);border-color:#d952e0;}
+.portal02-merch-photo {display:flex;align-items:center;justify-content:center;min-height:142px;background:radial-gradient(circle at center,rgba(120,90,130,.13),transparent 72%);}
+.portal02-merch-photo img {width:100%;height:135px;object-fit:contain;display:block;}
+.portal02-merch-info h3 {font-size:21px;margin:0 0 7px;color:#fff;}
+.portal02-merch-info p {font-size:12px;color:#bbc0c6;line-height:1.5;margin:0 0 16px;}
+.portal02-merch-cta {color:#d952e0;font-size:12px;font-weight:700;}
+@media(max-width:700px) {.portal02-merch-card {grid-template-columns:105px minmax(0,1fr);gap:9px;padding:9px;} .portal02-merch-photo img {height:105px;}}
+@media(max-width:520px) {.portal02-merch-grid {grid-template-columns:1fr;}}
