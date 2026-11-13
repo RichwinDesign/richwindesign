@@ -2,7 +2,7 @@
 .portal01-page { --portal-accent:#9ad448; --portal-muted:#a6b5b6; }
 /* Hero: richtiger WebP-Pfad, weniger milchige Fläche, sanfter Schatten von oben. */
 .portal01-page .portal-detail-hero.portal-detail-hero-01 {
- background-image:linear-gradient(180deg,rgba(10,13,16,.77) 0%,rgba(14,19,18,.44) 28%,rgba(11,18,16,.35) 68%,rgba(8,13,15,.66) 100%),url("../images/portale/portal-01/portal_01_hero-background.webp");
+ background-image:linear-gradient(180deg,rgba(9,6,14,.93) 0%,rgba(11,10,14,.73) 19%,rgba(15,17,17,.50) 46%,rgba(9,13,12,.52) 75%,rgba(5,9,12,.82) 100%),url("../images/portale/portal-01/portal_01_hero-background.webp");
  background-position:center; background-size:cover; background-repeat:no-repeat;
 }
 .portal01-page .portal-detail-hero-inner {position:relative;z-index:1;}
@@ -79,3 +79,73 @@
  .portal01-outro {padding:22px 12px;}
 }
 @media(prefers-reduced-motion:reduce) {.portal01-thumb {transition:none;}}
+
+/* Portalwelt: statt Portfolio-Blau ein dunkler Violett-/Waldton. */
+.portal01-page {
+  background:
+    radial-gradient(ellipse 80% 58% at 1% 30%, rgba(51,29,57,.18), transparent 72%),
+    radial-gradient(ellipse 75% 58% at 98% 85%, rgba(23,52,30,.17), transparent 70%),
+    #05070b;
+}
+.portal01-page .portal-detail-hero { isolation:isolate; }
+.portal01-page .portal-detail-hero-inner {z-index:1;}
+.portal01-page .portal-detail-navigation {position:relative;z-index:1;}
+.portal01-page .portal01-hero-back {
+  position:absolute;
+  top:34px;
+  left:max(28px,calc((100% - 1136px)/2));
+  z-index:3;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:35px;
+  padding:7px 14px;
+  border:1px solid rgba(204,224,205,.48);
+  border-radius:8px;
+  color:#f1f6f0;
+  background:rgba(15,13,20,.54);
+  backdrop-filter:blur(5px);
+  font-size:12px;
+  text-decoration:none;
+  transition:background .2s,border-color .2s;
+}
+.portal01-page .portal01-hero-back:hover,
+.portal01-page .portal01-hero-back:focus-visible {
+  border-color:var(--portal-accent);
+  background:rgba(25,22,31,.88);
+}
+/* Die schon vorhandenen 2-spaltigen großen Galerien: neutrale, leicht violette Flächen. */
+.portal01-page .portal01-gallery-main,
+.portal01-page .portal01-step-feature {
+  background:linear-gradient(150deg,#13131b,#0a0c10);
+  border-color:rgba(181,173,193,.24);
+}
+.portal01-page .portal01-main-image-wrap,
+.portal01-page .portal01-step-image-wrap {background:#09090e;}
+.portal01-page .portal01-thumb,
+.portal01-page .portal01-step-tab {
+  background:#11131b;
+  border-color:rgba(183,176,194,.23);
+}
+.portal01-page .portal01-thumb:hover,
+.portal01-page .portal01-thumb.is-active,
+.portal01-page .portal01-step-tab:hover,
+.portal01-page .portal01-step-tab.is-active {border-color:var(--portal-accent);}
+.portal01-page .portal01-step-tab.is-active {background:#20231c;}
+.portal01-page .portal01-gallery-arrows button {background:#171921;border-color:rgba(177,178,188,.3);}
+.portal01-page .portal01-section-top,
+.portal01-page .portal01-outro {border-color:rgba(187,187,178,.18);}
+/* Bilder im großen Format bleiben sichtbar, auch wenn externe Stilregeln stärker sind. */
+.portal01-page .portal01-main-image-wrap > img,
+.portal01-page .portal01-step-image-wrap > img {
+  display:block !important;
+  width:100% !important;
+  height:100% !important;
+  max-width:100% !important;
+  max-height:100% !important;
+  object-fit:contain !important;
+}
+@media(max-width:700px) {
+  .portal01-page .portal01-hero-back {top:16px;left:24px;}
+  .portal01-page .portal-detail-hero-inner {padding-top:80px;}
+}

@@ -13,6 +13,7 @@
   <main class="portal01-page">
     <!-- Bestehender Portal-Hero mit demselben Bild und Text -->
     <section class="portal-detail-hero portal-detail-hero-01">
+      <a class="portal01-hero-back" href="../portale.html" aria-label="Zur Portalübersicht">← Zurück</a>
       <div class="portal-detail-hero-inner">
         <div class="portal-detail-hero-image">
           <img src="../images/portale/portal-01/portal_01_hero.webp" alt="Portal #01 – Der Pfad der Entscheidung" fetchpriority="high">
@@ -95,8 +96,8 @@
   <script src="../script.js"></script>
   <script>
   (() => {
-    const details = [('../images/portale/portal-01/portal_01_detail_front.webp', 'Gesamtansicht', 'Die komplette Vorderseite'), ('../images/portale/portal-01/portal_01_detail_verschluss.webp', 'Verschluss', 'Nahaufnahme des Verschlusses'), ('../images/portale/portal-01/portal_01_detail_frontverschluss.webp', 'Vorderseite', 'Vorderseite mit Verschluss'), ('../images/portale/portal-01/portal_01_detail_offen.webp', 'Innenansicht', 'Das geöffnete Portal'), ('../images/portale/portal-01/portal_01_detail_wiese.webp', 'Wiesenlandschaft', 'Die bemalte Landschaft'), ('../images/portale/portal-01/portal_01_detail_portal.webp', 'Portal', 'Das gemalte Tor'), ('../images/portale/portal-01/portal_01_detail_oben.webp', 'Draufsicht', 'Ansicht von oben')];
-    const steps = [('../images/portale/portal-01/portal_01_process_01.webp', 'Rohbox'), ('../images/portale/portal-01/portal_01_process_02.webp', 'Skizze'), ('../images/portale/portal-01/portal_01_process_03.webp', 'Erste Farben'), ('../images/portale/portal-01/portal_01_process_04.webp', 'Portal'), ('../images/portale/portal-01/portal_01_process_05.webp', 'Landschaft'), ('../images/portale/portal-01/portal_01_process_06.webp', 'Vegetation'), ('../images/portale/portal-01/portal_01_process_07.webp', 'Feine Details'), ('../images/portale/portal-01/portal_01_process_08.webp', 'Licht & Schatten'), ('../images/portale/portal-01/portal_01_process_09.webp', 'Goldverzierungen')];
+    const details = [['../images/portale/portal-01/portal_01_detail_front.webp', 'Gesamtansicht', 'Die komplette Vorderseite'], ['../images/portale/portal-01/portal_01_detail_verschluss.webp', 'Verschluss', 'Nahaufnahme des Verschlusses'], ['../images/portale/portal-01/portal_01_detail_frontverschluss.webp', 'Vorderseite', 'Vorderseite mit Verschluss'], ['../images/portale/portal-01/portal_01_detail_offen.webp', 'Innenansicht', 'Das geöffnete Portal'], ['../images/portale/portal-01/portal_01_detail_wiese.webp', 'Wiesenlandschaft', 'Die bemalte Landschaft'], ['../images/portale/portal-01/portal_01_detail_portal.webp', 'Portal', 'Das gemalte Tor'], ['../images/portale/portal-01/portal_01_detail_oben.webp', 'Draufsicht', 'Ansicht von oben']];
+    const steps = [['../images/portale/portal-01/portal_01_process_01.webp', 'Rohbox'], ['../images/portale/portal-01/portal_01_process_02.webp', 'Skizze'], ['../images/portale/portal-01/portal_01_process_03.webp', 'Erste Farben'], ['../images/portale/portal-01/portal_01_process_04.webp', 'Portal'], ['../images/portale/portal-01/portal_01_process_05.webp', 'Landschaft'], ['../images/portale/portal-01/portal_01_process_06.webp', 'Vegetation'], ['../images/portale/portal-01/portal_01_process_07.webp', 'Feine Details'], ['../images/portale/portal-01/portal_01_process_08.webp', 'Licht & Schatten'], ['../images/portale/portal-01/portal_01_process_09.webp', 'Goldverzierungen']];
     const $ = id => document.getElementById(id);
     const padded = n => String(n+1).padStart(2,'0');
     const lightbox = $('portal01-lightbox');
