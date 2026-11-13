@@ -312,7 +312,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function navLink(label, target, key) {
 
-    const active = activePage === key;
+    const active = activePage === "ueber-mich"
+      ? key === "portfolio"
+      : activePage === key;
 
     return `
       <a
@@ -351,9 +353,12 @@ navigationHTML = `
 
   } else if (activePage === "ueber-mich") {
 
+    // Gleiches Portfolio-Klappmenü wie auf der Startseite.
+    // Links werden vor der Registrierung der Mega-Menü-Events erstellt.
     navigationHTML = `
-      ${navLink("Über mich", "ueber-mich/ueber-mich.html", "ueber-mich")}
+      ${navLink("Portfolio", "index.html#portfolio", "portfolio")}
       ${navLink("Kontakt", "kontakt/kontakt.html", "kontakt")}
+      ${navLink("Über mich", "ueber-mich/ueber-mich.html", "ueber-mich")}
     `;
 
   } else if (activePage === "kontakt") {
