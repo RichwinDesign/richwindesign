@@ -146,6 +146,55 @@
     width: min(100%, 290px);
   }
 }
+
+/* Timeline-Feinschliff: Jahreszahlen immer auf der Textseite. */
+@media (min-width: 701px) {
+  .about-page .journey-entry .journey-year {
+    top: 33px;
+    transform: translateY(-50%);
+  }
+  /* Text rechts (journey-left): Jahreszahl rechts von der Mittellinie. */
+  .about-page .journey-entry.journey-left .journey-year {
+    left: calc(50% + 35px);
+    right: auto;
+    text-align: left;
+  }
+  /* Text links (journey-right): Jahreszahl links von der Mittellinie. */
+  .about-page .journey-entry.journey-right .journey-year {
+    right: calc(50% + 35px);
+    left: auto;
+    text-align: right;
+  }
+  /* Exakte Verbindung bis zur linken/rechten Ecke der 45-Grad-Raute. */
+  .about-page .journey-entry.journey-left .journey-year::before {
+    left: auto;
+    right: calc(100% + 8px);
+    width: 20px;
+  }
+  .about-page .journey-entry.journey-right .journey-year::before {
+    right: auto;
+    left: calc(100% + 8px);
+    width: 20px;
+  }
+  /* Kleines Emote-Raster ein Stück näher an die Mittellinie. */
+  .about-page .journey-entry .journey-media-emotes {
+    margin-left: clamp(38px, 6.5vw, 96px);
+  }
+}
+/* Mobile: Jahreszahl direkt oberhalb des Texts, Raute und Linie fluchten. */
+@media (max-width: 700px) {
+  .about-page .journey-entry .journey-year,
+  .about-page .journey-entry.journey-left .journey-year,
+  .about-page .journey-entry.journey-right .journey-year {
+    left: 40px;
+    right: auto;
+    top: 44px;
+    transform: translateY(-50%);
+    text-align: left;
+  }
+  .about-page .journey-entry .journey-year::before { display: none; }
+  .about-page .journey-entry .journey-media-emotes { margin-left: 0; }
+}
 </style>
 </head>
 <body>
@@ -172,14 +221,14 @@
 <li class="journey-track" aria-hidden="true"><div class="journey-track-progress"></div></li>
 <li class="journey-entry journey-left"><div class="journey-year"><span>2026</span></div>
  <figure class="journey-media journey-media-wide journey-media-placeholder"><div class="journey-media-inner"><div class="journey-placeholder-copy"><strong>KI-Projekt in Vorbereitung</strong><span>Platzhalter für neuen Inhalt</span></div></div><figcaption>Digitalgestaltung · Platzhalter für ein neues Beispiel</figcaption></figure>
- <div class="journey-copy"><span class="journey-category">SEIT 10/2026 · WEITERBILDUNG</span><h3>KI-gestützte Mediengestaltung</h3>
+ <div class="journey-copy"><span class="journey-category">WEITERBILDUNG</span><h3>KI-gestützte Mediengestaltung</h3>
  <p class="journey-place">alfatraining · Vollzeit</p><p>Erweiterung meiner gestalterischen Arbeit durch Adobe Creative Cloud, KI-Bildgenerierung und Promptentwicklung. Praxisprojekte verbinden unterschiedliche Gestaltungsvarianten mit nachvollziehbarer Dokumentation.</p><p class="journey-keywords">Adobe CC · Adobe Firefly · KI-Workflows</p></div>
  </li>
 <li class="journey-entry journey-right"><div class="journey-year"><span>2023–2025</span></div>
  <figure class="journey-media journey-media-large"><div class="journey-media-inner">
  <img src="../images/portfolio/fotografie/fotografie_wirelane-03.webp" alt="Bildbearbeitung – Ladeinfrastruktur mit integrierter Säule" loading="lazy" decoding="async">
  </div><figcaption>Wirelane · Bildbearbeitung und Composing</figcaption></figure>
- <div class="journey-copy"><span class="journey-category">05/2023 – 03/2025 · BERUFSERFAHRUNG</span><h3>Mediengestalterin</h3>
+ <div class="journey-copy"><span class="journey-category">BERUFSERFAHRUNG</span><h3>Mediengestalterin</h3>
  <p class="journey-place">Network Punkt Hamburg UG · Hamburg</p><p>Erstellung, Adaption und Optimierung von Layouts, Reinzeichnung, komplexe Bildbearbeitung und Retusche. Dazu kamen Produktionsaufgaben und Recherchen.</p><p class="journey-keywords">Reinzeichnung · Retusche · Produktion</p></div>
  </li>
 <li class="journey-entry journey-left"><div class="journey-year"><span>2021–2025</span></div>
@@ -192,7 +241,7 @@
 </div>
 <figcaption>Streamer-Emotes · Gestaltung für digitale Communities</figcaption>
 </figure>
- <div class="journey-copy"><span class="journey-category">10/2021 – 12/2025 · EIGENSTÄNDIGE TÄTIGKEIT</span><h3>Mediengestaltung &amp; Affiliate-Marketing</h3>
+ <div class="journey-copy"><span class="journey-category">EIGENSTÄNDIGE TÄTIGKEIT</span><h3>Mediengestaltung &amp; Affiliate-Marketing</h3>
  <p class="journey-place">Pinneberg</p><p>Eigenständige Tätigkeit an der Schnittstelle von visueller Gestaltung und digitalen Projekten.</p><p class="journey-keywords">Digitaldesign · Kommunikation</p></div>
  </li>
 <li class="journey-entry journey-right"><div class="journey-year"><span>2018–2021</span></div>
@@ -200,11 +249,11 @@
 <div class="journey-media-inner"><video autoplay muted loop playsinline preload="metadata" aria-label="Nissin – animierter Werbebanner">
 <source src="../images/portfolio/motion-visuals/motion_nissin_300x250.mp4" type="video/mp4">Dein Browser unterstützt das Video nicht.
 </video></div><figcaption>Animierter Werbebanner · Beispiel aus meiner Ausbildung</figcaption></figure>
- <div class="journey-copy"><span class="journey-category">08/2018 – 06/2021 · AUSBILDUNG</span><h3>Mediengestalterin Digital und Print</h3>
+ <div class="journey-copy"><span class="journey-category">AUSBILDUNG</span><h3>Mediengestalterin Digital und Print</h3>
  <p class="journey-place">TAXi-AD GmbH → UP-Advertising GmbH</p><p>Ausbildung in der Fachrichtung Gestaltung und Technik. Zunächst bei TAXi-AD (08/2018–06/2019), anschließend bei UP-Advertising (07/2019–06/2021). <strong>Abschluss 2021.</strong></p><p class="journey-keywords">Print · Digital · Gestaltung &amp; Technik</p></div>
  </li>
 
-<li class="journey-entry journey-right"><div class="journey-year"><span>2014–2015</span></div>
+<li class="journey-entry journey-left"><div class="journey-year"><span>2014–2015</span></div>
  <figure class="journey-media journey-media-medium journey-media-sofa">
  <div class="journey-media-inner journey-sofa-compare" style="--sofa-position:50%">
   <img class="journey-sofa-before" src="../images/portfolio/fotografie/fotografie_composing-sofa-nachher.webp" alt="Sofa-Composing – Vorher" loading="lazy">
@@ -214,17 +263,17 @@
   <input type="range" class="journey-sofa-range" min="0" max="100" value="50" aria-label="Sofa-Composing: Vorher und Nachher vergleichen">
  </div><figcaption>Sofa-Composing · Vorher-Nachher-Vergleich</figcaption>
 </figure>
- <div class="journey-copy"><span class="journey-category">10/2014 – 10/2015 · AUSBILDUNG</span><h3>Kommunikationsdesign</h3>
+ <div class="journey-copy"><span class="journey-category">AUSBILDUNG</span><h3>Kommunikationsdesign</h3>
  <p class="journey-place">HTK – Akademie für Gestaltung · Hamburg</p><p>Schulische Ausbildung im Kommunikationsdesign; nicht abgeschlossen.</p><p class="journey-keywords"></p></div>
  </li>
 <li class="journey-entry journey-left journey-text-only"><div class="journey-year"><span>2014</span></div>
- <div class="journey-copy"><span class="journey-category">09/2014 – 11/2014 · BERUFSERFAHRUNG</span><h3>Friseurin</h3>
+ <div class="journey-copy"><span class="journey-category">BERUFSERFAHRUNG</span><h3>Friseurin</h3>
  <p class="journey-place">Friseur Klinck · Hamburg</p><p>Berufserfahrung im Friseurhandwerk nach der Gesellenprüfung.</p></div></li>
 <li class="journey-entry journey-right journey-text-only"><div class="journey-year"><span>2011–2014</span></div>
- <div class="journey-copy"><span class="journey-category">2011 – 2014 · HANDWERK</span><h3>Friseurausbildung &amp; Gesellenprüfung</h3>
+ <div class="journey-copy"><span class="journey-category">HANDWERK</span><h3>Friseurausbildung &amp; Gesellenprüfung</h3>
  <p class="journey-place">Friseur Susan · Gesellenprüfung 06/2014</p><p>Mein beruflicher Weg begann im kreativen Handwerk – mit einem Blick für Formen, Farben und die Arbeit mit Menschen.</p></div></li>
 <li class="journey-entry journey-left journey-text-only"><div class="journey-year"><span>2010–2011</span></div>
- <div class="journey-copy"><span class="journey-category">03/2010 – 01/2011 · BERUFSSTART</span><h3>Malerhandwerk</h3>
+ <div class="journey-copy"><span class="journey-category">BERUFSSTART</span><h3>Malerhandwerk</h3>
  <p class="journey-place">R. Schmidt · Praktikum und Ausbildung</p><p>Frühe praktische Erfahrungen im gestalterischen Handwerk.</p></div></li>
 </ol></section>
 <section class="about-skills-section" aria-labelledby="skills-title">
