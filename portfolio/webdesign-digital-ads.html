@@ -359,5 +359,167 @@
     }, interval);
   })();
   </script>
- </body>
+ 
+  <!-- Bildvergrößerung nur für statische Webdesign- und Digital-Ad-Motive. -->
+  <style>
+    .web-project:not(.web-project--emotes) figure.web-work .web-work-media img[data-web-zoom] {
+      cursor: zoom-in;
+    }
+    .web-project:not(.web-project--emotes) figure.web-work .web-work-media img[data-web-zoom]:focus-visible {
+      outline: 3px solid #8bc9e7;
+      outline-offset: 3px;
+    }
+    .web-image-lightbox[hidden] { display: none !important; }
+    .web-image-lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 100000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 64px 76px;
+      box-sizing: border-box;
+      background: rgba(3, 7, 15, .94);
+    }
+    .web-image-lightbox figure {
+      max-width: 100%;
+      max-height: 100%;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+    .web-image-lightbox img {
+      display: block;
+      max-width: 100%;
+      max-height: calc(100dvh - 165px);
+      width: auto;
+      height: auto;
+      object-fit: contain;
+    }
+    .web-image-lightbox figcaption {
+      color: #e8eef4;
+      font-size: 14px;
+      line-height: 1.5;
+      text-align: center;
+    }
+    .web-image-lightbox button {
+      position: absolute;
+      border: 1px solid rgba(255,255,255,.25);
+      border-radius: 50%;
+      width: 43px;
+      height: 43px;
+      padding: 0;
+      color: #fff;
+      background: rgba(24,35,49,.85);
+      font-size: 25px;
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+    }
+    .web-image-lightbox button:hover,
+    .web-image-lightbox button:focus-visible { background: #456a80; }
+    .web-image-lightbox .web-lightbox-close { top: 14px; right: 15px; }
+    .web-image-lightbox .web-lightbox-prev { left: 12px; top: 50%; transform: translateY(-50%); }
+    .web-image-lightbox .web-lightbox-next { right: 12px; top: 50%; transform: translateY(-50%); }
+    @media (max-width: 600px) {
+      .web-image-lightbox { padding: 62px 10px 94px; }
+      .web-image-lightbox img { max-height: calc(100dvh - 210px); }
+      .web-image-lightbox .web-lightbox-prev,
+      .web-image-lightbox .web-lightbox-next { top: auto; bottom: 22px; transform: none; }
+      .web-image-lightbox .web-lightbox-prev { left: calc(50% - 65px); }
+      .web-image-lightbox .web-lightbox-next { right: calc(50% - 65px); }
+    }
+  </style>
+  <div class="web-image-lightbox" id="webImageLightbox" role="dialog" aria-modal="true" aria-label="Vergrößerte Bildansicht" hidden>
+    <button class="web-lightbox-close" type="button" aria-label="Bildansicht schließen">×</button>
+    <button class="web-lightbox-prev" type="button" aria-label="Vorheriges Bild">‹</button>
+    <figure>
+      <img src="" alt="">
+      <figcaption></figcaption>
+    </figure>
+    <button class="web-lightbox-next" type="button" aria-label="Nächstes Bild">›</button>
+  </div>
+  <script>
+    (() => {
+      // Ausgenommen: Streamer-Emotes und die automatisch wechselnden Carservice-Motive.
+      const selector = '.web-project:not(.web-project--emotes) figure.web-work .web-work-media img';
+      const images = [...document.querySelectorAll(selector)];
+      const lightbox = document.getElementById('webImageLightbox');
+      if (!images.length || !lightbox) return;
+
+      const enlarged = lightbox.querySelector('figure img');
+      const caption = lightbox.querySelector('figcaption');
+      const closeButton = lightbox.querySelector('.web-lightbox-close');
+      const prevButton = lightbox.querySelector('.web-lightbox-prev');
+      const nextButton = lightbox.querySelector('.web-lightbox-next');
+      let group = [];
+      let position = 0;
+      let previousFocus = null;
+      let previousOverflow = '';
+
+      function show(index) {
+        position = (index + group.length) % group.length;
+        const current = group[position];
+        enlarged.src = current.currentSrc || current.src;
+        enlarged.alt = current.alt || 'Print- und Webdesignmotiv';
+        caption.textContent = current.closest('figure')?.querySelector('figcaption')?.textContent?.trim() || current.alt || '';
+        prevButton.hidden = group.length < 2;
+        nextButton.hidden = group.length < 2;
+      }
+
+      function open(image) {
+        const project = image.closest('.web-project');
+        group = [...project.querySelectorAll(selector)];
+        previousFocus = document.activeElement;
+        previousOverflow = document.body.style.overflow;
+        show(group.indexOf(image));
+        lightbox.hidden = false;
+        document.body.style.overflow = 'hidden';
+        closeButton.focus();
+      }
+
+      function close() {
+        lightbox.hidden = true;
+        enlarged.removeAttribute('src');
+        document.body.style.overflow = previousOverflow;
+        previousFocus?.focus?.();
+      }
+
+      images.forEach((img) => {
+        img.dataset.webZoom = '';
+        img.tabIndex = 0;
+        img.setAttribute('role', 'button');
+        img.setAttribute('aria-label', `${img.alt || 'Bild'} vergrößern`);
+        img.addEventListener('click', () => open(img));
+        img.addEventListener('keydown', (event) => {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            open(img);
+          }
+        });
+      });
+
+      closeButton.addEventListener('click', close);
+      prevButton.addEventListener('click', () => show(position - 1));
+      nextButton.addEventListener('click', () => show(position + 1));
+      lightbox.addEventListener('click', (event) => {
+        if (event.target === lightbox) close();
+      });
+      document.addEventListener('keydown', (event) => {
+        if (lightbox.hidden) return;
+        if (event.key === 'Escape') { event.preventDefault(); close(); }
+        if (event.key === 'ArrowLeft') { event.preventDefault(); show(position - 1); }
+        if (event.key === 'ArrowRight') { event.preventDefault(); show(position + 1); }
+        if (event.key === 'Tab') {
+          const controls = [closeButton, prevButton, nextButton].filter(b => !b.hidden);
+          const i = controls.indexOf(document.activeElement);
+          if (event.shiftKey && i <= 0) { event.preventDefault(); controls[controls.length - 1].focus(); }
+          if (!event.shiftKey && i === controls.length - 1) { event.preventDefault(); controls[0].focus(); }
+        }
+      });
+    })();
+  </script>
+</body>
 </html>
