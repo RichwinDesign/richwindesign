@@ -10,11 +10,11 @@
   const SETTINGS = {
     desktopLeaves: 260,       // viele kleine statt weniger riesiger Blätter
     mobileLeaves: 140,
-    desktopSize: [54, 91],    // Blattgröße in Pixeln (klein bis groß)
-    mobileSize: [40, 69],
+    desktopSize: [45, 76],    // Blattgröße in Pixeln (klein bis groß)
+    mobileSize: [32, 53],
     openDuration: 3300,      // Dauer der Öffnung in Millisekunden
     closeDuration: 1650,     // Dauer der Schließung
-    survivingLeaves: 0.28,  // Anteil sichtbarer Blätter in den Ecken
+    survivingLeaves: 0.46,  // Anteil sichtbarer Blätter in den Ecken
     assetFolder: '../images/links/efeublaetter/'
   };
 
@@ -67,20 +67,19 @@
       const closedX = (col + .5) * cellW - size / 2 + range(-cellW * .5, cellW * .5);
       const closedY = (row + .5) * cellH - size / 2 + range(-cellH * .5, cellH * .5);
 
-      // Offen: Blätter wandern in einen der vier Eckenbereiche.
-      // Wiederholungen ergeben dichteres, aber feinblättriges Laub.
+      // Offen: dichte, kleinere Efeu-Gruppen NUR in den vier Ecken.
+      // Keine frei schwebenden Blätter auf Logo oder Steinblöcken.
       const corner = i % 4;
-      const anchorX = corner === 0 || corner === 2 ? 0 : vw;
-      const anchorY = corner < 2 ? 0 : vh;
-      const angle = range(0, Math.PI / 2);
-      const spread = Math.pow(rnd(), 1.65);
-      const reachX = clamp(vw * .29, 110, 440) * spread;
-      const reachY = clamp(vh * .29, 100, 280) * spread;
-      const offsetX = Math.cos(angle) * reachX;
-      const offsetY = Math.sin(angle) * reachY;
-      const openX = (anchorX === 0 ? offsetX : vw - offsetX) - size / 2 + range(-25, 25);
-      const openY = (anchorY === 0 ? offsetY : vh - offsetY) - size / 2 + range(-25, 25);
-      const keep = rnd() < SETTINGS.survivingLeaves || spread < .22;
+      const isLeft = corner === 0 || corner === 2;
+      const isTop = corner < 2;
+      const maxReachX = Math.min(vw * .22, 225);
+      const maxReachY = Math.min(vh * .19, 175);
+      const spread = Math.pow(rnd(), 1.8);
+      const horizontal = range(-size * .38, maxReachX * spread);
+      const vertical = range(-size * .38, maxReachY * spread);
+      const openX = isLeft ? horizontal : vw - size - horizontal;
+      const openY = isTop ? vertical : vh - size - vertical;
+      const keep = rnd() < SETTINGS.survivingLeaves;
 
       leaf.style.setProperty('--size', `${size.toFixed(1)}px`);
       leaf.style.setProperty('--closed-x', `${closedX.toFixed(1)}px`);
@@ -133,11 +132,12 @@
   // 05 – Link anklicken: Efeu schließt, erst danach erfolgt der Seitenwechsel
   document.addEventListener('click', (event) => {
     const link = event.target.closest('a[data-portal-transition]');
-    if (!link || isClosing || event.defaultPrevented) return;
+    if (!link || event.defaultPrevented) return;
+    if (isClosing) { event.preventDefault(); return; }
     if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
 
     const destination = new URL(link.href, window.location.href);
-    if (destination.origin !== window.location.origin) return;
+    // Externe Links wie Ko-fi dürfen ebenfalls durch den Portalvorhang wechseln.
     event.preventDefault();
     isClosing = true;
     window.clearTimeout(openTimer);
@@ -157,7 +157,7 @@
     if (event.persisted) {
       isClosing = false;
       document.body.classList.remove('is-travelling', 'ivy-closing');
-      document.body.classList.add('ivy-open');
+      startOpening();
     }
   });
 

@@ -22,12 +22,12 @@ a { color: inherit; }
 }
 .scene {
   position: relative;
-  min-height: 100svh;
+  min-height: max(100svh, 620px);
   overflow: hidden;
   isolation: isolate;
   background:
     linear-gradient(180deg, rgba(0,0,0,.16), rgba(0,0,0,.06) 48%, rgba(0,0,0,.20)),
-    url('../images/links/links_background-cave.webp') center center / cover no-repeat;
+    url('../images/links/links_background-cave.webp') center bottom / cover no-repeat;
 }
 /* Bild bleibt vollständig sichtbar auf sehr breiten Bildschirmen. */
 @media (min-aspect-ratio: 20/9) {
@@ -55,11 +55,13 @@ a { color: inherit; }
   z-index: 3;
   left: 2.5%;
   right: 2.5%;
-  bottom: clamp(80px, 13.8vh, 150px);
+  bottom: clamp(105px, 13.5svh, 165px);
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
   align-items: end;
-  gap: clamp(1px, .35vw, 8px);
+  gap: clamp(2px, .7vw, 14px);
+  max-width: 1600px;
+  margin-inline: auto;
 }
 .stone {
   position: relative;
@@ -78,14 +80,16 @@ a { color: inherit; }
   top: 48%;
   transform: translateY(-50%);
   color: #f1dcc0;
-  font-size: clamp(.63rem, 1.26vw, 1.22rem);
+  font-size: clamp(.63rem, 1.13vw, 1.09rem);
   line-height: 1.2;
   letter-spacing: .075em;
   text-align: center;
   text-shadow: 0 2px 4px #000, 0 0 12px #000;
-  overflow-wrap: anywhere;
+  white-space: nowrap;
+  letter-spacing: .035em;
   pointer-events: none;
 }
+.label-mobile { display: none; }
 .stone:hover, .stone:focus-visible { transform: translateY(-9px); filter: drop-shadow(0 25px 16px rgba(0,0,0,.75)) brightness(1.12); }
 .stone:focus-visible { outline: 2px solid var(--gold); outline-offset: 1px; border-radius: 8px; }
 
@@ -95,67 +99,66 @@ a { color: inherit; }
   z-index: 3;
   left: 14px;
   right: 14px;
-  bottom: 46px;
+  bottom: 51px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: 8px 15px;
-  font: .77rem/1.5 Arial, Helvetica, sans-serif;
+  font: .85rem/1.5 Arial, Helvetica, sans-serif;
   color: #ddcdbb;
   text-shadow: 0 2px 7px #000;
 }
 .scene-bottom a, .scene-legal a { text-decoration: none; }
 .scene-bottom a:hover, .scene-legal a:hover { text-decoration: underline; }
-.muted-link { opacity: .50; }
+.muted-link { opacity: .72; }
 .divider { color: #a58059; }
 .scene-legal {
   position: absolute;
   z-index: 3;
-  bottom: 14px;
+  bottom: 18px;
   left: 0;
   right: 0;
   display: flex;
   justify-content: center;
   gap: 12px;
-  font: .67rem Arial, Helvetica, sans-serif;
+  font: .76rem Arial, Helvetica, sans-serif;
   color: #bcae9f;
 }
 
-/* 05 – Tablet und Smartphone: Steine bleiben auf einem Bodenpanel,
-   statt als winzige Elemente über die ganze Breite gequetscht zu werden. */
-@media (max-width: 880px) {
-  .scene { min-height: max(100svh, 820px); background-position: center center; }
-  .scene-heading { top: 42px; }
+/* 05 – Responsive: Steine BLEIBEN in einer Reihe auf derselben Bodenlinie.
+   Kein Flex-Wrap, keine relative Positionierung und keine schwebenden Reihen. */
+@media (max-width: 900px) {
+  .scene { min-height: max(100svh, 620px); background-position: center bottom; }
+  .scene-heading { top: clamp(24px, 6svh, 52px); }
   .stone-worlds {
-    position: relative;
-    left: auto;
-    right: auto;
-    bottom: auto;
-    width: min(96%, 700px);
-    margin: 0 auto;
-    padding-top: clamp(220px, 33vh, 330px);
-    display: flex;
-    flex-wrap: wrap;
-    align-items: end;
-    justify-content: center;
-    gap: 0 1%;
+    left: 2%; right: 2%;
+    bottom: clamp(115px, 13svh, 152px);
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 2px;
   }
-  .stone { flex: 0 0 31%; }
-  .stone-label { font-size: clamp(.67rem, 2vw, 1rem); }
-  .scene-bottom { position: relative; left: auto; right: auto; bottom: auto; margin: 45px 16px 10px; }
-  .scene-legal { position: relative; bottom: auto; padding: 10px 0 20px; }
+  .stone-label {
+    left: 13%; width: 74%;
+    font-size: clamp(.53rem, 1.52vw, .88rem);
+    letter-spacing: 0;
+  }
+  .scene-bottom {
+    bottom: 44px;
+    gap: 5px 14px;
+    font-size: .78rem;
+  }
 }
-@media (max-width: 480px) {
-  .scene { min-height: 100svh; background-position: 50% center; }
+@media (max-width: 560px) {
+  .scene { min-height: max(100svh, 600px); }
   .scene-heading { top: 28px; }
-  .scene-heading h1 { letter-spacing: .16em; }
-  .scene-heading p { letter-spacing: .14em; }
-  .stone-worlds { padding-top: 205px; width: 100%; gap: 0; }
-  .stone { flex: 0 0 48%; }
-  .stone:last-child { flex-basis: 48%; }
-  .stone-label { font-size: clamp(.62rem, 2.9vw, .88rem); }
-  .scene-bottom { margin-top: 26px; gap: 7px 12px; }
+  .scene-heading h1 { letter-spacing: .13em; font-size: clamp(1rem, 5vw, 1.5rem); }
+  .scene-heading p { letter-spacing: .1em; font-size: .62rem; }
+  .stone-worlds { left: .5%; right: .5%; bottom: clamp(132px, 15svh, 165px); gap: 0; }
+  .stone-label { left: 8%; width: 84%; font-size: clamp(.45rem, 1.75vw, .64rem); white-space: nowrap; }
+  .label-desktop { display: none; }
+  .label-mobile { display: inline; }
+  .scene-bottom { left: 10px; right: 10px; bottom: 49px; gap: 7px 12px; font-size: .72rem; }
+  .scene-legal { font-size: .69rem; bottom: 15px; }
 }
 
 /* 03 – Efeu-Overlay: vor der Animation dunkler Vorhang */
@@ -215,7 +218,7 @@ body.ivy-closing .ivy-leaf {
   inset: 0;
   pointer-events: none;
   z-index: 1001;
-  background: radial-gradient(ellipse at center, transparent 32%, rgba(0, 0, 0, .25) 72%, rgba(0, 0, 0, .79) 100%);
+  background: radial-gradient(ellipse at center, transparent 32%, rgba(0, 0, 0, .25) 72%, rgba(0, 0, 0, .62) 100%);
 }
 .skip-intro {
   position: fixed;
