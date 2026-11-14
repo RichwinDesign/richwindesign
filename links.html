@@ -6,59 +6,366 @@
   <meta name="theme-color" content="#03121a">
   <meta name="description" content="Alle wichtigen Links von RichwinDesign: Portalwelt, Portfolio, Genealogie, Kunst und Kontakt.">
   <title>Links | RichwinDesign</title>
+
   <style>
-    :root {color-scheme:dark;--bg:#03121a;--line:#3caad9;--text:#f7fbff;--muted:#c0d7e2;}
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% 31%,#102f42 0%,#061b28 36%,#03111a 70%,#020b12 100%);color:var(--text);font-family:Georgia,'Times New Roman',serif}
-    a{color:inherit}
-    .shell{position:relative;max-width:690px;margin:14px auto;padding:8px 38px 26px;border:1px solid rgba(74,175,218,.65);box-shadow:0 0 75px rgba(12,80,114,.19),inset 0 0 30px rgba(11,79,113,.08)}
-    .shell::before,.shell::after{content:'✦';position:absolute;font-size:1.9rem;color:#3d92b5;opacity:.38;pointer-events:none}
-    .shell::before{left:2%;top:1.2%}.shell::after{right:3%;bottom:1%}
-    .brand-logo{display:block;width:max-content;margin:-15px auto 8px;text-decoration:none;font-size:clamp(2.1rem,4vw,3rem);color:#b6dcf1;line-height:1;letter-spacing:-.06em;text-shadow:0 0 24px #4ca9d477}
-    .brand-logo::after{content:'';display:block;width:65px;height:1px;transform:rotate(-16deg) translate(32px,-17px);background:linear-gradient(90deg,#b3eaff,transparent)}
-    .hero{position:relative;width:min(100%,480px);margin:0 auto 8px;overflow:hidden}
-    .hero img{display:block;width:100%;height:auto;max-height:190px;object-fit:contain}
-    h1{text-align:center;font-weight:normal;font-size:clamp(2.35rem,5vw,3.4rem);letter-spacing:-.035em;margin:0;line-height:1.1;text-shadow:0 3px 16px #0008}
-    h1 span{color:#6bbbe9}
-    .eyebrow{text-align:center;text-transform:uppercase;letter-spacing:.19em;font-size:clamp(.61rem,1.5vw,.78rem);margin:9px auto 0;line-height:1.55}
-    .fine-line{height:1px;width:min(68%,440px);margin:14px auto;background:linear-gradient(90deg,transparent,#4fbce8,transparent)}
-    .intro{text-align:center;font-family:Arial,Helvetica,sans-serif;font-size:clamp(.83rem,1.55vw,.94rem);font-style:italic;font-weight:300;line-height:1.5;max-width:520px;margin:0 auto 18px;color:#eaf0f4}
-    .links{max-width:520px;margin:0 auto;display:grid;gap:8px}
-    .link{display:flex;justify-content:center;align-items:center;min-height:43px;border:1px solid #59c9fb;border-radius:11px;text-decoration:none;color:white;text-align:center;padding:8px 14px;background:linear-gradient(155deg,rgba(9,36,53,.95),rgba(20,83,111,.78) 66%,rgba(12,40,59,.93));box-shadow:inset 0 -2px 0 rgba(79,217,255,.36),inset 0 14px 18px rgba(3,23,33,.25);letter-spacing:.16em;text-transform:uppercase;font-size:clamp(.75rem,1.8vw,.93rem);transition:transform .2s ease,box-shadow .2s ease,background .2s ease}
-    a.link:hover,a.link:focus-visible{transform:translateY(-2px);box-shadow:0 0 23px rgba(75,188,236,.35),inset 0 -2px 0 rgba(79,217,255,.5);outline-offset:4px}
-    .link--quiet{border-color:#4b8ba8;background:linear-gradient(125deg,#09212e,#153c50 57%,#081d2b)}
-    .link--inactive{opacity:.44;filter:grayscale(.35);cursor:not-allowed;border-color:#72909e;box-shadow:none;flex-direction:column;gap:3px}
-    .link--inactive small{font-family:Arial,Helvetica,sans-serif;letter-spacing:.09em;font-size:.61rem;text-transform:none}
-    .socials{font:normal .79rem Arial,Helvetica,sans-serif;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px 19px;margin:16px auto 0;max-width:800px}
-    .socials a{text-decoration:none;color:#d8edf7}
-    .socials a:hover,.socials a:focus-visible{text-decoration:underline;color:#81d5ff}
-    .socials .dot{width:1px;height:18px;background:#67b4d0}
-    footer{margin-top:14px;text-align:center;font:normal .75rem Arial,Helvetica,sans-serif;color:#94b3c2}
-    footer a{text-decoration:none;margin:0 7px}footer a:hover{text-decoration:underline}
-    @media(max-width:600px){.shell{margin:8px 8px;padding:10px 5% 24px}.brand-logo{margin-top:-16px}.hero{width:100%;margin:0 auto 6px}.hero img{max-height:155px}.eyebrow{letter-spacing:.11em}.intro{font-size:.82rem;margin-bottom:16px}.intro br{display:none}.fine-line{margin:12px auto}.links{gap:8px}.link{min-height:44px;border-radius:10px;font-size:.73rem;letter-spacing:.1em}.socials{gap:9px}h1{font-size:clamp(2.1rem,8.5vw,3rem)}}
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.link{transition:none}}
+    /* ========================================
+       01 – FARBEN UND GRUNDEINSTELLUNGEN
+       ======================================== */
+    :root {
+      color-scheme:dark;
+      --bg:#03121a;
+      --line:#3caad9;
+      --text:#f7fbff;
+      --muted:#c0d7e2;
+    }
+
+    * {
+      box-sizing:border-box
+    }
+
+    html {
+      scroll-behavior:smooth
+    }
+
+    body {
+      margin:0;
+      min-height:100vh;
+      background:radial-gradient(ellipse at 50% 31%,#102f42 0%,#061b28 36%,#03111a 70%,#020b12 100%);
+      color:var(--text);
+      font-family:Georgia,'Times New Roman',serif
+    }
+
+    a {
+      color:inherit
+    }
+
+    .shell {
+      position:relative;
+      max-width:690px;
+      margin:14px auto;
+      padding:8px 38px 26px;
+      border:1px solid rgba(74,175,218,.65);
+      box-shadow:0 0 75px rgba(12,80,114,.19),inset 0 0 30px rgba(11,79,113,.08)
+    }
+
+    .shell::before,.shell::after {
+      content:'✦';
+      position:absolute;
+      font-size:1.9rem;
+      color:#3d92b5;
+      opacity:.38;
+      pointer-events:none
+    }
+
+    .shell::before {
+      left:2%;
+      top:1.2%
+    }
+
+    .shell::after {
+      right:3%;
+      bottom:1%
+    }
+
+    .brand-logo {
+      display:block;
+      width:max-content;
+      margin:-15px auto 8px;
+      text-decoration:none;
+      font-size:clamp(2.1rem,4vw,3rem);
+      color:#b6dcf1;
+      line-height:1;
+      letter-spacing:-.06em;
+      text-shadow:0 0 24px #4ca9d477
+    }
+
+    .brand-logo::after {
+      content:'';
+      display:block;
+      width:65px;
+      height:1px;
+      transform:rotate(-16deg) translate(32px,-17px);
+      background:linear-gradient(90deg,#b3eaff,transparent)
+    }
+
+    .hero {
+      position:relative;
+      width:min(100%,480px);
+      margin:0 auto 8px;
+      overflow:hidden
+    }
+
+    .hero img {
+      display:block;
+      width:100%;
+      height:auto;
+      max-height:190px;
+      object-fit:contain
+    }
+
+    h1 {
+      text-align:center;
+      font-weight:normal;
+      font-size:clamp(2.35rem,5vw,3.4rem);
+      letter-spacing:-.035em;
+      margin:0;
+      line-height:1.1;
+      text-shadow:0 3px 16px #0008
+    }
+
+    h1 span {
+      color:#6bbbe9
+    }
+
+    .eyebrow {
+      text-align:center;
+      text-transform:uppercase;
+      letter-spacing:.19em;
+      font-size:clamp(.61rem,1.5vw,.78rem);
+      margin:9px auto 0;
+      line-height:1.55
+    }
+
+    .fine-line {
+      height:1px;
+      width:min(68%,440px);
+      margin:14px auto;
+      background:linear-gradient(90deg,transparent,#4fbce8,transparent)
+    }
+
+    .intro {
+      text-align:center;
+      font-family:Arial,Helvetica,sans-serif;
+      font-size:clamp(.83rem,1.55vw,.94rem);
+      font-style:italic;
+      font-weight:300;
+      line-height:1.5;
+      max-width:520px;
+      margin:0 auto 18px;
+      color:#eaf0f4
+    }
+
+    .links {
+      max-width:520px;
+      margin:0 auto;
+      display:grid;
+      gap:8px
+    }
+
+    .link {
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      min-height:43px;
+      border:1px solid #59c9fb;
+      border-radius:11px;
+      text-decoration:none;
+      color:white;
+      text-align:center;
+      padding:8px 14px;
+      background:linear-gradient(155deg,rgba(9,36,53,.95),rgba(20,83,111,.78) 66%,rgba(12,40,59,.93));
+      box-shadow:inset 0 -2px 0 rgba(79,217,255,.36),inset 0 14px 18px rgba(3,23,33,.25);
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      font-size:clamp(.75rem,1.8vw,.93rem);
+      transition:transform .2s ease,box-shadow .2s ease,background .2s ease
+    }
+
+    a.link:hover,a.link:focus-visible {
+      transform:translateY(-2px);
+      box-shadow:0 0 23px rgba(75,188,236,.35),inset 0 -2px 0 rgba(79,217,255,.5);
+      outline-offset:4px
+    }
+
+    .link--quiet {
+      border-color:#4b8ba8;
+      background:linear-gradient(125deg,#09212e,#153c50 57%,#081d2b)
+    }
+
+    .link--inactive {
+      opacity:.44;
+      filter:grayscale(.35);
+      cursor:not-allowed;
+      border-color:#72909e;
+      box-shadow:none;
+      flex-direction:column;
+      gap:3px
+    }
+
+    .link--inactive small {
+      font-family:Arial,Helvetica,sans-serif;
+      letter-spacing:.09em;
+      font-size:.61rem;
+      text-transform:none
+    }
+
+    .socials {
+      font:normal .79rem Arial,Helvetica,sans-serif;
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      align-items:center;
+      gap:10px 19px;
+      margin:16px auto 0;
+      max-width:800px
+    }
+
+    .socials a {
+      text-decoration:none;
+      color:#d8edf7
+    }
+
+    .socials a:hover,.socials a:focus-visible {
+      text-decoration:underline;
+      color:#81d5ff
+    }
+
+    .socials .dot {
+      width:1px;
+      height:18px;
+      background:#67b4d0
+    }
+
+    footer {
+      margin-top:14px;
+      text-align:center;
+      font:normal .75rem Arial,Helvetica,sans-serif;
+      color:#94b3c2
+    }
+
+    footer a {
+      text-decoration:none;
+      margin:0 7px
+    }
+
+    footer a:hover {
+      text-decoration:underline
+    }
+
+    @media(max-width:600px) {
+      .shell {
+        margin:8px 8px;
+        padding:10px 5% 24px
+      }
+      .brand-logo {
+        margin-top:-16px
+      }
+      .hero {
+        width:100%;
+        margin:0 auto 6px
+      }
+      .hero img {
+        max-height:155px
+      }
+      .eyebrow {
+        letter-spacing:.11em
+      }
+      .intro {
+        font-size:.82rem;
+        margin-bottom:16px
+      }
+      .intro br {
+        display:none
+      }
+      .fine-line {
+        margin:12px auto
+      }
+      .links {
+        gap:8px
+      }
+      .link {
+        min-height:44px;
+        border-radius:10px;
+        font-size:.73rem;
+        letter-spacing:.1em
+      }
+      .socials {
+        gap:9px
+      }
+      h1 {
+        font-size:clamp(2.1rem,8.5vw,3rem)
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+      html {
+        scroll-behavior:auto
+      }
+      .link {
+        transition:none
+      }
+    }
   </style>
 </head>
+
 <body>
   <main class="shell">
-    <a class="brand-logo" href="index.html" aria-label="RichwinDesign – Startseite">BR</a>
-    <div class="hero"><img src="links-portalbild.webp" alt="Handbemalte Portal-Holzbox mit farbenreicher Landschaft und leuchtendem Portal" width="760" height="330" onerror="this.closest('.hero').hidden=true"></div>
+
+    <!-- ========================================
+         LOGO UND HERO
+         ======================================== -->
+    <a class="brand-logo" href="index.html" aria-label="RichwinDesign – Startseite">
+      BR
+    </a>
+
+    <div class="hero">
+      <img
+        src="images/general/links-portalbild.webp"
+        alt="Handbemalte Portal-Holzbox mit farbenreicher Landschaft und leuchtendem Portal"
+        width="760"
+        height="330"
+        onerror="this.closest('.hero').hidden=true"
+      >
+    </div>
+
+    <!-- ========================================
+         TITEL UND BESCHREIBUNG
+         ======================================== -->
     <h1>Richwin<span>Design</span></h1>
     <p class="eyebrow">Portalwelten · Kunst · Design · Genealogie</p>
     <div class="fine-line"></div>
-    <p class="intro">In meiner Welt treffen handbemalte Portalboxen,<br> visuelles Design und kreative Ideen aufeinander.</p>
+
+    <p class="intro">
+      In meiner Welt treffen handbemalte Portalboxen,<br>
+      visuelles Design und kreative Ideen aufeinander.
+    </p>
+
+    <!-- ========================================
+         HAUPTLINKS
+         ======================================== -->
     <nav class="links" aria-label="Wichtige Links">
       <a class="link" href="portale.html">Portalwelt entdecken</a>
       <a class="link" href="index.html">Portfolio ansehen</a>
       <a class="link" href="genealogie/genealogie.html">Genealogie</a>
-      <!-- TODO: Exakte Ko-fi-URL eintragen und span zu a ändern. -->
-      <span class="link link--quiet link--inactive" aria-label="Ko-fi-Link folgt">Ko-fi unterstützen<small>Link folgt</small></span>
-      <!-- TODO: Exakte Patreon-URL eintragen und span zu a ändern; kostenlose Mitgliedschaft möglich. -->
-      <span class="link link--quiet link--inactive" aria-label="Patreon-Link folgt">Patreon · kostenlos folgen<small>Link folgt</small></span>
-      <span class="link link--inactive" aria-label="Shop demnächst verfügbar">Shop<small>Demnächst verfügbar</small></span>
+
+      <!-- KO-FI -->
+      <a
+        class="link link--quiet"
+        href="https://ko-fi.com/richwindesign"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Ko-fi unterstützen
+      </a>
+
+      <!-- TODO: Patreon-URL eintragen und span durch a ersetzen. -->
+      <span class="link link--quiet link--inactive" aria-label="Patreon-Link folgt">
+        Patreon · kostenlos folgen
+        <small>Link folgt</small>
+      </span>
+
+      <!-- Shop bleibt bis zur Eröffnung deaktiviert. -->
+      <span class="link link--inactive" aria-label="Shop demnächst verfügbar">
+        Shop
+        <small>Demnächst verfügbar</small>
+      </span>
+
       <a class="link" href="kontakt/kontakt.html">Kontakt</a>
     </nav>
+
+    <!-- ========================================
+         SOCIAL MEDIA
+         ======================================== -->
     <div class="fine-line" aria-hidden="true"></div>
     <div class="socials" aria-label="Social Media">
       <a href="https://www.instagram.com/richwindesign/" target="_blank" rel="noopener noreferrer">Instagram</a>
@@ -67,7 +374,16 @@
       <span class="dot" aria-hidden="true"></span>
       <a href="https://www.linkedin.com/in/bianca-christine-richwin/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
     </div>
-    <footer><a href="kontakt/impressum.html">Impressum</a> · <a href="kontakt/datenschutz.html">Datenschutz</a></footer>
+
+    <!-- ========================================
+         RECHTLICHES
+         ======================================== -->
+    <footer>
+      <a href="kontakt/impressum.html">Impressum</a>
+      ·
+      <a href="kontakt/datenschutz.html">Datenschutz</a>
+    </footer>
+
   </main>
 </body>
 </html>
