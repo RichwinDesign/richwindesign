@@ -547,7 +547,7 @@ body[data-page="genealogie"] {
 /* -------------------------------------------------- */
 
 .motion-banner {
-  background-image: url("images/general/Hero_Motion-Visuals.gif");
+  background-image: url("images/portfolio/motion-visuals/hero_motion-visuals.webp");
   background-position: center;
 }
 
@@ -881,7 +881,7 @@ body[data-page="genealogie"] {
 .motion-page-hero {
   position: relative;
   min-height: 650px;
-  background-image: url("images/portfolio/motion-visuals/hero_motion-visuals.png");
+  background-image: url("images/portfolio/motion-visuals/hero_motion-visuals.webp");
   background-size: cover;
   background-position: center;
   overflow: hidden;
@@ -1427,7 +1427,7 @@ body:has(.portal-overview) {
       rgba(66, 64, 47, 0.78),
       rgba(66, 64, 47, 0.78)
     ),
-    url("images/portale/portal-01/portal_01_hero-background.png");
+    url("images/portale/portal-01/portal_01_hero-background.webp");
 }
 
 .portal-detail-hero-inner {
@@ -1703,7 +1703,7 @@ body:has(.portal-overview) {
       rgba(76, 37, 86, 0.78),
       rgba(76, 37, 86, 0.78)
     ),
-    url("images/portale/portal-02/portal_02_hero-background.png");
+    url("images/portale/portal-02/portal_02_hero-background.webp");
 }
 
 .portal-detail-hero-02 .portal-detail-hero-text h1 {
@@ -1750,7 +1750,7 @@ body:has(.portal-overview) {
       rgba(75, 46, 48, 0.80),
       rgba(75, 46, 48, 0.80)
     ),
-    url("images/portale/portal-03/portal_03_hero-background.png");
+    url("images/portale/portal-03/portal_03_hero-background.webp");
 }
 
 .portal-detail-hero-03 .portal-detail-hero-text h1 {
@@ -1790,7 +1790,7 @@ body:has(.portal-overview) {
       rgba(40, 40, 40, 0.82),
       rgba(40, 40, 40, 0.82)
     ),
-    url("images/portale/portal-04/portal_04_hero-background.png");
+    url("images/portale/portal-04/portal_04_hero-background.webp");
 }
 
 .portal-detail-hero-04 .portal-detail-hero-text h1 {
@@ -1848,7 +1848,7 @@ body:has(.portal-overview) {
       rgba(10, 37, 97, 0.80),
       rgba(10, 37, 97, 0.80)
     ),
-    url("images/portale/portal-05/portal_05_hero-background.png");
+    url("images/portale/portal-05/portal_05_hero-background.webp");
 }
 
 .portal-detail-hero-05 .portal-detail-hero-text h1 {
@@ -2259,7 +2259,7 @@ background-image: url("images/portfolio/webdesign-digital-ads/hero_webdesign-dig
 .photo-page-hero {
   position: relative;
   min-height: 650px;
-  background-image: url("images/portfolio/fotografie/hero_fotografie.png");
+  background-image: url("images/portfolio/fotografie/hero_fotografie.webp");
   background-size: cover;
   background-position: center;
   overflow: hidden;
