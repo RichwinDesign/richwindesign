@@ -2076,3 +2076,98 @@ document.addEventListener('DOMContentLoaded', () => {
   nav.appendChild(link);
   hero.insertAdjacentElement('afterend', nav);
 });
+
+
+/* ===========================================================
+   RICHWINDESIGN – HERKUNFTSNAVIGATION
+   Ganz unten an die bestehende script.js anhängen.
+   =========================================================== */
+
+document.addEventListener('DOMContentLoaded', () => {
+  const ownScript = [...document.querySelectorAll('script[src]')]
+    .find(script => /(?:^|\/)script\.js(?:[?#].*)?$/.test(script.getAttribute('src') || ''));
+  if (!ownScript) return;
+
+  const rootURL = new URL('./', new URL(ownScript.getAttribute('src'), document.baseURI));
+  const rootPath = rootURL.pathname;
+  const pagePath = window.location.pathname.startsWith(rootPath)
+    ? window.location.pathname.slice(rootPath.length)
+    : null;
+  if (pagePath === null) return;
+
+  const areaOf = path => {
+    if (path === 'portale.html' || path.startsWith('portale/')) return 'portale';
+    if (path === 'genealogie/genealogie.html' || path.startsWith('genealogie/')) return 'genealogie';
+    if (path === 'index.html' || path === '' || path.startsWith('portfolio/')) return 'portfolio';
+    if (path.startsWith('kontakt/') || path.startsWith('ueber-mich/')) return 'shared';
+    return 'other';
+  };
+
+  const area = areaOf(pagePath);
+  if (area !== 'portale' && area !== 'genealogie') return;
+
+  const storageKey = `richwindesign-entry-${area}`;
+  const entryURL = new URL('index.html#portfolio', rootURL).href;
+  let referrerPath = null;
+
+  try {
+    const referrer = new URL(document.referrer);
+    if (referrer.origin === window.location.origin &&
+        referrer.pathname.startsWith(rootPath)) {
+      referrerPath = referrer.pathname.slice(rootPath.length);
+    }
+  } catch (error) {
+    // Direkter Aufruf ohne Referrer.
+  }
+
+  const previousArea = referrerPath === null ? null : areaOf(referrerPath);
+  let cameFromPortfolio = false;
+
+  try {
+    if (previousArea === 'portfolio') {
+      sessionStorage.setItem(storageKey, 'portfolio');
+    } else if (previousArea === null || previousArea === 'other' ||
+               (previousArea !== area && previousArea !== 'shared')) {
+      sessionStorage.removeItem(storageKey);
+    }
+    cameFromPortfolio = sessionStorage.getItem(storageKey) === 'portfolio';
+  } catch (error) {
+    cameFromPortfolio = previousArea === 'portfolio';
+  }
+
+  if (!cameFromPortfolio) return;
+
+  const logo = document.querySelector('header.site-header .header-logo');
+  if (logo) {
+    logo.href = entryURL;
+    logo.setAttribute('aria-label', 'Zurück zum Portfolio');
+  }
+
+  const overview = pagePath === 'portale.html'
+    ? document.querySelector('.portal-intro-inner')
+    : pagePath === 'genealogie/genealogie.html'
+      ? document.querySelector('.genealogy-intro')
+      : null;
+
+  if (!overview || overview.querySelector('.origin-portfolio-back')) return;
+
+  const back = document.createElement('a');
+  back.className = 'origin-portfolio-back';
+  back.href = entryURL;
+  back.textContent = '← Zurück zum Portfolio';
+  back.style.cssText = [
+    'display:inline-flex',
+    'align-items:center',
+    'width:fit-content',
+    'margin:16px 0 18px',
+    'padding:9px 15px',
+    'color:#f2eafa',
+    'text-decoration:none',
+    'font-size:13px',
+    'border:1px solid rgba(185,155,215,.55)',
+    'border-radius:8px',
+    'background:rgba(35,24,49,.65)'
+  ].join(';');
+
+  overview.prepend(back);
+});
