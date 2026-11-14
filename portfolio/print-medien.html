@@ -9,6 +9,29 @@
    Print Medien | Richwin Design
   </title>
    <meta name="description" content="Flyer, Broschüren, Anzeigen und Printdesign. Einblicke in Gestaltung, Layout und professionelle Reinzeichnung von Bianca Richwin.">
+  <!-- Lightbox nur für normale Print-Motive (keine interaktiven Vergleiche) -->
+  <style>
+    .print-work-media img { cursor: zoom-in; }
+    .print-work-media img:focus-visible { outline: 3px solid #8bc9e7; outline-offset: 3px; }
+    .print-lightbox[hidden] { display: none !important; }
+    .print-lightbox {
+      position: fixed; inset: 0; z-index: 20000;
+      display: grid; grid-template-columns: minmax(40px, 72px) minmax(0, 1fr) minmax(40px, 72px);
+      grid-template-rows: minmax(0, 1fr) auto;
+      align-items: center; justify-items: center;
+      padding: 48px 12px 20px; box-sizing: border-box;
+      background: rgba(3, 8, 15, .94); color: #fff;
+    }
+    .print-lightbox-image { grid-column: 2; grid-row: 1; max-width: 100%; max-height: calc(100dvh - 125px); object-fit: contain; }
+    .print-lightbox-caption { grid-column: 1 / -1; grid-row: 2; margin: 10px 0 0; text-align: center; font-size: 14px; }
+    .print-lightbox button { border: 0; color: #fff; background: rgba(255,255,255,.12); border-radius: 6px; cursor: pointer; }
+    .print-lightbox button:hover, .print-lightbox button:focus-visible { background: rgba(255,255,255,.26); }
+    .print-lightbox-close { position: absolute; top: 12px; right: 16px; width: 40px; height: 40px; font-size: 26px; }
+    .print-lightbox-prev, .print-lightbox-next { grid-row: 1; width: 40px; height: 52px; font-size: 30px; }
+    .print-lightbox-prev { grid-column: 1; }
+    .print-lightbox-next { grid-column: 3; }
+    @media (max-width: 480px) { .print-lightbox { grid-template-columns: 40px minmax(0, 1fr) 40px; padding-left: 4px; padding-right: 4px; } }
+  </style>
 </head>
  <body>
   <div id="site-header">
@@ -679,9 +702,90 @@
     </button>
    </div>
   </div>
+  <!-- Bildvergrößerung für die normalen Print-Kacheln -->
+  <div class="print-lightbox" id="printLightbox" role="dialog" aria-modal="true" aria-label="Printmotiv vergrößert" hidden>
+    <button type="button" class="print-lightbox-close" aria-label="Bild schließen">×</button>
+    <button type="button" class="print-lightbox-prev" aria-label="Vorheriges Bild">‹</button>
+    <img class="print-lightbox-image" alt="">
+    <button type="button" class="print-lightbox-next" aria-label="Nächstes Bild">›</button>
+    <p class="print-lightbox-caption"></p>
+  </div>
   <script src="../script.js">
   </script>
   <script defer="" src="print-interaktiv.js">
   </script>
- </body>
+   <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const modal = document.getElementById('printLightbox');
+      const largeImage = modal.querySelector('.print-lightbox-image');
+      const caption = modal.querySelector('.print-lightbox-caption');
+      const previous = modal.querySelector('.print-lightbox-prev');
+      const next = modal.querySelector('.print-lightbox-next');
+      const close = modal.querySelector('.print-lightbox-close');
+      let gallery = [];
+      let index = 0;
+      let opener = null;
+      let previousOverflow = '';
+
+      function showImage() {
+        const thumbnail = gallery[index];
+        largeImage.src = thumbnail.currentSrc || thumbnail.src;
+        largeImage.alt = thumbnail.alt || 'Printmotiv';
+        caption.textContent = thumbnail.closest('figure')?.querySelector('figcaption')?.textContent.trim() || thumbnail.alt || '';
+        previous.hidden = gallery.length < 2;
+        next.hidden = gallery.length < 2;
+      }
+
+      function closeModal() {
+        if (modal.hidden) return;
+        modal.hidden = true;
+        document.body.style.overflow = previousOverflow;
+        largeImage.removeAttribute('src');
+        opener?.focus();
+      }
+
+      document.querySelectorAll('.print-work-media img').forEach((img) => {
+        img.tabIndex = 0;
+        img.setAttribute('role', 'button');
+        img.setAttribute('aria-label', (img.alt || 'Printmotiv') + ' vergrößern');
+        function openModal() {
+          const project = img.closest('details.print-project');
+          gallery = [...(project || document).querySelectorAll('.print-work-media img')];
+          index = gallery.indexOf(img);
+          if (index === -1) return;
+          opener = img;
+          previousOverflow = document.body.style.overflow;
+          document.body.style.overflow = 'hidden';
+          modal.hidden = false;
+          showImage();
+          close.focus();
+        }
+        img.addEventListener('click', openModal);
+        img.addEventListener('keydown', (event) => {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            openModal();
+          }
+        });
+      });
+
+      previous.addEventListener('click', () => { index = (index - 1 + gallery.length) % gallery.length; showImage(); });
+      next.addEventListener('click', () => { index = (index + 1) % gallery.length; showImage(); });
+      close.addEventListener('click', closeModal);
+      modal.addEventListener('click', (event) => { if (event.target === modal) closeModal(); });
+      document.addEventListener('keydown', (event) => {
+        if (modal.hidden) return;
+        if (event.key === 'Escape') { event.preventDefault(); closeModal(); }
+        if (event.key === 'ArrowLeft' && gallery.length > 1) { event.preventDefault(); previous.click(); }
+        if (event.key === 'ArrowRight' && gallery.length > 1) { event.preventDefault(); next.click(); }
+        if (event.key === 'Tab') {
+          const focusable = [close, previous, next].filter(btn => !btn.hidden);
+          const current = focusable.indexOf(document.activeElement);
+          if (event.shiftKey && current <= 0) { event.preventDefault(); focusable[focusable.length - 1].focus(); }
+          else if (!event.shiftKey && current === focusable.length - 1) { event.preventDefault(); focusable[0].focus(); }
+        }
+      });
+    });
+  </script>
+</body>
 </html>
