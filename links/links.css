@@ -1,0 +1,178 @@
+/* ===========================================================
+   RICHWINDESIGN – LINKSEITE / EFEU-PROTOTYP
+   =========================================================== */
+
+/* 01 – Farben & Basis */
+:root {
+  color-scheme: dark;
+  --text: #f5eee6;
+  --accent: #bda083;
+  --cyan: #79badd;
+  --ivy-open-time: 3300ms;
+  --ivy-close-time: 1650ms;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--text);
+  font-family: Georgia, 'Times New Roman', serif;
+  background: #0b0a0a;
+}
+body.is-travelling { overflow: hidden; }
+a { color: inherit; }
+
+/* 02 – Höhlenhintergrund aus images/links */
+.world-page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 28px 16px;
+  background:
+    linear-gradient(180deg, rgba(9, 8, 9, .43), rgba(6, 7, 8, .6)),
+    url('../images/links/links_background-cave.webp') center center / cover no-repeat fixed;
+}
+.world-content {
+  width: min(100%, 610px);
+  padding: 12px 30px 22px;
+  text-align: center;
+  background: rgba(7, 10, 12, .62);
+  border: 1px solid rgba(186, 149, 109, .4);
+  box-shadow: 0 20px 80px rgba(0, 0, 0, .4);
+  backdrop-filter: blur(3px);
+}
+.brand-logo {
+  display: inline-block;
+  font-size: 2.8rem;
+  line-height: 1.1;
+  text-decoration: none;
+  color: #e6d1b6;
+}
+.hero { width: min(100%, 380px); margin: 6px auto 6px; }
+.hero img { display: block; width: 100%; height: auto; max-height: 155px; object-fit: contain; }
+h1 { font-size: clamp(2.25rem, 5vw, 3.15rem); font-weight: normal; margin: 6px 0; }
+h1 span { color: var(--cyan); }
+.eyebrow { font-size: .74rem; letter-spacing: .17em; text-transform: uppercase; line-height: 1.6; }
+.fine-line { width: 70%; height: 1px; margin: 14px auto; background: linear-gradient(90deg, transparent, #af8c66, transparent); }
+.intro { font: italic .91rem/1.55 Arial, sans-serif; margin: 0 auto 18px; color: #e2e0db; }
+.links { width: min(100%, 490px); margin: 0 auto; display: grid; gap: 8px; }
+.link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 8px 12px;
+  border: 1px solid rgba(182, 148, 110, .8);
+  border-radius: 8px;
+  background: linear-gradient(130deg, rgba(22, 21, 20, .95), rgba(67, 48, 37, .8), rgba(16, 16, 17, .95));
+  text-decoration: none;
+  text-align: center;
+  font-size: .85rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  transition: background .2s, transform .2s, box-shadow .2s;
+}
+a.link:hover, a.link:focus-visible { transform: translateY(-2px); box-shadow: 0 0 20px rgba(227, 179, 113, .24); background: #3d3027; }
+.link--quiet { border-color: #7c7184; }
+.link--inactive { opacity: .45; filter: grayscale(.4); cursor: not-allowed; }
+.link small { font: .64rem Arial, sans-serif; margin-top: 3px; text-transform: none; letter-spacing: .02em; }
+.socials { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; font: .78rem Arial, sans-serif; }
+.socials a, footer a { text-decoration: none; }
+.socials a:hover, footer a:hover { text-decoration: underline; }
+footer { margin-top: 12px; color: #c6b6a6; font: .72rem Arial, sans-serif; }
+footer a { margin: 0 6px; }
+
+/* 03 – Efeu-Overlay: vor der Animation dunkler Vorhang */
+.ivy-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  overflow: hidden;
+  pointer-events: none;
+  visibility: hidden;
+}
+body.ivy-ready .ivy-overlay { visibility: visible; }
+.ivy-darkness {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 50% 42%, rgba(15, 20, 16, .96), rgba(1, 4, 3, 1) 88%),
+    #030705;
+  opacity: 1;
+  transition: opacity var(--ivy-open-time) ease-in-out;
+}
+body.ivy-open .ivy-darkness { opacity: 0; }
+body.ivy-closing .ivy-darkness { opacity: 1; transition-duration: var(--ivy-close-time); }
+.ivy-leaves { position: absolute; inset: 0; }
+.ivy-leaf {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: var(--size);
+  height: var(--size);
+  object-fit: contain;
+  transform-origin: center center;
+  transform: translate3d(var(--closed-x), var(--closed-y), 0) rotate(var(--closed-rot)) scale(var(--closed-scale));
+  opacity: 1;
+  will-change: transform, opacity;
+  filter: brightness(.58) saturate(.75) drop-shadow(1px 4px 4px rgba(0,0,0,.8));
+  transition:
+    transform var(--ivy-open-time) cubic-bezier(.2, .72, .17, 1) var(--delay),
+    opacity 1200ms ease var(--delay),
+    filter var(--ivy-open-time) ease;
+}
+body.ivy-open .ivy-leaf {
+  transform: translate3d(var(--open-x), var(--open-y), 0) rotate(var(--open-rot)) scale(var(--open-scale));
+  opacity: var(--open-opacity);
+  filter: brightness(.78) saturate(.83) drop-shadow(1px 5px 6px rgba(0,0,0,.65));
+}
+body.ivy-closing .ivy-leaf {
+  transform: translate3d(var(--closed-x), var(--closed-y), 0) rotate(var(--closed-rot)) scale(var(--closed-scale));
+  opacity: 1;
+  filter: brightness(.58) saturate(.75) drop-shadow(1px 4px 4px rgba(0,0,0,.8));
+  transition-duration: var(--ivy-close-time), 650ms, var(--ivy-close-time);
+  transition-delay: var(--close-delay), var(--close-delay), 0ms;
+}
+/* Bleibt auch nach Öffnung sichtbar; rahmt die vier Ecken ein. */
+.edge-vignette {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1001;
+  background: radial-gradient(ellipse at center, transparent 32%, rgba(0, 0, 0, .25) 72%, rgba(0, 0, 0, .79) 100%);
+}
+.skip-intro {
+  position: fixed;
+  right: 18px;
+  bottom: 16px;
+  z-index: 1002;
+  padding: 9px 12px;
+  border-radius: 8px;
+  border: 1px solid #b9ad98;
+  background: rgba(0, 0, 0, .82);
+  color: white;
+  font: .8rem Arial, sans-serif;
+  cursor: pointer;
+}
+.skip-intro[hidden] { display: none; }
+
+/* 04 – Smartphone & reduzierte Bewegung */
+@media (max-width: 600px) {
+  .world-page { padding: 12px 10px; background-attachment: scroll; }
+  .world-content { padding: 12px 13px 20px; }
+  .hero { width: min(100%, 310px); }
+  .hero img { max-height: 125px; }
+  .eyebrow { font-size: .62rem; letter-spacing: .1em; }
+  .intro { font-size: .8rem; }
+  .intro br { display: none; }
+  .links { gap: 8px; }
+  .link { font-size: .75rem; min-height: 44px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .ivy-overlay { display: none !important; }
+  .link { transition: none; }
+}
