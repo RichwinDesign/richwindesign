@@ -2143,31 +2143,22 @@ document.addEventListener('DOMContentLoaded', () => {
     logo.setAttribute('aria-label', 'Zurück zum Portfolio');
   }
 
+
   const overview = pagePath === 'portale.html'
     ? document.querySelector('.portal-intro-inner')
     : pagePath === 'genealogie/genealogie.html'
       ? document.querySelector('.genealogy-intro')
       : null;
 
-  if (!overview || overview.querySelector('.origin-portfolio-back')) return;
+  // Vorhandenen Zurück-Button verwenden,
+  // statt einen zweiten zu erstellen.
+  if (overview) {
+    const back = overview.querySelector('.about-back-link');
 
-  const back = document.createElement('a');
-  back.className = 'origin-portfolio-back';
-  back.href = entryURL;
-  back.textContent = '← Zurück zum Portfolio';
-  back.style.cssText = [
-    'display:inline-flex',
-    'align-items:center',
-    'width:fit-content',
-    'margin:16px 0 18px',
-    'padding:9px 15px',
-    'color:#f2eafa',
-    'text-decoration:none',
-    'font-size:13px',
-    'border:1px solid rgba(185,155,215,.55)',
-    'border-radius:8px',
-    'background:rgba(35,24,49,.65)'
-  ].join(';');
-
-  overview.prepend(back);
+     if (back) {
+      back.href = entryURL;
+      back.textContent = '← Zurück zum Portfolio';
+      back.setAttribute('aria-label', 'Zurück zum Portfolio');
+    }
+  }
 });
