@@ -1,4 +1,3 @@
-
 /* PORTAL-MERCH – EIGENE FARBWELT */
 
 .merch-page {
@@ -87,8 +86,7 @@
   display: flex;
   flex-direction: column;
   min-width: 0;
-min-height: 0;
-  
+  min-height: 0;
   position: relative;
   overflow: hidden;
   border-radius: 14px;
@@ -161,8 +159,8 @@ min-height: 0;
 
 .merch-card-info {
   display: flex;
-flex: 0 0 auto;
-flex-direction: column;
+  flex: 0 0 auto;
+  flex-direction: column;
   align-items: flex-start;
 
   padding: 8px 20px 16px;
@@ -201,7 +199,7 @@ flex-direction: column;
   align-items: center;
   gap: 14px;
 
-margin-top: 6px;
+  margin-top: 6px;
   padding: 9px 14px;
 
   border: 1px solid #477286;
@@ -304,5 +302,48 @@ margin-top: 6px;
 
   .merch-local-nav a {
     font-size: 11px;
+  }
+}
+
+/* Zurück-Button wie bei Portal #01–05: links im oberen Seitenbereich
+   statt unpositioniert am linken Viewportrand. Gilt für alle Merch-Seiten. */
+.merch-page {
+  position: relative;
+}
+
+.merch-page > .about-back-link {
+  position: absolute;
+  top: 34px;
+  left: max(28px, calc((100% - 1136px) / 2));
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 35px;
+  margin: 0;
+  padding: 7px 14px;
+  border: 1px solid rgba(204, 224, 205, .48);
+  border-radius: 8px;
+  background: rgba(15, 13, 20, .54);
+  color: #f1f6f0;
+  font-size: 12px;
+  line-height: 1.3;
+  text-decoration: none;
+  transition: background .2s, border-color .2s;
+}
+
+.merch-page > .about-back-link:hover,
+.merch-page > .about-back-link:focus-visible {
+  border-color: #80c9db;
+  background: rgba(25, 22, 31, .88);
+}
+
+@media (max-width: 700px) {
+  .merch-page > .about-back-link {
+    top: 16px;
+    left: 24px;
+  }
+  .merch-container {
+    padding-top: 92px;
   }
 }
