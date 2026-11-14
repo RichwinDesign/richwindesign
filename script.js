@@ -2150,15 +2150,23 @@ document.addEventListener('DOMContentLoaded', () => {
       ? document.querySelector('.genealogy-intro')
       : null;
 
-  // Vorhandenen Zurück-Button verwenden,
-  // statt einen zweiten zu erstellen.
+  
+  // Vorhandenen Zurück-Button verwenden.
+  // Auf der Portalübersicht bei Bedarf einen erstellen.
   if (overview) {
-    const back = overview.querySelector('.about-back-link');
+    let back = overview.querySelector('.about-back-link');
 
-     if (back) {
+    if (!back && pagePath === 'portale.html') {
+      back = document.createElement('a');
+      back.className = 'about-back-link';
+      overview.insertBefore(back, overview.firstChild);
+    }
+
+    if (back) {
       back.href = entryURL;
       back.textContent = '← Zurück zum Portfolio';
       back.setAttribute('aria-label', 'Zurück zum Portfolio');
     }
   }
+
 });
