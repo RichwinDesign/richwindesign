@@ -347,3 +347,20 @@
     padding-top: 92px;
   }
 }
+
+
+/* PORTAL-MERCH: exakt dieselben Hintergrund-Lichtinseln wie die Portalübersicht.
+   Der Verlauf liegt auf body, nicht auf main, um sichtbare Kanten zu vermeiden. */
+body:has(.merch-page) {
+  background-color: #090b10;
+  background-image:
+    radial-gradient(ellipse 250px 190px at 15% 20%, rgba(145, 60, 190, 0.16), transparent 100%),
+    radial-gradient(ellipse 280px 230px at 85% 50%, rgba(205, 55, 115, 0.12), transparent 100%),
+    radial-gradient(ellipse 260px 210px at 20% 85%, rgba(225, 115, 40, 0.11), transparent 100%),
+    linear-gradient(#090b10, #090b10);
+}
+body:has(.merch-page) main.merch-page {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+}
