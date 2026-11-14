@@ -1,89 +1,162 @@
-/* ===========================================================
-   RICHWINDESIGN – LINKSEITE / EFEU-PROTOTYP
-   =========================================================== */
+/* ============================================================
+   RICHWINDESIGN – LINKSEITE MIT FÜNF STEINBLÖCKEN (VERSION 02)
+   Alle Pfade sind relativ zu links/links.css.
+   ============================================================ */
 
-/* 01 – Farben & Basis */
+/* 01 – Grundstil und Höhlenhintergrund */
 :root {
   color-scheme: dark;
-  --text: #f5eee6;
-  --accent: #bda083;
-  --cyan: #79badd;
+  --text: #eee1d1;
+  --gold: #d5b48d;
   --ivy-open-time: 3300ms;
   --ivy-close-time: 1650ms;
 }
-
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body {
-  margin: 0;
-  min-height: 100vh;
-  color: var(--text);
-  font-family: Georgia, 'Times New Roman', serif;
-  background: #0b0a0a;
-}
+body { margin: 0; background: #070707; color: var(--text); font-family: Georgia, 'Times New Roman', serif; }
 body.is-travelling { overflow: hidden; }
 a { color: inherit; }
-
-/* 02 – Höhlenhintergrund aus images/links */
 .world-page {
-  min-height: 100vh;
-  display: grid;
-  place-items: center;
-  padding: 28px 16px;
+  min-height: 100svh;
+  background: #0c0b0b;
+}
+.scene {
+  position: relative;
+  min-height: 100svh;
+  overflow: hidden;
+  isolation: isolate;
   background:
-    linear-gradient(180deg, rgba(9, 8, 9, .43), rgba(6, 7, 8, .6)),
-    url('../images/links/links_background-cave.webp') center center / cover no-repeat fixed;
+    linear-gradient(180deg, rgba(0,0,0,.16), rgba(0,0,0,.06) 48%, rgba(0,0,0,.20)),
+    url('../images/links/links_background-cave.webp') center center / cover no-repeat;
 }
-.world-content {
-  width: min(100%, 610px);
-  padding: 12px 30px 22px;
+/* Bild bleibt vollständig sichtbar auf sehr breiten Bildschirmen. */
+@media (min-aspect-ratio: 20/9) {
+  .scene { background-size: cover; }
+}
+
+/* 02 – Titel über den Steinblöcken */
+.scene-heading {
+  position: absolute;
+  z-index: 2;
+  top: clamp(34px, 8vh, 95px);
+  left: 12px;
+  right: 12px;
   text-align: center;
-  background: rgba(7, 10, 12, .62);
-  border: 1px solid rgba(186, 149, 109, .4);
-  box-shadow: 0 20px 80px rgba(0, 0, 0, .4);
-  backdrop-filter: blur(3px);
+  color: #e9d7c0;
+  text-shadow: 0 2px 16px #000, 0 0 22px rgba(215,153,91,.2);
 }
-.brand-logo {
-  display: inline-block;
-  font-size: 2.8rem;
-  line-height: 1.1;
+.brand-mark { font-size: clamp(1.5rem, 3vw, 2.7rem); letter-spacing: .15em; line-height: 1; }
+.scene-heading h1 { margin: 12px 0 5px; font-size: clamp(1.15rem, 2.6vw, 2.25rem); font-weight: 400; letter-spacing: .34em; }
+.scene-heading p { margin: 0; font-size: clamp(.65rem, 1.12vw, .85rem); letter-spacing: .37em; }
+
+/* 03 – Steinblöcke stehen auf der beleuchteten Bodenfläche */
+.stone-worlds {
+  position: absolute;
+  z-index: 3;
+  left: 2.5%;
+  right: 2.5%;
+  bottom: clamp(80px, 13.8vh, 150px);
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  align-items: end;
+  gap: clamp(1px, .35vw, 8px);
+}
+.stone {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 1.5 / 1;
   text-decoration: none;
-  color: #e6d1b6;
+  transition: transform .35s ease, filter .35s ease;
+  filter: drop-shadow(0 22px 12px rgba(0,0,0,.6));
 }
-.hero { width: min(100%, 380px); margin: 6px auto 6px; }
-.hero img { display: block; width: 100%; height: auto; max-height: 155px; object-fit: contain; }
-h1 { font-size: clamp(2.25rem, 5vw, 3.15rem); font-weight: normal; margin: 6px 0; }
-h1 span { color: var(--cyan); }
-.eyebrow { font-size: .74rem; letter-spacing: .17em; text-transform: uppercase; line-height: 1.6; }
-.fine-line { width: 70%; height: 1px; margin: 14px auto; background: linear-gradient(90deg, transparent, #af8c66, transparent); }
-.intro { font: italic .91rem/1.55 Arial, sans-serif; margin: 0 auto 18px; color: #e2e0db; }
-.links { width: min(100%, 490px); margin: 0 auto; display: grid; gap: 8px; }
-.link {
+.stone img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.stone-label {
+  position: absolute;
+  left: 20%;
+  width: 60%;
+  top: 48%;
+  transform: translateY(-50%);
+  color: #f1dcc0;
+  font-size: clamp(.63rem, 1.26vw, 1.22rem);
+  line-height: 1.2;
+  letter-spacing: .075em;
+  text-align: center;
+  text-shadow: 0 2px 4px #000, 0 0 12px #000;
+  overflow-wrap: anywhere;
+  pointer-events: none;
+}
+.stone:hover, .stone:focus-visible { transform: translateY(-9px); filter: drop-shadow(0 25px 16px rgba(0,0,0,.75)) brightness(1.12); }
+.stone:focus-visible { outline: 2px solid var(--gold); outline-offset: 1px; border-radius: 8px; }
+
+/* 04 – Dezente Sekundärlinks am unteren Bildrand */
+.scene-bottom {
+  position: absolute;
+  z-index: 3;
+  left: 14px;
+  right: 14px;
+  bottom: 46px;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  min-height: 42px;
-  padding: 8px 12px;
-  border: 1px solid rgba(182, 148, 110, .8);
-  border-radius: 8px;
-  background: linear-gradient(130deg, rgba(22, 21, 20, .95), rgba(67, 48, 37, .8), rgba(16, 16, 17, .95));
-  text-decoration: none;
-  text-align: center;
-  font-size: .85rem;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  transition: background .2s, transform .2s, box-shadow .2s;
+  gap: 8px 15px;
+  font: .77rem/1.5 Arial, Helvetica, sans-serif;
+  color: #ddcdbb;
+  text-shadow: 0 2px 7px #000;
 }
-a.link:hover, a.link:focus-visible { transform: translateY(-2px); box-shadow: 0 0 20px rgba(227, 179, 113, .24); background: #3d3027; }
-.link--quiet { border-color: #7c7184; }
-.link--inactive { opacity: .45; filter: grayscale(.4); cursor: not-allowed; }
-.link small { font: .64rem Arial, sans-serif; margin-top: 3px; text-transform: none; letter-spacing: .02em; }
-.socials { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; font: .78rem Arial, sans-serif; }
-.socials a, footer a { text-decoration: none; }
-.socials a:hover, footer a:hover { text-decoration: underline; }
-footer { margin-top: 12px; color: #c6b6a6; font: .72rem Arial, sans-serif; }
-footer a { margin: 0 6px; }
+.scene-bottom a, .scene-legal a { text-decoration: none; }
+.scene-bottom a:hover, .scene-legal a:hover { text-decoration: underline; }
+.muted-link { opacity: .50; }
+.divider { color: #a58059; }
+.scene-legal {
+  position: absolute;
+  z-index: 3;
+  bottom: 14px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  font: .67rem Arial, Helvetica, sans-serif;
+  color: #bcae9f;
+}
+
+/* 05 – Tablet und Smartphone: Steine bleiben auf einem Bodenpanel,
+   statt als winzige Elemente über die ganze Breite gequetscht zu werden. */
+@media (max-width: 880px) {
+  .scene { min-height: max(100svh, 820px); background-position: center center; }
+  .scene-heading { top: 42px; }
+  .stone-worlds {
+    position: relative;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    width: min(96%, 700px);
+    margin: 0 auto;
+    padding-top: clamp(220px, 33vh, 330px);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    justify-content: center;
+    gap: 0 1%;
+  }
+  .stone { flex: 0 0 31%; }
+  .stone-label { font-size: clamp(.67rem, 2vw, 1rem); }
+  .scene-bottom { position: relative; left: auto; right: auto; bottom: auto; margin: 45px 16px 10px; }
+  .scene-legal { position: relative; bottom: auto; padding: 10px 0 20px; }
+}
+@media (max-width: 480px) {
+  .scene { min-height: 100svh; background-position: 50% center; }
+  .scene-heading { top: 28px; }
+  .scene-heading h1 { letter-spacing: .16em; }
+  .scene-heading p { letter-spacing: .14em; }
+  .stone-worlds { padding-top: 205px; width: 100%; gap: 0; }
+  .stone { flex: 0 0 48%; }
+  .stone:last-child { flex-basis: 48%; }
+  .stone-label { font-size: clamp(.62rem, 2.9vw, .88rem); }
+  .scene-bottom { margin-top: 26px; gap: 7px 12px; }
+}
 
 /* 03 – Efeu-Overlay: vor der Animation dunkler Vorhang */
 .ivy-overlay {
@@ -159,20 +232,10 @@ body.ivy-closing .ivy-leaf {
 }
 .skip-intro[hidden] { display: none; }
 
-/* 04 – Smartphone & reduzierte Bewegung */
-@media (max-width: 600px) {
-  .world-page { padding: 12px 10px; background-attachment: scroll; }
-  .world-content { padding: 12px 13px 20px; }
-  .hero { width: min(100%, 310px); }
-  .hero img { max-height: 125px; }
-  .eyebrow { font-size: .62rem; letter-spacing: .1em; }
-  .intro { font-size: .8rem; }
-  .intro br { display: none; }
-  .links { gap: 8px; }
-  .link { font-size: .75rem; min-height: 44px; }
-}
+
+/* 06 – Bewegungsreduzierung */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .ivy-overlay { display: none !important; }
-  .link { transition: none; }
+  .stone { transition: none; }
 }

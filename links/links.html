@@ -3,73 +3,77 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#080909">
-  <meta name="description" content="Entdecke die Welten von RichwinDesign – Portalwelten, Portfolio und Genealogie.">
+  <meta name="theme-color" content="#0b0909">
+  <meta name="description" content="Die fünf Welten von RichwinDesign: Portalwelten, Portfolio, Genealogie, Unterstützung und Kontakt.">
   <title>Die Welten | RichwinDesign</title>
   <link rel="stylesheet" href="links.css">
   <script src="links.js" defer></script>
 </head>
 <body>
-  <!-- 01 – Seiteninhalt: bleibt unverändert sichtbar, sobald sich der Efeu öffnet. -->
+  <!-- 01 – Höhlenszene mit Steinblöcken auf dem Boden -->
   <main class="world-page" id="world-page">
-    <div class="world-content">
-      <a class="brand-logo" href="../index.html" aria-label="RichwinDesign – Startseite">BR</a>
+    <div class="scene" aria-label="Die fünf Welten von RichwinDesign">
 
-      <div class="hero">
-        <img src="../images/links/links-portalbild.webp"
-             alt="Handbemalte Portal-Holzbox"
-             decoding="async">
-      </div>
+      <!-- 02 – Beschriftung oben, über den Portalen -->
+      <header class="scene-heading">
+        <div class="brand-mark" aria-hidden="true">✧ R ✧</div>
+        <h1>BIANCA RICHWIN</h1>
+        <p>DESIGN · KUNST · GENEALOGIE</p>
+      </header>
 
-      <h1>Richwin<span>Design</span></h1>
-      <p class="eyebrow">Portalwelten · Kunst · Design · Genealogie</p>
-      <div class="fine-line" aria-hidden="true"></div>
-      <p class="intro">In meiner Welt treffen handbemalte Portalboxen,<br>
-         visuelles Design und kreative Ideen aufeinander.</p>
+      <!-- 03 – Die fünf Steine: jeweils ein echtes anklickbares Element -->
+      <nav class="stone-worlds" aria-label="Welten auswählen">
 
-      <!-- 02 – Hauptlinks: Datenattribut aktiviert den Efeu-Schließübergang. -->
-      <nav class="links" aria-label="Wichtige Links">
-        <a class="link" href="../portale.html" data-portal-transition>Portalwelt entdecken</a>
-        <a class="link" href="../index.html" data-portal-transition>Portfolio ansehen</a>
-        <a class="link" href="../genealogie/genealogie.html" data-portal-transition>Genealogie</a>
+        <a class="stone stone--left-outer" href="../portale.html" data-portal-transition aria-label="Portalwelten entdecken">
+          <img src="../images/links/blocks/Block-links-01.webp" alt="" decoding="async">
+          <span class="stone-label">PORTALWELTEN</span>
+        </a>
 
-        <a class="link link--quiet" href="https://ko-fi.com/richwindesign"
-           target="_blank" rel="noopener noreferrer">Ko-fi unterstützen</a>
-        <span class="link link--quiet link--inactive" aria-label="Patreon-Link folgt">
-          Patreon · kostenlos folgen <small>Link folgt</small>
-        </span>
-        <span class="link link--inactive" aria-label="Shop demnächst verfügbar">
-          Shop <small>Demnächst verfügbar</small>
-        </span>
-        <a class="link" href="../kontakt/kontakt.html" data-portal-transition>Kontakt</a>
+        <a class="stone stone--left-inner" href="../index.html" data-portal-transition aria-label="Portfolio ansehen">
+          <img src="../images/links/blocks/Block-links-02.webp" alt="" decoding="async">
+          <span class="stone-label">PORTFOLIO</span>
+        </a>
+
+        <a class="stone stone--center" href="../genealogie/genealogie.html" data-portal-transition aria-label="Genealogie öffnen">
+          <img src="../images/links/blocks/Block-mitte.webp" alt="" decoding="async">
+          <span class="stone-label">GENEALOGIE</span>
+        </a>
+
+        <a class="stone stone--right-inner" href="https://ko-fi.com/richwindesign" target="_blank" rel="noopener noreferrer" aria-label="RichwinDesign auf Ko-fi unterstützen (öffnet neuen Tab)">
+          <img src="../images/links/blocks/Block-rechts-01.webp" alt="" decoding="async">
+          <span class="stone-label">KO-FI</span>
+        </a>
+
+        <a class="stone stone--right-outer" href="../kontakt/kontakt.html" data-portal-transition aria-label="Kontakt öffnen">
+          <img src="../images/links/blocks/Block-rechts-02.webp" alt="" decoding="async">
+          <span class="stone-label">KONTAKT</span>
+        </a>
       </nav>
 
-      <!-- 03 – Social Media und Rechtliches -->
-      <div class="fine-line" aria-hidden="true"></div>
-      <div class="socials" aria-label="Social Media">
+      <!-- 04 – Zusätzliche Links, bewusst zurückhaltend -->
+      <div class="scene-bottom">
+        <span class="muted-link" aria-disabled="true">Shop · demnächst</span>
+        <span class="divider" aria-hidden="true">✧</span>
+        <span class="muted-link" aria-disabled="true">Patreon · Link folgt</span>
+        <span class="divider" aria-hidden="true">✧</span>
         <a href="https://www.instagram.com/richwindesign/" target="_blank" rel="noopener noreferrer">Instagram</a>
-        <span aria-hidden="true">·</span>
         <a href="https://www.deviantart.com/richwindesign" target="_blank" rel="noopener noreferrer">DeviantArt</a>
-        <span aria-hidden="true">·</span>
         <a href="https://www.linkedin.com/in/bianca-christine-richwin/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       </div>
-      <footer>
-        <a href="../kontakt/impressum.html">Impressum</a>
+      <footer class="scene-legal">
+        <a href="../kontakt/impressum.html" data-portal-transition>Impressum</a>
         <span aria-hidden="true">·</span>
-        <a href="../kontakt/datenschutz.html">Datenschutz</a>
+        <a href="../kontakt/datenschutz.html" data-portal-transition>Datenschutz</a>
       </footer>
     </div>
   </main>
 
-  <!-- 04 – Efeu-Overlay: wird ausschließlich auf dieser Seite per JS gefüllt. -->
+  <!-- 05 – Dynamischer Efeuvorhang, nur auf dieser Linkseite -->
   <div class="ivy-overlay" id="ivy-overlay" aria-hidden="true">
     <div class="ivy-darkness"></div>
     <div class="ivy-leaves" id="ivy-leaves"></div>
   </div>
-
-  <!-- 05 – Ständige dunkle Vignette am Rand. -->
   <div class="edge-vignette" aria-hidden="true"></div>
-
   <button class="skip-intro" id="skip-intro" type="button" hidden>Animation überspringen</button>
 </body>
 </html>
