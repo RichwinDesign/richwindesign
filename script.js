@@ -390,9 +390,10 @@ navigationHTML = `
     logoDestination = backDestination || aboutURL;
   }
 
-  if (activePage === "kontakt") {
-    logoDestination = backDestination || contactURL;
-  }
+  
+if (activePage === "kontakt") {
+  logoDestination = backDestination || homeURL;
+}
 
   header.innerHTML = `
     <div class="header-inner">
