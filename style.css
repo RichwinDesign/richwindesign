@@ -5559,3 +5559,32 @@ body[data-page="portfolio"][data-theme="light"] .web-carservice-loop .web-loop-s
 }
 
 /* Keine Veränderung an Header, Hero, Popups oder Dark Mode. */
+/* RichwinDesign V24 – Dropdown-Typografie im Portfolio-Light-Mode
+   Nur Portfolio. Dark Mode und die separaten Portale-/Genealogie-Seiten bleiben unverändert.
+   Ganz unten an style.css anfuegen. */
+
+body[data-page="portfolio"][data-theme="light"] .site-header #richwin-mega-menu {
+  --menu-hint: #415767;
+  color: #172b38;
+}
+
+/* Titel, Gruppen, Links und Kontakt-/Rechtliches-Menue einheitlich dunkel. */
+body[data-page="portfolio"][data-theme="light"] .site-header #richwin-mega-menu .mega-heading,
+body[data-page="portfolio"][data-theme="light"] .site-header #richwin-mega-menu .mega-portfolio-title,
+body[data-page="portfolio"][data-theme="light"] .site-header #richwin-mega-menu .mega-link,
+body[data-page="portfolio"][data-theme="light"] .site-header #richwin-mega-menu .mega-simple-link a,
+body[data-page="portfolio"][data-theme="light"] .site-header #richwin-mega-menu a {
+  color: #172b38;
+}
+
+/* Untertitel bleiben lesbar, aber visuell nachgeordnet. */
+body[data-page="portfolio"][data-theme="light"] .site-header #richwin-mega-menu .mega-portfolio-hint,
+body[data-page="portfolio"][data-theme="light"] .site-header #richwin-mega-menu .mega-portfolio-hint span {
+  color: #415767;
+}
+
+/* Farbige Hover-/Fokuszustaende erhalten. */
+body[data-page="portfolio"][data-theme="light"] .site-header #richwin-mega-menu a:hover,
+body[data-page="portfolio"][data-theme="light"] .site-header #richwin-mega-menu a:focus-visible {
+  color: #21688c;
+}
