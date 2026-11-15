@@ -4928,8 +4928,21 @@ body:has(.portal-overview) {
    3. Nur das KI-Icon dieser einen Kachel ausblenden
    Andere Portfolio-Kacheln bleiben unverändert.
    ========================================================== */
+
+/* WEBDESIGN – Hero gezielt nach oben verschieben */
+
 .portfolio-card.landing-pages {
-  background-position: center 78%;
+  background-image: none;
+}
+
+.portfolio-card.landing-pages::after {
+  content: "";
+  position: absolute;
+  inset: -15% 0 0 0;
+  z-index: 0;
+  background: url("images/general/Hero_Webdesign.webp")
+              center center / cover no-repeat;
+  pointer-events: none;
 }
 
 .portfolio-card.landing-pages::before {
