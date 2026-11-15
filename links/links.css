@@ -1,153 +1,84 @@
-/* ============================================================
-   RICHWINDESIGN – SCHWEBENDE WELTEN V05
-   01 Grundlayout / Höhle
-   02 Portalsiegel
-   03 Portal-Fenster
-   04 Efeu-Übergang
-   05 Responsive / Bewegung
-   ============================================================ */
+/* =========================================================
+   RICHWINDESIGN – MINIMAL LINKS V07
+   Hintergrund: Original-Verlauf von der Seite „Portale“.
+   Nur diese Linkseite ist betroffen.
+   ========================================================= */
+
 :root {
   color-scheme: dark;
-  --text: #f0e3d5;
-  --gold: #d7b48d;
-  --ivy-open-time: 3300ms;
-  --ivy-close-time: 1650ms;
+  font-family: Arial, Helvetica, sans-serif;
 }
+
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { margin: 0; background: #080809; color: var(--text); font-family: Georgia, 'Times New Roman', serif; }
-body.is-travelling, body.has-open-portal { overflow: hidden; }
-a { color: inherit; }
-.world-page { min-height: 100svh; }
-.scene {
-  position: relative;
-  isolation: isolate;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: max(100svh, 620px);
-  padding: clamp(35px, 6vh, 75px) 18px 30px;
-  overflow: hidden;
-  background:
-    linear-gradient(180deg, rgba(0,0,0,.17), rgba(0,0,0,.07) 45%, rgba(0,0,0,.46)),
-    url('../images/links/links_background-cave.webp') center center / cover no-repeat;
-}
-.scene-heading { z-index: 1; text-align: center; text-shadow: 0 2px 16px #000, 0 0 22px #bb8b5060; }
-.brand-mark { font-size: clamp(1.5rem, 3.2vw, 2.65rem); letter-spacing: .15em; }
-.scene-heading h1 { margin: 12px 0 7px; font-size: clamp(1.2rem, 2.4vw, 2.15rem); font-weight: 400; letter-spacing: .26em; }
-.scene-heading p { margin: 0; font-size: clamp(.63rem, 1.1vw, .83rem); letter-spacing: .28em; }
 
-/* 02 – Die fünf Siegel schweben in einem eigenen Bereich, ohne Boden-Kollisionen */
-.floating-worlds {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: clamp(9px, 2vw, 35px);
-  width: min(100%, 1160px);
-  margin: auto 0 8px;
-  padding-top: 36px;
+html { min-height: 100%; }
+
+body {
+  min-height: 100vh;
+  min-height: 100svh;
+  margin: 0;
+  background-color: #090b10;
+  background-image:
+    radial-gradient(ellipse 250px 190px at 15% 20%, rgba(145, 60, 190, 0.16), transparent 100%),
+    radial-gradient(ellipse 280px 230px at 85% 50%, rgba(205, 55, 115, 0.12), transparent 100%),
+    radial-gradient(ellipse 260px 210px at 20% 85%, rgba(225, 115, 40, 0.11), transparent 100%),
+    linear-gradient(#090b10, #090b10);
+  background-attachment: fixed;
+  color: #f7f7fa;
+  font-family: Arial, Helvetica, sans-serif;
 }
-.world-token {
-  --lift: 0px;
-  --glow: #9d7dbb;
-  appearance: none;
-  border: 1px solid color-mix(in srgb, var(--glow), #d3ab6c 40%);
+
+.link-page {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: 48px 20px;
+}
+
+.link-navigation {
+  display: grid;
+  gap: 14px;
+  width: min(100%, 420px);
+}
+
+.link-button {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 11px;
-  width: clamp(94px, 14.5vw, 169px);
-  min-width: 0;
-  aspect-ratio: .92;
-  padding: 12px 8px;
-  border-radius: 43% 43% 25% 25%;
-  background: radial-gradient(ellipse at 50% 30%, color-mix(in srgb, var(--glow) 24%, transparent), rgba(14,13,22,.94) 68%);
-  color: #f3e4ce;
-  box-shadow: inset 0 0 0 4px #0008, inset 0 0 22px color-mix(in srgb, var(--glow) 38%, transparent), 0 12px 20px #000a, 0 0 20px color-mix(in srgb, var(--glow) 24%, transparent);
-  text-shadow: 0 2px 8px #000;
-  cursor: pointer;
-  transform: translateY(var(--lift));
-  animation: float-token 4.4s ease-in-out infinite;
-  transition: box-shadow .25s ease, filter .25s ease, border-color .25s ease;
+  min-height: 66px;
+  padding: 16px 22px;
+  border: 1px solid rgba(221, 215, 231, 0.20);
+  border-radius: 12px;
+  background: rgba(19, 21, 30, 0.66);
+  color: #f5f3f8;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.035em;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.10);
+  transition: background-color 180ms ease, border-color 180ms ease, transform 180ms ease;
 }
-.world-token::before { content: ''; position: absolute; inset: 6px; border: 1px solid #ffffff30; border-radius: inherit; pointer-events: none; }
-.world-token:hover, .world-token:focus-visible { filter: brightness(1.3); box-shadow: inset 0 0 18px var(--glow), 0 0 32px color-mix(in srgb, var(--glow) 55%, transparent); outline-offset: 5px; }
-.token-symbol { display: block; font-size: clamp(2rem, 4.6vw, 3.8rem); color: #ead6b4; text-shadow: 0 0 16px var(--glow); line-height: 1; }
-.token-name { font: 600 clamp(.61rem, 1vw, .88rem)/1.3 Arial, Helvetica, sans-serif; white-space: nowrap; letter-spacing: .045em; }
-.world-token--genealogy { --glow: #ba9b66; --lift: 15px; animation-delay: -.5s; }
-.world-token--portfolio { --glow: #8db9d3; --lift: -23px; animation-delay: -1.4s; }
-.world-token--portals { --glow: #b180e3; --lift: -40px; width: clamp(120px, 17.4vw, 205px); animation-delay: -2.1s; }
-.world-token--kofi { --glow: #d38c9c; --lift: -23px; animation-delay: -3.2s; }
-.world-token--contact { --glow: #a6c6ad; --lift: 15px; animation-delay: -.9s; }
-@keyframes float-token { 0%, 100% { translate: 0 0; } 50% { translate: 0 -10px; } }
-.scene-instruction { z-index: 2; margin: 10px 0 0; font: .78rem Arial, sans-serif; color: #f0ddbf; text-shadow: 0 2px 7px #000; text-align: center; }
-.scene-bottom { z-index: 2; display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 8px 18px; margin: auto 0 12px; padding-top: 54px; font: .79rem/1.5 Arial, sans-serif; text-shadow: 0 2px 6px #000; }
-.scene-bottom a, .scene-legal a { text-decoration: none; }
-.scene-bottom a:hover, .scene-legal a:hover { text-decoration: underline; }
-.muted-link { opacity: .66; }
-.divider { color: #cca97a; }
-.scene-legal { z-index: 2; display: flex; align-items: center; gap: 14px; font: .73rem Arial, sans-serif; color: #c5b4a1; }
 
-/* 03 – Portal-Vorschau: unabhängig von Größe und Position der Ausgangsbuttons */
-.portal-layer[hidden] { display: none; }
-.portal-layer { position: fixed; z-index: 50; inset: 0; display: grid; place-items: center; padding: 25px; }
-.portal-shade { position: absolute; inset: 0; background: rgba(3,4,9,.76); backdrop-filter: blur(7px); }
-.portal-dialog { --portal-glow: #b180e3; position: relative; width: min(420px, 100%); max-height: min(92svh, 780px); display: flex; flex-direction: column; align-items: center; outline: none; animation: grow-portal .56s cubic-bezier(.17,.8,.22,1) both; }
-@keyframes grow-portal { from { opacity: 0; transform: translateY(45px) scale(.44); filter: blur(8px); } to { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); } }
-.portal-close { position: absolute; z-index: 3; top: 5px; right: 5px; width: 38px; height: 38px; border-radius: 50%; border: 1px solid #e9d4bc7f; background: #110e19db; color: white; font-size: 28px; line-height: 1; cursor: pointer; }
-.portal-arch { position: relative; width: min(290px, 66vw); height: min(370px, 49svh); min-height: 195px; padding: 16px; border: 8px ridge #75604d; border-radius: 49% 49% 9% 9% / 29% 29% 6% 6%; background: linear-gradient(125deg, #4b4039, #a18a70 24%, #1b1820 50%, #6d5043 79%, #221a24); box-shadow: 0 0 5px 2px #c9ab8a, 0 0 24px 5px var(--portal-glow), 0 0 75px 2px color-mix(in srgb, var(--portal-glow) 50%, transparent), 0 20px 30px #000c; }
-.portal-screen { position: relative; width: 100%; height: 100%; overflow: hidden; border-radius: 49% 49% 6% 6% / 27% 27% 5% 5%; background: #110c21; box-shadow: inset 0 0 19px #000; }
-.portal-screen img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; filter: saturate(1.09) brightness(.84); }
-.portal-screen::after { content: ''; position: absolute; inset: 0; box-shadow: inset 0 0 29px 12px #100816; border-radius: inherit; pointer-events: none; }
-.portal-sheen { position: absolute; inset: -60%; pointer-events: none; background: linear-gradient(110deg, transparent 37%, #fff2 48%, #fff9 51%, transparent 58%); transform: translateX(-120%) rotate(12deg); animation: portal-sheen 4s ease-in-out infinite; }
-@keyframes portal-sheen { 0%, 26% { transform: translateX(-120%) rotate(12deg); } 68%, 100% { transform: translateX(120%) rotate(12deg); } }
-.portal-sparkles { position: absolute; inset: -21px; pointer-events: none; background-image: radial-gradient(circle,#fff 1px,transparent 3px), radial-gradient(circle,#e5b0ff 2px,transparent 4px), radial-gradient(circle,#ffeead 1px,transparent 3px); background-size: 47px 62px, 79px 89px, 61px 74px; background-position: 4px 8px, 28px 7px, 14px 29px; mask-image: radial-gradient(ellipse at center, transparent 43%, black 67%); animation: sparkle 2.8s ease-in-out infinite alternate; }
-@keyframes sparkle { from { opacity: .25; transform: scale(.97); } to { opacity: .8; transform: scale(1.04); } }
-.portal-details { width: min(360px, 90vw); padding: 15px 18px 17px; margin-top: -4px; border: 1px solid #c7a577; border-radius: 8px 8px 18px 18px; background: linear-gradient(140deg, #292126, #130e19); text-align: center; box-shadow: 0 10px 30px #000b; }
-.portal-details h2 { margin: 0 0 5px; letter-spacing: .13em; font-size: clamp(1.05rem, 3vw, 1.3rem); }
-.portal-details p { margin: 0 0 15px; font: .82rem/1.45 Arial, sans-serif; color: #e6d6c4; }
-.portal-enter { display: inline-flex; gap: 10px; padding: 10px 20px; border: 1px solid #c7a577; border-radius: 24px; color: #fff1d4; text-decoration: none; font: 700 .77rem Arial, sans-serif; letter-spacing: .08em; background: #372837; }
-.portal-enter:hover, .portal-enter:focus-visible { box-shadow: 0 0 20px var(--portal-glow); }
-
-/* 04 – Efeu-Vorhang: eigene feste Ebene */
-.ivy-overlay { position: fixed; inset: 0; z-index: 1000; overflow: hidden; pointer-events: none; visibility: hidden; }
-body.ivy-ready .ivy-overlay { visibility: visible; }
-.ivy-darkness { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 42%, rgba(15,20,16,.96), rgba(1,4,3,1) 88%), #030705; opacity: 1; transition: opacity var(--ivy-open-time) ease-in-out; }
-body.ivy-open .ivy-darkness { opacity: 0; }
-body.ivy-closing .ivy-darkness { opacity: 1; transition-duration: var(--ivy-close-time); }
-.ivy-leaves { position: absolute; inset: 0; }
-.ivy-leaf { position: absolute; left: 0; top: 0; width: var(--size); height: var(--size); object-fit: contain; transform-origin: center; transform: translate3d(var(--closed-x),var(--closed-y),0) rotate(var(--closed-rot)) scale(var(--closed-scale)); opacity: 1; will-change: transform, opacity; filter: brightness(.58) saturate(.75) drop-shadow(1px 4px 4px rgba(0,0,0,.8)); transition: transform var(--ivy-open-time) cubic-bezier(.2,.72,.17,1) var(--delay), opacity 1200ms ease var(--delay), filter var(--ivy-open-time) ease; }
-body.ivy-open .ivy-leaf { transform: translate3d(var(--open-x),var(--open-y),0) rotate(var(--open-rot)) scale(var(--open-scale)); opacity: var(--open-opacity); filter: brightness(.78) saturate(.83) drop-shadow(1px 5px 6px rgba(0,0,0,.65)); }
-body.ivy-closing .ivy-leaf { transform: translate3d(var(--closed-x),var(--closed-y),0) rotate(var(--closed-rot)) scale(var(--closed-scale)); opacity: 1; filter: brightness(.58) saturate(.75) drop-shadow(1px 4px 4px rgba(0,0,0,.8)); transition-duration: var(--ivy-close-time),650ms,var(--ivy-close-time); transition-delay: var(--close-delay),var(--close-delay),0ms; }
-.edge-vignette { position: fixed; inset: 0; z-index: 1001; pointer-events: none; background: radial-gradient(ellipse at center, transparent 32%, #0004 72%, #000a 100%); }
-.skip-intro { position: fixed; z-index: 1002; right: 18px; bottom: 16px; padding: 9px 12px; border-radius: 8px; border: 1px solid #b9ad98; background: #000d; color: white; font: .8rem Arial, sans-serif; cursor: pointer; }
-.skip-intro[hidden] { display: none; }
-
-/* 05 – Auf Smartphones keine Miniatur-Buttons in einer 5er-Reihe */
-@media (max-width: 700px) {
-  .scene { min-height: 100svh; padding-top: 37px; }
-  .scene-heading h1 { letter-spacing: .14em; }
-  .scene-heading p { letter-spacing: .1em; }
-  .floating-worlds { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); justify-items: center; width: min(100%, 440px); gap: 17px 11px; padding: 50px 0 0; margin: auto 0 16px; }
-  .world-token { --lift: 0px; width: min(100%, 145px); aspect-ratio: 1.18; }
-  .world-token--portals { grid-column: 1 / -1; grid-row: 1; width: 165px; aspect-ratio: 1.08; }
-  .world-token--genealogy { grid-column: 1; grid-row: 2; }
-  .world-token--portfolio { grid-column: 2; grid-row: 2; }
-  .world-token--kofi { grid-column: 1; grid-row: 3; }
-  .world-token--contact { grid-column: 2; grid-row: 3; }
-  .scene-bottom { padding-top: 30px; }
+.link-button:hover {
+  background: rgba(43, 34, 53, 0.82);
+  border-color: rgba(195, 156, 216, 0.58);
+  transform: translateY(-2px);
 }
-@media (max-height: 720px) {
-  .scene { min-height: 720px; }
-  .portal-layer { padding: 10px; }
-  .portal-arch { height: min(310px, 43svh); min-height: 150px; }
-  .portal-details { padding: 10px 14px; }
+
+.link-button:focus-visible {
+  outline: 2px solid #d9b5e6;
+  outline-offset: 4px;
 }
+
+.link-button:active { transform: translateY(0); }
+
+@media (max-width: 480px) {
+  .link-navigation { gap: 12px; }
+  .link-button { min-height: 60px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  .world-token, .portal-dialog, .portal-sheen, .portal-sparkles { animation: none !important; }
-  .ivy-overlay { display: none !important; }
+  .link-button { transition: none; }
 }

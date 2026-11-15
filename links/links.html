@@ -2,92 +2,21 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0b0909">
-  <meta name="description" content="Entdecke die Welten von RichwinDesign – Kunst, Portfolio, Genealogie und mehr.">
-  <title>Die Welten | RichwinDesign</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090b10">
+  <meta name="description" content="RichwinDesign – Portfolio, Portalwelten, Genealogie und Kontakt.">
+  <title>Links | RichwinDesign</title>
   <link rel="stylesheet" href="links.css">
-  <script src="links.js" defer></script>
 </head>
 <body>
-  <!-- 01 – Höhlenwelt -->
-  <main class="world-page" id="world-page">
-    <section class="scene" aria-label="Die fünf Welten von RichwinDesign">
-      <header class="scene-heading">
-        <div class="brand-mark" aria-hidden="true">✧ R ✧</div>
-        <h1>BIANCA RICHWIN</h1>
-        <p>DESIGN · KUNST · GENEALOGIE</p>
-      </header>
-
-      <!-- 02 – Fünf schwebende Portalsiegel -->
-      <nav class="floating-worlds" aria-label="Welten auswählen">
-        <button class="world-token world-token--genealogy" type="button" data-world="genealogy" aria-haspopup="dialog">
-          <span class="token-symbol" aria-hidden="true">◈</span>
-          <span class="token-name">GENEALOGIE</span>
-        </button>
-        <button class="world-token world-token--portfolio" type="button" data-world="portfolio" aria-haspopup="dialog">
-          <span class="token-symbol" aria-hidden="true">✦</span>
-          <span class="token-name">PORTFOLIO</span>
-        </button>
-        <button class="world-token world-token--portals" type="button" data-world="portals" aria-haspopup="dialog">
-          <span class="token-symbol" aria-hidden="true">✧</span>
-          <span class="token-name">PORTALWELTEN</span>
-        </button>
-        <button class="world-token world-token--kofi" type="button" data-world="kofi" aria-haspopup="dialog">
-          <span class="token-symbol" aria-hidden="true">❋</span>
-          <span class="token-name">KO-FI</span>
-        </button>
-        <button class="world-token world-token--contact" type="button" data-world="contact" aria-haspopup="dialog">
-          <span class="token-symbol" aria-hidden="true">✉</span>
-          <span class="token-name">KONTAKT</span>
-        </button>
-      </nav>
-      <p class="scene-instruction">Wähle eine Welt und öffne ihr Portal</p>
-
-      <!-- 03 – Zusatzlinks: bewusst nur sekundäre Navigation -->
-      <div class="scene-bottom">
-        <span class="muted-link" aria-disabled="true">Shop · demnächst</span>
-        <span class="divider" aria-hidden="true">✧</span>
-        <span class="muted-link" aria-disabled="true">Patreon · Link folgt</span>
-        <span class="divider" aria-hidden="true">✧</span>
-        <a href="https://www.instagram.com/richwindesign/" target="_blank" rel="noopener noreferrer">Instagram</a>
-        <a href="https://www.deviantart.com/richwindesign" target="_blank" rel="noopener noreferrer">DeviantArt</a>
-        <a href="https://www.linkedin.com/in/bianca-christine-richwin/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      </div>
-      <footer class="scene-legal">
-        <a href="../kontakt/impressum.html" data-portal-transition>Impressum</a>
-        <span aria-hidden="true">·</span>
-        <a href="../kontakt/datenschutz.html" data-portal-transition>Datenschutz</a>
-      </footer>
-    </section>
+  <main class="link-page">
+    <nav class="link-navigation" aria-label="RichwinDesign Bereiche">
+      <a class="link-button" href="../genealogie/genealogie.html">Genealogie</a>
+      <a class="link-button" href="../index.html">Portfolio</a>
+      <a class="link-button" href="../portale.html">Portalwelten</a>
+      <a class="link-button" href="https://ko-fi.com/richwindesign" target="_blank" rel="noopener noreferrer">Ko-fi</a>
+      <a class="link-button" href="../kontakt/kontakt.html">Kontakt</a>
+    </nav>
   </main>
-
-  <!-- 04 – Das Portal-Fenster wird immer im sichtbaren Bereich geöffnet -->
-  <div class="portal-layer" id="portal-layer" hidden>
-    <div class="portal-shade" data-close-portal></div>
-    <section class="portal-dialog" id="portal-dialog" role="dialog" aria-modal="true" aria-labelledby="portal-title" tabindex="-1">
-      <button class="portal-close" type="button" data-close-portal aria-label="Portal schließen">×</button>
-      <div class="portal-arch">
-        <div class="portal-screen">
-          <img id="portal-preview" src="" alt="" decoding="async">
-          <div class="portal-sheen" aria-hidden="true"></div>
-        </div>
-        <div class="portal-sparkles" aria-hidden="true"></div>
-      </div>
-      <div class="portal-details">
-        <h2 id="portal-title"></h2>
-        <p id="portal-description"></p>
-        <a class="portal-enter" id="portal-enter" href="../portale.html" data-portal-transition>Welt betreten <span aria-hidden="true">✧</span></a>
-      </div>
-    </section>
-  </div>
-
-  <!-- 05 – Efeuvorhang; ausschließlich auf dieser Linkseite -->
-  <div class="ivy-overlay" id="ivy-overlay" aria-hidden="true">
-    <div class="ivy-darkness"></div>
-    <div class="ivy-leaves" id="ivy-leaves"></div>
-  </div>
-  <div class="edge-vignette" aria-hidden="true"></div>
-  <button class="skip-intro" id="skip-intro" type="button" hidden>Animation überspringen</button>
 </body>
 </html>
