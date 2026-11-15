@@ -108,6 +108,8 @@ document.addEventListener("DOMContentLoaded", () => {
   function getPageArea(path) {
 
     if (
+      path === "portale" ||
+      path === "portale/" ||
       path === "portale.html" ||
       path.startsWith("portale/")
     ) {
@@ -2097,7 +2099,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (pagePath === null) return;
 
   const areaOf = path => {
-    if (path === 'portale.html' || path.startsWith('portale/')) return 'portale';
+    if (path === 'portale' || path === 'portale/' || path === 'portale.html' || path.startsWith('portale/')) return 'portale';
     if (path === 'genealogie/genealogie.html' || path.startsWith('genealogie/')) return 'genealogie';
     if (path === 'index.html' || path === '' || path.startsWith('portfolio/')) return 'portfolio';
     if (path.startsWith('kontakt/') || path.startsWith('ueber-mich/')) return 'shared';
@@ -2145,7 +2147,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
-  const overview = pagePath === 'portale.html'
+  const overview = ['portale', 'portale/', 'portale.html'].includes(pagePath)
     ? document.querySelector('.portal-intro-inner')
     : pagePath === 'genealogie/genealogie.html'
       ? document.querySelector('.genealogy-intro')
@@ -2157,7 +2159,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (overview) {
     let back = overview.querySelector('.about-back-link');
 
-    if (!back && pagePath === 'portale.html') {
+    if (!back && ['portale', 'portale/', 'portale.html'].includes(pagePath)) {
       back = document.createElement('a');
       back.className = 'about-back-link';
       overview.insertBefore(back, overview.firstChild);
