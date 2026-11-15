@@ -5070,3 +5070,36 @@ body:has(.portal-overview) {
       rgba(0, 0, 0, 0) 50%
     );
 }
+
+
+/* ==========================================================
+   STARTSEITE – TEXTSATZ V16 (15.11.2026)
+   Hei! besser sichtbar, Intro-Text angenehm schmal,
+   kontrollierte Zeilenumbrüche der sechs Kachelbeschreibungen.
+   ========================================================== */
+
+/* Einleitung: ungefähr bis zur Mitte zwischen Kachel 2 und 3. */
+.intro-section .intro-text > p:not(.intro-small) {
+  max-width: 610px;
+}
+
+/* Hei! passend zum übrigen Einstieg, ohne Seitenbuttons zu ändern. */
+.intro-section .intro-text > .intro-small {
+  font-size: 20px;
+  line-height: 1.35;
+}
+
+/* Gewünschte Umbrüche auf größeren Bildschirmen. */
+.portfolio-overview .start-copy-break {
+  display: initial;
+}
+
+/* Auf schmalen Screens den Browser natürlich umbrechen lassen. */
+@media (max-width: 700px) {
+  .portfolio-overview .start-copy-break {
+    display: none;
+  }
+  .intro-section .intro-text > p:not(.intro-small) {
+    max-width: 100%;
+  }
+}
