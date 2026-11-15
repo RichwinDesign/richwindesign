@@ -5268,3 +5268,34 @@ body[data-page="portfolio"][data-theme="light"] .photo-project-grid h2 {
 @media (prefers-reduced-motion: reduce) {
   body[data-page="portfolio"] .portfolio-theme-toggle { transition: none; }
 }
+
+/* RichwinDesign – Soft Light Mode V19
+   Nur für den Portfolio-Light-Mode.
+   Dark Mode, Portale, Genealogie und Kachelbilder bleiben unverändert.
+   Zum Schluss der bestehenden style.css hinzufügen. */
+body[data-page="portfolio"][data-theme="light"] {
+  --header-base: #c6d2da;
+  --header-light-left: rgba(134, 177, 198, .46);
+  --header-light-right: rgba(185, 200, 213, .40);
+  background-color: #c9d3d9;
+  background-image:
+    radial-gradient(ellipse 68% 48% at 16% 20%, rgba(228, 238, 241, .70) 0%, transparent 100%),
+    radial-gradient(ellipse 60% 52% at 90% 78%, rgba(141, 173, 190, .36) 0%, transparent 100%),
+    linear-gradient(145deg, #c0cbd2 0%, #d1dce1 46%, #bccbd3 100%);
+  background-attachment: fixed;
+  color: #203542;
+}
+
+/* Keine zweite helle Ebene über dem Verlauf. */
+body[data-page="portfolio"][data-theme="light"]::before {
+  background: none;
+}
+
+/* Ruhiger, etwas dunklerer Header mit weichen Lichtinseln. */
+body[data-page="portfolio"][data-theme="light"] .site-header {
+  background-color: var(--header-base);
+  background-image:
+    radial-gradient(ellipse 40% 150% at 18% 50%, var(--header-light-left), transparent 100%),
+    radial-gradient(ellipse 40% 150% at 82% 50%, var(--header-light-right), transparent 100%);
+  box-shadow: 0 5px 18px rgba(27, 55, 75, .09);
+}
