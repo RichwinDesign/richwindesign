@@ -5365,3 +5365,15 @@ body[data-page="portfolio"] .portfolio-theme-toggle .theme-toggle-moon:not([hidd
     right: calc(100% + 8px);
   }
 }
+/* RichwinDesign V21 – genau ein Theme-Icon je Modus.
+   Ganz unten in style.css anhaengen.
+   Dark: Sonne als Wechseloption; Light: Mond als Wechseloption.
+   Setzt sich ueber aeltere hidden-/display-Regeln hinweg. */
+body[data-page="portfolio"] .site-header .portfolio-theme-toggle svg.theme-toggle-sun,
+body[data-page="portfolio"] .site-header .portfolio-theme-toggle svg.theme-toggle-moon {
+  display: none !important;
+}
+body[data-page="portfolio"][data-theme="dark"] .site-header .portfolio-theme-toggle svg.theme-toggle-sun,
+body[data-page="portfolio"][data-theme="light"] .site-header .portfolio-theme-toggle svg.theme-toggle-moon {
+  display: block !important;
+}
