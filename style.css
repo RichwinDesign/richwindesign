@@ -4920,3 +4920,30 @@ body:has(.portal-overview) {
 @media (max-width: 700px) {
   .portal-detail-hero::before {height: 85px;}
 }
+
+/* ==========================================================
+   STARTSEITE – WEBDESIGN & DIGITAL ADS (NOVEMBER 2026)
+   1. Hero innerhalb der Kachel nach oben setzen
+   2. Unteren Verlauf verstärken, damit die Bildkante verschwindet
+   3. Nur das KI-Icon dieser einen Kachel ausblenden
+   Andere Portfolio-Kacheln bleiben unverändert.
+   ========================================================== */
+.portfolio-card.landing-pages {
+  background-position: center 78%;
+}
+
+.portfolio-card.landing-pages::before {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.01) 0%,
+    rgba(0, 0, 0, 0.07) 27%,
+    rgba(0, 0, 0, 0.38) 49%,
+    rgba(0, 0, 0, 0.82) 67%,
+    rgba(0, 0, 0, 0.97) 84%,
+    #050608 100%
+  );
+}
+
+.portfolio-card.landing-pages .ai-label.portfolio-card-ai {
+  display: none !important;
+}
