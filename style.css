@@ -5022,3 +5022,51 @@ body:has(.portal-overview) {
 .portfolio-card.landing-pages .ai-label.portfolio-card-ai {
   display: none !important;
 }
+
+
+/* ==========================================================
+   STARTSEITE – VERLÄUFE V15
+   Webdesign: untere Bildkante stärker abdunkeln.
+   Portale + Genealogie: keine rechteckige Fläche hinter
+   dem Text; weicher Verlauf über die volle Bannerhöhe.
+   ========================================================== */
+
+/* Webdesign: Schwarz setzt höher und kräftiger ein. */
+.portfolio-overview .portfolio-card.landing-pages::before {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.02) 0%,
+    rgba(0, 0, 0, 0.12) 24%,
+    rgba(0, 0, 0, 0.46) 43%,
+    rgba(0, 0, 0, 0.85) 61%,
+    rgba(0, 0, 0, 0.97) 79%,
+    #050608 100%
+  );
+}
+
+/* Die bisherige isolierte Textfläche erzeugte die sichtbare
+   rechteckige Kante: nur auf diesen beiden Bannern ausblenden. */
+.portfolio-overview .portfolio-wide.portals .portfolio-wide-text::before,
+.portfolio-overview .portfolio-wide.genealogy .portfolio-wide-text::before {
+  display: none;
+}
+
+/* Ein durchgängiger, weicher Verlauf von links bis zur Mitte;
+   rechts zusätzliche Abdunklung für den Entdecken-Button. */
+.portfolio-overview .portfolio-wide.portals::before,
+.portfolio-overview .portfolio-wide.genealogy::before {
+  background:
+    linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.72) 0%,
+      rgba(0, 0, 0, 0.57) 20%,
+      rgba(0, 0, 0, 0.30) 40%,
+      rgba(0, 0, 0, 0) 66%
+    ),
+    linear-gradient(
+      to left,
+      rgba(0, 0, 0, 0.60) 0%,
+      rgba(0, 0, 0, 0.17) 23%,
+      rgba(0, 0, 0, 0) 50%
+    );
+}
