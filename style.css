@@ -5299,3 +5299,69 @@ body[data-page="portfolio"][data-theme="light"] .site-header {
     radial-gradient(ellipse 40% 150% at 82% 50%, var(--header-light-right), transparent 100%);
   box-shadow: 0 5px 18px rgba(27, 55, 75, .09);
 }
+/* ==========================================================
+   RICHWINDESIGN – HEADER FEINSCHLIFF V20
+   Nur Portfolio: ein Modus-Icon, feste Social-Position,
+   dunkle Icons ohne Kacheln im Soft-Light-Mode.
+   Diese Regeln ganz unten in style.css einfügen.
+   ========================================================== */
+
+/* Social-Icons in beiden Modi an derselben Position. */
+body[data-page="portfolio"] .site-header .social-links {
+  position: relative;
+  gap: 13px;
+}
+
+body[data-page="portfolio"][data-theme="light"] .site-header .social-links > a {
+  flex: 0 0 20px;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+/* Die vorhandenen hellen Bild-Icons ohne Kasten dunkel einfärben. */
+body[data-page="portfolio"][data-theme="light"] .site-header .social-links > a img {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) saturate(100%);
+  opacity: .82;
+}
+body[data-page="portfolio"][data-theme="light"] .site-header .social-links > a:hover img {
+  opacity: 1;
+}
+
+/* Theme-Schalter nicht als zusätzliches Flex-Element zählen:
+   die Social-Icons bleiben daher beim Umschalten exakt stehen. */
+body[data-page="portfolio"] .site-header .portfolio-theme-toggle {
+  position: absolute;
+  right: calc(100% + 12px);
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0;
+}
+body[data-page="portfolio"] .site-header .portfolio-theme-toggle:hover {
+  transform: translateY(-50%);
+}
+
+/* Genau ein Symbol anzeigen: Dark = Sonne, Light = Mond. */
+body[data-page="portfolio"] .portfolio-theme-toggle .theme-toggle-sun[hidden],
+body[data-page="portfolio"] .portfolio-theme-toggle .theme-toggle-moon[hidden] {
+  display: none !important;
+}
+body[data-page="portfolio"] .portfolio-theme-toggle .theme-toggle-sun:not([hidden]),
+body[data-page="portfolio"] .portfolio-theme-toggle .theme-toggle-moon:not([hidden]) {
+  display: block;
+}
+
+/* Auch auf schmalen Bildschirmen die Icons gleich positionieren. */
+@media (max-width: 700px) {
+  body[data-page="portfolio"] .site-header .social-links { gap: 10px; }
+  body[data-page="portfolio"] .site-header .portfolio-theme-toggle {
+    right: calc(100% + 8px);
+  }
+}
