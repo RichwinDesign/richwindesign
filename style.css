@@ -5402,3 +5402,160 @@ body[data-page="portfolio"][data-theme="light"] .site-header .social-links > a i
 body[data-page="portfolio"][data-theme="light"] .site-header .main-nav a.active {
   color: var(--portfolio-header-ink);
 }
+/* ============================================================
+   RICHWINDESIGN – PORTFOLIO-UNTERSEITEN / SOFT LIGHT MODE V23
+   Gilt nur, wenn der Portfolio-Light-Mode aktiviert ist.
+   In die globale style.css ganz unten einsetzen.
+   Dark Mode, Portale und Genealogie bleiben unverändert.
+
+   ZENTRALE FARBEN: Hier können die Unterseiten später gemeinsam
+   angepasst werden, ohne vier CSS-Dateien anzufassen.
+   ============================================================ */
+body[data-page="portfolio"][data-theme="light"] {
+  --portfolio-light-ink: #172b38;
+  --portfolio-light-muted: #3d5261;
+  --portfolio-light-subtle: #506b7d;
+  --portfolio-light-accent: #276b91;
+  --portfolio-light-panel: rgba(231, 238, 242, .66);
+  --portfolio-light-panel-strong: rgba(240, 245, 248, .83);
+  --portfolio-light-edge: rgba(50, 86, 108, .23);
+}
+
+/* Die Abschnitte unterhalb der Hero-Motive tragen die weiche,
+   blaugraue Hintergrundwelt weiter – nicht die alten schwarzen Bänder. */
+body[data-page="portfolio"][data-theme="light"] .motion-description,
+body[data-page="portfolio"][data-theme="light"] .print-description,
+body[data-page="portfolio"][data-theme="light"] .web-description,
+body[data-page="portfolio"][data-theme="light"] .photo-description {
+  background: transparent;
+  color: var(--portfolio-light-ink);
+}
+
+/* Texte in Beschreibungen und Galerien: einheitlich dunkel. */
+body[data-page="portfolio"][data-theme="light"] .motion-showcase,
+body[data-page="portfolio"][data-theme="light"] .print-showcase,
+body[data-page="portfolio"][data-theme="light"] .web-showcase,
+body[data-page="portfolio"][data-theme="light"] .photo-showcase,
+body[data-page="portfolio"][data-theme="light"] .motion-description-inner,
+body[data-page="portfolio"][data-theme="light"] .print-description-inner,
+body[data-page="portfolio"][data-theme="light"] .web-description-inner,
+body[data-page="portfolio"][data-theme="light"] .photo-description-inner {
+  color: var(--portfolio-light-ink);
+}
+
+body[data-page="portfolio"][data-theme="light"] .motion-description-inner > p:not(.motion-page-subtitle),
+body[data-page="portfolio"][data-theme="light"] .print-description-inner > p:not(.print-page-subtitle),
+body[data-page="portfolio"][data-theme="light"] .web-description-inner > p:not(.web-page-subtitle),
+body[data-page="portfolio"][data-theme="light"] .photo-description-inner > p:not(.photo-page-subtitle),
+body[data-page="portfolio"][data-theme="light"] .motion-showcase-intro p,
+body[data-page="portfolio"][data-theme="light"] .print-showcase-intro p,
+body[data-page="portfolio"][data-theme="light"] .web-showcase-intro p,
+body[data-page="portfolio"][data-theme="light"] .photo-showcase-intro p,
+body[data-page="portfolio"][data-theme="light"] .motion-project-heading p,
+body[data-page="portfolio"][data-theme="light"] .print-project-heading p,
+body[data-page="portfolio"][data-theme="light"] .web-project-heading p,
+body[data-page="portfolio"][data-theme="light"] .photo-project-heading p {
+  color: var(--portfolio-light-muted);
+}
+
+/* Überschriften und Details der aufklappbaren Kategorien. */
+body[data-page="portfolio"][data-theme="light"] .motion-project-heading h2,
+body[data-page="portfolio"][data-theme="light"] .print-project-heading h2,
+body[data-page="portfolio"][data-theme="light"] .web-project-heading h2,
+body[data-page="portfolio"][data-theme="light"] .photo-project-heading h2,
+body[data-page="portfolio"][data-theme="light"] .print-feature-header h3 {
+  color: var(--portfolio-light-ink);
+}
+
+body[data-page="portfolio"][data-theme="light"] .motion-page-subtitle,
+body[data-page="portfolio"][data-theme="light"] .print-page-subtitle,
+body[data-page="portfolio"][data-theme="light"] .web-page-subtitle,
+body[data-page="portfolio"][data-theme="light"] .photo-page-subtitle,
+body[data-page="portfolio"][data-theme="light"] .motion-showcase-intro > span,
+body[data-page="portfolio"][data-theme="light"] .print-showcase-intro > span,
+body[data-page="portfolio"][data-theme="light"] .web-showcase-intro > span,
+body[data-page="portfolio"][data-theme="light"] .photo-showcase-intro > span,
+body[data-page="portfolio"][data-theme="light"] .motion-project-number,
+body[data-page="portfolio"][data-theme="light"] .print-project-number,
+body[data-page="portfolio"][data-theme="light"] .web-project-number,
+body[data-page="portfolio"][data-theme="light"] .photo-project-number,
+body[data-page="portfolio"][data-theme="light"] .motion-project-action,
+body[data-page="portfolio"][data-theme="light"] .print-project-action,
+body[data-page="portfolio"][data-theme="light"] .web-project-action,
+body[data-page="portfolio"][data-theme="light"] .photo-project-action {
+  color: var(--portfolio-light-accent);
+}
+
+body[data-page="portfolio"][data-theme="light"] .motion-project-count,
+body[data-page="portfolio"][data-theme="light"] .print-project-count,
+body[data-page="portfolio"][data-theme="light"] .web-project-count,
+body[data-page="portfolio"][data-theme="light"] .photo-project-count {
+  color: var(--portfolio-light-subtle);
+}
+
+body[data-page="portfolio"][data-theme="light"] :is(
+  .motion-showcase-intro, .print-showcase-intro,
+  .web-showcase-intro, .photo-showcase-intro,
+  .motion-project-heading, .print-project-heading,
+  .web-project-heading, .photo-project-heading
+) {
+  border-bottom-color: var(--portfolio-light-edge);
+}
+
+/* Karten: helle Einfassung und ein ruhiger Kontrast zur Seite.
+   WICHTIG: Fotos/GIFs/Videos selbst werden nicht eingefärbt. */
+body[data-page="portfolio"][data-theme="light"] .motion-work,
+body[data-page="portfolio"][data-theme="light"] .motion-work.motion-work-feature,
+body[data-page="portfolio"][data-theme="light"] .print-work,
+body[data-page="portfolio"][data-theme="light"] .web-work,
+body[data-page="portfolio"][data-theme="light"] .photo-work {
+  background: linear-gradient(155deg, var(--portfolio-light-panel-strong), var(--portfolio-light-panel));
+  border-color: var(--portfolio-light-edge);
+  box-shadow: 0 9px 24px rgba(40, 64, 82, .07);
+  color: var(--portfolio-light-ink);
+}
+
+body[data-page="portfolio"][data-theme="light"] .motion-work figcaption,
+body[data-page="portfolio"][data-theme="light"] .print-work figcaption,
+body[data-page="portfolio"][data-theme="light"] .web-work figcaption,
+body[data-page="portfolio"][data-theme="light"] .photo-work figcaption,
+body[data-page="portfolio"][data-theme="light"] .web-carservice-loop .web-loop-caption {
+  color: var(--portfolio-light-muted);
+}
+
+/* Spezielle aufklappbare Motion-Icon-Gruppe. */
+body[data-page="portfolio"][data-theme="light"] .motion-showcase .motion-lekkerland-icons {
+  background: var(--portfolio-light-panel);
+  border-color: var(--portfolio-light-edge);
+}
+body[data-page="portfolio"][data-theme="light"] .motion-showcase .motion-lekkerland-icons > summary {
+  color: var(--portfolio-light-ink);
+}
+body[data-page="portfolio"][data-theme="light"] .motion-showcase .motion-lekkerland-icons > summary span {
+  color: var(--portfolio-light-muted);
+}
+body[data-page="portfolio"][data-theme="light"] .motion-showcase .motion-lekkerland-icons .motion-work {
+  background: var(--portfolio-light-panel-strong);
+}
+
+/* Foto-Auswahlfelder: helle Bedienelemente statt grauem Text auf Schwarz. */
+body[data-page="portfolio"][data-theme="light"] .photo-showcase .photo-wirelane-choice {
+  background: var(--portfolio-light-panel-strong);
+  color: var(--portfolio-light-ink);
+  border-color: var(--portfolio-light-edge);
+}
+body[data-page="portfolio"][data-theme="light"] .photo-showcase .photo-wirelane-choice.is-active,
+body[data-page="portfolio"][data-theme="light"] .photo-showcase .photo-wirelane-choice:hover {
+  background: rgba(104, 159, 190, .22);
+  color: var(--portfolio-light-ink);
+}
+
+/* Bewusst dunkel lassen: Bildvergleich, Werbebanner-Bühnen,
+   Fotos mit Transparenz und ihre im Bild liegenden Beschriftungen. */
+body[data-page="portfolio"][data-theme="light"] .photo-compare,
+body[data-page="portfolio"][data-theme="light"] .photo-wirelane-viewer,
+body[data-page="portfolio"][data-theme="light"] .web-carservice-loop .web-loop-stage {
+  background-color: #0a1119;
+}
+
+/* Keine Veränderung an Header, Hero, Popups oder Dark Mode. */
