@@ -8,14 +8,16 @@
   <link rel="stylesheet" href="style.css">
     <title>Richwin Design</title>
   <meta name="description" content="RichwinDesign – Portfolio von Bianca Richwin. Mediengestaltung, Print- und Digitaldesign, Fotografie, KI-Workflows und kreative Portalwelten.">
-  <!-- Bildnachweis-Icon nur auf der Fotografie-Kachel -->
+  <!-- Bildnachweis-Icons: Fotografie und Genealogie -->
   <style>
-    .portfolio-card.photography .photo-source-info {
+    .portfolio-card.photography .photo-source-info,
+    .portfolio-wide.genealogy .genealogy-source-info {
       display: flex;
       align-items: center;
       justify-content: center;
     }
-    .portfolio-card.photography .photo-info-icon {
+    .portfolio-card.photography .photo-info-icon,
+    .portfolio-wide.genealogy .photo-info-icon {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -27,7 +29,9 @@
       font: 700 19px/1 Arial, Helvetica, sans-serif;
     }
     .portfolio-card.photography .photo-source-info:hover .photo-info-icon,
-    .portfolio-card.photography .photo-source-info:focus-visible .photo-info-icon {
+    .portfolio-card.photography .photo-source-info:focus-visible .photo-info-icon,
+    .portfolio-wide.genealogy .genealogy-source-info:hover .photo-info-icon,
+    .portfolio-wide.genealogy .genealogy-source-info:focus-visible .photo-info-icon {
       background: #d9eaf2;
     }
   </style>
@@ -343,15 +347,13 @@
           </div>
 
           <button
-            class="ai-label portfolio-wide-ai"
+            class="ai-label portfolio-wide-ai genealogy-source-info"
             type="button"
-            aria-label="KI-Hinweis zum Genealogie-Hero-Bild"
-            data-ai-message="Dieses Hero-Bild wurde vollständig mithilfe generativer KI erstellt."
+            aria-label="Bildnachweis zum Genealogie-Hero-Bild anzeigen"
+            data-info-title="Bildnachweis"
+            data-ai-message="Foto: Bernd Dittrich / Unsplash. Das Foto wird als Hintergrundmotiv der Genealogie-Kachel verwendet."
           >
-            <img
-              src="images/general/icons/icon_ki-hinweis.webp"
-              alt=""
-            >
+            <span class="photo-info-icon" aria-hidden="true">i</span>
           </button>
 
         </article>
