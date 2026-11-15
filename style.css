@@ -4992,7 +4992,8 @@ body:has(.portal-overview) {
 
 /* Runde i-Symbole bei Fotografie und Genealogie. */
 .portfolio-card.photography .photo-info-icon,
-.portfolio-wide.genealogy .photo-info-icon {
+.portfolio-wide.genealogy .photo-info-icon,
+.portfolio-wide.portals .photo-info-icon {
   display: flex;
   align-items: center;
   justify-content: center;
