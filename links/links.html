@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0b0909">
-  <meta name="description" content="Die fünf Welten von RichwinDesign: Portalwelten, Portfolio, Genealogie, Unterstützung und Kontakt.">
+  <meta name="description" content="Die fünf Welten von RichwinDesign: Genealogie, Portfolio, Portalwelten, Unterstützung und Kontakt.">
   <title>Die Welten | RichwinDesign</title>
   <link rel="stylesheet" href="links.css">
   <script src="links.js" defer></script>
@@ -24,9 +24,9 @@
       <!-- 03 – Die fünf Steine: jeweils ein echtes anklickbares Element -->
       <nav class="stone-worlds" aria-label="Welten auswählen">
 
-        <a class="stone stone--left-outer" href="../portale.html" data-portal-transition aria-label="Portalwelten entdecken">
+        <a class="stone stone--left-outer" href="../genealogie/genealogie.html" data-portal-transition aria-label="Genealogie öffnen">
           <img src="../images/links/bloecke/Block-links-01.webp" alt="" decoding="async">
-          <span class="stone-label"><span class="label-desktop">PORTALWELTEN</span><span class="label-mobile">PORTALE</span></span>
+          <span class="stone-label">GENEALOGIE</span>
         </a>
 
         <a class="stone stone--left-inner" href="../index.html" data-portal-transition aria-label="Portfolio ansehen">
@@ -34,9 +34,19 @@
           <span class="stone-label">PORTFOLIO</span>
         </a>
 
-        <a class="stone stone--center" href="../genealogie/genealogie.html" data-portal-transition aria-label="Genealogie öffnen">
+        <a class="stone stone--center stone--portal" href="../portale.html" data-portal-transition
+           aria-label="Portalwelten öffnen" aria-expanded="false" aria-describedby="portal-hint">
+          <!-- Portal öffnet sich über dem bestehenden, feststehenden Steinblock. -->
+          <span class="portal-reveal" aria-hidden="true">
+            <span class="portal-frame">
+              <span class="portal-window">
+                <!-- Provisorisches Vorschau-Motiv; später durch einen echten Screenshot ersetzbar. -->
+                <img src="../images/general/Hero_portalwelt.webp" alt="" loading="lazy" decoding="async">
+              </span>
+            </span>
+          </span>
           <img src="../images/links/bloecke/Block-mitte.webp" alt="" decoding="async">
-          <span class="stone-label">GENEALOGIE</span>
+          <span class="stone-label"><span class="label-desktop">PORTALWELTEN</span><span class="label-mobile">PORTALE</span></span>
         </a>
 
         <a class="stone stone--right-inner" href="https://ko-fi.com/richwindesign" data-portal-transition aria-label="RichwinDesign auf Ko-fi unterstützen">
@@ -49,6 +59,7 @@
           <span class="stone-label">KONTAKT</span>
         </a>
       </nav>
+      <p class="portal-hint" id="portal-hint" aria-live="polite">Portalwelten anklicken, um das Tor zu öffnen.</p>
 
       <!-- 04 – Zusätzliche Links, bewusst zurückhaltend -->
       <div class="scene-bottom">

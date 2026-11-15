@@ -242,3 +242,113 @@ body.ivy-closing .ivy-leaf {
   .ivy-overlay { display: none !important; }
   .stone { transition: none; }
 }
+
+
+/* ============================================================
+   07 – PORTALWELTEN: erster klickbarer Torbogen-Prototyp
+   Provisorischer Steinrahmen aus CSS – ersetzt später eine
+   freigestellte, perspektivisch passende Originalgrafik.
+   ============================================================ */
+.stone--portal {
+  z-index: 5;
+  /* Der Steinblock bleibt auch bei geöffneter Vorschau an Ort und Stelle. */
+}
+.stone--portal:hover,
+.stone--portal:focus-visible,
+.stone--portal.is-portal-open {
+  transform: none;
+}
+.stone--portal > img,
+.stone--portal > .stone-label {
+  position: relative;
+  z-index: 4;
+}
+.stone--portal > img { position: absolute; inset: 0; }
+.stone--portal > .stone-label { position: absolute; }
+.portal-reveal {
+  position: absolute;
+  z-index: 2;
+  bottom: 72%;
+  left: 18%;
+  width: 64%;
+  height: clamp(145px, 24vw, 360px);
+  pointer-events: none;
+  transform-origin: center bottom;
+  opacity: 0;
+  transform: translateY(22%) scaleY(.06);
+  transition: transform .85s cubic-bezier(.2,.8,.2,1), opacity .3s ease;
+}
+.stone--portal.is-portal-open .portal-reveal {
+  opacity: 1;
+  transform: translateY(0) scaleY(1);
+}
+.portal-frame {
+  display: block;
+  position: absolute;
+  inset: 0;
+  padding: clamp(8px, 1.3vw, 21px);
+  border-radius: 48% 48% 10% 10% / 30% 30% 5% 5%;
+  background:
+    linear-gradient(105deg, #211d1a 0%, #867257 18%, #372b25 36%, #181514 61%, #725136 82%, #191615 100%);
+  box-shadow:
+    inset 3px 3px 2px #d5a77577,
+    inset -5px -1px 8px #0b0808,
+    0 0 0 2px #130e0a,
+    0 0 0 4px #886341,
+    0 15px 26px #000b,
+    0 0 35px #e6a45b33;
+}
+.portal-frame::after {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  border: 1px solid #e1b47a66;
+  border-radius: inherit;
+  pointer-events: none;
+}
+.portal-window {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  border-radius: 45% 45% 4% 4% / 28% 28% 3% 3%;
+  box-shadow: inset 0 0 22px 8px #0a040c, 0 0 10px #bb8aff99;
+  background: #271c37;
+}
+.portal-window::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 0 20px 8px #170e25;
+  pointer-events: none;
+}
+.portal-window img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(.83) saturate(1.12);
+}
+.portal-hint {
+  position: absolute;
+  z-index: 6;
+  bottom: clamp(83px, 10.5svh, 130px);
+  left: 0;
+  right: 0;
+  margin: 0;
+  text-align: center;
+  font: .72rem/1.4 Arial, sans-serif;
+  color: #e5cda9;
+  text-shadow: 0 2px 6px black;
+}
+@media (max-width: 560px) {
+  .portal-reveal { height: clamp(110px, 30vw, 170px); left: 12%; width: 76%; }
+  .portal-hint { bottom: clamp(106px, 13svh, 135px); font-size: .64rem; }
+  .portal-frame { padding: 7px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .portal-reveal { transition: none; }
+}

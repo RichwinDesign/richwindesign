@@ -18,6 +18,23 @@
     assetFolder: '../images/links/efeublaetter/'
   };
 
+  // Portalwelten: erster Klick öffnet die Vorschau; der zweite betritt die Welt.
+  // Capture-Handler läuft vor dem bestehenden Efeu-Navigationshandler.
+  const portalStone = document.querySelector('.stone--portal');
+  const portalHint = document.getElementById('portal-hint');
+  if (portalStone) {
+    portalStone.addEventListener('click', (event) => {
+      if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+      if (portalStone.classList.contains('is-portal-open')) return;
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      portalStone.classList.add('is-portal-open');
+      portalStone.setAttribute('aria-expanded', 'true');
+      portalStone.setAttribute('aria-label', 'Portalwelten betreten');
+      if (portalHint) portalHint.textContent = 'Portal geöffnet – erneut auf Portalwelten klicken, um einzutreten.';
+    }, true);
+  }
+
   const overlay = document.getElementById('ivy-overlay');
   const leafContainer = document.getElementById('ivy-leaves');
   const skipButton = document.getElementById('skip-intro');
