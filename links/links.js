@@ -18,22 +18,107 @@
     assetFolder: '../images/links/efeublaetter/'
   };
 
-  // Portalwelten: erster Klick öffnet die Vorschau; der zweite betritt die Welt.
-  // Capture-Handler läuft vor dem bestehenden Efeu-Navigationshandler.
-  const portalStone = document.querySelector('.stone--portal');
-  const portalHint = document.getElementById('portal-hint');
-  if (portalStone) {
-    portalStone.addEventListener('click', (event) => {
-      if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
-      if (portalStone.classList.contains('is-portal-open')) return;
-      event.preventDefault();
-      event.stopImmediatePropagation();
-      portalStone.classList.add('is-portal-open');
-      portalStone.setAttribute('aria-expanded', 'true');
-      portalStone.setAttribute('aria-label', 'Portalwelten betreten');
-      if (portalHint) portalHint.textContent = 'Portal geöffnet – erneut auf Portalwelten klicken, um einzutreten.';
-    }, true);
+  // 01 – Jede Welt öffnet zunächst ein schwebendes Vorschau-Portal.
+  // Hier können die Bilder später durch echte Website-Screenshots ersetzt werden.
+  const WORLDS = {
+    genealogy: {
+      title: 'GENEALOGIE',
+      description: 'Familienlinien, Quellen und historische Spurensuche.',
+      preview: '../images/portale/portal_01.webp',
+      fallback: '../images/portale/portal_01.webp',
+      href: '../genealogie/genealogie.html',
+      glow: '#c5a16a'
+    },
+    portfolio: {
+      title: 'PORTFOLIO',
+      description: 'Visuelle Gestaltung, Print, Motion und Fotografie.',
+      preview: '../images/portale/portal_02.webp',
+      fallback: '../images/portale/portal_02.webp',
+      href: '../index.html',
+      glow: '#88c0e3'
+    },
+    portals: {
+      title: 'PORTALWELTEN',
+      description: 'Handbemalte Welten, verborgen in kleinen Holzboxen.',
+      preview: '../images/portale/portal_01.webp',
+      fallback: '../images/portale/portal_01.webp',
+      href: '../portale.html',
+      glow: '#bb8af0'
+    },
+    kofi: {
+      title: 'KO-FI',
+      description: 'Unterstütze die Entstehung neuer Portalwelten – ganz freiwillig.',
+      preview: '../images/portale/portal_03.webp',
+      fallback: '../images/portale/portal_03.webp',
+      href: 'https://ko-fi.com/richwindesign',
+      glow: '#e6a6b5'
+    },
+    contact: {
+      title: 'KONTAKT',
+      description: 'Du hast eine Idee oder möchtest eine Nachricht schicken?',
+      preview: '../images/portale/portal_05.webp',
+      fallback: '../images/portale/portal_05.webp',
+      href: '../kontakt/kontakt.html',
+      glow: '#a5ceb4'
+    }
+  };
+
+  const portalLayer = document.getElementById('portal-layer');
+  const portalDialog = document.getElementById('portal-dialog');
+  const portalTitle = document.getElementById('portal-title');
+  const portalDescription = document.getElementById('portal-description');
+  const portalPreview = document.getElementById('portal-preview');
+  const portalEnter = document.getElementById('portal-enter');
+  let lastTrigger = null;
+
+  function closePreview() {
+    if (portalLayer.hidden) return;
+    portalLayer.hidden = true;
+    document.body.classList.remove('has-open-portal');
+    if (lastTrigger) lastTrigger.focus();
   }
+
+  function openPreview(worldName, trigger) {
+    const world = WORLDS[worldName];
+    if (!world) return;
+    lastTrigger = trigger;
+    portalTitle.textContent = world.title;
+    portalDescription.textContent = world.description;
+    portalEnter.href = world.href;
+    portalPreview.src = world.preview.endsWith('.webm') ? world.fallback : world.preview;
+    portalPreview.alt = 'Bildvorschau: ' + world.title;
+    portalPreview.onerror = () => {
+      if (!portalPreview.src.endsWith(world.fallback)) portalPreview.src = world.fallback;
+    };
+    portalDialog.style.setProperty('--portal-glow', world.glow);
+    portalLayer.hidden = false;
+    document.body.classList.add('has-open-portal');
+    portalDialog.focus();
+  }
+
+  document.querySelectorAll('[data-world]').forEach((button) => {
+    button.addEventListener('click', () => openPreview(button.dataset.world, button));
+  });
+  portalLayer.querySelectorAll('[data-close-portal]').forEach((button) => {
+    button.addEventListener('click', closePreview);
+  });
+  document.addEventListener('keydown', (event) => {
+    if (portalLayer.hidden) return;
+    if (event.key === 'Escape') closePreview();
+    if (event.key === 'Tab') {
+      const controls = [...portalDialog.querySelectorAll('button:not([disabled]), a[href]')];
+      if (!controls.length) return;
+      const first = controls[0];
+      const last = controls[controls.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    }
+  });
 
   const overlay = document.getElementById('ivy-overlay');
   const leafContainer = document.getElementById('ivy-leaves');

@@ -4,64 +4,47 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0b0909">
-  <meta name="description" content="Die fünf Welten von RichwinDesign: Genealogie, Portfolio, Portalwelten, Unterstützung und Kontakt.">
+  <meta name="description" content="Entdecke die Welten von RichwinDesign – Kunst, Portfolio, Genealogie und mehr.">
   <title>Die Welten | RichwinDesign</title>
   <link rel="stylesheet" href="links.css">
   <script src="links.js" defer></script>
 </head>
 <body>
-  <!-- 01 – Höhlenszene mit Steinblöcken auf dem Boden -->
+  <!-- 01 – Höhlenwelt -->
   <main class="world-page" id="world-page">
-    <div class="scene" aria-label="Die fünf Welten von RichwinDesign">
-
-      <!-- 02 – Beschriftung oben, über den Portalen -->
+    <section class="scene" aria-label="Die fünf Welten von RichwinDesign">
       <header class="scene-heading">
         <div class="brand-mark" aria-hidden="true">✧ R ✧</div>
         <h1>BIANCA RICHWIN</h1>
         <p>DESIGN · KUNST · GENEALOGIE</p>
       </header>
 
-      <!-- 03 – Die fünf Steine: jeweils ein echtes anklickbares Element -->
-      <nav class="stone-worlds" aria-label="Welten auswählen">
-
-        <a class="stone stone--left-outer" href="../genealogie/genealogie.html" data-portal-transition aria-label="Genealogie öffnen">
-          <img src="../images/links/bloecke/Block-links-01.webp" alt="" decoding="async">
-          <span class="stone-label">GENEALOGIE</span>
-        </a>
-
-        <a class="stone stone--left-inner" href="../index.html" data-portal-transition aria-label="Portfolio ansehen">
-          <img src="../images/links/bloecke/Block-links-02.webp" alt="" decoding="async">
-          <span class="stone-label">PORTFOLIO</span>
-        </a>
-
-        <a class="stone stone--center stone--portal" href="../portale.html" data-portal-transition
-           aria-label="Portalwelten öffnen" aria-expanded="false" aria-describedby="portal-hint">
-          <!-- Portal öffnet sich über dem bestehenden, feststehenden Steinblock. -->
-          <span class="portal-reveal" aria-hidden="true">
-            <span class="portal-frame">
-              <span class="portal-window">
-                <!-- Provisorisches Vorschau-Motiv; später durch einen echten Screenshot ersetzbar. -->
-                <img src="../images/general/Hero_portalwelt.webp" alt="" loading="lazy" decoding="async">
-              </span>
-            </span>
-          </span>
-          <img src="../images/links/bloecke/Block-mitte.webp" alt="" decoding="async">
-          <span class="stone-label"><span class="label-desktop">PORTALWELTEN</span><span class="label-mobile">PORTALE</span></span>
-        </a>
-
-        <a class="stone stone--right-inner" href="https://ko-fi.com/richwindesign" data-portal-transition aria-label="RichwinDesign auf Ko-fi unterstützen">
-          <img src="../images/links/bloecke/Block-rechts-01.webp" alt="" decoding="async">
-          <span class="stone-label">KO-FI</span>
-        </a>
-
-        <a class="stone stone--right-outer" href="../kontakt/kontakt.html" data-portal-transition aria-label="Kontakt öffnen">
-          <img src="../images/links/bloecke/Block-rechts-02.webp" alt="" decoding="async">
-          <span class="stone-label">KONTAKT</span>
-        </a>
+      <!-- 02 – Fünf schwebende Portalsiegel -->
+      <nav class="floating-worlds" aria-label="Welten auswählen">
+        <button class="world-token world-token--genealogy" type="button" data-world="genealogy" aria-haspopup="dialog">
+          <span class="token-symbol" aria-hidden="true">◈</span>
+          <span class="token-name">GENEALOGIE</span>
+        </button>
+        <button class="world-token world-token--portfolio" type="button" data-world="portfolio" aria-haspopup="dialog">
+          <span class="token-symbol" aria-hidden="true">✦</span>
+          <span class="token-name">PORTFOLIO</span>
+        </button>
+        <button class="world-token world-token--portals" type="button" data-world="portals" aria-haspopup="dialog">
+          <span class="token-symbol" aria-hidden="true">✧</span>
+          <span class="token-name">PORTALWELTEN</span>
+        </button>
+        <button class="world-token world-token--kofi" type="button" data-world="kofi" aria-haspopup="dialog">
+          <span class="token-symbol" aria-hidden="true">❋</span>
+          <span class="token-name">KO-FI</span>
+        </button>
+        <button class="world-token world-token--contact" type="button" data-world="contact" aria-haspopup="dialog">
+          <span class="token-symbol" aria-hidden="true">✉</span>
+          <span class="token-name">KONTAKT</span>
+        </button>
       </nav>
-      <p class="portal-hint" id="portal-hint" aria-live="polite">Portalwelten anklicken, um das Tor zu öffnen.</p>
+      <p class="scene-instruction">Wähle eine Welt und öffne ihr Portal</p>
 
-      <!-- 04 – Zusätzliche Links, bewusst zurückhaltend -->
+      <!-- 03 – Zusatzlinks: bewusst nur sekundäre Navigation -->
       <div class="scene-bottom">
         <span class="muted-link" aria-disabled="true">Shop · demnächst</span>
         <span class="divider" aria-hidden="true">✧</span>
@@ -76,10 +59,30 @@
         <span aria-hidden="true">·</span>
         <a href="../kontakt/datenschutz.html" data-portal-transition>Datenschutz</a>
       </footer>
-    </div>
+    </section>
   </main>
 
-  <!-- 05 – Dynamischer Efeuvorhang, nur auf dieser Linkseite -->
+  <!-- 04 – Das Portal-Fenster wird immer im sichtbaren Bereich geöffnet -->
+  <div class="portal-layer" id="portal-layer" hidden>
+    <div class="portal-shade" data-close-portal></div>
+    <section class="portal-dialog" id="portal-dialog" role="dialog" aria-modal="true" aria-labelledby="portal-title" tabindex="-1">
+      <button class="portal-close" type="button" data-close-portal aria-label="Portal schließen">×</button>
+      <div class="portal-arch">
+        <div class="portal-screen">
+          <img id="portal-preview" src="" alt="" decoding="async">
+          <div class="portal-sheen" aria-hidden="true"></div>
+        </div>
+        <div class="portal-sparkles" aria-hidden="true"></div>
+      </div>
+      <div class="portal-details">
+        <h2 id="portal-title"></h2>
+        <p id="portal-description"></p>
+        <a class="portal-enter" id="portal-enter" href="../portale.html" data-portal-transition>Welt betreten <span aria-hidden="true">✧</span></a>
+      </div>
+    </section>
+  </div>
+
+  <!-- 05 – Efeuvorhang; ausschließlich auf dieser Linkseite -->
   <div class="ivy-overlay" id="ivy-overlay" aria-hidden="true">
     <div class="ivy-darkness"></div>
     <div class="ivy-leaves" id="ivy-leaves"></div>
