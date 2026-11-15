@@ -5103,3 +5103,168 @@ body:has(.portal-overview) {
     max-width: 100%;
   }
 }
+
+
+/* ==========================================================
+   RICHWINDESIGN – PORTFOLIO LIGHT MODE V18
+   Zentraler Umschalter in script.js. Standard bleibt dunkel.
+   Nur body[data-page="portfolio"] (Startseite & Portfolio).
+   Portalwelten, Genealogie und ihre Unterseiten nicht ändern.
+   ========================================================== */
+
+/* Schalter rechts neben den Social-Icons */
+body[data-page="portfolio"] .social-links {
+  gap: 12px;
+}
+body[data-page="portfolio"] .portfolio-theme-toggle {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 32px;
+  width: 32px;
+  height: 32px;
+  margin-left: 5px;
+  padding: 5px;
+  color: var(--header-accent, #89d7f1);
+  background: rgba(143, 189, 217, .08);
+  border: 1px solid var(--header-border-color, rgba(143,189,217,.35));
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background .2s ease, transform .2s ease, border-color .2s ease;
+}
+body[data-page="portfolio"] .portfolio-theme-toggle:hover {
+  background: rgba(143, 189, 217, .2);
+  transform: translateY(-1px);
+}
+body[data-page="portfolio"] .portfolio-theme-toggle:focus-visible {
+  outline: 2px solid var(--header-accent, #89d7f1);
+  outline-offset: 3px;
+}
+body[data-page="portfolio"] .portfolio-theme-toggle svg { width: 17px; height: 17px; }
+body[data-page="portfolio"] .portfolio-theme-toggle [hidden] { display: none; }
+
+/* Zentrale Light-Farben */
+body[data-page="portfolio"][data-theme="light"] {
+  --header-base: #f4f7f9;
+  --header-light-left: rgba(157, 203, 227, .28);
+  --header-light-right: rgba(194, 217, 229, .24);
+  --header-accent: #276b91;
+  --header-border-color: rgba(64, 112, 139, .30);
+  --header-accent-glow: rgba(80, 154, 198, .2);
+  --menu-hint: #536c7c;
+  background: #f1f4f6;
+  color: #202f39;
+  color-scheme: light;
+}
+body[data-page="portfolio"][data-theme="light"]::before {
+  background:
+    radial-gradient(ellipse at 12% 5%, rgba(173,207,224,.26), transparent 42%),
+    radial-gradient(ellipse at 89% 90%, rgba(218,229,234,.24), transparent 36%);
+}
+body[data-page="portfolio"][data-theme="light"] .site-header {
+  background-color: var(--header-base);
+  box-shadow: 0 5px 18px rgba(31, 69, 89, .05);
+}
+body[data-page="portfolio"][data-theme="light"] .site-header .header-logo {
+  color: #24475c;
+}
+body[data-page="portfolio"][data-theme="light"] .site-header .main-nav a,
+body[data-page="portfolio"][data-theme="light"] .main-nav a {
+  color: #2d485a;
+}
+body[data-page="portfolio"][data-theme="light"] .site-header .main-nav a:hover,
+body[data-page="portfolio"][data-theme="light"] .site-header .main-nav a.active {
+  color: #0c3857;
+}
+/* Bestehende weiße Social-Icons bleiben sichtbar auf zart getönter Fläche. */
+body[data-page="portfolio"][data-theme="light"] .social-links > a {
+  background: #27465a;
+  border-radius: 5px;
+  padding: 3px;
+  flex-basis: 26px;
+  width: 26px;
+  height: 26px;
+}
+body[data-page="portfolio"][data-theme="light"] .social-links > a img {
+  width: 19px;
+  height: 19px;
+}
+body[data-page="portfolio"][data-theme="light"] #richwin-mega-menu,
+body[data-page="portfolio"][data-theme="light"] .mega-menu-panel {
+  color: #243e4d;
+  background-color: #f7fafc;
+}
+body[data-page="portfolio"][data-theme="light"] #richwin-mega-menu a,
+body[data-page="portfolio"][data-theme="light"] .mega-menu-panel a {
+  color: #26475d;
+}
+body[data-page="portfolio"][data-theme="light"] #richwin-mega-menu a:hover,
+body[data-page="portfolio"][data-theme="light"] .mega-menu-panel a:hover {
+  color: #0c6c9e;
+}
+
+/* Intro auf der Startseite: dunkler Text auf hellem Hintergrund. */
+body[data-page="portfolio"][data-theme="light"] .intro-section {
+  background: transparent;
+}
+body[data-page="portfolio"][data-theme="light"] .intro-text h1,
+body[data-page="portfolio"][data-theme="light"] .intro-text .intro-small {
+  color: #172b38;
+}
+body[data-page="portfolio"][data-theme="light"] .intro-text h1 span {
+  color: #2e789f;
+  text-shadow: none;
+}
+body[data-page="portfolio"][data-theme="light"] .intro-text p:not(.intro-small) {
+  color: #3d5261;
+}
+/* Kartenbilder behalten bewusst ihre dunklen Verläufe und weiße Typografie. */
+body[data-page="portfolio"][data-theme="light"] .portfolio-card,
+body[data-page="portfolio"][data-theme="light"] .portfolio-wide {
+  color: #fff;
+  border-color: rgba(49, 84, 108, .2);
+  box-shadow: 0 14px 32px rgba(50, 68, 84, .12);
+}
+body[data-page="portfolio"][data-theme="light"] .portfolio-card-content,
+body[data-page="portfolio"][data-theme="light"] .portfolio-wide-content,
+body[data-page="portfolio"][data-theme="light"] .portfolio-card-content p,
+body[data-page="portfolio"][data-theme="light"] .portfolio-wide-text p {
+  color: #fff;
+}
+/* Für Portfolio-Unterseiten: Hero-Fotografien und Text bleiben dunkel/weiß. */
+body[data-page="portfolio"][data-theme="light"] .motion-page-hero,
+body[data-page="portfolio"][data-theme="light"] .print-page-hero,
+body[data-page="portfolio"][data-theme="light"] .landing-page-hero,
+body[data-page="portfolio"][data-theme="light"] .photo-page-hero {
+  color: #fff;
+}
+body[data-page="portfolio"][data-theme="light"] .motion-page-hero h1,
+body[data-page="portfolio"][data-theme="light"] .print-page-hero h1,
+body[data-page="portfolio"][data-theme="light"] .landing-page-hero h1,
+body[data-page="portfolio"][data-theme="light"] .photo-page-hero h1 {
+  color: #fff;
+}
+/* Neutrale Flächen unter den Hero-Motiven. */
+body[data-page="portfolio"][data-theme="light"] .print-gallery-item {
+  background: #dce3e8;
+}
+body[data-page="portfolio"][data-theme="light"] .photo-compare-block h2,
+body[data-page="portfolio"][data-theme="light"] .photo-compare-card h3,
+body[data-page="portfolio"][data-theme="light"] .photo-project-grid h2 {
+  color: #253d4a;
+}
+/* KI-/Bildnachweis-Popup bleibt für Kontrast in seiner dunklen Gestaltung. */
+
+@media (max-width: 700px) {
+  body[data-page="portfolio"] .portfolio-theme-toggle {
+    flex-basis: 30px;
+    width: 30px;
+    height: 30px;
+    margin-left: 0;
+  }
+  body[data-page="portfolio"] .social-links { gap: 8px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  body[data-page="portfolio"] .portfolio-theme-toggle { transition: none; }
+}
