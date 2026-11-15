@@ -5377,3 +5377,28 @@ body[data-page="portfolio"][data-theme="dark"] .site-header .portfolio-theme-tog
 body[data-page="portfolio"][data-theme="light"] .site-header .portfolio-theme-toggle svg.theme-toggle-moon {
   display: block !important;
 }
+/* RichwinDesign – Light-Mode-Header V22
+   Einheitliche Schrift- und Iconfarbe wie "Ich bin" (#172b38).
+   Nur Portfolio im Light Mode. Dark Mode bleibt unverändert.
+   Am Ende der bestehenden style.css einfuegen. */
+body[data-page="portfolio"][data-theme="light"] {
+  --portfolio-header-ink: #172b38;
+}
+
+body[data-page="portfolio"][data-theme="light"] .site-header .header-logo,
+body[data-page="portfolio"][data-theme="light"] .site-header .main-nav a,
+body[data-page="portfolio"][data-theme="light"] .site-header .portfolio-theme-toggle {
+  color: var(--portfolio-header-ink);
+}
+
+/* Die eingebundenen hellen Social-Icons ohne Hintergrundkasten
+   auf das gleiche dunkle Blaugrau einfärben. */
+body[data-page="portfolio"][data-theme="light"] .site-header .social-links > a img {
+  filter: brightness(0) saturate(100%) invert(13%) sepia(26%) saturate(778%) hue-rotate(155deg) brightness(94%) contrast(92%);
+  opacity: 1;
+}
+
+/* Aktiven Navigationspunkt weiterhin durch seine Unterstreichung kennzeichnen. */
+body[data-page="portfolio"][data-theme="light"] .site-header .main-nav a.active {
+  color: var(--portfolio-header-ink);
+}
