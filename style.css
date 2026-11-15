@@ -4961,51 +4961,64 @@ body:has(.portal-overview) {
   display: none !important;
 }
 
+/* ============================================================
+   STARTSEITE – ALLE HINWEIS-ICONS ZENTRAL STEUERN
+   Gilt für KI-Grafiken und runde i-Icons gleichermaßen.
+   Hier die gewünschte sichtbare Größe ändern: 20px.
+   Die Klickfläche bleibt unabhängig davon 28px groß.
+   ============================================================ */
+.portfolio-overview {
+  --hinweis-groesse: 20px;      /* Sichtbare Größe: KI + i */
+  --hinweis-schrift: 13px;      /* Schriftgröße des i */
+  --hinweis-abstand: 8px;       /* Abstand zur rechten/unteren Ecke */
+}
 
-/* ==========================================================
-   STARTSEITE – HINWEISSYMBOLE KLEINER UND ECKNÄHER
-   Gilt nur für die vier Portfolio-Kacheln und die beiden
-   breiten Banner; andere KI-Hinweise bleiben unverändert.
-   ========================================================== */
-.portfolio-card .ai-label.portfolio-card-ai,
-.portfolio-wide .ai-label.portfolio-wide-ai {
+/* Gleiche Position und komfortable Klickfläche für alle Hinweise. */
+.portfolio-overview .portfolio-card .ai-label.portfolio-card-ai,
+.portfolio-overview .portfolio-wide .ai-label.portfolio-wide-ai {
   left: auto !important;
   top: auto !important;
-  right: 8px !important;
-  bottom: 8px !important;
+  right: var(--hinweis-abstand) !important;
+  bottom: var(--hinweis-abstand) !important;
   width: 28px;
   height: 28px;
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 10;
 }
 
-/* KI-Grafiken auf ca. die Hälfte verkleinern, Klickfläche bleibt groß. */
-.portfolio-card .ai-label.portfolio-card-ai img,
-.portfolio-wide .ai-label.portfolio-wide-ai img {
-  width: 15px !important;
-  height: 15px !important;
-  max-width: 15px !important;
-  max-height: 15px !important;
-  object-fit: contain;
-}
-
-/* Runde i-Symbole bei Fotografie und Genealogie. */
-.portfolio-card.photography .photo-info-icon,
-.portfolio-wide.genealogy .photo-info-icon,
-.portfolio-wide.portals .photo-info-icon {
+/* KI-Bild und HTML-i: exakt dieselbe äußere Größe. */
+.portfolio-overview .portfolio-card .ai-label.portfolio-card-ai img,
+.portfolio-overview .portfolio-wide .ai-label.portfolio-wide-ai img,
+.portfolio-overview .portfolio-card .ai-label.portfolio-card-ai .photo-info-icon,
+.portfolio-overview .portfolio-wide .ai-label.portfolio-wide-ai .photo-info-icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 15px;
-  height: 15px;
+  width: var(--hinweis-groesse) !important;
+  height: var(--hinweis-groesse) !important;
+  max-width: var(--hinweis-groesse) !important;
+  max-height: var(--hinweis-groesse) !important;
+  object-fit: contain;
+  flex: 0 0 var(--hinweis-groesse);
+}
+
+/* Nur die runden i-Icons erhalten die weiße Kreisfläche. */
+.portfolio-overview .photo-info-icon {
+  border: 0;
   border-radius: 50%;
   background: #fff;
   color: #111;
-  font: 700 11px/1 Arial, Helvetica, sans-serif;
+  font: 700 var(--hinweis-schrift)/1 Arial, Helvetica, sans-serif;
 }
 
-/* Bestehende Ausblendung der Webdesign-KI-Markierung erhalten. */
+.portfolio-overview .ai-label:hover .photo-info-icon,
+.portfolio-overview .ai-label:focus-visible .photo-info-icon {
+  background: #d9eaf2;
+}
+
+/* Webdesign bleibt bewusst ohne KI-Icon. */
 .portfolio-card.landing-pages .ai-label.portfolio-card-ai {
   display: none !important;
 }
