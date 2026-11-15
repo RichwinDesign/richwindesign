@@ -4960,3 +4960,51 @@ body:has(.portal-overview) {
 .portfolio-card.landing-pages .ai-label.portfolio-card-ai {
   display: none !important;
 }
+
+
+/* ==========================================================
+   STARTSEITE – HINWEISSYMBOLE KLEINER UND ECKNÄHER
+   Gilt nur für die vier Portfolio-Kacheln und die beiden
+   breiten Banner; andere KI-Hinweise bleiben unverändert.
+   ========================================================== */
+.portfolio-card .ai-label.portfolio-card-ai,
+.portfolio-wide .ai-label.portfolio-wide-ai {
+  left: auto !important;
+  top: auto !important;
+  right: 8px !important;
+  bottom: 8px !important;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* KI-Grafiken auf ca. die Hälfte verkleinern, Klickfläche bleibt groß. */
+.portfolio-card .ai-label.portfolio-card-ai img,
+.portfolio-wide .ai-label.portfolio-wide-ai img {
+  width: 15px !important;
+  height: 15px !important;
+  max-width: 15px !important;
+  max-height: 15px !important;
+  object-fit: contain;
+}
+
+/* Runde i-Symbole bei Fotografie und Genealogie. */
+.portfolio-card.photography .photo-info-icon,
+.portfolio-wide.genealogy .photo-info-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #fff;
+  color: #111;
+  font: 700 11px/1 Arial, Helvetica, sans-serif;
+}
+
+/* Bestehende Ausblendung der Webdesign-KI-Markierung erhalten. */
+.portfolio-card.landing-pages .ai-label.portfolio-card-ai {
+  display: none !important;
+}
