@@ -16,6 +16,11 @@ document.addEventListener("DOMContentLoaded", () => {
       event.preventDefault();
       event.stopPropagation();
 
+      const title = aiModal.querySelector("#aiModalTitle");
+      if (title) {
+        title.textContent = event.currentTarget.dataset.infoTitle || "Hinweis zur KI-Bildgestaltung";
+      }
+
       const message = aiModal.querySelector(".ai-modal-window p");
 
       if (message) {
