@@ -16,6 +16,13 @@ document.addEventListener("DOMContentLoaded", () => {
       event.preventDefault();
       event.stopPropagation();
 
+      // Unterschiedliche Titel für KI-Hinweise und echte Bildnachweise.
+      const title = aiModal.querySelector("#aiModalTitle");
+      if (title) {
+        title.textContent = event.currentTarget.dataset.infoTitle ||
+          "Hinweis zur KI-Bildgestaltung";
+      }
+
       const message = aiModal.querySelector(".ai-modal-window p");
 
       if (message) {
