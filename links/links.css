@@ -1,5 +1,5 @@
 /* =========================================================
-   RICHWINDESIGN – MINIMAL LINKS V08
+   RICHWINDESIGN – MINIMAL LINKS V09
    Original-Portale-Verlauf, schmale gleichwertige Links,
    bestehende Social-Icons. Betrifft nur links/links.html.
    ========================================================= */
@@ -27,7 +27,47 @@ body {
   min-height: 100svh;
   padding: 48px 20px;
 }
-.link-content, .link-navigation { width: min(100%, 240px); }
+/* Ruhiger, schwebender Glasrahmen hinter den Links */
+.link-content {
+  position: relative;
+  isolation: isolate;
+  width: min(100%, 240px);
+}
+.link-content::before {
+  content: "";
+  position: absolute;
+  inset: -26px -30px -20px;
+  z-index: -1;
+  pointer-events: none;
+  border: 1px solid rgba(159, 171, 202, .24);
+  border-radius: 22px;
+  background:
+    linear-gradient(148deg, rgba(43, 52, 76, .28), rgba(18, 20, 30, .17) 55%, rgba(55, 34, 71, .18));
+  box-shadow: 0 16px 55px rgba(0, 0, 0, .15), inset 0 1px 0 rgba(255, 255, 255, .055);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transform-origin: center;
+  animation: frame-float 9s ease-in-out infinite;
+}
+.link-content::after {
+  content: "";
+  position: absolute;
+  inset: -48px -52px -42px;
+  z-index: -2;
+  pointer-events: none;
+  border-radius: 36px;
+  background: radial-gradient(ellipse at 50% 48%, rgba(99, 88, 146, .12), transparent 72%);
+  animation: halo-breathe 11s ease-in-out infinite;
+}
+@keyframes frame-float {
+  0%, 100% { transform: translateY(0); border-color: rgba(159, 171, 202, .24); }
+  50% { transform: translateY(-5px); border-color: rgba(172, 148, 200, .34); }
+}
+@keyframes halo-breathe {
+  0%, 100% { opacity: .55; transform: scale(.98); }
+  50% { opacity: .9; transform: scale(1.035); }
+}
+.link-navigation { width: 100%; }
 .link-navigation { display: grid; gap: 12px; }
 .link-button {
   display: flex;
@@ -74,4 +114,5 @@ body {
 @media (max-width: 480px) { .link-navigation { gap: 10px; } }
 @media (prefers-reduced-motion: reduce) {
   .link-button, .link-socials a { transition: none; }
+  .link-content::before, .link-content::after { animation: none; }
 }
