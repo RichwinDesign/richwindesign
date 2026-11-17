@@ -1,7 +1,7 @@
 /* =========================================================
-   RICHWINDESIGN – MINIMAL LINKS V09
-   Original-Portale-Verlauf, schmale gleichwertige Links,
-   bestehende Social-Icons. Betrifft nur links/links.html.
+   RICHWINDESIGN – MINIMAL LINKS V10
+   V09 beibehalten, nur oben mehr Rahmenhöhe + zentrierter Titel.
+   Nur links/links.html betroffen.
    ========================================================= */
 :root { color-scheme: dark; font-family: Arial, Helvetica, sans-serif; }
 * { box-sizing: border-box; }
@@ -41,8 +41,7 @@ body {
   pointer-events: none;
   border: 1px solid rgba(159, 171, 202, .24);
   border-radius: 22px;
-  background:
-    linear-gradient(148deg, rgba(43, 52, 76, .28), rgba(18, 20, 30, .17) 55%, rgba(55, 34, 71, .18));
+  background: linear-gradient(148deg, rgba(43, 52, 76, .28), rgba(18, 20, 30, .17) 55%, rgba(55, 34, 71, .18));
   box-shadow: 0 16px 55px rgba(0, 0, 0, .15), inset 0 1px 0 rgba(255, 255, 255, .055);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -67,8 +66,19 @@ body {
   0%, 100% { opacity: .55; transform: scale(.98); }
   50% { opacity: .9; transform: scale(1.035); }
 }
-.link-navigation { width: 100%; }
-.link-navigation { display: grid; gap: 12px; }
+/* Eine einzelne klare Überschrift mit bewusst mehr Luft darüber */
+.link-title {
+  margin: 12px 0 28px;
+  color: #f5f2f8;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(25px, 5vw, 29px);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -.035em;
+  text-align: center;
+  text-shadow: 0 2px 18px rgba(125, 110, 174, .16);
+}
+.link-navigation { width: 100%; display: grid; gap: 12px; }
 .link-button {
   display: flex;
   align-items: center;
