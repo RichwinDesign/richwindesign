@@ -1,8 +1,8 @@
 /* =========================================================
-   RICHWINDESIGN – LINKS V16 · SOFT AMBIENT
-   Keine aufklappenden Fluegel, keine Lichtstreifen auf Buttons.
-   Behaelt Groesse, Farben und Links aus V15 bei.
-   Nur links/links.css ersetzen.
+   RICHWINDESIGN – LINKS V18 · AURORA FRAME
+   Basis V16: Groesse, Links, Buttons und Original-Hintergrund.
+   Langsame Aurora hinter dem Rahmen; keine Portalfluegel
+   und keine Streifen in den Buttons. Nur diese Linkseite.
    ========================================================= */
 :root { color-scheme: dark; font-family: Arial, Helvetica, sans-serif; }
 * { box-sizing: border-box; }
@@ -34,47 +34,54 @@ body {
   width: min(100%, 315px);
   animation: soft-enter 1.05s cubic-bezier(.2,.8,.2,1) both;
 }
-/* Ruhiger Rahmen mit weichem, atmendem Licht. */
+/* Die Glasoberflaeche und ihr sich sehr langsam veraendernder Rand. */
 .link-content::before {
   content: "";
   position: absolute;
   inset: -39px -36px -32px;
   z-index: -1;
   pointer-events: none;
-  border: 1px solid rgba(159, 171, 202, .27);
+  border: 1px solid rgba(159, 171, 202, .28);
   border-radius: 27px;
   background: linear-gradient(148deg, rgba(43, 52, 76, .28), rgba(18, 20, 30, .17) 55%, rgba(55, 34, 71, .18));
   box-shadow: 0 18px 62px rgba(0,0,0,.15), inset 0 1px 0 rgba(255,255,255,.055);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  animation: border-glow 8s ease-in-out infinite;
+  animation: aurora-border 14s ease-in-out infinite alternate;
 }
+/* Organisches Nordlicht: mehrere weiche Farbwolken wandern hinter Glas. */
 .link-content::after {
   content: "";
   position: absolute;
-  inset: -80px -85px -73px;
+  inset: -96px -104px -91px;
   z-index: -2;
   pointer-events: none;
-  border-radius: 45px;
+  border-radius: 48%;
   background:
-    radial-gradient(ellipse at 25% 40%, rgba(87,109,158,.19), transparent 63%),
-    radial-gradient(ellipse at 80% 67%, rgba(131,68,145,.16), transparent 66%);
-  filter: blur(17px);
-  animation: ambient-shift 12s ease-in-out infinite alternate;
+    radial-gradient(ellipse 54% 52% at 16% 32%, rgba(72,132,167,.34), transparent 74%),
+    radial-gradient(ellipse 58% 48% at 82% 30%, rgba(134,71,161,.30), transparent 75%),
+    radial-gradient(ellipse 56% 55% at 68% 82%, rgba(89,105,166,.27), transparent 73%),
+    radial-gradient(ellipse 45% 48% at 22% 77%, rgba(131,67,121,.19), transparent 75%);
+  filter: blur(23px);
+  opacity: .78;
+  transform-origin: center;
+  animation: aurora-drift 19s ease-in-out infinite alternate;
 }
-/* V15-HTML darf bleiben; der alte Portalvorhang ist deaktiviert. */
 .portal-curtain { display: none !important; }
 @keyframes soft-enter {
   from { opacity: 0; transform: translateY(16px) scale(.985); }
   to { opacity: 1; transform: translateY(0) scale(1); }
 }
-@keyframes border-glow {
-  0%,100% { border-color: rgba(159,171,202,.25); box-shadow: 0 18px 62px rgba(0,0,0,.15), inset 0 1px 0 rgba(255,255,255,.055); }
-  50% { border-color: rgba(177,147,205,.46); box-shadow: 0 18px 65px rgba(78,51,114,.19), inset 0 1px 0 rgba(255,255,255,.075); }
+@keyframes aurora-border {
+  0% { border-color: rgba(113,165,189,.30); box-shadow: 0 18px 62px rgba(0,0,0,.15), 0 0 22px rgba(71,116,159,.08), inset 0 1px 0 rgba(255,255,255,.055); }
+  50% { border-color: rgba(167,123,181,.41); box-shadow: 0 18px 62px rgba(0,0,0,.15), 0 0 27px rgba(129,76,156,.12), inset 0 1px 0 rgba(255,255,255,.075); }
+  100% { border-color: rgba(135,141,196,.36); box-shadow: 0 18px 62px rgba(0,0,0,.15), 0 0 25px rgba(92,106,174,.12), inset 0 1px 0 rgba(255,255,255,.065); }
 }
-@keyframes ambient-shift {
-  from { opacity: .58; transform: translate(-7px, 4px) scale(.97); }
-  to { opacity: .94; transform: translate(9px, -6px) scale(1.045); }
+@keyframes aurora-drift {
+  0% { opacity: .61; transform: translate(-12px, 8px) rotate(-5deg) scale(.96); }
+  33% { opacity: .86; transform: translate(8px, -10px) rotate(2deg) scale(1.04); }
+  66% { opacity: .76; transform: translate(-5px, -2px) rotate(5deg) scale(1.025); }
+  100% { opacity: .94; transform: translate(14px, 10px) rotate(-2deg) scale(1.07); }
 }
 .link-title {
   margin: 16px 0 34px;
@@ -111,7 +118,6 @@ body {
   transform: translateY(-2px);
 }
 .link-button:active { transform: translateY(0); }
-/* Keine ::before-Grafik, keine Linien, keine per-Button-Animation. */
 .link-socials {
   display: flex;
   align-items: center;
@@ -135,7 +141,7 @@ body {
   .link-page { padding: 50px 42px; }
   .link-content { width: min(100%, 315px); }
   .link-content::before { inset: -25px -24px -22px; border-radius: 26px; }
-  .link-content::after { inset: -43px -41px -40px; }
+  .link-content::after { inset: -43px -41px -40px; filter: blur(15px); }
   .link-title { margin: 12px 0 28px; font-size: clamp(27px, 7vw, 37px); }
   .link-navigation { gap: 12px; }
   .link-button { min-height: 52px; font-size: clamp(15px, 4vw, 17px); border-radius: 10px; }
