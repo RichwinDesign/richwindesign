@@ -11,7 +11,7 @@
 <body>
   <main class="link-page">
     <div class="link-content">
-      <div class="portal-curtain" aria-hidden="true"><span></span><span></span></div>
+      <div class="glass-effects" aria-hidden="true"><div class="glass-aurora"></div><div class="glass-spotlight"></div></div>
       <h1 class="link-title">RichwinDesign</h1>
       <nav class="link-navigation" aria-label="RichwinDesign Bereiche">
         <a class="link-button" href="../portale.html"><span>Portalwelten</span></a>
@@ -26,5 +26,19 @@
       </nav>
     </div>
   </main>
+  <script>
+    (() => {
+      const card = document.querySelector('.link-content');
+      const surface = card?.querySelector('.glass-effects');
+      if (!card || !surface || !matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+      card.addEventListener('pointermove', (event) => {
+        const bounds = surface.getBoundingClientRect();
+        surface.style.setProperty('--spot-x', `${event.clientX - bounds.left}px`);
+        surface.style.setProperty('--spot-y', `${event.clientY - bounds.top}px`);
+        card.classList.add('is-spotlit');
+      }, { passive: true });
+      card.addEventListener('pointerleave', () => card.classList.remove('is-spotlit'));
+    })();
+  </script>
 </body>
 </html>

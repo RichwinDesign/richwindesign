@@ -1,5 +1,5 @@
 /* =========================================================
-   RICHWINDESIGN – LINKS V18 · AURORA FRAME
+   RICHWINDESIGN – LINKS V19 · AURORA + SPOTLIGHT
    Basis V16: Groesse, Links, Buttons und Original-Hintergrund.
    Langsame Aurora hinter dem Rahmen; keine Portalfluegel
    und keine Streifen in den Buttons. Nur diese Linkseite.
@@ -39,7 +39,7 @@ body {
   content: "";
   position: absolute;
   inset: -39px -36px -32px;
-  z-index: -1;
+  z-index: -2;
   pointer-events: none;
   border: 1px solid rgba(159, 171, 202, .28);
   border-radius: 27px;
@@ -54,7 +54,7 @@ body {
   content: "";
   position: absolute;
   inset: -96px -104px -91px;
-  z-index: -2;
+  z-index: -3;
   pointer-events: none;
   border-radius: 48%;
   background:
@@ -152,4 +152,52 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .link-content, .link-content::before, .link-content::after { animation: none; }
   .link-button, .link-socials a { transition: none; }
+}
+
+/* V19 – sehr zarte Fluid-Aurora UNTER den Buttons, im Glasrahmen.
+   Die bestehende große Aurora hinter dem Kasten bleibt unverändert. */
+.glass-effects {
+  position: absolute;
+  inset: -38px -35px -31px;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  border-radius: 26px;
+}
+.glass-aurora,
+.glass-spotlight { position: absolute; pointer-events: none; }
+.glass-aurora {
+  inset: -35%;
+  opacity: .56;
+  background:
+    radial-gradient(ellipse 36% 43% at 22% 43%, rgba(92, 123, 161, .14), transparent 78%),
+    radial-gradient(ellipse 40% 40% at 79% 61%, rgba(120, 80, 137, .12), transparent 78%),
+    radial-gradient(ellipse 37% 35% at 47% 80%, rgba(76, 102, 147, .085), transparent 80%);
+  filter: blur(26px);
+  animation: glass-fluid 24s ease-in-out infinite alternate;
+}
+.glass-spotlight {
+  inset: 0;
+  opacity: 0;
+  background: radial-gradient(circle 130px at var(--spot-x, 50%) var(--spot-y, 50%),
+    rgba(165, 177, 221, .21) 0%,
+    rgba(131, 123, 178, .085) 43%,
+    transparent 100%);
+  transition: opacity 420ms ease;
+}
+.link-content.is-spotlit .glass-spotlight { opacity: 1; }
+@keyframes glass-fluid {
+  0% { transform: translate(-7%, 3%) rotate(-7deg) scale(.99); }
+  48% { transform: translate(5%, -4%) rotate(8deg) scale(1.05); }
+  100% { transform: translate(-2%, 7%) rotate(15deg) scale(1.03); }
+}
+@media (max-width: 540px) {
+  .glass-effects { inset: -24px -23px -21px; border-radius: 25px; }
+}
+@media (hover: none) {
+  .glass-spotlight { opacity: 0 !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .glass-aurora { animation: none; }
+  .glass-spotlight { transition: none; }
 }
