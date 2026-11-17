@@ -1,6 +1,6 @@
 /* =========================================================
-   RICHWINDESIGN – MINIMAL LINKS V10
-   V09 beibehalten, nur oben mehr Rahmenhöhe + zentrierter Titel.
+   RICHWINDESIGN – MINIMAL LINKS V11
+   Groessere, weiterhin kompakte Version + neue Reihenfolge.
    Nur links/links.html betroffen.
    ========================================================= */
 :root { color-scheme: dark; font-family: Arial, Helvetica, sans-serif; }
@@ -25,22 +25,21 @@ body {
   place-items: center;
   min-height: 100vh;
   min-height: 100svh;
-  padding: 48px 20px;
+  padding: 52px 24px;
 }
-/* Ruhiger, schwebender Glasrahmen hinter den Links */
 .link-content {
   position: relative;
   isolation: isolate;
-  width: min(100%, 240px);
+  width: min(100%, 280px);
 }
 .link-content::before {
   content: "";
   position: absolute;
-  inset: -26px -30px -20px;
+  inset: -35px -32px -28px;
   z-index: -1;
   pointer-events: none;
   border: 1px solid rgba(159, 171, 202, .24);
-  border-radius: 22px;
+  border-radius: 24px;
   background: linear-gradient(148deg, rgba(43, 52, 76, .28), rgba(18, 20, 30, .17) 55%, rgba(55, 34, 71, .18));
   box-shadow: 0 16px 55px rgba(0, 0, 0, .15), inset 0 1px 0 rgba(255, 255, 255, .055);
   backdrop-filter: blur(10px);
@@ -51,7 +50,7 @@ body {
 .link-content::after {
   content: "";
   position: absolute;
-  inset: -48px -52px -42px;
+  inset: -56px -54px -50px;
   z-index: -2;
   pointer-events: none;
   border-radius: 36px;
@@ -66,30 +65,29 @@ body {
   0%, 100% { opacity: .55; transform: scale(.98); }
   50% { opacity: .9; transform: scale(1.035); }
 }
-/* Eine einzelne klare Überschrift mit bewusst mehr Luft darüber */
 .link-title {
-  margin: 12px 0 28px;
+  margin: 14px 0 30px;
   color: #f5f2f8;
   font-family: Georgia, 'Times New Roman', serif;
-  font-size: clamp(25px, 5vw, 29px);
+  font-size: clamp(29px, 5vw, 33px);
   font-weight: 400;
   line-height: 1.2;
   letter-spacing: -.035em;
   text-align: center;
   text-shadow: 0 2px 18px rgba(125, 110, 174, .16);
 }
-.link-navigation { width: 100%; display: grid; gap: 12px; }
+.link-navigation { width: 100%; display: grid; gap: 13px; }
 .link-button {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 44px;
-  padding: 10px 16px;
+  min-height: 49px;
+  padding: 11px 18px;
   border: 1px solid rgba(221, 215, 231, 0.24);
   border-radius: 10px;
   background: rgba(19, 21, 30, 0.66);
   color: #f5f3f8;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 500;
   letter-spacing: 0.025em;
   text-align: center;
@@ -106,22 +104,22 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 14px;
-  margin-top: 22px;
+  gap: 18px;
+  margin-top: 26px;
 }
 .link-socials a {
   display: grid;
   place-items: center;
-  width: 34px;
-  height: 34px;
+  width: 38px;
+  height: 38px;
   border-radius: 8px;
   opacity: .8;
   transition: opacity 180ms ease, transform 180ms ease;
 }
 .link-socials a:hover { opacity: 1; transform: translateY(-2px); }
-.link-socials img { display: block; width: 20px; height: 20px; object-fit: contain; }
+.link-socials img { display: block; width: 22px; height: 22px; object-fit: contain; }
 .link-button:focus-visible, .link-socials a:focus-visible { outline: 2px solid #d9b5e6; outline-offset: 4px; }
-@media (max-width: 480px) { .link-navigation { gap: 10px; } }
+@media (max-width: 480px) { .link-navigation { gap: 11px; } }
 @media (prefers-reduced-motion: reduce) {
   .link-button, .link-socials a { transition: none; }
   .link-content::before, .link-content::after { animation: none; }
