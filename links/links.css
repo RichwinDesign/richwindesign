@@ -1,18 +1,11 @@
 /* =========================================================
-   RICHWINDESIGN – MINIMAL LINKS V07
-   Hintergrund: Original-Verlauf von der Seite „Portale“.
-   Nur diese Linkseite ist betroffen.
+   RICHWINDESIGN – MINIMAL LINKS V08
+   Original-Portale-Verlauf, schmale gleichwertige Links,
+   bestehende Social-Icons. Betrifft nur links/links.html.
    ========================================================= */
-
-:root {
-  color-scheme: dark;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
+:root { color-scheme: dark; font-family: Arial, Helvetica, sans-serif; }
 * { box-sizing: border-box; }
-
 html { min-height: 100%; }
-
 body {
   min-height: 100vh;
   min-height: 100svh;
@@ -27,7 +20,6 @@ body {
   color: #f7f7fa;
   font-family: Arial, Helvetica, sans-serif;
 }
-
 .link-page {
   display: grid;
   place-items: center;
@@ -35,50 +27,51 @@ body {
   min-height: 100svh;
   padding: 48px 20px;
 }
-
-.link-navigation {
-  display: grid;
-  gap: 14px;
-  width: min(100%, 420px);
-}
-
+.link-content, .link-navigation { width: min(100%, 240px); }
+.link-navigation { display: grid; gap: 12px; }
 .link-button {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 66px;
-  padding: 16px 22px;
-  border: 1px solid rgba(221, 215, 231, 0.20);
-  border-radius: 12px;
+  min-height: 44px;
+  padding: 10px 16px;
+  border: 1px solid rgba(221, 215, 231, 0.24);
+  border-radius: 10px;
   background: rgba(19, 21, 30, 0.66);
   color: #f5f3f8;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 500;
-  letter-spacing: 0.035em;
+  letter-spacing: 0.025em;
   text-align: center;
   text-decoration: none;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.10);
   transition: background-color 180ms ease, border-color 180ms ease, transform 180ms ease;
 }
-
 .link-button:hover {
   background: rgba(43, 34, 53, 0.82);
   border-color: rgba(195, 156, 216, 0.58);
   transform: translateY(-2px);
 }
-
-.link-button:focus-visible {
-  outline: 2px solid #d9b5e6;
-  outline-offset: 4px;
-}
-
 .link-button:active { transform: translateY(0); }
-
-@media (max-width: 480px) {
-  .link-navigation { gap: 12px; }
-  .link-button { min-height: 60px; }
+.link-socials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 22px;
 }
-
+.link-socials a {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  opacity: .8;
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+.link-socials a:hover { opacity: 1; transform: translateY(-2px); }
+.link-socials img { display: block; width: 20px; height: 20px; object-fit: contain; }
+.link-button:focus-visible, .link-socials a:focus-visible { outline: 2px solid #d9b5e6; outline-offset: 4px; }
+@media (max-width: 480px) { .link-navigation { gap: 10px; } }
 @media (prefers-reduced-motion: reduce) {
-  .link-button { transition: none; }
+  .link-button, .link-socials a { transition: none; }
 }
