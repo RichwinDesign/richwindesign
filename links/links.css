@@ -1,8 +1,8 @@
 /* =========================================================
-   RICHWINDESIGN – LINKS V19 · AURORA + SPOTLIGHT
-   Basis V16: Groesse, Links, Buttons und Original-Hintergrund.
-   Langsame Aurora hinter dem Rahmen; keine Portalfluegel
-   und keine Streifen in den Buttons. Nur diese Linkseite.
+   RICHWINDESIGN – LINKS V20 · FULL-PAGE SPOTLIGHT
+   Originalhintergrund + bewegte Aurora aus V19 bleiben.
+   Maus-Spotlight jetzt auf der gesamten sichtbaren Seite.
+   Nur links/links.html und links/links.css.
    ========================================================= */
 :root { color-scheme: dark; font-family: Arial, Helvetica, sans-serif; }
 * { box-sizing: border-box; }
@@ -21,7 +21,23 @@ body {
   color: #f7f7fa;
   font-family: Arial, Helvetica, sans-serif;
 }
+/* Die neue Ebene liegt ueber dem Original-Hintergrund, unter dem Kasten. */
+.page-spotlight {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(circle 290px at var(--page-x, 50%) var(--page-y, 50%),
+    rgba(125, 150, 198, .15) 0%,
+    rgba(126, 99, 162, .075) 45%,
+    transparent 100%);
+  transition: opacity 380ms ease;
+}
+.page-spotlight.is-active { opacity: 1; }
 .link-page {
+  position: relative;
+  z-index: 1;
   display: grid;
   place-items: center;
   min-height: 100vh;
@@ -34,7 +50,6 @@ body {
   width: min(100%, 315px);
   animation: soft-enter 1.05s cubic-bezier(.2,.8,.2,1) both;
 }
-/* Die Glasoberflaeche und ihr sich sehr langsam veraendernder Rand. */
 .link-content::before {
   content: "";
   position: absolute;
@@ -49,7 +64,6 @@ body {
   -webkit-backdrop-filter: blur(10px);
   animation: aurora-border 14s ease-in-out infinite alternate;
 }
-/* Organisches Nordlicht: mehrere weiche Farbwolken wandern hinter Glas. */
 .link-content::after {
   content: "";
   position: absolute;
@@ -149,13 +163,6 @@ body {
   .link-socials a { width: 42px; height: 42px; }
   .link-socials img { width: 25px; height: 25px; }
 }
-@media (prefers-reduced-motion: reduce) {
-  .link-content, .link-content::before, .link-content::after { animation: none; }
-  .link-button, .link-socials a { transition: none; }
-}
-
-/* V19 – sehr zarte Fluid-Aurora UNTER den Buttons, im Glasrahmen.
-   Die bestehende große Aurora hinter dem Kasten bleibt unverändert. */
 .glass-effects {
   position: absolute;
   inset: -38px -35px -31px;
@@ -195,9 +202,11 @@ body {
   .glass-effects { inset: -24px -23px -21px; border-radius: 25px; }
 }
 @media (hover: none) {
-  .glass-spotlight { opacity: 0 !important; }
+  .glass-spotlight, .page-spotlight { opacity: 0 !important; }
 }
 @media (prefers-reduced-motion: reduce) {
+  .link-content, .link-content::before, .link-content::after,
   .glass-aurora { animation: none; }
-  .glass-spotlight { transition: none; }
+  .link-button, .link-socials a, .glass-spotlight,
+  .page-spotlight { transition: none; }
 }
