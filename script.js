@@ -2225,5 +2225,17 @@ document.addEventListener('DOMContentLoaded', () => {
       back.setAttribute('aria-label', 'Zurück zum Portfolio');
     }
   }
+/* RichwinDesign – Cloudflare Web Analytics V01
+   EINMAL GANZ UNTEN an die bestehende script.js anfuegen.
+   Diese Einbindung gilt fuer alle Seiten mit der zentralen script.js.
+*/
+(() => {
+  if (document.querySelector('script[src*="static.cloudflareinsights.com/beacon.min.js"]')) return;
+  const beacon = document.createElement('script');
+  beacon.type = 'module';
+  beacon.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+  beacon.dataset.cfBeacon = JSON.stringify({ token: 'f9a079fdc527410dbdb7a2d99e17be74' });
+  document.body.appendChild(beacon);
+})();
 
 });
