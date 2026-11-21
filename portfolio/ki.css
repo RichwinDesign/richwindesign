@@ -44,3 +44,16 @@ body[data-theme="light"] .ki-format-controls button{color:#36576b;border-color:#
 body[data-theme="light"] .ki-format-controls button[aria-pressed="true"],body[data-theme="light"] .ki-format-controls button:hover{background:#dceef7;color:#163c53;border-color:#56849e}
 @media(max-width:800px){.ki-campaign-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:480px){.ki-campaign-grid{grid-template-columns:1fr}}
+
+/* KI V05 – Produktvisualisierung, nur dieser Themenbereich. */
+.ki-product-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;align-items:stretch}
+.ki-product-grid[data-columns="2"]{grid-template-columns:repeat(2,minmax(0,1fr))}
+.ki-page .ki-product-card{padding:10px;min-width:0;gap:8px;justify-content:space-between}
+.ki-product-media{position:relative;aspect-ratio:3/2;min-width:0;overflow:hidden;border-radius:3px;background:#0b141d;display:grid;place-items:center}
+.ki-product-media img,.ki-product-media video{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:contain;border-radius:3px}
+.ki-product-media:has(video){aspect-ratio:16/9}
+.ki-page .ki-product-card figcaption{display:block!important;margin:0;padding:0;font-size:11px;line-height:1.45;text-align:center}
+body[data-theme="light"] .ki-product-card figcaption{color:var(--portfolio-light-muted,#536475)}
+body[data-theme="light"] .ki-product-media{background:#e6edf1}
+@media(max-width:800px){.ki-product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:480px){.ki-product-grid,.ki-product-grid[data-columns="2"]{grid-template-columns:minmax(0,1fr)}}
