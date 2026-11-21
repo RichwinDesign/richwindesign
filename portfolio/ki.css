@@ -128,3 +128,19 @@ body[data-theme="light"] .ki-page .ki-person-controls button[aria-pressed="true"
 @media(prefers-reduced-motion:reduce){.ki-page .ki-person-controls button,.ki-page .ki-format-controls button,.ki-page .ki-carousel .ki-dot::before{transition:none;}}
 
 .ki-page .ki-person-card[data-interaction="gaze"] .ki-person-media{min-height:180px;}
+
+/* V10 – four interaction cards and independent format gallery */
+.ki-page .ki-person-grid{grid-template-columns:repeat(4,minmax(0,1fr));align-items:stretch}
+.ki-page .ki-person-card[data-interaction="background"] .ki-person-media img{transform-origin:50% 0%;}
+.ki-auto-format-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.ki-page .ki-auto-format{padding:10px;display:flex;flex-direction:column;gap:8px;min-width:0;margin:0;transform:none}
+.ki-auto-wide{grid-column:1/-1}
+.ki-auto-format-stage{position:relative;aspect-ratio:16/10;width:100%;overflow:hidden;background:#0b141d;border-radius:6px;}
+.ki-auto-wide .ki-auto-format-stage{aspect-ratio:4/1}
+.ki-auto-format-stage img{position:absolute;inset:0;margin:0;display:block;width:100%!important;height:100%!important;object-fit:contain;opacity:0;transition:opacity .65s ease-in-out}
+.ki-auto-format-stage img.is-active{opacity:1}
+.ki-page .ki-auto-format figcaption{display:block!important;font-size:12px;text-align:center;opacity:.8;margin:0}
+body[data-theme="light"] .ki-auto-format-stage{background:#e6edf1}
+@media(max-width:900px){.ki-page .ki-person-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:480px){.ki-page .ki-person-grid{grid-template-columns:1fr}.ki-auto-format-grid{gap:8px}.ki-page .ki-auto-format{padding:5px}}
+@media(prefers-reduced-motion:reduce){.ki-auto-format-stage img{transition:none}}
