@@ -465,9 +465,8 @@
  // Zones anchored to the banner, rather than the browser center.
  let last=null;
  function update(){if(!last)return;const r=card.getBoundingClientRect();const x=(last.x-r.left)/r.width,y=(last.y-r.top)/r.height;
- // Above the banner: up, except the right-side column. Below: frontal.
- // A narrow left strip and a right column take precedence over the lower zone.
- const dir=x>1.20?'rechts':y<0?'oben':x<0.29?'links':'frontal';select(dir);}
+ // Above: up; below: down. Side columns retain priority below the banner.
+ const dir=x>1.20?'rechts':y<0?'oben':x<0.29?'links':y>1?'unten':'frontal';select(dir);}
  window.addEventListener('pointermove',e=>{if(e.pointerType==='mouse'){last={x:e.clientX,y:e.clientY};update()}},{passive:true});
  window.addEventListener('scroll',update,{passive:true});window.addEventListener('resize',update);
  document.documentElement.addEventListener('pointerleave',()=>{last=null;select('frontal')});window.addEventListener('blur',()=>{last=null;select('frontal')});
