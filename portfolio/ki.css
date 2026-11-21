@@ -57,3 +57,18 @@ body[data-theme="light"] .ki-product-card figcaption{color:var(--portfolio-light
 body[data-theme="light"] .ki-product-media{background:#e6edf1}
 @media(max-width:800px){.ki-product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:480px){.ki-product-grid,.ki-product-grid[data-columns="2"]{grid-template-columns:minmax(0,1fr)}}
+
+/* KI V06 – kompakte Produktgalerie mit echtem Platztausch */
+.ki-mosaic{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:12px;align-items:stretch;position:relative}
+.ki-mosaic-thumbs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));gap:8px;min-width:0}
+.ki-page .ki-mosaic-card{box-sizing:border-box;min-width:0;width:100%;padding:7px;gap:5px;display:flex;flex-direction:column;align-items:stretch;justify-content:center;transform:none;margin:0;color:inherit;font:inherit}
+.ki-page .ki-mosaic-main{padding:10px;gap:8px}
+.ki-mosaic-media{display:block;position:relative;width:100%;aspect-ratio:1;overflow:hidden;background:#0b141d;border-radius:4px}
+.ki-mosaic-media img{position:absolute;inset:0;display:block;width:100%!important;height:100%!important;max-width:100%;max-height:100%;object-fit:contain;margin:0}
+.ki-mosaic-label{display:block;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:11px;line-height:1.4;color:#aebfcd;min-width:0}
+.ki-mosaic-thumb{cursor:pointer}
+.ki-mosaic-thumb:focus-visible{outline:2px solid #8dcced;outline-offset:2px}
+.ki-mosaic-status{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;margin:0!important;padding:0}
+body[data-theme="light"] .ki-mosaic-media{background:#e6edf1}
+body[data-theme="light"] .ki-mosaic-label{color:var(--portfolio-light-muted,#536475)}
+@media(max-width:680px){.ki-mosaic{grid-template-columns:minmax(0,1fr);gap:10px}.ki-mosaic-main .ki-mosaic-media{max-width:340px;margin-inline:auto}.ki-mosaic-thumbs{gap:6px}.ki-page .ki-mosaic-thumb{padding:4px}.ki-mosaic-label{font-size:10px}}
