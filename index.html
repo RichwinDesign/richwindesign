@@ -8,6 +8,52 @@
   <link rel="stylesheet" href="style.css">
     <title>Richwin Design</title>
   <meta name="description" content="RichwinDesign – Portfolio von Bianca Richwin. Mediengestaltung, Print- und Digitaldesign, Fotografie, KI-Workflows und kreative Portalwelten.">
+
+  <!-- Startseite: KI und Portale nebeneinander -->
+  <style>
+    .portfolio-overview .portfolio-wide-stack {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .portfolio-overview .portfolio-wide-stack > .genealogy { grid-column: 1 / -1; }
+    .portfolio-overview .portfolio-wide-stack > :is(.ki-workflows, .portals) {
+      min-width: 0;
+      min-height: 250px;
+      background-color: #080e14;
+      background-position: right center;
+    }
+    .portfolio-overview .portfolio-wide-stack > .ki-workflows {
+      background-image: url('images/general/Hero_KI.webp');
+      background-size: auto 112%;
+      background-repeat: no-repeat;
+    }
+    .portfolio-overview .portfolio-wide-stack > :is(.ki-workflows, .portals)::before {
+      background: linear-gradient(90deg, rgba(4,8,12,.97) 0%, rgba(4,8,12,.84) 28%, rgba(4,8,12,.35) 62%, rgba(4,8,12,.06) 100%), linear-gradient(0deg,rgba(0,0,0,.38),transparent 55%);
+    }
+    .portfolio-overview .portfolio-wide-stack > :is(.ki-workflows, .portals) .portfolio-wide-content {
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: 24px;
+      min-height: 250px;
+      padding: 36px 40px;
+    }
+    .portfolio-overview .portfolio-wide-stack > :is(.ki-workflows, .portals) .portfolio-wide-text {
+      width: 100%;
+      position: static;
+      isolation: auto;
+      color: white;
+    }
+    .portfolio-overview .portfolio-wide-stack > :is(.ki-workflows, .portals) .portfolio-wide-text::before { display: none; }
+    .portfolio-overview .portfolio-wide-stack > :is(.ki-workflows, .portals) .portfolio-wide-button { margin: 0; }
+    @media (max-width: 700px) {
+      .portfolio-overview .portfolio-wide-stack { grid-template-columns: minmax(0,1fr); }
+      .portfolio-overview .portfolio-wide-stack > :is(.ki-workflows, .portals) .portfolio-wide-content { padding: 30px 24px; }
+    }
+  </style>
 </head>
 
 <body>
@@ -238,6 +284,24 @@
       <!-- BREITE BANNER -->
 
       <div class="portfolio-wide-stack">
+
+        <!-- KI -->
+        <article class="portfolio-wide ki-workflows" id="ki">
+          <div class="portfolio-wide-content">
+            <div class="portfolio-wide-text">
+              <h2><a href="portfolio/ki.html">KI</a></h2>
+              <p>KI-gestützte Bildwelten, Workflows<br class="start-copy-break">und kreative Projekte.</p>
+            </div>
+            <a class="portfolio-wide-button" href="portfolio/ki.html" aria-label="KI öffnen">
+              Entdecken <span aria-hidden="true">›</span>
+            </a>
+          </div>
+          <button class="ai-label portfolio-wide-ai" type="button"
+            aria-label="KI-Hinweis zum Hintergrundbild anzeigen"
+            data-ai-message="Das Hintergrundmotiv wurde mithilfe generativer KI erstellt.">
+            <img src="images/general/icons/icon_ki-hinweis.webp" alt="">
+          </button>
+        </article>
 
         <!-- PORTALE -->
 
