@@ -30,3 +30,24 @@ body[data-theme="light"] .ki-page {--ki-border:rgba(49,84,108,.24);--ki-panel:rg
 body[data-theme="light"] .ki-page .ki-project p,body[data-theme="light"] .ki-page .ki-tools p {color:var(--portfolio-light-muted,#536475);}
 @media(max-width:800px){.ki-grid,.ki-grid[data-layout="models"]{grid-template-columns:repeat(2,minmax(0,1fr))}.ki-grid{gap:12px}}
 @media(max-width:480px){.ki-grid,.ki-grid[data-layout="models"],.ki-grid[data-layout="pairs"]{grid-template-columns:1fr}.ki-placeholder{padding:6px}.ki-page .print-page-text h1{font-size:clamp(2.2rem,9vw,3rem);overflow-wrap:anywhere;}}
+
+/* KI V03 – Kampagnenübersicht und Formatgalerie */
+.ki-campaign-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;align-items:stretch}
+.ki-page .ki-campaign-card{cursor:zoom-in;width:100%;padding:10px;display:flex;justify-content:center;align-items:center;color:inherit;font:inherit}
+.ki-campaign-media{display:block;width:100%;aspect-ratio:1/1;overflow:hidden;border-radius:3px}
+.ki-campaign-media img{display:block;width:100%;height:100%;object-fit:contain}
+.ki-campaign-card:focus-visible{outline:2px solid #8dcced;outline-offset:3px}
+.ki-campaign-dialog{box-sizing:border-box;width:min(1040px,96vw);max-height:96dvh;padding:18px 22px;margin:auto;border:1px solid #365268;border-radius:12px;background:#0b141c;color:#eef4f9;overflow:auto;z-index:20000}
+.ki-campaign-dialog::backdrop{background:rgba(3,8,15,.94)}
+.ki-gallery-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:12px}
+.ki-gallery-heading h2{font-size:clamp(16px,2.5vw,24px);margin:0}
+.ki-campaign-dialog button{font:inherit;color:#dceaf3;background:#142430;border:1px solid #365268;border-radius:6px;cursor:pointer;padding:8px 14px}
+.ki-campaign-dialog button:hover,.ki-campaign-dialog button[aria-pressed="true"]{border-color:#8dcced;background:#234256;color:white}
+.ki-campaign-dialog button:focus-visible{outline:2px solid #8dcced;outline-offset:2px}
+.ki-campaign-dialog .ki-gallery-close{font-size:25px;line-height:1;padding:6px 12px}
+.ki-gallery-stage{display:grid;grid-template-columns:42px minmax(0,1fr) 42px;align-items:center;gap:10px;height:min(70dvh,750px)}
+.ki-gallery-image{display:block;width:100%;height:100%;min-height:0;object-fit:contain}
+.ki-campaign-dialog .ki-gallery-prev,.ki-campaign-dialog .ki-gallery-next{font-size:28px;padding:8px 0}
+.ki-gallery-formats{display:flex;justify-content:center;gap:10px;margin-top:14px}
+@media(max-width:800px){.ki-campaign-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:480px){.ki-campaign-grid{grid-template-columns:1fr}.ki-campaign-dialog{padding:12px}.ki-gallery-stage{grid-template-columns:30px minmax(0,1fr) 30px;gap:5px;height:65dvh}}
