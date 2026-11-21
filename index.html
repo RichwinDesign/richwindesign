@@ -460,8 +460,8 @@
  function ready(){if(imgs.frontal.naturalWidth)card.classList.add('ki-gaze-ready');}
  imgs.frontal.addEventListener('load',ready);ready();
  function select(dir){if(dir===current||!imgs[dir].complete||!imgs[dir].naturalWidth)return;imgs[current].classList.remove('is-active');imgs[dir].classList.add('is-active');current=dir;}
- function pointer(e){const r=card.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;select(Math.abs(x)<.16&&Math.abs(y)<.17?'frontal':Math.abs(x)>Math.abs(y)?(x<0?'links':'rechts'):(y<0?'oben':'unten'));}
- card.addEventListener('pointermove',e=>{if(e.pointerType==='mouse')pointer(e)});card.addEventListener('pointerleave',()=>select('frontal'));card.addEventListener('pointerdown',e=>{if(e.pointerType==='touch')pointer(e)});
+ function pointer(e){const x=e.clientX/window.innerWidth-.5,y=e.clientY/window.innerHeight-.5;select(Math.abs(x)<.16&&Math.abs(y)<.17?'frontal':Math.abs(x)>Math.abs(y)?(x<0?'links':'rechts'):(y<0?'oben':'unten'));}
+ window.addEventListener('pointermove',e=>{if(e.pointerType==='mouse')pointer(e)});window.addEventListener('pointerleave',()=>select('frontal'));window.addEventListener('blur',()=>select('frontal'));card.addEventListener('pointerdown',e=>{if(e.pointerType==='touch')pointer(e)});
 })();
 </script></body>
 
