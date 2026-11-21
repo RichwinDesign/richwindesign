@@ -29,6 +29,26 @@ document.addEventListener("DOMContentLoaded", () => {
         message.textContent =
           event.currentTarget.dataset.aiMessage ||
           "Dieses Bild wurde mithilfe generativer KI erstellt.";
+
+        // Originalbilder zu den Bildnachweisen auf der Startseite.
+        const sourceLinks = [
+          [".photo-source-info", "https://unsplash.com/de/fotos/person-mit-schwarzem-und-blauem-kameraobjektiv-MDMMttyMQYc"],
+          [".portal-source-info", "https://unsplash.com/de/fotos/ein-boot-in-einem-gewasser-mit-einem-riesigen-ring-davor-cXuvDkzEJdE"],
+          [".genealogy-source-info", "https://unsplash.com/de/fotos/text-e48jHQjjQrw"]
+        ];
+        const isHome = ["/", "/index.html"].includes(window.location.pathname);
+        const source = isHome && sourceLinks.find(([selector]) =>
+          event.currentTarget.matches(selector)
+        );
+        if (source) {
+          const link = document.createElement("a");
+          link.href = source[1];
+          link.target = "_blank";
+          link.rel = "noopener noreferrer";
+          link.textContent = "Originalbild auf Unsplash ansehen ↗";
+          link.style.cssText = "display:block;margin-top:12px;color:inherit;text-decoration:underline;text-underline-offset:3px;";
+          message.appendChild(link);
+        }
       }
 
       aiModal.classList.add("is-open");
