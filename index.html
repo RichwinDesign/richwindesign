@@ -25,7 +25,8 @@
     }
     .portfolio-overview .portfolio-wide-stack > .ki-workflows {
       background-image: url('images/portfolio/ki/bildgenerierung/ki_floristin_blick-frontal.webp');
-      background-size: auto 100%;
+      background-size: cover;
+      background-position: center 25%;
       background-repeat: no-repeat;
     }
     .portfolio-overview .portfolio-wide-stack > :is(.ki-workflows, .portals)::before {
@@ -56,7 +57,7 @@
   
     .portfolio-overview .portfolio-wide-stack > .ki-workflows{position:relative;isolation:isolate;overflow:hidden;}
     .ki-workflows .ki-home-gaze{position:absolute;inset:0;z-index:-1;pointer-events:none;}
-    .ki-workflows .ki-home-gaze img{position:absolute;right:0;top:0;height:100%;width:auto;max-width:100%;object-fit:contain;object-position:right center;opacity:0;transition:opacity .15s ease;}
+    .ki-workflows .ki-home-gaze img{position:absolute;inset:0;height:100%;width:100%;max-width:none;object-fit:cover;object-position:center 25%;opacity:0;transition:opacity .15s ease;}
     .ki-workflows .ki-home-gaze img.is-active{opacity:1;}
     .portfolio-overview .portfolio-wide-stack > .ki-workflows.ki-gaze-ready{background-image:none;}
     @media(prefers-reduced-motion:reduce){.ki-workflows .ki-home-gaze img{transition:none;}}
