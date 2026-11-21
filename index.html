@@ -24,8 +24,8 @@
       background-position: right center;
     }
     .portfolio-overview .portfolio-wide-stack > .ki-workflows {
-      background-image: url('images/general/Hero_KI.webp');
-      background-size: cover;
+      background-image: url('images/portfolio/ki/bildgenerierung/ki_floristin_blick-frontal.webp');
+      background-size: auto 100%;
       background-repeat: no-repeat;
     }
     .portfolio-overview .portfolio-wide-stack > :is(.ki-workflows, .portals)::before {
@@ -53,6 +53,13 @@
       .portfolio-overview .portfolio-wide-stack { grid-template-columns: minmax(0,1fr); }
       .portfolio-overview .portfolio-wide-stack > :is(.ki-workflows, .portals) .portfolio-wide-content { padding: 30px 24px; }
     }
+  
+    .portfolio-overview .portfolio-wide-stack > .ki-workflows{position:relative;isolation:isolate;overflow:hidden;}
+    .ki-workflows .ki-home-gaze{position:absolute;inset:0;z-index:-1;pointer-events:none;}
+    .ki-workflows .ki-home-gaze img{position:absolute;right:0;top:0;height:100%;width:auto;max-width:100%;object-fit:contain;object-position:right center;opacity:0;transition:opacity .15s ease;}
+    .ki-workflows .ki-home-gaze img.is-active{opacity:1;}
+    .portfolio-overview .portfolio-wide-stack > .ki-workflows.ki-gaze-ready{background-image:none;}
+    @media(prefers-reduced-motion:reduce){.ki-workflows .ki-home-gaze img{transition:none;}}
   </style>
 </head>
 
@@ -441,6 +448,20 @@
 
   <script src="script.js"></script>
 
-</body>
+<script>
+(() => {
+ const card=document.querySelector('.ki-workflows'); if(!card)return;
+ const layer=document.createElement('div');layer.className='ki-home-gaze';layer.setAttribute('aria-hidden','true');
+ const dirs=['frontal','links','rechts','oben','unten'];const imgs={};let current='frontal';
+ dirs.forEach(dir=>{const img=new Image();img.alt='';img.src='images/portfolio/ki/bildgenerierung/ki_floristin_blick-'+dir+'.webp';imgs[dir]=img;layer.append(img);});
+ // Keep the text and existing overlay above the photo; use the existing CSS background as a fallback.
+ card.prepend(layer);imgs.frontal.classList.add('is-active');
+ function ready(){if(imgs.frontal.naturalWidth)card.classList.add('ki-gaze-ready');}
+ imgs.frontal.addEventListener('load',ready);ready();
+ function select(dir){if(dir===current||!imgs[dir].complete||!imgs[dir].naturalWidth)return;imgs[current].classList.remove('is-active');imgs[dir].classList.add('is-active');current=dir;}
+ function pointer(e){const r=card.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;select(Math.abs(x)<.16&&Math.abs(y)<.17?'frontal':Math.abs(x)>Math.abs(y)?(x<0?'links':'rechts'):(y<0?'oben':'unten'));}
+ card.addEventListener('pointermove',e=>{if(e.pointerType==='mouse')pointer(e)});card.addEventListener('pointerleave',()=>select('frontal'));card.addEventListener('pointerdown',e=>{if(e.pointerType==='touch')pointer(e)});
+})();
+</script></body>
 
 </html>
