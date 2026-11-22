@@ -247,3 +247,12 @@ body[data-theme="light"] :is(.ki-vector-media,.ki-vector-stage){background:#e6ed
 body[data-theme="light"] .ki-expand-arrow{background:#f7fbfdee;color:#28516a;border-color:#5886a2}body[data-theme="light"] .ki-expand-arrow[aria-pressed=true],body[data-theme="light"] .ki-expand-arrow:hover{background:#326982;color:white}
 @media(max-width:600px){.ki-expand-arrow{width:29px;height:29px;font-size:16px}.ki-expand-all svg{width:17px;height:17px}.ki-expand-footer{font-size:11px;gap:8px}}
 @media(prefers-reduced-motion:reduce){.ki-expand-arrow{transition:none}}
+
+/* V24 – compact reference and larger fixed expansion canvas */
+.ki-page .ki-vapor-layout.has-reference{display:grid;grid-template-columns:minmax(86px,140px) minmax(0,1fr);gap:14px;align-items:start;max-width:1060px;margin-inline:auto}
+.ki-page .ki-vapor-layout .ki-vapor-reference{align-self:start;padding:7px;gap:6px;max-width:140px}
+.ki-vapor-reference .ki-vector-media{aspect-ratio:1/1;background:transparent}
+.ki-page .ki-vapor-layout .ki-vector-gallery{max-width:none;margin:0!important;align-self:start}
+.ki-page .ki-expand-canvas{max-width:none;aspect-ratio:900/748;}
+.ki-expand-up{left:50%;top:34.3583%}.ki-expand-down{left:50%;top:65.5615%}.ki-expand-left{left:33.3333%;top:49.9599%}.ki-expand-right{left:66.6667%;top:49.9599%}.ki-expand-all{left:66.6667%;top:34.3583%}
+@media(max-width:600px){.ki-page .ki-vapor-layout.has-reference{grid-template-columns:minmax(65px,90px) minmax(0,1fr);gap:7px}.ki-page .ki-vapor-layout .ki-vapor-reference{padding:4px}.ki-vapor-layout .ki-vector-thumbs{grid-template-columns:repeat(4,minmax(0,1fr))}}
