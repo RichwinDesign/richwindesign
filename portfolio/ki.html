@@ -36,8 +36,8 @@
 <svg class="ki-expand-svg" viewBox="50 -12 900 748" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Interaktive Erweiterung einer Blumenladen-Illustration">
 <defs><pattern id="ki-expand-dots" width="16" height="16" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="currentColor" opacity=".12"/></pattern><clipPath id="ki-expand-clip"><rect class="ki-expand-reveal" x="350" y="245" width="300" height="233.4"/></clipPath></defs>
 <rect width="1000" height="724" fill="url(#ki-expand-dots)"/>
-<g clip-path="url(#ki-expand-clip)"><image class="ki-expand-layer" x="350" y="245" width="300" height="233.4" preserveAspectRatio="none" /></g>
-<image href="../images/portfolio/ki/vektoren/ki_vektorerweiterung_01.webp" x="350" y="245" width="300" height="233.4" preserveAspectRatio="none"/>
+<image class="ki-expand-base" href="../images/portfolio/ki/vektoren/ki_vektorerweiterung_01.webp" x="350" y="245" width="300" height="233.4" preserveAspectRatio="none"/>
+<g class="ki-expand-overlay" clip-path="url(#ki-expand-clip)" visibility="hidden"><image class="ki-expand-layer" x="350" y="245" width="300" height="233.4" preserveAspectRatio="none" /></g>
 <rect class="ki-expand-outline" x="350" y="245" width="300" height="233.4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-dasharray="5 5"/>
 </svg>
 <button type="button" class="ki-expand-arrow ki-expand-up" data-expand="up" aria-label="Nach oben erweitern" aria-pressed="false">↑</button>
@@ -192,17 +192,25 @@ const scenes={
 };
 const reduce=matchMedia('(prefers-reduced-motion: reduce)');
 document.querySelectorAll('[data-expand-demo]').forEach(root=>{
- const reveal=root.querySelector('.ki-expand-reveal'),layer=root.querySelector('.ki-expand-layer'),status=root.querySelector('.ki-expand-status');
+ const reveal=root.querySelector('.ki-expand-reveal'),layer=root.querySelector('.ki-expand-layer'),overlay=root.querySelector('.ki-expand-overlay'),status=root.querySelector('.ki-expand-status');
  const attrs=['x','y','width','height'];let current='reset',shown='reset',frame=0,token=0,box=original.slice();
  const ready=new Map();function load(file){if(!ready.has(file)){const im=new Image();const promise=new Promise((resolve,reject)=>{im.onload=()=>resolve(im);im.onerror=reject;im.src=base+file+'.webp';});ready.set(file,promise);promise.catch(()=>ready.delete(file));}return ready.get(file);}
  function write(el,b){attrs.forEach((k,i)=>el.setAttribute(k,b[i]));}
  function animate(target,duration,id){cancelAnimationFrame(frame);const from=box.slice();return new Promise(resolve=>{const begin=performance.now();function step(now){if(id!==token){resolve(false);return;}const p=reduce.matches?1:Math.min(1,(now-begin)/duration),e=1-Math.pow(1-p,3);box=from.map((v,i)=>v+(target[i]-v)*e);write(reveal,box);if(p<1)frame=requestAnimationFrame(step);else resolve(true);}frame=requestAnimationFrame(step);});}
  async function choose(dir){if(dir===current)dir='reset';const id=++token;current=dir;
  root.querySelectorAll('.ki-expand-arrow').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.expand===dir)));
- if(shown!=='reset'){if(!await animate(original,250,id)||id!==token)return;shown='reset';}
+ if(shown!=='reset'){
+  if(!await animate(original,250,id)||id!==token)return;
+  shown='reset';
+  overlay.setAttribute('visibility','hidden');
+ }
  if(dir==='reset'){status.textContent='Ausgangsmotiv';return;}
- const cfg=scenes[dir];try{await load(cfg.file);}catch{if(id===token){status.textContent='Erweiterungsbild konnte nicht geladen werden.';current='reset';root.querySelectorAll('.ki-expand-arrow').forEach(b=>b.setAttribute('aria-pressed','false'));}return;}
- if(id!==token)return;write(layer,cfg.image);layer.setAttribute('href',base+cfg.file+'.webp');shown=dir;status.textContent=cfg.label;await animate(cfg.bounds,580,id);
+ const cfg=scenes[dir];try{await load(cfg.file);}catch{if(id===token){status.textContent='Erweiterungsbild konnte nicht geladen werden.';current='reset';root.querySelectorAll('.ki-expand-arrow').forEach(b=>b.setAttribute('aria-pressed','false'));overlay.setAttribute('visibility','hidden');}return;}
+ if(id!==token)return;
+ write(layer,cfg.image);
+ layer.setAttribute('href',base+cfg.file+'.webp');
+ overlay.setAttribute('visibility','visible');
+ shown=dir;status.textContent=cfg.label;await animate(cfg.bounds,580,id);
  }
  root.querySelectorAll('[data-expand]').forEach(b=>b.addEventListener('click',()=>choose(b.dataset.expand)));
  const preload=()=>Object.values(scenes).forEach(cfg=>load(cfg.file).catch(()=>{}));const group=root.closest('details');if(group?.open)preload();else group?.addEventListener('toggle',()=>{if(group.open)preload();},{once:true});
