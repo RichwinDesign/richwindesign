@@ -157,3 +157,27 @@ body[data-theme="light"] .ki-auto-format-stage{background:#e6edf1}
 .ki-product-grid[data-columns="5"]{grid-template-columns:repeat(5,minmax(0,1fr))}
 @media(max-width:800px){.ki-product-grid[data-columns="5"]{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:480px){.ki-product-grid[data-columns="5"]{grid-template-columns:1fr}}
+
+/* V17 – Bildbearbeitung & Composing */
+.ki-composing-references,.ki-composing-scenes{display:grid;gap:12px;grid-template-columns:repeat(6,minmax(0,1fr));align-items:stretch}
+.ki-composing-scenes{grid-template-columns:repeat(3,minmax(0,1fr))}
+.ki-page .ki-composing-card{display:flex;flex-direction:column;gap:8px;padding:8px;min-width:0;margin:0;justify-content:flex-start;align-items:stretch;transform:none;cursor:default}
+.ki-composing-media{position:relative;aspect-ratio:1;overflow:hidden;border-radius:5px;background:#0b141d}
+.ki-composing-scene .ki-composing-media{aspect-ratio:16/10}
+.ki-composing-media img,.ki-room-stage img{position:absolute;inset:0;margin:0;width:100%!important;height:100%!important;max-width:none;max-height:none;object-fit:contain;display:block}
+.ki-page .ki-composing-card figcaption{display:block!important;text-align:center;font-size:11px;line-height:1.4;margin:0;padding:0;opacity:.85}
+.ki-composing-subtitle{font-size:13px;font-weight:600;margin:0 0 10px;color:inherit}
+.ki-composing-process{display:flex;align-items:center;gap:14px;color:var(--ki-accent);max-width:360px;margin:12px auto}
+.ki-composing-process span{height:1px;flex:1;background:var(--ki-border)}
+.ki-page .ki-room-result{max-width:820px;width:100%;box-sizing:border-box;margin:0 auto;padding:10px;gap:10px}
+.ki-room-result .ki-composing-subtitle{margin:0}
+.ki-room-stage{position:relative;aspect-ratio:16/9;overflow:hidden;background:#0b141d;border-radius:5px;isolation:isolate}
+.ki-room-stage img{opacity:0}.ki-room-stage img.is-active{opacity:1}
+.ki-room-controls{display:flex;align-items:center;align-self:center;max-width:100%;gap:4px;padding:3px;border-radius:999px;background:rgba(125,184,215,.07)}
+.ki-room-controls button{padding:8px 22px;font:inherit;font-size:12px;color:inherit;border:0;border-radius:999px;background:transparent;cursor:pointer;transition:background .2s,color .2s}
+.ki-room-controls button[aria-pressed="true"]{background:var(--ki-accent);color:#07131c}.ki-room-controls button:hover:not([aria-pressed="true"]){background:rgba(125,184,215,.15)}
+.ki-room-controls button:focus-visible{outline:2px solid var(--ki-accent);outline-offset:2px}
+body[data-theme="light"] :is(.ki-composing-media,.ki-room-stage){background:#e6edf1}
+body[data-theme="light"] .ki-room-controls button[aria-pressed="true"]{color:#fff}
+@media(max-width:800px){.ki-composing-references{grid-template-columns:repeat(3,minmax(0,1fr))}.ki-composing-scenes{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:480px){.ki-composing-references{gap:6px}.ki-page .ki-composing-source{padding:4px}.ki-composing-scenes{grid-template-columns:1fr}.ki-room-controls button{padding:8px 14px}}
