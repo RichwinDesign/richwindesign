@@ -181,3 +181,16 @@ body[data-theme="light"] :is(.ki-composing-media,.ki-room-stage){background:#e6e
 body[data-theme="light"] .ki-room-controls button[aria-pressed="true"]{color:#fff}
 @media(max-width:800px){.ki-composing-references{grid-template-columns:repeat(3,minmax(0,1fr))}.ki-composing-scenes{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:480px){.ki-composing-references{gap:6px}.ki-page .ki-composing-source{padding:4px}.ki-composing-scenes{grid-template-columns:1fr}.ki-room-controls button{padding:8px 14px}}
+
+/* V18 – Szenengestaltung: Referenzen und Ergebnisse */
+.ki-scene-references{display:grid;gap:10px;align-items:stretch}
+.ki-scene-rooms{grid-template-columns:repeat(5,minmax(0,1fr))}
+.ki-scene-people{grid-template-columns:repeat(8,minmax(0,1fr))}
+.ki-scene-rooms .ki-composing-media{aspect-ratio:4/3}
+.ki-scene-people .ki-composing-media{aspect-ratio:3/4}
+.ki-page .ki-scene-reference{padding:6px;gap:6px}
+.ki-scene-person-heading{margin-top:20px}
+.ki-scene-process{text-align:center;font-size:12px;color:inherit;margin:16px 0 22px}
+.ki-scene-process .ki-composing-process{margin:0 auto 5px}
+@media(max-width:800px){.ki-scene-rooms{grid-template-columns:repeat(3,minmax(0,1fr))}.ki-scene-people{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:480px){.ki-scene-rooms{grid-template-columns:repeat(2,minmax(0,1fr))}.ki-scene-people{grid-template-columns:repeat(4,minmax(0,1fr))}.ki-scene-references{gap:5px}.ki-page .ki-scene-reference{padding:4px}.ki-page .ki-scene-reference figcaption{font-size:10px}}
