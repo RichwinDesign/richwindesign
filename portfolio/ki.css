@@ -152,3 +152,8 @@ body[data-theme="light"] .ki-auto-format-stage{background:#e6edf1}
 .ki-page .ki-person-grid > .ki-person-card:nth-child(5){grid-column:4/span 2;}
 @media(max-width:900px){.ki-page .ki-person-grid{grid-template-columns:repeat(2,minmax(0,1fr));}.ki-page .ki-person-grid > .ki-person-card:nth-child(n){grid-column:auto;}.ki-page .ki-person-grid > .ki-person-card:last-child{grid-column:1/-1;max-width:calc((100% - 12px)/2);justify-self:center;}}
 @media(max-width:480px){.ki-page .ki-person-grid{grid-template-columns:1fr;}.ki-page .ki-person-grid > .ki-person-card:last-child{max-width:none;}}
+
+/* V15 – kompakte Produktentwicklung & Werbewelten */
+.ki-product-grid[data-columns="5"]{grid-template-columns:repeat(5,minmax(0,1fr))}
+@media(max-width:800px){.ki-product-grid[data-columns="5"]{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:480px){.ki-product-grid[data-columns="5"]{grid-template-columns:1fr}}
